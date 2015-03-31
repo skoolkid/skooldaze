@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 31452</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31447.html">31447</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31452">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31637.html">31637</a></span></td>
+</tr>
+</table>
+<div class="description">31452: Determine the next move of a character following another character</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a class="link" href="31648.html">31648</a>, <a class="link" href="62938.html">62938</a> and <a class="link" href="63374.html">63374</a>. Returns with one of the following values in <span class="register">A</span> depending on the relative locations of the follower and his target:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th>A</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Follower is at the same coordinates as the target</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Follower should go (or continue going) upstairs</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Follower should go (or continue going) downstairs</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Follower should go left</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Follower should go right</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Target character's coordinates</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Follower's character number (152-172)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31452"></a>31452</td>
+<td class="instruction">LD L,97</td>
+<td class="comment-11" rowspan="1">Byte 97 of the follower's buffer holds his y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31454"></a>31454</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31455"></a>31455</td>
+<td class="instruction">CP 155</td>
+<td class="comment-11" rowspan="1">Is the follower on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31457"></a>31457</td>
+<td class="instruction">JR Z,31480</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31459"></a>31459</td>
+<td class="instruction">CP 162</td>
+<td class="comment-11" rowspan="1">Is the follower on the middle floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31461"></a>31461</td>
+<td class="instruction">JR Z,31480</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31463"></a>31463</td>
+<td class="instruction">CP 169</td>
+<td class="comment-11" rowspan="1">Is the follower on the bottom floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31465"></a>31465</td>
+<td class="instruction">JR Z,31480</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31467"></a>
+<div class="comments">
+<div class="paragraph">
+The follower is on a staircase. Find out whether he's going up or down and set <span class="register">A</span> accordingly to make him continue.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31467"></a>31467</td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="1">Byte 98 of the follower's buffer holds his x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31469"></a>31469</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31470"></a>31470</td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 holds the follower's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31472"></a>31472</td>
+<td class="instruction">ADD A,80</td>
+<td class="comment-11" rowspan="1">Set bit 7 of <span class="register">A</span> if the follower is on a staircase at the right of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31474"></a>31474</td>
+<td class="instruction">XOR (HL)</td>
+<td class="comment-11" rowspan="4"><span class="register">A</span>=1 if the follower is going upstairs, 2 if he's going downstairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31475"></a>31475</td>
+<td class="instruction">AND 128</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31477"></a>31477</td>
+<td class="instruction">RLCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31478"></a>31478</td>
+<td class="instruction">INC A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31479"></a>31479</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31480"></a>
+<div class="comments">
+<div class="paragraph">
+The follower is not on a staircase. Which way should he go?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31480"></a>31480</td>
+<td class="instruction">CP D</td>
+<td class="comment-11" rowspan="1">Is the follower on the same floor as the target?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31481"></a>31481</td>
+<td class="instruction">JR NZ,31549</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31483"></a>
+<div class="comments">
+<div class="paragraph">
+The follower is on the same floor as the target. However, there may be a wall between them.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31483"></a>31483</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2">Pick up the follower's x-coordinate in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31484"></a>31484</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31485"></a>31485</td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">Is the follower in the same spot as his target?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31486"></a>31486</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31487"></a>31487</td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="2">Pick up the follower's y-coordinate in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31488"></a>31488</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31489"></a>31489</td>
+<td class="instruction">CP 169</td>
+<td class="comment-11" rowspan="1">Is the follower on the bottom floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31491"></a>31491</td>
+<td class="instruction">JR NZ,31501</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31493"></a>
+<div class="comments">
+<div class="paragraph">
+The follower and target are both on the bottom floor, so the follower should simply move either left or right.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31493"></a>31493</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31494"></a>31494</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31495"></a>31495</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Set the carry flag if the follower should go right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31496"></a>31496</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=3 if the follower should go left, 4 if he should go right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31498"></a>31498</td>
+<td class="instruction">ADC A,0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31500"></a>31500</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31501"></a>
+<div class="comments">
+<div class="paragraph">
+The follower and target are both on the middle floor or both on the top floor.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31501"></a>31501</td>
+<td class="instruction">CP 162</td>
+<td class="comment-11" rowspan="1">162=middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31503"></a>31503</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31504"></a>31504</td>
+<td class="instruction">LD A,57</td>
+<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Reading and Map Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31506"></a>31506</td>
+<td class="instruction">JR NZ,31510</td>
+<td class="comment-11" rowspan="1">Jump if the follower and target are on the top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31508"></a>31508</td>
+<td class="instruction">LD A,38</td>
+<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31510"></a>31510</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare the follower's x-coordinate with that of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31511"></a>31511</td>
+<td class="instruction">JR C,31531</td>
+<td class="comment-11" rowspan="1">Jump if the follower is to the right of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31513"></a>31513</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Is the target character to the left of the wall?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31514"></a>31514</td>
+<td class="instruction">JR NC,31494</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31516"></a>
+<div class="comments">
+<div class="paragraph">
+The follower is on the left side of the skool and must go downstairs to get to the target on the other side of the skool.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31516"></a>31516</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31517"></a>31517</td>
+<td class="instruction">CP 12</td>
+<td class="comment-11" rowspan="1">12=x-coordinate of the tops of the staircases at the left of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31519"></a>31519</td>
+<td class="instruction">JR NZ,31496</td>
+<td class="comment-11" rowspan="1">Jump unless the follower is at the top of a staircase</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31521"></a>31521</td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 of the follower's buffer holds his animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31523"></a>31523</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=4 will make the follower turn round if facing left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31525"></a>31525</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is the follower facing left?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31527"></a>31527</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31528"></a>31528</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=2 will make the follower go down the stairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31530"></a>31530</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31531"></a>
+<div class="comments">
+<div class="paragraph">
+The follower is on the right side of the skool. Is the target there too?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31531"></a>31531</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Is the target character to the right of the wall?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31532"></a>31532</td>
+<td class="instruction">JR C,31494</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31534"></a>31534</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31535"></a>31535</td>
+<td class="instruction">CP 77</td>
+<td class="comment-11" rowspan="1">77=x-coordinate of the tops of the staircases at the right of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31537"></a>31537</td>
+<td class="instruction">JR NZ,31496</td>
+<td class="comment-11" rowspan="1">Jump unless the follower is at the top of a staircase</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31539"></a>31539</td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 of the follower's buffer holds his animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31541"></a>31541</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=3 will make the follower turn round if facing right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31543"></a>31543</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is the follower facing right?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31545"></a>31545</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31546"></a>31546</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=2 will make the follower go down the stairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31548"></a>31548</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31549"></a>
+<div class="comments">
+<div class="paragraph">
+The follower and target are on different floors.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31549"></a>31549</td>
+<td class="instruction">JR NC,31565</td>
+<td class="comment-11" rowspan="1">Jump if the target is on a floor above the follower</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31551"></a>31551</td>
+<td class="instruction">CP 162</td>
+<td class="comment-11" rowspan="1">162=middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31553"></a>31553</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31554"></a>31554</td>
+<td class="instruction">LD A,57</td>
+<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Reading and Map Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31556"></a>31556</td>
+<td class="instruction">JR NZ,31560</td>
+<td class="comment-11" rowspan="1">Jump if the follower is on the top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31558"></a>31558</td>
+<td class="instruction">LD A,38</td>
+<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31560"></a>31560</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare the follower's x-coordinate with that of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31561"></a>31561</td>
+<td class="instruction">JR NC,31516</td>
+<td class="comment-11" rowspan="1">Jump if the follower is to the left of the wall (and so needs to go to the top of a staircase on the left)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31563"></a>31563</td>
+<td class="instruction">JR C,31534</td>
+<td class="comment-11" rowspan="1">Jump if the follower is to the right of the wall (and so needs to go to the top of a staircase on the right)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31565"></a>
+<div class="comments">
+<div class="paragraph">
+The target is on a floor above the follower. Which staircase should the follower use?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31565"></a>31565</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=target's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31566"></a>31566</td>
+<td class="instruction">LD D,155</td>
+<td class="comment-11" rowspan="1">155=top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31568"></a>31568</td>
+<td class="instruction">CP 162</td>
+<td class="comment-11" rowspan="1">162=middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31570"></a>31570</td>
+<td class="instruction">LD A,57</td>
+<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Reading and Map Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31572"></a>31572</td>
+<td class="instruction">JR C,31578</td>
+<td class="comment-11" rowspan="1">Jump if the target is above the middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31574"></a>31574</td>
+<td class="instruction">LD D,162</td>
+<td class="comment-11" rowspan="1">162=middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31576"></a>31576</td>
+<td class="instruction">LD A,38</td>
+<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31578"></a>31578</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Compare the target's x-coordinate with that of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31579"></a>31579</td>
+<td class="instruction">LD E,97</td>
+<td class="comment-11" rowspan="1">Signal: target is to the right of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31581"></a>31581</td>
+<td class="instruction">JR C,31585</td>
+<td class="comment-11" rowspan="1">Jump if the target is to the right of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31583"></a>31583</td>
+<td class="instruction">LD E,1</td>
+<td class="comment-11" rowspan="1">Signal: target is to the left of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31585"></a>31585</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31586"></a>31586</td>
+<td class="instruction">CP 169</td>
+<td class="comment-11" rowspan="1">169=bottom floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31588"></a>31588</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31589"></a>31589</td>
+<td class="instruction">JR NZ,31622</td>
+<td class="comment-11" rowspan="1">Jump if the follower is on the middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31591"></a>31591</td>
+<td class="instruction">LD A,19</td>
+<td class="comment-11" rowspan="1">19=x-coordinate of the bottoms of the staircases at the left of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31593"></a>31593</td>
+<td class="instruction">DEC E</td>
+<td class="comment-11" rowspan="1">Is the target to the left of the wall?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31594"></a>31594</td>
+<td class="instruction">JR Z,31598</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31596"></a>31596</td>
+<td class="instruction">LD A,70</td>
+<td class="comment-11" rowspan="1">70=x-coordinate of the bottoms of the staircases at the right of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31598"></a>31598</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare this with the follower's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31599"></a>31599</td>
+<td class="instruction">CCF</td>
+<td class="comment-11" rowspan="1">Set the carry flag if the follower should go right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31600"></a>31600</td>
+<td class="instruction">JR NZ,31496</td>
+<td class="comment-11" rowspan="1">Jump if the follower is not at the bottom of a staircase</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31602"></a>31602</td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 of the follower's buffer holds his animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31604"></a>31604</td>
+<td class="instruction">CP 19</td>
+<td class="comment-11" rowspan="1">19=x-coordinate of the bottoms of the staircases at the left of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31606"></a>31606</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=1 will make the follower go upstairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31608"></a>31608</td>
+<td class="instruction">JR Z,31616</td>
+<td class="comment-11" rowspan="1">Jump if the follower should go up a staircase at the left of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31610"></a>31610</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is the follower facing right?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31612"></a>31612</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31613"></a>31613</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=3 will make the follower turn round and face right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31615"></a>31615</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31616"></a>31616</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is the follower facing left?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31618"></a>31618</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return (with <span class="register">A</span>=1) if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31619"></a>31619</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=3 will make the follower turn round and face left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31621"></a>31621</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31622"></a>
+<div class="comments">
+<div class="paragraph">
+The follower is on the middle floor, and the target is on the top floor.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31622"></a>31622</td>
+<td class="instruction">LD A,38</td>
+<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31624"></a>31624</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare this with the follower's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31625"></a>31625</td>
+<td class="instruction">LD A,97</td>
+<td class="comment-11" rowspan="1">Signal: follower is to the right of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31627"></a>31627</td>
+<td class="instruction">JR C,31631</td>
+<td class="comment-11" rowspan="1">Jump if the follower is to the right of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31629"></a>31629</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Signal: follower is to the left of the wall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31631"></a>31631</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Is the target on the same side of the skool?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31632"></a>31632</td>
+<td class="instruction">JR Z,31591</td>
+<td class="comment-11" rowspan="1">Jump if so (follower must go up the nearest staircase)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31634"></a>31634</td>
+<td class="instruction">CCF</td>
+<td class="comment-11" rowspan="1">Set the carry flag if the follower must go down a staircase at the right of the skool, and reset it if he must go down a staircase at the left of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31635"></a>31635</td>
+<td class="instruction">JR 31561</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31447.html">31447</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31452">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31637.html">31637</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 27206</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="27196.html">27196</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#27206">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="27246.html">27246</a></span></td>
+</tr>
+</table>
+<div class="description">27206: Deal with a character who has been knocked over</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+The address of this uninterruptible subcommand routine is placed into bytes 111 and 112 of a character's buffer by the routines at <a class="link" href="27126.html">27126</a> and <a class="link" href="28569.html">28569</a>. It knocks the character to the floor, makes him give lines to any nearby kids or reveal his safe combination letter (if he's a teacher), and then makes him get up.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="27206"></a>27206</td>
+<td class="instruction">LD L,113</td>
+<td class="comment-11" rowspan="1">Byte 113 of the character's buffer holds the knockout delay counter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27208"></a>27208</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-11" rowspan="1">Has the character already got up?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27209"></a>27209</td>
+<td class="instruction">JP Z,<a class="link" href="25248.html">25248</a></td>
+<td class="comment-11" rowspan="1">Terminate this uninterruptible subcommand if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27212"></a>27212</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick up the delay counter in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27213"></a>27213</td>
+<td class="instruction">CP 19</td>
+<td class="comment-11" rowspan="1">Has the character only just been hit?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27215"></a>27215</td>
+<td class="instruction">JR Z,27233</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27217"></a>27217</td>
+<td class="instruction">CALL <a class="link" href="63829.html">63829</a></td>
+<td class="comment-11" rowspan="1">If the character is a teacher, make him reveal his safe combination letter or give lines (as appropriate) and exit, or else return here</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27220"></a>27220</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27221"></a>27221</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Is it time for the character to get up?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27222"></a>27222</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27223"></a>27223</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2">Copy the character's pre-decked animatory state (stored in byte 114 of the character's buffer) to <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27224"></a>27224</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27225"></a>27225</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27226"></a>27226</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for the character's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27229"></a>27229</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27230"></a>27230</td>
+<td class="instruction">JP <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="27233"></a>
+<div class="comments">
+<div class="paragraph">
+The character has only just been hit, so adjust his animatory state to that of 'decked'.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="27233"></a>27233</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for the character's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27236"></a>27236</td>
+<td class="instruction">LD L,114</td>
+<td class="comment-11" rowspan="2">Store the character's pre-decked animatory state in byte 114 of the buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27238"></a>27238</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27239"></a>27239</td>
+<td class="instruction">AND 248</td>
+<td class="comment-11" rowspan="2">Set <span class="register">A</span> equal to the animatory state of the character lying on the floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27241"></a>27241</td>
+<td class="instruction">ADD A,7</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27243"></a>27243</td>
+<td class="instruction">JP <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="27196.html">27196</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#27206">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="27246.html">27246</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 31739</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31648.html">31648</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31739">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31768.html">31768</a></span></td>
+</tr>
+</table>
+<div class="description">31739: Move a character looking for ERIC from the midstride position</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="63374.html">63374</a>. The address of this interruptible subcommand routine is also placed into bytes 105 and 106 of a character's buffer by the routine at <a class="link" href="31768.html">31768</a>. It moves ERIC's chaser from the midstride position.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Number of the character looking for ERIC (161, 163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31739"></a>31739</td>
+<td class="instruction">LD L,105</td>
+<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 105 and 106 of the character's buffer (if present) with that of <a class="link" href="31648.html">31648</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31741"></a>31741</td>
+<td class="instruction">LD (HL),160</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31743"></a>31743</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for the character's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31746"></a>31746</td>
+<td class="instruction">LD L,108</td>
+<td class="comment-11" rowspan="5"><span class="register">D</span>=character's new y-coordinate (adjusted by the value in byte 108 of his buffer, placed there by the routine at <a class="link" href="31768.html">31768</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31748"></a>31748</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31749"></a>31749</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31750"></a>31750</td>
+<td class="instruction">ADD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31751"></a>31751</td>
+<td class="instruction">LD D,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31752"></a>31752</td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="4"><span class="register">E</span>=character's new x-coordinate (adjusted by the value in byte 107 of his buffer, placed there by the routine at <a class="link" href="31768.html">31768</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31753"></a>31753</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31754"></a>31754</td>
+<td class="instruction">ADD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31755"></a>31755</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="31756"></a>
+<div class="comments">
+<div class="paragraph">
+The character's post-midstride coordinates have been calculated; now we consider his post-midstride animatory state. Usually, a character's animatory state is incremented as he moves to or from the midstride position, which makes his walking animation cycle through phases 1, 2, 3 and 4. However, the next section of code - unlike its counterpart in the routine at <a class="link" href="31768.html">31768</a>, which moves ERIC's chaser to the midstride position - decrements the animatory state if the character is moving leftwards, and increments it if the character is moving rightwards. So when a character is moving leftwards while chasing ERIC, his walking animation will cycle through phases 1 and 2 only, or 3 and 4 only. This is a <a class="link" href="../reference/bugs.html#oneTwoOneTwo">bug</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31756"></a>31756</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=x-coordinate increment (-1 or +1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31757"></a>31757</td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1">Add this to the character's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31758"></a>31758</td>
+<td class="instruction">AND 3</td>
+<td class="comment-11" rowspan="2">Now <span class="register">C</span> holds the new walking phase bits</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31760"></a>31760</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31761"></a>31761</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31762"></a>31762</td>
+<td class="instruction">AND 252</td>
+<td class="comment-11" rowspan="1">Clear the walking phase bits (bits 0 and 1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31764"></a>31764</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Set the walking phase to 1 (<span class="register">C</span>=0) or 3 (<span class="register">C</span>=2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31765"></a>31765</td>
+<td class="instruction">JP <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the character's animatory state and location and update the SRB</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31648.html">31648</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31739">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31768.html">31768</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

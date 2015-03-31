@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 30464</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30457.html">30457</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30464">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30603.html">30603</a></span></td>
+</tr>
+</table>
+<div class="description">30464: Make a teacher give lines</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at routines at <a class="link" href="30636.html">30636</a>, <a class="link" href="30890.html">30890</a>, <a class="link" href="31904.html">31904</a> and <a class="link" href="62495.html">62495</a>. Prints the lines message (e.g. '100 LINES ERIC') in a bubble above the teacher's head, and shortly afterwards prints the reprimand message (e.g. 'NOW FIND A SEAT') in the same bubble.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Lines recipient's character number (167-169, 172)</td>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Reprimand message identifier (0-15)</td>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Teacher's coordinates</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30464"></a>30464</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30465"></a>30465</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30466"></a>30466</td>
+<td class="instruction">CALL <a class="link" href="29871.html">29871</a></td>
+<td class="comment-11" rowspan="1">Is the lines-giving teacher fully on-screen?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30469"></a>30469</td>
+<td class="instruction">JR NC,30474</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30471"></a>30471</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30472"></a>30472</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30473"></a>30473</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Otherwise return without having given lines</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30474"></a>
+<div class="comments">
+<div class="paragraph">
+The teacher is on-screen, so it's time to prepare the lines bubble for display. First, write the lines recipient's name into the lines bubble graphic buffer.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30474"></a>30474</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30475"></a>30475</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Save the attribute file address of the lines bubble</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30476"></a>30476</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Save the character number of the lines recipient</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30477"></a>30477</td>
+<td class="instruction">CALL <a class="link" href="30208.html">30208</a></td>
+<td class="comment-11" rowspan="1">Write the recipient's name into the lines bubble graphic buffer</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30480"></a>
+<div class="comments">
+<div class="paragraph">
+Next, determine how many lines should be given.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30480"></a>30480</td>
+<td class="instruction">CALL <a class="link" href="24993.html">24993</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30483"></a>30483</td>
+<td class="instruction">AND 14</td>
+<td class="comment-11" rowspan="8">Set <span class="register">DE</span> equal to the number of lines (divided by 10): 10, 20, 30, 40, 50, 60, 70 or 80</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30485"></a>30485</td>
+<td class="instruction">ADD A,2</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30487"></a>30487</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30488"></a>30488</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30489"></a>30489</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30490"></a>30490</td>
+<td class="instruction">ADD A,E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30491"></a>30491</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30492"></a>30492</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30494"></a>
+<div class="comments">
+<div class="paragraph">
+Add to the lines total or the score depending on who's getting lines.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30494"></a>30494</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore the lines recipient's character number to <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30495"></a>30495</td>
+<td class="instruction">CP 167</td>
+<td class="comment-11" rowspan="1">Is BOY WANDER the lines recipient?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30497"></a>30497</td>
+<td class="instruction">JR Z,30530</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30499"></a>30499</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store the number of lines</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30500"></a>30500</td>
+<td class="instruction">CP 172</td>
+<td class="comment-11" rowspan="1">Is ERIC the lines recipient?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30502"></a>30502</td>
+<td class="instruction">JR Z,30516</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30504"></a>30504</td>
+<td class="instruction">LD HL,(32708)</td>
+<td class="comment-11" rowspan="3">Add to the score if ANGELFACE or EINSTEIN was the lines recipient</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30507"></a>30507</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30508"></a>30508</td>
+<td class="instruction">LD (32708),HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30511"></a>30511</td>
+<td class="instruction">LD DE,20924</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30514"></a>30514</td>
+<td class="instruction">JR 30526</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30516"></a>30516</td>
+<td class="instruction">LD HL,(32710)</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=number of lines ERIC has</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30519"></a>30519</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add the lines being given</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30520"></a>30520</td>
+<td class="instruction">LD (32710),HL</td>
+<td class="comment-11" rowspan="1">Store the new lines total</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30523"></a>30523</td>
+<td class="instruction">LD DE,20956</td>
+<td class="comment-11" rowspan="1">Set <span class="register">DE</span> to the appropriate display file address for the lines total</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30526"></a>30526</td>
+<td class="instruction">CALL <a class="link" href="30408.html">30408</a></td>
+<td class="comment-11" rowspan="1">Print the new lines total</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30529"></a>30529</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=number of lines being given</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30530"></a>
+<div class="comments">
+<div class="paragraph">
+Now write the number of lines being given into the lines bubble graphic buffer, and copy the lines bubble graphic to the screen.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30530"></a>30530</td>
+<td class="instruction">CALL <a class="link" href="30432.html">30432</a></td>
+<td class="comment-11" rowspan="1">Write the number of lines into the lines bubble graphic buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30533"></a>30533</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="2">Restore the attribute file address to <span class="register">DE</span> and save it again</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30534"></a>30534</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30535"></a>30535</td>
+<td class="instruction">LD HL,60160</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the lines bubble graphic buffer at <a class="link" href="60160.html">60160</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30538"></a>30538</td>
+<td class="instruction">CALL <a class="link" href="29977.html">29977</a></td>
+<td class="comment-11" rowspan="1">Copy the lines bubble graphic to the screen</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30541"></a>
+<div class="comments">
+<div class="paragraph">
+Time for the first lines-giving sound effect.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30541"></a>30541</td>
+<td class="instruction">LD A,(60160)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=lines bubble graphic attribute byte</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30544"></a>30544</td>
+<td class="instruction">LD DE,10240</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=sound effect duration parameter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30547"></a>30547</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="4">The border colour will be the same as the PAPER colour of the lines bubble</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30548"></a>30548</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30549"></a>30549</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30550"></a>30550</td>
+<td class="instruction">AND 7</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30552"></a>30552</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="8">Play the first lines-giving sound effect</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30554"></a>30554</td>
+<td class="instruction">XOR 16</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30556"></a>30556</td>
+<td class="instruction">LD B,20</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30558"></a>30558</td>
+<td class="instruction">DJNZ 30558</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30560"></a>30560</td>
+<td class="instruction">DEC E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30561"></a>30561</td>
+<td class="instruction">JR NZ,30552</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30563"></a>30563</td>
+<td class="instruction">DEC D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30564"></a>30564</td>
+<td class="instruction">JR NZ,30552</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30566"></a>
+<div class="comments">
+<div class="paragraph">
+Now that the lines have been dished out, the teacher should explain why.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30566"></a>30566</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore the attribute file address to <span class="register">DE</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30567"></a>30567</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore the reprimand message identifier (0-15) to <span class="register">B</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30568"></a>30568</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Save the attribute file address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30569"></a>30569</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Save the border colour</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30570"></a>30570</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=reprimand message identifier (0-15)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30571"></a>30571</td>
+<td class="instruction">CALL <a class="link" href="30156.html">30156</a></td>
+<td class="comment-11" rowspan="1">Print the reprimand message</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30574"></a>30574</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore the border colour to <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30575"></a>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a class="link" href="63829.html">63829</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30575"></a>30575</td>
+<td class="instruction">LD DE,5120</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=sound effect duration parameter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30578"></a>30578</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="8">Play the second lines-giving sound effect</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30580"></a>30580</td>
+<td class="instruction">XOR 16</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30582"></a>30582</td>
+<td class="instruction">LD B,50</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30584"></a>30584</td>
+<td class="instruction">DJNZ 30584</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30586"></a>30586</td>
+<td class="instruction">DEC E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30587"></a>30587</td>
+<td class="instruction">JR NZ,30578</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30589"></a>30589</td>
+<td class="instruction">DEC D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30590"></a>30590</td>
+<td class="instruction">JR NZ,30578</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30592"></a>30592</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="2">Set the border colour back to blue</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30594"></a>30594</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30596"></a>30596</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore the attribute file address to <span class="register">DE</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30597"></a>30597</td>
+<td class="instruction">LD HL,59904</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the buffer containing the area of the screen overwritten by the lines bubble</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30600"></a>30600</td>
+<td class="instruction">JP <a class="link" href="29977.html">29977</a></td>
+<td class="comment-11" rowspan="1">Restore the area of the screen that was overwritten</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30457.html">30457</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30464">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30603.html">30603</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

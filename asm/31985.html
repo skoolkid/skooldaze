@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 31985</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31968.html">31968</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31985">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31996.html">31996</a></span></td>
+</tr>
+</table>
+<div class="description">31985: Call an interruptible subcommand</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a class="link" href="31996.html">31996</a>, <a class="link" href="32048.html">32048</a>, <a class="link" href="32158.html">32158</a>, <a class="link" href="62208.html">62208</a> and <a class="link" href="62464.html">62464</a>. Drops the return address from the stack and copies its LSB into byte 99 of the character's buffer (where the LSB of the address of the primary command routine is held), copies the address of the interruptible subcommand routine from <span class="register">BC</span> into bytes 106 and 107 of the character's buffer, and then jumps to that routine.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">BC</td>
+<td class="register-desc">Interruptible subcommand routine address</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31985"></a>31985</td>
+<td class="instruction">LD L,106</td>
+<td class="comment-11" rowspan="4">Copy the routine address from <span class="register">BC</span> into bytes 105 and and 106 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31987"></a>31987</td>
+<td class="instruction">LD (HL),B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31988"></a>31988</td>
+<td class="instruction">DEC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31989"></a>31989</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31990"></a>31990</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="3">Drop the return address off the stack and place its LSB into byte 99 of the character's buffer; this ensures that when the interruptible subcommand has finished, control resumes in the caller of this routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31991"></a>31991</td>
+<td class="instruction">LD L,99</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31993"></a>31993</td>
+<td class="instruction">LD (HL),E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31994"></a>31994</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="2">Make an indirect jump to the routine address in <span class="register">BC</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31995"></a>31995</td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31968.html">31968</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31985">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31996.html">31996</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

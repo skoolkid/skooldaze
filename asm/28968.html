@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 28968</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="28960.html">28960</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#28968">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="28994.html">28994</a></span></td>
+</tr>
+</table>
+<div class="description">28968: Get the identifier and coordinates of the blackboard closest to a character</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a class="link" href="28994.html">28994</a>, <a class="link" href="29148.html">29148</a>, <a class="link" href="29160.html">29160</a>, <a class="link" href="29284.html">29284</a>, <a class="link" href="32048.html">32048</a>, <a class="link" href="62208.html">62208</a>, <a class="link" href="63056.html">63056</a>, <a class="link" href="63146.html">63146</a> and <a class="link" href="64016.html">64016</a>. Returns with <span class="register">A</span> holding the blackboard identifier (the LSB of <a class="link" href="32748.html">32748</a>, <a class="link" href="32750.html">32750</a> or <a class="link" href="32752.html">32752</a>) and <span class="register">DE</span> holding the coordinates:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th>A</th>
+<th>(D,E)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>236</td>
+<td>(155,42)</td>
+<td>Reading Room blackboard</td>
+</tr>
+<tr>
+<td>238</td>
+<td>(161,26)</td>
+<td>White Room blackboard</td>
+</tr>
+<tr>
+<td>240</td>
+<td>(161,41)</td>
+<td>Exam Room blackboard</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (163-167)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="28968"></a>28968</td>
+<td class="instruction">LD L,97</td>
+<td class="comment-11" rowspan="1">Byte 97 of the character's buffer holds his y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28970"></a>28970</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28971"></a>28971</td>
+<td class="instruction">LD DE,39722</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=155 (y-coordinate), <span class="register">E</span>=42 (x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28974"></a>28974</td>
+<td class="instruction">CP 160</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28976"></a>28976</td>
+<td class="instruction">LD A,236</td>
+<td class="comment-11" rowspan="1">236=Reading Room blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28978"></a>28978</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">Return if the character's on the top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28979"></a>28979</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28980"></a>28980</td>
+<td class="instruction">LD DE,41242</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=26 (x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28983"></a>28983</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28984"></a>28984</td>
+<td class="instruction">CP 37</td>
+<td class="comment-11" rowspan="1">37=x-coordinate of the wall between the White and Exam Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28986"></a>28986</td>
+<td class="instruction">LD A,238</td>
+<td class="comment-11" rowspan="1">238=White Room blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28988"></a>28988</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28989"></a>28989</td>
+<td class="instruction">LD E,41</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=41 (x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28991"></a>28991</td>
+<td class="instruction">LD A,240</td>
+<td class="comment-11" rowspan="1">240=Exam Room blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28993"></a>28993</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="28960.html">28960</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#28968">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="28994.html">28994</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

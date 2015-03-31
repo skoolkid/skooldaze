@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 28786</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="28775.html">28775</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#28786">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="28799.html">28799</a></span></td>
+</tr>
+</table>
+<div class="description">28786: Make BOY WANDER fire his catapult (6)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+The address of this uninterruptible subcommand routine is placed into bytes 111 and 112 of BOY WANDER's buffer by the routine at <a class="link" href="28775.html">28775</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">167 (BOY WANDER)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="28786"></a>28786</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for BOY WANDER's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28789"></a>28789</td>
+<td class="instruction">LD L,113</td>
+<td class="comment-11" rowspan="2">Byte 113 of BOY WANDER's buffer holds his pre-fire animatory state; pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28791"></a>28791</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28792"></a>28792</td>
+<td class="instruction">LD L,111</td>
+<td class="comment-11" rowspan="2">Replace the address of this uninterruptible subcommand routine in bytes 111 and 112 of BOY WANDER's buffer with <a class="link" href="28799.html">28799</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28794"></a>28794</td>
+<td class="instruction">LD (HL),127</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="28796"></a>28796</td>
+<td class="instruction">JP <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Restore BOY WANDER's pre-fire animatory state and update the SRB</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="28775.html">28775</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#28786">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="28799.html">28799</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

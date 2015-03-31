@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 29394</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="29385.html">29385</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#29394">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="29441.html">29441</a></span></td>
+</tr>
+</table>
+<div class="description">29394: Update the SRB for the middle six columns of the speech bubble</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a class="link" href="29746.html">29746</a> and <a class="link" href="62714.html">62714</a>. Returns with the carry flag set if the speech bubble is off-screen.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="29394"></a>29394</td>
+<td class="instruction">LD DE,(32612)</td>
+<td class="comment-11" rowspan="1">Copy the speech bubble lip coordinates from <a class="link" href="32612.html">32612</a> to <span class="register">DE</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29398"></a>29398</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="3">Now <span class="register">E</span> holds the x-coordinate of the left edge of the speech bubble</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29399"></a>29399</td>
+<td class="instruction">AND 248</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29401"></a>29401</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29402"></a>29402</td>
+<td class="instruction">LD A,(32512)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=leftmost column of the skool on screen (0-64)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29405"></a>29405</td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">Is the speech bubble at the far left of the screen?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29406"></a>29406</td>
+<td class="instruction">JR Z,29418</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29408"></a>29408</td>
+<td class="instruction">CCF</td>
+<td class="comment-11" rowspan="2">Return with the carry flag set if the speech bubble is off-screen to the left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29409"></a>29409</td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29410"></a>29410</td>
+<td class="instruction">CP 225</td>
+<td class="comment-11" rowspan="2">Return with the carry flag set if the speech bubble is off-screen to the right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29412"></a>29412</td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29413"></a>29413</td>
+<td class="instruction">NEG</td>
+<td class="comment-11" rowspan="4"><span class="register">A</span>=1, 2 or 3 (corresponding to the quadrant of the screen containing the speech bubble)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29415"></a>29415</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29416"></a>29416</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29417"></a>29417</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="29418"></a>29418</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1"><span class="register">E</span>=0-3 (quadrant of the screen containing the speech bubble)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29419"></a>29419</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="7">Point <span class="register">DE</span> at the byte of the screen refresh buffer corresponding to the top row of the speech bubble</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29420"></a>29420</td>
+<td class="instruction">SUB 151</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29422"></a>29422</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29423"></a>29423</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29424"></a>29424</td>
+<td class="instruction">ADD A,E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29425"></a>29425</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29426"></a>29426</td>
+<td class="instruction">LD D,127</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29428"></a>29428</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="3">Set bits 1-6 of this screen refresh buffer byte (so that the part of the screen hidden by the middle 6 UDGs of the top row of the speech bubble will be refreshed)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29429"></a>29429</td>
+<td class="instruction">OR 126</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29431"></a>29431</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29432"></a>29432</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="3">Point <span class="register">DE</span> at the byte of the screen refresh buffer corresponding to the bottom row of the speech bubble</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29433"></a>29433</td>
+<td class="instruction">ADD A,4</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29435"></a>29435</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29436"></a>29436</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="3">Set bits 1-6 of this screen refresh buffer byte (so that the part of the screen hidden by the middle 6 UDGS of the bottom row of the speech bubble will be refreshed)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29437"></a>29437</td>
+<td class="instruction">OR 126</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29439"></a>29439</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="29440"></a>29440</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return with the carry flag reset</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="29385.html">29385</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#29394">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="29441.html">29441</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

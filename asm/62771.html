@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 62771</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="62750.html">62750</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#62771">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="62902.html">62902</a></span></td>
+</tr>
+</table>
+<div class="description">62771: Deal with ERIC when he's jumping</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="27353.html">27353</a> when bit 2 of ERIC's status flags at <a class="link" href="32763.html">32763</a> is set (by the routine at <a class="link" href="62574.html">62574</a>, via <a class="link" href="62617.html">62617</a>).
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62771"></a>62771</td>
+<td class="instruction">LD HL,32758</td>
+<td class="comment-11" rowspan="1">Decrement the jumping action timer at <a class="link" href="32758.html">32758</a> (which starts at 16)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62774"></a>62774</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-11" rowspan="1">Has ERIC completed the jump?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62775"></a>62775</td>
+<td class="instruction">JP Z,<a class="link" href="62495.html#62501">62501</a></td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62778"></a>62778</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick up the current value of the action timer in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62779"></a>62779</td>
+<td class="instruction">CP 12</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62781"></a>62781</td>
+<td class="instruction">LD B,15</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a class="link" href="57056.html">15</a>: YOU ARE NOT A KANGAROO</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62783"></a>62783</td>
+<td class="instruction">JP Z,<a class="link" href="62495.html#62550">62550</a></td>
+<td class="comment-11" rowspan="1">Jump if it's time to check whether any teachers can see ERIC jumping</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62786"></a>62786</td>
+<td class="instruction">LD H,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62788"></a>62788</td>
+<td class="instruction">CP 13</td>
+<td class="comment-11" rowspan="1">Is it time to check whether ERIC has touched a shield or opened the safe?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62790"></a>62790</td>
+<td class="instruction">JP Z,<a class="link" href="62750.html">62750</a></td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62793"></a>62793</td>
+<td class="instruction">CP 14</td>
+<td class="comment-11" rowspan="1">Is it time to make the jumping sound effect?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62795"></a>62795</td>
+<td class="instruction">JP Z,<a class="link" href="60139.html">60139</a></td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62798"></a>62798</td>
+<td class="instruction">CP 9</td>
+<td class="comment-11" rowspan="1">Is it time to move ERIC's arm back?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62800"></a>62800</td>
+<td class="instruction">JP Z,<a class="link" href="28775.html#28779">28779</a></td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62803"></a>62803</td>
+<td class="instruction">CP 3</td>
+<td class="comment-11" rowspan="1">Is it time to bring ERIC back down to the floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62805"></a>62805</td>
+<td class="instruction">JR NZ,62814</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62807"></a>62807</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for ERIC's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62810"></a>62810</td>
+<td class="instruction">INC D</td>
+<td class="comment-11" rowspan="1">Move ERIC downwards</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62811"></a>62811</td>
+<td class="instruction">JP <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update ERIC's location and update the SRB</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62814"></a>62814</td>
+<td class="instruction">CP 6</td>
+<td class="comment-11" rowspan="2">Return if <span class="register">A</span> &lt; 6 (nothing to check or do)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62816"></a>62816</td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62817"></a>
+<div class="comments">
+<div class="paragraph">
+At this point <span class="register">A</span>=6 (which means it's time to check whether ERIC has jumped onto a boy, or ERIC is already standing on a boy), or <span class="register">A</span> is one of {7, 8, 10, 11, 15}, or <span class="register">A</span>&gt;128 (which means ERIC has jumped while standing on a boy).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62817"></a>62817</td>
+<td class="instruction">JR NZ,62891</td>
+<td class="comment-11" rowspan="1">Jump unless (a) it's time to check whether ERIC has jumped on a boy, or (b) ERIC is already standing on a boy</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62819"></a>
+<div class="comments">
+<div class="paragraph">
+This entry point is erroneously used by the routine at <a class="link" href="60139.html">60139</a> with <span class="register">H</span>=3 (which means (<span class="register">D</span>,<span class="register">E</span>) is set to (198,32) by the code that follows, and the routine exits at <a class="link" href="62771.html#62841">62841</a>).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62819"></a>62819</td>
+<td class="instruction">LD L,97</td>
+<td class="comment-11" rowspan="1">Byte 97 of ERIC's buffer holds his y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62821"></a>62821</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">D</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62822"></a>62822</td>
+<td class="instruction">INC D</td>
+<td class="comment-11" rowspan="1">Down a level (where the boy that ERIC is standing on would be, if any)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62823"></a>62823</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1">Byte 98 holds ERIC's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62824"></a>62824</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">E</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62825"></a>62825</td>
+<td class="instruction">LD B,11</td>
+<td class="comment-11" rowspan="1">There are 11 little boys</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62827"></a>62827</td>
+<td class="instruction">LD H,152</td>
+<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62829"></a>62829</td>
+<td class="instruction">CALL <a class="link" href="62905.html">62905</a></td>
+<td class="comment-11" rowspan="1">Is ERIC standing on a little boy?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62832"></a>62832</td>
+<td class="instruction">JR C,62842</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62834"></a>62834</td>
+<td class="instruction">LD H,167</td>
+<td class="comment-11" rowspan="1">167=BOY WANDER</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62836"></a>62836</td>
+<td class="instruction">LD B,3</td>
+<td class="comment-11" rowspan="1">There are three main kids besides ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62838"></a>62838</td>
+<td class="instruction">CALL <a class="link" href="62905.html#62911">62911</a></td>
+<td class="comment-11" rowspan="1">Is ERIC standing on one of the three main kids?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62841"></a>62841</td>
+<td class="instruction">RET NC</td>
+<td class="comment-11" rowspan="1">Return if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62842"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC is standing on a kid who's been knocked out.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62842"></a>62842</td>
+<td class="instruction">CALL <a class="link" href="26426.html">26426</a></td>
+<td class="comment-11" rowspan="1">Check for keypresses</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62845"></a>62845</td>
+<td class="instruction">LD HL,32758</td>
+<td class="comment-11" rowspan="2">Set the jumping action timer at <a class="link" href="32758.html">32758</a> to 7, so that we keep returning to this section of code while ERIC is standing on a boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62848"></a>62848</td>
+<td class="instruction">LD (HL),7</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62850"></a>62850</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if no key of interest was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62851"></a>62851</td>
+<td class="instruction">SET 5,A</td>
+<td class="comment-11" rowspan="1">Convert the ASCII code of the keypress in <span class="register">A</span> to lower case</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62853"></a>62853</td>
+<td class="instruction">CP 106</td>
+<td class="comment-11" rowspan="1">Was 'j' (jump) pressed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62855"></a>62855</td>
+<td class="instruction">JR NZ,62860</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62857"></a>62857</td>
+<td class="instruction">LD (HL),144</td>
+<td class="comment-11" rowspan="1">Set the jumping action timer at <a class="link" href="32758.html">32758</a> to 144 to indicate that ERIC has jumped while standing on a boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62859"></a>62859</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return to the main loop with the carry flag reset</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62860"></a>
+<div class="comments">
+<div class="paragraph">
+A key other than 'j' was pressed while ERIC was standing on a boy.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62860"></a>62860</td>
+<td class="instruction">CP 111</td>
+<td class="comment-11" rowspan="1">111='o'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62862"></a>62862</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Set <span class="register">B</span>=<a class="link" href="../graphics/as.html#0">0</a> (ERIC facing left) for later comparison</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62864"></a>62864</td>
+<td class="instruction">JR Z,62871</td>
+<td class="comment-11" rowspan="1">Jump if 'o' (left) was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62866"></a>62866</td>
+<td class="instruction">LD B,128</td>
+<td class="comment-11" rowspan="1">Set <span class="register">B</span>=<a class="link" href="../graphics/as.html#128">128</a> (ERIC facing right) for later comparison</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62868"></a>62868</td>
+<td class="instruction">CP 112</td>
+<td class="comment-11" rowspan="1">Was 'p' (right) pressed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62870"></a>62870</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62871"></a>62871</td>
+<td class="instruction">LD HL,44134</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=animatory state of ERIC before he jumped (stored in byte 102 of his buffer)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62874"></a>62874</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62875"></a>62875</td>
+<td class="instruction">AND 128</td>
+<td class="comment-11" rowspan="1">Keep only the 'direction' bit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62877"></a>62877</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">Should ERIC turn round?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62878"></a>62878</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62879"></a>62879</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="3">Adjust ERIC's pre-jump animatory state to reflect his turning round while standing on a boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62880"></a>62880</td>
+<td class="instruction">XOR 128</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62882"></a>62882</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62883"></a>62883</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for ERIC's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62886"></a>62886</td>
+<td class="instruction">XOR 128</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of ERIC facing the other way</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62888"></a>62888</td>
+<td class="instruction">JP <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update ERIC's animatory state and update the SRB</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62891"></a>
+<div class="comments">
+<div class="paragraph">
+At this point <span class="register">A</span> is one of {7, 8, 10, 11, 15} (which means there is nothing to do), or <span class="register">A</span>=128-143 (which means ERIC has jumped while standing on a boy).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62891"></a>62891</td>
+<td class="instruction">CP 134</td>
+<td class="comment-11" rowspan="2">Return now if the SUB 128 instruction below would make <span class="register">A</span>=6</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62893"></a>62893</td>
+<td class="instruction">RET Z</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62894"></a>62894</td>
+<td class="instruction">SUB 128</td>
+<td class="comment-11" rowspan="2">Return unless ERIC jumped while standing on a boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62896"></a>62896</td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62897"></a>
+<div class="comments">
+<div class="paragraph">
+So ERIC has jumped while standing on a boy. Now either <span class="register">A</span>=0, meaning it's time to set the jumping action timer at <a class="link" href="32758.html">32758</a> back to 7, so we can deal with ERIC while he's standing on a boy; or <span class="register">A</span>=1-15 (but not 6, because that would lead us into the code at <a class="link" href="62771.html#62819">62819</a> to perform a redundant check on whether ERIC is standing on a boy), meaning we need to run the usual checks while ERIC is in mid-air.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62897"></a>62897</td>
+<td class="instruction">JP NZ,62779</td>
+<td class="comment-11" rowspan="1">Run the usual checks while ERIC is in mid-air above a supine boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62900"></a>62900</td>
+<td class="instruction">JR 62844</td>
+<td class="comment-11" rowspan="1">This should be JR <a class="link" href="62771.html#62845">62845</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="62750.html">62750</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#62771">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="62902.html">62902</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

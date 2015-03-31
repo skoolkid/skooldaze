@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 27008</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="27007.html">27007</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#27008">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="27026.html">27026</a></span></td>
+</tr>
+</table>
+<div class="description">27008: Update the SRB for one column of a sprite</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="25008.html">25008</a>. Sets the bits in the <a class="link" href="32524.html">screen refresh buffer</a> (SRB) that correspond to the four tiles in the left, middle or right column of a sprite.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Base address of the sprite UDG references</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">SRB address corresponding to the top row of the sprite</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="27008"></a>27008</td>
+<td class="instruction">LD B,4</td>
+<td class="comment-11" rowspan="1">There are 4 rows (and 3 columns) in a sprite</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="27010"></a>27010</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Pick up a sprite UDG reference</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27011"></a>27011</td>
+<td class="instruction">INC D</td>
+<td class="comment-11" rowspan="1">Next row of the sprite</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27012"></a>27012</td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Is this the blank UDG?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27013"></a>27013</td>
+<td class="instruction">JR Z,27017</td>
+<td class="comment-11" rowspan="1">Jump if so (no need to update this SRB byte)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27015"></a>27015</td>
+<td class="instruction">SET 0,(HL)</td>
+<td class="comment-11" rowspan="1">Set the appropriate bit in the SRB byte; this instruction is modified by the routine at <a class="link" href="25008.html">25008</a> before this routine is called</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="27017"></a>27017</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-11" rowspan="3">Point <span class="register">HL</span> at the byte of the SRB corresponding to the next row of the screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27019"></a>27019</td>
+<td class="instruction">ADD A,L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27020"></a>27020</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27021"></a>27021</td>
+<td class="instruction">DJNZ 27010</td>
+<td class="comment-11" rowspan="1">Jump back until all 4 squares in the column are done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27023"></a>27023</td>
+<td class="instruction">BIT 3,D</td>
+<td class="comment-11" rowspan="2">Return with the zero flag reset if we have just updated the SRB for the rightmost column of the sprite</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27025"></a>27025</td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="27007.html">27007</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#27008">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="27026.html">27026</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 64016</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="64004.html">64004</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#64016">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="64035.html">64035</a></span></td>
+</tr>
+</table>
+<div class="description">64016: Check whether MR CREAK is near a blackboard last written on by ERIC</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="63191.html">63191</a>. Returns with the zero flag set if MR CREAK is near a blackboard that was last written on by ERIC.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">166 (MR CREAK)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="64016"></a>64016</td>
+<td class="instruction">CALL <a class="link" href="28968.html">28968</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=identifier of the blackboard nearest to CREAK</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64019"></a>64019</td>
+<td class="instruction">CP 236</td>
+<td class="comment-11" rowspan="1">Is CREAK on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64021"></a>64021</td>
+<td class="instruction">JR NZ,64027</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64023"></a>64023</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98 (which byte holds CREAK's x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64024"></a>64024</td>
+<td class="instruction">BIT 6,(HL)</td>
+<td class="comment-11" rowspan="2">Return with the zero flag reset if CREAK's x-coordinate is &gt;= 64, i.e. he's standing at the doorway of the (blackboardless) Map Room (which never happens, because CREAK never teaches in that room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64026"></a>64026</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="64027"></a>64027</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="3"><span class="register">DE</span>=<a class="link" href="32749.html">32749</a> (Reading Room blackboard) or <a class="link" href="32751.html">32751</a> (White Room blackboard)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64028"></a>64028</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64029"></a>64029</td>
+<td class="instruction">LD D,127</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64031"></a>64031</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character who last wrote on this board</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64032"></a>64032</td>
+<td class="instruction">CP 172</td>
+<td class="comment-11" rowspan="1">Set the zero flag if it was ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="64034"></a>64034</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="64004.html">64004</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#64016">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="64035.html">64035</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

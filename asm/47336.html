@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 47336</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="47231.html">47231</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#47336">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="47358.html">47358</a></span></td>
+</tr>
+</table>
+<div class="description">47336: Change a character's name (2)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Continues from <a class="link" href="47208.html">47208</a>. Returns with the zero flag set if 'c' was pressed after entering the character's name.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Address of the character's name message</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">23611 (FLAGS)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="47336"></a>47336</td>
+<td class="instruction">RES 5,(HL)</td>
+<td class="comment-11" rowspan="1">Signal: no key pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47338"></a>47338</td>
+<td class="instruction">LD H,D</td>
+<td class="comment-11" rowspan="2">Set <span class="register">HL</span> to the message address for the character's name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47339"></a>47339</td>
+<td class="instruction">LD L,E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="47340"></a>47340</td>
+<td class="instruction">CALL <a class="link" href="47080.html">47080</a></td>
+<td class="comment-11" rowspan="1">Collect a keypress</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47343"></a>47343</td>
+<td class="instruction">JR Z,47352</td>
+<td class="comment-11" rowspan="1">Jump forward if ENTER was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47345"></a>47345</td>
+<td class="instruction">CP 13</td>
+<td class="comment-11" rowspan="1">Have 13 characters been typed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47347"></a>47347</td>
+<td class="instruction">JR NZ,47340</td>
+<td class="comment-11" rowspan="1">Jump back to collect another keypress if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47349"></a>47349</td>
+<td class="instruction">DEC E</td>
+<td class="comment-11" rowspan="2">Set the character name message address offset back to 12 to avoid overflow (any subsequent keypresses will be stored at that offset)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47350"></a>47350</td>
+<td class="instruction">JR 47340</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="47352"></a>47352</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Save the message address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47353"></a>47353</td>
+<td class="instruction">CALL <a class="link" href="46824.html">46824</a></td>
+<td class="comment-11" rowspan="1">Print 'PRESS'C'TO CHANGE NAME' and wait for a keypress</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47356"></a>47356</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore the character name message address to <span class="register">HL</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="47357"></a>47357</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="47231.html">47231</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#47336">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="47358.html">47358</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

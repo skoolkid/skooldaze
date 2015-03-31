@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Data at 44256</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="44160.html">44160</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#44256">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="44288.html">44288</a></span></td>
+</tr>
+</table>
+<div class="description">44256: Lesson descriptors</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+When a lesson starts, the routine at <a class="link" href="26342.html">26342</a> picks up the lesson descriptor from this table and copies it into <a class="link" href="32756.html">32756</a>. Each entry in this table defines the teacher for the period (if any), and the room. The teacher is identified by bits 4-7:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th>Bits</th>
+<th>Teacher</th>
+</tr>
+<tr>
+<td>0000</td>
+<td>MR WACKER</td>
+</tr>
+<tr>
+<td>0001</td>
+<td>MR ROCKITT</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>MR WITHIT</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>MR CREAK</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>None</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The room is identified by bits 0-3:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th>Bits</th>
+<th>Room</th>
+</tr>
+<tr>
+<td>0001</td>
+<td>READING ROOM</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>MAP ROOM</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>WHITE ROOM</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>EXAM ROOM</td>
+</tr>
+<tr>
+<td>0101</td>
+<td>REVISION LIBRARY</td>
+</tr>
+<tr>
+<td>0110</td>
+<td>DINNER</td>
+</tr>
+<tr>
+<td>0111</td>
+<td>PLAYTIME</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44256"></a>44256</td>
+<td class="instruction">DEFB 38</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/224.html">224</a>: DINNER (MR WITHIT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44257"></a>44257</td>
+<td class="instruction">DEFB 6</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/225.html">225</a>: DINNER (MR WACKER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44258"></a>44258</td>
+<td class="instruction">DEFB 4</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/226.html">226</a>: MR WACKER - EXAM ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44259"></a>44259</td>
+<td class="instruction">DEFB 20</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/227.html">227</a>: MR ROCKITT - EXAM ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44260"></a>44260</td>
+<td class="instruction">DEFB 69</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/228.html">228</a>: REVISION LIBRARY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44261"></a>44261</td>
+<td class="instruction">DEFB 69</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/229.html">229</a>: REVISION LIBRARY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44262"></a>44262</td>
+<td class="instruction">DEFB 69</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/230.html">230</a>: REVISION LIBRARY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44263"></a>44263</td>
+<td class="instruction">DEFB 34</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/231.html">231</a>: MR WITHIT - MAP ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44264"></a>44264</td>
+<td class="instruction">DEFB 1</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/232.html">232</a>: MR WACKER - READING ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44265"></a>44265</td>
+<td class="instruction">DEFB 17</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/233.html">233</a>: MR ROCKITT - READING ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44266"></a>44266</td>
+<td class="instruction">DEFB 49</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/234.html">234</a>: MR CREAK - READING ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44267"></a>44267</td>
+<td class="instruction">DEFB 51</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/235.html">235</a>: MR CREAK - WHITE ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44268"></a>44268</td>
+<td class="instruction">DEFB 3</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/236.html">236</a>: MR WACKER - WHITE ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44269"></a>44269</td>
+<td class="instruction">DEFB 35</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/237.html">237</a>: MR WITHIT - WHITE ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44270"></a>44270</td>
+<td class="instruction">DEFB 19</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/238.html">238</a>: MR ROCKITT - WHITE ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44271"></a>44271</td>
+<td class="instruction">DEFB 2</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/239.html">239</a>: MR WACKER - MAP ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44272"></a>44272</td>
+<td class="instruction">DEFB 34</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/240.html">240</a>: MR WITHIT - MAP ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44273"></a>44273</td>
+<td class="instruction">DEFB 19</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/241.html">241</a>: MR ROCKITT - WHITE ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44274"></a>44274</td>
+<td class="instruction">DEFB 49</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/242.html">242</a>: MR CREAK - READING ROOM</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44275"></a>44275</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/243.html">243</a>: PLAYTIME (ANGELFACE has mumps)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44276"></a>44276</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/244.html">244</a>: PLAYTIME (EINSTEIN is going to grass on ERIC)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44277"></a>44277</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/245.html">245</a>: PLAYTIME (BOY WANDER has hidden a pea-shooter)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44278"></a>44278</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/246.html">246</a>: PLAYTIME</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44279"></a>44279</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/247.html">247</a>: PLAYTIME</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44280"></a>44280</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/248.html">248</a>: PLAYTIME</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44281"></a>44281</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/249.html">249</a>: PLAYTIME</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44282"></a>44282</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/250.html">250</a>: PLAYTIME</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44283"></a>44283</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/251.html">251</a>: PLAYTIME</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44284"></a>44284</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/252.html">252</a>: PLAYTIME (little boys stampede)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44285"></a>44285</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/253.html">253</a>: PLAYTIME (little boys stampede)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44286"></a>44286</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/254.html">254</a>: PLAYTIME</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="44287"></a>44287</td>
+<td class="instruction">DEFB 71</td>
+<td class="comment-11" rowspan="1">Lesson <a class="link" href="../lessons/255.html">255</a>: PLAYTIME</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="44160.html">44160</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#44256">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="44288.html">44288</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 27406</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="27387.html">27387</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#27406">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="27442.html">27442</a></span></td>
+</tr>
+</table>
+<div class="description">27406: Print the bottom three lines of the screen</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="26880.html">26880</a>. Sets the attribute bytes for the bottom three lines of the screen, and then prints the Skool Daze logo and the score box.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="27406"></a>27406</td>
+<td class="instruction">LD HL,23200</td>
+<td class="comment-11" rowspan="3">Set <span class="register">HL</span> and <span class="register">DE</span> to the attribute file address for the leftmost character square of the third line from the the bottom of the screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27409"></a>27409</td>
+<td class="instruction">LD D,H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27410"></a>27410</td>
+<td class="instruction">LD E,L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="27411"></a>27411</td>
+<td class="instruction">LD (HL),18</td>
+<td class="comment-11" rowspan="3">INK 2: PAPER 2 for the bottom three lines of the screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27413"></a>27413</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27414"></a>27414</td>
+<td class="instruction">JR NZ,27411</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27416"></a>27416</td>
+<td class="instruction">LD H,239</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="61184.html">61184</a>: Skool Daze logo</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27418"></a>27418</td>
+<td class="instruction">CALL <a class="link" href="29977.html">29977</a></td>
+<td class="comment-11" rowspan="1">Print the logo at the bottom left of the screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27421"></a>27421</td>
+<td class="instruction">LD DE,23224</td>
+<td class="comment-11" rowspan="1">This is the attribute file address for the top-left corner of the score box</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27424"></a>27424</td>
+<td class="instruction">LD HL,60928</td>
+<td class="comment-11" rowspan="1"><a class="link" href="60928.html">60928</a>: Score/Lines/Hi-Score box graphic</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27427"></a>27427</td>
+<td class="instruction">CALL <a class="link" href="29977.html">29977</a></td>
+<td class="comment-11" rowspan="1">Print the Score/Lines/Hi-Score box</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27430"></a>27430</td>
+<td class="instruction">LD HL,(32706)</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=high score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27433"></a>27433</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="2">Is the high score zero?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27434"></a>27434</td>
+<td class="instruction">OR L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27435"></a>27435</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27436"></a>27436</td>
+<td class="instruction">LD DE,20988</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=display file address for the high score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="27439"></a>27439</td>
+<td class="instruction">JP <a class="link" href="30408.html">30408</a></td>
+<td class="comment-11" rowspan="1">Print the high score</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="27387.html">27387</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#27406">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="27442.html">27442</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

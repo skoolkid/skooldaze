@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 30636</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30630.html">30630</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30636">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30888.html">30888</a></span></td>
+</tr>
+</table>
+<div class="description">30636: Make any nearby teacher give ERIC lines if necessary</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="27353.html">27353</a>. Checks whether ERIC is somewhere he shouldn't be, or sitting or standing when or where he shouldn't be, or lying down, and makes any nearby teacher give lines accordingly.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30636"></a>30636</td>
+<td class="instruction">LD HL,32754</td>
+<td class="comment-11" rowspan="7">Check (and decrement) the lines-giving delay counter at <a class="link" href="32754.html">32754</a>, and proceed only if it was &lt;75 (the counter starts off at 0 for a new game, and is set to 150 by this routine after ERIC has been given lines)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30639"></a>30639</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30640"></a>30640</td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30641"></a>30641</td>
+<td class="instruction">JR Z,30647</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30643"></a>30643</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30644"></a>30644</td>
+<td class="instruction">CP 75</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30646"></a>30646</td>
+<td class="instruction">RET NC</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30647"></a>30647</td>
+<td class="instruction">LD BC,(44129)</td>
+<td class="comment-11" rowspan="1">Collect ERIC's coordinates in <span class="register">BC</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30651"></a>30651</td>
+<td class="instruction">LD L,251</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="32763.html">32763</a> (ERIC's status flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30653"></a>30653</td>
+<td class="instruction">BIT 2,(HL)</td>
+<td class="comment-11" rowspan="1">Is ERIC jumping?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30655"></a>30655</td>
+<td class="instruction">JR Z,30672</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30657"></a>30657</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30658"></a>30658</td>
+<td class="instruction">LD C,155</td>
+<td class="comment-11" rowspan="1">155=top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30660"></a>30660</td>
+<td class="instruction">CP 156</td>
+<td class="comment-11" rowspan="1">Is ERIC on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30662"></a>30662</td>
+<td class="instruction">JR C,30672</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30664"></a>30664</td>
+<td class="instruction">LD C,162</td>
+<td class="comment-11" rowspan="1">162=middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30666"></a>30666</td>
+<td class="instruction">CP 163</td>
+<td class="comment-11" rowspan="1">Is ERIC on the middle floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30668"></a>30668</td>
+<td class="instruction">JR C,30672</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30670"></a>30670</td>
+<td class="instruction">LD C,169</td>
+<td class="comment-11" rowspan="1">169=bottom floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30672"></a>30672</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate (adjusted if he's jumping)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30673"></a>30673</td>
+<td class="instruction">LD DE,30608</td>
+<td class="comment-11" rowspan="2">Point <span class="register">HL</span> at the skool region data table for the top floor at <a class="link" href="30608.html">30608</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30676"></a>30676</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30677"></a>30677</td>
+<td class="instruction">CP 155</td>
+<td class="comment-11" rowspan="1">Is ERIC on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30679"></a>30679</td>
+<td class="instruction">JR Z,30704</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30681"></a>30681</td>
+<td class="instruction">LD L,156</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="30620.html">30620</a> (skool region data table for the middle floor)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30683"></a>30683</td>
+<td class="instruction">CP 162</td>
+<td class="comment-11" rowspan="1">Is ERIC on the middle floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30685"></a>30685</td>
+<td class="instruction">JR Z,30704</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30687"></a>30687</td>
+<td class="instruction">LD L,166</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="30630.html">30630</a> (skool region data table for the bottom floor)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30689"></a>30689</td>
+<td class="instruction">CP 169</td>
+<td class="comment-11" rowspan="1">Is ERIC on the bottom floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30691"></a>30691</td>
+<td class="instruction">JR Z,30704</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30693"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC is on a staircase. Is he sitting on the stairs?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30693"></a>30693</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="32763.html">32763</a> (ERIC's status flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30694"></a>30694</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Reset the zero flag if ERIC is sitting</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30696"></a>30696</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">This value is ignored</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30698"></a>30698</td>
+<td class="instruction">JR Z,30712</td>
+<td class="comment-11" rowspan="1">Jump unless ERIC is sitting on the stairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30700"></a>30700</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a class="link" href="56192.html">0</a>: DON'T SIT ON THE STAIRS</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30702"></a>30702</td>
+<td class="instruction">JR 30776</td>
+<td class="comment-11" rowspan="1">Make any nearby teacher give lines</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30704"></a>
+<div class="comments">
+<div class="paragraph">
+At this point, <span class="register">HL</span> holds the base address of a data table describing the regions in the skool (<a class="link" href="30608.html">30608</a> for the top floor, <a class="link" href="30620.html">30620</a> for the middle floor, or <a class="link" href="30630.html">30630</a> for the bottom floor).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30704"></a>30704</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=ERIC's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30705"></a>30705</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare it with the x-coordinate from the region table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30706"></a>30706</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30707"></a>30707</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30708"></a>30708</td>
+<td class="instruction">JR NC,30705</td>
+<td class="comment-11" rowspan="1">Jump back until we've determined where ERIC is</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30710"></a>30710</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="2">Point <span class="register">DE</span> at the ID byte of the region table entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30711"></a>30711</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30712"></a>
+<div class="comments">
+<div class="paragraph">
+<span id="regionID" /> The ID bytes in the region tables have the following meanings:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th>ID</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td class="centre">0</td>
+<td>ERIC should never be here (head's study or staff room)</td>
+</tr>
+<tr>
+<td class="centre">1</td>
+<td>Reading Room</td>
+</tr>
+<tr>
+<td class="centre">2</td>
+<td>Map Room</td>
+</tr>
+<tr>
+<td class="centre">3</td>
+<td>White Room</td>
+</tr>
+<tr>
+<td class="centre">4</td>
+<td>Exam Room</td>
+</tr>
+<tr>
+<td class="centre">5</td>
+<td>Revision Library</td>
+</tr>
+<tr>
+<td class="centre">6</td>
+<td>Dinner hall</td>
+</tr>
+<tr>
+<td class="centre">7</td>
+<td>None of the above</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30712"></a>30712</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ID of the region ERIC's in (7 if he's on a staircase)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30713"></a>30713</td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Set the zero flag if ERIC's in a forbidden zone</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30714"></a>30714</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a class="link" href="56224.html">1</a>: THE ROOM IS PRIVATE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30716"></a>30716</td>
+<td class="instruction">JR Z,30776</td>
+<td class="comment-11" rowspan="1">Jump if ERIC's in the head's study or the staff room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30718"></a>30718</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ID of the region ERIC's in</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30719"></a>30719</td>
+<td class="instruction">LD L,200</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="32712.html">32712</a> (lesson status flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30721"></a>30721</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="2">Jump if EINSTEIN has not had a chance to grass on ERIC for being absent yet, or dinner has not started yet, or this is PLAYTIME or REVISION LIBRARY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30723"></a>30723</td>
+<td class="instruction">JR Z,30763</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30725"></a>30725</td>
+<td class="instruction">LD A,(32756)</td>
+<td class="comment-11" rowspan="1"><a class="link" href="32756.html">32756</a> holds the current lesson descriptor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30728"></a>30728</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">Keep only the 'room' bits (0-2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30730"></a>30730</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30731"></a>30731</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare this with ERIC's region ID</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30732"></a>30732</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30733"></a>30733</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a class="link" href="56256.html">2</a>: GET TO WHERE YOU SHOULD BE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30735"></a>30735</td>
+<td class="instruction">JR NZ,30776</td>
+<td class="comment-11" rowspan="1">Jump if ERIC is not where he should be</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30737"></a>30737</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick up the lesson status flags from <a class="link" href="32712.html">32712</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30738"></a>30738</td>
+<td class="instruction">RLCA</td>
+<td class="comment-11" rowspan="2">Set the carry flag if ERIC's lesson has started with ERIC present</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30739"></a>30739</td>
+<td class="instruction">RLCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30740"></a>30740</td>
+<td class="instruction">LD A,(44128)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30743"></a>30743</td>
+<td class="instruction">JR NC,30754</td>
+<td class="comment-11" rowspan="1">Jump if ERIC's lesson has not started</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30745"></a>30745</td>
+<td class="instruction">AND 15</td>
+<td class="comment-11" rowspan="2">ERIC's lesson has started; is ERIC sitting in a chair?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30747"></a>30747</td>
+<td class="instruction">CP 5</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30749"></a>30749</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30750"></a>30750</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a class="link" href="56288.html">3</a>: NOW FIND A SEAT</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30752"></a>30752</td>
+<td class="instruction">JR 30776</td>
+<td class="comment-11" rowspan="1">Make any nearby teacher give lines</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30754"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC's lesson has not started yet.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30754"></a>30754</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="2">Is ERIC standing, or midstride, or sitting on a chair?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30756"></a>30756</td>
+<td class="instruction">CP 6</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30758"></a>30758</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30759"></a>30759</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a class="link" href="56448.html">4</a>: GET OFF THE FLOOR</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30761"></a>30761</td>
+<td class="instruction">JR 30776</td>
+<td class="comment-11" rowspan="1">Make any nearby teacher give lines</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30763"></a>
+<div class="comments">
+<div class="paragraph">
+Bit 7 of <a class="link" href="32712.html">32712</a> is reset, which means EINSTEIN has not yet had a chance to grass on ERIC for being absent at the start of the lesson, or dinner has not started yet, or this is PLAYTIME or REVISION LIBRARY.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30763"></a>30763</td>
+<td class="instruction">CP 5</td>
+<td class="comment-11" rowspan="1">Is ERIC in a room?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30765"></a>30765</td>
+<td class="instruction">JR NC,30740</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30767"></a>30767</td>
+<td class="instruction">LD A,(32760)</td>
+<td class="comment-11" rowspan="1">Pick up the MSB of the lesson clock in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30770"></a>30770</td>
+<td class="instruction">CP 19</td>
+<td class="comment-11" rowspan="1">Should ERIC have left the room he was in last period?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30772"></a>30772</td>
+<td class="instruction">JR NC,30740</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30774"></a>30774</td>
+<td class="instruction">JR 30725</td>
+<td class="comment-11" rowspan="1">Otherwise check ERIC's location</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30776"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC is not where he should be, or is not sitting down when he should be, or is sitting on the floor or on the stairs. In short, he should be given lines by any adult witness. At this point <span class="register">A</span> holds one of the following values:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th><span class="register">A</span></th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>0</td>
+<td>ERIC is sitting on the stairs</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ERIC is in the head's study or the staff room</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ERIC is not in the room he should be in</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ERIC is not sitting down when he should be</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ERIC is sitting on the floor</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30776"></a>30776</td>
+<td class="instruction">LD D,A</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=0, 1, 2, 3 or 4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30777"></a>30777</td>
+<td class="instruction">LD L,242</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="32754.html">32754</a>: lines-giving delay counter (0-73)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30779"></a>30779</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="2">Is it too soon for the same teacher to give ERIC lines twice in a row?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30780"></a>30780</td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30781"></a>30781</td>
+<td class="instruction">JR Z,30790</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30783"></a>30783</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="2">Otherwise, collect from <a class="link" href="32755.html">32755</a> into <span class="register">H</span> the character number of the teacher who last gave ERIC lines</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30784"></a>30784</td>
+<td class="instruction">LD H,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30785"></a>30785</td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="3">Store this teacher's x-coordinate in <span class="register">E</span>, and set his x-coordinate to 255 temporarily, so he's out of range and will not be regarded as a lines-giving candidate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30787"></a>30787</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30788"></a>30788</td>
+<td class="instruction">LD (HL),255</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30790"></a>30790</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30791"></a>30791</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30792"></a>30792</td>
+<td class="instruction">LD D,C</td>
+<td class="comment-11" rowspan="2"><span class="register">DE</span>=ERIC's coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30793"></a>30793</td>
+<td class="instruction">LD E,B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30794"></a>30794</td>
+<td class="instruction">LD HL,44128</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at ERIC's character buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30797"></a>30797</td>
+<td class="instruction">CALL <a class="link" href="28304.html#28310">28310</a></td>
+<td class="comment-11" rowspan="1">Get the floor closest to ERIC (155, 162 or 169) in <span class="register">D</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30800"></a>30800</td>
+<td class="instruction">CALL <a class="link" href="28220.html#28223">28223</a></td>
+<td class="comment-11" rowspan="1">Can ERIC be seen by a teacher?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30803"></a>30803</td>
+<td class="instruction">JR C,30816</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30805"></a>30805</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30806"></a>30806</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30807"></a>30807</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return unless we need to restore the x-coordinate of the last teacher who gave ERIC lines</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30808"></a>30808</td>
+<td class="instruction">LD A,(32755)</td>
+<td class="comment-11" rowspan="4">Restore the x-coordinate of the teacher who was temporarily placed out of lines-giving range</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30811"></a>30811</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30812"></a>30812</td>
+<td class="instruction">LD L,98</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30814"></a>30814</td>
+<td class="instruction">LD (HL),E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30815"></a>30815</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30816"></a>
+<div class="comments">
+<div class="paragraph">
+Time to dish out some lines to ERIC.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30816"></a>30816</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30817"></a>30817</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30818"></a>30818</td>
+<td class="instruction">JR Z,30827</td>
+<td class="comment-11" rowspan="1">Jump unless we need to restore the x-coordinate of the last teacher who gave ERIC lines</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30820"></a>30820</td>
+<td class="instruction">LD A,(32755)</td>
+<td class="comment-11" rowspan="4">Restore the x-coordinate of the teacher who was temporarily placed out of lines-giving range</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30823"></a>30823</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30824"></a>30824</td>
+<td class="instruction">LD L,98</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30826"></a>30826</td>
+<td class="instruction">LD (HL),E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30827"></a>30827</td>
+<td class="instruction">LD B,D</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=0, 1, 2, 3 or 4 (lines reprimand ID)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30828"></a>30828</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="4"><span class="register">H</span>=character number of the teacher who saw ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30829"></a>30829</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30830"></a>30830</td>
+<td class="instruction">EXX</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30831"></a>30831</td>
+<td class="instruction">POP HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30832"></a>30832</td>
+<td class="instruction">LD L,150</td>
+<td class="comment-11" rowspan="2">Reset the lines-giving delay counter at <a class="link" href="32754.html">32754</a> to 150, and set <a class="link" href="32755.html">32755</a> to the character number of the teacher who saw ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30834"></a>30834</td>
+<td class="instruction">LD (32754),HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30837"></a>30837</td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="4"><span class="register">DE</span>=coordinates of the teacher who saw ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30839"></a>30839</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30840"></a>30840</td>
+<td class="instruction">DEC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30841"></a>30841</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30842"></a>30842</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=0, 1, 2, 3 or 4 (lines reprimand ID)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30843"></a>30843</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">Was ERIC spotted somewhere other than where he should be?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30845"></a>30845</td>
+<td class="instruction">JR NZ,30883</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30847"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC was spotted somewhere other than where he should be. The appropriate lines reprimand depends on who saw him: his teacher for this period, or another teacher.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30847"></a>30847</td>
+<td class="instruction">LD A,(32756)</td>
+<td class="comment-11" rowspan="1">Pick up the current lesson descriptor from <a class="link" href="32756.html">32756</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30850"></a>30850</td>
+<td class="instruction">AND 240</td>
+<td class="comment-11" rowspan="1">Keep only the teacher bits (4-7)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30852"></a>30852</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="5"><span class="register">A</span>=character number of ERIC's teacher for this period</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30853"></a>30853</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30854"></a>30854</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30855"></a>30855</td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30856"></a>30856</td>
+<td class="instruction">ADD A,163</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30858"></a>30858</td>
+<td class="instruction">CP H</td>
+<td class="comment-11" rowspan="1">Was it ERIC's teacher who saw him?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30859"></a>30859</td>
+<td class="instruction">JR NZ,30883</td>
+<td class="comment-11" rowspan="1">Jump if not (with <span class="register">B</span>=<a class="link" href="56256.html">2</a>: GET TO WHERE YOU SHOULD BE)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30861"></a>
+<div class="comments">
+<div class="paragraph">
+The truant ERIC has been spotted by his teacher for this period.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30861"></a>30861</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a class="link" href="56480.html">5</a>: COME ALONG WITH ME BOY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30863"></a>30863</td>
+<td class="instruction">LD A,(32712)</td>
+<td class="comment-11" rowspan="1">Bits 4 and 5 of <a class="link" href="32712.html">32712</a> hold the flags that determine ERIC's teacher's next lines reprimand</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30866"></a>30866</td>
+<td class="instruction">BIT 5,A</td>
+<td class="comment-11" rowspan="1">Set the zero flag if ERIC's teacher hasn't said 'COME ALONG WITH ME BOY' yet</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30868"></a>30868</td>
+<td class="instruction">SET 5,A</td>
+<td class="comment-11" rowspan="1">Indicate that he has said this now</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30870"></a>30870</td>
+<td class="instruction">JR Z,30880</td>
+<td class="comment-11" rowspan="1">Jump if ERIC's teacher has spotted him for the first time</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30872"></a>30872</td>
+<td class="instruction">XOR 16</td>
+<td class="comment-11" rowspan="1">Flip bit 4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30874"></a>30874</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a class="link" href="56512.html">6</a>: HURRY UP YOU HORROR</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30875"></a>30875</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">Should ERIC's teacher say this next?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30877"></a>30877</td>
+<td class="instruction">JR Z,30880</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30879"></a>30879</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a class="link" href="56544.html">7</a>: DON'T TRY MY PATIENCE BOY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30880"></a>30880</td>
+<td class="instruction">LD (32712),A</td>
+<td class="comment-11" rowspan="1">Update the truancy lines reprimand flags in <a class="link" href="32712.html">32712</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30883"></a>
+<div class="comments">
+<div class="paragraph">
+Now <span class="register">B</span> holds the appropriate lines reprimand ID. Finally, give lines to ERIC.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30883"></a>30883</td>
+<td class="instruction">LD A,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30885"></a>30885</td>
+<td class="instruction">JP <a class="link" href="30464.html">30464</a></td>
+<td class="comment-11" rowspan="1">Give lines to ERIC</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30630.html">30630</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30636">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30888.html">30888</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

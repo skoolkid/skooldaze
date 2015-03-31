@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 30258</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30251.html">30251</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30258">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30276.html">30276</a></span></td>
+</tr>
+</table>
+<div class="description">30258: Insert a pixel column into the number graphic buffer</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="30278.html">30278</a>. Slides the current contents of the number graphic buffer (at <a class="link" href="55552.html#55563">55563</a>) one pixel to the left, and places the new pixel column into the slot freed up on the right.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Pixel column byte</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30258"></a>30258</td>
+<td class="instruction">LD HL,55583</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the end of the buffer at <a class="link" href="55552.html#55563">55563</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30261"></a>30261</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Discard the baseline bit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30262"></a>30262</td>
+<td class="instruction">LD C,7</td>
+<td class="comment-11" rowspan="1">We will consider the remaining 7 bits</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30264"></a>30264</td>
+<td class="instruction">LD B,3</td>
+<td class="comment-11" rowspan="1">The buffer is 3 character squares wide</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30266"></a>30266</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Drop a bit into the carry flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30267"></a>30267</td>
+<td class="instruction">RL (HL)</td>
+<td class="comment-11" rowspan="3">Pick it up in the buffer and shift the other pixels in this row one to the left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30269"></a>30269</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30270"></a>30270</td>
+<td class="instruction">DJNZ 30267</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30272"></a>30272</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Next bit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30273"></a>30273</td>
+<td class="instruction">JR NZ,30264</td>
+<td class="comment-11" rowspan="1">Jump back until all 7 bits in the column are done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30275"></a>30275</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30251.html">30251</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30258">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30276.html">30276</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

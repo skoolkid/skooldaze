@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 31834</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31831.html">31831</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31834">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31852.html">31852</a></span></td>
+</tr>
+</table>
+<div class="description">31834: Place a continual subcommand routine address into a character's buffer</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by command lists <a class="link" href="64496.html">140</a>, <a class="link" href="64516.html">142</a>, <a class="link" href="64560.html">148</a>, <a class="link" href="64587.html">150</a>, <a class="link" href="64631.html">156</a>, <a class="link" href="64658.html">158</a>, <a class="link" href="64702.html">164</a>, <a class="link" href="64729.html">166</a>, <a class="link" href="64769.html">172</a>, <a class="link" href="64785.html">174</a>, <a class="link" href="64809.html">178</a>, <a class="link" href="64825.html">180</a>, <a class="link" href="64841.html">182</a>, <a class="link" href="64892.html">192</a>, <a class="link" href="64988.html">194</a>, <a class="link" href="64288.html">214</a>, <a class="link" href="64314.html">216</a>, <a class="link" href="64341.html">218</a> and <a class="link" href="64255.html">220</a>. Collects a continual subcommand routine address from a command list and places it into bytes 124 and 125 of the character's buffer. The routine address will be one of the following:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th>Address</th>
+<th>Description</th>
+</tr>
+<tr>
+<td class="centre"><a class="link" href="28446.html">28446</a></td>
+<td>Make ANGELFACE hit now and then</td>
+</tr>
+<tr>
+<td class="centre"><a class="link" href="28672.html">28672</a></td>
+<td>Make BOY WANDER fire his catapult now and then</td>
+</tr>
+<tr>
+<td class="centre"><a class="link" href="32234.html">32234</a></td>
+<td>Make a character walk fast</td>
+</tr>
+<tr>
+<td class="centre"><a class="link" href="64042.html">64042</a></td>
+<td>Check whether ANGELFACE is touching ERIC</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31834"></a>31834</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31835"></a>31835</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31836"></a>31836</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31837"></a>31837</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31838"></a>31838</td>
+<td class="instruction">LD L,124</td>
+<td class="comment-11" rowspan="6">Collect the address of the continual subcommand routine from the command list and place it into bytes 124 and 125 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31840"></a>31840</td>
+<td class="instruction">CALL <a class="link" href="24972.html">24972</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31843"></a>31843</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31844"></a>31844</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31845"></a>31845</td>
+<td class="instruction">CALL <a class="link" href="24972.html">24972</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31848"></a>31848</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31849"></a>31849</td>
+<td class="instruction">JP <a class="link" href="25126.html#25226">25226</a></td>
+<td class="comment-11" rowspan="1">Move to the next command in the command list</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31831.html">31831</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31834">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31852.html">31852</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

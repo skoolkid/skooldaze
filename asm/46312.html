@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 46312</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="46207.html">46207</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#46312">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="46335.html">46335</a></span></td>
+</tr>
+</table>
+<div class="description">46312: Move a character one step along the catwalk</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="46568.html">46568</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">152 (boy) or 164 (teacher)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="46312"></a>46312</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for the character's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46315"></a>46315</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's next animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46316"></a>46316</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Store this in <span class="register">C</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46317"></a>46317</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Set the carry flag if this animatory state is midstride</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46318"></a>46318</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Restore the next animatory state to <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46319"></a>46319</td>
+<td class="instruction">JR C,46329</td>
+<td class="comment-11" rowspan="1">Jump if the character will be midstride</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="46321"></a>
+<div class="comments">
+<div class="paragraph">
+The character will be moving from the midstride position, so move him one space forward.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46321"></a>46321</td>
+<td class="instruction">INC E</td>
+<td class="comment-11" rowspan="1">Increment the character's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46322"></a>46322</td>
+<td class="instruction">AND 3</td>
+<td class="comment-11" rowspan="1">Keep only the walking phase identifier bits of the animatory state (bits 0-1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46324"></a>46324</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Restore the next animatory state to <span class="register">A</span> again</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46325"></a>46325</td>
+<td class="instruction">JR NZ,46329</td>
+<td class="comment-11" rowspan="1">Jump if the next animatory state is standing/walking phase 3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46327"></a>46327</td>
+<td class="instruction">SUB 4</td>
+<td class="comment-11" rowspan="1">Reset the animatory state to standing/walking phase 1</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="46329"></a>
+<div class="comments">
+<div class="paragraph">
+Now <span class="register">A</span> holds the character's new animatory state, and <span class="register">E</span> his x-coordinate.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="46329"></a>46329</td>
+<td class="instruction">CALL <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the character's animatory state and location and update the SRB</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="46332"></a>46332</td>
+<td class="instruction">JP <a class="link" href="27026.html">27026</a></td>
+<td class="comment-11" rowspan="1">Update the display</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="46207.html">46207</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#46312">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="46335.html">46335</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

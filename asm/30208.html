@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 30208</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30203.html">30203</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30208">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30251.html">30251</a></span></td>
+</tr>
+</table>
+<div class="description">30208: Write a character's name into the lines bubble graphic buffer</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="30464.html">30464</a>. Generates the graphic data for the text of the lines recipient's name (e.g. 'ERIC') and stores it in the buffer at <a class="link" href="60160.html">60160</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Lines recipient's character number (167-169, 172)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30208"></a>30208</td>
+<td class="instruction">LD BC,6167</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=24; <span class="register">C</span>=23 (INK 7: PAPER 2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30211"></a>30211</td>
+<td class="instruction">LD HL,60160</td>
+<td class="comment-11" rowspan="1">The lines bubble graphic is stored at <a class="link" href="60160.html">60160</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30214"></a>30214</td>
+<td class="instruction">LD DE,55680</td>
+<td class="comment-11" rowspan="1"><a class="link" href="55680.html">55680</a>: 'ERIC'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30217"></a>30217</td>
+<td class="instruction">CP 172</td>
+<td class="comment-11" rowspan="1">Is ERIC being given lines?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30219"></a>30219</td>
+<td class="instruction">JR Z,30238</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30221"></a>30221</td>
+<td class="instruction">LD C,31</td>
+<td class="comment-11" rowspan="1">31=INK 7: PAPER 3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30223"></a>30223</td>
+<td class="instruction">LD E,142</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a class="link" href="55694.html">55694</a>: 'BOY WANDER'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30225"></a>30225</td>
+<td class="instruction">SUB 167</td>
+<td class="comment-11" rowspan="1">Is BOY WANDER being given lines?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30227"></a>30227</td>
+<td class="instruction">JR Z,30238</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30229"></a>30229</td>
+<td class="instruction">LD C,39</td>
+<td class="comment-11" rowspan="1">39=INK 7: PAPER 4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30231"></a>30231</td>
+<td class="instruction">LD E,156</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a class="link" href="55708.html">55708</a>: 'ANGELFACE'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30233"></a>30233</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Is ANGELFACE being given lines?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30234"></a>30234</td>
+<td class="instruction">JR Z,30238</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30236"></a>30236</td>
+<td class="instruction">LD E,170</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a class="link" href="55722.html">55722</a>: 'EINSTEIN'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30238"></a>30238</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-11" rowspan="3">Fill in the appropriate attribute bytes for the lines bubble</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30239"></a>30239</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30240"></a>30240</td>
+<td class="instruction">DJNZ 30238</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30242"></a>30242</td>
+<td class="instruction">LD L,120</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="60160.html#60280">60280</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30244"></a>30244</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a class="link" href="60160.html#60280">60280</a>, <span class="register">HL</span>=address of character name</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="30245"></a>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a class="link" href="63829.html">63829</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="30245"></a>30245</td>
+<td class="instruction">CALL <a class="link" href="30042.html">30042</a></td>
+<td class="comment-11" rowspan="1">Write the message into the graphic buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="30248"></a>30248</td>
+<td class="instruction">JP <a class="link" href="30132.html">30132</a></td>
+<td class="comment-11" rowspan="1">Draw the left and right edges of the bubble</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="30203.html">30203</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#30208">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="30251.html">30251</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

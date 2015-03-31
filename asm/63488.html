@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 63488</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="63486.html">63486</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#63488">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="63573.html">63573</a></span></td>
+</tr>
+</table>
+<div class="description">63488: Make little boy no. 10 give ERIC a message</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by command lists <a class="link" href="64230.html">208</a> and <a class="link" href="64240.html">210</a>. Makes little boy no. 10 tell ERIC about BOY WANDER having hidden a pea-shooter on the fire escape, EINSTEIN's intent to grass him up to MR WACKER, or ANGELFACE's medical condition.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">161 (little boy no. 10)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="63488"></a>63488</td>
+<td class="instruction">LD A,(32763)</td>
+<td class="comment-11" rowspan="3">Set bit 3 of ERIC's status flags at <a class="link" href="32763.html">32763</a>, indicating that ERIC is being spoken to</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63491"></a>63491</td>
+<td class="instruction">SET 3,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63493"></a>63493</td>
+<td class="instruction">LD (32763),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="63496"></a>63496</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="2">Adjust the MSB of the lesson clock so that the lesson will not end until the drama has played out</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63498"></a>63498</td>
+<td class="instruction">LD (32760),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="63501"></a>
+<div class="comments">
+<div class="paragraph">
+Figure out which message the boy should deliver, depending on what MR ROCKITT and MR WACKER are up to.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63501"></a>63501</td>
+<td class="instruction">LD A,(42104)</td>
+<td class="comment-11" rowspan="1">Collect byte 120 of MR ROCKITT's buffer, which holds the MSB of the command list start address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63504"></a>63504</td>
+<td class="instruction">CP 250</td>
+<td class="comment-11" rowspan="1">250 is the MSB of <a class="link" href="64219.html">64219</a> (command list <a class="link" href="64219.html">222</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63506"></a>63506</td>
+<td class="instruction">LD BC,65280</td>
+<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a class="link" href="65280.html">65280</a>: 'Don't let ANGELFACE touch you...'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63509"></a>63509</td>
+<td class="instruction">JR Z,63522</td>
+<td class="comment-11" rowspan="1">Jump if MR ROCKITT is using command list <a class="link" href="64219.html">222</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63511"></a>63511</td>
+<td class="instruction">LD C,53</td>
+<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a class="link" href="65333.html">65333</a>: 'EINSTEIN is going to tell MR WACKER...'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63513"></a>63513</td>
+<td class="instruction">LD A,(41845)</td>
+<td class="comment-11" rowspan="1">Collect byte 117 of MR WACKER's buffer, which holds the LSB of the address reached in the command list</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63516"></a>63516</td>
+<td class="instruction">CP 60</td>
+<td class="comment-11" rowspan="1">Is MR WACKER using command list <a class="link" href="64314.html">216</a>?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63518"></a>63518</td>
+<td class="instruction">JR C,63522</td>
+<td class="comment-11" rowspan="1">Jump if not (he must be using command list <a class="link" href="64288.html">214</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63520"></a>63520</td>
+<td class="instruction">LD C,143</td>
+<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a class="link" href="65423.html">65423</a>: 'BOY WANDER has hidden a pea-shooter...'</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="63522"></a>
+<div class="comments">
+<div class="paragraph">
+Now <span class="register">BC</span> holds the address of the message to be delivered.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="63522"></a>63522</td>
+<td class="instruction">CALL <a class="link" href="31996.html#32038">32038</a></td>
+<td class="comment-11" rowspan="1">Make the little boy deliver his message</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63525"></a>63525</td>
+<td class="instruction">LD L,104</td>
+<td class="comment-11" rowspan="2">Initialise the message repetition delay counter in byte 104 of the little boy's buffer to 40</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63527"></a>63527</td>
+<td class="instruction">LD (HL),40</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63529"></a>63529</td>
+<td class="instruction">LD BC,60640</td>
+<td class="comment-11" rowspan="1"><a class="link" href="60640.html">60640</a>: 'Press 'U' if you understood'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63532"></a>63532</td>
+<td class="instruction">LD A,(32715)</td>
+<td class="comment-11" rowspan="3">Set bit 0 at <a class="link" href="32715.html">32715</a>, indicating that the little boy is now waiting for acknowledgment from ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63535"></a>63535</td>
+<td class="instruction">SET 0,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63537"></a>63537</td>
+<td class="instruction">LD (32715),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63540"></a>63540</td>
+<td class="instruction">CALL <a class="link" href="31996.html#32038">32038</a></td>
+<td class="comment-11" rowspan="1">Make the little boy say 'Press 'U' if you understood'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63543"></a>63543</td>
+<td class="instruction">LD A,(32763)</td>
+<td class="comment-11" rowspan="1">Collect ERIC's status flags from <a class="link" href="32763.html">32763</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63546"></a>63546</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">Has 'U' been pressed yet?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63548"></a>63548</td>
+<td class="instruction">JR NZ,63558</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="63550"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC has acknowledged delivery of the message ('U' was pressed).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63550"></a>63550</td>
+<td class="instruction">LD A,12</td>
+<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 12, giving enough time for the ensuing drama to play out</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63552"></a>63552</td>
+<td class="instruction">LD (32760),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63555"></a>63555</td>
+<td class="instruction">JP <a class="link" href="25248.html#25256">25256</a></td>
+<td class="comment-11" rowspan="1">Move to the next command in little boy no. 10's command list</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="63558"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC has not yet acknowledged delivery of the message ('U' has not been pressed).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="63558"></a>63558</td>
+<td class="instruction">LD L,104</td>
+<td class="comment-11" rowspan="3">Decrement the message repetition delay counter in byte 104 of the little boy's buffer and return unless it has reached 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63560"></a>63560</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63561"></a>63561</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63562"></a>63562</td>
+<td class="instruction">LD A,(32715)</td>
+<td class="comment-11" rowspan="3">Reset bit 0 at <a class="link" href="32715.html">32715</a>, indicating that the little boy is no longer waiting for acknowledgment from ERIC (because he's going to repeat the message first)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63565"></a>63565</td>
+<td class="instruction">RES 0,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63567"></a>63567</td>
+<td class="instruction">LD (32715),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="63570"></a>63570</td>
+<td class="instruction">JP 63496</td>
+<td class="comment-11" rowspan="1">Deliver the message to ERIC once again</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="63486.html">63486</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#63488">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="63573.html">63573</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

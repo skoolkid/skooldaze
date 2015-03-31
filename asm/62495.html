@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 62495</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="62464.html">62464</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#62495">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="62571.html">62571</a></span></td>
+</tr>
+</table>
+<div class="description">62495: Deal with ERIC when he's firing the catapult</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a class="link" href="27353.html">27353</a> when bit 0 of ERIC's status flags at <a class="link" href="32763.html">32763</a> is set (by the routine at <a class="link" href="62574.html">62574</a>).
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62495"></a>62495</td>
+<td class="instruction">LD HL,32758</td>
+<td class="comment-11" rowspan="1"><a class="link" href="32758.html">32758</a> holds the catapult-firing action timer (initially 24)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62498"></a>62498</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-11" rowspan="1">Has ERIC finished firing the catapult?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62499"></a>62499</td>
+<td class="instruction">JR NZ,62516</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62501"></a>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a class="link" href="62628.html">62628</a> and <a class="link" href="62771.html">62771</a> to restore ERIC's animatory state to what it was before he jumped or threw a punch.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62501"></a>62501</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="2">Clear all of ERIC's status flags at <a class="link" href="32763.html">32763</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62502"></a>62502</td>
+<td class="instruction">LD (32763),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62505"></a>62505</td>
+<td class="instruction">LD H,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62507"></a>62507</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for ERIC's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62510"></a>62510</td>
+<td class="instruction">LD L,102</td>
+<td class="comment-11" rowspan="2">Restore ERIC's animatory state to what it was before he fired the catapult, jumped, or threw the punch</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62512"></a>62512</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62513"></a>62513</td>
+<td class="instruction">JP <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update ERIC's animatory state and location and update the SRB</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62516"></a>
+<div class="comments">
+<div class="paragraph">
+ERIC hasn't finished firing the catapult. Check which phase of the firing action we're at.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62516"></a>62516</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick up the current value of the action timer in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62517"></a>62517</td>
+<td class="instruction">LD H,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62519"></a>62519</td>
+<td class="instruction">CP 18</td>
+<td class="comment-11" rowspan="1">Is it time to raise the catapult to eye level?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62521"></a>62521</td>
+<td class="instruction">JP Z,<a class="link" href="28733.html#28737">28737</a></td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62524"></a>62524</td>
+<td class="instruction">CP 6</td>
+<td class="comment-11" rowspan="1">Is it time to start lowering the catapult?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62526"></a>62526</td>
+<td class="instruction">JP Z,<a class="link" href="28775.html#28779">28779</a></td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62529"></a>62529</td>
+<td class="instruction">CP 12</td>
+<td class="comment-11" rowspan="1">Is it time to launch the pellet?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62531"></a>62531</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62532"></a>
+<div class="comments">
+<div class="paragraph">
+It's time to launch the catapult pellet.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62532"></a>62532</td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 of ERIC's buffer holds his animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62534"></a>62534</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62535"></a>62535</td>
+<td class="instruction">OR 127</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=<a class="link" href="../graphics/as.html#127">127 or 255</a> (catapult pellet)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62537"></a>62537</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="4">Pick up ERIC's coordinates in <span class="register">DE</span>; they will be the initial coordinates of the catapult pellet</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62538"></a>62538</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62539"></a>62539</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62540"></a>62540</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62541"></a>62541</td>
+<td class="instruction">DEC H</td>
+<td class="comment-11" rowspan="1"><span class="register">H</span>=171 (ERIC's catapult pellet)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62542"></a>62542</td>
+<td class="instruction">CALL <a class="link" href="28744.html#28759">28759</a></td>
+<td class="comment-11" rowspan="1">Launch the catapult pellet</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62545"></a>62545</td>
+<td class="instruction">CALL <a class="link" href="65141.html">65141</a></td>
+<td class="comment-11" rowspan="1">Play the catapult sound effect</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62548"></a>62548</td>
+<td class="instruction">LD B,13</td>
+<td class="comment-11" rowspan="1">Reprimand message <a class="link" href="56992.html">13</a>: CATAPULTS ARE FORBIDDEN</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<a name="62550"></a>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a class="link" href="62628.html">62628</a> (with <span class="register">B</span>=<a class="link" href="57024.html">14</a>: DON'T HIT YOUR MATES) and <a class="link" href="62771.html">62771</a> (with <span class="register">B</span>=<a class="link" href="57056.html">15</a>: YOU ARE NOT A KANGAROO).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="62550"></a>62550</td>
+<td class="instruction">LD H,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62552"></a>62552</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Save the reprimand message identifier</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62553"></a>62553</td>
+<td class="instruction">CALL <a class="link" href="28220.html">28220</a></td>
+<td class="comment-11" rowspan="1">Check whether any teachers saw ERIC throw a punch, fire his catapult, or jump</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62556"></a>62556</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore the reprimand message identifier to <span class="register">B</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62557"></a>62557</td>
+<td class="instruction">RET NC</td>
+<td class="comment-11" rowspan="1">Return if ERIC wasn't seen by a teacher</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62558"></a>62558</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62559"></a>62559</td>
+<td class="instruction">LD L,97</td>
+<td class="comment-11" rowspan="1">Byte 97 of the teacher's buffer holds his y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62561"></a>62561</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-11" rowspan="3">Pick up the coordinates of the teacher who saw ERIC in <span class="register">DE'</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62562"></a>62562</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62563"></a>62563</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62564"></a>62564</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62565"></a>62565</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62566"></a>62566</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Now <span class="register">DE</span> holds the coordinates of the teacher who saw ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62567"></a>62567</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=172 (ERIC)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="62568"></a>62568</td>
+<td class="instruction">JP <a class="link" href="30464.html">30464</a></td>
+<td class="comment-11" rowspan="1">Make the teacher give ERIC lines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="62464.html">62464</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#62495">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="62571.html">62571</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

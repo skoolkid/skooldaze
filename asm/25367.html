@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 25367</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="25303.html">25303</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#25367">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="25373.html">25373</a></span></td>
+</tr>
+</table>
+<div class="description">25367: Determine whether a character should be moved (2)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Continues from <a class="link" href="25266.html">25266</a>. So far, byte 123 and bit 7 of byte 122 of the character's buffer have been adjusted to designate a new period of walking or running. All that remains is to ensure that bit 7 of byte 122 is set if the character is a teacher (teachers usually walk slowly).
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Contents of byte 122 of the character's buffer</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-171)</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">122</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="25367"></a>25367</td>
+<td class="instruction">AND 80</td>
+<td class="comment-11" rowspan="2">Check bit 6 (always reset) and bit 4 (set for teachers) of byte 122, and return (to move the character) if both are reset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25369"></a>25369</td>
+<td class="instruction">RET Z</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25370"></a>25370</td>
+<td class="instruction">SET 7,(HL)</td>
+<td class="comment-11" rowspan="1">Signal: walk slowly (the norm for teachers)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25372"></a>25372</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return to the routine at <a class="link" href="25126.html">25126</a> to move the character</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="25303.html">25303</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#25367">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="25373.html">25373</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

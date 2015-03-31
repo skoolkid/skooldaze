@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 31815</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31807.html">31807</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31815">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31831.html">31831</a></span></td>
+</tr>
+</table>
+<div class="description">31815: Restart the command list</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by command lists <a class="link" href="64841.html">182</a>, <a class="link" href="64883.html">190</a>, <a class="link" href="64892.html">192</a>, <a class="link" href="64988.html">194</a>, <a class="link" href="64914.html">196</a>, <a class="link" href="64947.html">204</a> and <a class="link" href="64975.html">206</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="31815"></a>31815</td>
+<td class="instruction">LD A,(32761)</td>
+<td class="comment-11" rowspan="1">Pick up the current lesson number (0-63) from <a class="link" href="32761.html">32761</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31818"></a>31818</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Copy this to <span class="register">E</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31819"></a>31819</td>
+<td class="instruction">LD B,1</td>
+<td class="comment-11" rowspan="1">We want to restart the command list for this character only</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31821"></a>31821</td>
+<td class="instruction">LD D,254</td>
+<td class="comment-11" rowspan="3">Set <span class="register">E</span> to the lesson identifier (224-255) from the <a class="link" href="65024.html">main timetable</a>; note that this will not be the identifier of the current lesson if the current lesson is a 'special' playtime - <a class="link" href="../lessons/243.html">243</a>, <a class="link" href="../lessons/244.html">244</a> or <a class="link" href="../lessons/245.html">245</a> - which is a <a class="link" href="../reference/bugs.html#wrongCommandList">bug</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31823"></a>31823</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31824"></a>31824</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31825"></a>31825</td>
+<td class="instruction">CALL <a class="link" href="26342.html#26395">26395</a></td>
+<td class="comment-11" rowspan="1">Set this character's command list up for a restart</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="31828"></a>31828</td>
+<td class="instruction">JP <a class="link" href="25248.html#25252">25252</a></td>
+<td class="comment-11" rowspan="1">Move to the first command in the command list</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="31807.html">31807</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#31815">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="31831.html">31831</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

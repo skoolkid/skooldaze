@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 25962</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="25956.html">25956</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#25962">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="25981.html">25981</a></span></td>
+</tr>
+</table>
+<div class="description">25962: Turn ERIC round</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a class="link" href="25983.html">25983</a>, <a class="link" href="26084.html">26084</a>, <a class="link" href="26194.html">26194</a> and <a class="link" href="26282.html">26282</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="25962"></a>25962</td>
+<td class="instruction">LD H,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25964"></a>25964</td>
+<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for ERIC's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25967"></a>25967</td>
+<td class="instruction">XOR 128</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of ERIC facing the other way</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25969"></a>25969</td>
+<td class="instruction">CALL <a class="link" href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update ERIC's animatory state and update the SRB</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25972"></a>25972</td>
+<td class="instruction">CALL <a class="link" href="65106.html">65106</a></td>
+<td class="comment-11" rowspan="1">Make a sound effect</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25975"></a>25975</td>
+<td class="instruction">LD HL,32744</td>
+<td class="comment-11" rowspan="2">Set ERIC's action timer at <a class="link" href="32744.html">32744</a> to 5</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25978"></a>25978</td>
+<td class="instruction">LD (HL),5</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="25980"></a>25980</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="25956.html">25956</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#25962">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="25981.html">25981</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

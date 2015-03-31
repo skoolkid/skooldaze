@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Game status buffer entry at 32763</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-g">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Game status buffer</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="32762.html">32762</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#32763">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="32764.html">32764</a></span></td>
+</tr>
+</table>
+<div class="description">32763: ERIC's status flags</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+If ERIC is doing anything other than walking or standing still, one of the bits here will be set.
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th>Bit</th>
+<th>Meaning if set</th>
+<th>Handler</th>
+<th>Checked by</th>
+</tr>
+<tr>
+<td class="centre">0</td>
+<td>ERIC is firing the catapult</td>
+<td class="centre"><a class="link" href="62495.html">62495</a></td>
+<td><a class="link" href="27353.html">27353</a></td>
+</tr>
+<tr>
+<td class="centre">1</td>
+<td>ERIC is hitting</td>
+<td class="centre"><a class="link" href="62628.html">62628</a></td>
+<td><a class="link" href="27353.html">27353</a></td>
+</tr>
+<tr>
+<td class="centre">2</td>
+<td>ERIC is jumping</td>
+<td class="centre"><a class="link" href="62771.html">62771</a></td>
+<td><a class="link" href="27353.html">27353</a>, <a class="link" href="30636.html">30636</a>, <a class="link" href="30890.html">30890</a>, <a class="link" href="31229.html">31229</a></td>
+</tr>
+<tr>
+<td class="centre">3</td>
+<td>ERIC is being spoken to by little boy no. 10</td>
+<td class="centre"><a class="link" href="63352.html">63352</a></td>
+<td><a class="link" href="27353.html">27353</a></td>
+</tr>
+<tr>
+<td class="centre">4</td>
+<td>ERIC has just been knocked down or unseated</td>
+<td class="centre"><a class="link" href="27303.html">27303</a></td>
+<td><a class="link" href="27353.html">27353</a></td>
+</tr>
+<tr>
+<td class="centre">5</td>
+<td>ERIC is writing on a blackboard</td>
+<td class="centre"><a class="link" href="63146.html">63146</a></td>
+<td><a class="link" href="26471.html">26471</a></td>
+</tr>
+<tr>
+<td class="centre">6</td>
+<td>Unused (always reset)</td>
+<td class="centre"></td>
+<td><a class="link" href="25983.html">25983</a>, <a class="link" href="26084.html">26084</a>, <a class="link" href="26194.html">26194</a></td>
+</tr>
+<tr>
+<td class="centre">7</td>
+<td>ERIC is sitting or lying down (set by <a class="link" href="27303.html">27303</a> or <a class="link" href="27823.html">27823</a>)</td>
+<td class="centre"></td>
+<td><a class="link" href="25956.html">25956</a>, <a class="link" href="62574.html">62574</a>, <a class="link" href="62938.html">62938</a>, <a class="link" href="63056.html">63056</a></td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="32763"></a>32763</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="32762.html">32762</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#32763">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="32764.html">32764</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>

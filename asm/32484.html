@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skool Daze: Routine at 32484</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../microsphere.css" />
+<link rel="stylesheet" type="text/css" href="../skool.css" />
+<link rel="stylesheet" type="text/css" href="../sd.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="32470.html">32470</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#32484">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="32497.html">32497</a></span></td>
+</tr>
+</table>
+<div class="description">32484: Save Skool Daze to tape</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+This routine was used to save the high-speed block to tape.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><a name="32484"></a>32484</td>
+<td class="instruction">LD HL,24288</td>
+<td class="comment-11" rowspan="1"><a class="link" href="../start/24288.html">24288</a> is where the game starts after loading</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="32487"></a>32487</td>
+<td class="instruction">LD (23833),HL</td>
+<td class="comment-11" rowspan="1">Store this address where it will be popped off the stack by the <a class="link" href="../load/32815.html">load routine</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="32490"></a>32490</td>
+<td class="instruction">LD BC,23</td>
+<td class="comment-11" rowspan="1">This parameter is used by the save routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="32493"></a>32493</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><a name="32494"></a>32494</td>
+<td class="instruction">JP 33024</td>
+<td class="comment-11" rowspan="1">Jump into the <a class="link" href="../save/33024.html">save routine</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a class="link" href="32470.html">32470</a></span></td>
+<td class="up">Up: <a class="link" href="../maps/all.html#32484">Map</a></td>
+<td class="next"><span class="next-1">Next: <a class="link" href="32497.html">32497</a></span></td>
+</tr>
+</table>
+<div class="footer">
+<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+</div>
+</body>
+</html>
