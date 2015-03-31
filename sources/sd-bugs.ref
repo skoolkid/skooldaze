@@ -1,0 +1,177 @@
+; Copyright 2008-2013 Richard Dymond (rjdymond@gmail.com)
+
+[Bug:runningTeachers:Running teachers]
+The teachers are all running at the start of the game.
+
+<div>POKE #R56587,144</div>
+<div>POKE #R56588,144</div>
+<div>POKE #R56589,144</div>
+<div>POKE #R56590,144</div>
+
+[Bug:jumpSound:Faulty jumping sound]
+The jumping sound effect is not as it should be, because of an erroneous CALL instruction in the routine at #R60139.
+
+POKE 60149,254
+
+[Bug:oneTwoOneTwo:One-two one-two]
+Usually, when a character is walking he will cycle through walking animation phases 1, 2, 3 and 4. So, for example, when MR WITHIT is walking leftwards, his animatory states will progress thus (reading from right to left):
+
+#UDGTABLE
+{ #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(97) | #CALL:as_img(96) | #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(97) | #CALL:as_img(96) }
+TABLE#
+
+However, when a character is looking for ERIC and walking leftwards, he will cycle through walking animation phases 1 and 2 only, or phases 3 and 4 only. For example, when MR WITHIT has left the Map Room to hunt down the truant ERIC, his animatory states cycle thus (through phases 1 and 2) as he makes his way leftwards across the bottom floor:
+
+#UDGTABLE
+{ #CALL:as_img(97) | #CALL:as_img(96) | #CALL:as_img(97) | #CALL:as_img(96) | #CALL:as_img(97) | #CALL:as_img(96) | #CALL:as_img(97) | #CALL:as_img(96) }
+TABLE#
+
+And when MR WITHIT has left the White Room to hunt down the truant ERIC, his animatory states cycle thus (through phases 3 and 4) as he makes his way leftwards across the bottom floor:
+
+#UDGTABLE
+{ #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(99) | #CALL:as_img(98) }
+TABLE#
+
+The reason for this shortened cycle of walking animation phases is the lack of symmetry between the routine at #R31739 (which is responsible for moving ERIC's chaser from the midstride position) and the routine at #R31768 (which is responsible for moving ERIC's chaser to the midstride position). The routine at #R31739 decrements the animatory state if the chaser is moving leftwards, and increments it if he's moving rightwards. However, the routine at #R31768 always increments the animatory state, regardless of the chaser's direction of travel. Thus the chaser's walking animation phases get locked into a 1-2-1-2 or 3-4-3-4 cycle if he's moving leftwards.
+
+<div>POKE #R31756,120</div>
+<div>POKE #R31757,60</div>
+
+[Bug:oneFourThreeFour:One-four three-four]
+Usually, when a character is going up a staircase he will cycle through walking animation phases 1, 2, 3 and 4 thus:
+
+#PUSHS
+#UDGTABLE {
+#CALL:place_char(169,70,17,144) #CALL:play_area(oftfs1,70,15,6,6,2,1) |
+#CALL:place_char(169,70,16,145) #CALL:play_area(oftfs2,70,15,6,6,2,1) |
+#CALL:place_char(169,71,16,146) #CALL:play_area(oftfs3,70,15,6,6,2,1) |
+#CALL:place_char(169,71,15,147) #CALL:play_area(oftfs4,70,15,6,6,2,1) |
+#CALL:place_char(169,72,15,144) #CALL:play_area(oftfs5,70,15,6,6,2,1)
+} TABLE#
+#POPS
+
+However, because of a bug in the routine at #R26084, when ERIC is going up a staircase he cycles through walking animation phases 1, 4, 3 and 4 instead thus:
+
+#PUSHS
+#UDGTABLE {
+#CALL:place_char(172,70,17,128) #CALL:play_area(oftfe1,70,15,6,6,2,1) |
+#CALL:place_char(172,70,16,131) #CALL:play_area(oftfe2,70,15,6,6,2,1) |
+#CALL:place_char(172,71,16,130) #CALL:play_area(oftfe3,70,15,6,6,2,1) |
+#CALL:place_char(172,71,15,131) #CALL:play_area(oftfe4,70,15,6,6,2,1) |
+#CALL:place_char(172,72,15,128) #CALL:play_area(oftfe5,70,15,6,6,2,1)
+} TABLE#
+#POPS
+
+POKE #R26137(26138),4
+
+[Bug:missAndHit:Miss and hit]
+ERIC can be knocked out by BOY WANDER's catapult pellet even when he's sitting on the floor or is already lying on the floor (and the pellet should really fly straight over his head instead). The best way to reproduce this bug is to stand (or sit) in BOY WANDER's line of fire in a classroom while everyone's waiting for the teacher to show up for the lesson.
+
+[Bug:allPlayAndNoWork:All play and no work]
+In lesson #LESSON227 (MR ROCKITT - EXAM ROOM), little boys 4-8 head off to the White Room in accordance with their personal timetables, but no teacher ever arrives to start the lesson.
+
+POKE #R42723,#R64458(134) (sends MR CREAK to the White Room)
+
+[Bug:waitingForEinstein:Waiting for EINSTEIN]
+Before wiping the board and getting a lesson under way, ERIC's teacher will wait for EINSTEIN to sit down first: see #R31952. This makes sense at the beginning of a lesson, but that same routine is called several times during the course of a lesson (see #R62208) to check whether ERIC is present, which means that the teacher will also stop whatever he's doing and wait for EINSTEIN to sit down before continuing on those occasions too. This is not really noticeable except during lessons where there is no question-and-answer session taking place between the teacher and the swot, and the teacher is pacing up and down in front of the blackboard instead. During those lessons, the call to #R31952 is made each time the teacher has reached the point where he is just about to turn round; if EINSTEIN is not sitting in a chair at that time (because ERIC has pushed him out of his seat, for example), the teacher will wait until EINSTEIN is back in his seat before turning round.
+
+This phenomenon can be made more readily reproducible and observable by using the following POKEs:
+
+<div>POKE #R27735(27736),20 (to lengthen the delay before a dethroned character rises)</div>
+<div>POKE #R62422(62423),0 (to make every lesson a non-question-and-answer lesson)</div>
+
+[Bug:wrongCommandList:Wrong command list]
+Many #R65152(command lists) use the routine at #R31815 to trigger a restart. This works as expected when the current lesson appears in the #R65024(main timetable), but does not work during the 'special' playtimes - #LESSON243, #LESSON244 and #LESSON245 - which do not appear in the main timetable, but instead replace main timetable playtimes at random three times out of eight on average (see #R28211).
+
+The problem is that the routine at #R31815 looks up the current lesson (whose number is stored at #R32761) in the main timetable in order to find out which command list to restart, and then copies the start address of that command list into bytes 119 and 120 of the character's buffer, overwriting the command list start address that was already there.
+
+The most noticeable effect of this bug will occur during a special playtime that has replaced a 'stampede' playtime (#LESSON252 or #LESSON253). Little boys 1-9 and 11 (not 10, because he's busy looking for ERIC to tell him what's going on) start with command list #R64914(196) (walkabout), but when the restart command is reached, will switch to command list #R64947(204) (stampede leader) or #R64975(206) (stampede follower). Thus a special playtime in which ERIC must watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the presence of stampeding boys tripping everyone up.
+
+<div>POKE #R31825,0</div>
+<div>POKE 31826,203</div>
+<div>POKE 31827,198</div>
+
+[Bug:wackersNumberBlindness:WACKER's number blindness]
+If ERIC has exactly 10000 lines, MR WACKER will come rushing to ERIC's side and say "YOU HAVE OVER 10000 LINES TO WRITE ERIC..." (see #R63931). Does the headmaster not know how to count, or does he actually think that 10000 > 10000? Either way, this is poor form for a maths teacher.
+
+POKE #R63942(63943),233 (keeps MR WACKER at bay until ERIC's lines total exceeds 10000)
+
+[Bug:avoidingExpulsion:Avoiding expulsion]
+By using the #FACT#undeliverableMessage(undeliverable message technique), it is possible to avoid being sent home by MR ROCKITT (when ERIC has mumps) or MR WACKER (when ERIC has 10000 or more lines).
+
+If MR ROCKITT is on his way to send ERIC home, head for the nearest blackboard and press 'W' to start writing. Then wait. And wait some more. And wait some more on top of that. After about 20 minutes, the bell will ring, at which point it will be safe for ERIC to stop writing (press ENTER). MR ROCKITT will walk away, having apparently forgotten all about ERIC's disease.
+
+Likewise with MR WACKER. After the bell rings, press ENTER to finish writing on the board and MR WACKER will walk away, having lost interest in sending ERIC home. However, ERIC must proceed with care: the next time he gets lines, MR WACKER will come looking for him again.
+
+[Bug:immunityThroughVelocity:Immunity through velocity]
+When ANGELFACE has mumps, ERIC may be able to run past him without 'touching' him, and thus avoid contracting the disease.
+
+This trick is possible because the collision detection code at #R64042 is executed only during ANGELFACE's turn to move; ERIC moves faster than any other character in the game, and so if he times it right, he can scoot past the bully in between his turns to move.
+
+[Bug:rockittExamRoom:MR ROCKITT as a boy]
+In lesson #LESSON229 (REVISION LIBRARY), MR ROCKITT paces up and down in the Exam Room like a little boy, waiting for a teacher who never arrives.
+
+POKE #R42213,#R64876(188) (sends MR ROCKITT to the staff room)
+
+[Bug:hiddenShield:Speech bubble v. shield]
+When a speech bubble is obscuring a shield, ERIC cannot get it by jumping up to it or firing at it. This is because the routine at #R28143 checks for the presence of a shield at the location of ERIC's hand or pellet by inspecting the attribute byte: a shield is assumed to be present only if neither the PAPER nor the INK is black. However, when a speech bubble is in the way, the INK is black, and the routine exits early.
+
+[Bug:corruptedBubble:Corrupted speech bubbles]
+Speech bubbles are vulnerable to corruption by the movement of characters or catapult pellets in front of them. The easiest way to see this is to climb the stairs that lead up to the head's study when a teacher is standing at the doorway of the White Room telling the kids to sit down. (This bug was fixed in Back to Skool by ensuring that characters, pellets, etc. are always drawn behind speech bubbles instead of in front of them.)
+
+[Bug:speechQueue:Speech queue hogs]
+ERIC's teacher and EINSTEIN can hog the 'speech queue' for several rounds of a question-and-answer session, making the other teachers wait a long time - sometimes until after the bell has rung - before they can tell the kids to sit down or what to do during the lesson.
+
+The reason this can happen is that there actually is no speech queue. That is, there is no mechanism for recording whose 'turn' it is to speak next.
+
+Consider the case where ERIC is being taught by MR CREAK in the White Room, and MR ROCKITT is teaching in the Exam Room:
+
+<ul>
+<li>MR CREAK is asking a question</li>
+<li>EINSTEIN is waiting for MR CREAK to finish speaking</li>
+<li>MR ROCKITT is standing at the blackboard, waiting to tell the kids what to do</li>
+</ul>
+
+When MR CREAK finishes speaking, the character-moving routine at #R25126 considers moving the following characters (after MR CREAK) in this order:
+
+<ul>
+<li>BOY WANDER</li>
+<li>ANGELFACE</li>
+<li>EINSTEIN</li>
+</ul>
+
+A character will be moved if bit 7 of byte 122 of his buffer is reset (which is true for kids half the time on average, and true for teachers only when they're running), or if byte 123 of his buffer (which is decremented on each pass through the character-moving routine) holds an even number. If either of these is true for EINSTEIN, he will get to speak next. When he's finished answering MR CREAK's question, the character-moving routine considers moving the following characters (after EINSTEIN) in this order:
+
+<ul>
+<li>little boys</li>
+<li>MR WACKER</li>
+<li>MR ROCKITT</li>
+<li>MR WITHIT</li>
+<li>MR CREAK</li>
+</ul>
+
+If, on MR ROCKITT's turn, byte 123 of his buffer holds an odd number, he will not be moved, and will therefore not start speaking before MR CREAK. If, on MR CREAK's turn, byte 123 of his buffer holds an even number, he will be moved and therefore start speaking before MR ROCKITT's next turn.
+
+Thus MR ROCKITT could spend quite a while waiting at the blackboard before telling the kids what to do, all depending on the contents of byte 123 of his, MR CREAK's and EINSTEIN's buffers (and also bit 7 of byte 122 of EINSTEIN's buffer) on their turns to be moved.
+
+[Bug:backSeat:Inaccessible back seat]
+Kids are unable to sit in the back seat in the Reading Room (see #R27632). This may actually be a feature, though, because if EINSTEIN sits in the back seat, his speech bubble goes through the wall into the Map Room.
+
+POKE #R27703(27704),56
+
+[Bug:doublyDirty:Doubly dirty blackboards]
+The blackboard buffers are wiped before a new game (or demo mode) starts, but the blackboards themselves are not. Thus BOY WANDER, who would normally write only on a clean board, will unwittingly scrawl over a blackboard's previous contents at the start of a new game. (This bug was fixed in Back to Skool.)
+
+[Bug:typo:Misspelt element]
+'Phosphorous' (at #R57532) is misspelt; it should be 'Phosphorus'.
+
+[Bug:emptyClass:MR CREAK and the empty class]
+Lesson #LESSON230 (REVISION LIBRARY) has MR CREAK teaching an empty class in the Reading Room.
+
+POKE #R42726,#R64876(188) (sends MR CREAK to the staff room)
+
+[Bug:chairHit:Share a chair]
+If ERIC hits a character who is sitting on a chair, and then quickly sits in the chair just vacated, ERIC will not be pushed out of the chair when the character rises and takes his seat again.
+
+[Bug:absentTearaway:800 lines BOY WANDER - NOW WHERE ARE YOU?]
+In lesson #LESSON236 (MR WACKER - WHITE ROOM), BOY WANDER is in the Revision Library (on his own, as it happens). However, if EINSTEIN tells on BOY WANDER for writing on the board, MR WACKER will still give lines to the absent tearaway. (Perhaps the ceiling in the White Room conducts sound well enough for BOY WANDER to hear the admonition.) The same thing may also happen in lesson #LESSON237 (MR WITHIT - WHITE ROOM), when BOY WANDER is once again in the Revision Library (this time accompanied by ANGELFACE).

@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -e # Abort on errors
+
+if [[ -z $SKOOLDAZE_HOME ]]; then
+  echo "Error: SKOOLDAZE_HOME not defined."
+  exit 1
+fi
+if [[ ! -d $SKOOLDAZE_HOME ]]; then
+  echo "Error: directory not found: $SKOOLDAZE_HOME"
+  exit 1
+fi
+
+if [[ -z $SKOOLKIT_HOME ]]; then
+  echo "Error: SKOOLKIT_HOME not defined."
+  exit 1
+fi
+if [[ ! -d $SKOOLKIT_HOME ]]; then
+  echo "Error: directory not found: $SKOOLKIT_HOME"
+  exit 1
+fi
+
+GAME=sd
+GAMEDIR=skool_daze
+GAMENAME="Skool Daze"
+SKOOLDIR=$SKOOLDAZE_HOME/sources
+SKOOLFILES=$(echo sd{,-load,-save,-start}.skool)
+REFFILE=$SKOOLDAZE_HOME/sources/$GAME.ref
+MKDTARBALL="$SKOOLDAZE_HOME/utils/mkdtarball"
+SRCDIR=sources
+SRCFILES=$(echo COPYING skooldaze.py sd{{,-bugs,-changelog,-data,-facts,-glossary,-graphics,-pages,-pokes}.ref,{,-load,-save,-start}.skool,.css} {microsphere,skool}{,-dark,-green,-plum}.css microsphere.{js,py})
+DHOME=$SKOOLDAZE_HOME
+GHREPO=skooldaze
+GHHTMLOPTS=""
+GHGAMEDIR=.
+
+. $SKOOLKIT_HOME/tools/drelease-functions
+
+parse_args $*

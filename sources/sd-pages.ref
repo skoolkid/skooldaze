@@ -1,0 +1,463 @@
+; Copyright 2008-2015 Richard Dymond (rjdymond@gmail.com)
+
+[PageContent:PlayArea]
+<div>#CALL:play_area(play_area,0,0,96,21,2,0,8)</div>
+
+[Page:PlayAreaTiles]
+JavaScript=microsphere.js
+
+[PageContent:PlayAreaTiles]
+<p>Click a tile to see the following info:</p>
+<table>
+<tr>
+<td>
+<div class="B">
+<div class="H">(x,y)=(10,9)</div>
+<table>
+<tr>
+<td><img alt="10,9" src="80db20.png"/></td>
+<td>
+<i>ref_addr</i>=(x,y+152)=41226<br/>
+<i>ref</i>=219, <i>udg_page</i>=128<br/>
+<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)=32987<br/>
+<i>attr_addr</i>=(x+128,y+152)=41354<br/>
+<i>attr</i>=32
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<p>where:</p>
+<ul>
+<li><i>ref</i> is the UDG reference for the tile (located at <i>ref_addr</i>)</li>
+<li><i>udg_page</i> is the base page for the tile graphic data (128, 136 or 144)</li>
+<li><i>udg_addr</i> is the base address of the tile graphic data (<i>ref</i>+256*<i>udg_page</i>)</li>
+<li><i>attr</i> is the tile's attribute byte (located at <i>attr_addr</i>)</li>
+</ul>
+<p>
+The base page for the tile graphic data (<i>udg_page</i>) depends on the x-coordinate of the tile as follows:
+</p>
+<table class="default">
+<tr><th>x</th><th><i>udg_page</i></th></tr>
+<tr><td class="centre">0-31</td><td class="centre">128</td></tr>
+<tr><td class="centre">32-63</td><td class="centre">136</td></tr>
+<tr><td class="centre">64-95</td><td class="centre">144</td></tr>
+</table>
+<p>
+The eight graphic bytes for a tile are located thus:
+</p>
+<table class="default">
+<tr><th>Address</th><th>Contents</th></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>)=<i>udg_addr</i></td><td>Graphic byte 1/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+1)=<i>udg_addr</i>+256</td><td>Graphic byte 2/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+2)=<i>udg_addr</i>+512</td><td>Graphic byte 3/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+3)=<i>udg_addr</i>+768</td><td>Graphic byte 4/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+4)=<i>udg_addr</i>+1024</td><td>Graphic byte 5/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+5)=<i>udg_addr</i>+1280</td><td>Graphic byte 6/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+6)=<i>udg_addr</i>+1536</td><td>Graphic byte 7/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+7)=<i>udg_addr</i>+1792</td><td>Graphic byte 8/8</td></tr>
+</table>
+<p>
+Any given tile (identified by <i>udg_addr</i>) may appear at more than one location in the play area.
+</p>
+#CALL:play_area_tiles(96,21)
+
+[Template:play_area_tiles]
+<table class="tiles">
+{rows}
+</table>
+
+[Template:play_area_tile_row]
+<tr>
+{tiles}
+</tr>
+
+[Template:play_area_tile]
+<td><div class="T" onclick="s('s{tile.x}x{tile.y}')"><img alt="{tile.x},{tile.y}" src="{img_fname}"/></div><div id="s{tile.x}x{tile.y}" class="B P" onclick="h(this)"><div class="H">(x,y)=({tile.x},{tile.y})</div><table><tr><td><img alt="{tile.x},{tile.y}" src="{img_fname}"/></td><td><i>ref_addr</i>=(x,y+152)={tile.ref_addr}<br/><i>ref</i>={tile.ref}, <i>udg_page</i>={tile.udg_page}<br/><i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)={tile.udg_addr}<br/><i>attr_addr</i>=(x+128,y+152)={tile.attr_addr}<br/><i>attr</i>={tile.attr}</td></tr></table></div></td>
+
+[PageContent:InitialAnimatoryStates]
+#PUSHS
+#POKES56576,17,21
+<div>#CALL:play_area(initial_as,0,0,96,21,2,1,8)</div>
+#POPS
+
+[PageContent:AnimatoryStates]
+<p>The appearance of an animatory state depends on the character using it. In each row of the table below, the first and second images correspond to the appearance of the animatory state when used by a boy or a catapult pellet (character numbers 152-162 and 167-172); the third and fourth images correspond to the appearance of the animatory state when used by a teacher (character numbers 163-166). (See #R27914.)</p>
+<table class="animatoryStates">
+#CALL:animatory_states()
+</table>
+
+[Template:animatory_state_row]
+<tr>
+<td><a name="{state_l}"></a>{img_l1}</td>
+<td><a name="{state_r}"></a>{img_r1}</td>
+<td><a name="{state_l}"></a>{img_l2}</td>
+<td><a name="{state_r}"></a>{img_r2}</td>
+<td>{state_l}, {state_r}: {desc}</td>
+</tr>
+
+[Page:AnimatoryStateTiles]
+JavaScript=microsphere.js
+
+[PageContent:AnimatoryStateTiles]
+<div>
+<p>Click a tile in the gallery below to see the following info:</p>
+<table>
+<tr>
+<td>
+<div class="B">
+<div class="H">0: row 1, column 1</div>
+<table>
+<tr>
+<td><img alt="0:1,1" src="b901.png"/></td>
+<td>
+<i>lsb</i>=0, <i>ref_page</i>=178<br/>
+<i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)=45568<br/>
+<i>ref</i>=1, <i>udg_page</i>=185<br/>
+<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)=47361
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<p>where:</p>
+<ul>
+<li><i>lsb</i> is the animatory state (0-255)</li>
+<li><i>ref_page</i> is the page containing the UDG reference for the tile (173-184)</li>
+<li><i>ref_addr</i> is the address of the UDG reference (<i>lsb</i>+256*<i>ref_page</i>)</li>
+<li><i>ref</i> is the UDG reference at <i>ref_addr</i> (0-255)</li>
+<li><i>udg_page</i> is the base page for the tile graphic data (185 or 201)</li>
+<li><i>udg_addr</i> is the base address of the tile graphic data (<i>ref</i>+256*<i>udg_page</i>)</li>
+</ul>
+<p>
+The graphic for an animatory state is made up of 12 tiles in a 3x4 grid:
+</p>
+<table class="asgrid">
+<tr><td>0</td><td>4</td><td>8</td></tr>
+<tr><td>1</td><td>5</td><td>9</td></tr>
+<tr><td>2</td><td>6</td><td>10</td></tr>
+<tr><td>3</td><td>7</td><td>11</td></tr>
+</table>
+<p>
+Each tile has a UDG reference (<i>ref</i>) located at (<i>lsb</i>,T+173), where T is the tile number (0-11).
+</p>
+<p>
+The eight graphic bytes and eight mask bytes for a tile are located thus:
+</p>
+<table class="default">
+<tr><th>Address</th><th>Contents</th></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>)=<i>udg_addr</i></td><td>Graphic byte 1/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+1)=<i>udg_addr</i>+256</td><td>Mask byte 1/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+2)=<i>udg_addr</i>+512</td><td>Graphic byte 2/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+3)=<i>udg_addr</i>+768</td><td>Mask byte 2/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+4)=<i>udg_addr</i>+1024</td><td>Graphic byte 3/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+5)=<i>udg_addr</i>+1280</td><td>Mask byte 3/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+6)=<i>udg_addr</i>+1536</td><td>Graphic byte 4/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+7)=<i>udg_addr</i>+1792</td><td>Mask byte 4/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+8)=<i>udg_addr</i>+2048</td><td>Graphic byte 5/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+9)=<i>udg_addr</i>+2304</td><td>Mask byte 5/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+10)=<i>udg_addr</i>+2560</td><td>Graphic byte 6/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+11)=<i>udg_addr</i>+2816</td><td>Mask byte 6/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+12)=<i>udg_addr</i>+3072</td><td>Graphic byte 7/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+13)=<i>udg_addr</i>+3328</td><td>Mask byte 7/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+14)=<i>udg_addr</i>+3584</td><td>Graphic byte 8/8</td></tr>
+<tr><td>(<i>ref</i>,<i>udg_page</i>+15)=<i>udg_addr</i>+3840</td><td>Mask byte 8/8</td></tr>
+</table>
+<p>
+The 'null' UDG (<i>ref</i>=0) is always taken to be blank (eight zeroes); its graphic data is not looked up at (0,185) or (0,201).
+</p>
+<p>
+Any given tile (identified by <i>udg_addr</i>) may appear in more than one animatory state (and in more than one place in a single animatory state).
+</p>
+<p>
+In each row of the table below, the first and second tile grids correspond to the appearance of the animatory state with <i>udg_page</i>=185 (as used by a boy or a catapult pellet, i.e. character numbers 152-162 and 167-172); the third and fourth tile grids correspond to the appearance of the animatory state with <i>udg_page</i>=201 (as used by a teacher, i.e. character numbers 163-166). (See #R27914.)
+</p>
+</div>
+<table class="asTiles">
+#CALL:astiles()
+</table>
+
+[Template:astiles_row]
+<tr>
+{frames}
+<td>{desc}</td>
+</tr>
+
+[Template:astiles_frame_4x3]
+<td>
+<table class="A">
+<tr>
+<td>{tiles[0]}</td>
+<td>{tiles[1]}</td>
+<td>{tiles[2]}</td>
+</tr>
+<tr>
+<td>{tiles[3]}</td>
+<td>{tiles[4]}</td>
+<td>{tiles[5]}</td>
+</tr>
+<tr>
+<td>{tiles[6]}</td>
+<td>{tiles[7]}</td>
+<td>{tiles[8]}</td>
+</tr>
+<tr>
+<td>{tiles[9]}</td>
+<td>{tiles[10]}</td>
+<td>{tiles[11]}</td>
+</tr>
+</table>
+</td>
+
+[Template:astile]
+<div class="T" onclick="s('{bubble_id}')"><img alt="{state}:{row},{column}" src="{img_fname}"/></div><div id="{bubble_id}" class="B P" onclick="h(this)"><div class="H">{state}: row {row}, column {column}</div><table><tr><td><img alt="{state}:{row},{column}" src="{img_fname}"/></td><td><i>lsb</i>={lsb}, <i>ref_page</i>={ref_page}<br/><i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={tile.ref_addr}<br/><i>ref</i>={tile.ref}, <i>udg_page</i>={tile.udg_page}<br/><i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)={tile.udg_addr}</td></tr></table></div>
+
+[Template:astile_null]
+<div class="T" onclick="s('{bubble_id}')"><img alt="{state}:{row},{column}" src="{img_fname}"/></div><div id="{bubble_id}" class="B P" onclick="h(this)"><div class="H">{state}: row {row}, column {column}</div><table><tr><td><img alt="{state}:{row},{column}" src="{img_fname}"/></td><td><i>lsb</i>={lsb}, <i>ref_page</i>={ref_page}<br/><i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={tile.ref_addr}<br/><i>ref</i>=0</td></tr></table></div>
+
+[PageContent:CharacterBuffers]
+<p>The character buffers occupy bytes 96-127 in pages 152-172.</p>
+#CALL:cast()
+#CALL:cbuffer()
+
+[Template:cast]
+#TABLE(cbuffer,cbufPage,cbufAddress,cbufCharacter,transparent,cbufPage,cbufAddress,cbufCharacter,transparent,cbufPage,cbufAddress,cbufCharacter)
+{{ =h Page | =h Address | =h Character      |  | =h Page | =h Address | =h Character      |  | =h Page | =h Address | =h Character }}
+{{ 152     | #R39008    | {characters[152]} |  | 159     | #R40800    | {characters[159]} |  | 166     | #R42592    | {characters[166]} }}
+{{ 153     | #R39264    | {characters[153]} |  | 160     | #R41056    | {characters[160]} |  | 167     | #R42848    | {characters[167]} }}
+{{ 154     | #R39520    | {characters[154]} |  | 161     | #R41312    | {characters[161]} |  | 168     | #R43104    | {characters[168]} }}
+{{ 155     | #R39776    | {characters[155]} |  | 162     | #R41568    | {characters[162]} |  | 169     | #R43360    | {characters[169]} }}
+{{ 156     | #R40032    | {characters[156]} |  | 163     | #R41824    | {characters[163]} |  | 170     | #R43616    | {characters[170]} }}
+{{ 157     | #R40288    | {characters[157]} |  | 164     | #R42080    | {characters[164]} |  | 171     | #R43872    | {characters[171]} }}
+{{ 158     | #R40544    | {characters[158]} |  | 165     | #R42336    | {characters[165]} |  | 172     | #R44128    | {characters[172]} }}
+TABLE#
+
+[Template:cbuffer]
+<p>The bytes in each character buffer are used as follows:</p>
+<table class="cbuffer">
+<tr>
+<th>Byte(s)</th>
+<th>Contents</th>
+</tr>
+{m_cbuffer_bytes}
+</table>
+
+[Template:cbuffer_bytes]
+<tr>
+<td class="cbufBytes" rowspan="{rowspan}">{bytes}</td>
+{t_cbuffer_desc}
+</tr>
+{m_cbuffer_desc_row}
+
+[Template:cbuffer_desc_row]
+<tr>
+{t_cbuffer_desc}
+</tr>
+
+[Template:cbuffer_desc]
+<td class="cbufByteDesc">
+{desc}
+</td>
+
+[Page:MainTimetable]
+Content=asm/65024.html
+
+[PageContent:PersonalTimetables]
+<table class="timetable">
+<tr>
+<th>No.</th>
+<th>Character</th>
+</tr>
+#CALL:personal_timetables()
+</table>
+
+[Template:personal_timetable]
+<tr>
+<td class="ptCharNum">#R{address}({num})</td>
+<td class="ptCharName">{name}</td>
+</tr>
+
+[PageContent:LessonIndex]
+<table class="lesson">
+<tr>
+<th>ID</th>
+<th>Lesson</th>
+</tr>
+#CALL:lesson_index()
+</table>
+
+[Template:lesson_type]
+<tr>
+<td class="lessonType">#LESSON{type}</td>
+<td class="lesson">{description}</td>
+</tr>
+
+[PageContent:Lesson224]
+#CALL:lesson(224)
+
+[PageContent:Lesson225]
+#CALL:lesson(225)
+
+[PageContent:Lesson226]
+#CALL:lesson(226)
+
+[PageContent:Lesson227]
+#CALL:lesson(227)
+
+[PageContent:Lesson228]
+#CALL:lesson(228)
+
+[PageContent:Lesson229]
+#CALL:lesson(229)
+
+[PageContent:Lesson230]
+#CALL:lesson(230)
+
+[PageContent:Lesson231]
+#CALL:lesson(231)
+
+[PageContent:Lesson232]
+#CALL:lesson(232)
+
+[PageContent:Lesson233]
+#CALL:lesson(233)
+
+[PageContent:Lesson234]
+#CALL:lesson(234)
+
+[PageContent:Lesson235]
+#CALL:lesson(235)
+
+[PageContent:Lesson236]
+#CALL:lesson(236)
+
+[PageContent:Lesson237]
+#CALL:lesson(237)
+
+[PageContent:Lesson238]
+#CALL:lesson(238)
+
+[PageContent:Lesson239]
+#CALL:lesson(239)
+
+[PageContent:Lesson240]
+#CALL:lesson(240)
+
+[PageContent:Lesson241]
+#CALL:lesson(241)
+
+[PageContent:Lesson242]
+#CALL:lesson(242)
+
+[PageContent:Lesson243]
+#CALL:lesson(243)
+
+[PageContent:Lesson244]
+#CALL:lesson(244)
+
+[PageContent:Lesson245]
+#CALL:lesson(245)
+
+[PageContent:Lesson246]
+#CALL:lesson(246)
+
+[PageContent:Lesson247]
+#CALL:lesson(247)
+
+[PageContent:Lesson248]
+#CALL:lesson(248)
+
+[PageContent:Lesson249]
+#CALL:lesson(249)
+
+[PageContent:Lesson250]
+#CALL:lesson(250)
+
+[PageContent:Lesson251]
+#CALL:lesson(251)
+
+[PageContent:Lesson252]
+#CALL:lesson(252)
+
+[PageContent:Lesson253]
+#CALL:lesson(253)
+
+[PageContent:Lesson254]
+#CALL:lesson(254)
+
+[PageContent:Lesson255]
+#CALL:lesson(255)
+
+[Page:CommandLists]
+Content=asm/65152.html
+
+[Template:lesson]
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-{prev_lesson[exists]}">Prev: <a class="link" href="{prev_lesson[href]}">{prev_lesson[num]}</a></span></td>
+<td class="up">Up: #LINK:LessonIndex(Index)</td>
+<td class="next"><span class="next-{next_lesson[exists]}">Next: <a class="link" href="{next_lesson[href]}">{next_lesson[num]}</a></span></td>
+</tr>
+</table>
+<div class="description">Lesson {lesson[num]}: {lesson[desc]}</div>
+<table class="lesson">
+<tr>
+<th>Character</th>
+<th>Address</th>
+<th>Command list</th>
+</tr>
+{m_timetable}
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-{prev_lesson[exists]}">Prev: <a class="link" href="{prev_lesson[href]}">{prev_lesson[num]}</a></span></td>
+<td class="up">Up: #LINK:LessonIndex(Index)</td>
+<td class="next"><span class="next-{next_lesson[exists]}">Next: <a class="link" href="{next_lesson[href]}">{next_lesson[num]}</a></span></td>
+</tr>
+</table>
+
+[Template:timetable]
+<tr>
+<td class="lessonCharacter">#R{pt_address}({character_num}) - {character}</td>
+<td class="lessonAddress">{lesson_address}</td>
+<td class="lesson">#R{cl_address}({cl_num}) - {cl_desc}</td>
+</tr>
+
+[PageContent:Keys]
+<div class="details">
+<div>Key = CHR$(Code)</div>
+<div>Address = Code + 26624 (points to an entry in the table at #R26656)</div>
+<div>Offset = PEEK(Address)</div>
+<div>Lookup = Offset + 26624 (points to an entry in the table at #R26624 or #R26752)</div>
+<div>Keycode = CHR$(PEEK(Lookup)) (copied to #R32764)</div>
+<div>Routine = address at (Lookup + 1, Lookup + 2)</div>
+</div>
+<table class="keytable">
+<tr>
+<th>Code</th>
+<th>Key</th>
+<th>Address</th>
+<th>Offset</th>
+<th>Lookup</th>
+<th>Keycode</th>
+<th>Routine</th>
+<th>Purpose</th>
+</tr>
+#CALL:keypress_table_rows()
+</table>
+
+[Template:keypress_table_row]
+<tr>
+<td class="keyIndex">{index}</td>
+<td class="key">{key}</td>
+<td class="keyAddress">{address}</td>
+<td class="keyOffset">{offset}</td>
+<td class="keyAddress">{lookup}</td>
+<td class="keycode">{keycode}</td>
+<td class="keyAddress">{routine}</td>
+<td class="keyPurpose">{purpose}</td>
+</tr>

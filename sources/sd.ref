@@ -1,0 +1,168 @@
+; Copyright 2008-2014 Richard Dymond (rjdymond@gmail.com)
+
+[Config]
+SkoolFile=sd.skool
+HtmlWriterClass=:skooldaze.SkoolDazeHtmlWriter
+GameDir=skool_daze
+
+[Game]
+Game=Skool Daze
+Logo=#UDGARRAY8,6,,8;61208-61343-1-64(/images/logo|Skool Daze)
+StyleSheet=skoolkit.css;microsphere.css;skool.css;sd.css
+Release=The complete Skool Daze RAM disassembly 20140614
+Copyright=&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).
+
+[Links]
+DataMap=[Data] (just the data)
+Graphics=Other graphics
+MemoryMap=[Everything] (routines, data, text and unused addresses)
+MessagesMap=[Messages] (just the text)
+RoutinesMap=[Routines] (just the routines)
+CommandLists=Command lists
+MainTimetable=Main timetable
+load-Index=Loading code
+save-Index=Save code
+start-Index=Startup code
+PlayArea=Play area
+PlayAreaTiles=Play area tiles
+InitialAnimatoryStates=Initial animatory states and locations
+AnimatoryStates=Animatory states
+AnimatoryStateTiles=Animatory state tiles
+CharacterBuffers=Character buffers
+MainTimetable=Main timetable
+PersonalTimetables=Personal timetables
+LessonIndex=Lessons
+CommandLists=Command lists
+Keys=Keypress table
+
+[Titles]
+load-Index=Loading code
+save-Index=Save code
+start-Index=Startup code
+PlayArea=Play area
+PlayAreaTiles=Play area tiles
+InitialAnimatoryStates=Initial animatory states and locations
+AnimatoryStates=Animatory states
+AnimatoryStateTiles=Animatory state tiles
+CharacterBuffers=Character buffers
+MainTimetable=Main timetable
+PersonalTimetables=Personal timetables
+LessonIndex=Lessons
+CommandLists=Command lists
+Keys=Keypress table
+Lesson224=Lesson 224
+Lesson225=Lesson 225
+Lesson226=Lesson 226
+Lesson227=Lesson 227
+Lesson228=Lesson 228
+Lesson229=Lesson 229
+Lesson230=Lesson 230
+Lesson231=Lesson 231
+Lesson232=Lesson 232
+Lesson233=Lesson 233
+Lesson234=Lesson 234
+Lesson235=Lesson 235
+Lesson236=Lesson 236
+Lesson237=Lesson 237
+Lesson238=Lesson 238
+Lesson239=Lesson 239
+Lesson240=Lesson 240
+Lesson241=Lesson 241
+Lesson242=Lesson 242
+Lesson243=Lesson 243
+Lesson244=Lesson 244
+Lesson245=Lesson 245
+Lesson246=Lesson 246
+Lesson247=Lesson 247
+Lesson248=Lesson 248
+Lesson249=Lesson 249
+Lesson250=Lesson 250
+Lesson251=Lesson 251
+Lesson252=Lesson 252
+Lesson253=Lesson 253
+Lesson254=Lesson 254
+Lesson255=Lesson 255
+
+[PageHeaders]
+load-Index=Loading code
+load-Asm-c=Load routines
+save-Index=Save code
+save-Asm-c=Save routine
+start-Index=Startup code
+start-Asm-c=Startup routine
+
+[Paths]
+PlayAreaImagePath=images/play_area
+AnimatoryStateImagePath=images/animatory_states
+Graphics=graphics/graphics.html
+PlayArea=graphics/playarea.html
+PlayAreaTiles=graphics/patiles/patiles.html
+InitialAnimatoryStates=graphics/asstart.html
+AnimatoryStates=graphics/as.html
+AnimatoryStateTiles=graphics/astiles/astiles.html
+CharacterBuffers=buffers/cbuffer.html
+Keys=tables/keys.html
+PersonalTimetables=lessons/timetables.html
+LessonIndex=lessons/index.html
+Lesson224=lessons/224.html
+Lesson225=lessons/225.html
+Lesson226=lessons/226.html
+Lesson227=lessons/227.html
+Lesson228=lessons/228.html
+Lesson229=lessons/229.html
+Lesson230=lessons/230.html
+Lesson231=lessons/231.html
+Lesson232=lessons/232.html
+Lesson233=lessons/233.html
+Lesson234=lessons/234.html
+Lesson235=lessons/235.html
+Lesson236=lessons/236.html
+Lesson237=lessons/237.html
+Lesson238=lessons/238.html
+Lesson239=lessons/239.html
+Lesson240=lessons/240.html
+Lesson241=lessons/241.html
+Lesson242=lessons/242.html
+Lesson243=lessons/243.html
+Lesson244=lessons/244.html
+Lesson245=lessons/245.html
+Lesson246=lessons/246.html
+Lesson247=lessons/247.html
+Lesson248=lessons/248.html
+Lesson249=lessons/249.html
+Lesson250=lessons/250.html
+Lesson251=lessons/251.html
+Lesson252=lessons/252.html
+Lesson253=lessons/253.html
+Lesson254=lessons/254.html
+Lesson255=lessons/255.html
+
+[OtherCode:load]
+Source=sd-load.skool
+
+[OtherCode:save]
+Source=sd-save.skool
+
+[OtherCode:start]
+Source=sd-start.skool
+
+[Index:Graphics:Graphics]
+PlayArea
+PlayAreaTiles
+InitialAnimatoryStates
+AnimatoryStates
+AnimatoryStateTiles
+Graphics
+GraphicGlitches
+
+[Index:DataTables:Data tables and buffers]
+GameStatusBuffer
+CharacterBuffers
+MainTimetable
+PersonalTimetables
+LessonIndex
+CommandLists
+Keys
+
+[MemoryMap:UnusedMap]
+Write=0

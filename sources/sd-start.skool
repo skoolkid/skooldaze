@@ -1,0 +1,29 @@
+; Copyright 2008-2013, 2015 Richard Dymond (rjdymond@gmail.com)
+
+@start
+; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
+; Copyright 2008-2013, 2015 Richard Dymond (this disassembly)
+@org=24288
+
+; Start
+;
+; We jump here from the load routine at #R32815@load.
+c24288 LD SP,23806   ; Put the stack pointer somewhere safe
+@nowarn
+ 24291 LD HL,32256   ; {Copy 32256-32767 into 32768-33279
+@nowarn
+ 24294 LD DE,32768   ;
+ 24297 LD BC,512     ;
+ 24300 LDIR          ; }
+@nowarn
+ 24302 LD HL,32255   ; {Move 24320-32255 up to 24576-32511
+@nowarn
+ 24305 LD DE,32511   ;
+ 24308 LD BC,7936    ;
+ 24311 LDDR          ; }
+ 24313 EI            ; Enable interrupts
+@nowarn
+ 24314 JP 26880      ; Play the theme tune and enter demo mode
+@end
+
+r26880 main
