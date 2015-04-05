@@ -37,8 +37,6 @@ Using ref files: {srcdir}/sd.ref, {srcdir}/sd-bugs.ref, {srcdir}/sd-changelog.re
 Parsing {srcdir}/sd.skool
 Creating directory {odir}/skool_daze
 Copying {SKOOLKIT_HOME}/skoolkit/resources/skoolkit.css to {odir}/skool_daze/skoolkit.css
-Copying ../resources/microsphere.css to {odir}/skool_daze/microsphere.css
-Copying ../resources/skool.css to {odir}/skool_daze/skool.css
 Copying ../resources/sd.css to {odir}/skool_daze/sd.css
   Writing disassembly files in skool_daze/asm
   Writing skool_daze/maps/all.html
