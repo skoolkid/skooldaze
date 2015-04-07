@@ -46,7 +46,7 @@ Copying ../resources/sd.css to {odir}/skool_daze/sd.css
   Writing skool_daze/buffers/gbuffer.html
   Writing skool_daze/graphics/graphics.html
   Writing skool_daze/graphics/playarea.html
-  Copying ../resources/microsphere.js to {odir}/skool_daze/microsphere.js
+  Copying ../resources/tiles.js to {odir}/skool_daze/tiles.js
   Writing skool_daze/graphics/patiles/patiles.html
   Writing skool_daze/graphics/asstart.html
   Writing skool_daze/graphics/as.html
