@@ -344,11 +344,11 @@ class SkoolDazeHtmlWriter(HtmlWriter):
         return end, link
 
     def expand_lesson(self, text, index, cwd):
-        # #LESSONnum
-        end, lesson = parse_ints(text, index, 1)
+        # #LESSONnum[(link text)]
+        end, lesson, link_text = parse_params(text, index)
         page_id = 'Lesson{0}'.format(lesson)
         href = self.relpath(cwd, self.paths[page_id])
-        link = self.format_link(href, lesson)
+        link = self.format_link(href, link_text or lesson)
         return end, link
 
     def get_skool_udg(self, y, x, show_chars=False):
@@ -433,9 +433,9 @@ class SkoolDazeAsmWriter(AsmWriter):
         return end, link_text or state
 
     def expand_lesson(self, text, index):
-        # #LESSONnum
-        end, lesson = parse_ints(text, index, 1)
-        return end, str(lesson)
+        # #LESSONnum[(link text)]
+        end, lesson, link_text = parse_params(text, index)
+        return end, link_text or lesson
 
 class Udg(BaseUdg):
     def __init__(self, attr, data, mask=None, attr_addr=None, ref_addr=None, ref=None, udg_page=None, x=None, y=None):
