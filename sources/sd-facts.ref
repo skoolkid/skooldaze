@@ -284,6 +284,11 @@ When demo mode or a new game starts, the timetable index is always #R65024#65024
 
 When demo mode starts for the first time after the game has loaded, the timetable index is #R65040(16). When a new game is started as soon as possible after the game has loaded, the timetable index is #R65056(32).
 
+[Fact:doublePlaytimes:Double playtimes]
+There are five places in the #R65024(main timetable) where one playtime is followed immediately by another: timetable indexes #R65032(8/9), #R65043(19/20), #R65065(41/42), #R65075(51/52), and #R65081(57/58). However, you might be forgiven for not having noticed this because the bell does not ring between the playtimes in each pair (see #R26360).
+
+Also note that playtimes #LESSON254 and #LESSON255 are used exclusively as the second playtime in double playtime periods. There's nothing special about those playtimes, except that their numbers (254, 255) are easily checked by the code at #R26360.
+
 [Fact:playtimeDistribution:Playtime distribution]
 Understandably, ERIC is always eager for playtime to come, but the number of lesson or Revision Library periods he has to tolerate between each break varies between one and three throughout the #R65024(main timetable).
 
