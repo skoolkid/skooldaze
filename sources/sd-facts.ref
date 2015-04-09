@@ -42,15 +42,17 @@ The reason for this discrepancy in pace numbers is the method used to calculate 
 [Fact:invulnerableMoments:Invulnerable moments]
 ERIC can usually throw a punch or fire his catapult and be confident that the impact will send one of the kids or teachers tumbling. However, on certain occasions, certain characters are invulnerable to ERIC's violence. Those characters and occasions are as follows:
 
-<ul>
-<li>MR WACKER, when he's looking for ERIC after EINSTEIN has told him what ERIC's up to</li>
-<li>MR WACKER, when he's looking for ERIC after finding the pea-shooter on the fire escape</li>
-<li>MR WACKER, when he's looking for ERIC to send him home after accumulating 10000 or more lines</li>
-<li>MR ROCKITT, when he's looking for ERIC to send him home after catching mumps from ANGELFACE</li>
-<li>Little boy no. 10, when he's looking for ERIC to tell him about ANGELFACE, EINSTEIN or BOY WANDER in one of the special playtimes (#LESSON243, #LESSON244, #LESSON245)</li>
-</ul>
+#LIST
+{ MR WACKER, when he's looking for ERIC after EINSTEIN has told him what ERIC's up to }
+{ MR WACKER, when he's looking for ERIC after finding the pea-shooter on the fire escape }
+{ MR WACKER, when he's looking for ERIC to send him home after accumulating 10000 or more lines }
+{ MR ROCKITT, when he's looking for ERIC to send him home after catching mumps from ANGELFACE }
+{ Little boy no. 10, when he's looking for ERIC to tell him about ANGELFACE, EINSTEIN or BOY WANDER in one of the special playtimes (#LESSON243, #LESSON244, #LESSON245) }
+LIST#
 
 The reason these characters are invulnerable while looking for ERIC is that they are under the control of the uninterruptible subcommand routine at #R63390.
+
+In addition, any boy is invulnerable when he's looking for a seat in a classroom, because he's under the control of the uninterruptible subcommand routine at #R27772.
 
 [Fact:undeliverableMessage:Undeliverable message]
 On those occasions when MR WACKER, MR ROCKITT or little boy no. 10 is looking for ERIC to deliver a message, ERIC can delay delivery of the message by making sure that he is writing on a blackboard when the messenger arrives. The messenger will then wait until ERIC has finished scribbling before commencing delivery.
