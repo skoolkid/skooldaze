@@ -284,6 +284,15 @@ When demo mode or a new game starts, the timetable index is always #R65024#65024
 
 When demo mode starts for the first time after the game has loaded, the timetable index is #R65040(16). When a new game is started as soon as possible after the game has loaded, the timetable index is #R65056(32).
 
+[Fact:playtimeDistribution:Playtime distribution]
+Understandably, ERIC is always eager for playtime to come, but the number of lesson or Revision Library periods he has to tolerate between each break varies between one and three throughout the #R65024(main timetable).
+
+#LIST
+{ There is one period between playtimes at timetable indexes #R65036(13) and #R65038(15) }
+{ There are three periods between playtimes at timetable indexes #R65049(26-28) and #R65056(33-35) }
+{ There are two periods between all the other playtimes (not counting dinner periods) }
+LIST#
+
 [Fact:dullPlaytimes:Always a dull playtime in demo mode]
 Special playtimes - the ones where ERIC must avoid contact with ANGELFACE, prevent MR WACKER from getting to the fire escape before BOY WANDER, or prevent EINSTEIN from making it to the head's study - never happen in demo mode (see #R63749). Which makes sense, because otherwise the user would have to press 'U' to signify understanding after being told what BOY WANDER, EINSTEIN or ANGELFACE is up to, and then press another key to exit demo mode.
 
