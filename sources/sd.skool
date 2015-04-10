@@ -2180,8 +2180,8 @@ s26336 DEFS 6
 @label=NEWLESSON
 c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
  26345 LD (32759),HL ; }
- 26348 LD HL,32761   ; {Advance the lesson number by one and get the next
- 26351 INC (HL)      ; lesson number (0-63) in #REGa
+ 26348 LD HL,32761   ; {Advance the lesson number at #R32761 by one and get the
+ 26351 INC (HL)      ; next lesson number (0-63) in #REGa
  26352 LD A,(HL)     ;
  26353 CP 64         ;
  26355 JR NZ,26359   ;
@@ -2190,8 +2190,8 @@ c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
 *26359 LD E,A        ; #REGe=lesson number (0-63)
  26360 CALL 63749    ; Get the identifier for this lesson in #REGa
  26363 CP D          ; {#REGd=254; ring the bell unless this is the second
- 26364 PUSH AF       ; PLAYTIME in a row (only PLAYTIMEs 254 and 255 follow
- 26365 CALL C,26450  ; another PLAYTIME)}
+ 26364 PUSH AF       ; PLAYTIME in a row (only PLAYTIMEs #LESSON254 and
+ 26365 CALL C,26450  ; #LESSON255 follow another PLAYTIME)}
  26368 LD HL,32712   ; {Clear the flags at #R32712, #R32713, #R32714 and
  26371 LD B,20       ; #R32715, the unused bytes at #R32716, MR CREAK's birth
 *26373 LD (HL),0     ; year question indicator at #R32730, and the unused byte
@@ -2200,9 +2200,9 @@ c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
  26378 POP AF        ;
  26379 LD E,A        ; #REGe=lesson identifier (224-255) from the #R65024(main
                      ; timetable)
- 26380 LD D,172      ; {Pick up the lesson descriptor (which determines who is
- 26382 LD A,(DE)     ; teaching ERIC and in what room) and place it in #R32756
- 26383 LD (32756),A  ; }
+ 26380 LD D,172      ; {Pick up the #R44256(lesson descriptor) (which
+ 26382 LD A,(DE)     ; determines who is teaching ERIC and in what room) and
+ 26383 LD (32756),A  ; place it in #R32756}
  26386 PUSH DE       ;
  26387 CALL 63909    ; Print the teacher and room names in the lesson box
  26390 POP DE        ;
@@ -2211,7 +2211,8 @@ c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
 ; This entry point is used by the routine at #R31815 with #REGb=1 to restart
 ; the command list for a single character.
 *26395 EXX           ;
- 26396 LD H,254      ; The addresses of the command lists are in page 254
+ 26396 LD H,254      ; The addresses of the command lists are in page 254 at
+                     ; #R65152
  26398 EXX           ;
 *26399 LD D,H        ; #REGd=character number (152-171)
  26400 LD L,122      ; {Set bit 0 of byte 122 of the character's buffer; this
