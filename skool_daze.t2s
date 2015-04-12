@@ -4,7 +4,7 @@
 ;
 ; to create a Z80 snapshot.
 
-ftp://ftp.worldofspectrum.org/pub/sinclair/games/s/SkoolDaze.tzx.zip
+http://www.worldofspectrum.org/pub/sinclair/games/s/SkoolDaze.tzx.zip
 skool_daze.z80
 --ram load=3,16384,16570     # 16384-32953
 --ram load=3,32902,,23       # 32902-end STEP 23
