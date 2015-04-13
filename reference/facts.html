@@ -7,15 +7,13 @@
 <title>Skool Daze: Trivia</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../microsphere.css" />
-<link rel="stylesheet" type="text/css" href="../skool.css" />
 <link rel="stylesheet" type="text/css" href="../sd.css" />
 
 </head>
 <body class="Facts">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Trivia</td>
 </tr>
 </table>
@@ -29,13 +27,18 @@
 <li><a class="link" href="#undeliverableMessage">Undeliverable message</a></li>
 <li><a class="link" href="#doppelwacker">Doppelwacker</a></li>
 <li><a class="link" href="#wackersOldShoes">MR WACKER's old shoes</a></li>
+<li><a class="link" href="#pointsForAPOrAP">Points for a punching or a pelleting</a></li>
 <li><a class="link" href="#bwShootsEricScores">BOY WANDER shoots, ERIC scores</a></li>
+<li><a class="link" href="#seatSelection">Seat selection</a></li>
 <li><a class="link" href="#unusedFlag">The mystery of the unused status flag</a></li>
 <li><a class="link" href="#pitchImperfect">Pitch imperfect</a></li>
 <li><a class="link" href="#shieldStats">Shield stats</a></li>
 <li><a class="link" href="#teacherRooms">Teachers and classrooms</a></li>
 <li><a class="link" href="#timetableStats">Timetable stats</a></li>
 <li><a class="link" href="#playtimeProbabilities">Playtime probabilities</a></li>
+<li><a class="link" href="#initialPlaytimes">Initial playtimes</a></li>
+<li><a class="link" href="#doublePlaytimes">Double playtimes</a></li>
+<li><a class="link" href="#playtimeDistribution">Playtime distribution</a></li>
 <li><a class="link" href="#dullPlaytimes">Always a dull playtime in demo mode</a></li>
 <li><a class="link" href="#handsUp">Hands up!</a></li>
 <li><a class="link" href="#wipingWander">Board-wiping WANDER</a></li>
@@ -77,11 +80,11 @@ The version of Skool Daze that was released by Alternative Software Ltd in 1987 
 (2) The font graphic for the '/' (slash) character is slightly broken:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td>  <img alt="alt_slash" src="../images/font/alt_slash.png" /> </td>
-<td>instead of</td>
-<td><img alt="slash" src="../images/font/slash.png" /></td>
+<td class="" colspan="1" rowspan="1">  <img alt="alt_slash" src="../images/font/alt_slash.png" /> </td>
+<td class="" colspan="1" rowspan="1">instead of</td>
+<td class="" colspan="1" rowspan="1"><img alt="slash" src="../images/font/slash.png" /></td>
 </tr>
 </table>
 </div>
@@ -99,9 +102,9 @@ Note that (1) and (2) appear to be regressions, which suggests that the version 
 The '\' (backslash) character in the Skool Daze font has a bit missing:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="backslash_dot" src="../images/font/backslash_dot.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="backslash_dot" src="../images/font/backslash_dot.png" /></td>
 </tr>
 </table>
 </div>
@@ -129,7 +132,7 @@ The reason for this discrepancy in pace numbers is the method used to calculate 
 ERIC can usually throw a punch or fire his catapult and be confident that the impact will send one of the kids or teachers tumbling. However, on certain occasions, certain characters are invulnerable to ERIC's violence. Those characters and occasions are as follows:
 </div>
 <div class="paragraph">
-<ul>
+<ul class="">
 <li>MR WACKER, when he's looking for ERIC after EINSTEIN has told him what ERIC's up to</li>
 <li>MR WACKER, when he's looking for ERIC after finding the pea-shooter on the fire escape</li>
 <li>MR WACKER, when he's looking for ERIC to send him home after accumulating 10000 or more lines</li>
@@ -139,6 +142,9 @@ ERIC can usually throw a punch or fire his catapult and be confident that the im
 </div>
 <div class="paragraph">
 The reason these characters are invulnerable while looking for ERIC is that they are under the control of the uninterruptible subcommand routine at <a class="link" href="../asm/63374.html#63390">63390</a>.
+</div>
+<div class="paragraph">
+In addition, any boy is invulnerable when he's looking for a seat in a classroom, because he's under the control of the uninterruptible subcommand routine at <a class="link" href="../asm/27772.html">27772</a>.
 </div>
 </div>
 <div><a name="undeliverableMessage"></a></div>
@@ -170,44 +176,44 @@ The sprite graphic data is split between two base pages: page <a class="link" hr
 <div class="paragraph">
 <table class="gallery">
 <tr>
-<td colspan="2">185</td>
-<td colspan="2">201</td>
+<td class="" colspan="2" rowspan="1">185</td>
+<td class="" colspan="2" rowspan="1">201</td>
 </tr>
 <tr>
-<td><img alt="Animatory state 80" src="../images/animatory_states/as080_120x2m185.png" /></td>
-<td><img alt="Animatory state 208" src="../images/animatory_states/as208_120x2m185.png" /></td>
-<td><img alt="Animatory state 80" src="../images/animatory_states/as080_120x2m201.png" /></td>
-<td><img alt="Animatory state 208" src="../images/animatory_states/as208_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 80" src="../images/animatory_states/as080_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 208" src="../images/animatory_states/as208_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 80" src="../images/animatory_states/as080_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 208" src="../images/animatory_states/as208_120x2m201.png" /></td>
 </tr>
 <tr>
-<td><img alt="Animatory state 81" src="../images/animatory_states/as081_120x2m185.png" /></td>
-<td><img alt="Animatory state 209" src="../images/animatory_states/as209_120x2m185.png" /></td>
-<td><img alt="Animatory state 81" src="../images/animatory_states/as081_120x2m201.png" /></td>
-<td><img alt="Animatory state 209" src="../images/animatory_states/as209_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 81" src="../images/animatory_states/as081_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 209" src="../images/animatory_states/as209_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 81" src="../images/animatory_states/as081_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 209" src="../images/animatory_states/as209_120x2m201.png" /></td>
 </tr>
 <tr>
-<td><img alt="Animatory state 82" src="../images/animatory_states/as082_120x2m185.png" /></td>
-<td><img alt="Animatory state 210" src="../images/animatory_states/as210_120x2m185.png" /></td>
-<td><img alt="Animatory state 82" src="../images/animatory_states/as082_120x2m201.png" /></td>
-<td><img alt="Animatory state 210" src="../images/animatory_states/as210_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 82" src="../images/animatory_states/as082_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 210" src="../images/animatory_states/as210_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 82" src="../images/animatory_states/as082_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 210" src="../images/animatory_states/as210_120x2m201.png" /></td>
 </tr>
 <tr>
-<td><img alt="Animatory state 83" src="../images/animatory_states/as083_120x2m185.png" /></td>
-<td><img alt="Animatory state 211" src="../images/animatory_states/as211_120x2m185.png" /></td>
-<td><img alt="Animatory state 83" src="../images/animatory_states/as083_120x2m201.png" /></td>
-<td><img alt="Animatory state 211" src="../images/animatory_states/as211_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 83" src="../images/animatory_states/as083_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 211" src="../images/animatory_states/as211_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 83" src="../images/animatory_states/as083_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 211" src="../images/animatory_states/as211_120x2m201.png" /></td>
 </tr>
 <tr>
-<td><img alt="Animatory state 85" src="../images/animatory_states/as085_120x2m185.png" /></td>
-<td><img alt="Animatory state 213" src="../images/animatory_states/as213_120x2m185.png" /></td>
-<td><img alt="Animatory state 85" src="../images/animatory_states/as085_120x2m201.png" /></td>
-<td><img alt="Animatory state 213" src="../images/animatory_states/as213_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 85" src="../images/animatory_states/as085_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 213" src="../images/animatory_states/as213_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 85" src="../images/animatory_states/as085_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 213" src="../images/animatory_states/as213_120x2m201.png" /></td>
 </tr>
 <tr>
-<td><img alt="Animatory state 87" src="../images/animatory_states/as087_120x2m185.png" /></td>
-<td><img alt="Animatory state 215" src="../images/animatory_states/as215_120x2m185.png" /></td>
-<td><img alt="Animatory state 87" src="../images/animatory_states/as087_120x2m201.png" /></td>
-<td><img alt="Animatory state 215" src="../images/animatory_states/as215_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 87" src="../images/animatory_states/as087_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 215" src="../images/animatory_states/as215_120x2m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 87" src="../images/animatory_states/as087_120x2m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 215" src="../images/animatory_states/as215_120x2m201.png" /></td>
 </tr>
 </table>
 </div>
@@ -224,20 +230,20 @@ The <a class="link" href="facts.html#doppelwacker">copies of MR WACKER's sprites
 <div class="paragraph">
 <table class="gallery">
 <tr>
-<td colspan="2">185</td>
-<td colspan="2">201</td>
+<td class="" colspan="2" rowspan="1">185</td>
+<td class="" colspan="2" rowspan="1">201</td>
 </tr>
 <tr>
-<td><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m185.png" /></td>
-<td><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m185.png" /></td>
-<td><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m201.png" /></td>
-<td><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m185.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m201.png" /></td>
 </tr>
 <tr>
-<td>81</td>
-<td>209</td>
-<td>81</td>
-<td>209</td>
+<td class="" colspan="1" rowspan="1">81</td>
+<td class="" colspan="1" rowspan="1">209</td>
+<td class="" colspan="1" rowspan="1">81</td>
+<td class="" colspan="1" rowspan="1">209</td>
 </tr>
 </table>
 </div>
@@ -274,20 +280,20 @@ The numbering of the tiles suggests that the bottom-right tile of animatory stat
 <div class="paragraph">
 <table class="gallery">
 <tr>
-<td colspan="2">185 (modified)</td>
-<td colspan="2">201</td>
+<td class="" colspan="2" rowspan="1">185 (modified)</td>
+<td class="" colspan="2" rowspan="1">201</td>
 </tr>
 <tr>
-<td>  <img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m185_wos.png" /></td>
-<td> <img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m185_wos.png" /> </td>
-<td><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m201.png" /></td>
-<td><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m201.png" /></td>
+<td class="" colspan="1" rowspan="1">  <img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m185_wos.png" /></td>
+<td class="" colspan="1" rowspan="1"> <img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m185_wos.png" /> </td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m201.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m201.png" /></td>
 </tr>
 <tr>
-<td>81</td>
-<td>209</td>
-<td>81</td>
-<td>209</td>
+<td class="" colspan="1" rowspan="1">81</td>
+<td class="" colspan="1" rowspan="1">209</td>
+<td class="" colspan="1" rowspan="1">81</td>
+<td class="" colspan="1" rowspan="1">209</td>
 </tr>
 </table>
 </div>
@@ -295,14 +301,56 @@ The numbering of the tiles suggests that the bottom-right tile of animatory stat
 So why didn't copies of tiles 81 and 209 from page 185 (which seem to finish MR WACKER's back foot better than tiles 13 and 141 do) make their way into page 201? The most likely answer is lack of space: there are no unused sprite tiles based in page 201, and tiles 13 and 141 are similar enough to tiles 81 and 209 to make reasonable substitutes.
 </div>
 </div>
-<div><a name="bwShootsEricScores"></a></div>
+<div><a name="pointsForAPOrAP"></a></div>
 <div class="box box-2">
+<div class="box-title">Points for a punching or a pelleting</div>
+<div class="paragraph">
+ANGELFACE is unique among the cast of characters in that if ERIC knocks him over with a punch, 30 points are awarded (see <a class="link" href="../asm/62628.html#62656">62656</a>). In addition, if ERIC knocks him over with a catapult pellet, 10 points are awarded (see <a class="link" href="../asm/27932.html#28029">28029</a>). No points are awarded for knocking anyone else over.
+</div>
+</div>
+<div><a name="bwShootsEricScores"></a></div>
+<div class="box box-1">
 <div class="box-title">BOY WANDER shoots, ERIC scores</div>
 <div class="paragraph">
 BOY WANDER may be a tearaway, but sometimes his impulsive nature can be more of a help than a hindrance. If he lets rip with his catapult and the pellet knocks ANGELFACE for six, you score 10 points - just as if ERIC had decked the bully himself. The reason for this is that the section of code at <a class="link" href="../asm/27932.html#28025">28025</a> does not bother to check whose pellet has collided with ANGELFACE's head. (The check for pellet ownership was added in Back to Skool, though.)
 </div>
 <div class="paragraph">
 It's also possible for one of BOY WANDER's pellets to bounce off a teacher's head, hit a shield, and make it flash - scoring even more points - but that would be a rare occurrence indeed.
+</div>
+</div>
+<div><a name="seatSelection"></a></div>
+<div class="box box-2">
+<div class="box-title">Seat selection</div>
+<div class="paragraph">
+Typically, when a teacher arrives at the classroom doorway to start the lesson, the boys will rush to the back seat and sit down. However, if a boy is late for class in the Map Room or Exam Room - that is, he arrives at the doorway after the teacher already has - then he will take some other seat (as shown below), depending on where his command list sends him.
+</div>
+<div class="paragraph">
+<table class="gallery">
+<tr>
+<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_boy" src="../images/play_area/ss_mr_boy.png" /> </td>
+<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_boy_wander" src="../images/play_area/ss_mr_boy_wander.png" /> </td>
+<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_angelface" src="../images/play_area/ss_mr_angelface.png" /> </td>
+<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_einstein" src="../images/play_area/ss_mr_einstein.png" /> </td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<table class="gallery">
+<tr>
+<td class="" colspan="1" rowspan="1">  <img alt="ss_er_boy" src="../images/play_area/ss_er_boy.png" /> </td>
+<td class="" colspan="1" rowspan="1">  <img alt="ss_er_angelface" src="../images/play_area/ss_er_angelface.png" /> </td>
+<td class="" colspan="1" rowspan="1">  <img alt="ss_er_einstein" src="../images/play_area/ss_er_einstein.png" /> </td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The reason this happens to a latecomer is that he doesn't get a chance to walk around before having to find a seat and sit down, because the teacher has already arrived, the corresponding signal has already been raised, and so the routine at <a class="link" href="../asm/25303.html">25303</a> moves straight to the next command in the command list: <a class="link" href="../asm/27808.html">27808</a> (find a seat and sit down). That command makes the boy move forward to the next seat if he's facing left (which is the case if he's just entered the Map Room or Exam Room), or walk to the back of the classroom if he's facing right. When the boy does get a chance to walk around first, he ends up facing right before that command kicks in, and then keeps moving right to the back of the class.
+</div>
+<div class="paragraph">
+Note that BOY WANDER always tries to sit in the back seat in the Exam Room, because after entering that room he goes to the blackboard first, and then walks to the middle of the room, at which point he is facing right.
+</div>
+<div class="paragraph">
+This unusual seat selection does not happen in the Reading Room or White Room, because the boy is facing right when he arrives in the classroom, and so keeps moving right to the back of the class.
 </div>
 </div>
 <div><a name="unusedFlag"></a></div>
@@ -344,14 +392,14 @@ Now put ERIC up to mischief in front of a teacher, and see if you can detect the
 Of the 15 shields on display around the skool, six are red:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="shield01" src="../images/play_area/shield01.png" /></td>
-<td><img alt="shield06" src="../images/play_area/shield06.png" /></td>
-<td><img alt="shield08" src="../images/play_area/shield08.png" /></td>
-<td><img alt="shield10" src="../images/play_area/shield10.png" /></td>
-<td><img alt="shield12" src="../images/play_area/shield12.png" /></td>
-<td><img alt="shield15" src="../images/play_area/shield15.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield01" src="../images/play_area/shield01.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield06" src="../images/play_area/shield06.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield08" src="../images/play_area/shield08.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield10" src="../images/play_area/shield10.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield12" src="../images/play_area/shield12.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield15" src="../images/play_area/shield15.png" /></td>
 </tr>
 </table>
 </div>
@@ -359,13 +407,13 @@ Of the 15 shields on display around the skool, six are red:
 five are blue:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="shield02" src="../images/play_area/shield02.png" /></td>
-<td><img alt="shield03" src="../images/play_area/shield03.png" /></td>
-<td><img alt="shield05" src="../images/play_area/shield05.png" /></td>
-<td><img alt="shield09" src="../images/play_area/shield09.png" /></td>
-<td><img alt="shield13" src="../images/play_area/shield13.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield02" src="../images/play_area/shield02.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield03" src="../images/play_area/shield03.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield05" src="../images/play_area/shield05.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield09" src="../images/play_area/shield09.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield13" src="../images/play_area/shield13.png" /></td>
 </tr>
 </table>
 </div>
@@ -373,11 +421,11 @@ five are blue:
 three are green:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="shield04" src="../images/play_area/shield04.png" /></td>
-<td><img alt="shield07" src="../images/play_area/shield07.png" /></td>
-<td><img alt="shield11" src="../images/play_area/shield11.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield04" src="../images/play_area/shield04.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield07" src="../images/play_area/shield07.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield11" src="../images/play_area/shield11.png" /></td>
 </tr>
 </table>
 </div>
@@ -385,9 +433,9 @@ three are green:
 and only one is magenta:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="shield14" src="../images/play_area/shield14.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield14" src="../images/play_area/shield14.png" /></td>
 </tr>
 </table>
 </div>
@@ -395,13 +443,13 @@ and only one is magenta:
 Unlike the colours, the shield designs appear in equal numbers. Five shields display the stripe design:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="shield01" src="../images/play_area/shield01.png" /></td>
-<td><img alt="shield06" src="../images/play_area/shield06.png" /></td>
-<td><img alt="shield08" src="../images/play_area/shield08.png" /></td>
-<td><img alt="shield10" src="../images/play_area/shield10.png" /></td>
-<td><img alt="shield12" src="../images/play_area/shield12.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield01" src="../images/play_area/shield01.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield06" src="../images/play_area/shield06.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield08" src="../images/play_area/shield08.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield10" src="../images/play_area/shield10.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield12" src="../images/play_area/shield12.png" /></td>
 </tr>
 </table>
 </div>
@@ -409,13 +457,13 @@ Unlike the colours, the shield designs appear in equal numbers. Five shields dis
 five display the squares design:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="shield04" src="../images/play_area/shield04.png" /></td>
-<td><img alt="shield05" src="../images/play_area/shield05.png" /></td>
-<td><img alt="shield09" src="../images/play_area/shield09.png" /></td>
-<td><img alt="shield11" src="../images/play_area/shield11.png" /></td>
-<td><img alt="shield15" src="../images/play_area/shield15.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield04" src="../images/play_area/shield04.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield05" src="../images/play_area/shield05.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield09" src="../images/play_area/shield09.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield11" src="../images/play_area/shield11.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield15" src="../images/play_area/shield15.png" /></td>
 </tr>
 </table>
 </div>
@@ -423,13 +471,13 @@ five display the squares design:
 and the remaining five display the triangle design:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="shield02" src="../images/play_area/shield02.png" /></td>
-<td><img alt="shield03" src="../images/play_area/shield03.png" /></td>
-<td><img alt="shield07" src="../images/play_area/shield07.png" /></td>
-<td><img alt="shield13" src="../images/play_area/shield13.png" /></td>
-<td><img alt="shield14" src="../images/play_area/shield14.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield02" src="../images/play_area/shield02.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield03" src="../images/play_area/shield03.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield07" src="../images/play_area/shield07.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield13" src="../images/play_area/shield13.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="shield14" src="../images/play_area/shield14.png" /></td>
 </tr>
 </table>
 </div>
@@ -497,26 +545,60 @@ ANGELFACE and EINSTEIN spend every playtime wandering around the skool from one 
 The playtime probabilities described here are all subject to alteration by the fact that, three times out of eight, a playtime in the main timetable is replaced with a 'special' playtime (<a class="link" href="../lessons/243.html">243</a>, <a class="link" href="../lessons/244.html">244</a> or <a class="link" href="../lessons/245.html">245</a>) chosen at random (see <a class="link" href="../asm/28211.html">28211</a>).
 </div>
 </div>
-<div><a name="dullPlaytimes"></a></div>
+<div><a name="initialPlaytimes"></a></div>
 <div class="box box-1">
+<div class="box-title">Initial playtimes</div>
+<div class="paragraph">
+When demo mode or a new game starts, the timetable index is always <a class="link" href="../asm/65024.html#65024">0</a>, <a class="link" href="../asm/65024.html#65040">16</a>, <a class="link" href="../asm/65024.html#65056">32</a> or <a class="link" href="../asm/65024.html#65072">48</a> (which are all playtime, of course).
+</div>
+<div class="paragraph">
+When demo mode starts for the first time after the game has loaded, the timetable index is <a class="link" href="../asm/65024.html#65040">16</a>. When a new game is started as soon as possible after the game has loaded, the timetable index is <a class="link" href="../asm/65024.html#65056">32</a>.
+</div>
+</div>
+<div><a name="doublePlaytimes"></a></div>
+<div class="box box-2">
+<div class="box-title">Double playtimes</div>
+<div class="paragraph">
+There are five places in the <a class="link" href="../asm/65024.html">main timetable</a> where one playtime is followed immediately by another: timetable indexes <a class="link" href="../asm/65024.html#65032">8/9</a>, <a class="link" href="../asm/65024.html#65043">19/20</a>, <a class="link" href="../asm/65024.html#65065">41/42</a>, <a class="link" href="../asm/65024.html#65075">51/52</a>, and <a class="link" href="../asm/65024.html#65081">57/58</a>. However, you might be forgiven for not having noticed this because the bell does not ring between the playtimes in each pair (see <a class="link" href="../asm/26342.html#26360">26360</a>).
+</div>
+<div class="paragraph">
+Also note that playtimes <a class="link" href="../lessons/254.html">254</a> and <a class="link" href="../lessons/255.html">255</a> are used exclusively as the second playtime in double playtime periods. There's nothing special about those playtimes, except that their numbers (254, 255) are easily checked by the code at <a class="link" href="../asm/26342.html#26360">26360</a>.
+</div>
+</div>
+<div><a name="playtimeDistribution"></a></div>
+<div class="box box-1">
+<div class="box-title">Playtime distribution</div>
+<div class="paragraph">
+Understandably, ERIC is always eager for playtime to come, but the number of lesson or Revision Library periods he has to tolerate between each break varies between one and three throughout the <a class="link" href="../asm/65024.html">main timetable</a>.
+</div>
+<div class="paragraph">
+<ul class="">
+<li>There is one period between playtimes at timetable indexes <a class="link" href="../asm/65024.html#65036">13</a> and <a class="link" href="../asm/65024.html#65038">15</a></li>
+<li>There are three periods between playtimes at timetable indexes <a class="link" href="../asm/65024.html#65049">26-28</a> and <a class="link" href="../asm/65024.html#65056">33-35</a></li>
+<li>There are two periods between all the other playtimes (not counting dinner periods)</li>
+</ul>
+</div>
+</div>
+<div><a name="dullPlaytimes"></a></div>
+<div class="box box-2">
 <div class="box-title">Always a dull playtime in demo mode</div>
 <div class="paragraph">
 Special playtimes - the ones where ERIC must avoid contact with ANGELFACE, prevent MR WACKER from getting to the fire escape before BOY WANDER, or prevent EINSTEIN from making it to the head's study - never happen in demo mode (see <a class="link" href="../asm/63749.html">63749</a>). Which makes sense, because otherwise the user would have to press 'U' to signify understanding after being told what BOY WANDER, EINSTEIN or ANGELFACE is up to, and then press another key to exit demo mode.
 </div>
 </div>
 <div><a name="handsUp"></a></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Hands up!</div>
 <div class="paragraph">
 The graphic data contains unused sprites of the main kids sitting down with a hand raised:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="Animatory state 4" src="../images/animatory_states/as004_120x2m.png" /></td>
-<td><img alt="Animatory state 20" src="../images/animatory_states/as020_120x2m.png" /></td>
-<td><img alt="Animatory state 36" src="../images/animatory_states/as036_120x2m.png" /></td>
-<td><img alt="Animatory state 52" src="../images/animatory_states/as052_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 4" src="../images/animatory_states/as004_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 20" src="../images/animatory_states/as020_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 36" src="../images/animatory_states/as036_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 52" src="../images/animatory_states/as052_120x2m.png" /></td>
 </tr>
 </table>
 </div>
@@ -525,25 +607,25 @@ Were these used while the game was in development? We'll probably never know.
 </div>
 </div>
 <div><a name="wipingWander"></a></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">Board-wiping WANDER</div>
 <div class="paragraph">
 The board-wiping routine at <a class="link" href="../asm/29148.html">29148</a> checks whether BOY WANDER (as opposed to a teacher) is wiping the board, and executes a different code path accordingly. However, BOY WANDER never makes use of this ability in the game that was released. Did he use it while the game was in development? Again, we'll probably never know.
 </div>
 </div>
 <div><a name="wipingBully"></a></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Board-wiping bully?</div>
 <div class="paragraph">
 Among the graphic data for the boys, there are four unused sprites of ANGELFACE that show him with his arm up as if writing on or wiping a blackboard:
 </div>
 <div class="paragraph">
-<table>
+<table class="">
 <tr>
-<td><img alt="Animatory state 44" src="../images/animatory_states/as044_120x2m.png" /></td>
-<td><img alt="Animatory state 45" src="../images/animatory_states/as045_120x2m.png" /></td>
-<td><img alt="Animatory state 172" src="../images/animatory_states/as172_120x2m.png" /></td>
-<td><img alt="Animatory state 173" src="../images/animatory_states/as173_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 44" src="../images/animatory_states/as044_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 45" src="../images/animatory_states/as045_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 172" src="../images/animatory_states/as172_120x2m.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 173" src="../images/animatory_states/as173_120x2m.png" /></td>
 </tr>
 </table>
 </div>
@@ -552,14 +634,14 @@ Were they used while the game was in development? Yet again, we'll probably neve
 </div>
 </div>
 <div><a name="blackboardBlindness"></a></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">Blackboard blindness</div>
 <div class="paragraph">
 Teachers don't give ERIC lines if they see him writing on a blackboard (unlike Back to Skool, where they do), but they might give him lines if EINSTEIN grasses on him for writing on the blackboard (unlike Back to Skool, where - because of a bug - EINSTEIN never grasses on ERIC for writing on the blackboard).
 </div>
 </div>
 <div><a name="saveDuster"></a></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Save the duster</div>
 <div class="paragraph">
 There are code remnants in the board-wiping routine at <a class="link" href="../asm/29148.html">29148</a> that make a teacher skip wiping the blackboard if it's already clean. The POKEs to re-enable this code are:
@@ -572,37 +654,37 @@ However, the code that would make the teacher walk to the middle of the blackboa
 </div>
 </div>
 <div><a name="wackerSwotTales"></a></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">WACKER loves EINSTEIN's tales</div>
 <div class="paragraph">
 MR WACKER never gives EINSTEIN lines for telling tales (see <a class="link" href="../asm/31968.html">31968</a>). Is WACKER merely gullible, a firm believer in the virtue of snitching, or both?
 </div>
 </div>
 <div><a name="wackerPtoZ"></a></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">WACKER's letter-blindness</div>
 <div class="paragraph">
 The first letter of the safe combination code (MR WACKER's) is always in the range A-O (see <a class="link" href="../asm/63573.html">63573</a>). Did WACKER never learn the alphabet from P to Z when he was at skool?
 </div>
 </div>
 <div><a name="battle1800"></a></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">WHICH BATTLE OCCURRED IN 1800?</div>
 <div class="paragraph">
 Among the 21 battle dates that comprise MR CREAK's history curriculum, 1800 makes no appearance. But perhaps it was not always so: see <a class="link" href="../asm/58600.html">58600</a>. We can only speculate which battle from that year EINSTEIN would have chosen for his answer.
 </div>
 </div>
 <div><a name="withitEdited"></a></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">WITHIT edited</div>
 <div class="paragraph">
 There is evidence that MR WITHIT used to be rather more verbose with his blackboard scribblings, but was edited before the game was released. See 'MANCHESTER MONSOONS' at <a class="link" href="../asm/59392.html">59392</a>, which was probably 'WHY IT RAINS IN MANCHESTER' at some point (see <a class="link" href="facts.html#alternativeDifferences">Alternative differences</a>). Likewise, 'THE PEAKS OF PERU' at <a class="link" href="../asm/59456.html">59456</a> may once have been expressed less tersely (or been about something other than PEAKS). Finally, which rain-forest other than Glasgow's could WITHIT have been writing about at <a class="link" href="../asm/59488.html">59488</a>?
 </div>
 </div>
 <div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
 </div>
 </body>
 </html>

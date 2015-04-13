@@ -7,15 +7,13 @@
 <title>Skool Daze: Game status buffer</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../microsphere.css" />
-<link rel="stylesheet" type="text/css" href="../skool.css" />
 <link rel="stylesheet" type="text/css" href="../sd.css" />
 
 </head>
 <body class="GameStatusBuffer">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Game status buffer</td>
 </tr>
 </table>
@@ -416,32 +414,32 @@ Various status flags for the current lesson.
 <div class="paragraph">
 <table class="default">
 <tr>
-<th>Bit(s)</th>
-<th>Meaning</th>
+<th colspan="1" rowspan="1">Bit(s)</th>
+<th colspan="1" rowspan="1">Meaning</th>
 </tr>
 <tr>
-<td class="centre">0</td>
-<td>End of lesson/playtime (always reset)</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">End of lesson/playtime (always reset)</td>
 </tr>
 <tr>
-<td class="centre">1-3</td>
-<td>Unused</td>
+<td class="centre" colspan="1" rowspan="1">1-3</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
 </tr>
 <tr>
-<td class="centre">4</td>
-<td>Next lines reprimand for the teacher fetching the truant ERIC (toggled by <a class="link" href="../asm/30636.html">30636</a>)</td>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Next lines reprimand for the teacher fetching the truant ERIC (toggled by <a class="link" href="../asm/30636.html">30636</a>)</td>
 </tr>
 <tr>
-<td class="centre">5</td>
-<td>Set after a teacher has found the truant ERIC (see <a class="link" href="../asm/30636.html">30636</a>)</td>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Set after a teacher has found the truant ERIC (see <a class="link" href="../asm/30636.html">30636</a>)</td>
 </tr>
 <tr>
-<td class="centre">6</td>
-<td>Set after a classroom lesson has started with ERIC present (see <a class="link" href="../asm/62208.html">62208</a>) (checked by <a class="link" href="../asm/30636.html">30636</a>; reset by <a class="link" href="../asm/26342.html">26342</a>)</td>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Set after a classroom lesson has started with ERIC present (see <a class="link" href="../asm/62208.html">62208</a>) (checked by <a class="link" href="../asm/30636.html">30636</a>; reset by <a class="link" href="../asm/26342.html">26342</a>)</td>
 </tr>
 <tr>
-<td class="centre">7</td>
-<td>Set after EINSTEIN has had a chance to grass on the absent ERIC (see <a class="link" href="../asm/62208.html">62208</a>), or after dinner has started (see <a class="link" href="../asm/31854.html">31854</a>) (checked by <a class="link" href="../asm/30636.html">30636</a>; reset by <a class="link" href="../asm/26342.html">26342</a>)</td>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Set after EINSTEIN has had a chance to grass on the absent ERIC (see <a class="link" href="../asm/62208.html">62208</a>), or after dinner has started (see <a class="link" href="../asm/31854.html">31854</a>) (checked by <a class="link" href="../asm/30636.html">30636</a>; reset by <a class="link" href="../asm/26342.html">26342</a>)</td>
 </tr>
 </table>
 </div>
@@ -462,32 +460,32 @@ Bits 0-3 are used by the classroom-based <a class="link" href="../asm/65152.html
 <div class="paragraph">
 <table class="default">
 <tr>
-<th>Bit(s)</th>
-<th>Meaning if set</th>
+<th colspan="1" rowspan="1">Bit(s)</th>
+<th colspan="1" rowspan="1">Meaning if set</th>
 </tr>
 <tr>
-<td class="centre">0</td>
-<td>Teacher has arrived at the Map Room</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Teacher has arrived at the Map Room</td>
 </tr>
 <tr>
-<td class="centre">1</td>
-<td>Teacher has arrived at the Reading Room</td>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Teacher has arrived at the Reading Room</td>
 </tr>
 <tr>
-<td class="centre">2</td>
-<td>Teacher has arrived at the Exam Room</td>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Teacher has arrived at the Exam Room</td>
 </tr>
 <tr>
-<td class="centre">3</td>
-<td>Teacher has arrived at the White Room</td>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Teacher has arrived at the White Room</td>
 </tr>
 <tr>
-<td class="centre">4-6</td>
-<td>Unused</td>
+<td class="centre" colspan="1" rowspan="1">4-6</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
 </tr>
 <tr>
-<td class="centre">7</td>
-<td>EINSTEIN is speaking (set by <a class="link" href="../asm/31919.html">31919</a>; checked by <a class="link" href="../asm/31162.html">31162</a> and <a class="link" href="../asm/31944.html">31944</a>; reset by <a class="link" href="../asm/31178.html">31178</a>)</td>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">EINSTEIN is speaking (set by <a class="link" href="../asm/31919.html">31919</a>; checked by <a class="link" href="../asm/31162.html">31162</a> and <a class="link" href="../asm/31944.html">31944</a>; reset by <a class="link" href="../asm/31178.html">31178</a>)</td>
 </tr>
 </table>
 </div>
@@ -508,20 +506,20 @@ These flags are set and reset by command list <a class="link" href="../asm/64947
 <div class="paragraph">
 <table class="default">
 <tr>
-<th>Bit(s)</th>
-<th>Meaning if set</th>
+<th colspan="1" rowspan="1">Bit(s)</th>
+<th colspan="1" rowspan="1">Meaning if set</th>
 </tr>
 <tr>
-<td class="centre">0</td>
-<td>Little boy no. 1 is ready to stampede</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Little boy no. 1 is ready to stampede</td>
 </tr>
 <tr>
-<td class="centre">1</td>
-<td>Little boy no. 1 is ready to stampede again</td>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Little boy no. 1 is ready to stampede again</td>
 </tr>
 <tr>
-<td class="centre">2-7</td>
-<td>Unused</td>
+<td class="centre" colspan="1" rowspan="1">2-7</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
 </tr>
 </table>
 </div>
@@ -542,48 +540,48 @@ These flags are used during the special playtimes (when EINSTEIN is going to tel
 <div class="paragraph">
 <table class="default">
 <tr>
-<th>Bit(s)</th>
-<th>Meaning if set</th>
+<th colspan="1" rowspan="1">Bit(s)</th>
+<th colspan="1" rowspan="1">Meaning if set</th>
 </tr>
 <tr>
-<td class="centre">0</td>
-<td>Little boy no. 10 is waiting for ERIC to respond to the message just delivered (set and reset by <a class="link" href="../asm/63488.html">63488</a>; checked by <a class="link" href="../asm/63352.html">63352</a>)</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Little boy no. 10 is waiting for ERIC to respond to the message just delivered (set and reset by <a class="link" href="../asm/63488.html">63488</a>; checked by <a class="link" href="../asm/63352.html">63352</a>)</td>
 </tr>
 <tr>
-<td class="centre">1</td>
-<td>Unused</td>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
 </tr>
 <tr>
-<td class="centre" rowspan="2">2</td>
-<td>EINSTEIN is ready (set by command list <a class="link" href="../asm/64265.html">212</a>; checked by command list <a class="link" href="../asm/64230.html">208</a>)</td>
+<td class="centre" colspan="1" rowspan="2">2</td>
+<td class="" colspan="1" rowspan="1">EINSTEIN is ready (set by command list <a class="link" href="../asm/64265.html">212</a>; checked by command list <a class="link" href="../asm/64230.html">208</a>)</td>
 </tr>
 <tr>
-<td>BOY WANDER is ready (set and reset by command list <a class="link" href="../asm/64314.html">216</a>; checked by command lists <a class="link" href="../asm/64230.html">208</a> and <a class="link" href="../asm/64341.html">218</a>)</td>
+<td class="" colspan="1" rowspan="1">BOY WANDER is ready (set and reset by command list <a class="link" href="../asm/64314.html">216</a>; checked by command lists <a class="link" href="../asm/64230.html">208</a> and <a class="link" href="../asm/64341.html">218</a>)</td>
 </tr>
 <tr>
-<td class="centre">3</td>
-<td>MR WACKER is ready (set by command lists <a class="link" href="../asm/64288.html">214</a> and <a class="link" href="../asm/64341.html">218</a>; checked by command list <a class="link" href="../asm/64230.html">208</a>)</td>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">MR WACKER is ready (set by command lists <a class="link" href="../asm/64288.html">214</a> and <a class="link" href="../asm/64341.html">218</a>; checked by command list <a class="link" href="../asm/64230.html">208</a>)</td>
 </tr>
 <tr>
-<td class="centre" rowspan="3">4</td>
-<td>Little boy no. 10 has told ERIC about EINSTEIN (set by command list <a class="link" href="../asm/64230.html">208</a>; checked by command list <a class="link" href="../asm/64265.html">212</a>)</td>
+<td class="centre" colspan="1" rowspan="3">4</td>
+<td class="" colspan="1" rowspan="1">Little boy no. 10 has told ERIC about EINSTEIN (set by command list <a class="link" href="../asm/64230.html">208</a>; checked by command list <a class="link" href="../asm/64265.html">212</a>)</td>
 </tr>
 <tr>
-<td>Little boy no. 10 has told ERIC about BOY WANDER (set by command list <a class="link" href="../asm/64230.html">208</a>; checked by command list <a class="link" href="../asm/64314.html">216</a>)</td>
+<td class="" colspan="1" rowspan="1">Little boy no. 10 has told ERIC about BOY WANDER (set by command list <a class="link" href="../asm/64230.html">208</a>; checked by command list <a class="link" href="../asm/64314.html">216</a>)</td>
 </tr>
 <tr>
-<td>Little boy no. 10 has told ERIC about ANGELFACE (set by command list <a class="link" href="../asm/64240.html">210</a>; checked by command list <a class="link" href="../asm/64255.html">220</a>)</td>
+<td class="" colspan="1" rowspan="1">Little boy no. 10 has told ERIC about ANGELFACE (set by command list <a class="link" href="../asm/64240.html">210</a>; checked by command list <a class="link" href="../asm/64255.html">220</a>)</td>
 </tr>
 <tr>
-<td class="centre" rowspan="2">5</td>
-<td>EINSTEIN has grassed on ERIC (set by command list <a class="link" href="../asm/64265.html">212</a>; checked by command list <a class="link" href="../asm/64288.html">214</a>)</td>
+<td class="centre" colspan="1" rowspan="2">5</td>
+<td class="" colspan="1" rowspan="1">EINSTEIN has grassed on ERIC (set by command list <a class="link" href="../asm/64265.html">212</a>; checked by command list <a class="link" href="../asm/64288.html">214</a>)</td>
 </tr>
 <tr>
-<td>ERIC has mumps (set by <a class="link" href="../asm/64042.html">64042</a>; checked by command list <a class="link" href="../asm/64219.html">222</a>)</td>
+<td class="" colspan="1" rowspan="1">ERIC has mumps (set by <a class="link" href="../asm/64042.html">64042</a>; checked by command list <a class="link" href="../asm/64219.html">222</a>)</td>
 </tr>
 <tr>
-<td class="centre">6-7</td>
-<td>Unused</td>
+<td class="centre" colspan="1" rowspan="1">6-7</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
 </tr>
 </table>
 </div>
@@ -670,24 +668,24 @@ Used by the routine at <a class="link" href="../asm/28143.html">28143</a>.
 <div class="paragraph">
 <table class="default">
 <tr>
-<th>Value</th>
-<th>Meaning</th>
+<th colspan="1" rowspan="1">Value</th>
+<th colspan="1" rowspan="1">Meaning</th>
 </tr>
 <tr>
-<td class="centre">0</td>
-<td>Demo mode</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Demo mode</td>
 </tr>
 <tr>
-<td class="centre">1</td>
-<td>Shields need to be flashed</td>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Shields need to be flashed</td>
 </tr>
 <tr>
-<td class="centre">2</td>
-<td>All shields flashing; ERIC needs to find the safe combination</td>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">All shields flashing; ERIC needs to find the safe combination</td>
 </tr>
 <tr>
-<td class="centre">3</td>
-<td>Shields need to be unflashed</td>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Shields need to be unflashed</td>
 </tr>
 </table>
 </div>
@@ -918,58 +916,58 @@ If ERIC is doing anything other than walking or standing still, one of the bits 
 <div class="paragraph">
 <table class="default">
 <tr>
-<th>Bit</th>
-<th>Meaning if set</th>
-<th>Handler</th>
-<th>Checked by</th>
+<th colspan="1" rowspan="1">Bit</th>
+<th colspan="1" rowspan="1">Meaning if set</th>
+<th colspan="1" rowspan="1">Handler</th>
+<th colspan="1" rowspan="1">Checked by</th>
 </tr>
 <tr>
-<td class="centre">0</td>
-<td>ERIC is firing the catapult</td>
-<td class="centre"><a class="link" href="../asm/62495.html">62495</a></td>
-<td><a class="link" href="../asm/27353.html">27353</a></td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">ERIC is firing the catapult</td>
+<td class="centre" colspan="1" rowspan="1"><a class="link" href="../asm/62495.html">62495</a></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/27353.html">27353</a></td>
 </tr>
 <tr>
-<td class="centre">1</td>
-<td>ERIC is hitting</td>
-<td class="centre"><a class="link" href="../asm/62628.html">62628</a></td>
-<td><a class="link" href="../asm/27353.html">27353</a></td>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">ERIC is hitting</td>
+<td class="centre" colspan="1" rowspan="1"><a class="link" href="../asm/62628.html">62628</a></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/27353.html">27353</a></td>
 </tr>
 <tr>
-<td class="centre">2</td>
-<td>ERIC is jumping</td>
-<td class="centre"><a class="link" href="../asm/62771.html">62771</a></td>
-<td><a class="link" href="../asm/27353.html">27353</a>, <a class="link" href="../asm/30636.html">30636</a>, <a class="link" href="../asm/30890.html">30890</a>, <a class="link" href="../asm/31229.html">31229</a></td>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">ERIC is jumping</td>
+<td class="centre" colspan="1" rowspan="1"><a class="link" href="../asm/62771.html">62771</a></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/27353.html">27353</a>, <a class="link" href="../asm/30636.html">30636</a>, <a class="link" href="../asm/30890.html">30890</a>, <a class="link" href="../asm/31229.html">31229</a></td>
 </tr>
 <tr>
-<td class="centre">3</td>
-<td>ERIC is being spoken to by little boy no. 10</td>
-<td class="centre"><a class="link" href="../asm/63352.html">63352</a></td>
-<td><a class="link" href="../asm/27353.html">27353</a></td>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">ERIC is being spoken to by little boy no. 10</td>
+<td class="centre" colspan="1" rowspan="1"><a class="link" href="../asm/63352.html">63352</a></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/27353.html">27353</a></td>
 </tr>
 <tr>
-<td class="centre">4</td>
-<td>ERIC has just been knocked down or unseated</td>
-<td class="centre"><a class="link" href="../asm/27303.html">27303</a></td>
-<td><a class="link" href="../asm/27353.html">27353</a></td>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">ERIC has just been knocked down or unseated</td>
+<td class="centre" colspan="1" rowspan="1"><a class="link" href="../asm/27303.html">27303</a></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/27353.html">27353</a></td>
 </tr>
 <tr>
-<td class="centre">5</td>
-<td>ERIC is writing on a blackboard</td>
-<td class="centre"><a class="link" href="../asm/63146.html">63146</a></td>
-<td><a class="link" href="../asm/26471.html">26471</a></td>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">ERIC is writing on a blackboard</td>
+<td class="centre" colspan="1" rowspan="1"><a class="link" href="../asm/63146.html">63146</a></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/26471.html">26471</a></td>
 </tr>
 <tr>
-<td class="centre">6</td>
-<td>Unused (always reset)</td>
-<td class="centre"></td>
-<td><a class="link" href="../asm/25983.html">25983</a>, <a class="link" href="../asm/26084.html">26084</a>, <a class="link" href="../asm/26194.html">26194</a></td>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Unused (always reset)</td>
+<td class="centre" colspan="1" rowspan="1"></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/25983.html">25983</a>, <a class="link" href="../asm/26084.html">26084</a>, <a class="link" href="../asm/26194.html">26194</a></td>
 </tr>
 <tr>
-<td class="centre">7</td>
-<td>ERIC is sitting or lying down (set by <a class="link" href="../asm/27303.html">27303</a> or <a class="link" href="../asm/27823.html">27823</a>)</td>
-<td class="centre"></td>
-<td><a class="link" href="../asm/25956.html">25956</a>, <a class="link" href="../asm/62574.html">62574</a>, <a class="link" href="../asm/62938.html">62938</a>, <a class="link" href="../asm/63056.html">63056</a></td>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">ERIC is sitting or lying down (set by <a class="link" href="../asm/27303.html">27303</a> or <a class="link" href="../asm/27823.html">27823</a>)</td>
+<td class="centre" colspan="1" rowspan="1"></td>
+<td class="" colspan="1" rowspan="1"><a class="link" href="../asm/25956.html">25956</a>, <a class="link" href="../asm/62574.html">62574</a>, <a class="link" href="../asm/62938.html">62938</a>, <a class="link" href="../asm/63056.html">63056</a></td>
 </tr>
 </table>
 </div>
@@ -1020,9 +1018,9 @@ Used by the routine at <a class="link" href="../asm/24993.html">24993</a>.
 </tr>
 </table>
 <div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20140614</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2014 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://pyskool.ca/?page_id=177">SkoolKit</a> 4.0.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
 </div>
 </body>
 </html>
