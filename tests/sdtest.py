@@ -37,7 +37,7 @@ Using ref files: {srcdir}/sd.ref, {srcdir}/sd-bugs.ref, {srcdir}/sd-changelog.re
 Parsing {srcdir}/sd.skool
 Creating directory {odir}/skool_daze
 Copying {SKOOLKIT_HOME}/skoolkit/resources/skoolkit.css to {odir}/skool_daze/skoolkit.css
-Copying ../resources/sd.css to {odir}/skool_daze/sd.css
+Copying ../sources/sd.css to {odir}/skool_daze/sd.css
   Writing disassembly files in skool_daze/asm
   Writing skool_daze/maps/all.html
   Writing skool_daze/maps/routines.html
@@ -46,7 +46,7 @@ Copying ../resources/sd.css to {odir}/skool_daze/sd.css
   Writing skool_daze/buffers/gbuffer.html
   Writing skool_daze/graphics/graphics.html
   Writing skool_daze/graphics/playarea.html
-  Copying ../resources/tiles.js to {odir}/skool_daze/tiles.js
+  Copying ../sources/tiles.js to {odir}/skool_daze/tiles.js
   Writing skool_daze/graphics/patiles/patiles.html
   Writing skool_daze/graphics/asstart.html
   Writing skool_daze/graphics/as.html
@@ -216,7 +216,7 @@ class AsmTestCase(DisassembliesTestCase):
     def _write_asm(self, options, skoolfile, writer=None):
         args = [options, skoolfile]
         if writer:
-            writer_spec = '../skoolkit:{}'.format(writer)
+            writer_spec = '../sources:{}'.format(writer)
             args.insert(0, '-W {}'.format(writer_spec))
         output, stderr = self.run_skoolkit_command(skool2asm.main, ' '.join(args), err_lines=True)
         self.assertTrue(stderr[0].startswith('Parsed {}'.format(skoolfile)))
@@ -293,8 +293,7 @@ class HtmlTestCase(DisassembliesTestCase):
     def _write_html(self, options, writer, ref_file, exp_output):
         shutil.rmtree(self.odir, True)
 
-        main_options = '-W ../skoolkit:{}'.format(writer)
-        main_options += ' -S ../resources'
+        main_options = '-W ../sources:{}'.format(writer)
         main_options += ' -d {}'.format(self.odir)
         args = '{} {} ../{}'.format(main_options, options, ref_file)
         output, error = self.run_skoolkit_command(skool2html.main, args)
