@@ -1,63 +1,96 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import sys
 import os
 
-def write_tests(superclass_name, class_name, options_list, games):
-    print('from sdtest import {}'.format(superclass_name))
-    print('')
-    print('class {}({}):'.format(class_name, superclass_name))
-    for game in games:
-        for options in options_list:
-            method_name_suffix = options.replace('-', '_').replace(' ', '')
-            method_name = 'test_{}{}'.format(game, method_name_suffix)
-            print("    def {}(self):".format(method_name))
-            print("        self.write_{}('{}')".format(game, options))
-            print("")
-
-def get_asm_options_list():
-    options_list = []
-    for b in ('', '-D', '-H'):
-        for c in ('', '-l', '-u'):
-            for f in ('', '-f 1', '-f 2', '-f 3'):
-                for p in ('', '-s', '-r'):
-                    options_list.append('{} {} {} {}'.format(b, c, f, p).strip())
-    return options_list
-
-def get_ctl_options_list():
-    options_list = []
-    for w in ('', '-w b', '-w bt', '-w btd', '-w btdr', '-w btdrm', '-w btdrms', '-w btdrmsc'):
-        for h in ('', '-h'):
-            for a in ('', '-a'):
-                for b in ('', '-b'):
-                    options_list.append('{} {} {} {}'.format(w, h, a, b).strip())
-    return options_list
-
-def get_html_options_list():
-    options_list = []
-    for b in ('', '-D', '-H'):
-        for c in ('', '-u', '-l'):
-            options_list.append('{} {}'.format(b, c).strip())
-    return options_list
-
-TEST_TYPES = {
-    'asm': get_asm_options_list(),
-    'ctl': get_ctl_options_list(),
-    'html': get_html_options_list(),
-    'sft': ('', '-h', '-b', '-h -b')
-}
-
-###############################################################################
-# Begin
-###############################################################################
-if not (len(sys.argv) == 2 and sys.argv[1] in TEST_TYPES):
-    sys.stderr.write("Usage: {} asm|ctl|html|sft\n".format(os.path.basename(sys.argv[0])))
+SKOOLKIT_HOME = os.environ.get('SKOOLKIT_HOME')
+if not SKOOLKIT_HOME:
+    sys.stderr.write('SKOOLKIT_HOME is not set; aborting\n')
     sys.exit(1)
-test_type = sys.argv[1]
-superclass_name = '{}TestCase'.format(test_type.capitalize())
-class_name = 'SkoolDaze{}Test'.format(test_type.capitalize())
-if test_type == 'asm':
-    games = ['sd' + suffix for suffix in ('', '_load', '_save', '_start')]
-else:
-    games = ['sd']
-write_tests(superclass_name, class_name, TEST_TYPES[test_type], games)
+if not os.path.isdir(SKOOLKIT_HOME):
+    sys.stderr.write('SKOOLKIT_HOME={}: directory not found\n'.format(SKOOLKIT_HOME))
+    sys.exit(1)
+sys.path.insert(0, '{}/tools'.format(SKOOLKIT_HOME))
+from testwriter import write_tests
+
+SKOOL = '../sources/sd.skool'
+
+SNAPSHOT = '../build/skool_daze.z80'
+
+OUTPUT = """Creating directory {odir}
+Using skool file: ../sources/sd.skool
+Using ref files: ../sources/sd.ref, ../sources/sd-bugs.ref, ../sources/sd-changelog.ref, ../sources/sd-data.ref, ../sources/sd-facts.ref, ../sources/sd-glossary.ref, ../sources/sd-graphics.ref, ../sources/sd-pages.ref, ../sources/sd-pokes.ref
+Parsing ../sources/sd.skool
+Creating directory {odir}/skool_daze
+Copying {SKOOLKIT_HOME}/skoolkit/resources/skoolkit.css to {odir}/skool_daze/skoolkit.css
+Copying ../sources/sd.css to {odir}/skool_daze/sd.css
+  Writing disassembly files in skool_daze/asm
+  Writing skool_daze/maps/all.html
+  Writing skool_daze/maps/routines.html
+  Writing skool_daze/maps/data.html
+  Writing skool_daze/maps/messages.html
+  Writing skool_daze/buffers/gbuffer.html
+  Writing skool_daze/graphics/graphics.html
+  Writing skool_daze/graphics/playarea.html
+  Copying ../sources/tiles.js to {odir}/skool_daze/tiles.js
+  Writing skool_daze/graphics/patiles/patiles.html
+  Writing skool_daze/graphics/asstart.html
+  Writing skool_daze/graphics/as.html
+  Writing skool_daze/graphics/astiles/astiles.html
+  Writing skool_daze/buffers/cbuffer.html
+  Writing skool_daze/lessons/timetables.html
+  Writing skool_daze/lessons/index.html
+  Writing skool_daze/lessons/224.html
+  Writing skool_daze/lessons/225.html
+  Writing skool_daze/lessons/226.html
+  Writing skool_daze/lessons/227.html
+  Writing skool_daze/lessons/228.html
+  Writing skool_daze/lessons/229.html
+  Writing skool_daze/lessons/230.html
+  Writing skool_daze/lessons/231.html
+  Writing skool_daze/lessons/232.html
+  Writing skool_daze/lessons/233.html
+  Writing skool_daze/lessons/234.html
+  Writing skool_daze/lessons/235.html
+  Writing skool_daze/lessons/236.html
+  Writing skool_daze/lessons/237.html
+  Writing skool_daze/lessons/238.html
+  Writing skool_daze/lessons/239.html
+  Writing skool_daze/lessons/240.html
+  Writing skool_daze/lessons/241.html
+  Writing skool_daze/lessons/242.html
+  Writing skool_daze/lessons/243.html
+  Writing skool_daze/lessons/244.html
+  Writing skool_daze/lessons/245.html
+  Writing skool_daze/lessons/246.html
+  Writing skool_daze/lessons/247.html
+  Writing skool_daze/lessons/248.html
+  Writing skool_daze/lessons/249.html
+  Writing skool_daze/lessons/250.html
+  Writing skool_daze/lessons/251.html
+  Writing skool_daze/lessons/252.html
+  Writing skool_daze/lessons/253.html
+  Writing skool_daze/lessons/254.html
+  Writing skool_daze/lessons/255.html
+  Writing skool_daze/tables/keys.html
+  Writing skool_daze/graphics/glitches.html
+  Writing skool_daze/reference/changelog.html
+  Writing skool_daze/reference/bugs.html
+  Writing skool_daze/reference/facts.html
+  Writing skool_daze/reference/glossary.html
+  Writing skool_daze/reference/pokes.html
+  Parsing ../sources/sd-load.skool
+    Writing skool_daze/load/load.html
+    Writing disassembly files in skool_daze/load
+  Parsing ../sources/sd-save.skool
+    Writing skool_daze/save/save.html
+    Writing disassembly files in skool_daze/save
+  Parsing ../sources/sd-start.skool
+    Writing skool_daze/start/start.html
+    Writing disassembly files in skool_daze/start
+  Writing skool_daze/index.html"""
+
+HTML_WRITER = '../sources:skooldaze.SkoolDazeHtmlWriter'
+
+ASM_WRITER = '../sources:skooldaze.SkoolDazeAsmWriter'
+
+write_tests(SKOOL, SNAPSHOT, OUTPUT, HTML_WRITER, ASM_WRITER)
