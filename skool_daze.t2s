@@ -6,8 +6,8 @@
 
 http://www.worldofspectrum.org/pub/sinclair/games/s/SkoolDaze.tzx.zip
 skool_daze.z80
---ram load=3,16384,16570     # 16384-32953
---ram load=3,32902,,23       # 32902-end STEP 23
+--ram load=4,16384,16570     # 16384-32953
+--ram load=4,32902,,23       # 32902-end STEP 23
 --ram move=32256,512,32768   # Move 32256-32767 to 32768-33279
 --ram move=24320,7936,24576  # Move 24320-32255 to 24576-32511
 --reg pc=26880               # Start at 26880
