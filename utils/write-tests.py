@@ -16,8 +16,7 @@ SKOOL = '../sources/sd.skool'
 
 SNAPSHOT = '../build/skool_daze.z80'
 
-OUTPUT = """Creating directory {odir}
-Using skool file: ../sources/sd.skool
+OUTPUT = """Using skool file: ../sources/sd.skool
 Using ref files: ../sources/sd.ref, ../sources/sd-bugs.ref, ../sources/sd-changelog.ref, ../sources/sd-data.ref, ../sources/sd-facts.ref, ../sources/sd-glossary.ref, ../sources/sd-graphics.ref, ../sources/sd-pages.ref, ../sources/sd-pokes.ref
 Parsing ../sources/sd.skool
 Creating directory {odir}/skool_daze
