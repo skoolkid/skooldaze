@@ -11537,6 +11537,7 @@ b44415 DEFB 0
 ;
 ; A Pixel column byte
 @label=SLIDECOL
+@assemble=1
 c44520 EXX           ;
  44521 LD HL,23551   ; Point #REGhl' at the end of the graphic buffer at
                      ; #R23296
@@ -11550,8 +11551,6 @@ c44520 EXX           ;
  44535 JR NZ,44526   ; Jump back until all 8 pixels rows are done
  44537 EXX           ;
  44538 RET           ;
-
-d44520 DEFB 217,33,255,91,14,8,6,32,15,203,22,43,16,251,13,32,245,217,201
 
 ; Unused
 s44539 DEFS 4
@@ -11668,9 +11667,6 @@ c44776 LD A,(DE)     ; #REGa=ASCII code of a character in the message
  44794 CALL 44520    ; }
  44797 JR 44776      ; Continue until the message is finished
 
-d44776 DEFB 26,19,167,200,111,38,217,70,36,126,205,232,173,13,16,248
- 44792 DEFB 175,13,205,232,173,024,233
-
 ; UDG reference for animatory state 255 at row 1, column 0
 ;
 ; Used by the routine at #R24843.
@@ -11733,8 +11729,6 @@ c44919 LD DE,46572   ;
                      ; (i.e. if we're dealing with a teacher)
  44924 JP 45429      ;
 
-d44919 DEFB 17,236,181,254,200,195,117,177
-
 ; UDG references for animatory states 127-231 at row 2, column 0
 ;
 @ignoreua
@@ -11793,9 +11787,6 @@ c45032 EX DE,HL      ; Now #REGde=message address, #REGhl=display file address
  45048 BIT 1,H       ;
  45050 JR NZ,45041   ; }
  45052 RET           ;
-
-d45032 DEFB 235,229,205,114,178,209,33,0,91,14,32,213,237,176,209,20
- 45048 DEFB 203,76,32,245,201
 
 ; Unused
 s45053 DEFS 2
@@ -11870,8 +11861,6 @@ c45170 LD A,8        ; {#REGc=8-#REGb
  45181 LD L,A        ; Place this LSB in #REGl
  45182 RET           ;
 
-d45170 DEFB 62,8,144,79,135,135,135,145,135,198,128,111,201
-
 ; UDG references for animatory states 127-231 at row 3, column 0
 ;
 @ignoreua
@@ -11930,9 +11919,6 @@ c45288 LD A,184      ; {Set #REGhl to the address of the appropriate character
  45305 LD H,217      ; name}
  45307 PUSH HL       ; Save this message address
  45308 JP 45544      ;
-
-d45288 DEFB 62,184,144,103,46,104,17,224,64,197,205,232,175,193,205,114
- 45304 DEFB 176,38,217,229,195,232,177
 
 ; UDG reference for animatory state 255 at row 3, column 0
 ;
@@ -11998,8 +11984,6 @@ c45429 JR C,45433    ; Jump if we are dealing with a boy
  45435 EX DE,HL      ; appropriate}
  45436 JP 46202      ;
 
-d45429 DEFB 56,2,38,164,235,114,235,195,122,180
-
 ; UDG references for animatory states 127-231 at row 0, column 1
 ;
 @ignoreua
@@ -12062,9 +12046,6 @@ c45544 PUSH BC       ;
 @rsub+begin
        DEFS 2
 @rsub+end
-
-d45544 DEFB 197,17,32,80,205,232,175,33,119,180,205,249,179,33,96,152
- 45560 DEFB 193,120,0,0,195,232,178
 
 ; UDG reference for animatory state 255 at row 0, column 1
 ;
@@ -12129,8 +12110,6 @@ c45682 XOR A         ; {Clear the buffer at #R23296 in preparation for the
  45690 LD C,254      ; Initialise the pixel column counter
  45692 JP 45937      ;
 
-d45682 DEFB 175,33,0,91,119,44,32,252,14,254,195,113,179
-
 ; UDG references for animatory states 127-231 at row 1, column 1
 ;
 @ignoreua
@@ -12192,9 +12171,6 @@ c45800 SUB 5         ; Are we dealing with one of the teachers?
  45819 RLCA          ; #AS160 (ANGELFACE), #AS176 (BOY WANDER), or #AS128
                      ; (ERIC)}
  45820 JP 46056      ;
-
-d45800 DEFB 214,5,56,7,198,9,230,11,135,24,6,47,60,230,3,198
- 45816 DEFB 25,7,7,7,195,232,179
 
 ; UDG reference for animatory state 255 at row 1, column 1
 ;
@@ -12261,8 +12237,6 @@ c45937 CALL 44776    ; Slide the message text into the graphic buffer
  45948 JR NZ,45943   ; }
  45950 RET           ;
 
-d45937 DEFB 205,232,174,203,57,12,175,205,232,173,13,32,249,201
-
 ; UDG references for animatory states 127-231 at row 2, column 1
 ;
 @ignoreua
@@ -12327,8 +12301,6 @@ c46056 PUSH BC       ;
        DEFB 0
 @rsub+end
 
-d46056 DEFB 197,205,119,175,0,44,54,3,205,232,181,193,225,201
-
 ; Print 'PRESS'C'TO CHANGE NAME'
 ;
 ; Used by the routine at #R46824.
@@ -12340,8 +12312,6 @@ c46070 LD HL,44648   ; #R44648: 'PRESS'C'TO CHANGE NAME'
 *46073 LD DE,20640   ; Set #REGde to the display file address at which to print
                      ; the message
  46076 JP 45032      ; Print the message
-
-d46070 DEFB 33,104,174,17,160,80,195,232,175
 
 ; UDG reference for animatory state 255 at row 2, column 1
 ;
@@ -12415,8 +12385,6 @@ c46202 LD (HL),A     ; Set the character's animatory state
  46204 LD (HL),164   ; Set the character's y-coordinate to 164
  46206 RET           ;
 
-d46202 DEFB 119,44,54,164,201
-
 ; UDG references for animatory states 127-231 at row 3, column 1
 ;
 @ignoreua
@@ -12480,9 +12448,6 @@ c46312 CALL 25108    ; Update the SRB for the character's current location
 *46329 CALL 25008    ; Update the character's animatory state and location and
                      ; update the SRB
  46332 JP 27026      ; Update the display
-
-d46312 DEFB 205,20,98,60,79,15,121,56,8,28,230,3,121,32,2,214
- 46328 DEFB 4,205,176,97,195,146,105
 
 ; UDG reference for animatory state 255 at row 3, column 1
 ;
@@ -12594,9 +12559,6 @@ c46568 LD B,38       ; The character will take 38 steps along the catwalk
  46587 DJNZ 46570    ; Jump back until 38 steps have been taken
  46589 RET           ;
 
-d46568 DEFB 6,38,197,38,152,205,232,180,205,64,254,14,100,16,254,13
- 46584 DEFB 32,251,193,16,237,201
-
 ; Unused
 s46590 DEFB 0
 
@@ -12701,9 +12663,6 @@ c46824 LD HL,23611   ; This is the FLAGS system variable
  46837 OR 32         ; Convert the ASCII code to lower case
  46839 CP 99         ; Set the zero flag if 'c' (or 'C') was pressed
  46841 RET           ;
-
-d46824 DEFB 33,59,92,203,174,205,246,179,205,58,103,40,251,246,32,254
- 46840 DEFB 99,201
 
 ; Unused
 s46842 DEFS 5
@@ -12823,9 +12782,6 @@ c47080 PUSH HL       ; Save the message address for the character's name
  47101 SUB L         ; far}
  47102 RET           ;
 
-d47080 DEFB 229,213,17,32,80,205,232,175,205,58,103,40,251,209,225,254
- 47096 DEFB 13,200,18,28,123,149,201
-
 ; UDG reference for animatory state 255 at row 2, column 2
 ;
 ; Used by the routine at #R24843.
@@ -12887,9 +12843,6 @@ c47208 PUSH HL       ; Save the message address
                      ; #REGde
  47228 JP 47336      ;
 
-d47208 DEFB 229,54,32,6,13,44,54,0,16,251,33,104,175,205,249,179
- 47224 DEFB 33,59,92,209,195,232,184
-
 ; UDG references for animatory states 127-231 at row 3, column 2
 ;
 @ignoreua
@@ -12949,9 +12902,7 @@ c47336 RES 5,(HL)    ; Signal: no key pressed
  47353 CALL 46824    ; Print 'PRESS'C'TO CHANGE NAME' and wait for a keypress
  47356 POP HL        ; Restore the character name message address to #REGhl
  47357 RET           ;
-
-d47336 DEFB 203,174,98,107,205,232,183,40,7,254,13,32,247,29,24,244
- 47352 DEFB 229,205,232,182,225,201
+@assemble=0
 
 ; Unused
 u47358 DEFB 184
