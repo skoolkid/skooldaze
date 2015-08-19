@@ -138,13 +138,10 @@ Lesson254=lessons/254.html
 Lesson255=lessons/255.html
 
 [OtherCode:load]
-Source=sd-load.skool
 
 [OtherCode:save]
-Source=sd-save.skool
 
 [OtherCode:start]
-Source=sd-start.skool
 
 [Index:Graphics:Graphics]
 PlayArea

@@ -77,13 +77,13 @@ Copying ../sources/sd.css to {odir}/skool_daze/sd.css
   Writing skool_daze/reference/facts.html
   Writing skool_daze/reference/glossary.html
   Writing skool_daze/reference/pokes.html
-  Parsing ../sources/sd-load.skool
+  Parsing ../sources/load.skool
     Writing skool_daze/load/load.html
     Writing disassembly files in skool_daze/load
-  Parsing ../sources/sd-save.skool
+  Parsing ../sources/save.skool
     Writing skool_daze/save/save.html
     Writing disassembly files in skool_daze/save
-  Parsing ../sources/sd-start.skool
+  Parsing ../sources/start.skool
     Writing skool_daze/start/start.html
     Writing disassembly files in skool_daze/start
   Writing skool_daze/index.html"""
