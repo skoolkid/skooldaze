@@ -17,7 +17,7 @@ SKOOL = '../sources/sd.skool'
 SNAPSHOT = '../build/skool_daze.z80'
 
 OUTPUT = """Using skool file: ../sources/sd.skool
-Using ref files: ../sources/sd.ref, ../sources/sd-bugs.ref, ../sources/sd-changelog.ref, ../sources/sd-data.ref, ../sources/sd-facts.ref, ../sources/sd-glossary.ref, ../sources/sd-graphics.ref, ../sources/sd-pages.ref, ../sources/sd-pokes.ref
+Using ref files: ../sources/sd.ref, ../sources/bugs.ref, ../sources/changelog.ref, ../sources/data.ref, ../sources/facts.ref, ../sources/glossary.ref, ../sources/graphics.ref, ../sources/pages.ref, ../sources/pokes.ref
 Parsing ../sources/sd.skool
 Creating directory {odir}/skool_daze
 Copying {SKOOLKIT_HOME}/skoolkit/resources/skoolkit.css to {odir}/skool_daze/skoolkit.css

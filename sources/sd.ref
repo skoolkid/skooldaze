@@ -1,7 +1,7 @@
 ; Copyright 2008-2015 Richard Dymond (rjdymond@gmail.com)
 
 [Config]
-SkoolFile=sd.skool
+RefFiles=bugs.ref;changelog.ref;data.ref;facts.ref;glossary.ref;graphics.ref;pages.ref;pokes.ref
 HtmlWriterClass=:skooldaze.SkoolDazeHtmlWriter
 GameDir=skool_daze
 
