@@ -318,7 +318,7 @@ d25397 DEFB 200 ; 25396 LD A,(32712)
 b23296 DEFS 256
 
 ; System variables and BASIC program area
-i23552
+i23552 DEFS 1024
 
 @start
 @writer=:skooldaze.SkoolDazeAsmWriter
