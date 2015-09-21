@@ -1,12 +1,12 @@
-; Copyright 2008-2013 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2013, 2015 Richard Dymond (rjdymond@gmail.com)
 
 [Bug:runningTeachers:Running teachers]
 The teachers are all running at the start of the game.
 
-<div>POKE #R56587,144</div>
-<div>POKE #R56588,144</div>
-<div>POKE #R56589,144</div>
-<div>POKE #R56590,144</div>
+<div>POKE #R56587(56587),144</div>
+<div>POKE #R56588(56588),144</div>
+<div>POKE #R56589(56589),144</div>
+<div>POKE #R56590(56590),144</div>
 
 [Bug:jumpSound:Faulty jumping sound]
 The jumping sound effect is not as it should be, because of an erroneous CALL instruction in the routine at #R60139.
@@ -34,8 +34,8 @@ TABLE#
 
 The reason for this shortened cycle of walking animation phases is the lack of symmetry between the routine at #R31739 (which is responsible for moving ERIC's chaser from the midstride position) and the routine at #R31768 (which is responsible for moving ERIC's chaser to the midstride position). The routine at #R31739 decrements the animatory state if the chaser is moving leftwards, and increments it if he's moving rightwards. However, the routine at #R31768 always increments the animatory state, regardless of the chaser's direction of travel. Thus the chaser's walking animation phases get locked into a 1-2-1-2 or 3-4-3-4 cycle if he's moving leftwards.
 
-<div>POKE #R31756,120</div>
-<div>POKE #R31757,60</div>
+<div>POKE #R31756(31756),120</div>
+<div>POKE #R31757(31757),60</div>
 
 [Bug:oneFourThreeFour:One-four three-four]
 Usually, when a character is going up a staircase he will cycle through walking animation phases 1, 2, 3 and 4 thus:
@@ -70,7 +70,7 @@ ERIC can be knocked out by BOY WANDER's catapult pellet even when he's sitting o
 [Bug:allPlayAndNoWork:All play and no work]
 In lesson #LESSON227 (MR ROCKITT - EXAM ROOM), little boys 4-8 head off to the White Room in accordance with their personal timetables, but no teacher ever arrives to start the lesson.
 
-POKE #R42723,#R64458(134) (sends MR CREAK to the White Room)
+POKE #R42723(42723),#R64458(134) (sends MR CREAK to the White Room)
 
 [Bug:waitingForEinstein:Waiting for EINSTEIN]
 Before wiping the board and getting a lesson under way, ERIC's teacher will wait for EINSTEIN to sit down first: see #R31952. This makes sense at the beginning of a lesson, but that same routine is called several times during the course of a lesson (see #R62208) to check whether ERIC is present, which means that the teacher will also stop whatever he's doing and wait for EINSTEIN to sit down before continuing on those occasions too. This is not really noticeable except during lessons where there is no question-and-answer session taking place between the teacher and the swot, and the teacher is pacing up and down in front of the blackboard instead. During those lessons, the call to #R31952 is made each time the teacher has reached the point where he is just about to turn round; if EINSTEIN is not sitting in a chair at that time (because ERIC has pushed him out of his seat, for example), the teacher will wait until EINSTEIN is back in his seat before turning round.
@@ -87,7 +87,7 @@ The problem is that the routine at #R31815 looks up the current lesson (whose nu
 
 The most noticeable effect of this bug will occur during a special playtime that has replaced a 'stampede' playtime (#LESSON252 or #LESSON253). Little boys 1-9 and 11 (not 10, because he's busy looking for ERIC to tell him what's going on) start with command list #R64914(196) (walkabout), but when the restart command is reached, will switch to command list #R64947(204) (stampede leader) or #R64975(206) (stampede follower). Thus a special playtime in which ERIC must watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the presence of stampeding boys tripping everyone up.
 
-<div>POKE #R31825,0</div>
+<div>POKE #R31825(31825),0</div>
 <div>POKE 31826,203</div>
 <div>POKE 31827,198</div>
 
@@ -111,7 +111,7 @@ This trick is possible because the collision detection code at #R64042 is execut
 [Bug:rockittExamRoom:MR ROCKITT as a boy]
 In lesson #LESSON229 (REVISION LIBRARY), MR ROCKITT paces up and down in the Exam Room like a little boy, waiting for a teacher who never arrives.
 
-POKE #R42213,#R64876(188) (sends MR ROCKITT to the staff room)
+POKE #R42213(42213),#R64876(188) (sends MR ROCKITT to the staff room)
 
 [Bug:hiddenShield:Speech bubble v. shield]
 When a speech bubble is obscuring a shield, ERIC cannot get it by jumping up to it or firing at it. This is because the routine at #R28143 checks for the presence of a shield at the location of ERIC's hand or pellet by inspecting the attribute byte: a shield is assumed to be present only if neither the PAPER nor the INK is black. However, when a speech bubble is in the way, the INK is black, and the routine exits early.
@@ -168,7 +168,7 @@ The blackboard buffers are wiped before a new game (or demo mode) starts, but th
 [Bug:emptyClass:MR CREAK and the empty class]
 Lesson #LESSON230 (REVISION LIBRARY) has MR CREAK teaching an empty class in the Reading Room.
 
-POKE #R42726,#R64876(188) (sends MR CREAK to the staff room)
+POKE #R42726(42726),#R64876(188) (sends MR CREAK to the staff room)
 
 [Bug:chairHit:Share a chair]
 If ERIC hits a character who is sitting on a chair, and then quickly sits in the chair just vacated, ERIC will not be pushed out of the chair when the character rises and takes his seat again.
