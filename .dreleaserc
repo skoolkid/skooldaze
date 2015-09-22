@@ -1,9 +1,6 @@
 GAME=sd
-GAMEDIR=skool_daze
 GAMENAME="Skool Daze"
-REFFILE=sd.ref
-SKOOLFILES=$(echo {sd,load,save,start}.skool)
-SRCFILES=$(echo $SKOOLFILES {sd,bugs,changelog,data,facts,glossary,graphics,pages,pokes}.ref {sd,dark,green,plum}.css tiles.js skooldaze.py COPYING)
+SRCFILES=$(echo {sd,load,save,start}.skool {sd,bugs,changelog,data,facts,glossary,graphics,pages,pokes}.ref {sd,dark,green,plum}.css tiles.js skooldaze.py COPYING)
 GHREPO=skooldaze
 GHHTMLOPTS=""
 SKOOL2BINOPTS="-i -S 24573"
