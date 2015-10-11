@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 26184</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="26175.html">26175</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#26184">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="26194.html">26194</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="26175.html">26175</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26184">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="26194.html">26194</a></span></td>
 </tr>
 </table>
 <div class="description">26184: Check whether a character is on a staircase</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="26194.html">26194</a>, <a class="link" href="26282.html">26282</a>, <a class="link" href="27823.html">27823</a>, <a class="link" href="28304.html">28304</a>, <a class="link" href="62617.html">62617</a> and <a class="link" href="63056.html">63056</a>. Returns with the zero flag set if the character is not on a staircase.
+Used by the routines at <a href="26194.html">26194</a>, <a href="26282.html">26282</a>, <a href="27823.html">27823</a>, <a href="28304.html">28304</a>, <a href="62617.html">62617</a> and <a href="63056.html">63056</a>. Returns with the zero flag set if the character is not on a staircase.
 </div>
 </div>
 <table class="input-1">
@@ -52,68 +48,68 @@ Used by the routines at <a class="link" href="26194.html">26194</a>, <a class="l
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="26184"></a>26184</td>
+<td class="address-2"><span id="26184"></span>26184</td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character's y-coordinate</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="26185"></a>
+<span id="26185"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routines at <a class="link" href="27126.html">27126</a>, <a class="link" href="27932.html">27932</a>, <a class="link" href="28446.html">28446</a>, <a class="link" href="28672.html">28672</a> and <a class="link" href="63973.html">63973</a> with <span class="register">A</span> holding the character's y-coordinate.
+This entry point is used by the routines at <a href="27126.html">27126</a>, <a href="27932.html">27932</a>, <a href="28446.html">28446</a>, <a href="28672.html">28672</a> and <a href="63973.html">63973</a> with <span class="register">A</span> holding the character's y-coordinate.
 </div>
 </div>
 </td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="26185"></a>26185</td>
+<td class="address-2"><span id="26185"></span>26185</td>
 <td class="instruction">CP 155</td>
 <td class="comment-11" rowspan="1">Is the character on the top floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="26187"></a>26187</td>
+<td class="address-1"><span id="26187"></span>26187</td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return with the zero flag set if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="26188"></a>26188</td>
+<td class="address-1"><span id="26188"></span>26188</td>
 <td class="instruction">CP 162</td>
 <td class="comment-11" rowspan="1">Is the character on the middle floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="26190"></a>26190</td>
+<td class="address-1"><span id="26190"></span>26190</td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return with the zero flag set if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="26191"></a>26191</td>
+<td class="address-1"><span id="26191"></span>26191</td>
 <td class="instruction">CP 169</td>
 <td class="comment-11" rowspan="1">Is the character on the top floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="26193"></a>26193</td>
+<td class="address-1"><span id="26193"></span>26193</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1">Return with the zero flag set if so</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="26175.html">26175</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#26184">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="26194.html">26194</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="26175.html">26175</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26184">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="26194.html">26194</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 63973</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63972.html">63972</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63973">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63990.html">63990</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63972.html">63972</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63973">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63990.html">63990</a></span></td>
 </tr>
 </table>
 <div class="description">63973: Compare a character's coordinates with ERIC's</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="63374.html">63374</a>. On entry, the zero flag is set if ERIC's y-coordinate matches that of the character looking for him. On exit, the zero flag is set if the character looking for ERIC is within 3 y-coordinates of ERIC's location and not on a staircase (in which case the routine at <a class="link" href="63374.html">63374</a> checks whether the character is also within 3 x-coordinates of ERIC's location, i.e. has found ERIC).
+Used by the routine at <a href="63374.html">63374</a>. On entry, the zero flag is set if ERIC's y-coordinate matches that of the character looking for him. On exit, the zero flag is set if the character looking for ERIC is within 3 y-coordinates of ERIC's location and not on a staircase (in which case the routine at <a href="63374.html">63374</a> checks whether the character is also within 3 x-coordinates of ERIC's location, i.e. has found ERIC).
 </div>
 </div>
 <table class="input-1">
@@ -64,76 +60,76 @@ Used by the routine at <a class="link" href="63374.html">63374</a>. On entry, th
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63973"></a>63973</td>
+<td class="address-2"><span id="63973"></span>63973</td>
 <td class="instruction">JR Z,63986</td>
 <td class="comment-11" rowspan="1">Jump if ERIC and his chaser are on the same floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63975"></a>63975</td>
+<td class="address-1"><span id="63975"></span>63975</td>
 <td class="instruction">SUB D</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=absolute difference between the y-coordinates of ERIC and his chaser</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63976"></a>63976</td>
+<td class="address-1"><span id="63976"></span>63976</td>
 <td class="instruction">JR NC,63980</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63978"></a>63978</td>
+<td class="address-1"><span id="63978"></span>63978</td>
 <td class="instruction">NEG</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63980"></a>63980</td>
+<td class="address-2"><span id="63980"></span>63980</td>
 <td class="instruction">CP 4</td>
 <td class="comment-11" rowspan="1">Are ERIC and his chaser within 3 y-coordinates of each other?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63982"></a>63982</td>
+<td class="address-1"><span id="63982"></span>63982</td>
 <td class="instruction">JR C,63986</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63984"></a>63984</td>
+<td class="address-1"><span id="63984"></span>63984</td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Reset the zero flag (ERIC has not been found)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63985"></a>63985</td>
+<td class="address-1"><span id="63985"></span>63985</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63986"></a>63986</td>
+<td class="address-2"><span id="63986"></span>63986</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=y-coordinate of the character looking for ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63987"></a>63987</td>
-<td class="instruction">JP <a class="link" href="26184.html#26185">26185</a></td>
+<td class="address-1"><span id="63987"></span>63987</td>
+<td class="instruction">JP <a href="26184.html#26185">26185</a></td>
 <td class="comment-11" rowspan="1">Set the zero flag set if the character is not on a staircase</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63972.html">63972</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63973">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63990.html">63990</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63972.html">63972</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63973">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63990.html">63990</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

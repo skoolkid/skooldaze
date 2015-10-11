@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 30097</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="30093.html">30093</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#30097">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="30115.html">30115</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="30093.html">30093</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30097">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30115.html">30115</a></span></td>
 </tr>
 </table>
 <div class="description">30097: Insert a pixel column into a graphic buffer</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="30042.html">30042</a>. Slides the current contents of a row of the graphic buffer (at <a class="link" href="60160.html">60160</a>, <a class="link" href="60416.html">60416</a> or <a class="link" href="60672.html">60672</a>) one pixel to the left, and places the new pixel column into the slot freed up on the right.
+Used by the routine at <a href="30042.html">30042</a>. Slides the current contents of a row of the graphic buffer (at <a href="60160.html">60160</a>, <a href="60416.html">60416</a> or <a href="60672.html">60672</a>) one pixel to the left, and places the new pixel column into the slot freed up on the right.
 </div>
 </div>
 <table class="input-1">
@@ -56,94 +52,94 @@ Used by the routine at <a class="link" href="30042.html">30042</a>. Slides the c
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30097"></a>30097</td>
+<td class="address-2"><span id="30097"></span>30097</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30098"></a>30098</td>
+<td class="address-1"><span id="30098"></span>30098</td>
 <td class="instruction">EXX</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30099"></a>30099</td>
+<td class="address-1"><span id="30099"></span>30099</td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1"><span class="register">HL'</span>=graphic buffer address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30100"></a>30100</td>
+<td class="address-1"><span id="30100"></span>30100</td>
 <td class="instruction">LD C,8</td>
 <td class="comment-11" rowspan="1">There are 8 pixels to insert into the column</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30102"></a>30102</td>
+<td class="address-2"><span id="30102"></span>30102</td>
 <td class="instruction">LD B,8</td>
 <td class="comment-11" rowspan="1">There are 8 bytes per row in the buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30104"></a>30104</td>
+<td class="address-1"><span id="30104"></span>30104</td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="1">Push a pixel into the carry flag</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30105"></a>30105</td>
+<td class="address-2"><span id="30105"></span>30105</td>
 <td class="instruction">RL (HL)</td>
 <td class="comment-11" rowspan="3">Drag the pixel from the carry flag into the buffer, and slide all the other pixels in the row one to the left</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30107"></a>30107</td>
+<td class="address-1"><span id="30107"></span>30107</td>
 <td class="instruction">DEC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30108"></a>30108</td>
+<td class="address-1"><span id="30108"></span>30108</td>
 <td class="instruction">DJNZ 30105</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30110"></a>30110</td>
+<td class="address-1"><span id="30110"></span>30110</td>
 <td class="instruction">DEC C</td>
 <td class="comment-11" rowspan="1">Next pixel</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30111"></a>30111</td>
+<td class="address-1"><span id="30111"></span>30111</td>
 <td class="instruction">JR NZ,30102</td>
 <td class="comment-11" rowspan="1">Jump back until all 8 pixels have been inserted</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30113"></a>30113</td>
+<td class="address-1"><span id="30113"></span>30113</td>
 <td class="instruction">EXX</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30114"></a>30114</td>
+<td class="address-1"><span id="30114"></span>30114</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="30093.html">30093</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#30097">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="30115.html">30115</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="30093.html">30093</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30097">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30115.html">30115</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

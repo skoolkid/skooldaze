@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 32279</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="32263.html">32263</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#32279">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="32353.html">32353</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="32263.html">32263</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32279">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32353.html">32353</a></span></td>
 </tr>
 </table>
 <div class="description">32279: Play a tune</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="32390.html">32390</a>, <a class="link" href="32400.html">32400</a>, <a class="link" href="32406.html">32406</a> and <a class="link" href="32418.html">32418</a>.
+Used by the routines at <a href="32390.html">32390</a>, <a href="32400.html">32400</a>, <a href="32406.html">32406</a> and <a href="32418.html">32418</a>.
 </div>
 </div>
 <table class="input-1">
@@ -52,61 +48,61 @@ Used by the routines at <a class="link" href="32390.html">32390</a>, <a class="l
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32279"></a>32279</td>
+<td class="address-2"><span id="32279"></span>32279</td>
 <td class="instruction">DI</td>
 <td class="comment-11" rowspan="1">Disable interrupts</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32280"></a>32280</td>
+<td class="address-2"><span id="32280"></span>32280</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick up a tune datum in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32281"></a>32281</td>
+<td class="address-1"><span id="32281"></span>32281</td>
 <td class="instruction">INC HL</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the next tune datum</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32282"></a>32282</td>
+<td class="address-1"><span id="32282"></span>32282</td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Is the tune finished?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32283"></a>32283</td>
+<td class="address-1"><span id="32283"></span>32283</td>
 <td class="instruction">JR NZ,32290</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32285"></a>32285</td>
+<td class="address-1"><span id="32285"></span>32285</td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="2">Make the border blue</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32286"></a>32286</td>
+<td class="address-1"><span id="32286"></span>32286</td>
 <td class="instruction">OUT (254),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32288"></a>32288</td>
+<td class="address-1"><span id="32288"></span>32288</td>
 <td class="instruction">EI</td>
 <td class="comment-11" rowspan="1">Re-enable interrupts</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32289"></a>32289</td>
+<td class="address-1"><span id="32289"></span>32289</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="32290"></a>
+<span id="32290"></span>
 <div class="comments">
 <div class="paragraph">
 A non-zero tune datum has been found, meaning the tune is not finished yet.
@@ -116,274 +112,274 @@ A non-zero tune datum has been found, meaning the tune is not finished yet.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32290"></a>32290</td>
+<td class="address-2"><span id="32290"></span>32290</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32291"></a>32291</td>
+<td class="address-1"><span id="32291"></span>32291</td>
 <td class="instruction">LD B,A</td>
 <td class="comment-11" rowspan="1">Copy the tune datum to <span class="register">B</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32292"></a>32292</td>
+<td class="address-1"><span id="32292"></span>32292</td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="1">Should we pause briefly (bit 0 set) here?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32293"></a>32293</td>
+<td class="address-1"><span id="32293"></span>32293</td>
 <td class="instruction">JR NC,32304</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32295"></a>32295</td>
+<td class="address-1"><span id="32295"></span>32295</td>
 <td class="instruction">LD DE,3840</td>
 <td class="comment-11" rowspan="5">Pause briefly (this happens for all but one note in the theme tune, and for all notes in the 'all shields/safe' tune)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32298"></a>32298</td>
+<td class="address-2"><span id="32298"></span>32298</td>
 <td class="instruction">DEC E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32299"></a>32299</td>
+<td class="address-1"><span id="32299"></span>32299</td>
 <td class="instruction">JR NZ,32298</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32301"></a>32301</td>
+<td class="address-1"><span id="32301"></span>32301</td>
 <td class="instruction">DEC D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32302"></a>32302</td>
+<td class="address-1"><span id="32302"></span>32302</td>
 <td class="instruction">JR NZ,32298</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32304"></a>32304</td>
+<td class="address-2"><span id="32304"></span>32304</td>
 <td class="instruction">AND 7</td>
 <td class="comment-11" rowspan="1">0&lt;=<span class="register">A</span>&lt;=7</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32306"></a>32306</td>
+<td class="address-1"><span id="32306"></span>32306</td>
 <td class="instruction">LD C,A</td>
 <td class="comment-11" rowspan="1"><span class="register">C</span>=border colour for this note</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32307"></a>32307</td>
+<td class="address-1"><span id="32307"></span>32307</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="4">Point <span class="register">HL</span> at the appropriate entry in the note pitch/duration data table at <a class="link" href="32263.html">32263</a></td>
+<td class="comment-11" rowspan="4">Point <span class="register">HL</span> at the appropriate entry in the note pitch/duration data table at <a href="32263.html">32263</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32308"></a>32308</td>
+<td class="address-1"><span id="32308"></span>32308</td>
 <td class="instruction">ADD A,7</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32310"></a>32310</td>
+<td class="address-1"><span id="32310"></span>32310</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32311"></a>32311</td>
+<td class="address-1"><span id="32311"></span>32311</td>
 <td class="instruction">LD H,126</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32313"></a>32313</td>
+<td class="address-1"><span id="32313"></span>32313</td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=original tune datum</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32314"></a>32314</td>
+<td class="address-1"><span id="32314"></span>32314</td>
 <td class="instruction">RLCA</td>
 <td class="comment-11" rowspan="15">Obtain the note frequency parameter in <span class="register">E</span> and the note duration parameter in <span class="register">HL</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32315"></a>32315</td>
+<td class="address-1"><span id="32315"></span>32315</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32316"></a>32316</td>
+<td class="address-1"><span id="32316"></span>32316</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32317"></a>32317</td>
+<td class="address-1"><span id="32317"></span>32317</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32318"></a>32318</td>
+<td class="address-1"><span id="32318"></span>32318</td>
 <td class="instruction">AND 15</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32320"></a>32320</td>
+<td class="address-1"><span id="32320"></span>32320</td>
 <td class="instruction">LD B,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32321"></a>32321</td>
+<td class="address-1"><span id="32321"></span>32321</td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32322"></a>32322</td>
+<td class="address-1"><span id="32322"></span>32322</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32323"></a>32323</td>
+<td class="address-1"><span id="32323"></span>32323</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32324"></a>32324</td>
+<td class="address-1"><span id="32324"></span>32324</td>
 <td class="instruction">LD HL,0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32327"></a>32327</td>
+<td class="address-2"><span id="32327"></span>32327</td>
 <td class="instruction">ADD HL,DE</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32328"></a>32328</td>
+<td class="address-1"><span id="32328"></span>32328</td>
 <td class="instruction">DJNZ 32327</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32330"></a>32330</td>
+<td class="address-1"><span id="32330"></span>32330</td>
 <td class="instruction">RR H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32332"></a>32332</td>
+<td class="address-1"><span id="32332"></span>32332</td>
 <td class="instruction">RR L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32334"></a>32334</td>
+<td class="address-1"><span id="32334"></span>32334</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32335"></a>32335</td>
+<td class="address-2"><span id="32335"></span>32335</td>
 <td class="instruction">LD A,C</td>
 <td class="comment-11" rowspan="10">Produce a note</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32336"></a>32336</td>
+<td class="address-1"><span id="32336"></span>32336</td>
 <td class="instruction">OUT (254),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32338"></a>32338</td>
+<td class="address-1"><span id="32338"></span>32338</td>
 <td class="instruction">XOR 16</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32340"></a>32340</td>
+<td class="address-1"><span id="32340"></span>32340</td>
 <td class="instruction">LD C,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32341"></a>32341</td>
+<td class="address-1"><span id="32341"></span>32341</td>
 <td class="instruction">LD B,E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="32342"></a>32342</td>
+<td class="address-2"><span id="32342"></span>32342</td>
 <td class="instruction">DJNZ 32342</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32344"></a>32344</td>
+<td class="address-1"><span id="32344"></span>32344</td>
 <td class="instruction">DEC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32345"></a>32345</td>
+<td class="address-1"><span id="32345"></span>32345</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32346"></a>32346</td>
+<td class="address-1"><span id="32346"></span>32346</td>
 <td class="instruction">OR L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32347"></a>32347</td>
+<td class="address-1"><span id="32347"></span>32347</td>
 <td class="instruction">JR NZ,32335</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32349"></a>32349</td>
+<td class="address-1"><span id="32349"></span>32349</td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1">Restore the pointer to the tune data table</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="32350"></a>32350</td>
+<td class="address-1"><span id="32350"></span>32350</td>
 <td class="instruction">JP 32280</td>
 <td class="comment-11" rowspan="1">Pick up the next tune datum</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="32263.html">32263</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#32279">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="32353.html">32353</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="32263.html">32263</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32279">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32353.html">32353</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

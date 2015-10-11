@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 31854</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="31852.html">31852</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#31854">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="31895.html">31895</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="31852.html">31852</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31854">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31895.html">31895</a></span></td>
 </tr>
 </table>
 <div class="description">31854: Make a teacher perform dinner duty (1)</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command list <a class="link" href="64857.html">184</a>. Makes the teacher on dinner duty pace up and down the dinner hall, checking whether ERIC is present. If ERIC is absent, the teacher is sent to find him, after which the command list is restarted.
+Used by command list <a href="64857.html">184</a>. Makes the teacher on dinner duty pace up and down the dinner hall, checking whether ERIC is present. If ERIC is absent, the teacher is sent to find him, after which the command list is restarted.
 </div>
 </div>
 <table class="input-1">
@@ -52,31 +48,31 @@ Used by command list <a class="link" href="64857.html">184</a>. Makes the teache
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="31854"></a>31854</td>
+<td class="address-2"><span id="31854"></span>31854</td>
 <td class="instruction">LD DE,32712</td>
-<td class="comment-11" rowspan="4">Set bit 7 at <a class="link" href="32712.html">32712</a>, indicating that dinner has started (and so ERIC should be in the dinner hall)</td>
+<td class="comment-11" rowspan="4">Set bit 7 at <a href="32712.html">32712</a>, indicating that dinner has started (and so ERIC should be in the dinner hall)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31857"></a>31857</td>
+<td class="address-1"><span id="31857"></span>31857</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31858"></a>31858</td>
+<td class="address-1"><span id="31858"></span>31858</td>
 <td class="instruction">SET 7,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31860"></a>31860</td>
+<td class="address-1"><span id="31860"></span>31860</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="31861"></a>
+<span id="31861"></span>
 <div class="comments">
 <div class="paragraph">
 This entry point is used on subsequent calls when the teacher on dinner duty has reached the right end of the dinner hall.
@@ -86,65 +82,65 @@ This entry point is used on subsequent calls when the teacher on dinner duty has
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31861"></a>31861</td>
-<td class="instruction">CALL <a class="link" href="31188.html">31188</a></td>
+<td class="address-1"><span id="31861"></span>31861</td>
+<td class="instruction">CALL <a href="31188.html">31188</a></td>
 <td class="comment-11" rowspan="1">Set the zero flag if ERIC is where he should be</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31864"></a>31864</td>
+<td class="address-1"><span id="31864"></span>31864</td>
 <td class="instruction">LD DE,38689</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=151 (LSB of <a class="link" href="31895.html">31895</a>), <span class="register">E</span>=33 (x-coordinate of the left end of the teacher's dinner duty orbit)</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=151 (LSB of <a href="31895.html">31895</a>), <span class="register">E</span>=33 (x-coordinate of the left end of the teacher's dinner duty orbit)</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="31867"></a>
+<span id="31867"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a class="link" href="31895.html">31895</a> with <span class="register">D</span>=117 (LSB of the entry point at <a class="link" href="31854.html#31861">31861</a>, above) and <span class="register">E</span>=62 (x-coordinate of the right end of the teacher's dinner duty orbit), and also by the routine at <a class="link" href="62208.html">62208</a> with the zero flag reset.
+This entry point is used by the routine at <a href="31895.html">31895</a> with <span class="register">D</span>=117 (LSB of the entry point at <a href="31854.html#31861">31861</a>, above) and <span class="register">E</span>=62 (x-coordinate of the right end of the teacher's dinner duty orbit), and also by the routine at <a href="62208.html">62208</a> with the zero flag reset.
 </div>
 </div>
 </td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="31867"></a>31867</td>
+<td class="address-2"><span id="31867"></span>31867</td>
 <td class="instruction">LD L,105</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31869"></a>31869</td>
+<td class="address-1"><span id="31869"></span>31869</td>
 <td class="instruction">JR Z,31879</td>
 <td class="comment-11" rowspan="1">Jump if ERIC is where he should be</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31871"></a>31871</td>
+<td class="address-1"><span id="31871"></span>31871</td>
 <td class="instruction">LD (HL),160</td>
-<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a class="link" href="31648.html">31648</a> into bytes 105 and 106 of the character's buffer</td>
+<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="31648.html">31648</a> into bytes 105 and 106 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31873"></a>31873</td>
+<td class="address-1"><span id="31873"></span>31873</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31874"></a>31874</td>
+<td class="address-1"><span id="31874"></span>31874</td>
 <td class="instruction">LD (HL),123</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31876"></a>31876</td>
-<td class="instruction">JP <a class="link" href="31648.html">31648</a></td>
+<td class="address-1"><span id="31876"></span>31876</td>
+<td class="instruction">JP <a href="31648.html">31648</a></td>
 <td class="comment-11" rowspan="1">And jump to that routine now</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="31879"></a>
+<span id="31879"></span>
 <div class="comments">
 <div class="paragraph">
 ERIC is where he should be, so there's no need to chase him.
@@ -154,76 +150,76 @@ ERIC is where he should be, so there's no need to chase him.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="31879"></a>31879</td>
+<td class="address-2"><span id="31879"></span>31879</td>
 <td class="instruction">LD (HL),60</td>
-<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a class="link" href="25404.html">25404</a> into bytes 105 and 106 of the teacher's buffer</td>
+<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="25404.html">25404</a> into bytes 105 and 106 of the teacher's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31881"></a>31881</td>
+<td class="address-1"><span id="31881"></span>31881</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31882"></a>31882</td>
+<td class="address-1"><span id="31882"></span>31882</td>
 <td class="instruction">LD (HL),99</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31884"></a>31884</td>
+<td class="address-1"><span id="31884"></span>31884</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="2">Place 33 or 62 into byte 107 of the teacher's buffer (to make him go to that x-coordinate next)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31885"></a>31885</td>
+<td class="address-1"><span id="31885"></span>31885</td>
 <td class="instruction">LD (HL),E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31886"></a>31886</td>
+<td class="address-1"><span id="31886"></span>31886</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="2">Place 0 into byte 108 of the teacher's buffer, giving him more than enough time to reach the other end of the dinner hall without interruption</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31887"></a>31887</td>
+<td class="address-1"><span id="31887"></span>31887</td>
 <td class="instruction">LD (HL),0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31889"></a>31889</td>
+<td class="address-1"><span id="31889"></span>31889</td>
 <td class="instruction">LD L,99</td>
-<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 99 and 100 of the teacher's buffer with that of <a class="link" href="31895.html">31895</a> or <a class="link" href="31854.html#31861">31861</a></td>
+<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 99 and 100 of the teacher's buffer with that of <a href="31895.html">31895</a> or <a href="31854.html#31861">31861</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31891"></a>31891</td>
+<td class="address-1"><span id="31891"></span>31891</td>
 <td class="instruction">LD (HL),D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31892"></a>31892</td>
-<td class="instruction">JP <a class="link" href="25404.html">25404</a></td>
+<td class="address-1"><span id="31892"></span>31892</td>
+<td class="instruction">JP <a href="25404.html">25404</a></td>
 <td class="comment-11" rowspan="1">Proceed to the other end of the dinner hall</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="31852.html">31852</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#31854">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="31895.html">31895</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="31852.html">31852</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31854">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31895.html">31895</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

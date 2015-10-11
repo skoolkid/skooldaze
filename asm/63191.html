@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 63191</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63146.html">63146</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63191">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63231.html">63231</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63146.html">63146</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63191">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63231.html">63231</a></span></td>
 </tr>
 </table>
 <div class="description">63191: Make MR CREAK reveal his safe combination letter if appropriate</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="32132.html">32132</a>. A teacher is standing at the doorway of a classroom, ready to tell the kids to sit down; this routine checks whether the teacher is MR CREAK, and if it is, makes him reveal his safe combination letter if his birth year has been written on the blackboard by ERIC, and ERIC has not yet opened the safe.
+Used by the routine at <a href="32132.html">32132</a>. A teacher is standing at the doorway of a classroom, ready to tell the kids to sit down; this routine checks whether the teacher is MR CREAK, and if it is, makes him reveal his safe combination letter if his birth year has been written on the blackboard by ERIC, and ERIC has not yet opened the safe.
 </div>
 </div>
 <table class="input-1">
@@ -56,85 +52,85 @@ Used by the routine at <a class="link" href="32132.html">32132</a>. A teacher is
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63191"></a>63191</td>
-<td class="instruction">CALL <a class="link" href="63734.html">63734</a></td>
+<td class="address-2"><span id="63191"></span>63191</td>
+<td class="instruction">CALL <a href="63734.html">63734</a></td>
 <td class="comment-11" rowspan="2">Return unless we're dealing with CREAK and ERIC has not yet opened the safe</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63194"></a>63194</td>
+<td class="address-1"><span id="63194"></span>63194</td>
 <td class="instruction">RET C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63195"></a>63195</td>
-<td class="instruction">CALL <a class="link" href="64016.html">64016</a></td>
+<td class="address-1"><span id="63195"></span>63195</td>
+<td class="instruction">CALL <a href="64016.html">64016</a></td>
 <td class="comment-11" rowspan="2">Return unless CREAK is near a blackboard last written on by ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63198"></a>63198</td>
+<td class="address-1"><span id="63198"></span>63198</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63199"></a>63199</td>
+<td class="address-1"><span id="63199"></span>63199</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="2"><span class="register">A</span>=56 (Reading Room blackboard) or 58 (White Room blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63200"></a>63200</td>
+<td class="address-1"><span id="63200"></span>63200</td>
 <td class="instruction">SUB 181</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63202"></a>63202</td>
+<td class="address-1"><span id="63202"></span>63202</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1">Save CREAK's character number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63203"></a>63203</td>
+<td class="address-1"><span id="63203"></span>63203</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="6"><span class="register">HL</span>=<a class="link" href="32680.html">32680</a> (Reading Room blackboard contents buffer) or <a class="link" href="32686.html">32686</a> (White Room blackboard contents buffer)</td>
+<td class="comment-11" rowspan="6"><span class="register">HL</span>=<a href="32680.html">32680</a> (Reading Room blackboard contents buffer) or <a href="32686.html">32686</a> (White Room blackboard contents buffer)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63204"></a>63204</td>
+<td class="address-1"><span id="63204"></span>63204</td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63205"></a>63205</td>
+<td class="address-1"><span id="63205"></span>63205</td>
 <td class="instruction">ADD A,L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63206"></a>63206</td>
+<td class="address-1"><span id="63206"></span>63206</td>
 <td class="instruction">NOP</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63207"></a>63207</td>
+<td class="address-1"><span id="63207"></span>63207</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63208"></a>63208</td>
+<td class="address-1"><span id="63208"></span>63208</td>
 <td class="instruction">LD H,D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="63209"></a>
+<span id="63209"></span>
 <div class="comments">
 <div class="paragraph">
 Check whether CREAK's birth year has been written on the board.
@@ -144,55 +140,55 @@ Check whether CREAK's birth year has been written on the board.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63209"></a>63209</td>
+<td class="address-1"><span id="63209"></span>63209</td>
 <td class="instruction">LD E,155</td>
-<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a class="link" href="32667.html">32667</a> (which holds CREAK's year of birth)</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a href="32667.html">32667</a> (which holds CREAK's year of birth)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63211"></a>63211</td>
+<td class="address-1"><span id="63211"></span>63211</td>
 <td class="instruction">LD B,4</td>
 <td class="comment-11" rowspan="1">There are 4 digits in CREAK's year of birth</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63213"></a>63213</td>
+<td class="address-2"><span id="63213"></span>63213</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=digit from CREAK's year of birth</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63214"></a>63214</td>
+<td class="address-1"><span id="63214"></span>63214</td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="1">Move <span class="register">DE</span> along to the next digit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63215"></a>63215</td>
+<td class="address-1"><span id="63215"></span>63215</td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="1">Compare the digit with the character written on the board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63216"></a>63216</td>
+<td class="address-1"><span id="63216"></span>63216</td>
 <td class="instruction">JR NZ,63226</td>
 <td class="comment-11" rowspan="1">Jump if they don't match</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63218"></a>63218</td>
+<td class="address-1"><span id="63218"></span>63218</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1">Move to the next character written on the board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63219"></a>63219</td>
+<td class="address-1"><span id="63219"></span>63219</td>
 <td class="instruction">DJNZ 63213</td>
 <td class="comment-11" rowspan="1">Jump back until all 4 digits have been checked</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="63221"></a>
+<span id="63221"></span>
 <div class="comments">
 <div class="paragraph">
 The first four characters written on the board by ERIC match the digits in MR CREAK's year of birth.
@@ -202,52 +198,52 @@ The first four characters written on the board by ERIC match the digits in MR CR
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63221"></a>63221</td>
+<td class="address-1"><span id="63221"></span>63221</td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1">Restore CREAK's character number (166) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63222"></a>63222</td>
+<td class="address-1"><span id="63222"></span>63222</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1">Save it again</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63223"></a>63223</td>
-<td class="instruction">CALL <a class="link" href="63829.html#63856">63856</a></td>
+<td class="address-1"><span id="63223"></span>63223</td>
+<td class="instruction">CALL <a href="63829.html#63856">63856</a></td>
 <td class="comment-11" rowspan="1">Reveal CREAK's safe combination letter</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63226"></a>63226</td>
+<td class="address-2"><span id="63226"></span>63226</td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1">Restore CREAK's character number (166) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63227"></a>63227</td>
+<td class="address-1"><span id="63227"></span>63227</td>
 <td class="instruction">LD BC,61889</td>
-<td class="comment-11" rowspan="1">Set <span class="register">BC</span> to <a class="link" href="61889.html">61889</a> (SILENCE! OR I'LL CANE THE LOT OF YOU) before returning</td>
+<td class="comment-11" rowspan="1">Set <span class="register">BC</span> to <a href="61889.html">61889</a> (SILENCE! OR I'LL CANE THE LOT OF YOU) before returning</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63230"></a>63230</td>
+<td class="address-1"><span id="63230"></span>63230</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63146.html">63146</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63191">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63231.html">63231</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63146.html">63146</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63191">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63231.html">63231</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

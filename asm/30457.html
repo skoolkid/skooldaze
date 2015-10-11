@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 30457</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="30432.html">30432</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#30457">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="30464.html">30464</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="30432.html">30432</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30457">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30464.html">30464</a></span></td>
 </tr>
 </table>
 <div class="description">30457: Print the score, lines total or hi-score (2)</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Continues from <a class="link" href="30408.html">30408</a>. Checks whether ERIC is over the lines limit (if the number of lines was just printed).
+Continues from <a href="30408.html">30408</a>. Checks whether ERIC is over the lines limit (if the number of lines was just printed).
 </div>
 </div>
 <table class="input-1">
@@ -52,40 +48,40 @@ Continues from <a class="link" href="30408.html">30408</a>. Checks whether ERIC 
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30457"></a>30457</td>
+<td class="address-2"><span id="30457"></span>30457</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1">Copy the LSB of the display file address to <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30458"></a>30458</td>
+<td class="address-1"><span id="30458"></span>30458</td>
 <td class="instruction">CP 220</td>
 <td class="comment-11" rowspan="1">Was it the lines total that was just printed?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30460"></a>30460</td>
+<td class="address-1"><span id="30460"></span>30460</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30461"></a>30461</td>
-<td class="instruction">JP <a class="link" href="63931.html">63931</a></td>
+<td class="address-1"><span id="30461"></span>30461</td>
+<td class="instruction">JP <a href="63931.html">63931</a></td>
 <td class="comment-11" rowspan="1">Otherwise check whether ERIC is over the lines limit</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="30432.html">30432</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#30457">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="30464.html">30464</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="30432.html">30432</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30457">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30464.html">30464</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

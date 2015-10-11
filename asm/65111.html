@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 65111</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="65106.html">65106</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#65111">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="65141.html">65141</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="65106.html">65106</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#65111">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="65141.html">65141</a></span></td>
 </tr>
 </table>
 <div class="description">65111: Make a knocked-out sound effect</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="27303.html">27303</a>. Makes a sound effect just after ERIC has been knocked over or pushed out of his seat.
+Used by the routine at <a href="27303.html">27303</a>. Makes a sound effect just after ERIC has been knocked over or pushed out of his seat.
 </div>
 </div>
 <table class="input-1">
@@ -39,7 +35,7 @@ Used by the routine at <a class="link" href="27303.html">27303</a>. Makes a soun
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">1 + knockout delay counter value (<a class="link" href="32757.html">32757</a>)</td>
+<td class="register-desc">1 + knockout delay counter value (<a href="32757.html">32757</a>)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -52,40 +48,40 @@ Used by the routine at <a class="link" href="27303.html">27303</a>. Makes a soun
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="65111"></a>65111</td>
+<td class="address-2"><span id="65111"></span>65111</td>
 <td class="instruction">CP 39</td>
-<td class="comment-11" rowspan="2">Return (to <a class="link" href="27351.html">27351</a>) unless ERIC has just been knocked over</td>
+<td class="comment-11" rowspan="2">Return (to <a href="27351.html">27351</a>) unless ERIC has just been knocked over</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65113"></a>65113</td>
+<td class="address-1"><span id="65113"></span>65113</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65114"></a>65114</td>
+<td class="address-1"><span id="65114"></span>65114</td>
 <td class="instruction">LD HL,275</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=2 (initial border colour: red), <span class="register">H</span>=1 (pitch adjustment), <span class="register">L</span>=19 (border alternates red/blue), <span class="register">D</span>=0 (duration), <span class="register">E</span>=0 (initial pitch)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65117"></a>65117</td>
+<td class="address-1"><span id="65117"></span>65117</td>
 <td class="instruction">LD DE,0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65120"></a>65120</td>
+<td class="address-1"><span id="65120"></span>65120</td>
 <td class="instruction">LD A,2</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="65122"></a>
+<span id="65122"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routines at <a class="link" href="58604.html">58604</a> (to make the 'hit a shield' sound effect) and <a class="link" href="65141.html">65141</a> (to make the catapult sound effect) with the following parameters prepared:
+This entry point is used by the routines at <a href="58604.html">58604</a> (to make the 'hit a shield' sound effect) and <a href="65141.html">65141</a> (to make the catapult sound effect) with the following parameters prepared:
 </div>
 <div class="paragraph">
 <table class="default">
@@ -116,100 +112,100 @@ This entry point is used by the routines at <a class="link" href="58604.html">58
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="65122"></a>65122</td>
+<td class="address-2"><span id="65122"></span>65122</td>
 <td class="instruction">XOR L</td>
 <td class="comment-11" rowspan="2">Flip the border colour and the state of the speaker</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65123"></a>65123</td>
+<td class="address-1"><span id="65123"></span>65123</td>
 <td class="instruction">OUT (254),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65125"></a>65125</td>
+<td class="address-1"><span id="65125"></span>65125</td>
 <td class="instruction">LD B,E</td>
 <td class="comment-11" rowspan="2">Pitch delay</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="65126"></a>65126</td>
+<td class="address-2"><span id="65126"></span>65126</td>
 <td class="instruction">DJNZ 65126</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65128"></a>65128</td>
+<td class="address-1"><span id="65128"></span>65128</td>
 <td class="instruction">LD B,A</td>
 <td class="comment-11" rowspan="1">Save <span class="register">A</span> temporarily</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65129"></a>65129</td>
+<td class="address-1"><span id="65129"></span>65129</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="3">Adjust the pitch</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65130"></a>65130</td>
+<td class="address-1"><span id="65130"></span>65130</td>
 <td class="instruction">ADD A,H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65131"></a>65131</td>
+<td class="address-1"><span id="65131"></span>65131</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65132"></a>65132</td>
+<td class="address-1"><span id="65132"></span>65132</td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="1">Restore <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65133"></a>65133</td>
+<td class="address-1"><span id="65133"></span>65133</td>
 <td class="instruction">DEC D</td>
 <td class="comment-11" rowspan="1">Decrement the duration counter</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65134"></a>65134</td>
+<td class="address-1"><span id="65134"></span>65134</td>
 <td class="instruction">JR NZ,65122</td>
 <td class="comment-11" rowspan="1">Jump back unless the sound effect is finished</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65136"></a>65136</td>
+<td class="address-1"><span id="65136"></span>65136</td>
 <td class="instruction">LD A,1</td>
 <td class="comment-11" rowspan="2">Make the border blue before returning</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65138"></a>65138</td>
+<td class="address-1"><span id="65138"></span>65138</td>
 <td class="instruction">OUT (254),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="65140"></a>65140</td>
+<td class="address-1"><span id="65140"></span>65140</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="65106.html">65106</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#65111">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="65141.html">65141</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="65106.html">65106</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#65111">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="65141.html">65141</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

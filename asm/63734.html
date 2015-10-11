@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 63734</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63668.html">63668</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63734">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63749.html">63749</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63668.html">63668</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63734">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63749.html">63749</a></span></td>
 </tr>
 </table>
 <div class="description">63734: Check whether MR CREAK can reveal his safe combination letter</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="63191.html">63191</a>. Returns with the carry flag reset if we're dealing with MR CREAK and ERIC has not yet opened the safe.
+Used by the routine at <a href="63191.html">63191</a>. Returns with the carry flag reset if we're dealing with MR CREAK and ERIC has not yet opened the safe.
 </div>
 </div>
 <table class="input-1">
@@ -52,70 +48,70 @@ Used by the routine at <a class="link" href="63191.html">63191</a>. Returns with
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63734"></a>63734</td>
+<td class="address-2"><span id="63734"></span>63734</td>
 <td class="instruction">LD BC,61889</td>
-<td class="comment-11" rowspan="1">Prepare <span class="register">BC</span> (<a class="link" href="61889.html">61889</a>='SILENCE! OR I'LL CANE THE LOT OF YOU') before returning</td>
+<td class="comment-11" rowspan="1">Prepare <span class="register">BC</span> (<a href="61889.html">61889</a>='SILENCE! OR I'LL CANE THE LOT OF YOU') before returning</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63737"></a>63737</td>
+<td class="address-1"><span id="63737"></span>63737</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=teacher's character number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63738"></a>63738</td>
+<td class="address-1"><span id="63738"></span>63738</td>
 <td class="instruction">CP 166</td>
 <td class="comment-11" rowspan="2">Return with the carry flag set if it's not MR CREAK (166)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63740"></a>63740</td>
+<td class="address-1"><span id="63740"></span>63740</td>
 <td class="instruction">RET C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63741"></a>63741</td>
+<td class="address-1"><span id="63741"></span>63741</td>
 <td class="instruction">LD A,(32746)</td>
-<td class="comment-11" rowspan="1">Collect the game mode indicator from <a class="link" href="32746.html">32746</a></td>
+<td class="comment-11" rowspan="1">Collect the game mode indicator from <a href="32746.html">32746</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63744"></a>63744</td>
+<td class="address-1"><span id="63744"></span>63744</td>
 <td class="instruction">DEC A</td>
 <td class="comment-11" rowspan="3">Set the carry flag if it's demo mode or ERIC has already opened the safe</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63745"></a>63745</td>
+<td class="address-1"><span id="63745"></span>63745</td>
 <td class="instruction">CP 2</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63747"></a>63747</td>
+<td class="address-1"><span id="63747"></span>63747</td>
 <td class="instruction">CCF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63748"></a>63748</td>
+<td class="address-1"><span id="63748"></span>63748</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63668.html">63668</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63734">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63749.html">63749</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63668.html">63668</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63734">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63749.html">63749</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

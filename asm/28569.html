@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 28569</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28558.html">28558</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28569">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28642.html">28642</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28558.html">28558</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28569">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28642.html">28642</a></span></td>
 </tr>
 </table>
 <div class="description">28569: Check whether anyone was punched by ERIC or ANGELFACE</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Continues from <a class="link" href="28558.html">28558</a>. Also used by the routine at <a class="link" href="62628.html">62628</a>. Checks whether anyone was punched by ERIC or ANGELFACE, and knocks them out if so.
+Continues from <a href="28558.html">28558</a>. Also used by the routine at <a href="62628.html">62628</a>. Checks whether anyone was punched by ERIC or ANGELFACE, and knocks them out if so.
 </div>
 </div>
 <table class="input-1">
@@ -52,139 +48,139 @@ Continues from <a class="link" href="28558.html">28558</a>. Also used by the rou
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28569"></a>28569</td>
+<td class="address-2"><span id="28569"></span>28569</td>
 <td class="instruction">LD L,98</td>
 <td class="comment-11" rowspan="1">Byte 98 of the puncher's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28571"></a>28571</td>
+<td class="address-1"><span id="28571"></span>28571</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28572"></a>28572</td>
+<td class="address-1"><span id="28572"></span>28572</td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28573"></a>28573</td>
+<td class="address-1"><span id="28573"></span>28573</td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-11" rowspan="1">Pick up the puncher's y-coordinate in <span class="register">D</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28574"></a>28574</td>
+<td class="address-1"><span id="28574"></span>28574</td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=96</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28575"></a>28575</td>
+<td class="address-1"><span id="28575"></span>28575</td>
 <td class="instruction">LD C,(HL)</td>
 <td class="comment-11" rowspan="1">Pick up the puncher's animatory state in <span class="register">C</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28576"></a>28576</td>
+<td class="address-1"><span id="28576"></span>28576</td>
 <td class="instruction">SUB 2</td>
 <td class="comment-11" rowspan="4"><span class="register">A</span>=x-coordinate of the location two spaces in front of the puncher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28578"></a>28578</td>
+<td class="address-1"><span id="28578"></span>28578</td>
 <td class="instruction">BIT 7,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28580"></a>28580</td>
+<td class="address-1"><span id="28580"></span>28580</td>
 <td class="instruction">JR Z,28584</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28582"></a>28582</td>
+<td class="address-1"><span id="28582"></span>28582</td>
 <td class="instruction">ADD A,4</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28584"></a>28584</td>
+<td class="address-2"><span id="28584"></span>28584</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-11" rowspan="1">Store the potential victim's x-coordinate in <span class="register">E</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28585"></a>28585</td>
+<td class="address-1"><span id="28585"></span>28585</td>
 <td class="instruction">LD A,(32763)</td>
-<td class="comment-11" rowspan="1">Collect ERIC's status flags from <a class="link" href="32763.html">32763</a></td>
+<td class="comment-11" rowspan="1">Collect ERIC's status flags from <a href="32763.html">32763</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28588"></a>28588</td>
+<td class="address-1"><span id="28588"></span>28588</td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Is ERIC doing the punching?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28589"></a>28589</td>
+<td class="address-1"><span id="28589"></span>28589</td>
 <td class="instruction">JR NZ,28606</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28591"></a>28591</td>
+<td class="address-1"><span id="28591"></span>28591</td>
 <td class="instruction">LD H,172</td>
 <td class="comment-11" rowspan="1">172=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28593"></a>28593</td>
-<td class="instruction">CALL <a class="link" href="28416.html">28416</a></td>
+<td class="address-1"><span id="28593"></span>28593</td>
+<td class="instruction">CALL <a href="28416.html">28416</a></td>
 <td class="comment-11" rowspan="1">Was ERIC punched?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28596"></a>28596</td>
+<td class="address-1"><span id="28596"></span>28596</td>
 <td class="instruction">JR NC,28606</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28598"></a>28598</td>
+<td class="address-1"><span id="28598"></span>28598</td>
 <td class="instruction">LD DE,32763</td>
-<td class="comment-11" rowspan="1"><a class="link" href="32763.html">32763</a> holds ERIC's status flags</td>
+<td class="comment-11" rowspan="1"><a href="32763.html">32763</a> holds ERIC's status flags</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28601"></a>28601</td>
+<td class="address-1"><span id="28601"></span>28601</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28602"></a>28602</td>
+<td class="address-1"><span id="28602"></span>28602</td>
 <td class="instruction">SET 4,(HL)</td>
 <td class="comment-11" rowspan="1">Signal: ERIC was hit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28604"></a>28604</td>
+<td class="address-1"><span id="28604"></span>28604</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28605"></a>28605</td>
+<td class="address-1"><span id="28605"></span>28605</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28606"></a>
+<span id="28606"></span>
 <div class="comments">
 <div class="paragraph">
 Now we check whether anyone was punched. We start with the three main kids.
@@ -194,85 +190,85 @@ Now we check whether anyone was punched. We start with the three main kids.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28606"></a>28606</td>
+<td class="address-2"><span id="28606"></span>28606</td>
 <td class="instruction">LD B,3</td>
 <td class="comment-11" rowspan="1">There are three main kids</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28608"></a>28608</td>
+<td class="address-1"><span id="28608"></span>28608</td>
 <td class="instruction">LD H,169</td>
 <td class="comment-11" rowspan="1">169=EINSTEIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28610"></a>28610</td>
-<td class="instruction">CALL <a class="link" href="28416.html">28416</a></td>
+<td class="address-2"><span id="28610"></span>28610</td>
+<td class="instruction">CALL <a href="28416.html">28416</a></td>
 <td class="comment-11" rowspan="1">Was this main kid punched?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28613"></a>28613</td>
+<td class="address-1"><span id="28613"></span>28613</td>
 <td class="instruction">JR NC,28626</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28615"></a>28615</td>
+<td class="address-2"><span id="28615"></span>28615</td>
 <td class="instruction">LD L,111</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a class="link" href="27206.html">27206</a> into bytes 111 and 112 of the victim's character buffer</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="27206.html">27206</a> into bytes 111 and 112 of the victim's character buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28617"></a>28617</td>
+<td class="address-1"><span id="28617"></span>28617</td>
 <td class="instruction">LD (HL),70</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28619"></a>28619</td>
+<td class="address-1"><span id="28619"></span>28619</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28620"></a>28620</td>
+<td class="address-1"><span id="28620"></span>28620</td>
 <td class="instruction">LD (HL),106</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28622"></a>28622</td>
+<td class="address-1"><span id="28622"></span>28622</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="2">Initialise the parameter determining how long the character will stay down (in byte 113)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28623"></a>28623</td>
+<td class="address-1"><span id="28623"></span>28623</td>
 <td class="instruction">LD (HL),20</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28625"></a>28625</td>
+<td class="address-1"><span id="28625"></span>28625</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28626"></a>28626</td>
+<td class="address-2"><span id="28626"></span>28626</td>
 <td class="instruction">DEC H</td>
 <td class="comment-11" rowspan="1">Next main kid</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28627"></a>28627</td>
+<td class="address-1"><span id="28627"></span>28627</td>
 <td class="instruction">DJNZ 28610</td>
 <td class="comment-11" rowspan="1">Jump back until three main kids have been considered</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28629"></a>
+<span id="28629"></span>
 <div class="comments">
 <div class="paragraph">
 None of the main kids was hit. What about the little boys?
@@ -282,58 +278,58 @@ None of the main kids was hit. What about the little boys?
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28629"></a>28629</td>
+<td class="address-1"><span id="28629"></span>28629</td>
 <td class="instruction">LD H,152</td>
 <td class="comment-11" rowspan="1">152=character number of little boy no. 1</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28631"></a>28631</td>
+<td class="address-1"><span id="28631"></span>28631</td>
 <td class="instruction">LD B,11</td>
 <td class="comment-11" rowspan="1">There are 11 little boys</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28633"></a>28633</td>
-<td class="instruction">CALL <a class="link" href="28416.html">28416</a></td>
+<td class="address-2"><span id="28633"></span>28633</td>
+<td class="instruction">CALL <a href="28416.html">28416</a></td>
 <td class="comment-11" rowspan="1">Was this little boy hit?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28636"></a>28636</td>
+<td class="address-1"><span id="28636"></span>28636</td>
 <td class="instruction">JR C,28615</td>
 <td class="comment-11" rowspan="1">Knock him over if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28638"></a>28638</td>
+<td class="address-1"><span id="28638"></span>28638</td>
 <td class="instruction">INC H</td>
 <td class="comment-11" rowspan="1">Next little boy</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28639"></a>28639</td>
+<td class="address-1"><span id="28639"></span>28639</td>
 <td class="instruction">DJNZ 28633</td>
 <td class="comment-11" rowspan="1">Jump back until all 11 little boys have been considered</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28641"></a>28641</td>
+<td class="address-1"><span id="28641"></span>28641</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28558.html">28558</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28569">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28642.html">28642</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28558.html">28558</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28569">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28642.html">28642</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

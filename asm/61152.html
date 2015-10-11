@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 61152</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="61144.html">61144</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#61152">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="61184.html">61184</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="61144.html">61144</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61152">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61184.html">61184</a></span></td>
 </tr>
 </table>
 <div class="description">61152: Prepare to change the names of the characters</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Continues from <a class="link" href="60896.html">60896</a>. Sets the scene for changing the main characters' names.
+Continues from <a href="60896.html">60896</a>. Sets the scene for changing the main characters' names.
 </div>
 </div>
 <table class="input-1">
@@ -56,100 +52,100 @@ Continues from <a class="link" href="60896.html">60896</a>. Sets the scene for c
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="61152"></a>61152</td>
+<td class="address-2"><span id="61152"></span>61152</td>
 <td class="instruction">LD (HL),255</td>
 <td class="comment-11" rowspan="3">Draw a solid line across the screen (the catwalk)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61154"></a>61154</td>
+<td class="address-1"><span id="61154"></span>61154</td>
 <td class="instruction">INC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61155"></a>61155</td>
+<td class="address-1"><span id="61155"></span>61155</td>
 <td class="instruction">DJNZ 61152</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61157"></a>61157</td>
+<td class="address-1"><span id="61157"></span>61157</td>
 <td class="instruction">LD HL,44392</td>
-<td class="comment-11" rowspan="1"><a class="link" href="44392.html">44392</a>: 'CAST OF CHARACTERS'</td>
+<td class="comment-11" rowspan="1"><a href="44392.html">44392</a>: 'CAST OF CHARACTERS'</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61160"></a>61160</td>
+<td class="address-1"><span id="61160"></span>61160</td>
 <td class="instruction">LD DE,16448</td>
 <td class="comment-11" rowspan="1">Set <span class="register">DE</span> to the display file address at which to print this message</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61163"></a>61163</td>
-<td class="instruction">CALL <a class="link" href="45032.html">45032</a></td>
+<td class="address-1"><span id="61163"></span>61163</td>
+<td class="instruction">CALL <a href="45032.html">45032</a></td>
 <td class="comment-11" rowspan="1">Print this message</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61166"></a>61166</td>
+<td class="address-1"><span id="61166"></span>61166</td>
 <td class="instruction">LD HL,24859</td>
-<td class="comment-11" rowspan="2">Change the instruction at <a class="link" href="24843.html#24859">24859</a> in the routine at <a class="link" href="24843.html">24843</a> to XOR A, so that the skool is not drawn in the background</td>
+<td class="comment-11" rowspan="2">Change the instruction at <a href="24843.html#24859">24859</a> in the routine at <a href="24843.html">24843</a> to XOR A, so that the skool is not drawn in the background</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61169"></a>61169</td>
+<td class="address-1"><span id="61169"></span>61169</td>
 <td class="instruction">LD (HL),175</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61171"></a>61171</td>
+<td class="address-1"><span id="61171"></span>61171</td>
 <td class="instruction">LD HL,39010</td>
 <td class="comment-11" rowspan="5">Set the x-coordinate of every character to 150 (entirely off-screen)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61174"></a>61174</td>
+<td class="address-1"><span id="61174"></span>61174</td>
 <td class="instruction">LD B,21</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="61176"></a>61176</td>
+<td class="address-2"><span id="61176"></span>61176</td>
 <td class="instruction">LD (HL),150</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61178"></a>61178</td>
+<td class="address-1"><span id="61178"></span>61178</td>
 <td class="instruction">INC H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61179"></a>61179</td>
+<td class="address-1"><span id="61179"></span>61179</td>
 <td class="instruction">DJNZ 61176</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="61181"></a>61181</td>
-<td class="instruction">JP <a class="link" href="61408.html">61408</a></td>
+<td class="address-1"><span id="61181"></span>61181</td>
+<td class="instruction">JP <a href="61408.html">61408</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="61144.html">61144</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#61152">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="61184.html">61184</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="61144.html">61144</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61152">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61184.html">61184</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

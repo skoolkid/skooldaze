@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 63270</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63242.html">63242</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63270">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63346.html">63346</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63242.html">63242</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63270">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63346.html">63346</a></span></td>
 </tr>
 </table>
 <div class="description">63270: Check whether ERIC has jumped up to the safe or a shield (2)</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Continues from <a class="link" href="62750.html">62750</a>. Checks whether ERIC has jumped up to the safe or a shield, and makes it flash or unflash as appropriate.
+Continues from <a href="62750.html">62750</a>. Checks whether ERIC has jumped up to the safe or a shield, and makes it flash or unflash as appropriate.
 </div>
 </div>
 <table class="input-1">
@@ -52,61 +48,61 @@ Continues from <a class="link" href="62750.html">62750</a>. Checks whether ERIC 
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63270"></a>63270</td>
+<td class="address-2"><span id="63270"></span>63270</td>
 <td class="instruction">LD A,(32746)</td>
-<td class="comment-11" rowspan="1">Pick up the game mode indicator from <a class="link" href="32746.html">32746</a></td>
+<td class="comment-11" rowspan="1">Pick up the game mode indicator from <a href="32746.html">32746</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63273"></a>63273</td>
+<td class="address-1"><span id="63273"></span>63273</td>
 <td class="instruction">CP 2</td>
 <td class="comment-11" rowspan="1">Are all the shields flashing?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63275"></a>63275</td>
-<td class="instruction">JP NZ,<a class="link" href="28102.html#28130">28130</a></td>
+<td class="address-1"><span id="63275"></span>63275</td>
+<td class="instruction">JP NZ,<a href="28102.html#28130">28130</a></td>
 <td class="comment-11" rowspan="1">Jump if not (to check whether ERIC touched a shield)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63278"></a>63278</td>
+<td class="address-1"><span id="63278"></span>63278</td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=y-coordinate of ERIC's hand</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63279"></a>63279</td>
+<td class="address-1"><span id="63279"></span>63279</td>
 <td class="instruction">CP 161</td>
 <td class="comment-11" rowspan="1">161=y-coordinate of the spot just under the safe in the staff room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63281"></a>63281</td>
+<td class="address-1"><span id="63281"></span>63281</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if ERIC is not on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63282"></a>63282</td>
+<td class="address-1"><span id="63282"></span>63282</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=x-coordinate of ERIC's hand</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63283"></a>63283</td>
+<td class="address-1"><span id="63283"></span>63283</td>
 <td class="instruction">CP 10</td>
 <td class="comment-11" rowspan="1">Has ERIC jumped up to the safe?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63285"></a>63285</td>
+<td class="address-1"><span id="63285"></span>63285</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="63286"></a>
+<span id="63286"></span>
 <div class="comments">
 <div class="paragraph">
 ERIC has jumped up to the safe. Can he open it?
@@ -116,55 +112,55 @@ ERIC has jumped up to the safe. Can he open it?
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63286"></a>63286</td>
+<td class="address-1"><span id="63286"></span>63286</td>
 <td class="instruction">LD HL,32749</td>
-<td class="comment-11" rowspan="1"><a class="link" href="32749.html">32749</a> holds the number of the character who last wrote on the Reading Room blackboard</td>
+<td class="comment-11" rowspan="1"><a href="32749.html">32749</a> holds the number of the character who last wrote on the Reading Room blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63289"></a>63289</td>
+<td class="address-1"><span id="63289"></span>63289</td>
 <td class="instruction">LD DE,32680</td>
-<td class="comment-11" rowspan="1"><a class="link" href="32680.html">32680</a>=Reading Room blackboard contents buffer</td>
+<td class="comment-11" rowspan="1"><a href="32680.html">32680</a>=Reading Room blackboard contents buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63292"></a>63292</td>
+<td class="address-1"><span id="63292"></span>63292</td>
 <td class="instruction">LD C,3</td>
 <td class="comment-11" rowspan="1">There are 3 blackboards</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63294"></a>63294</td>
+<td class="address-2"><span id="63294"></span>63294</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character who last wrote on this board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63295"></a>63295</td>
+<td class="address-1"><span id="63295"></span>63295</td>
 <td class="instruction">INC HL</td>
 <td class="comment-11" rowspan="2">Move <span class="register">HL</span> along to the next blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63296"></a>63296</td>
+<td class="address-1"><span id="63296"></span>63296</td>
 <td class="instruction">INC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63297"></a>63297</td>
+<td class="address-1"><span id="63297"></span>63297</td>
 <td class="instruction">CP 172</td>
 <td class="comment-11" rowspan="1">Did ERIC write on this blackboard?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63299"></a>63299</td>
+<td class="address-1"><span id="63299"></span>63299</td>
 <td class="instruction">JR NZ,63322</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="63301"></a>
+<span id="63301"></span>
 <div class="comments">
 <div class="paragraph">
 ERIC wrote on this blackboard. Check whether he wrote the safe combination code.
@@ -174,133 +170,133 @@ ERIC wrote on this blackboard. Check whether he wrote the safe combination code.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63301"></a>63301</td>
+<td class="address-1"><span id="63301"></span>63301</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63302"></a>63302</td>
+<td class="address-1"><span id="63302"></span>63302</td>
 <td class="instruction">LD L,159</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="32671.html">32671</a> (which holds the safe combination code)</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="32671.html">32671</a> (which holds the safe combination code)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63304"></a>63304</td>
+<td class="address-1"><span id="63304"></span>63304</td>
 <td class="instruction">LD B,4</td>
 <td class="comment-11" rowspan="1">There are 4 characters in the safe combination code</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63306"></a>63306</td>
+<td class="address-1"><span id="63306"></span>63306</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="1">Save the pointer to the blackboard contents buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63307"></a>63307</td>
+<td class="address-2"><span id="63307"></span>63307</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character written on the blackboard by ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63308"></a>63308</td>
+<td class="address-1"><span id="63308"></span>63308</td>
 <td class="instruction">AND 95</td>
 <td class="comment-11" rowspan="1">Convert to upper case</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63310"></a>63310</td>
+<td class="address-1"><span id="63310"></span>63310</td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="1">Move <span class="register">DE</span> along to the next character on the blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63311"></a>63311</td>
+<td class="address-1"><span id="63311"></span>63311</td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="1">Does the character on the blackboard match a safe combination letter?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63312"></a>63312</td>
+<td class="address-1"><span id="63312"></span>63312</td>
 <td class="instruction">JR NZ,63318</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63314"></a>63314</td>
+<td class="address-1"><span id="63314"></span>63314</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1">Move to the next letter of the safe combination code</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63315"></a>63315</td>
+<td class="address-1"><span id="63315"></span>63315</td>
 <td class="instruction">DJNZ 63307</td>
 <td class="comment-11" rowspan="1">Jump back until all four letters have been checked</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63317"></a>63317</td>
+<td class="address-1"><span id="63317"></span>63317</td>
 <td class="instruction">XOR A</td>
 <td class="comment-11" rowspan="1">Set the zero flag to indicate a match</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63318"></a>63318</td>
+<td class="address-2"><span id="63318"></span>63318</td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1">Restore the blackboard contents buffer pointer to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63319"></a>63319</td>
+<td class="address-1"><span id="63319"></span>63319</td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63320"></a>63320</td>
+<td class="address-1"><span id="63320"></span>63320</td>
 <td class="instruction">JR Z,63330</td>
 <td class="comment-11" rowspan="1">Jump if ERIC got the right combination</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63322"></a>63322</td>
+<td class="address-2"><span id="63322"></span>63322</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="3">Point <span class="register">DE</span> at the next blackboard contents buffer (<a class="link" href="32686.html">32686</a> or <a class="link" href="32692.html">32692</a>)</td>
+<td class="comment-11" rowspan="3">Point <span class="register">DE</span> at the next blackboard contents buffer (<a href="32686.html">32686</a> or <a href="32692.html">32692</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63323"></a>63323</td>
+<td class="address-1"><span id="63323"></span>63323</td>
 <td class="instruction">ADD A,6</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63325"></a>63325</td>
+<td class="address-1"><span id="63325"></span>63325</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63326"></a>63326</td>
+<td class="address-1"><span id="63326"></span>63326</td>
 <td class="instruction">DEC C</td>
 <td class="comment-11" rowspan="1">Decrease the blackboard counter</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63327"></a>63327</td>
+<td class="address-1"><span id="63327"></span>63327</td>
 <td class="instruction">JR NZ,63294</td>
 <td class="comment-11" rowspan="1">Jump back until all three blackboards have been checked</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63329"></a>63329</td>
+<td class="address-1"><span id="63329"></span>63329</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="63330"></a>
+<span id="63330"></span>
 <div class="comments">
 <div class="paragraph">
 ERIC got the right combination.
@@ -310,64 +306,64 @@ ERIC got the right combination.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63330"></a>63330</td>
-<td class="instruction">CALL <a class="link" href="63668.html">63668</a></td>
+<td class="address-2"><span id="63330"></span>63330</td>
+<td class="instruction">CALL <a href="63668.html">63668</a></td>
 <td class="comment-11" rowspan="1">Add 1000 to the score and play a celebratory tune</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63333"></a>63333</td>
+<td class="address-1"><span id="63333"></span>63333</td>
 <td class="instruction">LD HL,41354</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the attribute byte for the safe</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63336"></a>63336</td>
+<td class="address-1"><span id="63336"></span>63336</td>
 <td class="instruction">SET 7,(HL)</td>
 <td class="comment-11" rowspan="1">Alter the attribute byte of the safe in the skool attribute data to make it flash</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63338"></a>63338</td>
+<td class="address-1"><span id="63338"></span>63338</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1">Point <span class="register">DE</span> at the attribute byte for the safe</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63339"></a>63339</td>
-<td class="instruction">CALL <a class="link" href="62674.html">62674</a></td>
+<td class="address-1"><span id="63339"></span>63339</td>
+<td class="instruction">CALL <a href="62674.html">62674</a></td>
 <td class="comment-11" rowspan="1">Get the attribute file address of the safe in <span class="register">HL</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63342"></a>63342</td>
+<td class="address-1"><span id="63342"></span>63342</td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if the safe is off-screen (unlikely!)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63343"></a>63343</td>
+<td class="address-1"><span id="63343"></span>63343</td>
 <td class="instruction">SET 7,(HL)</td>
 <td class="comment-11" rowspan="1">Adjust the on-screen attribute byte of the safe to make it flash</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63345"></a>63345</td>
+<td class="address-1"><span id="63345"></span>63345</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63242.html">63242</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63270">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63346.html">63346</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63242.html">63242</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63270">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63346.html">63346</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

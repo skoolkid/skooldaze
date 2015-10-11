@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 28672</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28665.html">28665</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28672">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28713.html">28713</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28665.html">28665</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28672">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28713.html">28713</a></span></td>
 </tr>
 </table>
 <div class="description">28672: Make BOY WANDER fire his catapult now and then</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this continual subcommand routine is placed into bytes 124 and 125 of BOY WANDER's buffer by command lists <a class="link" href="64496.html">140</a>, <a class="link" href="64560.html">148</a>, <a class="link" href="64631.html">156</a>, <a class="link" href="64702.html">164</a>, <a class="link" href="64769.html">172</a>, <a class="link" href="64809.html">178</a>, <a class="link" href="64892.html">192</a>, <a class="link" href="64988.html">194</a> and <a class="link" href="64314.html">216</a>. It decides whether BOY WANDER should let rip with a pellet, and gets the catapult-firing action under way if so.
+The address of this continual subcommand routine is placed into bytes 124 and 125 of BOY WANDER's buffer by command lists <a href="64496.html">140</a>, <a href="64560.html">148</a>, <a href="64631.html">156</a>, <a href="64702.html">164</a>, <a href="64769.html">172</a>, <a href="64809.html">178</a>, <a href="64892.html">192</a>, <a href="64988.html">194</a> and <a href="64314.html">216</a>. It decides whether BOY WANDER should let rip with a pellet, and gets the catapult-firing action under way if so.
 </div>
 </div>
 <table class="input-1">
@@ -52,166 +48,166 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28672"></a>28672</td>
+<td class="address-2"><span id="28672"></span>28672</td>
 <td class="instruction">LD L,98</td>
 <td class="comment-11" rowspan="1">Byte 98 of BOY WANDER's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28674"></a>28674</td>
+<td class="address-1"><span id="28674"></span>28674</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28675"></a>28675</td>
+<td class="address-1"><span id="28675"></span>28675</td>
 <td class="instruction">AND 3</td>
 <td class="comment-11" rowspan="1">Is BOY WANDER's x-coordinate divisible by 4?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28677"></a>28677</td>
+<td class="address-1"><span id="28677"></span>28677</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28678"></a>28678</td>
+<td class="address-1"><span id="28678"></span>28678</td>
 <td class="instruction">LD L,96</td>
 <td class="comment-11" rowspan="1">Byte 96 holds BOY WANDER's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28680"></a>28680</td>
+<td class="address-1"><span id="28680"></span>28680</td>
 <td class="instruction">BIT 0,(HL)</td>
 <td class="comment-11" rowspan="1">Is BOY WANDER midstride?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28682"></a>28682</td>
+<td class="address-1"><span id="28682"></span>28682</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28683"></a>28683</td>
+<td class="address-1"><span id="28683"></span>28683</td>
 <td class="instruction">LD L,112</td>
 <td class="comment-11" rowspan="4">Return if there is already an uninterruptible subcommand routine address in bytes 111 and 112 of BOY WANDER's buffer (he's otherwise occupied)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28685"></a>28685</td>
+<td class="address-1"><span id="28685"></span>28685</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28686"></a>28686</td>
+<td class="address-1"><span id="28686"></span>28686</td>
 <td class="instruction">AND A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28687"></a>28687</td>
+<td class="address-1"><span id="28687"></span>28687</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28688"></a>28688</td>
-<td class="instruction">CALL <a class="link" href="24993.html">24993</a></td>
+<td class="address-1"><span id="28688"></span>28688</td>
+<td class="instruction">CALL <a href="24993.html">24993</a></td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28691"></a>28691</td>
+<td class="address-1"><span id="28691"></span>28691</td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="2">Return half the time</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28692"></a>28692</td>
+<td class="address-1"><span id="28692"></span>28692</td>
 <td class="instruction">RET NC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28693"></a>28693</td>
+<td class="address-1"><span id="28693"></span>28693</td>
 <td class="instruction">LD L,97</td>
 <td class="comment-11" rowspan="1">Byte 97 holds BOY WANDER's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28695"></a>28695</td>
+<td class="address-1"><span id="28695"></span>28695</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28696"></a>28696</td>
-<td class="instruction">CALL <a class="link" href="26184.html#26185">26185</a></td>
+<td class="address-1"><span id="28696"></span>28696</td>
+<td class="instruction">CALL <a href="26184.html#26185">26185</a></td>
 <td class="comment-11" rowspan="1">Is BOY WANDER on a staircase?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28699"></a>28699</td>
+<td class="address-1"><span id="28699"></span>28699</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28700"></a>28700</td>
-<td class="instruction">CALL <a class="link" href="28220.html">28220</a></td>
+<td class="address-1"><span id="28700"></span>28700</td>
+<td class="instruction">CALL <a href="28220.html">28220</a></td>
 <td class="comment-11" rowspan="1">Are there any teachers around who can see BOY WANDER?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28703"></a>28703</td>
+<td class="address-1"><span id="28703"></span>28703</td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28704"></a>28704</td>
+<td class="address-1"><span id="28704"></span>28704</td>
 <td class="instruction">LD A,(43618)</td>
 <td class="comment-11" rowspan="1">Pick up the x-coordinate of BOY WANDER's pellet in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28707"></a>28707</td>
+<td class="address-1"><span id="28707"></span>28707</td>
 <td class="instruction">RLCA</td>
 <td class="comment-11" rowspan="1">Is BOY WANDER's catapult pellet airborne at the moment?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28708"></a>28708</td>
+<td class="address-1"><span id="28708"></span>28708</td>
 <td class="instruction">RET NC</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28709"></a>28709</td>
+<td class="address-1"><span id="28709"></span>28709</td>
 <td class="instruction">LD L,111</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28711"></a>28711</td>
-<td class="instruction">JR <a class="link" href="28665.html">28665</a></td>
+<td class="address-1"><span id="28711"></span>28711</td>
+<td class="instruction">JR <a href="28665.html">28665</a></td>
 <td class="comment-11" rowspan="1">Make BOY WANDER fire his catapult</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28665.html">28665</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28672">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28713.html">28713</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28665.html">28665</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28672">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28713.html">28713</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

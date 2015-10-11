@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 25820</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25810.html">25810</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25820">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25830.html">25830</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25810.html">25810</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25820">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25830.html">25830</a></span></td>
 </tr>
 </table>
 <div class="description">25820: Scroll the screen left 8 columns</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="25856.html">25856</a> and <a class="link" href="63768.html">63768</a>.
+Used by the routines at <a href="25856.html">25856</a> and <a href="63768.html">63768</a>.
 </div>
 </div>
 <table class="input-0">
@@ -49,52 +45,52 @@ Used by the routines at <a class="link" href="25856.html">25856</a> and <a class
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25820"></a>25820</td>
+<td class="address-2"><span id="25820"></span>25820</td>
 <td class="instruction">LD B,8</td>
 <td class="comment-11" rowspan="1">There are 8 columns to scroll</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25822"></a>25822</td>
+<td class="address-2"><span id="25822"></span>25822</td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25823"></a>25823</td>
-<td class="instruction">CALL <a class="link" href="24731.html">24731</a></td>
+<td class="address-1"><span id="25823"></span>25823</td>
+<td class="instruction">CALL <a href="24731.html">24731</a></td>
 <td class="comment-11" rowspan="1">Scroll one column left</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25826"></a>25826</td>
+<td class="address-1"><span id="25826"></span>25826</td>
 <td class="instruction">POP BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25827"></a>25827</td>
+<td class="address-1"><span id="25827"></span>25827</td>
 <td class="instruction">DJNZ 25822</td>
 <td class="comment-11" rowspan="1">Jump back till all 8 columns are done</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25829"></a>25829</td>
+<td class="address-1"><span id="25829"></span>25829</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25810.html">25810</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25820">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25830.html">25830</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25810.html">25810</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25820">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25830.html">25830</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

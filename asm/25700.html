@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 25700</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25695.html">25695</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25700">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25749.html">25749</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25695.html">25695</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25700">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25749.html">25749</a></span></td>
 </tr>
 </table>
 <div class="description">25700: Guide a character from the bottom floor to another floor</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="25534.html">25534</a> when the character under consideration is on the bottom floor but is destined for another floor.
+Used by the routine at <a href="25534.html">25534</a> when the character under consideration is on the bottom floor but is destined for another floor.
 </div>
 </div>
 <table class="input-1">
@@ -39,7 +35,7 @@ Used by the routine at <a class="link" href="25534.html">25534</a> when the char
 </tr>
 <tr>
 <td class="register">BC</td>
-<td class="register-desc"><a class="link" href="25404.html">25404</a></td>
+<td class="register-desc"><a href="25404.html">25404</a></td>
 </tr>
 <tr>
 <td class="register">E</td>
@@ -64,160 +60,160 @@ Used by the routine at <a class="link" href="25534.html">25534</a> when the char
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25700"></a>25700</td>
+<td class="address-2"><span id="25700"></span>25700</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=destination y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25701"></a>25701</td>
+<td class="address-1"><span id="25701"></span>25701</td>
 <td class="instruction">CP 162</td>
 <td class="comment-11" rowspan="1">162=middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25703"></a>25703</td>
+<td class="address-1"><span id="25703"></span>25703</td>
 <td class="instruction">LD A,38</td>
 <td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25705"></a>25705</td>
+<td class="address-1"><span id="25705"></span>25705</td>
 <td class="instruction">JR Z,25709</td>
 <td class="comment-11" rowspan="1">Jump if the character is going to the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25707"></a>25707</td>
+<td class="address-1"><span id="25707"></span>25707</td>
 <td class="instruction">LD A,57</td>
 <td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Map and Reading Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25709"></a>25709</td>
+<td class="address-2"><span id="25709"></span>25709</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="2">Set the carry flag if the character is destined for some place to the right of the wall referred to by <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25710"></a>25710</td>
+<td class="address-1"><span id="25710"></span>25710</td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25711"></a>25711</td>
+<td class="address-1"><span id="25711"></span>25711</td>
 <td class="instruction">LD A,70</td>
 <td class="comment-11" rowspan="1">70=x-coordinate of the bottoms of the staircases at the right of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25713"></a>25713</td>
+<td class="address-1"><span id="25713"></span>25713</td>
 <td class="instruction">JR C,25717</td>
 <td class="comment-11" rowspan="1">Jump if the character must go to a staircase on the right</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25715"></a>25715</td>
+<td class="address-1"><span id="25715"></span>25715</td>
 <td class="instruction">LD A,19</td>
 <td class="comment-11" rowspan="1">19=x-coordinate of the bottoms of the staircases at the left of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25717"></a>25717</td>
+<td class="address-2"><span id="25717"></span>25717</td>
 <td class="instruction">CP E</td>
 <td class="comment-11" rowspan="1">Is the character at the bottom of the staircase he must climb?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25718"></a>25718</td>
-<td class="instruction">JP NZ,<a class="link" href="25534.html#25627">25627</a></td>
+<td class="address-1"><span id="25718"></span>25718</td>
+<td class="instruction">JP NZ,<a href="25534.html#25627">25627</a></td>
 <td class="comment-11" rowspan="1">Jump if not (to send the character there)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25721"></a>25721</td>
+<td class="address-1"><span id="25721"></span>25721</td>
 <td class="instruction">LD L,96</td>
 <td class="comment-11" rowspan="1">Byte 96 of the character's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25723"></a>25723</td>
+<td class="address-1"><span id="25723"></span>25723</td>
 <td class="instruction">BIT 0,(HL)</td>
 <td class="comment-11" rowspan="1">Is the character midstride?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25725"></a>25725</td>
-<td class="instruction">JP NZ,<a class="link" href="25534.html#25627">25627</a></td>
+<td class="address-1"><span id="25725"></span>25725</td>
+<td class="instruction">JP NZ,<a href="25534.html#25627">25627</a></td>
 <td class="comment-11" rowspan="1">Jump if so (to finish the stride)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25728"></a>25728</td>
+<td class="address-1"><span id="25728"></span>25728</td>
 <td class="instruction">CP 48</td>
 <td class="comment-11" rowspan="1">Is the character at the bottom of a staircase at the right of the skool?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25730"></a>25730</td>
+<td class="address-1"><span id="25730"></span>25730</td>
 <td class="instruction">JR NC,25739</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25732"></a>25732</td>
+<td class="address-1"><span id="25732"></span>25732</td>
 <td class="instruction">BIT 7,(HL)</td>
 <td class="comment-11" rowspan="1">Is the character facing right?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25734"></a>25734</td>
-<td class="instruction">JP NZ,<a class="link" href="25534.html#25615">25615</a></td>
+<td class="address-1"><span id="25734"></span>25734</td>
+<td class="instruction">JP NZ,<a href="25534.html#25615">25615</a></td>
 <td class="comment-11" rowspan="1">Turn him round if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25737"></a>25737</td>
+<td class="address-1"><span id="25737"></span>25737</td>
 <td class="instruction">JR 25744</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25739"></a>25739</td>
+<td class="address-2"><span id="25739"></span>25739</td>
 <td class="instruction">BIT 7,(HL)</td>
 <td class="comment-11" rowspan="1">Is the character facing left?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25741"></a>25741</td>
-<td class="instruction">JP Z,<a class="link" href="25534.html#25615">25615</a></td>
+<td class="address-1"><span id="25741"></span>25741</td>
+<td class="instruction">JP Z,<a href="25534.html#25615">25615</a></td>
 <td class="comment-11" rowspan="1">Turn him round if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25744"></a>25744</td>
+<td class="address-2"><span id="25744"></span>25744</td>
 <td class="instruction">LD C,140</td>
-<td class="comment-11" rowspan="2">Set <span class="register">BC</span>=<a class="link" href="25484.html">25484</a> (guide character up stairs) and place this interruptible subcommand routine address into bytes 105 and 106 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Set <span class="register">BC</span>=<a href="25484.html">25484</a> (guide character up stairs) and place this interruptible subcommand routine address into bytes 105 and 106 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25746"></a>25746</td>
-<td class="instruction">JP <a class="link" href="25534.html#25625">25625</a></td>
+<td class="address-1"><span id="25746"></span>25746</td>
+<td class="instruction">JP <a href="25534.html#25625">25625</a></td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25695.html">25695</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25700">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25749.html">25749</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25695.html">25695</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25700">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25749.html">25749</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

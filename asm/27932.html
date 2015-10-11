@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 27932</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27914.html">27914</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27932">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28101.html">28101</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27914.html">27914</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27932">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28101.html">28101</a></span></td>
 </tr>
 </table>
 <div class="description">27932: Control the horizontal flight of a catapult pellet</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this uninterruptible subcommand routine is placed into bytes 111 and 112 of a catapult pellet's buffer by the routine at <a class="link" href="28744.html">28744</a>. It controls the pellet from the beginning of its horizontal flight to the end, handing over to the routine at <a class="link" href="28102.html">28102</a> if the pellet bounces upwards off some obstacle.
+The address of this uninterruptible subcommand routine is placed into bytes 111 and 112 of a catapult pellet's buffer by the routine at <a href="28744.html">28744</a>. It controls the pellet from the beginning of its horizontal flight to the end, handing over to the routine at <a href="28102.html">28102</a> if the pellet bounces upwards off some obstacle.
 </div>
 </div>
 <table class="input-1">
@@ -52,71 +48,71 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27932"></a>27932</td>
-<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="address-2"><span id="27932"></span>27932</td>
+<td class="instruction">CALL <a href="25108.html">25108</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for the pellet's current location</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27935"></a>27935</td>
+<td class="address-1"><span id="27935"></span>27935</td>
 <td class="instruction">LD L,113</td>
 <td class="comment-11" rowspan="1">Byte 113 of the pellet's buffer holds the distance left to travel</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27937"></a>27937</td>
+<td class="address-1"><span id="27937"></span>27937</td>
 <td class="instruction">DEC (HL)</td>
 <td class="comment-11" rowspan="1">Has the pellet finished travelling?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27938"></a>27938</td>
+<td class="address-1"><span id="27938"></span>27938</td>
 <td class="instruction">JR NZ,27949</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="27940"></a>
+<span id="27940"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a class="link" href="28102.html">28102</a>. It places the catapult pellet off-screen and terminates its flight.
+This entry point is used by the routine at <a href="28102.html">28102</a>. It places the catapult pellet off-screen and terminates its flight.
 </div>
 </div>
 </td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27940"></a>27940</td>
+<td class="address-2"><span id="27940"></span>27940</td>
 <td class="instruction">LD L,98</td>
 <td class="comment-11" rowspan="2">Set the pellet's x-coordinate to 150 (i.e. off-screen)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27942"></a>27942</td>
+<td class="address-1"><span id="27942"></span>27942</td>
 <td class="instruction">LD (HL),150</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27944"></a>27944</td>
+<td class="address-1"><span id="27944"></span>27944</td>
 <td class="instruction">LD L,112</td>
 <td class="comment-11" rowspan="2">Remove the address of this routine from bytes 111 and 112 of the pellet's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27946"></a>27946</td>
+<td class="address-1"><span id="27946"></span>27946</td>
 <td class="instruction">LD (HL),0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27948"></a>27948</td>
+<td class="address-1"><span id="27948"></span>27948</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="27949"></a>
+<span id="27949"></span>
 <div class="comments">
 <div class="paragraph">
 The pellet has not finished travelling. Where to next?
@@ -126,163 +122,163 @@ The pellet has not finished travelling. Where to next?
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27949"></a>27949</td>
+<td class="address-2"><span id="27949"></span>27949</td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="5">Set <span class="register">E</span> equal to the next x-coordinate for the pellet</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27950"></a>27950</td>
+<td class="address-1"><span id="27950"></span>27950</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27951"></a>27951</td>
+<td class="address-1"><span id="27951"></span>27951</td>
 <td class="instruction">JR C,27955</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27953"></a>27953</td>
+<td class="address-1"><span id="27953"></span>27953</td>
 <td class="instruction">DEC E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27954"></a>27954</td>
+<td class="address-1"><span id="27954"></span>27954</td>
 <td class="instruction">DEC E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27955"></a>27955</td>
+<td class="address-2"><span id="27955"></span>27955</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=pellet's next x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27956"></a>27956</td>
+<td class="address-1"><span id="27956"></span>27956</td>
 <td class="instruction">CP 96</td>
 <td class="comment-11" rowspan="1">Will it still be on-screen?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27958"></a>27958</td>
+<td class="address-1"><span id="27958"></span>27958</td>
 <td class="instruction">JR NC,27940</td>
 <td class="comment-11" rowspan="1">Terminate the pellet if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27960"></a>27960</td>
+<td class="address-1"><span id="27960"></span>27960</td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=pellet's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27961"></a>27961</td>
-<td class="instruction">CALL <a class="link" href="26184.html#26185">26185</a></td>
+<td class="address-1"><span id="27961"></span>27961</td>
+<td class="instruction">CALL <a href="26184.html#26185">26185</a></td>
 <td class="comment-11" rowspan="1">Was the pellet fired on the top, middle or bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27964"></a>27964</td>
+<td class="address-1"><span id="27964"></span>27964</td>
 <td class="instruction">JR NZ,27981</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27966"></a>27966</td>
+<td class="address-1"><span id="27966"></span>27966</td>
 <td class="instruction">CP 169</td>
 <td class="comment-11" rowspan="1">Is the pellet on the bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27968"></a>27968</td>
+<td class="address-1"><span id="27968"></span>27968</td>
 <td class="instruction">JR Z,27981</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27970"></a>27970</td>
+<td class="address-1"><span id="27970"></span>27970</td>
 <td class="instruction">CP 155</td>
 <td class="comment-11" rowspan="1">155=top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27972"></a>27972</td>
+<td class="address-1"><span id="27972"></span>27972</td>
 <td class="instruction">LD A,38</td>
 <td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27974"></a>27974</td>
+<td class="address-1"><span id="27974"></span>27974</td>
 <td class="instruction">JR NZ,27978</td>
 <td class="comment-11" rowspan="1">Jump if the pellet is on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27976"></a>27976</td>
+<td class="address-1"><span id="27976"></span>27976</td>
 <td class="instruction">LD A,57</td>
 <td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27978"></a>27978</td>
+<td class="address-2"><span id="27978"></span>27978</td>
 <td class="instruction">CP E</td>
 <td class="comment-11" rowspan="1">Has the pellet hit a wall?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27979"></a>27979</td>
+<td class="address-1"><span id="27979"></span>27979</td>
 <td class="instruction">JR Z,27940</td>
 <td class="comment-11" rowspan="1">Terminate the pellet if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27981"></a>27981</td>
+<td class="address-2"><span id="27981"></span>27981</td>
 <td class="instruction">LD L,96</td>
 <td class="comment-11" rowspan="1">Byte 96 of the pellet's buffer holds its animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27983"></a>27983</td>
+<td class="address-1"><span id="27983"></span>27983</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27984"></a>27984</td>
-<td class="instruction">CALL <a class="link" href="25008.html">25008</a></td>
+<td class="address-1"><span id="27984"></span>27984</td>
+<td class="instruction">CALL <a href="25008.html">25008</a></td>
 <td class="comment-11" rowspan="1">Update the pellet's location and update the SRB</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27987"></a>27987</td>
+<td class="address-1"><span id="27987"></span>27987</td>
 <td class="instruction">LD L,97</td>
 <td class="comment-11" rowspan="1">Byte 97 of the pellet's buffer holds its y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27989"></a>27989</td>
+<td class="address-1"><span id="27989"></span>27989</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27990"></a>27990</td>
-<td class="instruction">CALL <a class="link" href="26184.html#26185">26185</a></td>
+<td class="address-1"><span id="27990"></span>27990</td>
+<td class="instruction">CALL <a href="26184.html#26185">26185</a></td>
 <td class="comment-11" rowspan="1">Was the pellet fired on the top, middle or bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27993"></a>27993</td>
-<td class="instruction">JP NZ,<a class="link" href="28102.html#28123">28123</a></td>
+<td class="address-1"><span id="27993"></span>27993</td>
+<td class="instruction">JP NZ,<a href="28102.html#28123">28123</a></td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="27996"></a>
+<span id="27996"></span>
 <div class="comments">
 <div class="paragraph">
 The pellet was fired on the top, middle or bottom floor. Let's see if it's hit anybody.
@@ -292,103 +288,103 @@ The pellet was fired on the top, middle or bottom floor. Let's see if it's hit a
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27996"></a>27996</td>
+<td class="address-1"><span id="27996"></span>27996</td>
 <td class="instruction">LD L,113</td>
 <td class="comment-11" rowspan="1">Byte 113 of the pellet's buffer holds the distance left to travel</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27998"></a>27998</td>
+<td class="address-1"><span id="27998"></span>27998</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27999"></a>27999</td>
+<td class="address-1"><span id="27999"></span>27999</td>
 <td class="instruction">CP 8</td>
 <td class="comment-11" rowspan="1">Is the pellet ready to hit something?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28001"></a>28001</td>
+<td class="address-1"><span id="28001"></span>28001</td>
 <td class="instruction">RET NC</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28002"></a>28002</td>
+<td class="address-1"><span id="28002"></span>28002</td>
 <td class="instruction">LD DE,44130</td>
 <td class="comment-11" rowspan="1">Point <span class="register">DE</span> at ERIC's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28005"></a>28005</td>
+<td class="address-1"><span id="28005"></span>28005</td>
 <td class="instruction">LD L,E</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28006"></a>28006</td>
+<td class="address-1"><span id="28006"></span>28006</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1">Pick up ERIC's x-coordinate in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28007"></a>28007</td>
+<td class="address-1"><span id="28007"></span>28007</td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="1">Does it match the pellet's x-coordinate?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28008"></a>28008</td>
+<td class="address-1"><span id="28008"></span>28008</td>
 <td class="instruction">JR NZ,28036</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28010"></a>28010</td>
+<td class="address-1"><span id="28010"></span>28010</td>
 <td class="instruction">DEC E</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=97</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28011"></a>28011</td>
+<td class="address-1"><span id="28011"></span>28011</td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28012"></a>28012</td>
+<td class="address-1"><span id="28012"></span>28012</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1">Pick up ERIC's y-coordinate in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28013"></a>28013</td>
+<td class="address-1"><span id="28013"></span>28013</td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28014"></a>28014</td>
+<td class="address-1"><span id="28014"></span>28014</td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="1">Compare ERIC's y-coordinate with that of the pellet</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28015"></a>28015</td>
+<td class="address-1"><span id="28015"></span>28015</td>
 <td class="instruction">LD L,E</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28016"></a>28016</td>
+<td class="address-1"><span id="28016"></span>28016</td>
 <td class="instruction">JR NZ,28036</td>
 <td class="comment-11" rowspan="1">Jump unless ERIC's location matches that of the pellet</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28018"></a>
+<span id="28018"></span>
 <div class="comments">
 <div class="paragraph">
 ERIC has been hit by the pellet. Knock him over.
@@ -398,67 +394,67 @@ ERIC has been hit by the pellet. Knock him over.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28018"></a>28018</td>
+<td class="address-1"><span id="28018"></span>28018</td>
 <td class="instruction">LD DE,32763</td>
-<td class="comment-11" rowspan="3">Signal that ERIC has been knocked over by setting bit 4 of ERIC's status flags at <a class="link" href="32763.html">32763</a></td>
+<td class="comment-11" rowspan="3">Signal that ERIC has been knocked over by setting bit 4 of ERIC's status flags at <a href="32763.html">32763</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28021"></a>28021</td>
+<td class="address-1"><span id="28021"></span>28021</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28022"></a>28022</td>
+<td class="address-1"><span id="28022"></span>28022</td>
 <td class="instruction">SET 4,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28024"></a>28024</td>
+<td class="address-2"><span id="28024"></span>28024</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28025"></a>28025</td>
+<td class="address-1"><span id="28025"></span>28025</td>
 <td class="instruction">LD L,113</td>
 <td class="comment-11" rowspan="2">The pellet has hit something; set its remaining distance to travel to 1, so it's terminated next time</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28027"></a>28027</td>
+<td class="address-1"><span id="28027"></span>28027</td>
 <td class="instruction">LD (HL),1</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28029"></a>28029</td>
+<td class="address-1"><span id="28029"></span>28029</td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character hit by the pellet</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28030"></a>28030</td>
+<td class="address-1"><span id="28030"></span>28030</td>
 <td class="instruction">CP 168</td>
 <td class="comment-11" rowspan="1">Was ANGELFACE hit?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28032"></a>28032</td>
-<td class="instruction">JP Z,<a class="link" href="27387.html">27387</a></td>
+<td class="address-1"><span id="28032"></span>28032</td>
+<td class="instruction">JP Z,<a href="27387.html">27387</a></td>
 <td class="comment-11" rowspan="1">Add to the score and print it if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28035"></a>28035</td>
+<td class="address-1"><span id="28035"></span>28035</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28036"></a>
+<span id="28036"></span>
 <div class="comments">
 <div class="paragraph">
 ERIC wasn't hit by the pellet. What about the main kids and teachers?
@@ -468,97 +464,97 @@ ERIC wasn't hit by the pellet. What about the main kids and teachers?
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28036"></a>28036</td>
+<td class="address-2"><span id="28036"></span>28036</td>
 <td class="instruction">LD D,169</td>
 <td class="comment-11" rowspan="1">169=EINSTEIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28038"></a>28038</td>
+<td class="address-1"><span id="28038"></span>28038</td>
 <td class="instruction">LD B,7</td>
 <td class="comment-11" rowspan="1">There are 3 main kids and 4 teachers</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28040"></a>28040</td>
+<td class="address-2"><span id="28040"></span>28040</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1">Pick up the potential target's x-coordinate in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28041"></a>28041</td>
+<td class="address-1"><span id="28041"></span>28041</td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="1">Does it match that of the pellet?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28042"></a>28042</td>
+<td class="address-1"><span id="28042"></span>28042</td>
 <td class="instruction">JR Z,28048</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28044"></a>28044</td>
+<td class="address-2"><span id="28044"></span>28044</td>
 <td class="instruction">DEC D</td>
 <td class="comment-11" rowspan="1">Next main kid or teacher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28045"></a>28045</td>
+<td class="address-1"><span id="28045"></span>28045</td>
 <td class="instruction">DJNZ 28040</td>
 <td class="comment-11" rowspan="1">Jump back until all the main kids and teachers have been checked</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28047"></a>28047</td>
+<td class="address-1"><span id="28047"></span>28047</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28048"></a>28048</td>
+<td class="address-2"><span id="28048"></span>28048</td>
 <td class="instruction">DEC E</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=97</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28049"></a>28049</td>
+<td class="address-1"><span id="28049"></span>28049</td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28050"></a>28050</td>
+<td class="address-1"><span id="28050"></span>28050</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1">Pick up the potential target's y-coordinate in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28051"></a>28051</td>
+<td class="address-1"><span id="28051"></span>28051</td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28052"></a>28052</td>
+<td class="address-1"><span id="28052"></span>28052</td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="1">Compare the potential target's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28053"></a>28053</td>
+<td class="address-1"><span id="28053"></span>28053</td>
 <td class="instruction">LD L,E</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28054"></a>28054</td>
+<td class="address-1"><span id="28054"></span>28054</td>
 <td class="instruction">JR NZ,28044</td>
 <td class="comment-11" rowspan="1">Jump unless the potential target's coordinates match</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28056"></a>
+<span id="28056"></span>
 <div class="comments">
 <div class="paragraph">
 We have found a potential target at the pellet's current coordinates. Can we knock him over?
@@ -568,85 +564,85 @@ We have found a potential target at the pellet's current coordinates. Can we kno
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28056"></a>28056</td>
+<td class="address-1"><span id="28056"></span>28056</td>
 <td class="instruction">LD E,112</td>
 <td class="comment-11" rowspan="2">Byte 112 of the character's buffer may hold the MSB of an uninterruptible subcommand routine address; pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28058"></a>28058</td>
+<td class="address-1"><span id="28058"></span>28058</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28059"></a>28059</td>
+<td class="address-1"><span id="28059"></span>28059</td>
 <td class="instruction">LD E,L</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28060"></a>28060</td>
+<td class="address-1"><span id="28060"></span>28060</td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Is there an uninterruptible subcommand routine address in bytes 111 and 112?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28061"></a>28061</td>
+<td class="address-1"><span id="28061"></span>28061</td>
 <td class="instruction">JR NZ,28076</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28063"></a>28063</td>
+<td class="address-1"><span id="28063"></span>28063</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28064"></a>28064</td>
+<td class="address-1"><span id="28064"></span>28064</td>
 <td class="instruction">LD L,111</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a class="link" href="27206.html">27206</a> into bytes 111 and 112 of the character's buffer, which will knock the character over</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="27206.html">27206</a> into bytes 111 and 112 of the character's buffer, which will knock the character over</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28066"></a>28066</td>
+<td class="address-1"><span id="28066"></span>28066</td>
 <td class="instruction">LD (HL),70</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28068"></a>28068</td>
+<td class="address-1"><span id="28068"></span>28068</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28069"></a>28069</td>
+<td class="address-1"><span id="28069"></span>28069</td>
 <td class="instruction">LD (HL),106</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28071"></a>28071</td>
+<td class="address-1"><span id="28071"></span>28071</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="2">Initialise the parameter determining how long the character will stay down in byte 113 of his buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28072"></a>28072</td>
+<td class="address-1"><span id="28072"></span>28072</td>
 <td class="instruction">LD (HL),20</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28074"></a>28074</td>
+<td class="address-1"><span id="28074"></span>28074</td>
 <td class="instruction">JR 28024</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28076"></a>
+<span id="28076"></span>
 <div class="comments">
 <div class="paragraph">
 The potential target may already have been knocked over. Let's check.
@@ -656,61 +652,61 @@ The potential target may already have been knocked over. Let's check.
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28076"></a>28076</td>
+<td class="address-2"><span id="28076"></span>28076</td>
 <td class="instruction">LD E,96</td>
 <td class="comment-11" rowspan="1">Byte 96 of the buffer holds the potential target's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28078"></a>28078</td>
+<td class="address-1"><span id="28078"></span>28078</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28079"></a>28079</td>
+<td class="address-1"><span id="28079"></span>28079</td>
 <td class="instruction">LD E,L</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28080"></a>28080</td>
+<td class="address-1"><span id="28080"></span>28080</td>
 <td class="instruction">AND 127</td>
 <td class="comment-11" rowspan="1">Remove the direction bit (bit 7)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28082"></a>28082</td>
+<td class="address-1"><span id="28082"></span>28082</td>
 <td class="instruction">CP 72</td>
 <td class="comment-11" rowspan="1">Is the potential target a kid?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28084"></a>28084</td>
+<td class="address-1"><span id="28084"></span>28084</td>
 <td class="instruction">JR C,28044</td>
 <td class="comment-11" rowspan="1">Jump back to consider the next main kid or teacher if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28086"></a>28086</td>
+<td class="address-1"><span id="28086"></span>28086</td>
 <td class="instruction">AND 7</td>
 <td class="comment-11" rowspan="1">Retain only bits 0-2 of the teacher's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28088"></a>28088</td>
+<td class="address-1"><span id="28088"></span>28088</td>
 <td class="instruction">CP 7</td>
 <td class="comment-11" rowspan="1">Has the teacher already been knocked down?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28090"></a>28090</td>
+<td class="address-1"><span id="28090"></span>28090</td>
 <td class="instruction">JR NZ,28044</td>
 <td class="comment-11" rowspan="1">Jump back to consider the next teacher if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28092"></a>
+<span id="28092"></span>
 <div class="comments">
 <div class="paragraph">
 The pellet has hit a teacher who's already been knocked over. Prepare for vertical flight.
@@ -720,46 +716,46 @@ The pellet has hit a teacher who's already been knocked over. Prepare for vertic
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28092"></a>28092</td>
+<td class="address-1"><span id="28092"></span>28092</td>
 <td class="instruction">LD L,111</td>
-<td class="comment-11" rowspan="2">Place the address of the uninterruptible subcommand routine at <a class="link" href="28102.html">28102</a> into bytes 111 and 112 of the pellet's character buffer, which will make the pellet travel upwards from now on</td>
+<td class="comment-11" rowspan="2">Place the address of the uninterruptible subcommand routine at <a href="28102.html">28102</a> into bytes 111 and 112 of the pellet's character buffer, which will make the pellet travel upwards from now on</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28094"></a>28094</td>
+<td class="address-1"><span id="28094"></span>28094</td>
 <td class="instruction">LD (HL),198</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28096"></a>28096</td>
+<td class="address-1"><span id="28096"></span>28096</td>
 <td class="instruction">LD L,113</td>
 <td class="comment-11" rowspan="2">Set the pellet's remaining distance to travel to 5 spaces</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28098"></a>28098</td>
+<td class="address-1"><span id="28098"></span>28098</td>
 <td class="instruction">LD (HL),5</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28100"></a>28100</td>
+<td class="address-1"><span id="28100"></span>28100</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27914.html">27914</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27932">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28101.html">28101</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27914.html">27914</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27932">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28101.html">28101</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

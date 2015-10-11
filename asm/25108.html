@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 25108</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25106.html">25106</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25108">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25126.html">25126</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25106.html">25106</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25108">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25126.html">25126</a></span></td>
 </tr>
 </table>
 <div class="description">25108: Update the SRB for a character's current animatory state and location</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by many routines. Updates the <a class="link" href="32524.html">screen refresh buffer</a> (SRB) for a character's current animatory state and location. Returns with the character's current coordinates in <span class="register">DE</span> and animatory state in <span class="register">A</span>.
+Used by many routines. Updates the <a href="32524.html">screen refresh buffer</a> (SRB) for a character's current animatory state and location. Returns with the character's current coordinates in <span class="register">DE</span> and animatory state in <span class="register">A</span>.
 </div>
 </div>
 <table class="input-1">
@@ -52,100 +48,100 @@ Used by many routines. Updates the <a class="link" href="32524.html">screen refr
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25108"></a>25108</td>
+<td class="address-2"><span id="25108"></span>25108</td>
 <td class="instruction">LD L,96</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 96 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25110"></a>25110</td>
+<td class="address-1"><span id="25110"></span>25110</td>
 <td class="instruction">LD B,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=character's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25111"></a>25111</td>
+<td class="address-1"><span id="25111"></span>25111</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25112"></a>25112</td>
+<td class="address-1"><span id="25112"></span>25112</td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=character's y-coordinate (154-169)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25113"></a>25113</td>
+<td class="address-1"><span id="25113"></span>25113</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25114"></a>25114</td>
+<td class="address-1"><span id="25114"></span>25114</td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=character's x-coordinate (0-95)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25115"></a>25115</td>
-<td class="instruction">CALL <a class="link" href="25008.html#25016">25016</a></td>
+<td class="address-1"><span id="25115"></span>25115</td>
+<td class="instruction">CALL <a href="25008.html#25016">25016</a></td>
 <td class="comment-11" rowspan="1">Update the SRB</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25118"></a>25118</td>
+<td class="address-1"><span id="25118"></span>25118</td>
 <td class="instruction">LD L,96</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 96 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25120"></a>25120</td>
+<td class="address-1"><span id="25120"></span>25120</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25121"></a>25121</td>
+<td class="address-1"><span id="25121"></span>25121</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25122"></a>25122</td>
+<td class="address-1"><span id="25122"></span>25122</td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=character's y-coordinate (155-169)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25123"></a>25123</td>
+<td class="address-1"><span id="25123"></span>25123</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25124"></a>25124</td>
+<td class="address-1"><span id="25124"></span>25124</td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=character's x-coordinate (0-95)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25125"></a>25125</td>
+<td class="address-1"><span id="25125"></span>25125</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25106.html">25106</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25108">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25126.html">25126</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25106.html">25106</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25108">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25126.html">25126</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

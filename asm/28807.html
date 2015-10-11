@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 28807</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28802.html">28802</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28807">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28882.html">28882</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28802.html">28802</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28807">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28882.html">28882</a></span></td>
 </tr>
 </table>
 <div class="description">28807: Update the SRB for a blackboard or the speech bubble lip</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="28994.html">28994</a>, <a class="link" href="29160.html">29160</a>, <a class="link" href="29518.html">29518</a> and <a class="link" href="29746.html">29746</a>. Updates the <a class="link" href="32524.html">screen refresh buffer</a> (SRB) so that the character squares at (<span class="register">E</span>,<span class="register">D</span>) and (<span class="register">E</span>+1,<span class="register">D</span>) are marked dirty. Two character squares in a row are marked dirty to ensure that blackboard contents are properly displayed (characters written on a blackboard may cross character square boundaries).
+Used by the routines at <a href="28994.html">28994</a>, <a href="29160.html">29160</a>, <a href="29518.html">29518</a> and <a href="29746.html">29746</a>. Updates the <a href="32524.html">screen refresh buffer</a> (SRB) so that the character squares at (<span class="register">E</span>,<span class="register">D</span>) and (<span class="register">E</span>+1,<span class="register">D</span>) are marked dirty. Two character squares in a row are marked dirty to ensure that blackboard contents are properly displayed (characters written on a blackboard may cross character square boundaries).
 </div>
 </div>
 <table class="input-1">
@@ -56,310 +52,310 @@ Used by the routines at <a class="link" href="28994.html">28994</a>, <a class="l
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28807"></a>28807</td>
+<td class="address-2"><span id="28807"></span>28807</td>
 <td class="instruction">LD A,(32512)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=X: leftmost column of the skool on screen (0-64)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28810"></a>28810</td>
+<td class="address-1"><span id="28810"></span>28810</td>
 <td class="instruction">SUB 2</td>
 <td class="comment-11" rowspan="7">Return unless X-1&lt;=<span class="register">E</span>&lt;=X+31 (i.e. unless the coordinates in <span class="register">DE</span> correspond to a skool location that is currently on-screen or just off to the left)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28812"></a>28812</td>
+<td class="address-1"><span id="28812"></span>28812</td>
 <td class="instruction">JR C,28816</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28814"></a>28814</td>
+<td class="address-1"><span id="28814"></span>28814</td>
 <td class="instruction">CP E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28815"></a>28815</td>
+<td class="address-1"><span id="28815"></span>28815</td>
 <td class="instruction">RET NC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28816"></a>28816</td>
+<td class="address-2"><span id="28816"></span>28816</td>
 <td class="instruction">ADD A,33</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28818"></a>28818</td>
+<td class="address-1"><span id="28818"></span>28818</td>
 <td class="instruction">CP E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28819"></a>28819</td>
+<td class="address-1"><span id="28819"></span>28819</td>
 <td class="instruction">RET C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28820"></a>28820</td>
+<td class="address-1"><span id="28820"></span>28820</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="1">Store the skool coordinates</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28821"></a>28821</td>
+<td class="address-1"><span id="28821"></span>28821</td>
 <td class="instruction">SUB 32</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=<span class="register">E</span>-X (-1, 0-31)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28823"></a>28823</td>
+<td class="address-1"><span id="28823"></span>28823</td>
 <td class="instruction">CPL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28824"></a>28824</td>
+<td class="address-1"><span id="28824"></span>28824</td>
 <td class="instruction">ADD A,E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28825"></a>28825</td>
+<td class="address-1"><span id="28825"></span>28825</td>
 <td class="instruction">BIT 7,A</td>
 <td class="comment-11" rowspan="1">Are the coordinates in <span class="register">DE</span> on-screen?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28827"></a>28827</td>
+<td class="address-1"><span id="28827"></span>28827</td>
 <td class="instruction">JR Z,28830</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28829"></a>28829</td>
+<td class="address-1"><span id="28829"></span>28829</td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=0</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28830"></a>28830</td>
+<td class="address-2"><span id="28830"></span>28830</td>
 <td class="instruction">RLCA</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=8x (x=0-31, the screen x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28831"></a>28831</td>
+<td class="address-1"><span id="28831"></span>28831</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28832"></a>28832</td>
+<td class="address-1"><span id="28832"></span>28832</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28833"></a>28833</td>
+<td class="address-1"><span id="28833"></span>28833</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-11" rowspan="1">Save this value in <span class="register">E</span> briefly</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28834"></a>28834</td>
+<td class="address-1"><span id="28834"></span>28834</td>
 <td class="instruction">AND 56</td>
-<td class="comment-11" rowspan="3">Modify the SET m,(HL) instruction at <a class="link" href="28807.html#28857">28857</a> below</td>
+<td class="comment-11" rowspan="3">Modify the SET m,(HL) instruction at <a href="28807.html#28857">28857</a> below</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28836"></a>28836</td>
+<td class="address-1"><span id="28836"></span>28836</td>
 <td class="instruction">ADD A,198</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28838"></a>28838</td>
+<td class="address-1"><span id="28838"></span>28838</td>
 <td class="instruction">LD (28858),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28841"></a>28841</td>
+<td class="address-1"><span id="28841"></span>28841</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="13">Point <span class="register">HL</span> at the appropriate byte in the screen refresh buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28842"></a>28842</td>
+<td class="address-1"><span id="28842"></span>28842</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28843"></a>28843</td>
+<td class="address-1"><span id="28843"></span>28843</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28844"></a>28844</td>
+<td class="address-1"><span id="28844"></span>28844</td>
 <td class="instruction">AND 3</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28846"></a>28846</td>
+<td class="address-1"><span id="28846"></span>28846</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28847"></a>28847</td>
+<td class="address-1"><span id="28847"></span>28847</td>
 <td class="instruction">LD A,D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28848"></a>28848</td>
+<td class="address-1"><span id="28848"></span>28848</td>
 <td class="instruction">SUB 149</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28850"></a>28850</td>
+<td class="address-1"><span id="28850"></span>28850</td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28851"></a>28851</td>
+<td class="address-1"><span id="28851"></span>28851</td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28852"></a>28852</td>
+<td class="address-1"><span id="28852"></span>28852</td>
 <td class="instruction">ADD A,E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28853"></a>28853</td>
+<td class="address-1"><span id="28853"></span>28853</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28854"></a>28854</td>
+<td class="address-1"><span id="28854"></span>28854</td>
 <td class="instruction">LD D,127</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28856"></a>28856</td>
+<td class="address-1"><span id="28856"></span>28856</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28857"></a>28857</td>
+<td class="address-1"><span id="28857"></span>28857</td>
 <td class="instruction">SET 0,(HL)</td>
 <td class="comment-11" rowspan="1">Set the appropriate bit in the SRB byte; this instruction is modified earlier in this routine to set the required bit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28859"></a>28859</td>
+<td class="address-1"><span id="28859"></span>28859</td>
 <td class="instruction">LD A,(28858)</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28862"></a>28862</td>
+<td class="address-1"><span id="28862"></span>28862</td>
 <td class="instruction">ADD A,8</td>
 <td class="comment-11" rowspan="1">Was m=7?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28864"></a>28864</td>
+<td class="address-1"><span id="28864"></span>28864</td>
 <td class="instruction">JR NC,28874</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28866"></a>28866</td>
+<td class="address-1"><span id="28866"></span>28866</td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1">Move to the next SRB byte</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28867"></a>28867</td>
+<td class="address-1"><span id="28867"></span>28867</td>
 <td class="instruction">LD A,L</td>
 <td class="comment-11" rowspan="2"><span class="register">A</span> will be 0 if we wrapped round to the next row of the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28868"></a>28868</td>
+<td class="address-1"><span id="28868"></span>28868</td>
 <td class="instruction">AND 3</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28870"></a>28870</td>
+<td class="address-1"><span id="28870"></span>28870</td>
 <td class="instruction">LD A,198</td>
 <td class="comment-11" rowspan="1">198 will set n=0</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28872"></a>28872</td>
+<td class="address-1"><span id="28872"></span>28872</td>
 <td class="instruction">JR Z,28879</td>
 <td class="comment-11" rowspan="1">Jump if we wrapped round to the next row</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28874"></a>28874</td>
+<td class="address-2"><span id="28874"></span>28874</td>
 <td class="instruction">LD (28878),A</td>
 <td class="comment-11" rowspan="1">Modify the SET n,(HL) instruction below so that n=m+1 mod 8</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28877"></a>28877</td>
+<td class="address-1"><span id="28877"></span>28877</td>
 <td class="instruction">SET 0,(HL)</td>
 <td class="comment-11" rowspan="1">Set the appropriate bit in the SRB byte; this instruction is modified immediately before execution to set the required bit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28879"></a>28879</td>
+<td class="address-2"><span id="28879"></span>28879</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28880"></a>28880</td>
+<td class="address-1"><span id="28880"></span>28880</td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1">Restore the skool coordinates to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28881"></a>28881</td>
+<td class="address-1"><span id="28881"></span>28881</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28802.html">28802</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28807">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28882.html">28882</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28802.html">28802</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28807">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28882.html">28882</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

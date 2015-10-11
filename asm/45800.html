@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 45800</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="45695.html">45695</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#45800">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="45823.html">45823</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="45695.html">45695</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45800">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45823.html">45823</a></span></td>
 </tr>
 </table>
 <div class="description">45800: Print a character's title and name, and walk him onto the screen (3)</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Continues from <a class="link" href="45544.html">45544</a>. Determines the animatory state of the character to be walked onto the screen.
+Continues from <a href="45544.html">45544</a>. Determines the animatory state of the character to be walked onto the screen.
 </div>
 </div>
 <table class="input-1">
@@ -56,100 +52,100 @@ Continues from <a class="link" href="45544.html">45544</a>. Determines the anima
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="45800"></a>45800</td>
+<td class="address-2"><span id="45800"></span>45800</td>
 <td class="instruction">SUB 5</td>
 <td class="comment-11" rowspan="1">Are we dealing with one of the teachers?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45802"></a>45802</td>
+<td class="address-1"><span id="45802"></span>45802</td>
 <td class="instruction">JR C,45811</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45804"></a>45804</td>
+<td class="address-1"><span id="45804"></span>45804</td>
 <td class="instruction">ADD A,9</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=9, 10, 11, 12</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45806"></a>45806</td>
+<td class="address-1"><span id="45806"></span>45806</td>
 <td class="instruction">AND 11</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=9, 10, 11, 8</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45808"></a>45808</td>
+<td class="address-1"><span id="45808"></span>45808</td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=18, 20, 22, 16</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45809"></a>45809</td>
+<td class="address-1"><span id="45809"></span>45809</td>
 <td class="instruction">JR 45817</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="45811"></a>45811</td>
+<td class="address-2"><span id="45811"></span>45811</td>
 <td class="instruction">CPL</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=0, 1, 2, 3</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45812"></a>45812</td>
+<td class="address-1"><span id="45812"></span>45812</td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=1, 2, 3, 4</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45813"></a>45813</td>
+<td class="address-1"><span id="45813"></span>45813</td>
 <td class="instruction">AND 3</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=1, 2, 3, 0</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45815"></a>45815</td>
+<td class="address-1"><span id="45815"></span>45815</td>
 <td class="instruction">ADD A,25</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=26, 27, 28, 25</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="45817"></a>45817</td>
+<td class="address-2"><span id="45817"></span>45817</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="3"><span class="register">A</span>=<a class="link" href="../graphics/as.html#208">208</a> (MR WACKER), <a class="link" href="../graphics/as.html#216">216</a> (MR ROCKITT), <a class="link" href="../graphics/as.html#224">224</a> (MR WITHIT), <a class="link" href="../graphics/as.html#200">200</a> (MR CREAK), <a class="link" href="../graphics/as.html#144">144</a> (EINSTEIN), <a class="link" href="../graphics/as.html#160">160</a> (ANGELFACE), <a class="link" href="../graphics/as.html#176">176</a> (BOY WANDER), or <a class="link" href="../graphics/as.html#128">128</a> (ERIC)</td>
+<td class="comment-11" rowspan="3"><span class="register">A</span>=<a href="../graphics/as.html#208">208</a> (MR WACKER), <a href="../graphics/as.html#216">216</a> (MR ROCKITT), <a href="../graphics/as.html#224">224</a> (MR WITHIT), <a href="../graphics/as.html#200">200</a> (MR CREAK), <a href="../graphics/as.html#144">144</a> (EINSTEIN), <a href="../graphics/as.html#160">160</a> (ANGELFACE), <a href="../graphics/as.html#176">176</a> (BOY WANDER), or <a href="../graphics/as.html#128">128</a> (ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45818"></a>45818</td>
-<td class="instruction">RLCA</td>
-<td class="comment-01" rowspan="1"></td>
-</tr>
-<tr>
-<td class="asm-label-0"></td>
-<td class="address-1"><a name="45819"></a>45819</td>
+<td class="address-1"><span id="45818"></span>45818</td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45820"></a>45820</td>
-<td class="instruction">JP <a class="link" href="46056.html">46056</a></td>
+<td class="address-1"><span id="45819"></span>45819</td>
+<td class="instruction">RLCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45820"></span>45820</td>
+<td class="instruction">JP <a href="46056.html">46056</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="45695.html">45695</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#45800">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="45823.html">45823</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="45695.html">45695</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45800">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45823.html">45823</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

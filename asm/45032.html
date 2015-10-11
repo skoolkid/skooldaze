@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 45032</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="44927.html">44927</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#45032">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="45053.html">45053</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="44927.html">44927</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45032">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45053.html">45053</a></span></td>
 </tr>
 </table>
 <div class="description">45032: Print a message centred across the entire screen</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="26784.html">26784</a>, <a class="link" href="45288.html">45288</a>, <a class="link" href="45544.html">45544</a>, <a class="link" href="46070.html">46070</a>, <a class="link" href="47080.html">47080</a>, <a class="link" href="61152.html">61152</a> and <a class="link" href="64073.html">64073</a>.
+Used by the routines at <a href="26784.html">26784</a>, <a href="45288.html">45288</a>, <a href="45544.html">45544</a>, <a href="46070.html">46070</a>, <a href="47080.html">47080</a>, <a href="61152.html">61152</a> and <a href="64073.html">64073</a>.
 </div>
 </div>
 <table class="input-1">
@@ -56,94 +52,94 @@ Used by the routines at <a class="link" href="26784.html">26784</a>, <a class="l
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="45032"></a>45032</td>
+<td class="address-2"><span id="45032"></span>45032</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1">Now <span class="register">DE</span>=message address, <span class="register">HL</span>=display file address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45033"></a>45033</td>
+<td class="address-1"><span id="45033"></span>45033</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1">Save the display file address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45034"></a>45034</td>
-<td class="instruction">CALL <a class="link" href="45682.html">45682</a></td>
-<td class="comment-11" rowspan="1">Prepare the message in the buffer at <a class="link" href="23296.html">23296</a></td>
+<td class="address-1"><span id="45034"></span>45034</td>
+<td class="instruction">CALL <a href="45682.html">45682</a></td>
+<td class="comment-11" rowspan="1">Prepare the message in the buffer at <a href="23296.html">23296</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45037"></a>45037</td>
+<td class="address-1"><span id="45037"></span>45037</td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1">Restore the display file address to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45038"></a>45038</td>
+<td class="address-1"><span id="45038"></span>45038</td>
 <td class="instruction">LD HL,23296</td>
 <td class="comment-11" rowspan="8">Transfer the message from the buffer to the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="45041"></a>45041</td>
+<td class="address-2"><span id="45041"></span>45041</td>
 <td class="instruction">LD C,32</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45043"></a>45043</td>
+<td class="address-1"><span id="45043"></span>45043</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45044"></a>45044</td>
+<td class="address-1"><span id="45044"></span>45044</td>
 <td class="instruction">LDIR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45046"></a>45046</td>
+<td class="address-1"><span id="45046"></span>45046</td>
 <td class="instruction">POP DE</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45047"></a>45047</td>
+<td class="address-1"><span id="45047"></span>45047</td>
 <td class="instruction">INC D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45048"></a>45048</td>
+<td class="address-1"><span id="45048"></span>45048</td>
 <td class="instruction">BIT 1,H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45050"></a>45050</td>
+<td class="address-1"><span id="45050"></span>45050</td>
 <td class="instruction">JR NZ,45041</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45052"></a>45052</td>
+<td class="address-1"><span id="45052"></span>45052</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="44927.html">44927</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#45032">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="45053.html">45053</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="44927.html">44927</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45032">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45053.html">45053</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

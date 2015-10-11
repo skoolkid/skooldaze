@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 63909</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63908.html">63908</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63909">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63930.html">63930</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63908.html">63908</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63909">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63930.html">63930</a></span></td>
 </tr>
 </table>
 <div class="description">63909: Print the lesson</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="26342.html">26342</a>. Prints the lesson or 'DEMO. - PRESS A KEY TO PLAY' in the lesson box.
+Used by the routine at <a href="26342.html">26342</a>. Prints the lesson or 'DEMO. - PRESS A KEY TO PLAY' in the lesson box.
 </div>
 </div>
 <table class="input-0">
@@ -49,74 +45,74 @@ Used by the routine at <a class="link" href="26342.html">26342</a>. Prints the l
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63909"></a>63909</td>
+<td class="address-2"><span id="63909"></span>63909</td>
 <td class="instruction">LD A,(32746)</td>
-<td class="comment-11" rowspan="1">Collect the game mode indicator from <a class="link" href="32746.html">32746</a></td>
+<td class="comment-11" rowspan="1">Collect the game mode indicator from <a href="32746.html">32746</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63912"></a>63912</td>
+<td class="address-1"><span id="63912"></span>63912</td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Are we in demo mode?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63913"></a>63913</td>
-<td class="instruction">JP NZ,<a class="link" href="31040.html">31040</a></td>
+<td class="address-1"><span id="63913"></span>63913</td>
+<td class="instruction">JP NZ,<a href="31040.html">31040</a></td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63916"></a>63916</td>
+<td class="address-1"><span id="63916"></span>63916</td>
 <td class="instruction">LD HL,60384</td>
-<td class="comment-11" rowspan="1"><a class="link" href="60384.html">60384</a>: 'DEMO. - PRESS A KEY TO PLAY'</td>
+<td class="comment-11" rowspan="1"><a href="60384.html">60384</a>: 'DEMO. - PRESS A KEY TO PLAY'</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="63919"></a>
+<span id="63919"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a class="link" href="63668.html">63668</a> with <span class="register">HL</span>=<a class="link" href="65248.html">65248</a> ('WELL DONE! GO UP A YEAR').
+This entry point is used by the routine at <a href="63668.html">63668</a> with <span class="register">HL</span>=<a href="65248.html">65248</a> ('WELL DONE! GO UP A YEAR').
 </div>
 </div>
 </td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="63919"></a>63919</td>
+<td class="address-2"><span id="63919"></span>63919</td>
 <td class="instruction">LD DE,60720</td>
 <td class="comment-11" rowspan="1">Point <span class="register">DE</span> at the lesson box graphic buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63922"></a>63922</td>
-<td class="instruction">CALL <a class="link" href="30042.html">30042</a></td>
+<td class="address-1"><span id="63922"></span>63922</td>
+<td class="instruction">CALL <a href="30042.html">30042</a></td>
 <td class="comment-11" rowspan="1">Write the first line of text into the lesson box graphic buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63925"></a>63925</td>
+<td class="address-1"><span id="63925"></span>63925</td>
 <td class="instruction">LD L,240</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a class="link" href="60384.html#60400">60400</a> ('A KEY TO PLAY') or <a class="link" href="65248.html#65264">65264</a> ('UP A YEAR')</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="60384.html#60400">60400</a> ('A KEY TO PLAY') or <a href="65248.html#65264">65264</a> ('UP A YEAR')</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="63927"></a>63927</td>
-<td class="instruction">JP <a class="link" href="31040.html#31093">31093</a></td>
+<td class="address-1"><span id="63927"></span>63927</td>
+<td class="instruction">JP <a href="31040.html#31093">31093</a></td>
 <td class="comment-11" rowspan="1">Write the second line of text into the lesson box graphic buffer and copy the buffer to the screen</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="63908.html">63908</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#63909">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="63930.html">63930</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="63908.html">63908</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63909">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63930.html">63930</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

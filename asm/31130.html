@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 31130</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="31110.html">31110</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#31130">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="31152.html">31152</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="31110.html">31110</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31130">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31152.html">31152</a></span></td>
 </tr>
 </table>
 <div class="description">31130: Make a character speak (2)</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this interruptible subcommand routine is placed into bytes 105 and 106 of a character's buffer by the routine at <a class="link" href="31110.html">31110</a> just after the speech bubble has been printed above the character's head. It controls the character until he has finished speaking, and then removes the speech bubble.
+The address of this interruptible subcommand routine is placed into bytes 105 and 106 of a character's buffer by the routine at <a href="31110.html">31110</a> just after the speech bubble has been printed above the character's head. It controls the character until he has finished speaking, and then removes the speech bubble.
 </div>
 </div>
 <table class="input-1">
@@ -52,76 +48,76 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="31130"></a>31130</td>
-<td class="instruction">CALL <a class="link" href="32242.html">32242</a></td>
+<td class="address-2"><span id="31130"></span>31130</td>
+<td class="instruction">CALL <a href="32242.html">32242</a></td>
 <td class="comment-11" rowspan="1">Make sure the character speaks slowly</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31133"></a>31133</td>
+<td class="address-1"><span id="31133"></span>31133</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31134"></a>31134</td>
-<td class="instruction">CALL <a class="link" href="29706.html">29706</a></td>
+<td class="address-1"><span id="31134"></span>31134</td>
+<td class="instruction">CALL <a href="29706.html">29706</a></td>
 <td class="comment-11" rowspan="1">Slide one letter into the text window of the speech bubble</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31137"></a>31137</td>
+<td class="address-1"><span id="31137"></span>31137</td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31138"></a>31138</td>
+<td class="address-1"><span id="31138"></span>31138</td>
 <td class="instruction">JR NC,31146</td>
 <td class="comment-11" rowspan="1">Jump unless the character has finished speaking</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="31140"></a>31140</td>
-<td class="instruction">CALL <a class="link" href="29746.html">29746</a></td>
+<td class="address-2"><span id="31140"></span>31140</td>
+<td class="instruction">CALL <a href="29746.html">29746</a></td>
 <td class="comment-11" rowspan="1">Remove the speech bubble</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31143"></a>31143</td>
-<td class="instruction">JP <a class="link" href="25248.html#25252">25252</a></td>
+<td class="address-1"><span id="31143"></span>31143</td>
+<td class="instruction">JP <a href="25248.html#25252">25252</a></td>
 <td class="comment-11" rowspan="1">Terminate this interruptible subcommand</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="31146"></a>31146</td>
-<td class="instruction">CALL <a class="link" href="29706.html">29706</a></td>
+<td class="address-2"><span id="31146"></span>31146</td>
+<td class="instruction">CALL <a href="29706.html">29706</a></td>
 <td class="comment-11" rowspan="1">Slide another letter into the text window of the speech bubble</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31149"></a>31149</td>
+<td class="address-1"><span id="31149"></span>31149</td>
 <td class="instruction">JR C,31140</td>
 <td class="comment-11" rowspan="1">Remove the speech bubble if the character has finished speaking</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31151"></a>31151</td>
+<td class="address-1"><span id="31151"></span>31151</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="31110.html">31110</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#31130">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="31152.html">31152</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="31110.html">31110</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31130">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31152.html">31152</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

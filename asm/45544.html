@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 45544</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="45439.html">45439</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#45544">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="45567.html">45567</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="45439.html">45439</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45544">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45567.html">45567</a></span></td>
 </tr>
 </table>
 <div class="description">45544: Print a character's title and name, and walk him onto the screen (2)</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Continues from <a class="link" href="45288.html">45288</a>. Prints the character's name followed by a space.
+Continues from <a href="45288.html">45288</a>. Prints the character's name followed by a space.
 </div>
 </div>
 <table class="input-1">
@@ -56,82 +52,82 @@ Continues from <a class="link" href="45288.html">45288</a>. Prints the character
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="45544"></a>45544</td>
+<td class="address-2"><span id="45544"></span>45544</td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45545"></a>45545</td>
+<td class="address-1"><span id="45545"></span>45545</td>
 <td class="instruction">LD DE,20512</td>
 <td class="comment-11" rowspan="1">This is the display file address at which to print the character's name</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45548"></a>45548</td>
-<td class="instruction">CALL <a class="link" href="45032.html">45032</a></td>
+<td class="address-1"><span id="45548"></span>45548</td>
+<td class="instruction">CALL <a href="45032.html">45032</a></td>
 <td class="comment-11" rowspan="1">Print the character's name</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45551"></a>45551</td>
+<td class="address-1"><span id="45551"></span>45551</td>
 <td class="instruction">LD HL,46199</td>
-<td class="comment-11" rowspan="1"><a class="link" href="46199.html">46199</a>: ' '</td>
+<td class="comment-11" rowspan="1"><a href="46199.html">46199</a>: ' '</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45554"></a>45554</td>
-<td class="instruction">CALL <a class="link" href="46070.html#46073">46073</a></td>
+<td class="address-1"><span id="45554"></span>45554</td>
+<td class="instruction">CALL <a href="46070.html#46073">46073</a></td>
 <td class="comment-11" rowspan="1">Print a space</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45557"></a>45557</td>
+<td class="address-1"><span id="45557"></span>45557</td>
 <td class="instruction">LD HL,39008</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 96 of little boy no. 1's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45560"></a>45560</td>
+<td class="address-1"><span id="45560"></span>45560</td>
 <td class="instruction">POP BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45561"></a>45561</td>
+<td class="address-1"><span id="45561"></span>45561</td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=1-8 (corresponding to one of the eight main characters)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45562"></a>45562</td>
+<td class="address-1"><span id="45562"></span>45562</td>
 <td class="instruction">NOP</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45563"></a>45563</td>
+<td class="address-1"><span id="45563"></span>45563</td>
 <td class="instruction">NOP</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="45564"></a>45564</td>
-<td class="instruction">JP <a class="link" href="45800.html">45800</a></td>
+<td class="address-1"><span id="45564"></span>45564</td>
+<td class="instruction">JP <a href="45800.html">45800</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="45439.html">45439</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#45544">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="45567.html">45567</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="45439.html">45439</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45544">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45567.html">45567</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

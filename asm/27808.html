@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 27808</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27798.html">27798</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27808">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27822.html">27822</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27798.html">27798</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27808">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27822.html">27822</a></span></td>
 </tr>
 </table>
 <div class="description">27808: Make a character find a seat</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a class="link" href="64484.html">136</a>, <a class="link" href="64496.html">140</a>, <a class="link" href="64516.html">142</a>, <a class="link" href="64536.html">144</a>, <a class="link" href="64548.html">146</a>, <a class="link" href="64560.html">148</a>, <a class="link" href="64587.html">150</a>, <a class="link" href="64607.html">152</a>, <a class="link" href="64619.html">154</a>, <a class="link" href="64631.html">156</a>, <a class="link" href="64658.html">158</a>, <a class="link" href="64678.html">160</a>, <a class="link" href="64690.html">162</a>, <a class="link" href="64702.html">164</a>, <a class="link" href="64729.html">166</a> and <a class="link" href="64749.html">168</a>. Makes a character start looking for a seat.
+Used by command lists <a href="64484.html">136</a>, <a href="64496.html">140</a>, <a href="64516.html">142</a>, <a href="64536.html">144</a>, <a href="64548.html">146</a>, <a href="64560.html">148</a>, <a href="64587.html">150</a>, <a href="64607.html">152</a>, <a href="64619.html">154</a>, <a href="64631.html">156</a>, <a href="64658.html">158</a>, <a href="64678.html">160</a>, <a href="64690.html">162</a>, <a href="64702.html">164</a>, <a href="64729.html">166</a> and <a href="64749.html">168</a>. Makes a character start looking for a seat.
 </div>
 </div>
 <table class="input-1">
@@ -52,58 +48,58 @@ Used by command lists <a class="link" href="64484.html">136</a>, <a class="link"
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27808"></a>27808</td>
+<td class="address-2"><span id="27808"></span>27808</td>
 <td class="instruction">LD L,100</td>
-<td class="comment-11" rowspan="2">Remove the address of this primary command routine from bytes 99 and 100 of the character's buffer, triggering a move to the next command in the command list (which will be <a class="link" href="31162.html">31162</a> if the character is EINSTEIN, or <a class="link" href="25126.html#25247">25247</a>=RET otherwise) as soon as the character has found a seat</td>
+<td class="comment-11" rowspan="2">Remove the address of this primary command routine from bytes 99 and 100 of the character's buffer, triggering a move to the next command in the command list (which will be <a href="31162.html">31162</a> if the character is EINSTEIN, or <a href="25126.html#25247">25247</a>=RET otherwise) as soon as the character has found a seat</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27810"></a>27810</td>
+<td class="address-1"><span id="27810"></span>27810</td>
 <td class="instruction">LD (HL),0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27812"></a>27812</td>
+<td class="address-1"><span id="27812"></span>27812</td>
 <td class="instruction">LD L,111</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a class="link" href="27772.html">27772</a> into bytes 111 and 112 of the character's buffer</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="27772.html">27772</a> into bytes 111 and 112 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27814"></a>27814</td>
+<td class="address-1"><span id="27814"></span>27814</td>
 <td class="instruction">LD (HL),124</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27816"></a>27816</td>
+<td class="address-1"><span id="27816"></span>27816</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27817"></a>27817</td>
+<td class="address-1"><span id="27817"></span>27817</td>
 <td class="instruction">LD (HL),108</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27819"></a>27819</td>
-<td class="instruction">JP <a class="link" href="27772.html">27772</a></td>
+<td class="address-1"><span id="27819"></span>27819</td>
+<td class="instruction">JP <a href="27772.html">27772</a></td>
 <td class="comment-11" rowspan="1">Set the character off in search of a seat</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27798.html">27798</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27808">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27822.html">27822</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27798.html">27798</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27808">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27822.html">27822</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

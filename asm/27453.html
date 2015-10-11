@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 27453</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27451.html">27451</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27453">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27476.html">27476</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27451.html">27451</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27453">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27476.html">27476</a></span></td>
 </tr>
 </table>
 <div class="description">27453: Make a character walk up and down a few times or until a certain time</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a class="link" href="64841.html">182</a>, <a class="link" href="64892.html">192</a>, <a class="link" href="64988.html">194</a>, <a class="link" href="64914.html">196</a> and <a class="link" href="64947.html">204</a> to make a character walk about a fixed location until a specified time, or until a certain number of walkabouts have been performed.
+Used by command lists <a href="64841.html">182</a>, <a href="64892.html">192</a>, <a href="64988.html">194</a>, <a href="64914.html">196</a> and <a href="64947.html">204</a> to make a character walk about a fixed location until a specified time, or until a certain number of walkabouts have been performed.
 </div>
 </div>
 <table class="input-1">
@@ -56,88 +52,88 @@ Used by command lists <a class="link" href="64841.html">182</a>, <a class="link"
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27453"></a>27453</td>
+<td class="address-2"><span id="27453"></span>27453</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 122 of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27454"></a>27454</td>
+<td class="address-1"><span id="27454"></span>27454</td>
 <td class="instruction">AND 159</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27456"></a>27456</td>
+<td class="address-1"><span id="27456"></span>27456</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27457"></a>27457</td>
+<td class="address-1"><span id="27457"></span>27457</td>
 <td class="instruction">LD L,99</td>
-<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 99 and 100 of the character's buffer with that of <a class="link" href="27442.html">27442</a></td>
+<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 99 and 100 of the character's buffer with that of <a href="27442.html">27442</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27459"></a>27459</td>
+<td class="address-1"><span id="27459"></span>27459</td>
 <td class="instruction">LD (HL),50</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27461"></a>27461</td>
+<td class="address-1"><span id="27461"></span>27461</td>
 <td class="instruction">LD L,103</td>
 <td class="comment-11" rowspan="3">Collect the next byte (the number of walkabouts) from the command list and place it in byte 103 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27463"></a>27463</td>
-<td class="instruction">CALL <a class="link" href="24972.html">24972</a></td>
+<td class="address-1"><span id="27463"></span>27463</td>
+<td class="instruction">CALL <a href="24972.html">24972</a></td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27466"></a>27466</td>
+<td class="address-1"><span id="27466"></span>27466</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27467"></a>27467</td>
+<td class="address-1"><span id="27467"></span>27467</td>
 <td class="instruction">LD L,101</td>
 <td class="comment-11" rowspan="3">Collect the next byte (the signal byte - always 0) from the command list and place it in byte 101 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27469"></a>27469</td>
-<td class="instruction">CALL <a class="link" href="24972.html">24972</a></td>
+<td class="address-1"><span id="27469"></span>27469</td>
+<td class="instruction">CALL <a href="24972.html">24972</a></td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27472"></a>27472</td>
+<td class="address-1"><span id="27472"></span>27472</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27473"></a>27473</td>
-<td class="instruction">JP <a class="link" href="25303.html#25317">25317</a></td>
+<td class="address-1"><span id="27473"></span>27473</td>
+<td class="instruction">JP <a href="25303.html#25317">25317</a></td>
 <td class="comment-11" rowspan="1">Send the character on his first mini-walkabout</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27451.html">27451</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27453">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27476.html">27476</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27451.html">27451</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27453">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27476.html">27476</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

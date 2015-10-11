@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 25916</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25856.html">25856</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25916">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25952.html">25952</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25856.html">25856</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25916">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25952.html">25952</a></span></td>
 </tr>
 </table>
 <div class="description">25916: Put ERIC midstride, or raise his arm while writing on a blackboard</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="25983.html">25983</a>, <a class="link" href="26084.html">26084</a>, <a class="link" href="26194.html">26194</a> and <a class="link" href="63056.html">63056</a>.
+Used by the routines at <a href="25983.html">25983</a>, <a href="26084.html">26084</a>, <a href="26194.html">26194</a> and <a href="63056.html">63056</a>.
 </div>
 </div>
 <table class="input-1">
@@ -64,136 +60,136 @@ Used by the routines at <a class="link" href="25983.html">25983</a>, <a class="l
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25916"></a>25916</td>
+<td class="address-2"><span id="25916"></span>25916</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="2">Store ERIC's midstride/arm-up animatory state and coordinates briefly</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25917"></a>25917</td>
+<td class="address-1"><span id="25917"></span>25917</td>
 <td class="instruction">PUSH AF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25918"></a>25918</td>
+<td class="address-1"><span id="25918"></span>25918</td>
 <td class="instruction">LD HL,44131</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 99 of ERIC's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25921"></a>25921</td>
+<td class="address-1"><span id="25921"></span>25921</td>
 <td class="instruction">LD (HL),B</td>
 <td class="comment-11" rowspan="5">Store ERIC's post-midstride animatory state and coordinates in bytes 99, 100 and 101 of his buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25922"></a>25922</td>
+<td class="address-1"><span id="25922"></span>25922</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25923"></a>25923</td>
+<td class="address-1"><span id="25923"></span>25923</td>
 <td class="instruction">LD (HL),D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25924"></a>25924</td>
+<td class="address-1"><span id="25924"></span>25924</td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25925"></a>25925</td>
+<td class="address-1"><span id="25925"></span>25925</td>
 <td class="instruction">LD (HL),E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25926"></a>25926</td>
-<td class="instruction">CALL <a class="link" href="25108.html">25108</a></td>
+<td class="address-1"><span id="25926"></span>25926</td>
+<td class="instruction">CALL <a href="25108.html">25108</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for ERIC's current location</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25929"></a>25929</td>
+<td class="address-1"><span id="25929"></span>25929</td>
 <td class="instruction">POP AF</td>
 <td class="comment-11" rowspan="2">Restore ERIC's midstride/arm-up animatory state and location to <span class="register">A</span> and <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25930"></a>25930</td>
+<td class="address-1"><span id="25930"></span>25930</td>
 <td class="instruction">POP DE</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25931"></a>25931</td>
-<td class="instruction">CALL <a class="link" href="25008.html">25008</a></td>
+<td class="address-1"><span id="25931"></span>25931</td>
+<td class="instruction">CALL <a href="25008.html">25008</a></td>
 <td class="comment-11" rowspan="1">Update ERIC's animatory state and location and update the SRB</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25934"></a>25934</td>
+<td class="address-1"><span id="25934"></span>25934</td>
 <td class="instruction">LD L,4</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25936"></a>25936</td>
+<td class="address-1"><span id="25936"></span>25936</td>
 <td class="instruction">LD A,(32764)</td>
-<td class="comment-11" rowspan="1"><a class="link" href="32764.html">32764</a> holds the ASCII code of the last keypress</td>
+<td class="comment-11" rowspan="1"><a href="32764.html">32764</a> holds the ASCII code of the last keypress</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25939"></a>25939</td>
+<td class="address-1"><span id="25939"></span>25939</td>
 <td class="instruction">BIT 5,A</td>
 <td class="comment-11" rowspan="1">Was the last keypress upper case (fast)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25941"></a>25941</td>
+<td class="address-1"><span id="25941"></span>25941</td>
 <td class="instruction">JR Z,25945</td>
 <td class="comment-11" rowspan="1">Jump (with <span class="register">L</span>=4: fast) if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25943"></a>25943</td>
+<td class="address-1"><span id="25943"></span>25943</td>
 <td class="instruction">LD L,9</td>
 <td class="comment-11" rowspan="1">Otherwise set <span class="register">L</span>=9 (slow)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="25945"></a>25945</td>
+<td class="address-2"><span id="25945"></span>25945</td>
 <td class="instruction">LD H,L</td>
-<td class="comment-11" rowspan="2">Set appropriate values for ERIC's main action timer (<a class="link" href="32744.html">32744</a>) and midstride action timer (<a class="link" href="32745.html">32745</a>)</td>
+<td class="comment-11" rowspan="2">Set appropriate values for ERIC's main action timer (<a href="32744.html">32744</a>) and midstride action timer (<a href="32745.html">32745</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25946"></a>25946</td>
+<td class="address-1"><span id="25946"></span>25946</td>
 <td class="instruction">LD (32744),HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="25949"></a>25949</td>
-<td class="instruction">JP <a class="link" href="65106.html">65106</a></td>
+<td class="address-1"><span id="25949"></span>25949</td>
+<td class="instruction">JP <a href="65106.html">65106</a></td>
 <td class="comment-11" rowspan="1">Make a walking (or writing-on-board) sound effect</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="25856.html">25856</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#25916">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="25952.html">25952</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="25856.html">25856</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25916">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25952.html">25952</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

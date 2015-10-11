@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 27517</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27512.html">27512</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27517">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27542.html">27542</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27512.html">27512</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27517">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27542.html">27542</a></span></td>
 </tr>
 </table>
 <div class="description">27517: Knock the current occupant (if any) out of a chair</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="27772.html">27772</a> and <a class="link" href="27823.html">27823</a>. Knocks the current occupant (if any) out of the chair next to the character looking for a seat.
+Used by the routines at <a href="27772.html">27772</a> and <a href="27823.html">27823</a>. Knocks the current occupant (if any) out of the chair next to the character looking for a seat.
 </div>
 </div>
 <table class="input-1">
@@ -52,94 +48,94 @@ Used by the routines at <a class="link" href="27772.html">27772</a> and <a class
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27517"></a>27517</td>
+<td class="address-2"><span id="27517"></span>27517</td>
 <td class="instruction">LD B,11</td>
 <td class="comment-11" rowspan="1">There are 11 little boys</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27519"></a>27519</td>
+<td class="address-1"><span id="27519"></span>27519</td>
 <td class="instruction">LD D,152</td>
 <td class="comment-11" rowspan="1">152=little boy no. 1</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27521"></a>27521</td>
-<td class="instruction">CALL <a class="link" href="27543.html">27543</a></td>
+<td class="address-1"><span id="27521"></span>27521</td>
+<td class="instruction">CALL <a href="27543.html">27543</a></td>
 <td class="comment-11" rowspan="1">Knock any occupant out of the chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27524"></a>27524</td>
+<td class="address-1"><span id="27524"></span>27524</td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if a little boy was knocked out of the chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27525"></a>27525</td>
+<td class="address-1"><span id="27525"></span>27525</td>
 <td class="instruction">LD B,3</td>
 <td class="comment-11" rowspan="1">There are 3 main kids besides ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27527"></a>27527</td>
+<td class="address-1"><span id="27527"></span>27527</td>
 <td class="instruction">LD D,167</td>
 <td class="comment-11" rowspan="1">167=BOY WANDER</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27529"></a>27529</td>
-<td class="instruction">CALL <a class="link" href="27543.html">27543</a></td>
+<td class="address-1"><span id="27529"></span>27529</td>
+<td class="instruction">CALL <a href="27543.html">27543</a></td>
 <td class="comment-11" rowspan="1">Knock any occupant out of the chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27532"></a>27532</td>
+<td class="address-1"><span id="27532"></span>27532</td>
 <td class="instruction">LD D,172</td>
 <td class="comment-11" rowspan="1">172=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27534"></a>27534</td>
+<td class="address-1"><span id="27534"></span>27534</td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if a main kid was knocked out of the chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27535"></a>27535</td>
+<td class="address-1"><span id="27535"></span>27535</td>
 <td class="instruction">INC B</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=1 (just ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27536"></a>27536</td>
-<td class="instruction">CALL <a class="link" href="27543.html">27543</a></td>
+<td class="address-1"><span id="27536"></span>27536</td>
+<td class="instruction">CALL <a href="27543.html">27543</a></td>
 <td class="comment-11" rowspan="1">Knock ERIC out of the chair if he's there</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27539"></a>27539</td>
-<td class="instruction">JR NC,<a class="link" href="27543.html#27581">27581</a></td>
+<td class="address-1"><span id="27539"></span>27539</td>
+<td class="instruction">JR NC,<a href="27543.html#27581">27581</a></td>
 <td class="comment-11" rowspan="1">Jump unless ERIC was knocked out of the chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27541"></a>27541</td>
+<td class="address-1"><span id="27541"></span>27541</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27512.html">27512</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27517">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27542.html">27542</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27512.html">27512</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27517">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27542.html">27542</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

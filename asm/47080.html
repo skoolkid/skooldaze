@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 47080</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="46975.html">46975</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#47080">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="47103.html">47103</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="46975.html">46975</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47080">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47103.html">47103</a></span></td>
 </tr>
 </table>
 <div class="description">47080: Collect a keypress while a character's name is being entered</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a class="link" href="47336.html">47336</a>. Waits for a keypress and returns with the zero flag set if it was ENTER; otherwise inserts the ASCII code of the keypress into the next slot in the character's name message, and returns with <span class="register">A</span> holding the number of characters typed so far.
+Used by the routine at <a href="47336.html">47336</a>. Waits for a keypress and returns with the zero flag set if it was ENTER; otherwise inserts the ASCII code of the keypress into the next slot in the character's name message, and returns with <span class="register">A</span> holding the number of characters typed so far.
 </div>
 </div>
 <table class="input-1">
@@ -56,106 +52,106 @@ Used by the routine at <a class="link" href="47336.html">47336</a>. Waits for a 
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="47080"></a>47080</td>
+<td class="address-2"><span id="47080"></span>47080</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1">Save the message address for the character's name</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47081"></a>47081</td>
+<td class="address-1"><span id="47081"></span>47081</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47082"></a>47082</td>
+<td class="address-1"><span id="47082"></span>47082</td>
 <td class="instruction">LD DE,20512</td>
 <td class="comment-11" rowspan="1">Set <span class="register">DE</span> to the display file address at which to print the character's name</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47085"></a>47085</td>
-<td class="instruction">CALL <a class="link" href="45032.html">45032</a></td>
+<td class="address-1"><span id="47085"></span>47085</td>
+<td class="instruction">CALL <a href="45032.html">45032</a></td>
 <td class="comment-11" rowspan="1">Print the character's name (which is being edited)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="47088"></a>47088</td>
-<td class="instruction">CALL <a class="link" href="26426.html">26426</a></td>
+<td class="address-2"><span id="47088"></span>47088</td>
+<td class="instruction">CALL <a href="26426.html">26426</a></td>
 <td class="comment-11" rowspan="2">Wait for a keypress and collect its ASCII code in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47091"></a>47091</td>
+<td class="address-1"><span id="47091"></span>47091</td>
 <td class="instruction">JR Z,47088</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47093"></a>47093</td>
+<td class="address-1"><span id="47093"></span>47093</td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47094"></a>47094</td>
+<td class="address-1"><span id="47094"></span>47094</td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1">Restore the character name message address to <span class="register">HL</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47095"></a>47095</td>
+<td class="address-1"><span id="47095"></span>47095</td>
 <td class="instruction">CP 13</td>
 <td class="comment-11" rowspan="1">Was ENTER pressed?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47097"></a>47097</td>
+<td class="address-1"><span id="47097"></span>47097</td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47098"></a>47098</td>
+<td class="address-1"><span id="47098"></span>47098</td>
 <td class="instruction">LD (DE),A</td>
 <td class="comment-11" rowspan="1">Store the ASCII code of the key just pressed</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47099"></a>47099</td>
+<td class="address-1"><span id="47099"></span>47099</td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="1">Move <span class="register">DE</span> along to the next slot in the name message</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47100"></a>47100</td>
+<td class="address-1"><span id="47100"></span>47100</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="2">Set <span class="register">A</span> equal to the number of characters typed so far</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47101"></a>47101</td>
+<td class="address-1"><span id="47101"></span>47101</td>
 <td class="instruction">SUB L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="47102"></a>47102</td>
+<td class="address-1"><span id="47102"></span>47102</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="46975.html">46975</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#47080">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="47103.html">47103</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="46975.html">46975</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47080">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47103.html">47103</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

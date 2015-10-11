@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 27387</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27353.html">27353</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27387">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27406.html">27406</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27353.html">27353</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27387">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27406.html">27406</a></span></td>
 </tr>
 </table>
 <div class="description">27387: Add to the score and print it</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="27932.html">27932</a>, <a class="link" href="28143.html">28143</a> and <a class="link" href="62628.html">62628</a>.
+Used by the routines at <a href="27932.html">27932</a>, <a href="28143.html">28143</a> and <a href="62628.html">62628</a>.
 </div>
 </div>
 <table class="input-0">
@@ -49,86 +45,86 @@ Used by the routines at <a class="link" href="27932.html">27932</a>, <a class="l
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27387"></a>27387</td>
+<td class="address-2"><span id="27387"></span>27387</td>
 <td class="instruction">LD A,1</td>
 <td class="comment-11" rowspan="1">This will add 10 to the score</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="27389"></a>
+<span id="27389"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routines at <a class="link" href="28143.html">28143</a> and <a class="link" href="62628.html">62628</a> with <span class="register">A</span> holding the amount (divided by 10) to add to the score.
+This entry point is used by the routines at <a href="28143.html">28143</a> and <a href="62628.html">62628</a> with <span class="register">A</span> holding the amount (divided by 10) to add to the score.
 </div>
 </div>
 </td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27389"></a>27389</td>
+<td class="address-2"><span id="27389"></span>27389</td>
 <td class="instruction">LD HL,(32708)</td>
 <td class="comment-11" rowspan="1">Pick up the current score in <span class="register">HL</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27392"></a>27392</td>
+<td class="address-1"><span id="27392"></span>27392</td>
 <td class="instruction">ADD A,L</td>
 <td class="comment-11" rowspan="5">Set <span class="register">HL</span> equal to the new score</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27393"></a>27393</td>
+<td class="address-1"><span id="27393"></span>27393</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27394"></a>27394</td>
+<td class="address-1"><span id="27394"></span>27394</td>
 <td class="instruction">ADC A,H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27395"></a>27395</td>
+<td class="address-1"><span id="27395"></span>27395</td>
 <td class="instruction">SUB L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27396"></a>27396</td>
+<td class="address-1"><span id="27396"></span>27396</td>
 <td class="instruction">LD H,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27397"></a>27397</td>
+<td class="address-1"><span id="27397"></span>27397</td>
 <td class="instruction">LD (32708),HL</td>
 <td class="comment-11" rowspan="1">Store the new score</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27400"></a>27400</td>
+<td class="address-1"><span id="27400"></span>27400</td>
 <td class="instruction">LD DE,20924</td>
 <td class="comment-11" rowspan="1">Set <span class="register">DE</span> to the display file address at which to print the score</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27403"></a>27403</td>
-<td class="instruction">JP <a class="link" href="30408.html">30408</a></td>
+<td class="address-1"><span id="27403"></span>27403</td>
+<td class="instruction">JP <a href="30408.html">30408</a></td>
 <td class="comment-11" rowspan="1">Print the new score</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27353.html">27353</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27387">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27406.html">27406</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27353.html">27353</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27387">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27406.html">27406</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

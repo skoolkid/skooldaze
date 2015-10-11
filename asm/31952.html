@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 31952</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="31944.html">31944</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#31952">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="31968.html">31968</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="31944.html">31944</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31952">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31968.html">31968</a></span></td>
 </tr>
 </table>
 <div class="description">31952: Check whether ERIC and EINSTEIN are in class</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="62208.html">62208</a> and <a class="link" href="62464.html">62464</a>. If EINSTEIN is in class, this routine returns to the caller with the zero flag set if and only if ERIC is present too. If EINSTEIN is not yet sitting down in class, it makes the teacher wait until he shows up.
+Used by the routines at <a href="62208.html">62208</a> and <a href="62464.html">62464</a>. If EINSTEIN is in class, this routine returns to the caller with the zero flag set if and only if ERIC is present too. If EINSTEIN is not yet sitting down in class, it makes the teacher wait until he shows up.
 </div>
 </div>
 <table class="input-1">
@@ -52,70 +48,70 @@ Used by the routines at <a class="link" href="62208.html">62208</a> and <a class
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="31952"></a>31952</td>
+<td class="address-2"><span id="31952"></span>31952</td>
 <td class="instruction">LD A,(43360)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=EINSTEIN's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31955"></a>31955</td>
+<td class="address-1"><span id="31955"></span>31955</td>
 <td class="instruction">CP 21</td>
-<td class="comment-11" rowspan="1"><a class="link" href="../graphics/as.html#21">21</a>=EINSTEIN sitting in a chair</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#21">21</a>=EINSTEIN sitting in a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31957"></a>31957</td>
-<td class="instruction">JP Z,<a class="link" href="31188.html">31188</a></td>
+<td class="address-1"><span id="31957"></span>31957</td>
+<td class="instruction">JP Z,<a href="31188.html">31188</a></td>
 <td class="comment-11" rowspan="1">Jump if EINSTEIN is sitting in a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31960"></a>31960</td>
+<td class="address-1"><span id="31960"></span>31960</td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="5">Place the address of the instruction that called this routine into bytes 99 and 100 of the teacher's buffer, so that control of the teacher remains in this routine until EINSTEIN is seated</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31961"></a>31961</td>
+<td class="address-1"><span id="31961"></span>31961</td>
 <td class="instruction">LD L,99</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31963"></a>31963</td>
+<td class="address-1"><span id="31963"></span>31963</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31964"></a>31964</td>
+<td class="address-1"><span id="31964"></span>31964</td>
 <td class="instruction">SUB 3</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31966"></a>31966</td>
+<td class="address-1"><span id="31966"></span>31966</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="31967"></a>31967</td>
+<td class="address-1"><span id="31967"></span>31967</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="31944.html">31944</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#31952">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="31968.html">31968</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="31944.html">31944</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31952">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31968.html">31968</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 28416</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28380.html">28380</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28416">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28442.html">28442</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28380.html">28380</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28416">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28442.html">28442</a></span></td>
 </tr>
 </table>
 <div class="description">28416: Check whether a character was or can be punched by ERIC or ANGELFACE</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="28446.html">28446</a> and <a class="link" href="28569.html">28569</a>. On entry, <span class="register">E</span> holds the x-coordinate of the spot three spaces in front of ANGELFACE to check whether it's worth raising his fist (<a class="link" href="28446.html">28446</a>), or the x-coordinate of the spot two spaces in front of ERIC or ANGELFACE when he has already raised his fist (<a class="link" href="28569.html">28569</a>). Returns with the carry flag set if the potential victim is at the target coordinates and is facing the right way.
+Used by the routines at <a href="28446.html">28446</a> and <a href="28569.html">28569</a>. On entry, <span class="register">E</span> holds the x-coordinate of the spot three spaces in front of ANGELFACE to check whether it's worth raising his fist (<a href="28446.html">28446</a>), or the x-coordinate of the spot two spaces in front of ERIC or ANGELFACE when he has already raised his fist (<a href="28569.html">28569</a>). Returns with the carry flag set if the potential victim is at the target coordinates and is facing the right way.
 </div>
 </div>
 <table class="input-1">
@@ -64,67 +60,67 @@ Used by the routines at <a class="link" href="28446.html">28446</a> and <a class
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28416"></a>28416</td>
+<td class="address-2"><span id="28416"></span>28416</td>
 <td class="instruction">LD L,98</td>
 <td class="comment-11" rowspan="1">Byte 98 of a character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28418"></a>28418</td>
+<td class="address-1"><span id="28418"></span>28418</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28419"></a>28419</td>
+<td class="address-1"><span id="28419"></span>28419</td>
 <td class="instruction">CP E</td>
 <td class="comment-11" rowspan="1">Is this character at the target x-coordinate?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28420"></a>28420</td>
+<td class="address-1"><span id="28420"></span>28420</td>
 <td class="instruction">JR Z,28424</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28422"></a>28422</td>
+<td class="address-2"><span id="28422"></span>28422</td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Reset the carry flag to indicate absence of character</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28423"></a>28423</td>
+<td class="address-1"><span id="28423"></span>28423</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="28424"></a>28424</td>
+<td class="address-2"><span id="28424"></span>28424</td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1">Byte 97 holds the character's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28425"></a>28425</td>
+<td class="address-1"><span id="28425"></span>28425</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28426"></a>28426</td>
+<td class="address-1"><span id="28426"></span>28426</td>
 <td class="instruction">CP D</td>
 <td class="comment-11" rowspan="1">Is this character at the target y-coordinate?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28427"></a>28427</td>
+<td class="address-1"><span id="28427"></span>28427</td>
 <td class="instruction">JR NZ,28422</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="28429"></a>
+<span id="28429"></span>
 <div class="comments">
 <div class="paragraph">
 The character being checked has been found at the target coordinates. But is he facing the right way?
@@ -134,82 +130,82 @@ The character being checked has been found at the target coordinates. But is he 
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28429"></a>28429</td>
+<td class="address-1"><span id="28429"></span>28429</td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1">Byte 96 holds the character's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28430"></a>28430</td>
+<td class="address-1"><span id="28430"></span>28430</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28431"></a>28431</td>
+<td class="address-1"><span id="28431"></span>28431</td>
 <td class="instruction">XOR C</td>
 <td class="comment-11" rowspan="2">Now <span class="register">A</span>=128 if the character and puncher are facing each other, and 0 otherwise</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28432"></a>28432</td>
+<td class="address-1"><span id="28432"></span>28432</td>
 <td class="instruction">AND 128</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28434"></a>28434</td>
+<td class="address-1"><span id="28434"></span>28434</td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if the character's not facing the puncher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28435"></a>28435</td>
+<td class="address-1"><span id="28435"></span>28435</td>
 <td class="instruction">LD L,112</td>
 <td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 111 and 112 of the potential victim's buffer (i.e. is he not in a punchable state at the moment)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28437"></a>28437</td>
+<td class="address-1"><span id="28437"></span>28437</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28438"></a>28438</td>
+<td class="address-1"><span id="28438"></span>28438</td>
 <td class="instruction">AND A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28439"></a>28439</td>
+<td class="address-1"><span id="28439"></span>28439</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return with the carry flag reset if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28440"></a>28440</td>
+<td class="address-1"><span id="28440"></span>28440</td>
 <td class="instruction">SCF</td>
 <td class="comment-11" rowspan="1">Set the carry flag to indicate the presence of a ripe target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="28441"></a>28441</td>
+<td class="address-1"><span id="28441"></span>28441</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="28380.html">28380</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#28416">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="28442.html">28442</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="28380.html">28380</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28416">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28442.html">28442</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 29977</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="29972.html">29972</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#29977">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="30039.html">30039</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="29972.html">29972</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29977">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30039.html">30039</a></span></td>
 </tr>
 </table>
 <div class="description">29977: Copy a graphic buffer to the screen</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a class="link" href="27406.html">27406</a> (to print the Skool Daze logo and the score box), <a class="link" href="30464.html">30464</a> (to print a lines bubble), <a class="link" href="31040.html">31040</a> (to print the lesson box) and <a class="link" href="63829.html">63829</a> (to print a safe combination letter in a bubble).
+Used by the routines at <a href="27406.html">27406</a> (to print the Skool Daze logo and the score box), <a href="30464.html">30464</a> (to print a lines bubble), <a href="31040.html">31040</a> (to print the lesson box) and <a href="63829.html">63829</a> (to print a safe combination letter in a bubble).
 </div>
 </div>
 <table class="input-1">
@@ -56,284 +52,284 @@ Used by the routines at <a class="link" href="27406.html">27406</a> (to print th
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="29977"></a>29977</td>
+<td class="address-2"><span id="29977"></span>29977</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="1">Save the attribute file address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29978"></a>29978</td>
+<td class="address-1"><span id="29978"></span>29978</td>
 <td class="instruction">LD BC,8</td>
 <td class="comment-11" rowspan="2">Copy the first row of attribute bytes from the graphic buffer to the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29981"></a>29981</td>
+<td class="address-1"><span id="29981"></span>29981</td>
 <td class="instruction">LDIR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29983"></a>29983</td>
+<td class="address-1"><span id="29983"></span>29983</td>
 <td class="instruction">LD C,24</td>
 <td class="comment-11" rowspan="6">Copy the second row of attribute bytes from the graphic buffer to the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29985"></a>29985</td>
+<td class="address-1"><span id="29985"></span>29985</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29986"></a>29986</td>
+<td class="address-1"><span id="29986"></span>29986</td>
 <td class="instruction">ADD HL,BC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29987"></a>29987</td>
+<td class="address-1"><span id="29987"></span>29987</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29988"></a>29988</td>
+<td class="address-1"><span id="29988"></span>29988</td>
 <td class="instruction">LD C,8</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29990"></a>29990</td>
+<td class="address-1"><span id="29990"></span>29990</td>
 <td class="instruction">LDIR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29992"></a>29992</td>
+<td class="address-1"><span id="29992"></span>29992</td>
 <td class="instruction">LD C,24</td>
 <td class="comment-11" rowspan="6">Copy the third row of attribute bytes from the graphic buffer to the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29994"></a>29994</td>
+<td class="address-1"><span id="29994"></span>29994</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29995"></a>29995</td>
+<td class="address-1"><span id="29995"></span>29995</td>
 <td class="instruction">ADD HL,BC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29996"></a>29996</td>
+<td class="address-1"><span id="29996"></span>29996</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29997"></a>29997</td>
+<td class="address-1"><span id="29997"></span>29997</td>
 <td class="instruction">LD C,8</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="29999"></a>29999</td>
+<td class="address-1"><span id="29999"></span>29999</td>
 <td class="instruction">LDIR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
-<a name="30001"></a>
+<span id="30001"></span>
 <div class="comments">
 <div class="paragraph">
-The attribute bytes have been copied to the screen. Now for the graphic bytes. This entry point is used by the routine at <a class="link" href="30156.html">30156</a>.
+The attribute bytes have been copied to the screen. Now for the graphic bytes. This entry point is used by the routine at <a href="30156.html">30156</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30001"></a>30001</td>
+<td class="address-2"><span id="30001"></span>30001</td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1">Restore the attribute file address to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30002"></a>30002</td>
+<td class="address-1"><span id="30002"></span>30002</td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="6">Set <span class="register">DE</span> to the corresponding display file address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30003"></a>30003</td>
+<td class="address-1"><span id="30003"></span>30003</td>
 <td class="instruction">SUB 80</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30005"></a>30005</td>
+<td class="address-1"><span id="30005"></span>30005</td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30006"></a>30006</td>
+<td class="address-1"><span id="30006"></span>30006</td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30007"></a>30007</td>
+<td class="address-1"><span id="30007"></span>30007</td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30008"></a>30008</td>
+<td class="address-1"><span id="30008"></span>30008</td>
 <td class="instruction">LD D,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30009"></a>30009</td>
+<td class="address-1"><span id="30009"></span>30009</td>
 <td class="instruction">LD C,3</td>
 <td class="comment-11" rowspan="1">There are three rows of UDGs to copy to the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30011"></a>30011</td>
+<td class="address-2"><span id="30011"></span>30011</td>
 <td class="instruction">LD A,8</td>
 <td class="comment-11" rowspan="1">There are 8 pixel lines per row of UDGs</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30013"></a>30013</td>
+<td class="address-1"><span id="30013"></span>30013</td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-11" rowspan="1">Save <span class="register">C</span> (the row counter)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30014"></a>30014</td>
+<td class="address-2"><span id="30014"></span>30014</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="7">Copy a row of 8 UDGs from the graphic buffer to the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30015"></a>30015</td>
+<td class="address-1"><span id="30015"></span>30015</td>
 <td class="instruction">LD C,8</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30017"></a>30017</td>
+<td class="address-1"><span id="30017"></span>30017</td>
 <td class="instruction">LDIR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30019"></a>30019</td>
+<td class="address-1"><span id="30019"></span>30019</td>
 <td class="instruction">POP DE</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30020"></a>30020</td>
+<td class="address-1"><span id="30020"></span>30020</td>
 <td class="instruction">INC D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30021"></a>30021</td>
+<td class="address-1"><span id="30021"></span>30021</td>
 <td class="instruction">DEC A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30022"></a>30022</td>
+<td class="address-1"><span id="30022"></span>30022</td>
 <td class="instruction">JR NZ,30014</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30024"></a>30024</td>
+<td class="address-1"><span id="30024"></span>30024</td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="7">Set <span class="register">DE</span> to the display file address for the next row</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30025"></a>30025</td>
+<td class="address-1"><span id="30025"></span>30025</td>
 <td class="instruction">ADD A,32</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30027"></a>30027</td>
+<td class="address-1"><span id="30027"></span>30027</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30028"></a>30028</td>
+<td class="address-1"><span id="30028"></span>30028</td>
 <td class="instruction">JR C,30034</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30030"></a>30030</td>
+<td class="address-1"><span id="30030"></span>30030</td>
 <td class="instruction">LD A,D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30031"></a>30031</td>
+<td class="address-1"><span id="30031"></span>30031</td>
 <td class="instruction">SUB 8</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30033"></a>30033</td>
+<td class="address-1"><span id="30033"></span>30033</td>
 <td class="instruction">LD D,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="30034"></a>30034</td>
+<td class="address-2"><span id="30034"></span>30034</td>
 <td class="instruction">POP BC</td>
 <td class="comment-11" rowspan="1">Restore the row counter to <span class="register">C</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30035"></a>30035</td>
+<td class="address-1"><span id="30035"></span>30035</td>
 <td class="instruction">DEC C</td>
 <td class="comment-11" rowspan="1">Next row</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30036"></a>30036</td>
+<td class="address-1"><span id="30036"></span>30036</td>
 <td class="instruction">JR NZ,30011</td>
 <td class="comment-11" rowspan="1">Jump back until all three rows of UDGs have been copied</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="30038"></a>30038</td>
+<td class="address-1"><span id="30038"></span>30038</td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="29972.html">29972</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#29977">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="30039.html">30039</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="29972.html">29972</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29977">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30039.html">30039</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

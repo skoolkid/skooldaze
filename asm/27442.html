@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 27442</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27406.html">27406</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27442">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27451.html">27451</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27406.html">27406</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27442">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27451.html">27451</a></span></td>
 </tr>
 </table>
 <div class="description">27442: Send a character on a mini-walkabout</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this primary command routine is placed into bytes 99 and 100 of a character's buffer by the routine at <a class="link" href="27453.html">27453</a>. It either sends the character to his next walkabout destination (the walkabout origin or some spot within 7 spaces to the left of it), or moves to the next command in the command list if the designated number of walkabouts has been completed.
+The address of this primary command routine is placed into bytes 99 and 100 of a character's buffer by the routine at <a href="27453.html">27453</a>. It either sends the character to his next walkabout destination (the walkabout origin or some spot within 7 spaces to the left of it), or moves to the next command in the command list if the designated number of walkabouts has been completed.
 </div>
 </div>
 <table class="input-1">
@@ -52,40 +48,40 @@ The address of this primary command routine is placed into bytes 99 and 100 of a
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27442"></a>27442</td>
+<td class="address-2"><span id="27442"></span>27442</td>
 <td class="instruction">LD L,103</td>
 <td class="comment-11" rowspan="2">Decrement the walkabouts counter in byte 103 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27444"></a>27444</td>
+<td class="address-1"><span id="27444"></span>27444</td>
 <td class="instruction">DEC (HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27445"></a>27445</td>
-<td class="instruction">JP Z,<a class="link" href="25248.html#25256">25256</a></td>
+<td class="address-1"><span id="27445"></span>27445</td>
+<td class="instruction">JP Z,<a href="25248.html#25256">25256</a></td>
 <td class="comment-11" rowspan="1">Move to the next command in the command list if all the walkabouts have been done</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27448"></a>27448</td>
-<td class="instruction">JP <a class="link" href="25303.html#25317">25317</a></td>
+<td class="address-1"><span id="27448"></span>27448</td>
+<td class="instruction">JP <a href="25303.html#25317">25317</a></td>
 <td class="comment-11" rowspan="1">Otherwise go for another mini-walkabout</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27406.html">27406</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27442">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27451.html">27451</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27406.html">27406</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27442">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27451.html">27451</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>

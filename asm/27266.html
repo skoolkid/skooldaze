@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Skool Daze: Routine at 27266</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../sd.css" />
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
 
 </head>
 <body class="Asm-c">
 <table class="header">
 <tr>
-<td class="logo"><a class="link" href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
 <td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27262.html">27262</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27266">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27297.html">27297</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27262.html">27262</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27266">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27297.html">27297</a></span></td>
 </tr>
 </table>
 <div class="description">27266: Make a little boy find and follow little boy no. 1</div>
@@ -30,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command list <a class="link" href="64975.html">206</a> (which is used by little boys 2-11).
+Used by command list <a href="64975.html">206</a> (which is used by little boys 2-11).
 </div>
 </div>
 <table class="input-1">
@@ -56,130 +52,130 @@ Used by command list <a class="link" href="64975.html">206</a> (which is used by
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-2"><a name="27266"></a>27266</td>
+<td class="address-2"><span id="27266"></span>27266</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="4">Reset bit 6 (do not walk slowly continuously) and bit 7 (walk fast) and set bit 5 (walk fast continuously) of byte 122 of the boy's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27267"></a>27267</td>
+<td class="address-1"><span id="27267"></span>27267</td>
 <td class="instruction">AND 31</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27269"></a>27269</td>
+<td class="address-1"><span id="27269"></span>27269</td>
 <td class="instruction">ADD A,32</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27271"></a>27271</td>
+<td class="address-1"><span id="27271"></span>27271</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27272"></a>27272</td>
+<td class="address-1"><span id="27272"></span>27272</td>
 <td class="instruction">LD DE,39037</td>
 <td class="comment-11" rowspan="2">Collect byte 125 of little boy no. 1's buffer, which holds the MSB of a continual subcommand routine address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27275"></a>27275</td>
+<td class="address-1"><span id="27275"></span>27275</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27276"></a>27276</td>
+<td class="address-1"><span id="27276"></span>27276</td>
 <td class="instruction">CP 105</td>
-<td class="comment-11" rowspan="2">Return unless little boy no. 1's continual subcommand is the routine at <a class="link" href="27126.html">27126</a>, i.e. he's tripping people up as he proceeds to his destination</td>
+<td class="comment-11" rowspan="2">Return unless little boy no. 1's continual subcommand is the routine at <a href="27126.html">27126</a>, i.e. he's tripping people up as he proceeds to his destination</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27278"></a>27278</td>
+<td class="address-1"><span id="27278"></span>27278</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27279"></a>27279</td>
+<td class="address-1"><span id="27279"></span>27279</td>
 <td class="instruction">LD L,E</td>
-<td class="comment-11" rowspan="4">Place the address of the continual subcommand routine at <a class="link" href="27126.html">27126</a> into bytes 124 and 125 of this boy's character buffer (making him trip people up as he follows little boy no. 1)</td>
+<td class="comment-11" rowspan="4">Place the address of the continual subcommand routine at <a href="27126.html">27126</a> into bytes 124 and 125 of this boy's character buffer (making him trip people up as he follows little boy no. 1)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27280"></a>27280</td>
+<td class="address-1"><span id="27280"></span>27280</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27281"></a>27281</td>
+<td class="address-1"><span id="27281"></span>27281</td>
 <td class="instruction">DEC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27282"></a>27282</td>
+<td class="address-1"><span id="27282"></span>27282</td>
 <td class="instruction">LD (HL),246</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27284"></a>27284</td>
+<td class="address-1"><span id="27284"></span>27284</td>
 <td class="instruction">LD E,99</td>
-<td class="comment-11" rowspan="5">Copy bytes 99-102 of little boy no. 1's character buffer into bytes 99-102 of this little boy's character buffer; bytes 99 and 100 will then contain <a class="link" href="25534.html#25553">25553</a>, and bytes 101 and 102 will contain little boy no. 1's destination</td>
+<td class="comment-11" rowspan="5">Copy bytes 99-102 of little boy no. 1's character buffer into bytes 99-102 of this little boy's character buffer; bytes 99 and 100 will then contain <a href="25534.html#25553">25553</a>, and bytes 101 and 102 will contain little boy no. 1's destination</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27286"></a>27286</td>
+<td class="address-1"><span id="27286"></span>27286</td>
 <td class="instruction">LD L,E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27287"></a>27287</td>
+<td class="address-1"><span id="27287"></span>27287</td>
 <td class="instruction">LD BC,4</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27290"></a>27290</td>
+<td class="address-1"><span id="27290"></span>27290</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27291"></a>27291</td>
+<td class="address-1"><span id="27291"></span>27291</td>
 <td class="instruction">LDIR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27293"></a>27293</td>
+<td class="address-1"><span id="27293"></span>27293</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
-<td class="address-1"><a name="27294"></a>27294</td>
-<td class="instruction">JP <a class="link" href="25534.html#25549">25549</a></td>
+<td class="address-1"><span id="27294"></span>27294</td>
+<td class="instruction">JP <a href="25534.html#25549">25549</a></td>
 <td class="comment-11" rowspan="1">Make this little boy follow little boy no. 1</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a class="link" href="27262.html">27262</a></span></td>
-<td class="up">Up: <a class="link" href="../maps/all.html#27266">Map</a></td>
-<td class="next"><span class="next-1">Next: <a class="link" href="27297.html">27297</a></span></td>
+<td class="prev"><span class="prev-1">Prev: <a href="27262.html">27262</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27266">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27297.html">27297</a></span></td>
 </tr>
 </table>
-<div class="footer">
-<div class="release">The complete Skool Daze RAM disassembly 20150413</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 4.3.</div>
-</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+</footer>
 </body>
 </html>
