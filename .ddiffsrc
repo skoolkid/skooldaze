@@ -1,5 +1,5 @@
 # rc file for disassembly-diff, skooldiff and write-files
 
-OLD_VERSION=20150413
-SK_OLD_VERSION=4.3
+OLD_VERSION=20151011
+SK_OLD_VERSION=5.0
 SNAPSHOT=$SKOOLDAZE_HOME/build/skool_daze.z80
