@@ -132,7 +132,7 @@ New graphic glitches:
 
 Added a trivia entry: #FACT#skoolTunes() (thanks gasman)
 
-Expanded the #AS(animatory states) and #LINK:AnimatoryStateTiles(animatory state tiles) pages to show what a boy would look like if he used a teacher's animatory state, and vice versa
+Expanded the #AS()(animatory states) and #LINK:AnimatoryStateTiles(animatory state tiles) pages to show what a boy would look like if he used a teacher's animatory state, and vice versa
 
 [Changelog:20100225]
 Included in SkoolKit 1.1.
@@ -229,7 +229,7 @@ Bloated HTML 'image' tables replaced by PNGs
 
 Added Prev/Up/Next links in various places for easier navigation
 
-#AS(Animatory state images) now show the outline masks
+#AS()(Animatory state images) now show the outline masks
 
 Added the #LINK:Graphics(Other graphics) page
 
