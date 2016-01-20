@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at B272</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="B268.html">B268</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#b272">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="B27F.html">B27F</a></span></td>
+</tr>
+</table>
+<div class="description">B272: Prepare a message in the message graphic buffer (1)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="AFE8.html">AFE8</a>. Clears the buffer at <a href="5B00.html">5B00</a> in preparation for the message.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Message address</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="b272"></span>B272</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="5">Clear the buffer at <a href="5B00.html">5B00</a> in preparation for the message</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="b273"></span>B273</td>
+<td class="instruction">LD HL,$5B00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="b276"></span>B276</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="b277"></span>B277</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="b278"></span>B278</td>
+<td class="instruction">JR NZ,$B276</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="b27a"></span>B27A</td>
+<td class="instruction">LD C,$FE</td>
+<td class="comment-11" rowspan="1">Initialise the pixel column counter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="b27c"></span>B27C</td>
+<td class="instruction">JP <a href="B371.html">$B371</a></td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="B268.html">B268</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#b272">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="B27F.html">B27F</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

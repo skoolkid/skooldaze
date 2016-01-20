@@ -43,17 +43,17 @@
 The teachers are all running at the start of the game.
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/56576.html#56587">56587</a>,144</div>
-<div>POKE <a href="../asm/56576.html#56588">56588</a>,144</div>
-<div>POKE <a href="../asm/56576.html#56589">56589</a>,144</div>
-<div>POKE <a href="../asm/56576.html#56590">56590</a>,144</div>
+<div>POKE <a href="../asm/DD00.html#dd0b">56587</a>,144</div>
+<div>POKE <a href="../asm/DD00.html#dd0c">56588</a>,144</div>
+<div>POKE <a href="../asm/DD00.html#dd0d">56589</a>,144</div>
+<div>POKE <a href="../asm/DD00.html#dd0e">56590</a>,144</div>
 </div>
 </div>
 <div><span id="jumpSound"></span></div>
 <div class="box box-2">
 <div class="box-title">Faulty jumping sound</div>
 <div class="paragraph">
-The jumping sound effect is not as it should be, because of an erroneous CALL instruction in the routine at <a href="../asm/60139.html">60139</a>.
+The jumping sound effect is not as it should be, because of an erroneous CALL instruction in the routine at <a href="../asm/EAEB.html">EAEB</a>.
 </div>
 <div class="paragraph">
 POKE 60149,254
@@ -114,11 +114,11 @@ And when MR WITHIT has left the White Room to hunt down the truant ERIC, his ani
 </table>
 </div>
 <div class="paragraph">
-The reason for this shortened cycle of walking animation phases is the lack of symmetry between the routine at <a href="../asm/31739.html">31739</a> (which is responsible for moving ERIC's chaser from the midstride position) and the routine at <a href="../asm/31768.html">31768</a> (which is responsible for moving ERIC's chaser to the midstride position). The routine at <a href="../asm/31739.html">31739</a> decrements the animatory state if the chaser is moving leftwards, and increments it if he's moving rightwards. However, the routine at <a href="../asm/31768.html">31768</a> always increments the animatory state, regardless of the chaser's direction of travel. Thus the chaser's walking animation phases get locked into a 1-2-1-2 or 3-4-3-4 cycle if he's moving leftwards.
+The reason for this shortened cycle of walking animation phases is the lack of symmetry between the routine at <a href="../asm/7BFB.html">7BFB</a> (which is responsible for moving ERIC's chaser from the midstride position) and the routine at <a href="../asm/7C18.html">7C18</a> (which is responsible for moving ERIC's chaser to the midstride position). The routine at <a href="../asm/7BFB.html">7BFB</a> decrements the animatory state if the chaser is moving leftwards, and increments it if he's moving rightwards. However, the routine at <a href="../asm/7C18.html">7C18</a> always increments the animatory state, regardless of the chaser's direction of travel. Thus the chaser's walking animation phases get locked into a 1-2-1-2 or 3-4-3-4 cycle if he's moving leftwards.
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/31739.html#31756">31756</a>,120</div>
-<div>POKE <a href="../asm/31739.html#31757">31757</a>,60</div>
+<div>POKE <a href="../asm/7BFB.html#7c0c">31756</a>,120</div>
+<div>POKE <a href="../asm/7BFB.html#7c0d">31757</a>,60</div>
 </div>
 </div>
 <div><span id="oneFourThreeFour"></span></div>
@@ -130,30 +130,30 @@ Usually, when a character is going up a staircase he will cycle through walking 
 <div class="paragraph">
 <table class="">
 <tr>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfs1" src="../images/play_area/oftfs1.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfs2" src="../images/play_area/oftfs2.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfs3" src="../images/play_area/oftfs3.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfs4" src="../images/play_area/oftfs4.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfs5" src="../images/play_area/oftfs5.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfs1" src="../images/play_area/oftfs1.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfs2" src="../images/play_area/oftfs2.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfs3" src="../images/play_area/oftfs3.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfs4" src="../images/play_area/oftfs4.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfs5" src="../images/play_area/oftfs5.png" /></td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-However, because of a bug in the routine at <a href="../asm/26084.html">26084</a>, when ERIC is going up a staircase he cycles through walking animation phases 1, 4, 3 and 4 instead thus:
+However, because of a bug in the routine at <a href="../asm/65E4.html">65E4</a>, when ERIC is going up a staircase he cycles through walking animation phases 1, 4, 3 and 4 instead thus:
 </div>
 <div class="paragraph">
 <table class="">
 <tr>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfe1" src="../images/play_area/oftfe1.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfe2" src="../images/play_area/oftfe2.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfe3" src="../images/play_area/oftfe3.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfe4" src="../images/play_area/oftfe4.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="oftfe5" src="../images/play_area/oftfe5.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfe1" src="../images/play_area/oftfe1.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfe2" src="../images/play_area/oftfe2.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfe3" src="../images/play_area/oftfe3.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfe4" src="../images/play_area/oftfe4.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="oftfe5" src="../images/play_area/oftfe5.png" /></td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-POKE <a href="../asm/26084.html#26137">26138</a>,4
+POKE <a href="../asm/65E4.html#6619">26138</a>,4
 </div>
 </div>
 <div><span id="missAndHit"></span></div>
@@ -170,37 +170,37 @@ ERIC can be knocked out by BOY WANDER's catapult pellet even when he's sitting o
 In lesson <a href="../lessons/227.html">227</a> (MR ROCKITT - EXAM ROOM), little boys 4-8 head off to the White Room in accordance with their personal timetables, but no teacher ever arrives to start the lesson.
 </div>
 <div class="paragraph">
-POKE <a href="../asm/42720.html#42723">42723</a>,<a href="../asm/64458.html">134</a> (sends MR CREAK to the White Room)
+POKE <a href="../asm/A6E0.html#a6e3">42723</a>,<a href="../asm/FBCA.html">134</a> (sends MR CREAK to the White Room)
 </div>
 </div>
 <div><span id="waitingForEinstein"></span></div>
 <div class="box box-1">
 <div class="box-title">Waiting for EINSTEIN</div>
 <div class="paragraph">
-Before wiping the board and getting a lesson under way, ERIC's teacher will wait for EINSTEIN to sit down first: see <a href="../asm/31952.html">31952</a>. This makes sense at the beginning of a lesson, but that same routine is called several times during the course of a lesson (see <a href="../asm/62208.html">62208</a>) to check whether ERIC is present, which means that the teacher will also stop whatever he's doing and wait for EINSTEIN to sit down before continuing on those occasions too. This is not really noticeable except during lessons where there is no question-and-answer session taking place between the teacher and the swot, and the teacher is pacing up and down in front of the blackboard instead. During those lessons, the call to <a href="../asm/31952.html">31952</a> is made each time the teacher has reached the point where he is just about to turn round; if EINSTEIN is not sitting in a chair at that time (because ERIC has pushed him out of his seat, for example), the teacher will wait until EINSTEIN is back in his seat before turning round.
+Before wiping the board and getting a lesson under way, ERIC's teacher will wait for EINSTEIN to sit down first: see <a href="../asm/7CD0.html">7CD0</a>. This makes sense at the beginning of a lesson, but that same routine is called several times during the course of a lesson (see <a href="../asm/F300.html">F300</a>) to check whether ERIC is present, which means that the teacher will also stop whatever he's doing and wait for EINSTEIN to sit down before continuing on those occasions too. This is not really noticeable except during lessons where there is no question-and-answer session taking place between the teacher and the swot, and the teacher is pacing up and down in front of the blackboard instead. During those lessons, the call to <a href="../asm/7CD0.html">7CD0</a> is made each time the teacher has reached the point where he is just about to turn round; if EINSTEIN is not sitting in a chair at that time (because ERIC has pushed him out of his seat, for example), the teacher will wait until EINSTEIN is back in his seat before turning round.
 </div>
 <div class="paragraph">
 This phenomenon can be made more readily reproducible and observable by using the following POKEs:
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/27733.html#27735">27736</a>,20 (to lengthen the delay before a dethroned character rises)</div>
-<div>POKE <a href="../asm/62208.html#62422">62423</a>,0 (to make every lesson a non-question-and-answer lesson)</div>
+<div>POKE <a href="../asm/6C55.html#6c57">27736</a>,20 (to lengthen the delay before a dethroned character rises)</div>
+<div>POKE <a href="../asm/F300.html#f3d6">62423</a>,0 (to make every lesson a non-question-and-answer lesson)</div>
 </div>
 </div>
 <div><span id="wrongCommandList"></span></div>
 <div class="box box-2">
 <div class="box-title">Wrong command list</div>
 <div class="paragraph">
-Many <a href="../asm/65152.html">command lists</a> use the routine at <a href="../asm/31815.html">31815</a> to trigger a restart. This works as expected when the current lesson appears in the <a href="../asm/65024.html">main timetable</a>, but does not work during the 'special' playtimes - <a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> and <a href="../lessons/245.html">245</a> - which do not appear in the main timetable, but instead replace main timetable playtimes at random three times out of eight on average (see <a href="../asm/28211.html">28211</a>).
+Many <a href="../asm/FE80.html">command lists</a> use the routine at <a href="../asm/7C47.html">7C47</a> to trigger a restart. This works as expected when the current lesson appears in the <a href="../asm/FE00.html">main timetable</a>, but does not work during the 'special' playtimes - <a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> and <a href="../lessons/245.html">245</a> - which do not appear in the main timetable, but instead replace main timetable playtimes at random three times out of eight on average (see <a href="../asm/6E33.html">6E33</a>).
 </div>
 <div class="paragraph">
-The problem is that the routine at <a href="../asm/31815.html">31815</a> looks up the current lesson (whose number is stored at <a href="../asm/32761.html">32761</a>) in the main timetable in order to find out which command list to restart, and then copies the start address of that command list into bytes 119 and 120 of the character's buffer, overwriting the command list start address that was already there.
+The problem is that the routine at <a href="../asm/7C47.html">7C47</a> looks up the current lesson (whose number is stored at <a href="../asm/7FF9.html">7FF9</a>) in the main timetable in order to find out which command list to restart, and then copies the start address of that command list into bytes 119 and 120 of the character's buffer, overwriting the command list start address that was already there.
 </div>
 <div class="paragraph">
-The most noticeable effect of this bug will occur during a special playtime that has replaced a 'stampede' playtime (<a href="../lessons/252.html">252</a> or <a href="../lessons/253.html">253</a>). Little boys 1-9 and 11 (not 10, because he's busy looking for ERIC to tell him what's going on) start with command list <a href="../asm/64914.html">196</a> (walkabout), but when the restart command is reached, will switch to command list <a href="../asm/64947.html">204</a> (stampede leader) or <a href="../asm/64975.html">206</a> (stampede follower). Thus a special playtime in which ERIC must watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the presence of stampeding boys tripping everyone up.
+The most noticeable effect of this bug will occur during a special playtime that has replaced a 'stampede' playtime (<a href="../lessons/252.html">252</a> or <a href="../lessons/253.html">253</a>). Little boys 1-9 and 11 (not 10, because he's busy looking for ERIC to tell him what's going on) start with command list <a href="../asm/FD92.html">196</a> (walkabout), but when the restart command is reached, will switch to command list <a href="../asm/FDB3.html">204</a> (stampede leader) or <a href="../asm/FDCF.html">206</a> (stampede follower). Thus a special playtime in which ERIC must watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the presence of stampeding boys tripping everyone up.
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/31815.html#31825">31825</a>,0</div>
+<div>POKE <a href="../asm/7C47.html#7c51">31825</a>,0</div>
 <div>POKE 31826,203</div>
 <div>POKE 31827,198</div>
 </div>
@@ -209,10 +209,10 @@ The most noticeable effect of this bug will occur during a special playtime that
 <div class="box box-1">
 <div class="box-title">WACKER's number blindness</div>
 <div class="paragraph">
-If ERIC has exactly 10000 lines, MR WACKER will come rushing to ERIC's side and say "YOU HAVE OVER 10000 LINES TO WRITE ERIC..." (see <a href="../asm/63931.html">63931</a>). Does the headmaster not know how to count, or does he actually think that 10000 > 10000? Either way, this is poor form for a maths teacher.
+If ERIC has exactly 10000 lines, MR WACKER will come rushing to ERIC's side and say "YOU HAVE OVER 10000 LINES TO WRITE ERIC..." (see <a href="../asm/F9BB.html">F9BB</a>). Does the headmaster not know how to count, or does he actually think that 10000 > 10000? Either way, this is poor form for a maths teacher.
 </div>
 <div class="paragraph">
-POKE <a href="../asm/63931.html#63942">63943</a>,233 (keeps MR WACKER at bay until ERIC's lines total exceeds 10000)
+POKE <a href="../asm/F9BB.html#f9c6">63943</a>,233 (keeps MR WACKER at bay until ERIC's lines total exceeds 10000)
 </div>
 </div>
 <div><span id="avoidingExpulsion"></span></div>
@@ -235,7 +235,7 @@ Likewise with MR WACKER. After the bell rings, press ENTER to finish writing on 
 When ANGELFACE has mumps, ERIC may be able to run past him without 'touching' him, and thus avoid contracting the disease.
 </div>
 <div class="paragraph">
-This trick is possible because the collision detection code at <a href="../asm/64042.html">64042</a> is executed only during ANGELFACE's turn to move; ERIC moves faster than any other character in the game, and so if he times it right, he can scoot past the bully in between his turns to move.
+This trick is possible because the collision detection code at <a href="../asm/FA2A.html">FA2A</a> is executed only during ANGELFACE's turn to move; ERIC moves faster than any other character in the game, and so if he times it right, he can scoot past the bully in between his turns to move.
 </div>
 </div>
 <div><span id="rockittExamRoom"></span></div>
@@ -245,14 +245,14 @@ This trick is possible because the collision detection code at <a href="../asm/6
 In lesson <a href="../lessons/229.html">229</a> (REVISION LIBRARY), MR ROCKITT paces up and down in the Exam Room like a little boy, waiting for a teacher who never arrives.
 </div>
 <div class="paragraph">
-POKE <a href="../asm/42208.html#42213">42213</a>,<a href="../asm/64876.html">188</a> (sends MR ROCKITT to the staff room)
+POKE <a href="../asm/A4E0.html#a4e5">42213</a>,<a href="../asm/FD6C.html">188</a> (sends MR ROCKITT to the staff room)
 </div>
 </div>
 <div><span id="hiddenShield"></span></div>
 <div class="box box-1">
 <div class="box-title">Speech bubble v. shield</div>
 <div class="paragraph">
-When a speech bubble is obscuring a shield, ERIC cannot get it by jumping up to it or firing at it. This is because the routine at <a href="../asm/28143.html">28143</a> checks for the presence of a shield at the location of ERIC's hand or pellet by inspecting the attribute byte: a shield is assumed to be present only if neither the PAPER nor the INK is black. However, when a speech bubble is in the way, the INK is black, and the routine exits early.
+When a speech bubble is obscuring a shield, ERIC cannot get it by jumping up to it or firing at it. This is because the routine at <a href="../asm/6DEF.html">6DEF</a> checks for the presence of a shield at the location of ERIC's hand or pellet by inspecting the attribute byte: a shield is assumed to be present only if neither the PAPER nor the INK is black. However, when a speech bubble is in the way, the INK is black, and the routine exits early.
 </div>
 </div>
 <div><span id="corruptedBubble"></span></div>
@@ -282,7 +282,7 @@ Consider the case where ERIC is being taught by MR CREAK in the White Room, and 
 </ul>
 </div>
 <div class="paragraph">
-When MR CREAK finishes speaking, the character-moving routine at <a href="../asm/25126.html">25126</a> considers moving the following characters (after MR CREAK) in this order:
+When MR CREAK finishes speaking, the character-moving routine at <a href="../asm/6226.html">6226</a> considers moving the following characters (after MR CREAK) in this order:
 </div>
 <div class="paragraph">
 <ul>
@@ -314,10 +314,10 @@ Thus MR ROCKITT could spend quite a while waiting at the blackboard before telli
 <div class="box box-2">
 <div class="box-title">Inaccessible back seat</div>
 <div class="paragraph">
-Kids are unable to sit in the back seat in the Reading Room (see <a href="../asm/27632.html">27632</a>). This may actually be a feature, though, because if EINSTEIN sits in the back seat, his speech bubble goes through the wall into the Map Room.
+Kids are unable to sit in the back seat in the Reading Room (see <a href="../asm/6BF0.html">6BF0</a>). This may actually be a feature, though, because if EINSTEIN sits in the back seat, his speech bubble goes through the wall into the Map Room.
 </div>
 <div class="paragraph">
-POKE <a href="../asm/27632.html#27703">27704</a>,56
+POKE <a href="../asm/6BF0.html#6c37">27704</a>,56
 </div>
 </div>
 <div><span id="doublyDirty"></span></div>
@@ -331,7 +331,7 @@ The blackboard buffers are wiped before a new game (or demo mode) starts, but th
 <div class="box box-2">
 <div class="box-title">Misspelt element</div>
 <div class="paragraph">
-'Phosphorous' (at <a href="../asm/57532.html">57532</a>) is misspelt; it should be 'Phosphorus'.
+'Phosphorous' (at <a href="../asm/E0BC.html">E0BC</a>) is misspelt; it should be 'Phosphorus'.
 </div>
 </div>
 <div><span id="emptyClass"></span></div>
@@ -341,7 +341,7 @@ The blackboard buffers are wiped before a new game (or demo mode) starts, but th
 Lesson <a href="../lessons/230.html">230</a> (REVISION LIBRARY) has MR CREAK teaching an empty class in the Reading Room.
 </div>
 <div class="paragraph">
-POKE <a href="../asm/42720.html#42726">42726</a>,<a href="../asm/64876.html">188</a> (sends MR CREAK to the staff room)
+POKE <a href="../asm/A6E0.html#a6e6">42726</a>,<a href="../asm/FD6C.html">188</a> (sends MR CREAK to the staff room)
 </div>
 </div>
 <div><span id="chairHit"></span></div>
@@ -361,7 +361,7 @@ In lesson <a href="../lessons/236.html">236</a> (MR WACKER - WHITE ROOM), BOY WA
 <footer>
 <div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
 </footer>
 </body>
 </html>

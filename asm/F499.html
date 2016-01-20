@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at F499</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F492.html">F492</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f499">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F4A4.html">F4A4</a></span></td>
+</tr>
+</table>
+<div class="description">F499: 'J' pressed - jump</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+The address of this routine is found in the table of keypress handling routines at <a href="6880.html">6880</a>. It is called from the main loop at <a href="6767.html">6767</a> when 'J' or 'L' is pressed.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f499"></span>F499</td>
+<td class="instruction">CALL <a href="6648.html">$6648</a></td>
+<td class="comment-11" rowspan="1">Is ERIC on a staircase?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f49c"></span>F49C</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if so (ERIC can't jump while on a staircase)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f49d"></span>F49D</td>
+<td class="instruction">LD BC,$0C04</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="../graphics/as.html#12">12</a> (ERIC with arm raised), <span class="register">C</span>=4 (bit 2 set)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f4a0"></span>F4A0</td>
+<td class="instruction">LD A,$10</td>
+<td class="comment-11" rowspan="1">This will initialise the jumping action timer at <a href="7FF6.html">7FF6</a> to 16</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f4a2"></span>F4A2</td>
+<td class="instruction">JR <a href="F46E.html#f478">$F478</a></td>
+<td class="comment-11" rowspan="1">Start the jump</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F492.html">F492</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f499">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F4A4.html">F4A4</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

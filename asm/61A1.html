@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 61A1</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="618C.html">618C</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61a1">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61B0.html">61B0</a></span></td>
+</tr>
+</table>
+<div class="description">61A1: Get a random number</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="62B2.html">62B2</a>, <a href="62D7.html">62D7</a>, <a href="69D2.html">69D2</a>, <a href="7000.html">7000</a>, <a href="7264.html">7264</a>, <a href="7700.html">7700</a>, <a href="7A32.html">7A32</a>, <a href="7CE0.html">7CE0</a>, <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</a>, <a href="F300.html">F300</a>, <a href="F855.html">F855</a> and <a href="F905.html">F905</a>. Returns with a random number in <span class="register">A</span>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61a1"></span>61A1</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61a2"></span>61A2</td>
+<td class="instruction">LD HL,($7FFE)</td>
+<td class="comment-11" rowspan="1"><a href="7FFE.html">7FFE</a> holds the random number seed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61a5"></span>61A5</td>
+<td class="instruction">LD A,($5C78)</td>
+<td class="comment-11" rowspan="1">Pick up the LSB of the system variable FRAMES</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61a8"></span>61A8</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="2">Add 257 to the seed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61a9"></span>61A9</td>
+<td class="instruction">INC H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61aa"></span>61AA</td>
+<td class="instruction">XOR (HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61ab"></span>61AB</td>
+<td class="instruction">LD ($7FFE),HL</td>
+<td class="comment-11" rowspan="1">Store the new seed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61ae"></span>61AE</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61af"></span>61AF</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="618C.html">618C</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61a1">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61B0.html">61B0</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

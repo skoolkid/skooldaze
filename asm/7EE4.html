@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 7EE4</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7ED6.html">7ED6</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7ee4">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7EF1.html">7EF1</a></span></td>
+</tr>
+</table>
+<div class="description">7EE4: Save Skool Daze to tape</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+This routine was used to save the high-speed block to tape.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7ee4"></span>7EE4</td>
+<td class="instruction">LD HL,$5EE0</td>
+<td class="comment-11" rowspan="1"><a href="../start/5EE0.html">5EE0</a> is where the game starts after loading</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7ee7"></span>7EE7</td>
+<td class="instruction">LD ($5D19),HL</td>
+<td class="comment-11" rowspan="1">Store this address where it will be popped off the stack by the <a href="../load/802F.html">load routine</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7eea"></span>7EEA</td>
+<td class="instruction">LD BC,$0017</td>
+<td class="comment-11" rowspan="1">This parameter is used by the save routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7eed"></span>7EED</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7eee"></span>7EEE</td>
+<td class="instruction">JP $8100</td>
+<td class="comment-11" rowspan="1">Jump into the <a href="../save/8100.html">save routine</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7ED6.html">7ED6</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7ee4">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7EF1.html">7EF1</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

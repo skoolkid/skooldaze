@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at F8B4</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F8B2.html">F8B2</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f8b4">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F8F6.html">F8F6</a></span></td>
+</tr>
+</table>
+<div class="description">F8B4: Adjust the game mode</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="6900.html">6900</a> (to prepare the shields and safe for a new game), <a href="6DEF.html">6DEF</a> (when the last shield has just been flashed or unflashed) and <a href="F726.html">F726</a> (when ERIC has opened the safe).
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f8b4"></span>F8B4</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8b5"></span>F8B5</td>
+<td class="instruction">LD HL,$7FEB</td>
+<td class="comment-11" rowspan="1"><a href="7FEB.html">7FEB</a> holds the shield counter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8b8"></span>F8B8</td>
+<td class="instruction">LD (HL),$0F</td>
+<td class="comment-11" rowspan="1">Restore the shield counter to 15</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8ba"></span>F8BA</td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7FEA.html">7FEA</a> (game mode indicator)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8bb"></span>F8BB</td>
+<td class="instruction">INC (HL)</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=1 if the game has just started, 2 if the 15th shield was just flashed, 3 if the safe was just opened, or 4 if the 15th shield was just unflashed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8bc"></span>F8BC</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8bd"></span>F8BD</td>
+<td class="instruction">LD HL,($7FC4)</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8c0"></span>F8C0</td>
+<td class="instruction">CP $04</td>
+<td class="comment-11" rowspan="1">Was the 15th shield just unflashed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8c2"></span>F8C2</td>
+<td class="instruction">JR NZ,$F8D8</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="f8c4"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC has just hit the 15th shield and made it unflash.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8c4"></span>F8C4</td>
+<td class="instruction">LD DE,$01F4</td>
+<td class="comment-11" rowspan="3">Add 5000 to the score and print it</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8c7"></span>F8C7</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8c8"></span>F8C8</td>
+<td class="instruction">CALL <a href="F4F1.html">$F4F1</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8cb"></span>F8CB</td>
+<td class="instruction">LD HL,$FEE0</td>
+<td class="comment-11" rowspan="1"><a href="FEE0.html">FEE0</a>='WELL DONE! GO UP A YEAR'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8ce"></span>F8CE</td>
+<td class="instruction">CALL <a href="F9A5.html#f9af">$F9AF</a></td>
+<td class="comment-11" rowspan="1">Print this in the lesson box</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8d1"></span>F8D1</td>
+<td class="instruction">LD A,$0C</td>
+<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 12</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8d3"></span>F8D3</td>
+<td class="instruction">LD ($7FF8),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8d6"></span>F8D6</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-11" rowspan="1">Ensure that the 'DEC A' below sets the zero flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f8d8"></span>F8D8</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Was the 15th shield just flashed or the safe just opened?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8d9"></span>F8D9</td>
+<td class="instruction">JR NZ,$F8E6</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="f8db"></span>
+<div class="comments">
+<div class="paragraph">
+Either the game has just started, or the 15th shield was just unflashed.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8db"></span>F8DB</td>
+<td class="instruction">CALL <a href="F855.html">$F855</a></td>
+<td class="comment-11" rowspan="1">Generate a new safe combination code, and a new random birth year for MR CREAK</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8de"></span>F8DE</td>
+<td class="instruction">CALL <a href="F70A.html">$F70A</a></td>
+<td class="comment-11" rowspan="1">Unflash the safe and all the shields</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8e1"></span>F8E1</td>
+<td class="instruction">CALL <a href="7E90.html">$7E90</a></td>
+<td class="comment-11" rowspan="1">Play the theme tune</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8e4"></span>F8E4</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8e5"></span>F8E5</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="f8e6"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC has just hit the 15th shield and made it flash (<span class="register">A</span>=1), or just opened the safe (<span class="register">A</span>=2).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f8e6"></span>F8E6</td>
+<td class="instruction">LD DE,$0064</td>
+<td class="comment-11" rowspan="2">Add 1000 to the score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8e9"></span>F8E9</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8ea"></span>F8EA</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Was the safe just opened?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8eb"></span>F8EB</td>
+<td class="instruction">JR NZ,$F8EE</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8ed"></span>F8ED</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add 1000 more to the score if the 15th shield was hit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f8ee"></span>F8EE</td>
+<td class="instruction">CALL <a href="F4F1.html">$F4F1</a></td>
+<td class="comment-11" rowspan="1">Print the new score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8f1"></span>F8F1</td>
+<td class="instruction">CALL <a href="7E96.html">$7E96</a></td>
+<td class="comment-11" rowspan="1">Play the 'Got all the shields' tune</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8f4"></span>F8F4</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f8f5"></span>F8F5</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F8B2.html">F8B2</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f8b4">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F8F6.html">F8F6</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

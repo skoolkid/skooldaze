@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 68A0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6896.html">6896</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#68a0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="68D4.html">68D4</a></span></td>
+</tr>
+</table>
+<div class="description">68A0: Request and set the input method (keyboard, joystick, Int2)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="FA49.html">FA49</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="68a0"></span>68A0</td>
+<td class="instruction">LD HL,$68D4</td>
+<td class="comment-11" rowspan="1"><a href="68D4.html">68D4</a>: 'CONTROL KEYS - Normal/Kempston/Cursor/Int2?'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68a3"></span>68A3</td>
+<td class="instruction">CALL <a href="AFE8.html">$AFE8</a></td>
+<td class="comment-11" rowspan="1">Print this message</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="68a6"></span>68A6</td>
+<td class="instruction">LD HL,$5C3B</td>
+<td class="comment-11" rowspan="1">This is the system variable FLAGS</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68a9"></span>68A9</td>
+<td class="instruction">RES 5,(HL)</td>
+<td class="comment-11" rowspan="1">Signal: no key pressed yet</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="68ab"></span>68AB</td>
+<td class="instruction">CALL <a href="673A.html#673d">$673D</a></td>
+<td class="comment-11" rowspan="2">Wait for a keypress and collect its ASCII code in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68ae"></span>68AE</td>
+<td class="instruction">JR Z,$68AB</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68b0"></span>68B0</td>
+<td class="instruction">LD HL,$688C</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the keypress table for keys 0-9 when Int2 is not selected</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68b3"></span>68B3</td>
+<td class="instruction">LD BC,$000A</td>
+<td class="comment-11" rowspan="1">There are 10 entries in this table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68b6"></span>68B6</td>
+<td class="instruction">CP $6E</td>
+<td class="comment-11" rowspan="1">Was 'n' pressed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68b8"></span>68B8</td>
+<td class="instruction">JR Z,$68C7</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68ba"></span>68BA</td>
+<td class="instruction">CP $63</td>
+<td class="comment-11" rowspan="1">Was 'c' pressed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68bc"></span>68BC</td>
+<td class="instruction">JR Z,$68C7</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68be"></span>68BE</td>
+<td class="instruction">CP $6B</td>
+<td class="comment-11" rowspan="1">Was 'k' pressed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68c0"></span>68C0</td>
+<td class="instruction">JR Z,$68C8</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68c2"></span>68C2</td>
+<td class="instruction">CP $69</td>
+<td class="comment-11" rowspan="1">Was 'i' pressed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68c4"></span>68C4</td>
+<td class="instruction">JR NZ,$68A6</td>
+<td class="comment-11" rowspan="1">Jump back to collect another keypress if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68c6"></span>68C6</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="6896.html">6896</a> if 'i' was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="68c7"></span>68C7</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set <span class="register">A</span> to 0 unless 'k' was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="68c8"></span>68C8</td>
+<td class="instruction">LD DE,$6830</td>
+<td class="comment-11" rowspan="2">Copy 10 bytes from <a href="688C.html">688C</a> or <a href="6896.html">6896</a> to <a href="6820.html#6830">6830</a> (the keypress table entries for keys 0-9)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68cb"></span>68CB</td>
+<td class="instruction">LDIR</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68cd"></span>68CD</td>
+<td class="instruction">LD L,$1F</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="681F.html">681F</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68cf"></span>68CF</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Store 107 ('k' for Kempston) or 0 here as appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68d0"></span>68D0</td>
+<td class="instruction">LD HL,$5000</td>
+<td class="comment-11" rowspan="1">Prepare <span class="register">HL</span> for drawing the catwalk</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="68d3"></span>68D3</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6896.html">6896</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#68a0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="68D4.html">68D4</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

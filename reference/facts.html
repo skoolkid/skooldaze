@@ -50,7 +50,7 @@
 <div class="box box-1">
 <div class="box-title">The importance of little boy no. 11</div>
 <div class="paragraph">
-In demo mode, ERIC bases his every move on where little boy no. 11 is and what he's doing (see the routine at <a href="../asm/62938.html">62938</a>). This important role means that little boy no. 11 is in all of ERIC's classes (if he weren't, ERIC would be guilty of truancy in demo mode). In fact, little boy no. 11 is the only character besides EINSTEIN who joins ERIC for every class.
+In demo mode, ERIC bases his every move on where little boy no. 11 is and what he's doing (see the routine at <a href="../asm/F5DA.html">F5DA</a>). This important role means that little boy no. 11 is in all of ERIC's classes (if he weren't, ERIC would be guilty of truancy in demo mode). In fact, little boy no. 11 is the only character besides EINSTEIN who joins ERIC for every class.
 </div>
 <div class="paragraph">
 One consequence of this devotion to little boy no. 11 is that ERIC can sometimes be seen going from one end of a staircase to the other three times in succession, as if unsure of where to go. This happens because when little boy no. 11 starts climbing a staircase, ERIC will run to the top and get there before him, then run down to the bottom looking for him, and finally run to the top again to catch up with him.
@@ -70,7 +70,7 @@ The tune that plays just before a game (or demo mode) starts, and also when ERIC
 The version of Skool Daze that was released by Alternative Software Ltd in 1987 contains three visible differences from the version released by Microsphere in 1984.
 </div>
 <div class="paragraph">
-(1) MR WITHIT's blackboard message at <a href="../asm/59392.html">59392</a> reads 'WHY IT RAINS IN MANCHESTER' (which doesn't fit on the blackboard) instead of 'MANCHESTER MONSOONS'.
+(1) MR WITHIT's blackboard message at <a href="../asm/E800.html">E800</a> reads 'WHY IT RAINS IN MANCHESTER' (which doesn't fit on the blackboard) instead of 'MANCHESTER MONSOONS'.
 </div>
 <div class="paragraph">
 (2) The font graphic for the '/' (slash) character is slightly broken:
@@ -78,7 +78,7 @@ The version of Skool Daze that was released by Alternative Software Ltd in 1987 
 <div class="paragraph">
 <table class="">
 <tr>
-<td class="" colspan="1" rowspan="1">  <img alt="alt_slash" src="../images/font/alt_slash.png" /> </td>
+<td class="" colspan="1" rowspan="1"><img alt="alt_slash" src="../images/font/alt_slash.png" /></td>
 <td class="" colspan="1" rowspan="1">instead of</td>
 <td class="" colspan="1" rowspan="1"><img alt="slash" src="../images/font/slash.png" /></td>
 </tr>
@@ -118,7 +118,7 @@ If a teacher is conducting a class without ERIC, or is conducting ERIC's class b
 If he's in the White Room, he will take one pace up and then down, oscillating between x-coordinates 29 and 30. If he's in the Reading Room, he will also take one pace up and then down, oscillating between x-coordinates 45 and 46. And if he's in the Map Room, he will once again take one pace up and then down, oscillating between x-coordinates 61 and 62. But if he's in the Exam Room, he will take three paces up and then down, oscillating between x-coordinates 44 and 47.
 </div>
 <div class="paragraph">
-The reason for this discrepancy in pace numbers is the method used to calculate the teacher's next pace-up or pace-down destination, which is to take his current x-coordinate and do an XOR 3 on it: see the sections of code at <a href="../asm/32048.html#32115">32115</a> and <a href="../asm/62208.html#62429">62429</a>.
+The reason for this discrepancy in pace numbers is the method used to calculate the teacher's next pace-up or pace-down destination, which is to take his current x-coordinate and do an XOR 3 on it: see the sections of code at <a href="../asm/7D30.html#7d73">7D73</a> and <a href="../asm/F300.html#f3dd">F3DD</a>.
 </div>
 </div>
 <div><span id="invulnerableMoments"></span></div>
@@ -137,10 +137,10 @@ ERIC can usually throw a punch or fire his catapult and be confident that the im
 </ul>
 </div>
 <div class="paragraph">
-The reason these characters are invulnerable while looking for ERIC is that they are under the control of the uninterruptible subcommand routine at <a href="../asm/63374.html#63390">63390</a>.
+The reason these characters are invulnerable while looking for ERIC is that they are under the control of the uninterruptible subcommand routine at <a href="../asm/F78E.html#f79e">F79E</a>.
 </div>
 <div class="paragraph">
-In addition, any boy is invulnerable when he's looking for a seat in a classroom, because he's under the control of the uninterruptible subcommand routine at <a href="../asm/27772.html">27772</a>.
+In addition, any boy is invulnerable when he's looking for a seat in a classroom, because he's under the control of the uninterruptible subcommand routine at <a href="../asm/6C7C.html">6C7C</a>.
 </div>
 </div>
 <div><span id="undeliverableMessage"></span></div>
@@ -153,8 +153,8 @@ On those occasions when MR WACKER, MR ROCKITT or little boy no. 10 is looking fo
 To verify this, use the following POKEs (which make every playtime the 'special' playtime in which little boy no. 10 will come looking for ERIC to tell him that EINSTEIN is going to grass him up to MR WACKER) and then head for the nearest blackboard:
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/28211.html">28212</a>,0</div>
-<div>POKE <a href="../asm/28211.html#28213">28214</a>,<a href="../lessons/244.html">244</a></div>
+<div>POKE <a href="../asm/6E33.html">28212</a>,0</div>
+<div>POKE <a href="../asm/6E33.html#6e35">28214</a>,<a href="../lessons/244.html">244</a></div>
 </div>
 <div class="paragraph">
 If you're feeling very patient, you can use this stalling technique to avoid having to take part in the special playtime: just stand at the blackboard for about 20 minutes until the bell rings.
@@ -167,7 +167,7 @@ Rather more interesting is that you can use this technique to <a href="bugs.html
 <div class="box box-2">
 <div class="box-title">Doppelwacker</div>
 <div class="paragraph">
-The sprite graphic data is split between two base pages: page <a href="../asm/47360.html">185</a> for the boys and the catapult pellet, and page <a href="../asm/51456.html">201</a> for the teachers (see <a href="../asm/27914.html">27914</a>). However, the graphic data based in page 185 contains exact copies of most of MR WACKER's sprites:
+The sprite graphic data is split between two base pages: page <a href="../asm/B900.html">185</a> for the boys and the catapult pellet, and page <a href="../asm/C900.html">201</a> for the teachers (see <a href="../asm/6D0A.html">6D0A</a>). However, the graphic data based in page 185 contains exact copies of most of MR WACKER's sprites:
 </div>
 <div class="paragraph">
 <table class="gallery">
@@ -280,8 +280,8 @@ The numbering of the tiles suggests that the bottom-right tile of animatory stat
 <td class="" colspan="2" rowspan="1">201</td>
 </tr>
 <tr>
-<td class="" colspan="1" rowspan="1">  <img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m185_wos.png" /></td>
-<td class="" colspan="1" rowspan="1"> <img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m185_wos.png" /> </td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m185_wos.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m185_wos.png" /></td>
 <td class="" colspan="1" rowspan="1"><img alt="Animatory state 81" src="../images/animatory_states/as081_120x4m201.png" /></td>
 <td class="" colspan="1" rowspan="1"><img alt="Animatory state 209" src="../images/animatory_states/as209_120x4m201.png" /></td>
 </tr>
@@ -301,14 +301,14 @@ So why didn't copies of tiles 81 and 209 from page 185 (which seem to finish MR 
 <div class="box box-2">
 <div class="box-title">Points for a punching or a pelleting</div>
 <div class="paragraph">
-ANGELFACE is unique among the cast of characters in that if ERIC knocks him over with a punch, 30 points are awarded (see <a href="../asm/62628.html#62656">62656</a>). In addition, if ERIC knocks him over with a catapult pellet, 10 points are awarded (see <a href="../asm/27932.html#28029">28029</a>). No points are awarded for knocking anyone else over.
+ANGELFACE is unique among the cast of characters in that if ERIC knocks him over with a punch, 30 points are awarded (see <a href="../asm/F4A4.html#f4c0">F4C0</a>). In addition, if ERIC knocks him over with a catapult pellet, 10 points are awarded (see <a href="../asm/6D1C.html#6d7d">6D7D</a>). No points are awarded for knocking anyone else over.
 </div>
 </div>
 <div><span id="bwShootsEricScores"></span></div>
 <div class="box box-1">
 <div class="box-title">BOY WANDER shoots, ERIC scores</div>
 <div class="paragraph">
-BOY WANDER may be a tearaway, but sometimes his impulsive nature can be more of a help than a hindrance. If he lets rip with his catapult and the pellet knocks ANGELFACE for six, you score 10 points - just as if ERIC had decked the bully himself. The reason for this is that the section of code at <a href="../asm/27932.html#28025">28025</a> does not bother to check whose pellet has collided with ANGELFACE's head. (The check for pellet ownership was added in Back to Skool, though.)
+BOY WANDER may be a tearaway, but sometimes his impulsive nature can be more of a help than a hindrance. If he lets rip with his catapult and the pellet knocks ANGELFACE for six, you score 10 points - just as if ERIC had decked the bully himself. The reason for this is that the section of code at <a href="../asm/6D1C.html#6d79">6D79</a> does not bother to check whose pellet has collided with ANGELFACE's head. (The check for pellet ownership was added in Back to Skool, though.)
 </div>
 <div class="paragraph">
 It's also possible for one of BOY WANDER's pellets to bounce off a teacher's head, hit a shield, and make it flash - scoring even more points - but that would be a rare occurrence indeed.
@@ -323,24 +323,24 @@ Typically, when a teacher arrives at the classroom doorway to start the lesson, 
 <div class="paragraph">
 <table class="gallery">
 <tr>
-<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_boy" src="../images/play_area/ss_mr_boy.png" /> </td>
-<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_boy_wander" src="../images/play_area/ss_mr_boy_wander.png" /> </td>
-<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_angelface" src="../images/play_area/ss_mr_angelface.png" /> </td>
-<td class="" colspan="1" rowspan="1">  <img alt="ss_mr_einstein" src="../images/play_area/ss_mr_einstein.png" /> </td>
+<td class="" colspan="1" rowspan="1"><img alt="ss_mr_boy" src="../images/play_area/ss_mr_boy.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="ss_mr_boy_wander" src="../images/play_area/ss_mr_boy_wander.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="ss_mr_angelface" src="../images/play_area/ss_mr_angelface.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="ss_mr_einstein" src="../images/play_area/ss_mr_einstein.png" /></td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
 <table class="gallery">
 <tr>
-<td class="" colspan="1" rowspan="1">  <img alt="ss_er_boy" src="../images/play_area/ss_er_boy.png" /> </td>
-<td class="" colspan="1" rowspan="1">  <img alt="ss_er_angelface" src="../images/play_area/ss_er_angelface.png" /> </td>
-<td class="" colspan="1" rowspan="1">  <img alt="ss_er_einstein" src="../images/play_area/ss_er_einstein.png" /> </td>
+<td class="" colspan="1" rowspan="1"><img alt="ss_er_boy" src="../images/play_area/ss_er_boy.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="ss_er_angelface" src="../images/play_area/ss_er_angelface.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="ss_er_einstein" src="../images/play_area/ss_er_einstein.png" /></td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-The reason this happens to a latecomer is that he doesn't get a chance to walk around before having to find a seat and sit down, because the teacher has already arrived, the corresponding signal has already been raised, and so the routine at <a href="../asm/25303.html">25303</a> moves straight to the next command in the command list: <a href="../asm/27808.html">27808</a> (find a seat and sit down). That command makes the boy move forward to the next seat if he's facing left (which is the case if he's just entered the Map Room or Exam Room), or walk to the back of the classroom if he's facing right. When the boy does get a chance to walk around first, he ends up facing right before that command kicks in, and then keeps moving right to the back of the class.
+The reason this happens to a latecomer is that he doesn't get a chance to walk around before having to find a seat and sit down, because the teacher has already arrived, the corresponding signal has already been raised, and so the routine at <a href="../asm/62D7.html">62D7</a> moves straight to the next command in the command list: <a href="../asm/6CA0.html">6CA0</a> (find a seat and sit down). That command makes the boy move forward to the next seat if he's facing left (which is the case if he's just entered the Map Room or Exam Room), or walk to the back of the classroom if he's facing right. When the boy does get a chance to walk around first, he ends up facing right before that command kicks in, and then keeps moving right to the back of the class.
 </div>
 <div class="paragraph">
 Note that BOY WANDER always tries to sit in the back seat in the Exam Room, because after entering that room he goes to the blackboard first, and then walks to the middle of the room, at which point he is facing right.
@@ -353,16 +353,16 @@ This unusual seat selection does not happen in the Reading Room or White Room, b
 <div class="box box-1">
 <div class="box-title">The mystery of the unused status flag</div>
 <div class="paragraph">
-Bit 6 of ERIC's status flags at <a href="../asm/32763.html">32763</a> is unused: it's always 0. However, the routines at <a href="../asm/25983.html">25983</a> (down), <a href="../asm/26084.html">26084</a> (up) and <a href="../asm/26194.html">26194</a> (left) check the flag and act on the result.
+Bit 6 of ERIC's status flags at <a href="../asm/7FFB.html">7FFB</a> is unused: it's always 0. However, the routines at <a href="../asm/657F.html">657F</a> (down), <a href="../asm/65E4.html">65E4</a> (up) and <a href="../asm/6652.html">6652</a> (left) check the flag and act on the result.
 </div>
 <div class="paragraph">
-<a href="../asm/25983.html">25983</a> (down) checks bit 6 early on. If it's set, a jump is made over the code that checks whether ERIC is on or near a staircase, straight to the code that moves ERIC left or right (depending on which way he's facing).
+<a href="../asm/657F.html">657F</a> (down) checks bit 6 early on. If it's set, a jump is made over the code that checks whether ERIC is on or near a staircase, straight to the code that moves ERIC left or right (depending on which way he's facing).
 </div>
 <div class="paragraph">
-<a href="../asm/26084.html">26084</a> (up) does the same, which suggests that bit 6 may once have been set or reset elsewhere to indicate whether ERIC is on a staircase.
+<a href="../asm/65E4.html">65E4</a> (up) does the same, which suggests that bit 6 may once have been set or reset elsewhere to indicate whether ERIC is on a staircase.
 </div>
 <div class="paragraph">
-However, <a href="../asm/26194.html">26194</a> (left) suggests otherwise. It checks bit 6, and if it's reset, a jump is made over some code that looks as if it was once used to adjust ERIC's animatory state in some way: see <a href="../asm/26194.html#26250">26250</a>.
+However, <a href="../asm/6652.html">6652</a> (left) suggests otherwise. It checks bit 6, and if it's reset, a jump is made over some code that looks as if it was once used to adjust ERIC's animatory state in some way: see <a href="../asm/6652.html#668a">668A</a>.
 </div>
 <div class="paragraph">
 What was this flag used for originally? The mystery may never be solved.
@@ -375,7 +375,7 @@ What was this flag used for originally? The mystery may never be solved.
 When ERIC walks, fires his catapult, throws a punch, is knocked out, or receives lines, the accompanying sound effects are played with interrupts enabled, which means they are affected by keys being held down. This is especially noticeable with the lines-giving sounds, which are somewhat longer than the others. To make them even longer:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/30464.html#30541">30546</a>,0: POKE <a href="../asm/30464.html#30575">30577</a>,0
+POKE <a href="../asm/7700.html#774d">30546</a>,0: POKE <a href="../asm/7700.html#776f">30577</a>,0
 </div>
 <div class="paragraph">
 Now put ERIC up to mischief in front of a teacher, and see if you can detect the change in pitch of the lines-giving screeches as you hold down various keys.
@@ -482,23 +482,23 @@ and the remaining five display the triangle design:
 <div class="box box-2">
 <div class="box-title">Teachers and classrooms</div>
 <div class="paragraph">
-MR WACKER is the only teacher who teaches ERIC in all four classrooms. See his <a href="../asm/41952.html">personal timetable</a>.
+MR WACKER is the only teacher who teaches ERIC in all four classrooms. See his <a href="../asm/A3E0.html">personal timetable</a>.
 </div>
 <div class="paragraph">
-MR ROCKITT never teaches in the Map Room. See his <a href="../asm/42208.html">personal timetable</a>.
+MR ROCKITT never teaches in the Map Room. See his <a href="../asm/A4E0.html">personal timetable</a>.
 </div>
 <div class="paragraph">
-MR WITHIT never teaches ERIC in the Reading Room or the Exam Room, but does teach other kids in those rooms. See his <a href="../asm/42464.html">personal timetable</a>.
+MR WITHIT never teaches ERIC in the Reading Room or the Exam Room, but does teach other kids in those rooms. See his <a href="../asm/A5E0.html">personal timetable</a>.
 </div>
 <div class="paragraph">
-MR CREAK never teaches in the Map Room or the Exam Room. See his <a href="../asm/42720.html">personal timetable</a>.
+MR CREAK never teaches in the Map Room or the Exam Room. See his <a href="../asm/A6E0.html">personal timetable</a>.
 </div>
 </div>
 <div><span id="timetableStats"></span></div>
 <div class="box box-1">
 <div class="box-title">Timetable stats</div>
 <div class="paragraph">
-There are 64 periods in the <a href="../asm/65024.html">main timetable</a>: 26 playtimes, 4 dinner periods, and 34 lesson periods (when ERIC is supposed to be in either a classroom or the Revision Library).
+There are 64 periods in the <a href="../asm/FE00.html">main timetable</a>: 26 playtimes, 4 dinner periods, and 34 lesson periods (when ERIC is supposed to be in either a classroom or the Revision Library).
 </div>
 <div class="paragraph">
 In the 34 lesson periods, ERIC is scheduled to be in the White Room 11 times, the Reading Room 8 times, the Map Room 6 times, the Exam Room 4 times, and the Revision Library 5 times.
@@ -529,48 +529,48 @@ ANGELFACE spends more lesson periods in the Revision Library than any other boy 
 <div class="box box-2">
 <div class="box-title">Playtime probabilities</div>
 <div class="paragraph">
-During playtime, the teacher most likely to be found pacing up and down in the staff room is MR CREAK, who spends 23 of the 26 playtimes in the <a href="../asm/65024.html">main timetable</a> in that room (the three exceptions being those playtimes where the little boys stampede around the skool). The teacher least likely to be found in the staff room is MR WACKER, who spends only three playtimes there; the other 23 playtimes he divides between his study (3 times) and walking around the skool (20).
+During playtime, the teacher most likely to be found pacing up and down in the staff room is MR CREAK, who spends 23 of the 26 playtimes in the <a href="../asm/FE00.html">main timetable</a> in that room (the three exceptions being those playtimes where the little boys stampede around the skool). The teacher least likely to be found in the staff room is MR WACKER, who spends only three playtimes there; the other 23 playtimes he divides between his study (3 times) and walking around the skool (20).
 </div>
 <div class="paragraph">
 BOY WANDER spends most of his playtimes (16 out of 26) in search of clean blackboards to write on.
 </div>
 <div class="paragraph">
-ANGELFACE and EINSTEIN spend every playtime wandering around the skool from one <a href="../asm/27082.html">randomly chosen location</a> to another. The 11 little boys, however, split their playtimes between wandering around the skool and walking up and down in one of the four playtime locations (Revision Library, fire escape, gym and big window) until the bell rings.
+ANGELFACE and EINSTEIN spend every playtime wandering around the skool from one <a href="../asm/69CA.html">randomly chosen location</a> to another. The 11 little boys, however, split their playtimes between wandering around the skool and walking up and down in one of the four playtime locations (Revision Library, fire escape, gym and big window) until the bell rings.
 </div>
 <div class="paragraph">
-The playtime probabilities described here are all subject to alteration by the fact that, three times out of eight, a playtime in the main timetable is replaced with a 'special' playtime (<a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a>) chosen at random (see <a href="../asm/28211.html">28211</a>).
+The playtime probabilities described here are all subject to alteration by the fact that, three times out of eight, a playtime in the main timetable is replaced with a 'special' playtime (<a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a>) chosen at random (see <a href="../asm/6E33.html">6E33</a>).
 </div>
 </div>
 <div><span id="initialPlaytimes"></span></div>
 <div class="box box-1">
 <div class="box-title">Initial playtimes</div>
 <div class="paragraph">
-When demo mode or a new game starts, the timetable index is always <a href="../asm/65024.html#65024">0</a>, <a href="../asm/65024.html#65040">16</a>, <a href="../asm/65024.html#65056">32</a> or <a href="../asm/65024.html#65072">48</a> (which are all playtime, of course).
+When demo mode or a new game starts, the timetable index is always <a href="../asm/FE00.html#fe00">0</a>, <a href="../asm/FE00.html#fe10">16</a>, <a href="../asm/FE00.html#fe20">32</a> or <a href="../asm/FE00.html#fe30">48</a> (which are all playtime, of course).
 </div>
 <div class="paragraph">
-When demo mode starts for the first time after the game has loaded, the timetable index is <a href="../asm/65024.html#65040">16</a>. When a new game is started as soon as possible after the game has loaded, the timetable index is <a href="../asm/65024.html#65056">32</a>.
+When demo mode starts for the first time after the game has loaded, the timetable index is <a href="../asm/FE00.html#fe10">16</a>. When a new game is started as soon as possible after the game has loaded, the timetable index is <a href="../asm/FE00.html#fe20">32</a>.
 </div>
 </div>
 <div><span id="doublePlaytimes"></span></div>
 <div class="box box-2">
 <div class="box-title">Double playtimes</div>
 <div class="paragraph">
-There are five places in the <a href="../asm/65024.html">main timetable</a> where one playtime is followed immediately by another: timetable indexes <a href="../asm/65024.html#65032">8/9</a>, <a href="../asm/65024.html#65043">19/20</a>, <a href="../asm/65024.html#65065">41/42</a>, <a href="../asm/65024.html#65075">51/52</a>, and <a href="../asm/65024.html#65081">57/58</a>. However, you might be forgiven for not having noticed this because the bell does not ring between the playtimes in each pair (see <a href="../asm/26342.html#26360">26360</a>).
+There are five places in the <a href="../asm/FE00.html">main timetable</a> where one playtime is followed immediately by another: timetable indexes <a href="../asm/FE00.html#fe08">8/9</a>, <a href="../asm/FE00.html#fe13">19/20</a>, <a href="../asm/FE00.html#fe29">41/42</a>, <a href="../asm/FE00.html#fe33">51/52</a>, and <a href="../asm/FE00.html#fe39">57/58</a>. However, you might be forgiven for not having noticed this because the bell does not ring between the playtimes in each pair (see <a href="../asm/66E6.html#66f8">66F8</a>).
 </div>
 <div class="paragraph">
-Also note that playtimes <a href="../lessons/254.html">254</a> and <a href="../lessons/255.html">255</a> are used exclusively as the second playtime in double playtime periods. There's nothing special about those playtimes, except that their numbers (254, 255) are easily checked by the code at <a href="../asm/26342.html#26360">26360</a>.
+Also note that playtimes <a href="../lessons/254.html">254</a> and <a href="../lessons/255.html">255</a> are used exclusively as the second playtime in double playtime periods. There's nothing special about those playtimes, except that their numbers (254, 255) are easily checked by the code at <a href="../asm/66E6.html#66f8">66F8</a>.
 </div>
 </div>
 <div><span id="playtimeDistribution"></span></div>
 <div class="box box-1">
 <div class="box-title">Playtime distribution</div>
 <div class="paragraph">
-Understandably, ERIC is always eager for playtime to come, but the number of lesson or Revision Library periods he has to tolerate between each break varies between one and three throughout the <a href="../asm/65024.html">main timetable</a>.
+Understandably, ERIC is always eager for playtime to come, but the number of lesson or Revision Library periods he has to tolerate between each break varies between one and three throughout the <a href="../asm/FE00.html">main timetable</a>.
 </div>
 <div class="paragraph">
 <ul class="">
-<li>There is one period between playtimes at timetable indexes <a href="../asm/65024.html#65036">13</a> and <a href="../asm/65024.html#65038">15</a></li>
-<li>There are three periods between playtimes at timetable indexes <a href="../asm/65024.html#65049">26-28</a> and <a href="../asm/65024.html#65056">33-35</a></li>
+<li>There is one period between playtimes at timetable indexes <a href="../asm/FE00.html#fe0c">13</a> and <a href="../asm/FE00.html#fe0e">15</a></li>
+<li>There are three periods between playtimes at timetable indexes <a href="../asm/FE00.html#fe19">26-28</a> and <a href="../asm/FE00.html#fe20">33-35</a></li>
 <li>There are two periods between all the other playtimes (not counting dinner periods)</li>
 </ul>
 </div>
@@ -579,7 +579,7 @@ Understandably, ERIC is always eager for playtime to come, but the number of les
 <div class="box box-2">
 <div class="box-title">Always a dull playtime in demo mode</div>
 <div class="paragraph">
-Special playtimes - the ones where ERIC must avoid contact with ANGELFACE, prevent MR WACKER from getting to the fire escape before BOY WANDER, or prevent EINSTEIN from making it to the head's study - never happen in demo mode (see <a href="../asm/63749.html">63749</a>). Which makes sense, because otherwise the user would have to press 'U' to signify understanding after being told what BOY WANDER, EINSTEIN or ANGELFACE is up to, and then press another key to exit demo mode.
+Special playtimes - the ones where ERIC must avoid contact with ANGELFACE, prevent MR WACKER from getting to the fire escape before BOY WANDER, or prevent EINSTEIN from making it to the head's study - never happen in demo mode (see <a href="../asm/F905.html">F905</a>). Which makes sense, because otherwise the user would have to press 'U' to signify understanding after being told what BOY WANDER, EINSTEIN or ANGELFACE is up to, and then press another key to exit demo mode.
 </div>
 </div>
 <div><span id="handsUp"></span></div>
@@ -606,7 +606,7 @@ Were these used while the game was in development? We'll probably never know.
 <div class="box box-2">
 <div class="box-title">Board-wiping WANDER</div>
 <div class="paragraph">
-The board-wiping routine at <a href="../asm/29148.html">29148</a> checks whether BOY WANDER (as opposed to a teacher) is wiping the board, and executes a different code path accordingly. However, BOY WANDER never makes use of this ability in the game that was released. Did he use it while the game was in development? Again, we'll probably never know.
+The board-wiping routine at <a href="../asm/71DC.html">71DC</a> checks whether BOY WANDER (as opposed to a teacher) is wiping the board, and executes a different code path accordingly. However, BOY WANDER never makes use of this ability in the game that was released. Did he use it while the game was in development? Again, we'll probably never know.
 </div>
 </div>
 <div><span id="wipingBully"></span></div>
@@ -640,7 +640,7 @@ Teachers don't give ERIC lines if they see him writing on a blackboard (unlike B
 <div class="box box-1">
 <div class="box-title">Save the duster</div>
 <div class="paragraph">
-There are code remnants in the board-wiping routine at <a href="../asm/29148.html">29148</a> that make a teacher skip wiping the blackboard if it's already clean. The POKEs to re-enable this code are:
+There are code remnants in the board-wiping routine at <a href="../asm/71DC.html">71DC</a> that make a teacher skip wiping the blackboard if it's already clean. The POKEs to re-enable this code are:
 </div>
 <div class="paragraph">
 POKE 29151,79: POKE 29152,6
@@ -653,34 +653,34 @@ However, the code that would make the teacher walk to the middle of the blackboa
 <div class="box box-2">
 <div class="box-title">WACKER loves EINSTEIN's tales</div>
 <div class="paragraph">
-MR WACKER never gives EINSTEIN lines for telling tales (see <a href="../asm/31968.html">31968</a>). Is WACKER merely gullible, a firm believer in the virtue of snitching, or both?
+MR WACKER never gives EINSTEIN lines for telling tales (see <a href="../asm/7CE0.html">7CE0</a>). Is WACKER merely gullible, a firm believer in the virtue of snitching, or both?
 </div>
 </div>
 <div><span id="wackerPtoZ"></span></div>
 <div class="box box-1">
 <div class="box-title">WACKER's letter-blindness</div>
 <div class="paragraph">
-The first letter of the safe combination code (MR WACKER's) is always in the range A-O (see <a href="../asm/63573.html">63573</a>). Did WACKER never learn the alphabet from P to Z when he was at skool?
+The first letter of the safe combination code (MR WACKER's) is always in the range A-O (see <a href="../asm/F855.html">F855</a>). Did WACKER never learn the alphabet from P to Z when he was at skool?
 </div>
 </div>
 <div><span id="battle1800"></span></div>
 <div class="box box-2">
 <div class="box-title">WHICH BATTLE OCCURRED IN 1800?</div>
 <div class="paragraph">
-Among the 21 battle dates that comprise MR CREAK's history curriculum, 1800 makes no appearance. But perhaps it was not always so: see <a href="../asm/58600.html">58600</a>. We can only speculate which battle from that year EINSTEIN would have chosen for his answer.
+Among the 21 battle dates that comprise MR CREAK's history curriculum, 1800 makes no appearance. But perhaps it was not always so: see <a href="../asm/E4E8.html">E4E8</a>. We can only speculate which battle from that year EINSTEIN would have chosen for his answer.
 </div>
 </div>
 <div><span id="withitEdited"></span></div>
 <div class="box box-1">
 <div class="box-title">WITHIT edited</div>
 <div class="paragraph">
-There is evidence that MR WITHIT used to be rather more verbose with his blackboard scribblings, but was edited before the game was released. See 'MANCHESTER MONSOONS' at <a href="../asm/59392.html">59392</a>, which was probably 'WHY IT RAINS IN MANCHESTER' at some point (see <a href="facts.html#alternativeDifferences">Alternative differences</a>). Likewise, 'THE PEAKS OF PERU' at <a href="../asm/59456.html">59456</a> may once have been expressed less tersely (or been about something other than PEAKS). Finally, which rain-forest other than Glasgow's could WITHIT have been writing about at <a href="../asm/59488.html">59488</a>?
+There is evidence that MR WITHIT used to be rather more verbose with his blackboard scribblings, but was edited before the game was released. See 'MANCHESTER MONSOONS' at <a href="../asm/E800.html">E800</a>, which was probably 'WHY IT RAINS IN MANCHESTER' at some point (see <a href="facts.html#alternativeDifferences">Alternative differences</a>). Likewise, 'THE PEAKS OF PERU' at <a href="../asm/E840.html">E840</a> may once have been expressed less tersely (or been about something other than PEAKS). Finally, which rain-forest other than Glasgow's could WITHIT have been writing about at <a href="../asm/E860.html">E860</a>?
 </div>
 </div>
 <footer>
 <div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
 </footer>
 </body>
 </html>

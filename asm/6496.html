@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 6496</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6495.html">6495</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6496">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64CA.html">64CA</a></span></td>
+</tr>
+</table>
+<div class="description">6496: Guide a character to a location on the same floor</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="63BE.html">63BE</a> when the character under consideration is on the same floor as his destination.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Character's coordinates</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">101</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6496"></span>6496</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the destination x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6497"></span>6497</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's current x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6498"></span>6498</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Is the character at the destination?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6499"></span>6499</td>
+<td class="instruction">JR NZ,$64A5</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="649b"></span>649B</td>
+<td class="instruction">LD L,$60</td>
+<td class="comment-11" rowspan="1">Byte 96 holds the character's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="649d"></span>649D</td>
+<td class="instruction">BIT 0,(HL)</td>
+<td class="comment-11" rowspan="1">Is the character midstride?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="649f"></span>649F</td>
+<td class="instruction">JP Z,<a href="62A0.html#62a8">$62A8</a></td>
+<td class="comment-11" rowspan="1">Move to the next command in the command list if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64a2"></span>64A2</td>
+<td class="instruction">JP <a href="63BE.html#641b">$641B</a></td>
+<td class="comment-11" rowspan="1">Otherwise finish the stride</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64a5"></span>
+<div class="comments">
+<div class="paragraph">
+The character hasn't reached his destination yet. Figure out his next move.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64a5"></span>64A5</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64a6"></span>64A6</td>
+<td class="instruction">CP $A9</td>
+<td class="comment-11" rowspan="1">169=bottom floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64a8"></span>64A8</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=destination x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64a9"></span>64A9</td>
+<td class="instruction">JP Z,<a href="63BE.html#641b">$641B</a></td>
+<td class="comment-11" rowspan="1">Jump if the character is on the bottom floor</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64ac"></span>
+<div class="comments">
+<div class="paragraph">
+The character is on the middle floor or the top floor. But which side of the wall?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64ac"></span>64AC</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64ad"></span>64AD</td>
+<td class="instruction">CP $9B</td>
+<td class="comment-11" rowspan="1">155=top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64af"></span>64AF</td>
+<td class="instruction">LD A,$39</td>
+<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Map and Reading Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64b1"></span>64B1</td>
+<td class="instruction">JR Z,$64B5</td>
+<td class="comment-11" rowspan="1">Jump if the character is on the top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64b3"></span>64B3</td>
+<td class="instruction">LD A,$26</td>
+<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64b5"></span>64B5</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Is the character to the left of the wall?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64b6"></span>64B6</td>
+<td class="instruction">JR NC,$64C0</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64b8"></span>
+<div class="comments">
+<div class="paragraph">
+The character is on the right side of the wall.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64b8"></span>64B8</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare the wall's x-coordinate (in <span class="register">A</span>) with the destination x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64b9"></span>64B9</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=destination x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64ba"></span>64BA</td>
+<td class="instruction">JP C,<a href="63BE.html#641b">$641B</a></td>
+<td class="comment-11" rowspan="1">Jump if the character doesn't need to go down the stairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64bd"></span>64BD</td>
+<td class="instruction">JP <a href="63BE.html#63f6">$63F6</a></td>
+<td class="comment-11" rowspan="1">Send the character to the top of the staircase</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64c0"></span>
+<div class="comments">
+<div class="paragraph">
+The character is on the left side of the wall.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64c0"></span>64C0</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare the wall's x-coordinate (in <span class="register">A</span>) with the destination x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64c1"></span>64C1</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=destination x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64c2"></span>64C2</td>
+<td class="instruction">JP NC,<a href="63BE.html#641b">$641B</a></td>
+<td class="comment-11" rowspan="1">Jump if the character doesn't need to go down the stairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64c5"></span>64C5</td>
+<td class="instruction">LD A,$0C</td>
+<td class="comment-11" rowspan="1">12=x-coordinate of the tops of the staircases at the left of the skool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64c7"></span>64C7</td>
+<td class="instruction">JP <a href="63BE.html#63f8">$63F8</a></td>
+<td class="comment-11" rowspan="1">Send the character to the top of the staircase</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6495.html">6495</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6496">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64CA.html">64CA</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

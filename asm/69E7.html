@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 69E7</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="69D2.html">69D2</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#69e7">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="69F5.html">69F5</a></span></td>
+</tr>
+</table>
+<div class="description">69E7: Make a character go to a random location</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by command lists <a href="FD49.html">182</a>, <a href="FD73.html">190</a>, <a href="FD7C.html">192</a>, <a href="FDDC.html">194</a>, <a href="FD92.html">196</a>, <a href="FAE6.html">208</a>, <a href="FAF0.html">210</a>, <a href="FB09.html">212</a>, <a href="FB3A.html">216</a> and <a href="FAFF.html">220</a> to make a character go to a place at random (selected from the table at <a href="69CA.html">69CA</a>).
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">122</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="69e7"></span>69E7</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 122 of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="69e8"></span>69E8</td>
+<td class="instruction">AND $9F</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="69ea"></span>69EA</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="69eb"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="6A6E.html">6A6E</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="69eb"></span>69EB</td>
+<td class="instruction">CALL <a href="69D2.html">$69D2</a></td>
+<td class="comment-11" rowspan="1">Set a random destination for the character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="69ee"></span>69EE</td>
+<td class="instruction">LD L,$64</td>
+<td class="comment-11" rowspan="2">Prepare the MSB of the primary command routine address in bytes 99 and 100 of the character's buffer; the LSB will be set to 209 soon (making the routine address <a href="63BE.html#63d1">63D1</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="69f0"></span>69F0</td>
+<td class="instruction">LD (HL),$63</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="69f2"></span>69F2</td>
+<td class="instruction">JP <a href="63BE.html#63cd">$63CD</a></td>
+<td class="comment-11" rowspan="1">Set the character on his way</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="69D2.html">69D2</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#69e7">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="69F5.html">69F5</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

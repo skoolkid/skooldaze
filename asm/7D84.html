@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 7D84</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7D83.html">7D83</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7d84">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7D9E.html">7D9E</a></span></td>
+</tr>
+</table>
+<div class="description">7D84: Make a teacher tell the kids to sit down</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.html">130</a>, <a href="FBB4.html">132</a> and <a href="FBCA.html">134</a>. Makes the teacher tell the kids to sit down; also makes MR CREAK reveal his safe combination letter if he can see his year of birth written on the board.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7d84"></span>7D84</td>
+<td class="instruction">CALL <a href="F6D7.html">$F6D7</a></td>
+<td class="comment-11" rowspan="1">Make MR CREAK reveal his safe combination letter if appropriate; also set <span class="register">BC</span>=<a href="F1C1.html">F1C1</a> (SILENCE! OR I'LL CANE THE LOT OF YOU)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d87"></span>7D87</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=teacher's character number (163-166)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d88"></span>7D88</td>
+<td class="instruction">SUB $A3</td>
+<td class="comment-11" rowspan="1">Is it MR WACKER?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d8a"></span>7D8A</td>
+<td class="instruction">JR Z,$7D98</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d8c"></span>7D8C</td>
+<td class="instruction">LD C,$59</td>
+<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a href="F159.html">F159</a> (RIGHT! SIT DOWN MY LITTLE CHERUBS)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d8e"></span>7D8E</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Is it MR ROCKITT?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d8f"></span>7D8F</td>
+<td class="instruction">JR Z,$7D98</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d91"></span>7D91</td>
+<td class="instruction">LD C,$7B</td>
+<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a href="F17B.html">F17B</a> (COME ON CHAPS - SETTLE DOWN)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d93"></span>7D93</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Is it MR WITHIT?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d94"></span>7D94</td>
+<td class="instruction">JR Z,$7D98</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d96"></span>7D96</td>
+<td class="instruction">LD C,$97</td>
+<td class="comment-11" rowspan="1">It must be MR CREAK; set <span class="register">BC</span>=<a href="F197.html">F197</a> (BE QUIET AND SEATED YOU NASTY LITTLE BOYS)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7d98"></span>7D98</td>
+<td class="instruction">CALL <a href="7CFC.html#7d26">$7D26</a></td>
+<td class="comment-11" rowspan="1">Make the teacher speak</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d9b"></span>7D9B</td>
+<td class="instruction">JP <a href="62A0.html#62a8">$62A8</a></td>
+<td class="comment-11" rowspan="1">Move to the next command in the command list</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7D83.html">7D83</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7d84">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7D9E.html">7D9E</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

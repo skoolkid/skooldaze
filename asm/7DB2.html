@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 7DB2</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7DA7.html">7DA7</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7db2">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7DD4.html">7DD4</a></span></td>
+</tr>
+</table>
+<div class="description">7DB2: Make a teacher conduct a class</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.html">130</a>, <a href="FBB4.html">132</a> and <a href="FBCA.html">134</a>. Determines whether the teacher is conducting ERIC's class, and hands over to <a href="F300.html">F300</a> if so or <a href="7D30.html">7D30</a> if not.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7db2"></span>7DB2</td>
+<td class="instruction">LD A,($7FF4)</td>
+<td class="comment-11" rowspan="1">Pick up the lesson descriptor from <a href="7FF4.html">7FF4</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7db5"></span>7DB5</td>
+<td class="instruction">AND $F0</td>
+<td class="comment-11" rowspan="1">Keep only the 'teacher' bits (4-7)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7db7"></span>7DB7</td>
+<td class="instruction">RLCA</td>
+<td class="comment-11" rowspan="5"><span class="register">A</span>=character number of the teacher (163-166) that is teaching ERIC and EINSTEIN this period</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7db8"></span>7DB8</td>
+<td class="instruction">RLCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7db9"></span>7DB9</td>
+<td class="instruction">RLCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dba"></span>7DBA</td>
+<td class="instruction">RLCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dbb"></span>7DBB</td>
+<td class="instruction">ADD A,$A3</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dbd"></span>7DBD</td>
+<td class="instruction">CP H</td>
+<td class="comment-11" rowspan="1">Set the zero flag if this teacher is teaching ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dbe"></span>7DBE</td>
+<td class="instruction">LD L,$63</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dc0"></span>7DC0</td>
+<td class="instruction">JR Z,$7DC7</td>
+<td class="comment-11" rowspan="1">Jump if we're dealing with ERIC's teacher</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dc2"></span>7DC2</td>
+<td class="instruction">LD (HL),$30</td>
+<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 99 and 100 of the teacher's buffer with <a href="7D30.html">7D30</a>, and jump there now to start the lesson</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dc4"></span>7DC4</td>
+<td class="instruction">JP <a href="7D30.html">$7D30</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="7dc7"></span>
+<div class="comments">
+<div class="paragraph">
+This teacher has the pleasure of conducting ERIC's class this period.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7dc7"></span>7DC7</td>
+<td class="instruction">LD (HL),$00</td>
+<td class="comment-11" rowspan="3">Replace the address of this routine in bytes 99 and 100 of the teacher's buffer with that of <a href="F300.html">F300</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dc9"></span>7DC9</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dca"></span>7DCA</td>
+<td class="instruction">LD (HL),$F3</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dcc"></span>7DCC</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-11" rowspan="2">Clear all the lesson status flags at <a href="7FC8.html">7FC8</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dce"></span>7DCE</td>
+<td class="instruction">LD ($7FC8),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7dd1"></span>7DD1</td>
+<td class="instruction">JP <a href="F300.html">$F300</a></td>
+<td class="comment-11" rowspan="1">Start the lesson</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7DA7.html">7DA7</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7db2">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7DD4.html">7DD4</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

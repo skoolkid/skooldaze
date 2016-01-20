@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at AEE8</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="AE7F.html">AE7F</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#aee8">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="AEFF.html">AEFF</a></span></td>
+</tr>
+</table>
+<div class="description">AEE8: Insert message text into the message graphic buffer</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="B371.html">B371</a>. Generates the graphic data for the text of the message and inserts it into the buffer at <a href="5B00.html">5B00</a>. Returns with the message right-aligned in the buffer, and with <span class="register">C</span> holding the number of empty pixel columns remaining on the left.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">254</td>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Message address</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="aee8"></span>AEE8</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ASCII code of a character in the message</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aee9"></span>AEE9</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Point <span class="register">DE</span> at the next character in the message</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aeea"></span>AEEA</td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Have we reached the end of the message?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aeeb"></span>AEEB</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aeec"></span>AEEC</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="3"><span class="register">B</span>=width (in pixels) of the bitmap for this font character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aeed"></span>AEED</td>
+<td class="instruction">LD H,$D9</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aeef"></span>AEEF</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="aef0"></span>AEF0</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="3">Pick up a pixel column for the font character and slide it into the graphic buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aef1"></span>AEF1</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aef2"></span>AEF2</td>
+<td class="instruction">CALL <a href="ADE8.html">$ADE8</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aef5"></span>AEF5</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Decrease the pixel column count</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aef6"></span>AEF6</td>
+<td class="instruction">DJNZ $AEF0</td>
+<td class="comment-11" rowspan="1">Jump back until the entire font character has been done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aef8"></span>AEF8</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="3">Insert a blank pixel column between characters</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aef9"></span>AEF9</td>
+<td class="instruction">DEC C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aefa"></span>AEFA</td>
+<td class="instruction">CALL <a href="ADE8.html">$ADE8</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="aefd"></span>AEFD</td>
+<td class="instruction">JR $AEE8</td>
+<td class="comment-11" rowspan="1">Continue until the message is finished</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="AE7F.html">AE7F</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#aee8">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="AEFF.html">AEFF</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

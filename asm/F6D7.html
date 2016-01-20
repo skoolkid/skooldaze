@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at F6D7</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F6AA.html">F6AA</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f6d7">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F6FF.html">F6FF</a></span></td>
+</tr>
+</table>
+<div class="description">F6D7: Make MR CREAK reveal his safe combination letter if appropriate</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="7D84.html">7D84</a>. A teacher is standing at the doorway of a classroom, ready to tell the kids to sit down; this routine checks whether the teacher is MR CREAK, and if it is, makes him reveal his safe combination letter if his birth year has been written on the blackboard by ERIC, and ERIC has not yet opened the safe.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">122</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f6d7"></span>F6D7</td>
+<td class="instruction">CALL <a href="F8F6.html">$F8F6</a></td>
+<td class="comment-11" rowspan="2">Return unless we're dealing with CREAK and ERIC has not yet opened the safe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6da"></span>F6DA</td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6db"></span>F6DB</td>
+<td class="instruction">CALL <a href="FA10.html">$FA10</a></td>
+<td class="comment-11" rowspan="2">Return unless CREAK is near a blackboard last written on by ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6de"></span>F6DE</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6df"></span>F6DF</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=56 (Reading Room blackboard) or 58 (White Room blackboard)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e0"></span>F6E0</td>
+<td class="instruction">SUB $B5</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e2"></span>F6E2</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Save CREAK's character number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e3"></span>F6E3</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="6"><span class="register">HL</span>=<a href="7FA8.html">7FA8</a> (Reading Room blackboard contents buffer) or <a href="7FAE.html">7FAE</a> (White Room blackboard contents buffer)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e4"></span>F6E4</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e5"></span>F6E5</td>
+<td class="instruction">ADD A,L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e6"></span>F6E6</td>
+<td class="instruction">NOP</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e7"></span>F6E7</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e8"></span>F6E8</td>
+<td class="instruction">LD H,D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="f6e9"></span>
+<div class="comments">
+<div class="paragraph">
+Check whether CREAK's birth year has been written on the board.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6e9"></span>F6E9</td>
+<td class="instruction">LD E,$9B</td>
+<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a href="7F9B.html">7F9B</a> (which holds CREAK's year of birth)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6eb"></span>F6EB</td>
+<td class="instruction">LD B,$04</td>
+<td class="comment-11" rowspan="1">There are 4 digits in CREAK's year of birth</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f6ed"></span>F6ED</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=digit from CREAK's year of birth</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6ee"></span>F6EE</td>
+<td class="instruction">INC E</td>
+<td class="comment-11" rowspan="1">Move <span class="register">DE</span> along to the next digit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6ef"></span>F6EF</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare the digit with the character written on the board</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6f0"></span>F6F0</td>
+<td class="instruction">JR NZ,$F6FA</td>
+<td class="comment-11" rowspan="1">Jump if they don't match</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6f2"></span>F6F2</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1">Move to the next character written on the board</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6f3"></span>F6F3</td>
+<td class="instruction">DJNZ $F6ED</td>
+<td class="comment-11" rowspan="1">Jump back until all 4 digits have been checked</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="f6f5"></span>
+<div class="comments">
+<div class="paragraph">
+The first four characters written on the board by ERIC match the digits in MR CREAK's year of birth.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6f5"></span>F6F5</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore CREAK's character number (166) to <span class="register">H</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6f6"></span>F6F6</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Save it again</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6f7"></span>F6F7</td>
+<td class="instruction">CALL <a href="F955.html#f970">$F970</a></td>
+<td class="comment-11" rowspan="1">Reveal CREAK's safe combination letter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f6fa"></span>F6FA</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore CREAK's character number (166) to <span class="register">H</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6fb"></span>F6FB</td>
+<td class="instruction">LD BC,$F1C1</td>
+<td class="comment-11" rowspan="1">Set <span class="register">BC</span> to <a href="F1C1.html">F1C1</a> (SILENCE! OR I'LL CANE THE LOT OF YOU) before returning</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f6fe"></span>F6FE</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F6AA.html">F6AA</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f6d7">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F6FF.html">F6FF</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

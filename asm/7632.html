@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 7632</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="762B.html">762B</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7632">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7644.html">7644</a></span></td>
+</tr>
+</table>
+<div class="description">7632: Insert a pixel column into the number graphic buffer</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="7646.html">7646</a>. Slides the current contents of the number graphic buffer (at <a href="D900.html#d90b">D90B</a>) one pixel to the left, and places the new pixel column into the slot freed up on the right.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Pixel column byte</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7632"></span>7632</td>
+<td class="instruction">LD HL,$D91F</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the end of the buffer at <a href="D900.html#d90b">D90B</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7635"></span>7635</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Discard the baseline bit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7636"></span>7636</td>
+<td class="instruction">LD C,$07</td>
+<td class="comment-11" rowspan="1">We will consider the remaining 7 bits</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7638"></span>7638</td>
+<td class="instruction">LD B,$03</td>
+<td class="comment-11" rowspan="1">The buffer is 3 character squares wide</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="763a"></span>763A</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Drop a bit into the carry flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="763b"></span>763B</td>
+<td class="instruction">RL (HL)</td>
+<td class="comment-11" rowspan="3">Pick it up in the buffer and shift the other pixels in this row one to the left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="763d"></span>763D</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="763e"></span>763E</td>
+<td class="instruction">DJNZ $763B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7640"></span>7640</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Next bit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7641"></span>7641</td>
+<td class="instruction">JR NZ,$7638</td>
+<td class="comment-11" rowspan="1">Jump back until all 7 bits in the column are done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7643"></span>7643</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="762B.html">762B</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7632">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7644.html">7644</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

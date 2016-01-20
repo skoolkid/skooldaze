@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 7C18</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7BFB.html">7BFB</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7c18">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7C3F.html">7C3F</a></span></td>
+</tr>
+</table>
+<div class="description">7C18: Move a character looking for ERIC to the midstride position</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Continues from <a href="7BA0.html">7BA0</a>. Moves the character looking for ERIC to the midstride position in the appropriate direction.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">1 if the character's going upstairs, 2 if going down</td>
+</tr>
+<tr>
+<td class="register">BC</td>
+<td class="register-desc">0</td>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">0</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Number of the character looking for ERIC (161, 163-166)</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">96</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="7c18"></span>
+<div class="comments">
+<div class="paragraph">
+The main entry point is used when the character is on a staircase.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7c18"></span>7C18</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c19"></span>7C19</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Is the chaser going downstairs?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c1a"></span>7C1A</td>
+<td class="instruction">JR NZ,$7C1E</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c1c"></span>7C1C</td>
+<td class="instruction">DEC B</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c1d"></span>7C1D</td>
+<td class="instruction">DEC D</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=-1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7c1e"></span>7C1E</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1"><span class="register">C</span>=1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c1f"></span>7C1F</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is the chaser facing right?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c21"></span>7C21</td>
+<td class="instruction">JR NZ,$7C25</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c23"></span>7C23</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="2"><span class="register">C</span>=-1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c24"></span>7C24</td>
+<td class="instruction">DEC C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="7c25"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="7BA0.html">7BA0</a> when the character looking for ERIC is not on a staircase; in this case <span class="register">B</span>=<span class="register">D</span>=<span class="register">E</span>=0, and <span class="register">C</span>=-1 if the chaser is to ERIC's left, or 1 if he is to ERIC's right.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7c25"></span>7C25</td>
+<td class="instruction">LD L,$6B</td>
+<td class="comment-11" rowspan="4"><span class="register">C</span>=-1 if the chaser is to ERIC's left, or 1 if to his right; <span class="register">B</span>=1 if the chaser is going downstairs, 0 otherwise; place these values into bytes 107 and 108 of of the chaser's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c27"></span>7C27</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c28"></span>7C28</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c29"></span>7C29</td>
+<td class="instruction">LD (HL),B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c2a"></span>7C2A</td>
+<td class="instruction">LD L,$69</td>
+<td class="comment-11" rowspan="2">Change the interruptible subcommand routine address in bytes 105 and 106 of the chaser's buffer from <a href="7BA0.html">7BA0</a> to <a href="7BFB.html">7BFB</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c2c"></span>7C2C</td>
+<td class="instruction">LD (HL),$FB</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c2e"></span>7C2E</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Save the x- and y-coordinate increments for the chaser's next move</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c2f"></span>7C2F</td>
+<td class="instruction">CALL <a href="6214.html">$6214</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for the chaser's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c32"></span>7C32</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=chaser's next animatory state (midstride)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c33"></span>7C33</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Store this in <span class="register">L</span> briefly</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c34"></span>7C34</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Get the appropriate y- and x-coordinate increments for the chaser's move to the midstride position in <span class="register">BC</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c35"></span>7C35</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="3">Get the chaser's new y-coordinate in <span class="register">D</span> (which is the same as his current y-coordinate unless he's going up a staircase)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c36"></span>7C36</td>
+<td class="instruction">ADD A,D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c37"></span>7C37</td>
+<td class="instruction">LD D,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c38"></span>7C38</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="3">Get the chaser's new x-coordinate in <span class="register">E</span> (which is the same as his current x-coordinate, because <span class="register">C</span> is always 0)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c39"></span>7C39</td>
+<td class="instruction">ADD A,E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c3a"></span>7C3A</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c3b"></span>7C3B</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Restore the chaser's new animatory state to <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7c3c"></span>7C3C</td>
+<td class="instruction">JP <a href="61B0.html">$61B0</a></td>
+<td class="comment-11" rowspan="1">Update the chaser's animatory state and location and update the SRB</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7BFB.html">7BFB</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7c18">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7C3F.html">7C3F</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

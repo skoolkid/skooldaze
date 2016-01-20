@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at EDE0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="EDD8.html">EDD8</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#ede0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="EDFF.html">EDFF</a></span></td>
+</tr>
+</table>
+<div class="description">EDE0: Prepare for a new game</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="6900.html">6900</a>. Clears the screen and asks whether the characters' names should be changed; returns to the caller if the answer is no, or proceeds into the routine at <a href="EEE0.html">EEE0</a> if the answer is yes.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="ede0"></span>EDE0</td>
+<td class="instruction">LD A,$06</td>
+<td class="comment-11" rowspan="2">BORDER 6</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ede2"></span>EDE2</td>
+<td class="instruction">OUT ($FE),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ede4"></span>EDE4</td>
+<td class="instruction">LD HL,$4000</td>
+<td class="comment-11" rowspan="6">Blank the entire display</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="ede7"></span>EDE7</td>
+<td class="instruction">LD (HL),$00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ede9"></span>EDE9</td>
+<td class="instruction">INC HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edea"></span>EDEA</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edeb"></span>EDEB</td>
+<td class="instruction">CP $58</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="eded"></span>EDED</td>
+<td class="instruction">JR NZ,$EDE7</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="edef"></span>EDEF</td>
+<td class="instruction">LD (HL),$30</td>
+<td class="comment-11" rowspan="5">PAPER 6: INK 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edf1"></span>EDF1</td>
+<td class="instruction">INC HL</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edf2"></span>EDF2</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edf3"></span>EDF3</td>
+<td class="instruction">CP $5B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edf5"></span>EDF5</td>
+<td class="instruction">JR NZ,$EDEF</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edf7"></span>EDF7</td>
+<td class="instruction">CALL <a href="FA49.html">$FA49</a></td>
+<td class="comment-11" rowspan="1">Ask whether the characters' names should be changed, and return here only if the answer is yes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edfa"></span>EDFA</td>
+<td class="instruction">LD B,$20</td>
+<td class="comment-11" rowspan="1">Prepare <span class="register">B</span> for drawing the catwalk</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="edfc"></span>EDFC</td>
+<td class="instruction">JP <a href="EEE0.html">$EEE0</a></td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="EDD8.html">EDD8</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#ede0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="EDFF.html">EDFF</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

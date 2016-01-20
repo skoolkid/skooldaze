@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Data at EC00</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="EBE0.html">EBE0</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#ec00">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="ECD8.html">ECD8</a></span></td>
+</tr>
+</table>
+<div class="description">EC00: Lines bubble graphic template 2</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="75CC.html">75CC</a> and <a href="F955.html">F955</a>. The initial contents of this buffer are almost the same as lines bubble graphic template 1 at <a href="EB00.html">EB00</a>, except that the '0' does not have a line through it. The '0 lines' text in this buffer is overwritten by the lines reprimand message (or the safe combination letter) before the bubble is displayed for the first time.
+</div>
+<div class="paragraph">
+<table class="">
+<tr>
+<td class="" colspan="1" rowspan="1"><img alt="lines_bubble2" src="../images/udgs/lines_bubble2.png" /></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The attribute bytes will be 7 (INK 7: PAPER 0) for the safe combination letter bubble, or one of the following depending on who's getting lines:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Attribute</th>
+<th colspan="1" rowspan="1">Lines recipient</th>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">23 (INK 7: PAPER 2)</td>
+<td class="" colspan="1" rowspan="1">ERIC</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">31 (INK 7: PAPER 3)</td>
+<td class="" colspan="1" rowspan="1">BOY WANDER</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">39 (INK 7: PAPER 4)</td>
+<td class="" colspan="1" rowspan="1">EINSTEIN or ANGELFACE</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec00"></span>EC00</td>
+<td class="instruction">DEFB $00,$00,$00,$00,$00,$00,$00,$00</td>
+<td class="comment-11" rowspan="3">The attribute bytes are filled in here</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec08"></span>EC08</td>
+<td class="instruction">DEFB $00,$00,$00,$00,$00,$00,$00,$00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec10"></span>EC10</td>
+<td class="instruction">DEFB $00,$00,$00,$00,$00,$00,$00,$00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec18"></span>EC18</td>
+<td class="instruction">DEFB $3F,$FC,$3F,$FC,$3F,$FC,$3F,$FC</td>
+<td class="comment-11" rowspan="24">Graphic data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec20"></span>EC20</td>
+<td class="instruction">DEFB $07,$E0,$07,$E0,$07,$E0,$07,$E0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec28"></span>EC28</td>
+<td class="instruction">DEFB $00,$00,$00,$00,$00,$00,$00,$00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec30"></span>EC30</td>
+<td class="instruction">DEFB $00,$00,$00,$00,$00,$00,$00,$00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec38"></span>EC38</td>
+<td class="instruction">DEFB $80,$00,$00,$30,$40,$00,$00,$01</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec40"></span>EC40</td>
+<td class="instruction">DEFB $C0,$00,$00,$48,$50,$00,$00,$03</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec48"></span>EC48</td>
+<td class="instruction">DEFB $E0,$00,$00,$48,$45,$18,$E0,$07</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec50"></span>EC50</td>
+<td class="instruction">DEFB $F0,$00,$00,$48,$56,$A5,$00,$0F</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec58"></span>EC58</td>
+<td class="instruction">DEFB $F0,$00,$00,$48,$54,$BD,$C0,$0F</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec60"></span>EC60</td>
+<td class="instruction">DEFB $E0,$00,$00,$48,$54,$A0,$20,$07</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec68"></span>EC68</td>
+<td class="instruction">DEFB $C0,$00,$00,$30,$54,$99,$C0,$03</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec70"></span>EC70</td>
+<td class="instruction">DEFB $80,$00,$00,$00,$00,$00,$00,$01</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec78"></span>EC78</td>
+<td class="instruction">DEFB $80,$00,$00,$00,$00,$00,$00,$01</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec80"></span>EC80</td>
+<td class="instruction">DEFB $C0,$00,$00,$00,$00,$00,$00,$03</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec88"></span>EC88</td>
+<td class="instruction">DEFB $E0,$00,$00,$00,$00,$00,$00,$07</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec90"></span>EC90</td>
+<td class="instruction">DEFB $F0,$00,$00,$00,$00,$00,$00,$0F</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ec98"></span>EC98</td>
+<td class="instruction">DEFB $F0,$00,$00,$00,$00,$00,$00,$0F</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="eca0"></span>ECA0</td>
+<td class="instruction">DEFB $E0,$00,$00,$00,$00,$00,$00,$07</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="eca8"></span>ECA8</td>
+<td class="instruction">DEFB $C0,$00,$00,$00,$00,$00,$00,$03</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ecb0"></span>ECB0</td>
+<td class="instruction">DEFB $80,$00,$00,$00,$00,$00,$00,$01</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ecb8"></span>ECB8</td>
+<td class="instruction">DEFB $00,$00,$00,$00,$00,$00,$00,$00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ecc0"></span>ECC0</td>
+<td class="instruction">DEFB $00,$00,$00,$00,$00,$00,$00,$00</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ecc8"></span>ECC8</td>
+<td class="instruction">DEFB $07,$E0,$07,$E0,$07,$E0,$07,$E0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="ecd0"></span>ECD0</td>
+<td class="instruction">DEFB $3F,$FC,$3F,$FC,$3F,$FC,$3F,$FC</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="EBE0.html">EBE0</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#ec00">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="ECD8.html">ECD8</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

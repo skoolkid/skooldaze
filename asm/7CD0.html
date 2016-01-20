@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 7CD0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7CC8.html">7CC8</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7cd0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7CE0.html">7CE0</a></span></td>
+</tr>
+</table>
+<div class="description">7CD0: Check whether ERIC and EINSTEIN are in class</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F400</a>. If EINSTEIN is in class, this routine returns to the caller with the zero flag set if and only if ERIC is present too. If EINSTEIN is not yet sitting down in class, it makes the teacher wait until he shows up.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7cd0"></span>7CD0</td>
+<td class="instruction">LD A,($A960)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=EINSTEIN's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cd3"></span>7CD3</td>
+<td class="instruction">CP $15</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#21">21</a>=EINSTEIN sitting in a chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cd5"></span>7CD5</td>
+<td class="instruction">JP Z,<a href="79D4.html">$79D4</a></td>
+<td class="comment-11" rowspan="1">Jump if EINSTEIN is sitting in a chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cd8"></span>7CD8</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="5">Place the address of the instruction that called this routine into bytes 99 and 100 of the teacher's buffer, so that control of the teacher remains in this routine until EINSTEIN is seated</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cd9"></span>7CD9</td>
+<td class="instruction">LD L,$63</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cdb"></span>7CDB</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cdc"></span>7CDC</td>
+<td class="instruction">SUB $03</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cde"></span>7CDE</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7cdf"></span>7CDF</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7CC8.html">7CC8</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7cd0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7CE0.html">7CE0</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

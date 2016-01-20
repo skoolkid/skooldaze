@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at F778</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F772.html">F772</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f778">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F78D.html">F78D</a></span></td>
+</tr>
+</table>
+<div class="description">F778: Deal with ERIC when he's being spoken to by a little boy</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="6AD9.html">6AD9</a> when bit 3 of ERIC's status flags at <a href="7FFB.html">7FFB</a> is set (by the routine at <a href="F800.html">F800</a>).
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f778"></span>F778</td>
+<td class="instruction">LD HL,$7FCB</td>
+<td class="comment-11" rowspan="1"><a href="7FCB.html">7FCB</a> holds the special playtime signal flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f77b"></span>F77B</td>
+<td class="instruction">BIT 0,(HL)</td>
+<td class="comment-11" rowspan="1">Is the little boy is still delivering the main message?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f77d"></span>F77D</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f77e"></span>F77E</td>
+<td class="instruction">CALL <a href="673A.html">$673A</a></td>
+<td class="comment-11" rowspan="1">Check the keyboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f781"></span>F781</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if no game keys were pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f782"></span>F782</td>
+<td class="instruction">OR $20</td>
+<td class="comment-11" rowspan="1">Convert the keypress code to lower case</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f784"></span>F784</td>
+<td class="instruction">CP $75</td>
+<td class="comment-11" rowspan="1">Was 'u' pressed?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f786"></span>F786</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return (to <a href="6AD7.html">6AD7</a>) if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f787"></span>F787</td>
+<td class="instruction">LD HL,$7FFB</td>
+<td class="comment-11" rowspan="1"><a href="7FFB.html">7FFB</a> holds ERIC's status flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f78a"></span>F78A</td>
+<td class="instruction">RES 3,(HL)</td>
+<td class="comment-11" rowspan="1">Signal: ERIC's conference with the little boy is over</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f78c"></span>F78C</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return to <a href="6AD7.html">6AD7</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F772.html">F772</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f778">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F78D.html">F78D</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

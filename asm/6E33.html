@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 6E33</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6DEF.html">6DEF</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6e33">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6E3C.html">6E3C</a></span></td>
+</tr>
+</table>
+<div class="description">6E33: Select a special PLAYTIME occasionally</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, this routine returns with the identifier of a 'special' playtime (<a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a>) in <span class="register">A</span>; the rest of the time it returns with <span class="register">A</span> holding the PLAYTIME identifier from the <a href="FE00.html">main timetable</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Random number</td>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Address of the main timetable entry</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6e33"></span>6E33</td>
+<td class="instruction">AND $07</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=random number between 238 and 245</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6e35"></span>6E35</td>
+<td class="instruction">ADD A,$EE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6e37"></span>6E37</td>
+<td class="instruction">CP $F3</td>
+<td class="comment-11" rowspan="2">Return if <span class="register">A</span> is 243, 244, or 245 (one of the 'special' playtimes)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6e39"></span>6E39</td>
+<td class="instruction">RET NC</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6e3a"></span>6E3A</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="2">Otherwise return with <span class="register">A</span> holding the PLAYTIME identifier from the main timetable</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6e3b"></span>6E3B</td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6DEF.html">6DEF</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6e33">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6E3C.html">6E3C</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

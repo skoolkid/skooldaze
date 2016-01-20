@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 7D30</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7CFC.html">7CFC</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7d30">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7D83.html">7D83</a></span></td>
+</tr>
+</table>
+<div class="description">7D30: Make a teacher conduct a class without ERIC</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="7DB2.html">7DB2</a>. Makes the teacher wipe the board (if there is one), tell the kids what to do, and then walk up and down until the end of the lesson.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7d30"></span>7D30</td>
+<td class="instruction">CALL <a href="7128.html">$7128</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=identifier of the blackboard the teacher is next to</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d33"></span>7D33</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Copy this to <span class="register">C</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d34"></span>7D34</td>
+<td class="instruction">CP $EC</td>
+<td class="comment-11" rowspan="1">Is the teacher on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d36"></span>7D36</td>
+<td class="instruction">JR NZ,$7D3E</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d38"></span>7D38</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d39"></span>7D39</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=teacher's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d3a"></span>7D3A</td>
+<td class="instruction">CP $3A</td>
+<td class="comment-11" rowspan="1">Is the teacher in the Map Room?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d3c"></span>7D3C</td>
+<td class="instruction">JR NC,$7D70</td>
+<td class="comment-11" rowspan="1">Jump if so (there's no blackboard in the Map Room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7d3e"></span>7D3E</td>
+<td class="instruction">LD BC,$71DC</td>
+<td class="comment-11" rowspan="2">Hand over control to the routine at <a href="71DC.html">71DC</a>, making the teacher wipe the blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d41"></span>7D41</td>
+<td class="instruction">CALL <a href="7CF1.html">$7CF1</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="7d44"></span>
+<div class="comments">
+<div class="paragraph">
+Control returns here when the teacher has finished wiping the blackboard.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d44"></span>7D44</td>
+<td class="instruction">LD L,$62</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=teacher's x-coordinate (equal to that of the left edge of the blackboard)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d46"></span>7D46</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d47"></span>7D47</td>
+<td class="instruction">ADD A,$03</td>
+<td class="comment-11" rowspan="5">Place the x-coordinate of the middle of the blackboard into byte 107 of the teacher's buffer, and the same value into byte 108 (which ensures that the routine at <a href="633C.html">633C</a> will not relinquish control before the teacher has reached the middle of the blackboard)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d49"></span>7D49</td>
+<td class="instruction">LD L,$6B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d4b"></span>7D4B</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d4c"></span>7D4C</td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d4d"></span>7D4D</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d4e"></span>7D4E</td>
+<td class="instruction">LD BC,$633C</td>
+<td class="comment-11" rowspan="2">Hand over control to the routine at <a href="633C.html">633C</a>, making the teacher walk to the middle of the blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d51"></span>7D51</td>
+<td class="instruction">CALL <a href="7CF1.html">$7CF1</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="7d54"></span>
+<div class="comments">
+<div class="paragraph">
+Control returns here when the teacher has reached the middle of the blackboard.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d54"></span>7D54</td>
+<td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d57"></span>7D57</td>
+<td class="instruction">CP $A0</td>
+<td class="comment-11" rowspan="1">Should the teacher write on the blackboard?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d59"></span>7D59</td>
+<td class="instruction">JR C,$7D70</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d5b"></span>7D5B</td>
+<td class="instruction">LD BC,$7264</td>
+<td class="comment-11" rowspan="2">Hand over control to the routine at <a href="7264.html">7264</a>, making the teacher write on the blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d5e"></span>7D5E</td>
+<td class="instruction">CALL <a href="7CF1.html">$7CF1</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="7d61"></span>
+<div class="comments">
+<div class="paragraph">
+Control returns here when the teacher has finished writing on the blackboard.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d61"></span>7D61</td>
+<td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d64"></span>7D64</td>
+<td class="instruction">CP $A0</td>
+<td class="comment-11" rowspan="1">Should the teacher tell the kids to write an essay?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d66"></span>7D66</td>
+<td class="instruction">JR C,$7D70</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d68"></span>7D68</td>
+<td class="instruction">LD BC,$F2D6</td>
+<td class="comment-11" rowspan="1"><a href="F2D6.html">F2D6</a>: 'WRITE AN ESSAY WITH THIS TITLE'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d6b"></span>7D6B</td>
+<td class="instruction">CALL <a href="7CFC.html#7d26">$7D26</a></td>
+<td class="comment-11" rowspan="1">Make the teacher tell the kids to write an essay</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d6e"></span>7D6E</td>
+<td class="instruction">JR $7D73</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7d70"></span>7D70</td>
+<td class="instruction">CALL <a href="7CFC.html">$7CFC</a></td>
+<td class="comment-11" rowspan="1">Make the teacher tell the kids to go to a page in their books</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="7d73"></span>
+<div class="comments">
+<div class="paragraph">
+Now we enter a loop that makes the teacher walk up and down next to the blackboard (or the map).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="7d73"></span>7D73</td>
+<td class="instruction">LD L,$62</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=teacher's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d75"></span>7D75</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d76"></span>7D76</td>
+<td class="instruction">XOR $03</td>
+<td class="comment-11" rowspan="3">Store the x-coordinate of the location 1 or 3 spaces behind the teacher in byte 107 of his buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d78"></span>7D78</td>
+<td class="instruction">LD L,$6B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d7a"></span>7D7A</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d7b"></span>7D7B</td>
+<td class="instruction">LD BC,$633C</td>
+<td class="comment-11" rowspan="2">Hand over control to the routine at <a href="633C.html">633C</a>, making the teacher turn round and walk 1 or 3 paces</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d7e"></span>7D7E</td>
+<td class="instruction">CALL <a href="7CF1.html">$7CF1</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="7d81"></span>7D81</td>
+<td class="instruction">JR $7D73</td>
+<td class="comment-11" rowspan="1">Make the teacher turn round and walk 1 or 3 paces again</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="7CFC.html">7CFC</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#7d30">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="7D83.html">7D83</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 67D8</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="67CC.html">67CC</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#67d8">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="67FD.html">67FD</a></span></td>
+</tr>
+</table>
+<div class="description">67D8: Get input from the Kempston joystick if it's in use</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="673A.html">673A</a>. Returns with the zero flag set if there was no joystick input. Otherwise returns to the caller of <a href="673A.html">673A</a> with the zero flag reset and the ASCII code of the equivalent keypress in <span class="register">A</span>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="67d8"></span>67D8</td>
+<td class="instruction">LD HL,$5C3B</td>
+<td class="comment-11" rowspan="1">Prepare <span class="register">HL</span> in case we return to <a href="673A.html">673A</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67db"></span>67DB</td>
+<td class="instruction">LD A,($681F)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=107 ('k') if the Kempston joystick is being used, 0 otherwise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67de"></span>67DE</td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Is the Kempston joystick being used?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67df"></span>67DF</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67e0"></span>67E0</td>
+<td class="instruction">IN A,($1F)</td>
+<td class="comment-11" rowspan="1">Collect input from the joystick</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67e2"></span>67E2</td>
+<td class="instruction">AND $1F</td>
+<td class="comment-11" rowspan="1">Check bits 0-4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67e4"></span>67E4</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return with the zero flag set if there was no input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67e5"></span>67E5</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Drop the return address from the stack so we return straight to the caller of <a href="673A.html">673A</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67e6"></span>67E6</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=input from the joystick</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67e7"></span>67E7</td>
+<td class="instruction">BIT 4,L</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67e9"></span>67E9</td>
+<td class="instruction">LD A,$66</td>
+<td class="comment-11" rowspan="1">102='f' (fire catapult)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67eb"></span>67EB</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if the fire button was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67ec"></span>67EC</td>
+<td class="instruction">LD A,$51</td>
+<td class="comment-11" rowspan="1">81='Q' (up)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67ee"></span>67EE</td>
+<td class="instruction">BIT 3,L</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f0"></span>67F0</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if the joystick was moved up</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f1"></span>67F1</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=80: 'P' (right)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f2"></span>67F2</td>
+<td class="instruction">BIT 0,L</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f4"></span>67F4</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if the joystick was moved right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f5"></span>67F5</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=79: 'O' (left)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f6"></span>67F6</td>
+<td class="instruction">BIT 1,L</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f8"></span>67F8</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if the joystick was moved left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67f9"></span>67F9</td>
+<td class="instruction">LD A,$41</td>
+<td class="comment-11" rowspan="1">65='A' (down)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67fb"></span>67FB</td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Reset the zero flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="67fc"></span>67FC</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="67CC.html">67CC</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#67d8">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="67FD.html">67FD</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

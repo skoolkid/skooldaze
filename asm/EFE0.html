@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at EFE0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="EFD8.html">EFD8</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#efe0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F000.html">F000</a></span></td>
+</tr>
+</table>
+<div class="description">EFE0: Display the cast of characters and change their names</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Continues from <a href="EEE0.html">EEE0</a>. Walks each character onto the screen, changes his name (if desired), and walks him off again.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="efe0"></span>EFE0</td>
+<td class="instruction">LD HL,$7F00</td>
+<td class="comment-11" rowspan="1"><a href="7F00.html">7F00</a> holds the leftmost column of the skool on screen (0-64)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="efe3"></span>EFE3</td>
+<td class="instruction">LD B,$08</td>
+<td class="comment-11" rowspan="1">There are 8 main characters to consider</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="efe5"></span>EFE5</td>
+<td class="instruction">LD (HL),B</td>
+<td class="comment-11" rowspan="1">Set the leftmost column to 8, so that the character can start off-screen (at x=3) and walk on from the left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="efe6"></span>EFE6</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Save the character counter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="efe7"></span>EFE7</td>
+<td class="instruction">CALL <a href="B0E8.html">$B0E8</a></td>
+<td class="comment-11" rowspan="1">Print the character's title and name, and walk him onto the screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="efea"></span>EFEA</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Save the message address for the character's name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="efeb"></span>EFEB</td>
+<td class="instruction">CALL <a href="B6E8.html">$B6E8</a></td>
+<td class="comment-11" rowspan="1">Print 'PRESS'C'TO CHANGE NAME' and wait for a keypress</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="efee"></span>EFEE</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore the message address for the character's name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="efef"></span>EFEF</td>
+<td class="instruction">CALL Z,<a href="B868.html">$B868</a></td>
+<td class="comment-11" rowspan="1">Change the character's name if 'c' was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="eff2"></span>EFF2</td>
+<td class="instruction">JR Z,$EFEF</td>
+<td class="comment-11" rowspan="1">Change the character's name if 'c' was pressed again</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="eff4"></span>EFF4</td>
+<td class="instruction">CALL <a href="B5E8.html">$B5E8</a></td>
+<td class="comment-11" rowspan="1">Walk the character off the screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="eff7"></span>EFF7</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore the character counter to <span class="register">B</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="eff8"></span>EFF8</td>
+<td class="instruction">DJNZ $EFE6</td>
+<td class="comment-11" rowspan="1">Jump back until all 8 main characters have been done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="effa"></span>EFFA</td>
+<td class="instruction">LD HL,$611B</td>
+<td class="comment-11" rowspan="2">Set the instruction at <a href="610B.html#611b">611B</a> in the routine at <a href="610B.html">610B</a> back to LD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="effd"></span>EFFD</td>
+<td class="instruction">LD (HL),$7E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="efff"></span>EFFF</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="EFD8.html">EFD8</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#efe0">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F000.html">F000</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

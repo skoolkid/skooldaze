@@ -34,7 +34,7 @@
 To stop MR WACKER expelling ERIC after 10000 lines:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/63931.html">63931</a>,201
+POKE <a href="../asm/F9BB.html">63931</a>,201
 </div>
 </div>
 <div><span id="noLines"></span></div>
@@ -44,13 +44,13 @@ POKE <a href="../asm/63931.html">63931</a>,201
 To prevent teachers from giving lines to ERIC or anyone else:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/30464.html">30464</a>,201
+POKE <a href="../asm/7700.html">30464</a>,201
 </div>
 <div class="paragraph">
 However, that won't prevent MR WACKER from giving ERIC 2000 lines during the 'special' playtimes (if EINSTEIN tells WACKER what ERIC's up to, or WACKER finds the pea-shooter on the fire escape). For that you need:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/63456.html#63468">63468</a>,0
+POKE <a href="../asm/F7E0.html#f7ec">63468</a>,0
 </div>
 <div class="paragraph">
 One harmless side-effect of this POKE is that the lines total will be printed as '00' instead of '0' when WACKER delivers his 'TAKE 2000 LINES...' speech.
@@ -63,40 +63,40 @@ One harmless side-effect of this POKE is that the lines total will be printed as
 If 'Infinite lines' or 'No lines' makes things too easy, use a selection of these POKEs that disable lines-giving for specific infractions:
 </div>
 <div class="paragraph">
-CATAPULTS ARE FORBIDDEN - POKE <a href="../asm/62495.html#62545">62545</a>,195
+CATAPULTS ARE FORBIDDEN - POKE <a href="../asm/F41F.html#f451">62545</a>,195
 </div>
 <div class="paragraph">
-DON'T HIT YOUR MATES - POKE <a href="../asm/62628.html#62661">62661</a>,195
+DON'T HIT YOUR MATES - POKE <a href="../asm/F4A4.html#f4c5">62661</a>,195
 </div>
 <div class="paragraph">
-DON'T SIT ON THE STAIRS - POKE <a href="../asm/30636.html#30698">30698</a>,24
+DON'T SIT ON THE STAIRS - POKE <a href="../asm/77AC.html#77ea">30698</a>,24
 </div>
 <div class="paragraph">
-DON'T TOUCH BLACKBOARDS - POKE <a href="../asm/62208.html#62366">62366</a>,1
+DON'T TOUCH BLACKBOARDS - POKE <a href="../asm/F300.html#f39e">62366</a>,1
 </div>
 <div class="paragraph">
-GET OFF THE FLOOR - POKE <a href="../asm/30636.html#30758">30758</a>,201
+GET OFF THE FLOOR - POKE <a href="../asm/77AC.html#7826">30758</a>,201
 </div>
 <div class="paragraph">
-GET TO WHERE YOU SHOULD BE/COME ALONG WITH ME BOY/HURRY UP YOU HORROR/DON'T TRY MY PATIENCE BOY - POKE <a href="../asm/30636.html#30735">30736</a>,0
+GET TO WHERE YOU SHOULD BE/COME ALONG WITH ME BOY/HURRY UP YOU HORROR/DON'T TRY MY PATIENCE BOY - POKE <a href="../asm/77AC.html#780f">30736</a>,0
 </div>
 <div class="paragraph">
-NEVER BE LATE AGAIN/AND STAY THIS TIME - POKE <a href="../asm/62208.html#62249">62249</a>,1
+NEVER BE LATE AGAIN/AND STAY THIS TIME - POKE <a href="../asm/F300.html#f329">62249</a>,1
 </div>
 <div class="paragraph">
-NOW DON'T DO IT AGAIN - POKE <a href="../asm/27196.html">27196</a>,201 (after a teacher has been knocked over)
+NOW DON'T DO IT AGAIN - POKE <a href="../asm/6A3C.html">27196</a>,201 (after a teacher has been knocked over)
 </div>
 <div class="paragraph">
-NOW DON'T DO IT AGAIN - POKE <a href="../asm/62208.html#62294">62294</a>,1 (when EINSTEIN says 'ERIC hit me')
+NOW DON'T DO IT AGAIN - POKE <a href="../asm/F300.html#f356">62294</a>,1 (when EINSTEIN says 'ERIC hit me')
 </div>
 <div class="paragraph">
-NOW FIND A SEAT - POKE <a href="../asm/30636.html#30749">30749</a>,201
+NOW FIND A SEAT - POKE <a href="../asm/77AC.html#781d">30749</a>,201
 </div>
 <div class="paragraph">
-THE ROOM IS PRIVATE - POKE <a href="../asm/30636.html#30716">30717</a>,31 (also suppresses GET TO WHERE YOU SHOULD BE if ERIC is in the head's study or the staff room when he should be in class)
+THE ROOM IS PRIVATE - POKE <a href="../asm/77AC.html#77fc">30717</a>,31 (also suppresses GET TO WHERE YOU SHOULD BE if ERIC is in the head's study or the staff room when he should be in class)
 </div>
 <div class="paragraph">
-YOU ARE NOT A KANGAROO - POKE <a href="../asm/62771.html#62779">62780</a>,99
+YOU ARE NOT A KANGAROO - POKE <a href="../asm/F533.html#f53b">62780</a>,99
 </div>
 </div>
 <div><span id="linesLimit"></span></div>
@@ -106,11 +106,11 @@ YOU ARE NOT A KANGAROO - POKE <a href="../asm/62771.html#62779">62780</a>,99
 To change the lines limit from 10000 to 10N:
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/63931.html#63934">63935</a>,INT(N/256)</div>
-<div>POKE <a href="../asm/63931.html#63942">63943</a>,N-256*INT(N/256)</div>
+<div>POKE <a href="../asm/F9BB.html#f9be">63935</a>,INT(N/256)</div>
+<div>POKE <a href="../asm/F9BB.html#f9c6">63943</a>,N-256*INT(N/256)</div>
 </div>
 <div class="paragraph">
-To change the expulsion message MR WACKER delivers (at <a href="../asm/61926.html">61926</a>) accordingly, you will need to POKE the ASCII codes of the digits of the new lines limit into addresses 61940-61944.
+To change the expulsion message MR WACKER delivers (at <a href="../asm/F1E6.html">F1E6</a>) accordingly, you will need to POKE the ASCII codes of the digits of the new lines limit into addresses 61940-61944.
 </div>
 <div class="paragraph">
 For example, to change the lines limit to 20000 and adjust the expulsion message to match:
@@ -126,13 +126,13 @@ POKE 63935,7: POKE 63943,208: POKE 61940,50
 To make sure that EINSTEIN never tells tales:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/62208.html#62270">62270</a>,24: POKE <a href="../asm/62208.html#62321">62321</a>,24
+POKE <a href="../asm/F300.html#f33e">62270</a>,24: POKE <a href="../asm/F300.html#f371">62321</a>,24
 </div>
 <div class="paragraph">
 Alternatively, to make the teacher always give lines to EINSTEIN for telling tales:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/31968.html#31982">31982</a>,0
+POKE <a href="../asm/7CE0.html#7cee">31982</a>,0
 </div>
 </div>
 <div><span id="singleShield"></span></div>
@@ -142,7 +142,7 @@ POKE <a href="../asm/31968.html#31982">31982</a>,0
 Hitting all 15 shields before obtaining the safe combination, and then hitting all 15 shields again after opening the safe can be hard work for a busy skoolboy. To reduce ERIC's task to hitting just one shield (any shield):
 </div>
 <div class="paragraph">
-POKE <a href="../asm/63668.html#63672">63673</a>,1
+POKE <a href="../asm/F8B4.html#f8b8">63673</a>,1
 </div>
 <div class="paragraph">
 Note that in order to go up a year, ERIC will have to hit the same shield as he hit before opening the safe.
@@ -155,7 +155,7 @@ Note that in order to go up a year, ERIC will have to hit the same shield as he 
 Having to knock down the teachers (or, in CREAK's case, discover his year of birth and then write it on the blackboard in the classroom he'll be teaching in next) in order to obtain the safe combination letters, and then try up to six permutations of those letters before hitting the right one, can be a tiresome task. How much easier it would be if BOY WANDER and the teachers took it upon themselves to reveal the safe combination every time they wrote on a blackboard:
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/29284.html#29312">29313</a>,0</div>
+<div>POKE <a href="../asm/7264.html#7280">29313</a>,0</div>
 <div>POKE 29315,127</div>
 <div>POKE 29322,62</div>
 <div>POKE 29323,159</div>
@@ -168,22 +168,22 @@ The teachers and BOY WANDER will actually write the safe combination followed by
 <div class="box box-2">
 <div class="box-title">Lesson length</div>
 <div class="paragraph">
-Normally the lesson clock (at <a href="../asm/32759.html">32759</a>) counts down from 5376 (21*256) to 0, at which point the bell rings. To make the lesson clock count down from N*256 to 0 instead:
+Normally the lesson clock (at <a href="../asm/7FF7.html">7FF7</a>) counts down from 5376 (21*256) to 0, at which point the bell rings. To make the lesson clock count down from N*256 to 0 instead:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/26342.html">26344</a>,N
+POKE <a href="../asm/66E6.html">26344</a>,N
 </div>
 <div class="paragraph">
 If you are extending the lesson length, it's a good idea to also adjust the time at which teachers will tell the kids to sit down. Normally this is 3840 (15*256); to change it to M*256 (M=N-6 is a good choice):
 </div>
 <div class="paragraph">
-POKE <a href="../asm/31807.html#31810">31811</a>,M
+POKE <a href="../asm/7C3F.html#7c42">31811</a>,M
 </div>
 <div class="paragraph">
 If, on the other hand, you are shortening the lesson, it's a good idea to also adjust the time at which teachers will start giving lines to ERIC for being in the wrong classroom. Normally this is 4864 (19*256); to change it to G*256 (G=N-2 is a good choice):
 </div>
 <div class="paragraph">
-POKE <a href="../asm/30636.html#30770">30771</a>,G
+POKE <a href="../asm/77AC.html#7832">30771</a>,G
 </div>
 </div>
 <div><span id="ringBell"></span></div>
@@ -193,8 +193,8 @@ POKE <a href="../asm/30636.html#30770">30771</a>,G
 To put ERIC in charge of ringing the bell:
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/26656.html#26700">26700</a>,123 (points 'L' at <a href="../asm/26656.html#26747">26747</a>)</div>
-<div>POKE 26748,230: POKE 26749,102 (sets the keypress-handling routine for 'L' to <a href="../asm/26342.html">26342</a>)</div>
+<div>POKE <a href="../asm/6820.html#684c">26700</a>,123 (points 'L' at <a href="../asm/6820.html#687b">687B</a>)</div>
+<div>POKE 26748,230: POKE 26749,102 (sets the keypress-handling routine for 'L' to <a href="../asm/66E6.html">66E6</a>)</div>
 </div>
 <div class="paragraph">
 Now whenever 'L' (upper case) is pressed, the bell will ring and the next lesson will begin (which could prove handy if ERIC is found playing truant, cannot be bothered to hide from ANGELFACE when he has mumps, or simply cannot wait any longer for playtime).
@@ -207,13 +207,13 @@ Now whenever 'L' (upper case) is pressed, the bell will ring and the next lesson
 Normally 'q', 'a', 'o' and 'p' make ERIC walk, and 'Q', 'A', 'O' and 'P' make him run. To make ERIC always run, regardless of whether SHIFT is held down:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/25916.html#25941">25941</a>,24
+POKE <a href="../asm/653C.html#6555">25941</a>,24
 </div>
 <div class="paragraph">
 Or, to make ERIC walk when SHIFT is held down and run when it isn't:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/25916.html#25941">25941</a>,32
+POKE <a href="../asm/653C.html#6555">25941</a>,32
 </div>
 </div>
 <div><span id="superCatty"></span></div>
@@ -223,13 +223,13 @@ POKE <a href="../asm/25916.html#25941">25941</a>,32
 To extend the range of the catapult from 13 to N:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/28744.html#28772">28773</a>,N
+POKE <a href="../asm/7048.html#7064">28773</a>,N
 </div>
 <div class="paragraph">
 However, this doesn't extend the 'hit zone' of the pellet (the portion of its flight where it can hit something). To change the hit zone from the last 7 stages of its flight to the last M stages (M=N-6 is a good choice):
 </div>
 <div class="paragraph">
-POKE <a href="../asm/27932.html#27999">28000</a>,M+1
+POKE <a href="../asm/6D1C.html#6d5f">28000</a>,M+1
 </div>
 </div>
 <div><span id="throughWalls"></span></div>
@@ -239,15 +239,15 @@ POKE <a href="../asm/27932.html#27999">28000</a>,M+1
 To enable ERIC to walk through specific walls:
 </div>
 <div class="paragraph">
-<div>POKE <a href="../asm/26194.html#26233">26233</a>,0 (classroom walls, from the right side)</div>
-<div>POKE <a href="../asm/26282.html#26328">26328</a>,0 (classroom walls, from the left side)</div>
-<div>POKE <a href="../asm/26282.html#26320">26320</a>,0 (wall at the top of the right-hand staircase on the middle floor)</div>
+<div>POKE <a href="../asm/6652.html#6679">26233</a>,0 (classroom walls, from the right side)</div>
+<div>POKE <a href="../asm/66AA.html#66d8">26328</a>,0 (classroom walls, from the left side)</div>
+<div>POKE <a href="../asm/66AA.html#66d0">26320</a>,0 (wall at the top of the right-hand staircase on the middle floor)</div>
 </div>
 </div>
 <footer>
 <div class="release">The complete Skool Daze RAM disassembly 20151011</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.0.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
 </footer>
 </body>
 </html>

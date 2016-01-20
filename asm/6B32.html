@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 6B32</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6B0E.html">6B0E</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6b32">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6B3B.html">6B3B</a></span></td>
+</tr>
+</table>
+<div class="description">6B32: Send a character on a mini-walkabout</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+The address of this primary command routine is placed into bytes 99 and 100 of a character's buffer by the routine at <a href="6B3D.html">6B3D</a>. It either sends the character to his next walkabout destination (the walkabout origin or some spot within 7 spaces to the left of it), or moves to the next command in the command list if the designated number of walkabouts has been completed.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6b32"></span>6B32</td>
+<td class="instruction">LD L,$67</td>
+<td class="comment-11" rowspan="2">Decrement the walkabouts counter in byte 103 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6b34"></span>6B34</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6b35"></span>6B35</td>
+<td class="instruction">JP Z,<a href="62A0.html#62a8">$62A8</a></td>
+<td class="comment-11" rowspan="1">Move to the next command in the command list if all the walkabouts have been done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6b38"></span>6B38</td>
+<td class="instruction">JP <a href="62D7.html#62e5">$62E5</a></td>
+<td class="comment-11" rowspan="1">Otherwise go for another mini-walkabout</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6B0E.html">6B0E</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6b32">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6B3B.html">6B3B</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

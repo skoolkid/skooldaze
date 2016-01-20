@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 6648</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="663F.html">663F</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6648">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6652.html">6652</a></span></td>
+</tr>
+</table>
+<div class="description">6648: Check whether a character is on a staircase</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="6652.html">6652</a>, <a href="66AA.html">66AA</a>, <a href="6CAF.html">6CAF</a>, <a href="6E90.html">6E90</a>, <a href="F499.html">F499</a> and <a href="F650.html">F650</a>. Returns with the zero flag set if the character is not on a staircase.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">D</td>
+<td class="register-desc">Character's y-coordinate</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6648"></span>6648</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's y-coordinate</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="6649"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="69F6.html">69F6</a>, <a href="6D1C.html">6D1C</a>, <a href="6F1E.html">6F1E</a>, <a href="7000.html">7000</a> and <a href="F9E5.html">F9E5</a> with <span class="register">A</span> holding the character's y-coordinate.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6649"></span>6649</td>
+<td class="instruction">CP $9B</td>
+<td class="comment-11" rowspan="1">Is the character on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="664b"></span>664B</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return with the zero flag set if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="664c"></span>664C</td>
+<td class="instruction">CP $A2</td>
+<td class="comment-11" rowspan="1">Is the character on the middle floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="664e"></span>664E</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return with the zero flag set if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="664f"></span>664F</td>
+<td class="instruction">CP $A9</td>
+<td class="comment-11" rowspan="1">Is the character on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6651"></span>6651</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return with the zero flag set if so</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="663F.html">663F</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6648">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6652.html">6652</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

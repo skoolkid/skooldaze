@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at F5B9</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F5B6.html">F5B6</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f5b9">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F5D9.html">F5D9</a></span></td>
+</tr>
+</table>
+<div class="description">F5B9: Check whether ERIC is standing on a boy who's been knocked out</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="F533.html">F533</a>. Returns with the carry flag set if ERIC is standing on a boy.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">11 (there are 11 little boys)</td>
+</tr>
+<tr>
+<td class="register">D</td>
+<td class="register-desc">1 + ERIC's y-coordinate</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">ERIC's x-coordinate</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">152 (little boy no. 1)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f5b9"></span>F5B9</td>
+<td class="instruction">LD C,E</td>
+<td class="comment-11" rowspan="4">Set <span class="register">E</span>=x-1 and <span class="register">C</span>=x+2 where x is ERIC's x-coordinate; any boy with an x-coordinate in this range is a potential step for ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5ba"></span>F5BA</td>
+<td class="instruction">DEC E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5bb"></span>F5BB</td>
+<td class="instruction">INC C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5bc"></span>F5BC</td>
+<td class="instruction">INC C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5bd"></span>F5BD</td>
+<td class="instruction">LD L,$61</td>
+<td class="comment-11" rowspan="1">Byte 97 of the boy's buffer holds his y-coordinate</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="f5bf"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is also used by the routine at <a href="F533.html">F533</a> with <span class="register">H</span>=167 (BOY WANDER) and <span class="register">B</span>=3 (and <span class="register">E</span> and <span class="register">C</span> already set as above).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f5bf"></span>F5BF</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=y+1 (y=ERIC's y-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5c0"></span>F5C0</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Is there a boy at this y-coordinate?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5c1"></span>F5C1</td>
+<td class="instruction">JR NZ,$F5D4</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5c3"></span>F5C3</td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="2">Collect the boy's animatory state from byte 96 of his buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5c4"></span>F5C4</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5c5"></span>F5C5</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5c6"></span>F5C6</td>
+<td class="instruction">AND $0F</td>
+<td class="comment-11" rowspan="1">Keep only bits 0-3 of the animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5c8"></span>F5C8</td>
+<td class="instruction">CP $07</td>
+<td class="comment-11" rowspan="1">Is the boy lying flat on his back?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5ca"></span>F5CA</td>
+<td class="instruction">JR NZ,$F5D4</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5cc"></span>F5CC</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2">Collect the boy's x-coordinate from byte 98 of his buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5cd"></span>F5CD</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5ce"></span>F5CE</td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5cf"></span>F5CF</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="4">Return with the carry flag set if ERIC is standing on this boy; otherwise continue</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5d0"></span>F5D0</td>
+<td class="instruction">JR C,$F5D4</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5d2"></span>F5D2</td>
+<td class="instruction">CP C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5d3"></span>F5D3</td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="f5d4"></span>F5D4</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">Next boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5d5"></span>F5D5</td>
+<td class="instruction">DJNZ $F5BF</td>
+<td class="comment-11" rowspan="1">Jump back until all the boys have been checked</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5d7"></span>F5D7</td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="2">Return with the carry flag reset to indicate that ERIC is not standing on a boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="f5d8"></span>F5D8</td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="F5B6.html">F5B6</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#f5b9">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="F5D9.html">F5D9</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>

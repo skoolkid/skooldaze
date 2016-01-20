@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 6F00</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6EDC.html">6EDC</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6f00">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6F1A.html">6F1A</a></span></td>
+</tr>
+</table>
+<div class="description">6F00: Check whether a character was or can be punched by ERIC or ANGELFACE</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="6F1E.html">6F1E</a> and <a href="6F99.html">6F99</a>. On entry, <span class="register">E</span> holds the x-coordinate of the spot three spaces in front of ANGELFACE to check whether it's worth raising his fist (<a href="6F1E.html">6F1E</a>), or the x-coordinate of the spot two spaces in front of ERIC or ANGELFACE when he has already raised his fist (<a href="6F99.html">6F99</a>). Returns with the carry flag set if the potential victim is at the target coordinates and is facing the right way.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">Punching character's animatory state</td>
+</tr>
+<tr>
+<td class="register">D</td>
+<td class="register-desc">Punching character's y-coordinate</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">Target x-coordinate (2 or 3 spaces in front of the punching character)</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number of the potential victim (152-172)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6f00"></span>6F00</td>
+<td class="instruction">LD L,$62</td>
+<td class="comment-11" rowspan="1">Byte 98 of a character's buffer holds his x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f02"></span>6F02</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f03"></span>6F03</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Is this character at the target x-coordinate?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f04"></span>6F04</td>
+<td class="instruction">JR Z,$6F08</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6f06"></span>6F06</td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Reset the carry flag to indicate absence of character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f07"></span>6F07</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="6f08"></span>6F08</td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="1">Byte 97 holds the character's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f09"></span>6F09</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f0a"></span>6F0A</td>
+<td class="instruction">CP D</td>
+<td class="comment-11" rowspan="1">Is this character at the target y-coordinate?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f0b"></span>6F0B</td>
+<td class="instruction">JR NZ,$6F06</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="6f0d"></span>
+<div class="comments">
+<div class="paragraph">
+The character being checked has been found at the target coordinates. But is he facing the right way?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f0d"></span>6F0D</td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="1">Byte 96 holds the character's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f0e"></span>6F0E</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f0f"></span>6F0F</td>
+<td class="instruction">XOR C</td>
+<td class="comment-11" rowspan="2">Now <span class="register">A</span>=128 if the character and puncher are facing each other, and 0 otherwise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f10"></span>6F10</td>
+<td class="instruction">AND $80</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f12"></span>6F12</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if the character's not facing the puncher</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f13"></span>6F13</td>
+<td class="instruction">LD L,$70</td>
+<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 111 and 112 of the potential victim's buffer (i.e. is he not in a punchable state at the moment)?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f15"></span>6F15</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f16"></span>6F16</td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f17"></span>6F17</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return with the carry flag reset if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f18"></span>6F18</td>
+<td class="instruction">SCF</td>
+<td class="comment-11" rowspan="1">Set the carry flag to indicate the presence of a ripe target</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="6f19"></span>6F19</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="6EDC.html">6EDC</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#6f00">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="6F1A.html">6F1A</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+</footer>
+</body>
+</html>
