@@ -8,7 +8,7 @@ using [SkoolKit](http://skoolkit.ca/).
 Decide which number base you prefer and then click the corresponding link below
 to browse the latest release:
 
-* [Skool Daze disassembly](http://skoolkid.github.io/skooldaze/) (hexadecimal)
+* [Skool Daze disassembly](http://skoolkid.github.io/skooldaze/) (hexadecimal; mirror [here](https://skoolkid.gitlab.io/skooldaze/))
 * [Skool Daze disassembly](http://skoolkit.ca/disassemblies/skool_daze/) (decimal)
 
 To build the current development version, first either install SkoolKit, or
