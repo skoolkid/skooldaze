@@ -71,11 +71,11 @@ Copying ../sources/sd.css to {odir}/skool_daze/sd.css
   Writing skool_daze/lessons/254.html
   Writing skool_daze/lessons/255.html
   Writing skool_daze/tables/keys.html
-  Writing skool_daze/graphics/glitches.html
-  Writing skool_daze/reference/changelog.html
   Writing skool_daze/reference/bugs.html
+  Writing skool_daze/reference/changelog.html
   Writing skool_daze/reference/facts.html
   Writing skool_daze/reference/glossary.html
+  Writing skool_daze/graphics/glitches.html
   Writing skool_daze/reference/pokes.html
   Parsing ../sources/load.skool
     Writing skool_daze/load/load.html
