@@ -1,4 +1,4 @@
-; Copyright 2008-2015 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017 Richard Dymond (rjdymond@gmail.com)
 
 ; Self-modifying code.
 d25397 DEFB 200 ; 25396 LD A,(32712)
@@ -321,12 +321,15 @@ b23296 DEFS 256
 i23552 DEFS 1024
 
 @start
+@replace=/#BUG(?![A-Z])/#LINK:Bugs
+@replace=/#FACT(?![A-Z])/#LINK:Facts
+@replace=/#POKE(?![A-Z])/#LINK:Pokes
 @writer=:skooldaze.SkoolDazeAsmWriter
 ; Skool Daze disassembly
 ; http://skoolkit.ca/
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -1992,8 +1995,8 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
 *26134 LD A,B        ; #REGa=#AS2(2/130)
 @bfix-begin
  26135 BIT 0,L       ; {#REGa=#AS3(3/131), #REGb=#AS2(2/130) if ERIC's current
- 26137 JR Z,26141    ; x-coordinate is even (which is a #BUG#oneFourThreeFour);
- 26139 DEC B         ;
+ 26137 JR Z,26141    ; x-coordinate is even (which is a
+ 26139 DEC B         ; #BUG#oneFourThreeFour(bug));
 @bfix+else
  26135 BIT 0,L       ; {#REGa=#AS1(1/129), #REGb=#AS2(2/130) if ERIC's current
  26137 JR Z,26143    ; x-coordinate is even;
@@ -4261,7 +4264,7 @@ c28143 LD A,(32746)  ; #R32746 holds the game mode indicator
  28179 RET Z         ; or black ink (which is normally true only if it's not a
  28180 LD A,(DE)     ; shield, but is also true if a speech bubble has been
  28181 AND 7         ; drawn over a shield; in this case, the routine exits
- 28183 RET Z         ; here, which is a #BUG#hiddenShield)}
+ 28183 RET Z         ; here, which is a #BUG#hiddenShield(bug))}
  28184 LD A,(DE)     ; #REGa=attribute of the shield
  28185 XOR C         ; {Check whether we should make the shields flash or not
  28186 RLCA          ; flash, and return unless the flash status of the shield
@@ -7780,7 +7783,7 @@ c31739 LD L,105      ; {Replace the address of this routine in bytes 105 and
 ; moving leftwards, and increments it if the character is moving rightwards. So
 ; when a character is moving leftwards while chasing ERIC, his walking
 ; animation will cycle through phases 1 and 2 only, or 3 and 4 only. This is a
-; #BUG#oneTwoOneTwo.
+; #BUG#oneTwoOneTwo(bug).
  31756 LD A,(HL)     ; #REGa=x-coordinate increment (-1 or +1)
  31757 ADD A,B       ; Add this to the character's current animatory state
 @bfix+else
@@ -7884,7 +7887,7 @@ c31815 LD A,(32761)  ; Pick up the current lesson number (0-63) from #R32761
  31823 LD A,(DE)     ; #R65024(main timetable); note that this will not be the
  31824 LD E,A        ; identifier of the current lesson if the current lesson
                      ; is a 'special' playtime - #LESSON243, #LESSON244 or
-                     ; #LESSON245 - which is a #BUG#wrongCommandList}
+                     ; #LESSON245 - which is a #BUG#wrongCommandList(bug)}
 @bfix-begin
  31825 CALL 26395    ; Set this character's command list up for a restart
 @bfix+else
@@ -10692,7 +10695,7 @@ b42208 DEFB 188 ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64876(188) (Staff
                 ; Room)
 @bfix-begin
  42213 DEFB 154 ; Lesson #LESSON229 (REVISION LIBRARY): #R64619(154) (Exam
-                ; Room) (this is a #BUG#rockittExamRoom)
+                ; Room) (this is a #BUG#rockittExamRoom(bug))
 @bfix+else
  42213 DEFB 188 ; Lesson #LESSON229 (REVISION LIBRARY): #R64876(188) (Staff
                 ; room)
@@ -10875,7 +10878,7 @@ b42720 DEFB 188 ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64876(188) (Staff
                 ; Room)
 @bfix-begin
  42726 DEFB 130 ; Lesson #LESSON230 (REVISION LIBRARY): #R64410(130) (Reading
-                ; Room) (this is a #BUG#emptyClass)
+                ; Room) (this is a #BUG#emptyClass(bug))
 @bfix+else
  42726 DEFB 188 ; Lesson #LESSON230 (REVISION LIBRARY): #R64876(188) (Staff
                 ; room)
@@ -13892,7 +13895,7 @@ b56576 DEFB 0   ; {Initial value of byte 122 for the little boys
  56587 DEFB 16  ; {MR WACKER, MR ROCKITT, MR WITHIT and MR CREAK have bit 4 set
  56588 DEFB 16  ; to indicate that they are teachers; note that bit 7 is reset,
  56589 DEFB 16  ; making them run at the start of the game (which is a
- 56590 DEFB 16  ; #BUG#runningTeachers)}
+ 56590 DEFB 16  ; #BUG#runningTeachers(bug))}
 @bfix+else
        DEFB 144 ; {MR WACKER, MR ROCKITT, MR WITHIT and MR CREAK have bit 4 set
        DEFB 144 ; to indicate that they are teachers, and bit 7 set to make
@@ -15694,7 +15697,7 @@ c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
 @ignoreua
 c60139 LD HL,784     ; {These parameters were meant for the routine at #R65122;
  60142 LD DE,12896   ; however, the CALL below is to 62818 (98,245) instead of
- 60145 LD A,1        ; #R65122 (98,254), which is a #BUG#jumpSound}
+ 60145 LD A,1        ; #R65122 (98,254), which is a #BUG#jumpSound(bug)}
 @nowarn
 @ignoreua
  60147 CALL 62818    ; 62818 holds the operand of a JR NZ instruction, so in
@@ -18388,7 +18391,7 @@ s64618 DEFB 0
 ; Command list 154: Exam Room - little boy
 ;
 ; Used by the little boys in various lessons, and also by MR ROCKITT in lesson
-; #LESSON229 (which is a #BUG#rockittExamRoom).
+; #LESSON229 (which is a #BUG#rockittExamRoom(bug)).
 @label=CLIST154
 b64619 DEFW 25534  ; Go to...
  64621 DEFB 162,61 ; ...the Exam Room
