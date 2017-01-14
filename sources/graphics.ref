@@ -1,4 +1,4 @@
-; Copyright 2008-2014 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2014, 2017 Richard Dymond (rjdymond@gmail.com)
 
 [GraphicGlitch:einsteinHead:EINSTEIN's head]
 The line just above EINSTEIN's head contains a transparent pixel (shown in green) that should be blank:
@@ -233,7 +233,10 @@ To shift it one pixel to the right:
 TABLE#
 #POPS
 
-[PageContent:Graphics]
+[Page:Graphics]
+PageContent=#INCLUDE(Graphics)
+
+[Graphics]
 <h3>Score box, lines bubble, speech bubble</h3>
 <table cellpadding="5">
 <tr><td>#UDGARRAY8,6,,8;60952-60959;61016-61023;61080-61087(score_box)</td><td>Score box</td></tr>

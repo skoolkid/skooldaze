@@ -1,12 +1,13 @@
-; Copyright 2008-2015 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017 Richard Dymond (rjdymond@gmail.com)
 
-[PageContent:PlayArea]
-<div>#CALL:play_area(play_area,0,0,96,21,2,0,8)</div>
+[Page:PlayArea]
+PageContent=<div>#CALL:play_area(play_area,0,0,96,21,2,0,8)</div>
 
 [Page:PlayAreaTiles]
 JavaScript=tiles.js
+PageContent=#INCLUDE(PlayAreaTiles)
 
-[PageContent:PlayAreaTiles]
+[PlayAreaTiles]
 <p>Click a tile to see the following info:</p>
 <table>
 <tr>
@@ -77,13 +78,19 @@ Any given tile (identified by <i>udg_addr</i>) may appear at more than one locat
 [Template:play_area_tile]
 <td><div class="T" onclick="s('s{tile.x}x{tile.y}')"><img alt="{tile.x},{tile.y}" src="{img_fname}"/></div><div id="s{tile.x}x{tile.y}" class="B P" onclick="h(this)"><div class="H">(x,y)=({tile.x},{tile.y})</div><table><tr><td><img alt="{tile.x},{tile.y}" src="{img_fname}"/></td><td><i>ref_addr</i>=(x,y+152)={tile.ref_addr}<br/><i>ref</i>={tile.ref}, <i>udg_page</i>={tile.udg_page}<br/><i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)={tile.udg_addr}<br/><i>attr_addr</i>=(x+128,y+152)={tile.attr_addr}<br/><i>attr</i>={tile.attr}</td></tr></table></div></td>
 
-[PageContent:InitialAnimatoryStates]
+[Page:InitialAnimatoryStates]
+PageContent=#INCLUDE(InitialAnimatoryStates)
+
+[InitialAnimatoryStates]
 #PUSHS
 #POKES56576,17,21
 <div>#CALL:play_area(initial_as,0,0,96,21,2,1,8)</div>
 #POPS
 
-[PageContent:AnimatoryStates]
+[Page:AnimatoryStates]
+PageContent=#INCLUDE(AnimatoryStatesPage)
+
+[AnimatoryStatesPage]
 <p>The appearance of an animatory state depends on the character using it. In each row of the table below, the first and second images correspond to the appearance of the animatory state when used by a boy or a catapult pellet (character numbers 152-162 and 167-172); the third and fourth images correspond to the appearance of the animatory state when used by a teacher (character numbers 163-166). (See #R27914.)</p>
 <table class="animatoryStates">
 #CALL:animatory_states()
@@ -100,8 +107,9 @@ Any given tile (identified by <i>udg_addr</i>) may appear at more than one locat
 
 [Page:AnimatoryStateTiles]
 JavaScript=tiles.js
+PageContent=#INCLUDE(AnimatoryStateTiles)
 
-[PageContent:AnimatoryStateTiles]
+[AnimatoryStateTiles]
 <div>
 <p>Click a tile in the gallery below to see the following info:</p>
 <table>
@@ -219,7 +227,10 @@ In each row of the table below, the first and second tile grids correspond to th
 [Template:astile_null]
 <div class="T" onclick="s('{bubble_id}')"><img alt="{state}:{row},{column}" src="{img_fname}"/></div><div id="{bubble_id}" class="B P" onclick="h(this)"><div class="H">{state}: row {row}, column {column}</div><table><tr><td><img alt="{state}:{row},{column}" src="{img_fname}"/></td><td><i>lsb</i>={lsb}, <i>ref_page</i>={ref_page}<br/><i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={tile.ref_addr}<br/><i>ref</i>=0</td></tr></table></div>
 
-[PageContent:CharacterBuffers]
+[Page:CharacterBuffers]
+PageContent=#INCLUDE(CharacterBuffers)
+
+[CharacterBuffers]
 <p>The character buffers occupy bytes 96-127 in pages 152-172.</p>
 #CALL:cast()
 #CALL:cbuffer()
@@ -266,7 +277,10 @@ TABLE#
 [Page:MainTimetable]
 Content=asm/65024.html
 
-[PageContent:PersonalTimetables]
+[Page:PersonalTimetables]
+PageContent=#INCLUDE(PersonalTimetables)
+
+[PersonalTimetables]
 <table class="timetable">
 <tr>
 <th>No.</th>
@@ -281,7 +295,10 @@ Content=asm/65024.html
 <td class="ptCharName">{name}</td>
 </tr>
 
-[PageContent:LessonIndex]
+[Page:LessonIndex]
+PageContent=#INCLUDE(LessonIndex)
+
+[LessonIndex]
 <table class="lesson">
 <tr>
 <th>ID</th>
@@ -296,101 +313,101 @@ Content=asm/65024.html
 <td class="lesson">{description}</td>
 </tr>
 
-[PageContent:Lesson224]
-#CALL:lesson(224)
+[Page:Lesson224]
+PageContent=#CALL:lesson(224)
 
-[PageContent:Lesson225]
-#CALL:lesson(225)
+[Page:Lesson225]
+PageContent=#CALL:lesson(225)
 
-[PageContent:Lesson226]
-#CALL:lesson(226)
+[Page:Lesson226]
+PageContent=#CALL:lesson(226)
 
-[PageContent:Lesson227]
-#CALL:lesson(227)
+[Page:Lesson227]
+PageContent=#CALL:lesson(227)
 
-[PageContent:Lesson228]
-#CALL:lesson(228)
+[Page:Lesson228]
+PageContent=#CALL:lesson(228)
 
-[PageContent:Lesson229]
-#CALL:lesson(229)
+[Page:Lesson229]
+PageContent=#CALL:lesson(229)
 
-[PageContent:Lesson230]
-#CALL:lesson(230)
+[Page:Lesson230]
+PageContent=#CALL:lesson(230)
 
-[PageContent:Lesson231]
-#CALL:lesson(231)
+[Page:Lesson231]
+PageContent=#CALL:lesson(231)
 
-[PageContent:Lesson232]
-#CALL:lesson(232)
+[Page:Lesson232]
+PageContent=#CALL:lesson(232)
 
-[PageContent:Lesson233]
-#CALL:lesson(233)
+[Page:Lesson233]
+PageContent=#CALL:lesson(233)
 
-[PageContent:Lesson234]
-#CALL:lesson(234)
+[Page:Lesson234]
+PageContent=#CALL:lesson(234)
 
-[PageContent:Lesson235]
-#CALL:lesson(235)
+[Page:Lesson235]
+PageContent=#CALL:lesson(235)
 
-[PageContent:Lesson236]
-#CALL:lesson(236)
+[Page:Lesson236]
+PageContent=#CALL:lesson(236)
 
-[PageContent:Lesson237]
-#CALL:lesson(237)
+[Page:Lesson237]
+PageContent=#CALL:lesson(237)
 
-[PageContent:Lesson238]
-#CALL:lesson(238)
+[Page:Lesson238]
+PageContent=#CALL:lesson(238)
 
-[PageContent:Lesson239]
-#CALL:lesson(239)
+[Page:Lesson239]
+PageContent=#CALL:lesson(239)
 
-[PageContent:Lesson240]
-#CALL:lesson(240)
+[Page:Lesson240]
+PageContent=#CALL:lesson(240)
 
-[PageContent:Lesson241]
-#CALL:lesson(241)
+[Page:Lesson241]
+PageContent=#CALL:lesson(241)
 
-[PageContent:Lesson242]
-#CALL:lesson(242)
+[Page:Lesson242]
+PageContent=#CALL:lesson(242)
 
-[PageContent:Lesson243]
-#CALL:lesson(243)
+[Page:Lesson243]
+PageContent=#CALL:lesson(243)
 
-[PageContent:Lesson244]
-#CALL:lesson(244)
+[Page:Lesson244]
+PageContent=#CALL:lesson(244)
 
-[PageContent:Lesson245]
-#CALL:lesson(245)
+[Page:Lesson245]
+PageContent=#CALL:lesson(245)
 
-[PageContent:Lesson246]
-#CALL:lesson(246)
+[Page:Lesson246]
+PageContent=#CALL:lesson(246)
 
-[PageContent:Lesson247]
-#CALL:lesson(247)
+[Page:Lesson247]
+PageContent=#CALL:lesson(247)
 
-[PageContent:Lesson248]
-#CALL:lesson(248)
+[Page:Lesson248]
+PageContent=#CALL:lesson(248)
 
-[PageContent:Lesson249]
-#CALL:lesson(249)
+[Page:Lesson249]
+PageContent=#CALL:lesson(249)
 
-[PageContent:Lesson250]
-#CALL:lesson(250)
+[Page:Lesson250]
+PageContent=#CALL:lesson(250)
 
-[PageContent:Lesson251]
-#CALL:lesson(251)
+[Page:Lesson251]
+PageContent=#CALL:lesson(251)
 
-[PageContent:Lesson252]
-#CALL:lesson(252)
+[Page:Lesson252]
+PageContent=#CALL:lesson(252)
 
-[PageContent:Lesson253]
-#CALL:lesson(253)
+[Page:Lesson253]
+PageContent=#CALL:lesson(253)
 
-[PageContent:Lesson254]
-#CALL:lesson(254)
+[Page:Lesson254]
+PageContent=#CALL:lesson(254)
 
-[PageContent:Lesson255]
-#CALL:lesson(255)
+[Page:Lesson255]
+PageContent=#CALL:lesson(255)
 
 [Page:CommandLists]
 Content=asm/65152.html
@@ -427,7 +444,10 @@ Content=asm/65152.html
 <td class="lesson">#R{cl_address}({cl_num}) - {cl_desc}</td>
 </tr>
 
-[PageContent:Keys]
+[Page:Keys]
+PageContent=#INCLUDE(Keys)
+
+[Keys]
 <div class="details">
 <div>Key = CHR$(Code)</div>
 <div>Address = Code + 26624 (points to an entry in the table at #R26656)</div>
