@@ -450,9 +450,9 @@ PageContent=#INCLUDE(Keys)
 [Keys]
 <div class="details">
 <div>Key = CHR$(Code)</div>
-<div>Address = Code + 26624 (points to an entry in the table at #R26656)</div>
+<div>Address = Code + #N26624 (points to an entry in the table at #R26656)</div>
 <div>Offset = PEEK(Address)</div>
-<div>Lookup = Offset + 26624 (points to an entry in the table at #R26624 or #R26752)</div>
+<div>Lookup = Offset + #N26624 (points to an entry in the table at #R26624 or #R26752)</div>
 <div>Keycode = CHR$(PEEK(Lookup)) (copied to #R32764)</div>
 <div>Routine = address at (Lookup + 1, Lookup + 2)</div>
 </div>

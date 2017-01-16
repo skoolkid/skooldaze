@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Copyright 2008-2015 Richard Dymond (rjdymond@gmail.com)
+# Copyright 2008-2015, 2017 Richard Dymond (rjdymond@gmail.com)
 #
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -17,7 +15,8 @@
 
 import cgi
 
-from skoolkit.skoolhtml import Udg as BaseUdg, HtmlWriter, join
+from skoolkit.graphics import Udg as BaseUdg
+from skoolkit.skoolhtml import HtmlWriter, join
 from skoolkit.skoolasm import AsmWriter
 from skoolkit.skoolmacro import parse_ints, parse_brackets
 
@@ -389,11 +388,11 @@ class SkoolDazeHtmlWriter(HtmlWriter):
             key_byte = self.snapshot[lookup]
             routine = self.snapshot[lookup + 1] + 256 * self.snapshot[lookup + 2]
             subs = {
-                'index': c,
+                'index': '#N{}'.format(c),
                 'key': self.get_chr(c),
-                'address': address,
-                'offset': offset,
-                'lookup': lookup,
+                'address': '#N{}'.format(address),
+                'offset': '#N{}'.format(offset),
+                'lookup': '#N{}'.format(lookup),
                 'keycode': 'SPACE' if key_byte == 32 else chr(key_byte),
                 'routine': '#R{}'.format(routine),
                 'purpose': self.keypress_routines[routine]
