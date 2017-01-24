@@ -1,267 +1,240 @@
-; Copyright 2008-2015 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017 Richard Dymond (rjdymond@gmail.com)
+
+[Page:Changelog]
+SectionType=BulletPoints
 
 [Changelog:20151011]
 -
 
-Ported the disassembly to SkoolKit 5
+- Ported the disassembly to SkoolKit 5
 
 [Changelog:20150413]
 -
 
-Added trivia entries:
-  #FACT#pointsForAPOrAP()
-  #FACT#seatSelection()
-  #FACT#initialPlaytimes()
-  #FACT#doublePlaytimes()
-  #FACT#playtimeDistribution()
-
-Expanded the #FACT#invulnerableMoments() trivia entry
+- Added trivia entries:
+  - #FACT#pointsForAPOrAP()
+  - #FACT#seatSelection()
+  - #FACT#initialPlaytimes()
+  - #FACT#doublePlaytimes()
+  - #FACT#playtimeDistribution()
+- Expanded the #FACT#invulnerableMoments() trivia entry
 
 [Changelog:20140614]
 -
 
-Ported the disassembly to SkoolKit 4
-
-In the entry at #R32263, marked notes 6 and 7 as unused
+- Ported the disassembly to SkoolKit 4
+- In the entry at #R32263, marked notes 6 and 7 as unused
 
 [Changelog:20131222]
 -
 
-Added trivia entries:
-  #FACT#dullPlaytimes()
-  #FACT#wipingBully()
-  #FACT#doppelwacker()
-  #FACT#wackersOldShoes()
-  #FACT#pitchImperfect()
-
-Documented bugs:
-  #BUG#immunityThroughVelocity()
-  #BUG#wackersNumberBlindness()
-
-In the trivia entry #FACT#boy11(), added a note about ERIC's strange behaviour on staircases
-
-Added images of some of the unused sprite tiles in base page 185 to the entry at #R47360
-
-Added CSS files to complete the 'dark', 'green', 'plum' and 'spectrum' themes
+- Added trivia entries:
+  - #FACT#dullPlaytimes()
+  - #FACT#wipingBully()
+  - #FACT#doppelwacker()
+  - #FACT#wackersOldShoes()
+  - #FACT#pitchImperfect()
+- Documented bugs:
+  - #BUG#immunityThroughVelocity()
+  - #BUG#wackersNumberBlindness()
+- In the trivia entry #FACT#boy11(), added a note about ERIC's strange
+  behaviour on staircases
+- Added images of some of the unused sprite tiles in base page 185 to the entry
+  at #R47360
+- Added CSS files to complete the 'dark', 'green', 'plum' and 'spectrum' themes
 
 [Changelog:20121119]
 -
 
-Added a trivia entry: #FACT#blackboardBlindness()
-
-Added POKEs:
-  #POKE#someLines()
-  #POKE#silentSnitch()
+- Added a trivia entry: #FACT#blackboardBlindness()
+- Added POKEs:
+  - #POKE#someLines()
+  - #POKE#silentSnitch()
 
 [Changelog:20120718]
 -
 
-Added a trivia entry: #FACT#shieldStats()
-
-Added POKEs:
-  #POKE#singleShield()
-  #POKE#unsafeCombination()
+- Added a trivia entry: #FACT#shieldStats()
+- Added POKEs:
+  - #POKE#singleShield()
+  - #POKE#unsafeCombination()
 
 [Changelog:20120626]
 -
 
-Added a trivia entry: #FACT#slashDot()
-
-Fixed the entries for the characters '#CHR8593' (code 94) and '#CHR163' (code 96) in the #LINK:Keys(keypress table) and the #R26656(keypress offset table)
+- Added a trivia entry: #FACT#slashDot()
+- Fixed the entries for the characters '#CHR8593' (code 94) and '#CHR163' (code
+  96) in the #LINK:Keys(keypress table) and the #R26656(keypress offset table)
 
 [Changelog:20120411]
 -
 
-Ported the disassembly to SkoolKit 3
+- Ported the disassembly to SkoolKit 3
 
 [Changelog:20120202]
 -
 
-Added comments to the entries at #R32768, #R34816 and #R36864 describing unused play area tiles
-
-Removed leading zeroes from bytes in DEFB statements
-
-Added labels to the save code and loading code disassemblies
+- Added comments to the entries at #R32768, #R34816 and #R36864 describing
+  unused play area tiles
+- Removed leading zeroes from bytes in DEFB statements
+- Added labels to the save code and loading code disassemblies
 
 [Changelog:20111116]
 -
 
-Added trivia entries:
-  #FACT#timetableStats()
-  #FACT#playtimeProbabilities()
+- Added trivia entries:
+  - #FACT#timetableStats()
+  - #FACT#playtimeProbabilities()
 
 [Changelog:20111031]
 -
 
-Documented a bug: #BUG#allPlayAndNoWork()
+- Documented a bug: #BUG#allPlayAndNoWork()
 
 [Changelog:20110510]
 Included in SkoolKit 2.2.
 
-Inserted comments above the entry points at 25615 and 25625 in the routine at #R25534
+- Inserted comments above the entry points at 25615 and 25625 in the routine at
+  #R25534
 
 [Changelog:20110403]
 Included in SkoolKit 2.1.
 
-Documented a bug: #BUG#oneFourThreeFour()
-
-Added a trivia entry: #FACT#alternativeDifferences()
-
-Added animatory state images to the #FACT#handsUp() trivia entry
+- Documented a bug: #BUG#oneFourThreeFour()
+- Added a trivia entry: #FACT#alternativeDifferences()
+- Added animatory state images to the #FACT#handsUp() trivia entry
 
 [Changelog:20101123]
 Included in SkoolKit 2.0.
 
-Ported the disassembly to SkoolKit 2
+- Ported the disassembly to SkoolKit 2
 
 [Changelog:20101111]
 Included in SkoolKit 1.4.
 
-Made minor corrections to the #R23831@load(loading code disassembly) and added a screenshot of the initial loader program
-
-Made minor corrections to the #R33024@save(save code disassembly) and added a description of the two sections in the fast code block
+- Made minor corrections to the #R23831@load(loading code disassembly) and
+  added a screenshot of the initial loader program
+- Made minor corrections to the #R33024@save(save code disassembly) and added a
+  description of the two sections in the fast code block
 
 [Changelog:20100723]
 Included in SkoolKit 1.3.
 
-New graphic glitches:
-  #LINK:GraphicGlitches#rockittCoat(MR ROCKITT's coat)
-  #LINK:GraphicGlitches#creakHand(MR CREAK's hand)
-  #LINK:GraphicGlitches#bigKidsHands(Big kids' hands)
-  #LINK:GraphicGlitches#littleKidsHand(Little kid's hand)
-
-Added a trivia entry: #FACT#skoolTunes() (thanks gasman)
-
-Expanded the #AS()(animatory states) and #LINK:AnimatoryStateTiles(animatory state tiles) pages to show what a boy would look like if he used a teacher's animatory state, and vice versa
+- New graphic glitches:
+  - #LINK:GraphicGlitches#rockittCoat(MR ROCKITT's coat)
+  - #LINK:GraphicGlitches#creakHand(MR CREAK's hand)
+  - #LINK:GraphicGlitches#bigKidsHands(Big kids' hands)
+  - #LINK:GraphicGlitches#littleKidsHand(Little kid's hand)
+- Added a trivia entry: #FACT#skoolTunes() (thanks gasman)
+- Expanded the #AS()(animatory states) and #LINK:AnimatoryStateTiles(animatory
+  state tiles) pages to show what a boy would look like if he used a teacher's
+  animatory state, and vice versa
 
 [Changelog:20100225]
 Included in SkoolKit 1.1.
 
-Fixed the address of the last DEFB statement in the entry at #R56576
+- Fixed the address of the last DEFB statement in the entry at #R56576
 
 [Changelog:20100128]
 Included in SkoolKit 1.0.
 
-Tweaked the CSS so that the disassembly looks the same in Internet Explorer as it does in other browsers
-
-Added a fix for the bug #BUG#oneTwoOneTwo()
-
-Added a trivia entry: #FACT#bwShootsEricScores()
-
-Documented a bug: #BUG#speechQueue()
+- Tweaked the CSS so that the disassembly looks the same in Internet Explorer
+  as it does in other browsers
+- Added a fix for the bug #BUG#oneTwoOneTwo()
+- Added a trivia entry: #FACT#bwShootsEricScores()
+- Documented a bug: #BUG#speechQueue()
 
 [Changelog:20100111]
 -
 
-Fixed the 'Jump if the number is...' comments in the routine at #R30278 (thanks Jimmy)
-
-Documented a bug: #BUG#oneTwoOneTwo()
-
-Added a trivia entry: #FACT#unusedFlag()
-
-Added the #LINK:PlayAreaTiles(Play area tiles) page
-
-Added the #LINK:AnimatoryStateTiles(Animatory state tiles) page
-
-Added the first eight graphic glitches:
-  #LINK:GraphicGlitches#einsteinHead(EINSTEIN's head)
-  #LINK:GraphicGlitches#boyWanderHead(BOY WANDER's head)
-  #LINK:GraphicGlitches#creakEar(MR CREAK's ear)
-  #LINK:GraphicGlitches#wackerTrousers(MR WACKER's trousers)
-  #LINK:GraphicGlitches#withitShoes(MR WITHIT's shoes)
-  #LINK:GraphicGlitches#withitHand(MR WITHIT's hand)
-  #LINK:GraphicGlitches#boysShoes(Boys' shoes)
-  #LINK:GraphicGlitches#scoreBox(Score box)
+- Fixed the 'Jump if the number is...' comments in the routine at #R30278
+  (thanks Jimmy)
+- Documented a bug: #BUG#oneTwoOneTwo()
+- Added a trivia entry: #FACT#unusedFlag()
+- Added the #LINK:PlayAreaTiles(Play area tiles) page
+- Added the #LINK:AnimatoryStateTiles(Animatory state tiles) page
+- Added the first eight graphic glitches:
+  - #LINK:GraphicGlitches#einsteinHead(EINSTEIN's head)
+  - #LINK:GraphicGlitches#boyWanderHead(BOY WANDER's head)
+  - #LINK:GraphicGlitches#creakEar(MR CREAK's ear)
+  - #LINK:GraphicGlitches#wackerTrousers(MR WACKER's trousers)
+  - #LINK:GraphicGlitches#withitShoes(MR WITHIT's shoes)
+  - #LINK:GraphicGlitches#withitHand(MR WITHIT's hand)
+  - #LINK:GraphicGlitches#boysShoes(Boys' shoes)
+  - #LINK:GraphicGlitches#scoreBox(Score box)
 
 [Changelog:20091221]
 -
 
-Documented bugs:
-  #BUG#missAndHit()
-  #BUG#waitingForEinstein()
-  #BUG#wrongCommandList()
-  #BUG#avoidingExpulsion()
-
-Added trivia entries:
-  #FACT#onePaceOrThree()
-  #FACT#invulnerableMoments()
-  #FACT#undeliverableMessage()
-
-Added POKEs:
-  #POKE#linesLimit()
-  #POKE#lessonLength()
-  #POKE#ringBell()
-  #POKE#alwaysRun()
-
-Supplied missing entries to the #LINK:CharacterBuffers(character buffer documentation) for byte 107
-
-Added command list usage info to the command list entries (e.g. see command list #R64939(202))
-
-Filled in the images for animatory states #AS104(104-126 and 232-254) (they are garbage, not blank)
-
-Removed the duplicate question/answer messages from the memory map
-
-Added an entry for the message graphic buffer at #R23296
-
-Made memory map entry titles, character buffer entry descriptions, and animatory state descriptions less terse
-
-Filled in and fleshed out routine descriptions that were absent or vague
-
-Made many minor refinements and corrections to code comments and routine comments
+- Documented bugs:
+  -  #BUG#missAndHit()
+  - #BUG#waitingForEinstein()
+  - #BUG#wrongCommandList()
+  - #BUG#avoidingExpulsion()
+- Added trivia entries:
+  - #FACT#onePaceOrThree()
+  - #FACT#invulnerableMoments()
+  - #FACT#undeliverableMessage()
+- Added POKEs:
+  - #POKE#linesLimit()
+  - #POKE#lessonLength()
+  - #POKE#ringBell()
+  - #POKE#alwaysRun()
+- Supplied missing entries to the #LINK:CharacterBuffers(character buffer
+  documentation) for byte 107
+- Added command list usage info to the command list entries (e.g. see command
+  list #R64939(202))
+- Filled in the images for animatory states #AS104(104-126 and 232-254) (they
+  are garbage, not blank)
+- Removed the duplicate question/answer messages from the memory map
+- Added an entry for the message graphic buffer at #R23296
+- Made memory map entry titles, character buffer entry descriptions, and
+  animatory state descriptions less terse
+- Filled in and fleshed out routine descriptions that were absent or vague
+- Made many minor refinements and corrections to code comments and routine
+  comments
 
 [Changelog:20091021]
 -
 
-Added disassembly pages for data blocks
-
-Added trivia entries:
-  #FACT#battle1800()
-  #FACT#withitEdited()
-
-Documented bugs:
-  #BUG#rockittExamRoom()
-  #BUG#hiddenShield()
-  #BUG#corruptedBubble()
-  #BUG#doublyDirty()
-  #BUG#absentTearaway()
-
-Bloated HTML 'image' tables replaced by PNGs
-
-Added Prev/Up/Next links in various places for easier navigation
-
-#AS()(Animatory state images) now show the outline masks
-
-Added the #LINK:Graphics(Other graphics) page
+- Added disassembly pages for data blocks
+- Added trivia entries:
+  - #FACT#battle1800()
+  - #FACT#withitEdited()
+- Documented bugs:
+  - #BUG#rockittExamRoom()
+  - #BUG#hiddenShield()
+  - #BUG#corruptedBubble()
+  - #BUG#doublyDirty()
+  - #BUG#absentTearaway()
+- Bloated HTML 'image' tables replaced by PNGs
+- Added Prev/Up/Next links in various places for easier navigation
+- #AS()(Animatory state images) now show the outline masks
+- Added the #LINK:Graphics(Other graphics) page
 
 [Changelog:20090820]
 -
 
-Memory map is much more detailed
-
-Many corrections to code comments
-
-Added #R33024@save(save) and #R23831@load(load) code disassemblies
-
-Documented bugs:
-  #BUG#typo()
-  #BUG#emptyClass()
-  #BUG#chairHit()
-
-Added POKEs:
-  #POKE#noLines()
-  #POKE#superCatty()
-  #POKE#throughWalls()
-
-Added #LINK:PersonalTimetables(personal timetable) pages
-
-Added the first seven trivia entries:
-  #FACT#boy11()
-  #FACT#teacherRooms()
-  #FACT#handsUp()
-  #FACT#wipingWander()
-  #FACT#saveDuster()
-  #FACT#wackerSwotTales()
-  #FACT#wackerPtoZ()
+- Memory map is much more detailed
+- Many corrections to code comments
+- Added #R33024@save(save) and #R23831@load(load) code disassemblies
+- Documented bugs:
+  - #BUG#typo()
+  - #BUG#emptyClass()
+  - #BUG#chairHit()
+- Added POKEs:
+  - #POKE#noLines()
+  - #POKE#superCatty()
+  - #POKE#throughWalls()
+- Added #LINK:PersonalTimetables(personal timetable) pages
+- Added the first seven trivia entries:
+  - #FACT#boy11()
+  - #FACT#teacherRooms()
+  - #FACT#handsUp()
+  - #FACT#wipingWander()
+  - #FACT#saveDuster()
+  - #FACT#wackerSwotTales()
+  - #FACT#wackerPtoZ()
 
 [Changelog:20081119]
 First public release of the Skool Daze disassembly.
