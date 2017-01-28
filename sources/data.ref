@@ -1,4 +1,4 @@
-; Copyright 2008-2012 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2012, 2017 Richard Dymond (rjdymond@gmail.com)
 
 [Lessons]
 224=DINNER (MR WITHIT)
@@ -225,7 +225,8 @@ ERIC's post-midstride x-coordinate (see #R25856, #R25916)
 [CharBuf:102]
 Destination x-coordinate (see #R27090)
 
-ERIC's animatory state before he started firing the catapult, hitting, or jumping (see #R62574)
+ERIC's animatory state before he started firing the catapult, hitting, or
+jumping (see #R62574)
 
 [CharBuf:103]
 Number of mini-walkabouts remaining (see #R27453)
@@ -237,40 +238,48 @@ Message repetition delay counter (see #R63488)
 Interruptible subcommand routine address (see #R25126)
 
 [CharBuf:107]
-LSB of the address of the next character in the message being written on a blackboard or spoken (see #R28882)
+LSB of the address of the next character in the message being written on a
+blackboard or spoken (see #R28882)
 
 Walkabout destination x-coordinate (see #R27442)
 
 x-coordinate increment to use while chasing ERIC (see #R31739, #R31768)
 
-Number of movements remaining to ascend or descend the staircase (see #R25488, #R25534)
+Number of movements remaining to ascend or descend the staircase (see #R25488,
+#R25534)
 
 Number of movements remaining to wipe the blackboard (see #R29160)
 
 Intermediate destination x-coordinate (see #R25404)
 
 [CharBuf:108]
-MSB of the address of the next character in the message being written on a blackboard or spoken (see #R28882)
+MSB of the address of the next character in the message being written on a
+blackboard or spoken (see #R28882)
 
 y-coordinate increment to use while chasing ERIC (see #R31739, #R31768)
 
 x-coordinate of the next column of the board to wipe (see #R29160)
 
-Number of paces remaining until the next command list restart request check (see #R25404)
+Number of paces remaining until the next command list restart request check
+(see #R25404)
 
 [CharBuf:109]
-LSB of the address of the next character in the submessage being written on a blackboard or spoken (see #R28882)
+LSB of the address of the next character in the submessage being written on a
+blackboard or spoken (see #R28882)
 
 y-coordinate of the top row of the blackboard being wiped (see #R29160)
 
 [CharBuf:110]
-MSB of the address of the next character in the submessage being written on a blackboard or spoken (see #R28882)
+MSB of the address of the next character in the submessage being written on a
+blackboard or spoken (see #R28882)
 
 [CharBuf:111,112]
 Uninterruptible subcommand routine address (see #R25126)
 
 [CharBuf:113]
-Counter determining how much longer the character will stay down after being punched (see #R28569), hit by a catapult pellet (see #R27932), knocked out of a chair (see #R27733), or tripped up by a stampeding kid (see #R27126)
+Counter determining how much longer the character will stay down after being
+punched (see #R28569), hit by a catapult pellet (see #R27932), knocked out of a
+chair (see #R27733), or tripped up by a stampeding kid (see #R27126)
 
 Distance remaining for the pellet to travel (see #R27932)
 
@@ -294,15 +303,19 @@ Start address of the command list
 Unused (always 0, but checked by #R25126)
 
 [CharBuf:122]
-Various flags; initially populated by #R26880 with 0 for kids, 16 (bit 4 set) for teachers, and 32 (bit 5 set) for catapult pellets:
+Various flags; initially populated by #R26880 with 0 for kids, 16 (bit 4 set)
+for teachers, and 32 (bit 5 set) for catapult pellets:
 #TABLE(default,centre)
 { =h Bit(s) | =h Meaning if set }
-{ 0         | Restart the command list at the next opportunity if bit 1 is reset (see #R25126) }
+{ 0         | Restart the command list at the next opportunity if bit 1 is
+              reset (see #R25126) }
 { 1         | Always reset }
 { 2-3       | Unused }
 { 4         | Character is a teacher (checked by #R25367) }
-{ 5         | Character is walking fast continuously (set for pellets and stampeding boys; see #R27246) }
-{ 6         | Character is walking slowly continuously (always reset, but checked by #R25367) }
+{ 5         | Character is walking fast continuously (set for pellets and
+              stampeding boys; see #R27246) }
+{ 6         | Character is walking slowly continuously (always reset, but
+              checked by #R25367) }
 { 7         | Character is walking slowly (see #R25266) }
 TABLE#
 
@@ -310,7 +323,8 @@ TABLE#
 Walking speed change delay counter (see #R25266, #R32234, #R32242, #R64016)
 
 [CharBuf:124,125]
-Continual subcommand routine address (see #R25126); set to #R25247 initially by #R26880
+Continual subcommand routine address (see #R25126); set to #R25247 initially by
+#R26880
 
 [CharBuf:126,127]
 Unused
