@@ -1,4 +1,4 @@
-; Copyright 2008-2012, 2015 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2012, 2015, 2017 Richard Dymond (rjdymond@gmail.com)
 
 [Poke:infiniteLines:Infinite lines]
 To stop MR WACKER expelling ERIC after 10000 lines:
@@ -10,14 +10,18 @@ To prevent teachers from giving lines to ERIC or anyone else:
 
 POKE #R30464(30464),201
 
-However, that won't prevent MR WACKER from giving ERIC 2000 lines during the 'special' playtimes (if EINSTEIN tells WACKER what ERIC's up to, or WACKER finds the pea-shooter on the fire escape). For that you need:
+However, that won't prevent MR WACKER from giving ERIC 2000 lines during the
+'special' playtimes (if EINSTEIN tells WACKER what ERIC's up to, or WACKER
+finds the pea-shooter on the fire escape). For that you need:
 
 POKE #R63468(63468),0
 
-One harmless side-effect of this POKE is that the lines total will be printed as '00' instead of '0' when WACKER delivers his 'TAKE 2000 LINES...' speech.
+One harmless side-effect of this POKE is that the lines total will be printed
+as '00' instead of '0' when WACKER delivers his 'TAKE 2000 LINES...' speech.
 
 [Poke:someLines:Some lines]
-If 'Infinite lines' or 'No lines' makes things too easy, use a selection of these POKEs that disable lines-giving for specific infractions:
+If 'Infinite lines' or 'No lines' makes things too easy, use a selection of
+these POKEs that disable lines-giving for specific infractions:
 
 CATAPULTS ARE FORBIDDEN - POKE #R62545(62545),195
 
@@ -29,17 +33,22 @@ DON'T TOUCH BLACKBOARDS - POKE #R62366(62366),1
 
 GET OFF THE FLOOR - POKE #R30758(30758),201
 
-GET TO WHERE YOU SHOULD BE/COME ALONG WITH ME BOY/HURRY UP YOU HORROR/DON'T TRY MY PATIENCE BOY - POKE #R30735(30736),0
+GET TO WHERE YOU SHOULD BE/COME ALONG WITH ME BOY/HURRY UP YOU HORROR/DON'T TRY
+MY PATIENCE BOY - POKE #R30735(30736),0
 
 NEVER BE LATE AGAIN/AND STAY THIS TIME - POKE #R62249(62249),1
 
-NOW DON'T DO IT AGAIN - POKE #R27196(27196),201 (after a teacher has been knocked over)
+NOW DON'T DO IT AGAIN - POKE #R27196(27196),201 (after a teacher has been
+knocked over)
 
-NOW DON'T DO IT AGAIN - POKE #R62294(62294),1 (when EINSTEIN says 'ERIC hit me')
+NOW DON'T DO IT AGAIN - POKE #R62294(62294),1 (when EINSTEIN says 'ERIC hit
+me')
 
 NOW FIND A SEAT - POKE #R30749(30749),201
 
-THE ROOM IS PRIVATE - POKE #R30716(30717),31 (also suppresses GET TO WHERE YOU SHOULD BE if ERIC is in the head's study or the staff room when he should be in class)
+THE ROOM IS PRIVATE - POKE #R30716(30717),31 (also suppresses GET TO WHERE YOU
+SHOULD BE if ERIC is in the head's study or the staff room when he should be in
+class)
 
 YOU ARE NOT A KANGAROO - POKE #R62779(62780),99
 
@@ -49,9 +58,12 @@ To change the lines limit from 10000 to 10N:
 <div>POKE #R63934(63935),INT(N/256)</div>
 <div>POKE #R63942(63943),N-256*INT(N/256)</div>
 
-To change the expulsion message MR WACKER delivers (at #R61926) accordingly, you will need to POKE the ASCII codes of the digits of the new lines limit into addresses 61940-61944.
+To change the expulsion message MR WACKER delivers (at #R61926) accordingly,
+you will need to POKE the ASCII codes of the digits of the new lines limit into
+addresses 61940-61944.
 
-For example, to change the lines limit to 20000 and adjust the expulsion message to match:
+For example, to change the lines limit to 20000 and adjust the expulsion
+message to match:
 
 POKE 63935,7: POKE 63943,208: POKE 61940,50
 
@@ -60,37 +72,56 @@ To make sure that EINSTEIN never tells tales:
 
 POKE #R62270(62270),24: POKE #R62321(62321),24
 
-Alternatively, to make the teacher always give lines to EINSTEIN for telling tales:
+Alternatively, to make the teacher always give lines to EINSTEIN for telling
+tales:
 
 POKE #R31982(31982),0
 
 [Poke:singleShield:Single shield]
-Hitting all 15 shields before obtaining the safe combination, and then hitting all 15 shields again after opening the safe can be hard work for a busy skoolboy. To reduce ERIC's task to hitting just one shield (any shield):
+Hitting all 15 shields before obtaining the safe combination, and then hitting
+all 15 shields again after opening the safe can be hard work for a busy
+skoolboy. To reduce ERIC's task to hitting just one shield (any shield):
 
 POKE #R63672(63673),1
 
-Note that in order to go up a year, ERIC will have to hit the same shield as he hit before opening the safe.
+Note that in order to go up a year, ERIC will have to hit the same shield as he
+hit before opening the safe.
 
 [Poke:unsafeCombination:Unsafe combination]
-Having to knock down the teachers (or, in CREAK's case, discover his year of birth and then write it on the blackboard in the classroom he'll be teaching in next) in order to obtain the safe combination letters, and then try up to six permutations of those letters before hitting the right one, can be a tiresome task. How much easier it would be if BOY WANDER and the teachers took it upon themselves to reveal the safe combination every time they wrote on a blackboard:
+Having to knock down the teachers (or, in CREAK's case, discover his year of
+birth and then write it on the blackboard in the classroom he'll be teaching in
+next) in order to obtain the safe combination letters, and then try up to six
+permutations of those letters before hitting the right one, can be a tiresome
+task. How much easier it would be if BOY WANDER and the teachers took it upon
+themselves to reveal the safe combination every time they wrote on a
+blackboard:
 
 <div>POKE #R29312(29313),0</div>
 <div>POKE 29315,127</div>
 <div>POKE 29322,62</div>
 <div>POKE 29323,159</div>
 
-The teachers and BOY WANDER will actually write the safe combination followed by WACKER's, ROCKITT's, WITHIT's and CREAK's individual safe combination letters, in that order, but those last four letters can be ignored.
+The teachers and BOY WANDER will actually write the safe combination followed
+by WACKER's, ROCKITT's, WITHIT's and CREAK's individual safe combination
+letters, in that order, but those last four letters can be ignored.
 
 [Poke:lessonLength:Lesson length]
-Normally the lesson clock (at #R32759) counts down from 5376 (21*256) to 0, at which point the bell rings. To make the lesson clock count down from N*256 to 0 instead:
+Normally the lesson clock (at #R32759) counts down from 5376 (21*256) to 0, at
+which point the bell rings. To make the lesson clock count down from N*256 to 0
+instead:
 
 POKE #R26342(26344),N
 
-If you are extending the lesson length, it's a good idea to also adjust the time at which teachers will tell the kids to sit down. Normally this is 3840 (15*256); to change it to M*256 (M=N-6 is a good choice):
+If you are extending the lesson length, it's a good idea to also adjust the
+time at which teachers will tell the kids to sit down. Normally this is 3840
+(15*256); to change it to M*256 (M=N-6 is a good choice):
 
 POKE #R31810(31811),M
 
-If, on the other hand, you are shortening the lesson, it's a good idea to also adjust the time at which teachers will start giving lines to ERIC for being in the wrong classroom. Normally this is 4864 (19*256); to change it to G*256 (G=N-2 is a good choice):
+If, on the other hand, you are shortening the lesson, it's a good idea to also
+adjust the time at which teachers will start giving lines to ERIC for being in
+the wrong classroom. Normally this is 4864 (19*256); to change it to G*256
+(G=N-2 is a good choice):
 
 POKE #R30770(30771),G
 
@@ -98,12 +129,17 @@ POKE #R30770(30771),G
 To put ERIC in charge of ringing the bell:
 
 <div>POKE #R26700(26700),123 (points 'L' at #R26747)</div>
-<div>POKE 26748,230: POKE 26749,102 (sets the keypress-handling routine for 'L' to #R26342)</div>
+<div>POKE 26748,230: POKE 26749,102 (sets the keypress-handling routine for 'L'
+to #R26342)</div>
 
-Now whenever 'L' (upper case) is pressed, the bell will ring and the next lesson will begin (which could prove handy if ERIC is found playing truant, cannot be bothered to hide from ANGELFACE when he has mumps, or simply cannot wait any longer for playtime).
+Now whenever 'L' (upper case) is pressed, the bell will ring and the next
+lesson will begin (which could prove handy if ERIC is found playing truant,
+cannot be bothered to hide from ANGELFACE when he has mumps, or simply cannot
+wait any longer for playtime).
 
 [Poke:alwaysRun:Always run]
-Normally 'q', 'a', 'o' and 'p' make ERIC walk, and 'Q', 'A', 'O' and 'P' make him run. To make ERIC always run, regardless of whether SHIFT is held down:
+Normally 'q', 'a', 'o' and 'p' make ERIC walk, and 'Q', 'A', 'O' and 'P' make
+him run. To make ERIC always run, regardless of whether SHIFT is held down:
 
 POKE #R25941(25941),24
 
@@ -116,7 +152,9 @@ To extend the range of the catapult from 13 to N:
 
 POKE #R28772(28773),N
 
-However, this doesn't extend the 'hit zone' of the pellet (the portion of its flight where it can hit something). To change the hit zone from the last 7 stages of its flight to the last M stages (M=N-6 is a good choice):
+However, this doesn't extend the 'hit zone' of the pellet (the portion of its
+flight where it can hit something). To change the hit zone from the last 7
+stages of its flight to the last M stages (M=N-6 is a good choice):
 
 POKE #R27999(28000),M+1
 
@@ -125,4 +163,5 @@ To enable ERIC to walk through specific walls:
 
 <div>POKE #R26233(26233),0 (classroom walls, from the right side)</div>
 <div>POKE #R26328(26328),0 (classroom walls, from the left side)</div>
-<div>POKE #R26320(26320),0 (wall at the top of the right-hand staircase on the middle floor)</div>
+<div>POKE #R26320(26320),0 (wall at the top of the right-hand staircase on the
+middle floor)</div>
