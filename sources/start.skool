@@ -1,19 +1,19 @@
-; Copyright 2008-2013, 2015 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2013, 2015, 2017 Richard Dymond (rjdymond@gmail.com)
 
 @start
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2013, 2015 Richard Dymond (this disassembly)
+; Copyright 2008-2013, 2015, 2017 Richard Dymond (this disassembly)
 @org=24288
 
 ; Start
 ;
 ; We jump here from the load routine at #R32815@load.
 c24288 LD SP,23806   ; Put the stack pointer somewhere safe
- 24291 LD HL,32256   ; {Copy 32256-32767 into 32768-33279
+ 24291 LD HL,32256   ; {Copy #N32256-#N32767 into #N32768-#N33279
  24294 LD DE,32768   ;
  24297 LD BC,512     ;
  24300 LDIR          ; }
- 24302 LD HL,32255   ; {Move 24320-32255 up to 24576-32511
+ 24302 LD HL,32255   ; {Move #N24320-#N32255 up to #N24576-#N32511
  24305 LD DE,32511   ;
  24308 LD BC,7936    ;
  24311 LDDR          ; }
