@@ -100,8 +100,8 @@ SectionType=BulletPoints
 [Changelog:20110510]
 Included in SkoolKit 2.2.
 
-- Inserted comments above the entry points at 25615 and 25625 in the routine at
-  #R25534
+- Inserted comments above the entry points at #N25615 and #N25625 in the
+  routine at #R25534
 
 [Changelog:20110403]
 Included in SkoolKit 2.1.
