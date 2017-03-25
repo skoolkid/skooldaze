@@ -30,6 +30,11 @@ def parse_lesson(text, index):
     end, link_text = parse_brackets(text, end, str(lesson))
     return end, lesson, link_text
 
+def parse_s(text, index):
+    sep = text[index]
+    end, s = parse_brackets(text, index, '', sep, sep)
+    return end, '#IF({{case}}==1){0}{0}{1}{0}{2}{0}{0}'.format(sep, s.lower(), s)
+
 class SkoolDazeHtmlWriter(HtmlWriter):
     def init(self):
         self.char_buf_descs = self.get_sections('CharBuf', True)
@@ -345,6 +350,10 @@ class SkoolDazeHtmlWriter(HtmlWriter):
         link = self.format_link(href, link_text)
         return end, link
 
+    def expand_s(self, text, index, cwd):
+        # #S/text/
+        return parse_s(text, index)
+
     def get_skool_udg(self, y, x, show_chars=False):
         ref_page = y + 152
         attr_addr = x + 128 + 256 * ref_page
@@ -430,6 +439,10 @@ class SkoolDazeAsmWriter(AsmWriter):
         # #LESSONnum[(link text)]
         end, lesson, link_text = parse_lesson(text, index)
         return end, link_text
+
+    def expand_s(self, text, index):
+        # #S/text/
+        return parse_s(text, index)
 
 class Udg(BaseUdg):
     def __init__(self, attr, data, mask=None, attr_addr=None, ref_addr=None, ref=None, udg_page=None, x=None, y=None):
