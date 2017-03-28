@@ -177,15 +177,15 @@ PageContent=#INCLUDE(AnimatoryStateTiles)
 <tr>
 <td>
 <div class="B">
-<div class="H">0: row 1, column 1</div>
+<div class="H">#N0: row 1, column 1</div>
 <table>
 <tr>
-<td><img alt="0:1,1" src="b901.png"/></td>
+<td><img alt="#N0:1,1" src="b901.png"/></td>
 <td>
-<i>lsb</i>=0, <i>ref_page</i>=178<br/>
-<i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)=45568<br/>
-<i>ref</i>=1, <i>udg_page</i>=185<br/>
-<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)=47361
+<i>lsb</i>=#N(0), <i>ref_page</i>=#N178<br/>
+<i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)=#N45568<br/>
+<i>ref</i>=#N(1), <i>udg_page</i>=#N185<br/>
+<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)=#N47361
 </td>
 </tr>
 </table>
@@ -196,24 +196,25 @@ PageContent=#INCLUDE(AnimatoryStateTiles)
 <p>where:</p>
 <ul>
 <li>
-<i>lsb</i> is the animatory state (0-255)
+<i>lsb</i> is the animatory state (#N0-#N255)
 </li>
 <li>
-<i>ref_page</i> is the page containing the UDG reference for the tile (173-184)
+<i>ref_page</i> is the page containing the UDG reference for the tile
+(#N173-#N184)
 </li>
 <li>
 <i>ref_addr</i> is the address of the UDG reference
-(<i>lsb</i>+256*<i>ref_page</i>)
+(<i>lsb</i>+#N256*<i>ref_page</i>)
 </li>
 <li>
-<i>ref</i> is the UDG reference at <i>ref_addr</i> (0-255)
+<i>ref</i> is the UDG reference at <i>ref_addr</i> (#N0-#N255)
 </li>
 <li>
-<i>udg_page</i> is the base page for the tile graphic data (185 or 201)
+<i>udg_page</i> is the base page for the tile graphic data (#N185 or #N201)
 </li>
 <li>
 <i>udg_addr</i> is the base address of the tile graphic data
-(<i>ref</i>+256*<i>udg_page</i>)
+(<i>ref</i>+#N256*<i>udg_page</i>)
 </li>
 </ul>
 <p>
@@ -226,8 +227,8 @@ The graphic for an animatory state is made up of 12 tiles in a 3x4 grid:
 <tr><td>3</td><td>7</td><td>11</td></tr>
 </table>
 <p>
-Each tile has a UDG reference (<i>ref</i>) located at (<i>lsb</i>,T+173), where
-T is the tile number (0-11).
+Each tile has a UDG reference (<i>ref</i>) located at (<i>lsb</i>,T+#N173),
+where T is the tile number (0-11).
 </p>
 <p>
 The eight graphic bytes and eight mask bytes for a tile are located thus:
@@ -239,69 +240,69 @@ The eight graphic bytes and eight mask bytes for a tile are located thus:
 <td>Graphic byte 1/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+1)=<i>udg_addr</i>+256</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N1)=<i>udg_addr</i>+#N256</td>
 <td>Mask byte 1/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+2)=<i>udg_addr</i>+512</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N2)=<i>udg_addr</i>+#N512</td>
 <td>Graphic byte 2/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+3)=<i>udg_addr</i>+768</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N3)=<i>udg_addr</i>+#N768</td>
 <td>Mask byte 2/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+4)=<i>udg_addr</i>+1024</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N4)=<i>udg_addr</i>+#N1024</td>
 <td>Graphic byte 3/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+5)=<i>udg_addr</i>+1280</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N5)=<i>udg_addr</i>+#N1280</td>
 <td>Mask byte 3/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+6)=<i>udg_addr</i>+1536</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N6)=<i>udg_addr</i>+#N1536</td>
 <td>Graphic byte 4/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+7)=<i>udg_addr</i>+1792</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N7)=<i>udg_addr</i>+#N1792</td>
 <td>Mask byte 4/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+8)=<i>udg_addr</i>+2048</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N8)=<i>udg_addr</i>+#N2048</td>
 <td>Graphic byte 5/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+9)=<i>udg_addr</i>+2304</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N9)=<i>udg_addr</i>+#N2304</td>
 <td>Mask byte 5/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+10)=<i>udg_addr</i>+2560</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N10)=<i>udg_addr</i>+#N2560</td>
 <td>Graphic byte 6/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+11)=<i>udg_addr</i>+2816</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N11)=<i>udg_addr</i>+#N2816</td>
 <td>Mask byte 6/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+12)=<i>udg_addr</i>+3072</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N12)=<i>udg_addr</i>+#N3072</td>
 <td>Graphic byte 7/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+13)=<i>udg_addr</i>+3328</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N13)=<i>udg_addr</i>+#N3328</td>
 <td>Mask byte 7/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+14)=<i>udg_addr</i>+3584</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N14)=<i>udg_addr</i>+#N3584</td>
 <td>Graphic byte 8/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+15)=<i>udg_addr</i>+3840</td>
+<td>(<i>ref</i>,<i>udg_page</i>+#N15)=<i>udg_addr</i>+#N3840</td>
 <td>Mask byte 8/8</td>
 </tr>
 </table>
 <p>
-The 'null' UDG (<i>ref</i>=0) is always taken to be blank (eight zeroes); its
-graphic data is not looked up at (0,185) or (0,201).
+The 'null' UDG (<i>ref</i>=#N0) is always taken to be blank (eight zeroes); its
+graphic data is not looked up at (#N(0),#N185) or (#N(0),#N201).
 </p>
 <p>
 Any given tile (identified by <i>udg_addr</i>) may appear in more than one
@@ -309,10 +310,10 @@ animatory state (and in more than one place in a single animatory state).
 </p>
 <p>
 In each row of the table below, the first and second tile grids correspond to
-the appearance of the animatory state with <i>udg_page</i>=185 (as used by a
+the appearance of the animatory state with <i>udg_page</i>=#N185 (as used by a
 boy or a catapult pellet, i.e. character numbers 152-162 and 167-172); the
 third and fourth tile grids correspond to the appearance of the animatory state
-with <i>udg_page</i>=201 (as used by a teacher, i.e. character numbers
+with <i>udg_page</i>=#N201 (as used by a teacher, i.e. character numbers
 163-166). (See #R27914.)
 </p>
 </div>
@@ -363,9 +364,9 @@ with <i>udg_page</i>=201 (as used by a teacher, i.e. character numbers
 <td><img alt="{state}:{row},{column}" src="{img_fname}"/></td>
 <td>
 <i>lsb</i>={lsb}, <i>ref_page</i>={ref_page}<br/>
-<i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={tile.ref_addr}<br/>
-<i>ref</i>={tile.ref}, <i>udg_page</i>={tile.udg_page}<br/>
-<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)={tile.udg_addr}
+<i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={ref_addr}<br/>
+<i>ref</i>={ref}, <i>udg_page</i>={udg_page}<br/>
+<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)={udg_addr}
 </td>
 </tr>
 </table>
@@ -382,8 +383,8 @@ with <i>udg_page</i>=201 (as used by a teacher, i.e. character numbers
 <td><img alt="{state}:{row},{column}" src="{img_fname}"/></td>
 <td>
 <i>lsb</i>={lsb}, <i>ref_page</i>={ref_page}<br/>
-<i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={tile.ref_addr}<br/>
-<i>ref</i>=0
+<i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={ref_addr}<br/>
+<i>ref</i>={ref}
 </td>
 </tr>
 </table>

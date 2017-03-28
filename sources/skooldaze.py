@@ -214,8 +214,13 @@ class SkoolDazeHtmlWriter(HtmlWriter):
     def astiles(self, cwd):
         rows = []
         attr = 120
+        b_fmt = '{:02X}' if self.base == 16 else '{}'
+        w_fmt = '{:04X}' if self.base == 16 else '{}'
+        if self.case == 1:
+            b_fmt = b_fmt.lower()
+            w_fmt = w_fmt.lower()
         for n in range(128):
-            for state_specs, states_desc in self._get_animatory_state_tiles_row(n):
+            for state_specs, states_desc in self._get_animatory_state_tiles_row(n, b_fmt):
                 frames = []
                 for state, udg_page in state_specs:
                     tiles = []
@@ -234,13 +239,16 @@ class SkoolDazeHtmlWriter(HtmlWriter):
                             template_name = 'astile' if tile.ref else 'astile_null'
                             astile_subs = {
                                 'bubble_id': bubble_id,
-                                'state': state,
+                                'state': b_fmt.format(state),
                                 'row': row_num,
                                 'column': col_num,
                                 'img_fname': img_fname,
-                                'lsb': tile.ref_addr % 256,
-                                'ref_page': tile.ref_addr // 256,
-                                'tile': tile
+                                'lsb': b_fmt.format(tile.ref_addr % 256),
+                                'ref_page': b_fmt.format(tile.ref_addr // 256),
+                                'ref_addr': w_fmt.format(tile.ref_addr),
+                                'ref': b_fmt.format(tile.ref),
+                                'udg_page': b_fmt.format(tile.udg_page),
+                                'udg_addr': w_fmt.format(tile.udg_addr)
                             }
                             tiles.append(self.format_template(template_name, astile_subs))
                     template_name = 'astiles_frame_{}x{}'.format(num_rows, len(row))
@@ -411,9 +419,9 @@ class SkoolDazeHtmlWriter(HtmlWriter):
         }
         return self.format_template('animatory_state_row', subs)
 
-    def _get_animatory_state_tiles_row(self, n):
+    def _get_animatory_state_tiles_row(self, n, fmt):
         states = ((n, 185), (n + 128, 185), (n, 201), (n + 128, 201))
-        states_desc = '{0}, {1}: {2}'.format(n, n + 128, self.as_descs[n])
+        states_desc = '{0}, {0}: {{}}'.format(fmt).format(n, n + 128, self.as_descs[n])
         return [(states, states_desc)]
 
     def place_char(self, cwd, char_num, x=None, y=None, state=None):
