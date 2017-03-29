@@ -48,6 +48,11 @@ class SkoolDazeHtmlWriter(HtmlWriter):
         self.max_character = 169
         self.font_address = 55552
         self._calculate_tap_index(65152, 222)
+        self.b_fmt = '{:02X}' if self.base == 16 else '{}'
+        self.w_fmt = '{:04X}' if self.base == 16 else '{}'
+        if self.case == 1:
+            self.b_fmt = self.b_fmt.lower()
+            self.w_fmt = self.w_fmt.lower()
 
     def _calculate_tap_index(self, tap_address_table, max_tap):
         min_tap = tap_address_table % 256
@@ -195,7 +200,19 @@ class SkoolDazeHtmlWriter(HtmlWriter):
                     img_path = join(cwd, img_fname)
                     if self.need_image(img_path):
                         self.write_image(img_path, [[tile]], scale=4)
-                    subs = {'tile': tile, 'prefix': prefix, 'img_fname': img_fname}
+                    subs = {
+                        'x': tile.x,
+                        'x_offset': self.b_fmt.format(128),
+                        'y': tile.y,
+                        'y_offset': self.b_fmt.format(152),
+                        'ref_addr': self.w_fmt.format(tile.ref_addr),
+                        'ref': self.b_fmt.format(tile.ref),
+                        'udg_page': self.b_fmt.format(tile.udg_page),
+                        'udg_addr': self.w_fmt.format(tile.udg_addr),
+                        'attr_addr': self.w_fmt.format(tile.attr_addr),
+                        'attr': self.b_fmt.format(tile.attr),
+                        'img_fname': img_fname
+                    }
                     cells.append(self.format_template('play_area_tile', subs))
                 else:
                     cells.append(self.format_template('play_area_tile_blank', {}))
@@ -214,13 +231,8 @@ class SkoolDazeHtmlWriter(HtmlWriter):
     def astiles(self, cwd):
         rows = []
         attr = 120
-        b_fmt = '{:02X}' if self.base == 16 else '{}'
-        w_fmt = '{:04X}' if self.base == 16 else '{}'
-        if self.case == 1:
-            b_fmt = b_fmt.lower()
-            w_fmt = w_fmt.lower()
         for n in range(128):
-            for state_specs, states_desc in self._get_animatory_state_tiles_row(n, b_fmt):
+            for state_specs, states_desc in self._get_animatory_state_tiles_row(n):
                 frames = []
                 for state, udg_page in state_specs:
                     tiles = []
@@ -239,16 +251,16 @@ class SkoolDazeHtmlWriter(HtmlWriter):
                             template_name = 'astile' if tile.ref else 'astile_null'
                             astile_subs = {
                                 'bubble_id': bubble_id,
-                                'state': b_fmt.format(state),
+                                'state': self.b_fmt.format(state),
                                 'row': row_num,
                                 'column': col_num,
                                 'img_fname': img_fname,
-                                'lsb': b_fmt.format(tile.ref_addr % 256),
-                                'ref_page': b_fmt.format(tile.ref_addr // 256),
-                                'ref_addr': w_fmt.format(tile.ref_addr),
-                                'ref': b_fmt.format(tile.ref),
-                                'udg_page': b_fmt.format(tile.udg_page),
-                                'udg_addr': w_fmt.format(tile.udg_addr)
+                                'lsb': self.b_fmt.format(tile.ref_addr % 256),
+                                'ref_page': self.b_fmt.format(tile.ref_addr // 256),
+                                'ref_addr': self.w_fmt.format(tile.ref_addr),
+                                'ref': self.b_fmt.format(tile.ref),
+                                'udg_page': self.b_fmt.format(tile.udg_page),
+                                'udg_addr': self.w_fmt.format(tile.udg_addr)
                             }
                             tiles.append(self.format_template(template_name, astile_subs))
                     template_name = 'astiles_frame_{}x{}'.format(num_rows, len(row))
@@ -419,9 +431,9 @@ class SkoolDazeHtmlWriter(HtmlWriter):
         }
         return self.format_template('animatory_state_row', subs)
 
-    def _get_animatory_state_tiles_row(self, n, fmt):
+    def _get_animatory_state_tiles_row(self, n):
         states = ((n, 185), (n + 128, 185), (n, 201), (n + 128, 201))
-        states_desc = '{0}, {0}: {{}}'.format(fmt).format(n, n + 128, self.as_descs[n])
+        states_desc = '{0}, {0}: {{}}'.format(self.b_fmt).format(n, n + 128, self.as_descs[n])
         return [(states, states_desc)]
 
     def place_char(self, cwd, char_num, x=None, y=None, state=None):

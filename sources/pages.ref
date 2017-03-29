@@ -18,11 +18,11 @@ PageContent=#INCLUDE(PlayAreaTiles)
 <tr>
 <td><img alt="10,9" src="80db20.png"/></td>
 <td>
-<i>ref_addr</i>=(x,y+152)=41226<br/>
-<i>ref</i>=219, <i>udg_page</i>=128<br/>
-<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)=32987<br/>
-<i>attr_addr</i>=(x+128,y+152)=41354<br/>
-<i>attr</i>=32
+<i>ref_addr</i>=(x,y+#N152)=#N41226<br/>
+<i>ref</i>=#N(219), <i>udg_page</i>=#N128<br/>
+<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)=#N32987<br/>
+<i>attr_addr</i>=(x+#N(128),y+#N152)=#N41354<br/>
+<i>attr</i>=#N32
 </td>
 </tr>
 </table>
@@ -36,11 +36,12 @@ PageContent=#INCLUDE(PlayAreaTiles)
 <i>ref</i> is the UDG reference for the tile (located at <i>ref_addr</i>)
 </li>
 <li>
-<i>udg_page</i> is the base page for the tile graphic data (128, 136 or 144)
+<i>udg_page</i> is the base page for the tile graphic data (#N(128), #N136 or
+#N144)
 </li>
 <li>
 <i>udg_addr</i> is the base address of the tile graphic data
-(<i>ref</i>+256*<i>udg_page</i>)
+(<i>ref</i>+#N256*<i>udg_page</i>)
 </li>
 <li>
 <i>attr</i> is the tile's attribute byte (located at <i>attr_addr</i>)
@@ -52,9 +53,9 @@ x-coordinate of the tile as follows:
 </p>
 <table class="default">
 <tr><th>x</th><th><i>udg_page</i></th></tr>
-<tr><td class="centre">0-31</td><td class="centre">128</td></tr>
-<tr><td class="centre">32-63</td><td class="centre">136</td></tr>
-<tr><td class="centre">64-95</td><td class="centre">144</td></tr>
+<tr><td class="centre">0-31</td><td class="centre">#N128</td></tr>
+<tr><td class="centre">32-63</td><td class="centre">#N136</td></tr>
+<tr><td class="centre">64-95</td><td class="centre">#N144</td></tr>
 </table>
 <p>
 The eight graphic bytes for a tile are located thus:
@@ -68,31 +69,31 @@ The eight graphic bytes for a tile are located thus:
 <td>Graphic byte 1/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+1)=<i>udg_addr</i>+256</td>
+<td>(<i>ref</i>,<i>udg_page</i>+1)=<i>udg_addr</i>+#N256</td>
 <td>Graphic byte 2/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+2)=<i>udg_addr</i>+512</td>
+<td>(<i>ref</i>,<i>udg_page</i>+2)=<i>udg_addr</i>+#N512</td>
 <td>Graphic byte 3/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+3)=<i>udg_addr</i>+768</td>
+<td>(<i>ref</i>,<i>udg_page</i>+3)=<i>udg_addr</i>+#N768</td>
 <td>Graphic byte 4/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+4)=<i>udg_addr</i>+1024</td>
+<td>(<i>ref</i>,<i>udg_page</i>+4)=<i>udg_addr</i>+#N1024</td>
 <td>Graphic byte 5/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+5)=<i>udg_addr</i>+1280</td>
+<td>(<i>ref</i>,<i>udg_page</i>+5)=<i>udg_addr</i>+#N1280</td>
 <td>Graphic byte 6/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+6)=<i>udg_addr</i>+1536</td>
+<td>(<i>ref</i>,<i>udg_page</i>+6)=<i>udg_addr</i>+#N1536</td>
 <td>Graphic byte 7/8</td>
 </tr>
 <tr>
-<td>(<i>ref</i>,<i>udg_page</i>+7)=<i>udg_addr</i>+1792</td>
+<td>(<i>ref</i>,<i>udg_page</i>+7)=<i>udg_addr</i>+#N1792</td>
 <td>Graphic byte 8/8</td>
 </tr>
 </table>
@@ -114,20 +115,20 @@ location in the play area.
 
 [Template:play_area_tile]
 <td>
-<div class="T" onclick="s('s{tile.x}x{tile.y}')">
-<img alt="{tile.x},{tile.y}" src="{img_fname}"/>
+<div class="T" onclick="s('s{x}x{y}')">
+<img alt="{x},{y}" src="{img_fname}"/>
 </div>
-<div id="s{tile.x}x{tile.y}" class="B P" onclick="h(this)">
-<div class="H">(x,y)=({tile.x},{tile.y})</div>
+<div id="s{x}x{y}" class="B P" onclick="h(this)">
+<div class="H">(x,y)=({x},{y})</div>
 <table>
 <tr>
-<td><img alt="{tile.x},{tile.y}" src="{img_fname}"/></td>
+<td><img alt="{x},{y}" src="{img_fname}"/></td>
 <td>
-<i>ref_addr</i>=(x,y+152)={tile.ref_addr}<br/>
-<i>ref</i>={tile.ref}, <i>udg_page</i>={tile.udg_page}<br/>
-<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)={tile.udg_addr}<br/>
-<i>attr_addr</i>=(x+128,y+152)={tile.attr_addr}<br/>
-<i>attr</i>={tile.attr}
+<i>ref_addr</i>=(x,y+{y_offset})={ref_addr}<br/>
+<i>ref</i>={ref}, <i>udg_page</i>={udg_page}<br/>
+<i>udg_addr</i>=(<i>ref</i>,<i>udg_page</i>)={udg_addr}<br/>
+<i>attr_addr</i>=(x+{x_offset},y+{y_offset})={attr_addr}<br/>
+<i>attr</i>={attr}
 </td>
 </tr>
 </table>
