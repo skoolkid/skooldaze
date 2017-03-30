@@ -156,19 +156,19 @@ sprites, so the graphic data for him and the other teachers had to go to page
 201.
 
 [Fact:wackersOldShoes:MR WACKER's old shoes]
-The #FACT#doppelwacker(copies of MR WACKER's sprites based in page 185) show a
-slight difference in animatory states 81 and 209 compared to the official
-sprites based in page 201:
+The #FACT#doppelwacker(copies of MR WACKER's sprites based in page #N185) show
+a slight difference in animatory states #N81 and #N209 compared to the official
+sprites based in page #N201:
 
 #UDGTABLE(gallery)
-{ =c2 185 | =c2 201 }
+{ =c2 #N185 | =c2 #N201 }
 { #CALL:as_img(81, 4, 1, 120, 185) | #CALL:as_img(209, 4, 1, 120, 185) |
   #CALL:as_img(81, 4, 1, 120, 201) | #CALL:as_img(209, 4, 1, 120, 201) }
-{ 81 | 209 | 81 | 209 }
+{ #N81 | #N209 | #N81 | #N209 }
 TABLE#
 
-Note the incorrect tile at the bottom right of animatory state 81, and the
-corresponding incorrect tile at the bottom left of animatory state 209. An
+Note the incorrect tile at the bottom right of animatory state #N81, and the
+corresponding incorrect tile at the bottom left of animatory state #N209. An
 examination of the tile references used to build these sprites reveals
 something interesting:
 
@@ -176,44 +176,44 @@ something interesting:
 <tr>
 <td>
 <table class="asgrid">
-<tr><td>90</td><td>89</td><td>0</td></tr>
-<tr><td>88</td><td>87</td><td>100</td></tr>
-<tr><td>86</td><td>85</td><td>84</td></tr>
-<tr><td>83</td><td>82</td><td><b>13</b></td></tr>
+<tr><td>#N90</td><td>#N89</td><td>#N0</td></tr>
+<tr><td>#N88</td><td>#N87</td><td>#N100</td></tr>
+<tr><td>#N86</td><td>#N85</td><td>#N84</td></tr>
+<tr><td>#N83</td><td>#N82</td><td><b>#N13</b></td></tr>
 </table>
 </td>
 <td style="width: 20px">
 </td>
 <td>
 <table class="asgrid">
-<tr><td>0</td><td>217</td><td>218</td></tr>
-<tr><td>228</td><td>215</td><td>216</td></tr>
-<tr><td>212</td><td>213</td><td>214</td></tr>
-<tr><td><b>141</b></td><td>210</td><td>211</td></tr>
+<tr><td>#N0</td><td>#N217</td><td>#N218</td></tr>
+<tr><td>#N228</td><td>#N215</td><td>#N216</td></tr>
+<tr><td>#N212</td><td>#N213</td><td>#N214</td></tr>
+<tr><td><b>#N141</b></td><td>#N210</td><td>#N211</td></tr>
 </table>
 </td>
 </tr>
 </table>
 
 The numbering of the tiles suggests that the bottom-right tile of animatory
-state 81 was originally 81 (not 13), and the bottom-left tile of animatory
-state 209 was originally 209 (not 141). If those changes are made (POKE
-47185,81: POKE 45265,209), the shoe on MR WACKER's back foot takes a different
-shape:
+state #N81 was originally #N81 (not #N13), and the bottom-left tile of
+animatory state #N209 was originally #N209 (not #N141). If those changes are
+made (POKE 47185,81: POKE 45265,209), the shoe on MR WACKER's back foot takes a
+different shape:
 
 #UDGTABLE(gallery)
-{ =c2 185 (modified) | =c2 201 }
+{ =c2 #N185 (modified) | =c2 #N201 }
 { #PUSHSwos #POKES47185,81 #CALL:as_img(81, 4, 1, 120, 185) |
   #POKES45265,209 #CALL:as_img(209, 4, 1, 120, 185) #POPS |
   #CALL:as_img(81, 4, 1, 120, 201) | #CALL:as_img(209, 4, 1, 120, 201) }
-{ 81 | 209 | 81 | 209 }
+{ #N81 | #N209 | #N81 | #N209 }
 TABLE#
 
-So why didn't copies of tiles 81 and 209 from page 185 (which seem to finish MR
-WACKER's back foot better than tiles 13 and 141 do) make their way into page
-201? The most likely answer is lack of space: there are no unused sprite tiles
-based in page 201, and tiles 13 and 141 are similar enough to tiles 81 and 209
-to make reasonable substitutes.
+So why didn't copies of tiles #N81 and #N209 from page #N185 (which seem to
+finish MR WACKER's back foot better than tiles #N13 and #N141 do) make their
+way into page #N201? The most likely answer is lack of space: there are no
+unused sprite tiles based in page #N201, and tiles #N13 and #N141 are similar
+enough to tiles #N81 and #N209 to make reasonable substitutes.
 
 [Fact:pointsForAPOrAP:Points for a punching or a pelleting]
 ANGELFACE is unique among the cast of characters in that if ERIC knocks him

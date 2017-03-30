@@ -164,7 +164,7 @@ numbers 163-166). (See #R27914.)</p>
 <td id="{state_r}">{img_r1}</td>
 <td>{img_l2}</td>
 <td>{img_r2}</td>
-<td>{state_l}, {state_r}: {desc}</td>
+<td>{state_l_s}, {state_r_s}: {desc}</td>
 </tr>
 
 [Page:AnimatoryStateTiles]
