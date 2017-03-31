@@ -325,6 +325,8 @@ i23552 DEFS 1024
 @replace=/#FACT(?![A-Z])/#LINK:Facts
 @replace=/#POKE(?![A-Z])/#LINK:Pokes
 @replace=/#n\i/#N\1,,,1($)
+@replace=/#b\i/#N(\1)/ (byte)
+@replace=/#w\i/#N(\1,4)/ (word)
 @writer=:skooldaze.SkoolDazeAsmWriter
 ; Skool Daze disassembly
 ; http://skoolkit.ca/
@@ -1917,10 +1919,10 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
  26030 LD B,130      ; #AS130=ERIC standing, facing right
  26032 INC E         ; {One pace to the right (taking into the account the one
  26033 INC E         ; pace to the left made above)}
-*26034 LD A,B        ; #REGa=#AS2(#N2/#N130)
- 26035 BIT 0,L       ; {#REGa=#AS1(#N1/#N129), #REGb=#AS2(#N2/#N130) if ERIC's
- 26037 JR Z,26043    ; current x-coordinate is even; #REGa=#AS3(#N3/#N131),
- 26039 DEC B         ; #REGb=#AS0(#N0/#N128) if ERIC's current x-coordinate is
+*26034 LD A,B        ; #REGa=#AS2(#b2/#b130)
+ 26035 BIT 0,L       ; {#REGa=#AS1(#b1/#b129), #REGb=#AS2(#b2/#b130) if ERIC's
+ 26037 JR Z,26043    ; current x-coordinate is even; #REGa=#AS3(#b3/#b131),
+ 26039 DEC B         ; #REGb=#AS0(#b0/#b128) if ERIC's current x-coordinate is
  26040 DEC B         ; odd
  26041 ADD A,2       ;
 *26043 DEC A         ; }
@@ -1993,17 +1995,17 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
  26130 LD B,130      ; #AS130=ERIC standing, facing right
  26132 INC E         ; {One pace to the right (taking into the account the one
  26133 INC E         ; pace to the left made above)}
-*26134 LD A,B        ; #REGa=#AS2(#N2/#N130)
+*26134 LD A,B        ; #REGa=#AS2(#b2/#b130)
 @bfix-begin
- 26135 BIT 0,L       ; {#REGa=#AS3(#N3/#N131), #REGb=#AS2(#N2/#N130) if ERIC's
+ 26135 BIT 0,L       ; {#REGa=#AS3(#b3/#b131), #REGb=#AS2(#b2/#b130) if ERIC's
  26137 JR Z,26141    ; current x-coordinate is even (which is a
  26139 DEC B         ; #BUG#oneFourThreeFour(bug));
 @bfix+else
- 26135 BIT 0,L       ; {#REGa=#AS1(#N1/#N129), #REGb=#AS2(#N2/#N130) if ERIC's
+ 26135 BIT 0,L       ; {#REGa=#AS1(#b1/#b129), #REGb=#AS2(#b2/#b130) if ERIC's
  26137 JR Z,26143    ; current x-coordinate is even;
  26139 DEC B         ;
 @bfix+end
- 26140 DEC B         ; #REGa=#AS3(#N3/#N131), #REGb=#AS0(#N0/#N128) if ERIC's
+ 26140 DEC B         ; #REGa=#AS3(#b3/#b131), #REGb=#AS0(#b0/#b128) if ERIC's
 @bfix-begin
 *26141 ADD A,2       ; current x-coordinate is odd
  26143 DEC A         ; }
@@ -2092,7 +2094,7 @@ c26194 CALL 25956    ; Is ERIC sitting or lying down?
 ; This entry point is used by the routine at #R26282 with
 ; #REGa=#AS129 (ERIC facing right, midstride).
 @rsub-begin
-*26238 LD C,A        ; #REGc=#AS1(#N1/#N129) (ERIC midstride)
+*26238 LD C,A        ; #REGc=#AS1(#b1/#b129) (ERIC midstride)
  26239 LD A,(32764)  ; #R32764 holds the ASCII code of the last keypress
  26242 BIT 5,A       ; Was the last keypress upper case (fast)?
  26244 JR Z,26250    ; Jump if so
@@ -2105,18 +2107,18 @@ c26194 CALL 25956    ; Is ERIC sitting or lying down?
  26257 LD A,C        ; {Clearly these instructions have no effect, but one
  26258 ADD A,0       ; wonders what they might once have been and done
  26260 LD C,A        ; }
-*26261 LD A,C        ; #REGa=#AS1(#N1/#N129) (ERIC midstride)
+*26261 LD A,C        ; #REGa=#AS1(#b1/#b129) (ERIC midstride)
 @rsub+else
 @label=ERICMID
 @rsub+end
  26262 LD H,D        ; #REGh=ERIC's current y-coordinate
- 26263 LD B,A        ; {#REGb=#AS2(#N2/#N130) (ERIC standing, phase 3)
+ 26263 LD B,A        ; {#REGb=#AS2(#b2/#b130) (ERIC standing, phase 3)
  26264 INC B         ; }
  26265 BIT 0,L       ; Is ERIC's current x-coordinate even?
  26267 JR Z,26273    ; Jump if so
  26269 DEC B         ; {Adjust ERIC's midstride animatory state (in #REGa) to
- 26270 DEC B         ; #AS3(#N3/#N131) and post-midstride animatory state (in
- 26271 ADD A,2       ; #REGb) to #AS0(#N0/#N128) if ERIC's current x-coordinate
+ 26270 DEC B         ; #AS3(#b3/#b131) and post-midstride animatory state (in
+ 26271 ADD A,2       ; #REGb) to #AS0(#b0/#b128) if ERIC's current x-coordinate
                      ; is odd}
 *26273 JP 25916      ; Put ERIC midstride
 
@@ -2258,8 +2260,8 @@ c26422 SET 3,(IY+48) ; Put CAPS LOCK on, and continue into #R26426
 @label=READKEY
 c26426 CALL 26584    ; Get input from the Kempston joystick if it's in use
 ; This entry point is used by the routines at #R26784 and #R64073.
-*26429 BIT 5,(HL)    ; {Check bit 5 of #N(23611), which will be set if a key
- 26431 RES 5,(HL)    ; was pressed; reset bit 5 afterwards}
+*26429 BIT 5,(HL)    ; {Check bit 5 of #w23611, which will be set if a key was
+ 26431 RES 5,(HL)    ; pressed; reset bit 5 afterwards}
  26433 RET Z         ; Return with the zero flag set if no key was pressed
  26434 LD A,(23560)  ; Get the code of the last key pressed
  26437 CP 13         ; Was it ENTER?
@@ -2373,7 +2375,7 @@ c26471 LD HL,(32759) ; #R32759 holds the lesson clock
 *26556 CALL 27026    ; Update the display
 ; The next section of code ensures that we don't pass through the main loop
 ; more than once every 20 milliseconds.
-*26559 LD HL,32762   ; {Wait until the system variable FRAMES at #N23672 has
+*26559 LD HL,32762   ; {Wait until the system variable FRAMES at #w23672 has
 *26562 LD A,(23672)  ; been incremented since the last time it was checked
  26565 CP (HL)       ; (FRAMES is incremented every 20ms)
  26566 JR Z,26562    ;
@@ -3418,7 +3420,7 @@ c27303 LD HL,32757   ; {#R32757 holds the delay counter used when ERIC has been
  27337 AND 128       ;
  27339 ADD A,6       ;
 *27341 INC A         ; #REGa=#AS6 (ERIC sitting on the floor) or
-                     ; #AS7(#N7/#N135) (ERIC lying on his back)
+                     ; #AS7(#b7/#b135) (ERIC lying on his back)
  27342 LD B,A        ; Store ERIC's new animatory state in #REGb temporarily
  27343 LD A,D        ; #REGa=ERIC's y-coordinate
  27344 CALL 31242    ; Get the y-coordinate of the floor ERIC's on in #REGd
@@ -3963,7 +3965,7 @@ c27823 LD HL,32763   ; {Flip bit 7 of ERIC's status flags at #R32763
        CALL 27634    ; Is ERIC beside a chair?
 @ofix+end
  27875 JP Z,27517    ; Seat him if so
-*27878 LD A,B        ; {#REGa=#AS6(#N6 or #N134) (ERIC sitting on the floor)
+*27878 LD A,B        ; {#REGa=#AS6(#b6 or #b134) (ERIC sitting on the floor)
  27879 AND 128       ;
  27881 ADD A,6       ; }
  27883 JP 25008      ; Update ERIC's animatory state and update the SRB
@@ -4636,7 +4638,7 @@ c28558 LD L,111      ; {Place the address of the uninterruptible subcommand
 @rsub+end
                      ; }
  28562 CALL 25108    ; Update the SRB for ANGELFACE's current animatory state
- 28565 INC A         ; #REGa=#AS43(#N43/#N171): ANGELFACE hitting (phase 2)
+ 28565 INC A         ; #REGa=#AS43(#b43/#b171): ANGELFACE hitting (phase 2)
  28566 CALL 25008    ; Update ANGELFACE's animatory state and update the SRB,
                      ; then continue into the routine at #R28569
 
@@ -4807,7 +4809,7 @@ c28716 LD L,111      ; {Replace the address of this uninterruptible subcommand
  28720 CALL 25108    ; Update the SRB for BOY WANDER's current animatory state
  28723 LD L,113      ; {Store BOY WANDER's pre-fire animatory state in byte 113
  28725 LD (HL),A     ; of his buffer}
- 28726 AND 128       ; {#REGa=#AS56(#N56/#N184): BOY WANDER firing (phase 1)
+ 28726 AND 128       ; {#REGa=#AS56(#b56/#b184): BOY WANDER firing (phase 1)
  28728 ADD A,56      ; }
  28730 JP 25008      ; Update BOY WANDER's animatory state and update the SRB
 
@@ -4853,9 +4855,9 @@ c28744 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @rsub+end
                      ; }
  28748 LD L,96       ; Byte 96 of BOY WANDER's buffer holds his animatory state
-                     ; (#AS57(#N57/#N185))
+                     ; (#AS57(#b57/#b185))
  28750 LD A,(HL)     ; Pick this up in #REGa
- 28751 ADD A,70      ; Now #REGa=#AS127(#N127 or #N255) (catapult pellet)
+ 28751 ADD A,70      ; Now #REGa=#AS127(#b127 or #b255) (catapult pellet)
  28753 INC L         ; {Pick up BOY WANDER's coordinates in #REGde
  28754 LD D,(HL)     ;
  28755 INC L         ;
@@ -5470,7 +5472,7 @@ c29284 CALL 28968    ; Collect the identifier of the nearest blackboard in
  29356 LD B,A        ; #REGb=character's current animatory state
  29357 JR NZ,29375   ; Jump if a teacher is writing on the board
 ; BOY WANDER is writing on the board. Determine his next animatory state:
-; #AS60(#N60/#N188) or #AS61(#N61/#N189).
+; #AS60(#b60/#b188) or #AS61(#b61/#b189).
  29359 AND 127       ; Drop the direction bit (bit 7) for now
  29361 CP 60         ; #AS60=BOY WANDER writing (phase 1)
  29363 LD A,122      ; #REGa/2=#AS61=BOY WANDER writing (phase 2)
@@ -6439,7 +6441,7 @@ s30406 DEFS 2
 ; number in #REGhl, then copies the graphic data to the screen at the location
 ; specified by #REGde.
 ;
-; DE Display file address: #N20924 (score), #N20956 (lines) or #N20988
+; DE Display file address: #w20924 (score), #w20956 (lines) or #w20988
 ; .  (hi-score)
 ; HL Score, lines total or hi-score
 @label=PRINTNUM
@@ -6492,7 +6494,7 @@ c30432 CALL 30278    ; Generate the graphic data for the number of lines
 ; Continues from #R30408. Checks whether ERIC is over the lines limit (if the
 ; number of lines was just printed).
 ;
-; DE Display file address: #N20924 (score), #N20956 (lines) or #N20988
+; DE Display file address: #w20924 (score), #w20956 (lines) or #w20988
 ; .  (hi-score)
 @label=PRINTNUM2
 c30457 LD A,E        ; Copy the LSB of the display file address to #REGa
@@ -7718,7 +7720,7 @@ c31648 CALL 31229    ; Get ERIC's coordinates in #REGde
 ; ERIC is not where he should be, or the teacher is on a staircase.
 *31695 AND A         ; Are ERIC and the teacher in exactly the same location?
  31696 JR NZ,31711   ; Jump if not
- 31698 LD A,(23672)  ; #N23672=LSB of FRAMES system variable
+ 31698 LD A,(23672)  ; #w23672=LSB of FRAMES system variable
  31701 AND A         ; This LSB will be 0 once every 5.12 seconds
  31702 RET NZ        ; Return if it's not zero now
 *31703 CALL 25108    ; Update the SRB for the teacher's current animatory state
@@ -11452,7 +11454,7 @@ b44256 DEFB 38 ; Lesson #LESSON224: DINNER (MR WITHIT)
  44286 DEFB 71 ; Lesson #LESSON254: PLAYTIME
  44287 DEFB 71 ; Lesson #LESSON255: PLAYTIME
 
-; UDG references for animatory states #N0-#N103 at row 0, column 0
+; UDG references for animatory states #b0-#b103 at row 0, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11460,25 +11462,25 @@ b44256 DEFB 38 ; Lesson #LESSON224: DINNER (MR WITHIT)
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N44292 }
-; { #AS14-#N15  | #N44302-#N44303 }
-; { #AS20       | #N44308 }
-; { #AS24-#N31  | #N44312-#N44319 }
-; { #AS36       | #N44324 }
-; { #AS40-#N41  | #N44328-#N44329 }
-; { #AS44-#N47  | #N44332-#N44335 }
-; { #AS52       | #N44340 }
-; { #AS58-#N59  | #N44346-#N44347 }
-; { #AS62       | #N44350 }
-; { #AS68       | #N44356 }
-; { #AS76       | #N44364 }
-; { #AS78       | #N44366 }
-; { #AS84       | #N44372 }
-; { #AS86       | #N44374 }
-; { #AS92       | #N44380 }
-; { #AS94       | #N44382 }
-; { #AS100      | #N44388 }
-; { #AS102      | #N44390 }
+; { #AS4        | #w44292 }
+; { #AS14-#b15  | #w44302-#w44303 }
+; { #AS20       | #w44308 }
+; { #AS24-#b31  | #w44312-#w44319 }
+; { #AS36       | #w44324 }
+; { #AS40-#b41  | #w44328-#w44329 }
+; { #AS44-#b47  | #w44332-#w44335 }
+; { #AS52       | #w44340 }
+; { #AS58-#b59  | #w44346-#w44347 }
+; { #AS62       | #w44350 }
+; { #AS68       | #w44356 }
+; { #AS76       | #w44364 }
+; { #AS78       | #w44366 }
+; { #AS84       | #w44372 }
+; { #AS86       | #w44374 }
+; { #AS92       | #w44380 }
+; { #AS94       | #w44382 }
+; { #AS100      | #w44388 }
+; { #AS102      | #w44390 }
 ; TABLE#
 b44288 DEFB 0,0,0,0,0,0,0,0,0,0,0,0,0,71,0,0
  44304 DEFB 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -11498,7 +11500,7 @@ t44392 DEFM "CAST OF CHARACTERS"
 ; Unused
 s44411 DEFS 4
 
-; UDG references for animatory states #N127-#N231 at row 0, column 0
+; UDG references for animatory states #b127-#b231 at row 0, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11506,25 +11508,25 @@ s44411 DEFS 4
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N44420 }
-; { #AS142-#N143 | #N44430-#N44431 }
-; { #AS148       | #N44436 }
-; { #AS152-#N159 | #N44440-#N44447 }
-; { #AS164       | #N44452 }
-; { #AS168-#N169 | #N44456-#N44457 }
-; { #AS172-#N175 | #N44460-#N44463 }
-; { #AS180       | #N44468 }
-; { #AS186-#N187 | #N44474-#N44475 }
-; { #AS190       | #N44478 }
-; { #AS196       | #N44484 }
-; { #AS204       | #N44492 }
-; { #AS206       | #N44494 }
-; { #AS212       | #N44500 }
-; { #AS214       | #N44502 }
-; { #AS220       | #N44508 }
-; { #AS222       | #N44510 }
-; { #AS228       | #N44516 }
-; { #AS230       | #N44518 }
+; { #AS132       | #w44420 }
+; { #AS142-#b143 | #w44430-#w44431 }
+; { #AS148       | #w44436 }
+; { #AS152-#b159 | #w44440-#w44447 }
+; { #AS164       | #w44452 }
+; { #AS168-#b169 | #w44456-#w44457 }
+; { #AS172-#b175 | #w44460-#w44463 }
+; { #AS180       | #w44468 }
+; { #AS186-#b187 | #w44474-#w44475 }
+; { #AS190       | #w44478 }
+; { #AS196       | #w44484 }
+; { #AS204       | #w44492 }
+; { #AS206       | #w44494 }
+; { #AS212       | #w44500 }
+; { #AS214       | #w44502 }
+; { #AS220       | #w44508 }
+; { #AS222       | #w44510 }
+; { #AS228       | #w44516 }
+; { #AS230       | #w44518 }
 ; TABLE#
 b44415 DEFB 0
  44416 DEFB 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -11561,12 +11563,12 @@ c44520 EXX           ;
 ; Unused
 s44539 DEFS 4
 
-; UDG reference for animatory state #N255 at row 0, column 0
+; UDG reference for animatory state #b255 at row 0, column 0
 ;
 ; Used by the routine at #R24843.
 b44543 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 1, column 0
+; UDG references for animatory states #b0-#b103 at row 1, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11574,25 +11576,25 @@ b44543 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N44548 }
-; { #AS14-#N15  | #N44558-#N44559 }
-; { #AS20       | #N44564 }
-; { #AS24-#N31  | #N44568-#N44575 }
-; { #AS36       | #N44580 }
-; { #AS40-#N41  | #N44584-#N44585 }
-; { #AS44-#N47  | #N44588-#N44591 }
-; { #AS52       | #N44596 }
-; { #AS58-#N59  | #N44602-#N44603 }
-; { #AS62       | #N44606 }
-; { #AS68       | #N44612 }
-; { #AS76       | #N44620 }
-; { #AS78       | #N44622 }
-; { #AS84       | #N44628 }
-; { #AS86       | #N44630 }
-; { #AS92       | #N44636 }
-; { #AS94       | #N44638 }
-; { #AS100      | #N44644 }
-; { #AS102      | #N44646 }
+; { #AS4        | #w44548 }
+; { #AS14-#b15  | #w44558-#w44559 }
+; { #AS20       | #w44564 }
+; { #AS24-#b31  | #w44568-#w44575 }
+; { #AS36       | #w44580 }
+; { #AS40-#b41  | #w44584-#w44585 }
+; { #AS44-#b47  | #w44588-#w44591 }
+; { #AS52       | #w44596 }
+; { #AS58-#b59  | #w44602-#w44603 }
+; { #AS62       | #w44606 }
+; { #AS68       | #w44612 }
+; { #AS76       | #w44620 }
+; { #AS78       | #w44622 }
+; { #AS84       | #w44628 }
+; { #AS86       | #w44630 }
+; { #AS92       | #w44636 }
+; { #AS94       | #w44638 }
+; { #AS100      | #w44644 }
+; { #AS102      | #w44646 }
 ; TABLE#
 b44544 DEFB 38,7,38,7,38,38,0,0,38,57,38,66,69,72,0,0
  44560 DEFB 0,33,0,33,0,0,0,0,0,23,0,17,0,23,0,0
@@ -11609,7 +11611,7 @@ b44544 DEFB 38,7,38,7,38,38,0,0,38,57,38,66,69,72,0,0
 t44648 DEFM "PRESS'C'TO CHANGE NAME"
  44670 DEFB 0 ; End marker
 
-; UDG references for animatory states #N127-#N231 at row 1, column 0
+; UDG references for animatory states #b127-#b231 at row 1, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11617,25 +11619,25 @@ t44648 DEFM "PRESS'C'TO CHANGE NAME"
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N44676 }
-; { #AS142-#N143 | #N44686-#N44687 }
-; { #AS148       | #N44692 }
-; { #AS152-#N159 | #N44696-#N44703 }
-; { #AS164       | #N44708 }
-; { #AS168-#N169 | #N44712-#N44713 }
-; { #AS172-#N175 | #N44716-#N44719 }
-; { #AS180       | #N44724 }
-; { #AS186-#N187 | #N44730-#N44731 }
-; { #AS190       | #N44734 }
-; { #AS196       | #N44740 }
-; { #AS204       | #N44748 }
-; { #AS206       | #N44750 }
-; { #AS212       | #N44756 }
-; { #AS214       | #N44758 }
-; { #AS220       | #N44764 }
-; { #AS222       | #N44766 }
-; { #AS228       | #N44772 }
-; { #AS230       | #N44774 }
+; { #AS132       | #w44676 }
+; { #AS142-#b143 | #w44686-#w44687 }
+; { #AS148       | #w44692 }
+; { #AS152-#b159 | #w44696-#w44703 }
+; { #AS164       | #w44708 }
+; { #AS168-#b169 | #w44712-#w44713 }
+; { #AS172-#b175 | #w44716-#w44719 }
+; { #AS180       | #w44724 }
+; { #AS186-#b187 | #w44730-#w44731 }
+; { #AS190       | #w44734 }
+; { #AS196       | #w44740 }
+; { #AS204       | #w44748 }
+; { #AS206       | #w44750 }
+; { #AS212       | #w44756 }
+; { #AS214       | #w44758 }
+; { #AS220       | #w44764 }
+; { #AS222       | #w44766 }
+; { #AS228       | #w44772 }
+; { #AS230       | #w44774 }
 ; TABLE#
 b44671 DEFB 0
  44672 DEFB 130,0,130,0,130,130,0,0,130,130,130,130,130,130,0,0
@@ -11673,12 +11675,12 @@ c44776 LD A,(DE)     ; #REGa=ASCII code of a character in the message
  44794 CALL 44520    ; }
  44797 JR 44776      ; Continue until the message is finished
 
-; UDG reference for animatory state #N255 at row 1, column 0
+; UDG reference for animatory state #b255 at row 1, column 0
 ;
 ; Used by the routine at #R24843.
 b44799 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 2, column 0
+; UDG references for animatory states #b0-#b103 at row 2, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11686,25 +11688,25 @@ b44799 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N44804 }
-; { #AS14-#N15  | #N44814-#N44815 }
-; { #AS20       | #N44820 }
-; { #AS24-#N31  | #N44824-#N44831 }
-; { #AS36       | #N44836 }
-; { #AS40-#N41  | #N44840-#N44841 }
-; { #AS44-#N47  | #N44844-#N44847 }
-; { #AS52       | #N44852 }
-; { #AS58-#N59  | #N44858-#N44859 }
-; { #AS62       | #N44862 }
-; { #AS68       | #N44868 }
-; { #AS76       | #N44876 }
-; { #AS78       | #N44878 }
-; { #AS84       | #N44884 }
-; { #AS86       | #N44886 }
-; { #AS92       | #N44892 }
-; { #AS94       | #N44894 }
-; { #AS100      | #N44900 }
-; { #AS102      | #N44902 }
+; { #AS4        | #w44804 }
+; { #AS14-#b15  | #w44814-#w44815 }
+; { #AS20       | #w44820 }
+; { #AS24-#b31  | #w44824-#w44831 }
+; { #AS36       | #w44836 }
+; { #AS40-#b41  | #w44840-#w44841 }
+; { #AS44-#b47  | #w44844-#w44847 }
+; { #AS52       | #w44852 }
+; { #AS58-#b59  | #w44858-#w44859 }
+; { #AS62       | #w44862 }
+; { #AS68       | #w44868 }
+; { #AS76       | #w44876 }
+; { #AS78       | #w44878 }
+; { #AS84       | #w44884 }
+; { #AS86       | #w44886 }
+; { #AS92       | #w44892 }
+; { #AS94       | #w44894 }
+; { #AS100      | #w44900 }
+; { #AS102      | #w44902 }
 ; TABLE#
 b44800 DEFB 3,8,3,8,17,17,0,0,52,55,60,64,70,70,0,0
  44816 DEFB 3,8,3,8,17,17,0,0,0,24,0,28,0,24,0,0
@@ -11727,7 +11729,7 @@ t44904 DEFM "ENTER NEW NAME"
 ;
 @ignoreua
 ; A Character's animatory state
-; HL #N39008 (96, 152)
+; HL #w39008 (96, 152)
 @ssub=LD DE,46571+1
 @label=SETASY
 c44919 LD DE,46572   ;
@@ -11735,7 +11737,7 @@ c44919 LD DE,46572   ;
                      ; (i.e. if we're dealing with a teacher)
  44924 JP 45429      ;
 
-; UDG references for animatory states #N127-#N231 at row 2, column 0
+; UDG references for animatory states #b127-#b231 at row 2, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11743,25 +11745,25 @@ c44919 LD DE,46572   ;
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N44932 }
-; { #AS142-#N143 | #N44942-#N44943 }
-; { #AS148       | #N44948 }
-; { #AS152-#N159 | #N44952-#N44959 }
-; { #AS164       | #N44964 }
-; { #AS168-#N169 | #N44968-#N44969 }
-; { #AS172-#N175 | #N44972-#N44975 }
-; { #AS180       | #N44980 }
-; { #AS186-#N187 | #N44986-#N44987 }
-; { #AS190       | #N44990 }
-; { #AS196       | #N44996 }
-; { #AS204       | #N45004 }
-; { #AS206       | #N45006 }
-; { #AS212       | #N45012 }
-; { #AS214       | #N45014 }
-; { #AS220       | #N45020 }
-; { #AS222       | #N45022 }
-; { #AS228       | #N45028 }
-; { #AS230       | #N45030 }
+; { #AS132       | #w44932 }
+; { #AS142-#b143 | #w44942-#w44943 }
+; { #AS148       | #w44948 }
+; { #AS152-#b159 | #w44952-#w44959 }
+; { #AS164       | #w44964 }
+; { #AS168-#b169 | #w44968-#w44969 }
+; { #AS172-#b175 | #w44972-#w44975 }
+; { #AS180       | #w44980 }
+; { #AS186-#b187 | #w44986-#w44987 }
+; { #AS190       | #w44990 }
+; { #AS196       | #w44996 }
+; { #AS204       | #w45004 }
+; { #AS206       | #w45006 }
+; { #AS212       | #w45012 }
+; { #AS214       | #w45014 }
+; { #AS220       | #w45020 }
+; { #AS222       | #w45022 }
+; { #AS228       | #w45028 }
+; { #AS230       | #w45030 }
 ; TABLE#
 b44927 DEFB 0
  44928 DEFB 133,0,133,0,146,146,151,0,182,184,133,133,133,133,0,0
@@ -11797,12 +11799,12 @@ c45032 EX DE,HL      ; Now #REGde=message address, #REGhl=display file address
 ; Unused
 s45053 DEFS 2
 
-; UDG reference for animatory state #N255 at row 2, column 0
+; UDG reference for animatory state #b255 at row 2, column 0
 ;
 ; Used by the routine at #R24843.
 b45055 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 3, column 0
+; UDG references for animatory states #b0-#b103 at row 3, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11810,25 +11812,25 @@ b45055 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N45060 }
-; { #AS14-#N15  | #N45070-#N45071 }
-; { #AS20       | #N45076 }
-; { #AS24-#N31  | #N45080-#N45087 }
-; { #AS36       | #N45092 }
-; { #AS40-#N41  | #N45096-#N45097 }
-; { #AS44-#N47  | #N45100-#N45103 }
-; { #AS52       | #N45108 }
-; { #AS58-#N59  | #N45114-#N45115 }
-; { #AS62       | #N45118 }
-; { #AS68       | #N45124 }
-; { #AS76       | #N45132 }
-; { #AS78       | #N45134 }
-; { #AS84       | #N45140 }
-; { #AS86       | #N45142 }
-; { #AS92       | #N45148 }
-; { #AS94       | #N45150 }
-; { #AS100      | #N45156 }
-; { #AS102      | #N45158 }
+; { #AS4        | #w45060 }
+; { #AS14-#b15  | #w45070-#w45071 }
+; { #AS20       | #w45076 }
+; { #AS24-#b31  | #w45080-#w45087 }
+; { #AS36       | #w45092 }
+; { #AS40-#b41  | #w45096-#w45097 }
+; { #AS44-#b47  | #w45100-#w45103 }
+; { #AS52       | #w45108 }
+; { #AS58-#b59  | #w45114-#w45115 }
+; { #AS62       | #w45118 }
+; { #AS68       | #w45124 }
+; { #AS76       | #w45132 }
+; { #AS78       | #w45134 }
+; { #AS84       | #w45140 }
+; { #AS86       | #w45142 }
+; { #AS92       | #w45148 }
+; { #AS94       | #w45150 }
+; { #AS100      | #w45156 }
+; { #AS102      | #w45158 }
 ; TABLE#
 b45056 DEFB 0,11,0,14,19,19,24,27,0,0,62,62,0,0,0,0
  45072 DEFB 0,11,0,14,19,19,24,27,0,25,0,29,0,25,0,0
@@ -11867,7 +11869,7 @@ c45170 LD A,8        ; {#REGc=8-#REGb
  45181 LD L,A        ; Place this LSB in #REGl
  45182 RET           ;
 
-; UDG references for animatory states #N127-#N231 at row 3, column 0
+; UDG references for animatory states #b127-#b231 at row 3, column 0
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11875,25 +11877,25 @@ c45170 LD A,8        ; {#REGc=8-#REGb
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N45188 }
-; { #AS142-#N143 | #N45198-#N45199 }
-; { #AS148       | #N45204 }
-; { #AS152-#N159 | #N45208-#N45215 }
-; { #AS164       | #N45220 }
-; { #AS168-#N169 | #N45224-#N45225 }
-; { #AS172-#N175 | #N45228-#N45231 }
-; { #AS180       | #N45236 }
-; { #AS186-#N187 | #N45242-#N45243 }
-; { #AS190       | #N45246 }
-; { #AS196       | #N45252 }
-; { #AS204       | #N45260 }
-; { #AS206       | #N45262 }
-; { #AS212       | #N45268 }
-; { #AS214       | #N45270 }
-; { #AS220       | #N45276 }
-; { #AS222       | #N45278 }
-; { #AS228       | #N45284 }
-; { #AS230       | #N45286 }
+; { #AS132       | #w45188 }
+; { #AS142-#b143 | #w45198-#w45199 }
+; { #AS148       | #w45204 }
+; { #AS152-#b159 | #w45208-#w45215 }
+; { #AS164       | #w45220 }
+; { #AS168-#b169 | #w45224-#w45225 }
+; { #AS172-#b175 | #w45228-#w45231 }
+; { #AS180       | #w45236 }
+; { #AS186-#b187 | #w45242-#w45243 }
+; { #AS190       | #w45246 }
+; { #AS196       | #w45252 }
+; { #AS204       | #w45260 }
+; { #AS206       | #w45262 }
+; { #AS212       | #w45268 }
+; { #AS214       | #w45270 }
+; { #AS220       | #w45276 }
+; { #AS222       | #w45278 }
+; { #AS228       | #w45284 }
+; { #AS230       | #w45286 }
 ; TABLE#
 b45183 DEFB 0
  45184 DEFB 0,0,0,0,0,0,154,157,0,0,133,133,0,0,0,0
@@ -11926,12 +11928,12 @@ c45288 LD A,184      ; {Set #REGhl to the address of the appropriate character
  45307 PUSH HL       ; Save this message address
  45308 JP 45544      ;
 
-; UDG reference for animatory state #N255 at row 3, column 0
+; UDG reference for animatory state #b255 at row 3, column 0
 ;
 ; Used by the routine at #R24843.
 b45311 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 0, column 1
+; UDG references for animatory states #b0-#b103 at row 0, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11939,25 +11941,25 @@ b45311 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N45316 }
-; { #AS14-#N15  | #N45326-#N45327 }
-; { #AS20       | #N45332 }
-; { #AS24-#N31  | #N45336-#N45343 }
-; { #AS36       | #N45348 }
-; { #AS40-#N41  | #N45352-#N45353 }
-; { #AS44-#N47  | #N45356-#N45359 }
-; { #AS52       | #N45364 }
-; { #AS58-#N59  | #N45370-#N45371 }
-; { #AS62       | #N45374 }
-; { #AS68       | #N45380 }
-; { #AS76       | #N45388 }
-; { #AS78       | #N45390 }
-; { #AS84       | #N45396 }
-; { #AS86       | #N45398 }
-; { #AS92       | #N45404 }
-; { #AS94       | #N45406 }
-; { #AS100      | #N45412 }
-; { #AS102      | #N45414 }
+; { #AS4        | #w45316 }
+; { #AS14-#b15  | #w45326-#w45327 }
+; { #AS20       | #w45332 }
+; { #AS24-#b31  | #w45336-#w45343 }
+; { #AS36       | #w45348 }
+; { #AS40-#b41  | #w45352-#w45353 }
+; { #AS44-#b47  | #w45356-#w45359 }
+; { #AS52       | #w45364 }
+; { #AS58-#b59  | #w45370-#w45371 }
+; { #AS62       | #w45374 }
+; { #AS68       | #w45380 }
+; { #AS76       | #w45388 }
+; { #AS78       | #w45390 }
+; { #AS84       | #w45396 }
+; { #AS86       | #w45398 }
+; { #AS92       | #w45404 }
+; { #AS94       | #w45406 }
+; { #AS100      | #w45412 }
+; { #AS102      | #w45414 }
 ; TABLE#
 b45312 DEFB 0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0
  45328 DEFB 0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0
@@ -11980,8 +11982,8 @@ t45416 DEFM "THE TEARAWAY"
 ; to be walked onto the screen is a boy.
 ;
 @ignoreua
-; DE #N46572
-; HL #N39008 (96, 152)
+; DE #w46572
+; HL #w39008 (96, 152)
 @label=SETASY2
 c45429 JR C,45433    ; Jump if we are dealing with a boy
  45431 LD H,164      ; 164=MR ROCKITT
@@ -11990,7 +11992,7 @@ c45429 JR C,45433    ; Jump if we are dealing with a boy
  45435 EX DE,HL      ; appropriate}
  45436 JP 46202      ;
 
-; UDG references for animatory states #N127-#N231 at row 0, column 1
+; UDG references for animatory states #b127-#b231 at row 0, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -11998,25 +12000,25 @@ c45429 JR C,45433    ; Jump if we are dealing with a boy
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N45444 }
-; { #AS142-#N143 | #N45454-#N45455 }
-; { #AS148       | #N45460 }
-; { #AS152-#N159 | #N45464-#N45471 }
-; { #AS164       | #N45476 }
-; { #AS168-#N169 | #N45480-#N45481 }
-; { #AS172-#N175 | #N45484-#N45487 }
-; { #AS180       | #N45492 }
-; { #AS186-#N187 | #N45498-#N45499 }
-; { #AS190       | #N45502 }
-; { #AS196       | #N45508 }
-; { #AS204       | #N45516 }
-; { #AS206       | #N45518 }
-; { #AS212       | #N45524 }
-; { #AS214       | #N45526 }
-; { #AS220       | #N45532 }
-; { #AS222       | #N45534 }
-; { #AS228       | #N45540 }
-; { #AS230       | #N45542 }
+; { #AS132       | #w45444 }
+; { #AS142-#b143 | #w45454-#w45455 }
+; { #AS148       | #w45460 }
+; { #AS152-#b159 | #w45464-#w45471 }
+; { #AS164       | #w45476 }
+; { #AS168-#b169 | #w45480-#w45481 }
+; { #AS172-#b175 | #w45484-#w45487 }
+; { #AS180       | #w45492 }
+; { #AS186-#b187 | #w45498-#w45499 }
+; { #AS190       | #w45502 }
+; { #AS196       | #w45508 }
+; { #AS204       | #w45516 }
+; { #AS206       | #w45518 }
+; { #AS212       | #w45524 }
+; { #AS214       | #w45526 }
+; { #AS220       | #w45532 }
+; { #AS222       | #w45534 }
+; { #AS228       | #w45540 }
+; { #AS230       | #w45542 }
 ; TABLE#
 b45439 DEFB 0
  45440 DEFB 0,0,0,0,149,0,0,0,0,0,0,0,0,0,0,0
@@ -12053,12 +12055,12 @@ c45544 PUSH BC       ;
        DEFS 2
 @rsub+end
 
-; UDG reference for animatory state #N255 at row 0, column 1
+; UDG reference for animatory state #b255 at row 0, column 1
 ;
 ; Used by the routine at #R24843.
 b45567 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 1, column 1
+; UDG references for animatory states #b0-#b103 at row 1, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12066,25 +12068,25 @@ b45567 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N45572 }
-; { #AS14-#N15  | #N45582-#N45583 }
-; { #AS20       | #N45588 }
-; { #AS24-#N31  | #N45592-#N45599 }
-; { #AS36       | #N45604 }
-; { #AS40-#N41  | #N45608-#N45609 }
-; { #AS44-#N47  | #N45612-#N45615 }
-; { #AS52       | #N45620 }
-; { #AS58-#N59  | #N45626-#N45627 }
-; { #AS62       | #N45630 }
-; { #AS68       | #N45636 }
-; { #AS76       | #N45644 }
-; { #AS78       | #N45646 }
-; { #AS84       | #N45652 }
-; { #AS86       | #N45654 }
-; { #AS92       | #N45660 }
-; { #AS94       | #N45662 }
-; { #AS100      | #N45668 }
-; { #AS102      | #N45670 }
+; { #AS4        | #w45572 }
+; { #AS14-#b15  | #w45582-#w45583 }
+; { #AS20       | #w45588 }
+; { #AS24-#b31  | #w45592-#w45599 }
+; { #AS36       | #w45604 }
+; { #AS40-#b41  | #w45608-#w45609 }
+; { #AS44-#b47  | #w45612-#w45615 }
+; { #AS52       | #w45620 }
+; { #AS58-#b59  | #w45626-#w45627 }
+; { #AS62       | #w45630 }
+; { #AS68       | #w45636 }
+; { #AS76       | #w45644 }
+; { #AS78       | #w45646 }
+; { #AS84       | #w45652 }
+; { #AS86       | #w45654 }
+; { #AS92       | #w45660 }
+; { #AS94       | #w45662 }
+; { #AS100      | #w45668 }
+; { #AS102      | #w45670 }
 ; TABLE#
 b45568 DEFB 1,9,1,9,1,1,0,0,1,58,1,68,1,1,0,0
  45584 DEFB 32,34,32,34,32,32,0,0,0,0,0,20,0,0,0,0
@@ -12116,7 +12118,7 @@ c45682 XOR A         ; {Clear the buffer at #R23296 in preparation for the
  45690 LD C,254      ; Initialise the pixel column counter
  45692 JP 45937      ;
 
-; UDG references for animatory states #N127-#N231 at row 1, column 1
+; UDG references for animatory states #b127-#b231 at row 1, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12124,25 +12126,25 @@ c45682 XOR A         ; {Clear the buffer at #R23296 in preparation for the
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N45700 }
-; { #AS142-#N143 | #N45710-#N45711 }
-; { #AS148       | #N45716 }
-; { #AS152-#N159 | #N45720-#N45727 }
-; { #AS164       | #N45732 }
-; { #AS168-#N169 | #N45736-#N45737 }
-; { #AS172-#N175 | #N45740-#N45743 }
-; { #AS180       | #N45748 }
-; { #AS186-#N187 | #N45754-#N45755 }
-; { #AS190       | #N45758 }
-; { #AS196       | #N45764 }
-; { #AS204       | #N45772 }
-; { #AS206       | #N45774 }
-; { #AS212       | #N45780 }
-; { #AS214       | #N45782 }
-; { #AS220       | #N45788 }
-; { #AS222       | #N45790 }
-; { #AS228       | #N45796 }
-; { #AS230       | #N45798 }
+; { #AS132       | #w45700 }
+; { #AS142-#b143 | #w45710-#w45711 }
+; { #AS148       | #w45716 }
+; { #AS152-#b159 | #w45720-#w45727 }
+; { #AS164       | #w45732 }
+; { #AS168-#b169 | #w45736-#w45737 }
+; { #AS172-#b175 | #w45740-#w45743 }
+; { #AS180       | #w45748 }
+; { #AS186-#b187 | #w45754-#w45755 }
+; { #AS190       | #w45758 }
+; { #AS196       | #w45764 }
+; { #AS204       | #w45772 }
+; { #AS206       | #w45774 }
+; { #AS212       | #w45780 }
+; { #AS214       | #w45782 }
+; { #AS220       | #w45788 }
+; { #AS222       | #w45790 }
+; { #AS228       | #w45796 }
+; { #AS230       | #w45798 }
 ; TABLE#
 b45695 DEFB 73
  45696 DEFB 129,137,129,137,129,129,0,0,129,186,129,196,129,129,0,0
@@ -12160,7 +12162,7 @@ b45695 DEFB 73
 ;
 @ignoreua
 ; A 1-8 (corresponding to one of the eight main characters)
-; HL #N39008 (96, 152)
+; HL #w39008 (96, 152)
 @label=WALKCHAR3
 c45800 SUB 5         ; Are we dealing with one of the teachers?
  45802 JR C,45811    ; Jump if so
@@ -12178,12 +12180,12 @@ c45800 SUB 5         ; Are we dealing with one of the teachers?
                      ; (ERIC)}
  45820 JP 46056      ;
 
-; UDG reference for animatory state #N255 at row 1, column 1
+; UDG reference for animatory state #b255 at row 1, column 1
 ;
 ; Used by the routine at #R24843.
 b45823 DEFB 201
 
-; UDG references for animatory states #N0-#N103 at row 2, column 1
+; UDG references for animatory states #b0-#b103 at row 2, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12191,25 +12193,25 @@ b45823 DEFB 201
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N45828 }
-; { #AS14-#N15  | #N45838-#N45839 }
-; { #AS20       | #N45844 }
-; { #AS24-#N31  | #N45848-#N45855 }
-; { #AS36       | #N45860 }
-; { #AS40-#N41  | #N45864-#N45865 }
-; { #AS44-#N47  | #N45868-#N45871 }
-; { #AS52       | #N45876 }
-; { #AS58-#N59  | #N45882-#N45883 }
-; { #AS62       | #N45886 }
-; { #AS68       | #N45892 }
-; { #AS76       | #N45900 }
-; { #AS78       | #N45902 }
-; { #AS84       | #N45908 }
-; { #AS86       | #N45910 }
-; { #AS92       | #N45916 }
-; { #AS94       | #N45918 }
-; { #AS100      | #N45924 }
-; { #AS102      | #N45926 }
+; { #AS4        | #w45828 }
+; { #AS14-#b15  | #w45838-#w45839 }
+; { #AS20       | #w45844 }
+; { #AS24-#b31  | #w45848-#w45855 }
+; { #AS36       | #w45860 }
+; { #AS40-#b41  | #w45864-#w45865 }
+; { #AS44-#b47  | #w45868-#w45871 }
+; { #AS52       | #w45876 }
+; { #AS58-#b59  | #w45882-#w45883 }
+; { #AS62       | #w45886 }
+; { #AS68       | #w45892 }
+; { #AS76       | #w45900 }
+; { #AS78       | #w45902 }
+; { #AS84       | #w45908 }
+; { #AS86       | #w45910 }
+; { #AS92       | #w45916 }
+; { #AS94       | #w45918 }
+; { #AS100      | #w45924 }
+; { #AS102      | #w45926 }
 ; TABLE#
 b45824 DEFB 4,10,4,10,16,16,22,0,53,53,61,65,4,4,0,0
  45840 DEFB 30,31,30,31,16,16,35,0,0,26,0,30,0,26,0,0
@@ -12243,7 +12245,7 @@ c45937 CALL 44776    ; Slide the message text into the graphic buffer
  45948 JR NZ,45943   ; }
  45950 RET           ;
 
-; UDG references for animatory states #N127-#N231 at row 2, column 1
+; UDG references for animatory states #b127-#b231 at row 2, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12251,25 +12253,25 @@ c45937 CALL 44776    ; Slide the message text into the graphic buffer
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N45956 }
-; { #AS142-#N143 | #N45966-#N45967 }
-; { #AS148       | #N45972 }
-; { #AS152-#N159 | #N45976-#N45983 }
-; { #AS164       | #N45988 }
-; { #AS168-#N169 | #N45992-#N45993 }
-; { #AS172-#N175 | #N45996-#N45999 }
-; { #AS180       | #N46004 }
-; { #AS186-#N187 | #N46010-#N46011 }
-; { #AS190       | #N46014 }
-; { #AS196       | #N46020 }
-; { #AS204       | #N46028 }
-; { #AS206       | #N46030 }
-; { #AS212       | #N46036 }
-; { #AS214       | #N46038 }
-; { #AS220       | #N46044 }
-; { #AS222       | #N46046 }
-; { #AS228       | #N46052 }
-; { #AS230       | #N46054 }
+; { #AS132       | #w45956 }
+; { #AS142-#b143 | #w45966-#w45967 }
+; { #AS148       | #w45972 }
+; { #AS152-#b159 | #w45976-#w45983 }
+; { #AS164       | #w45988 }
+; { #AS168-#b169 | #w45992-#w45993 }
+; { #AS172-#b175 | #w45996-#w45999 }
+; { #AS180       | #w46004 }
+; { #AS186-#b187 | #w46010-#w46011 }
+; { #AS190       | #w46014 }
+; { #AS196       | #w46020 }
+; { #AS204       | #w46028 }
+; { #AS206       | #w46030 }
+; { #AS212       | #w46036 }
+; { #AS214       | #w46038 }
+; { #AS220       | #w46044 }
+; { #AS222       | #w46046 }
+; { #AS228       | #w46052 }
+; { #AS230       | #w46054 }
 ; TABLE#
 b45951 DEFB 0
  45952 DEFB 132,138,132,138,144,144,150,0,181,181,189,193,132,132,0,0
@@ -12288,7 +12290,7 @@ b45951 DEFB 0
 @ignoreua
 ; A Animatory state
 ; B 1-8 (corresponding to one of the eight main characters)
-; HL #N39008 (96, 152)
+; HL #w39008 (96, 152)
 @label=WALKCHAR4
 c46056 PUSH BC       ;
  46057 CALL 44919    ; Set the animatory state and y-coordinate of the
@@ -12319,12 +12321,12 @@ c46070 LD HL,44648   ; #R44648: 'PRESS'C'TO CHANGE NAME'
                      ; the message
  46076 JP 45032      ; Print the message
 
-; UDG reference for animatory state #N255 at row 2, column 1
+; UDG reference for animatory state #b255 at row 2, column 1
 ;
 ; Used by the routine at #R24843.
 b46079 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 3, column 1
+; UDG references for animatory states #b0-#b103 at row 3, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12332,25 +12334,25 @@ b46079 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N46084 }
-; { #AS14-#N15  | #N46094-#N46095 }
-; { #AS20       | #N46100 }
-; { #AS24-#N31  | #N46104-#N46111 }
-; { #AS36       | #N46116 }
-; { #AS40-#N41  | #N46120-#N46121 }
-; { #AS44-#N47  | #N46124-#N46127 }
-; { #AS52       | #N46132 }
-; { #AS58-#N59  | #N46138-#N46139 }
-; { #AS62       | #N46142 }
-; { #AS68       | #N46148 }
-; { #AS76       | #N46156 }
-; { #AS78       | #N46158 }
-; { #AS84       | #N46164 }
-; { #AS86       | #N46166 }
-; { #AS92       | #N46172 }
-; { #AS94       | #N46174 }
-; { #AS100      | #N46180 }
-; { #AS102      | #N46182 }
+; { #AS4        | #w46084 }
+; { #AS14-#b15  | #w46094-#w46095 }
+; { #AS20       | #w46100 }
+; { #AS24-#b31  | #w46104-#w46111 }
+; { #AS36       | #w46116 }
+; { #AS40-#b41  | #w46120-#w46121 }
+; { #AS44-#b47  | #w46124-#w46127 }
+; { #AS52       | #w46132 }
+; { #AS58-#b59  | #w46138-#w46139 }
+; { #AS62       | #w46142 }
+; { #AS68       | #w46148 }
+; { #AS76       | #w46156 }
+; { #AS78       | #w46158 }
+; { #AS84       | #w46164 }
+; { #AS86       | #w46166 }
+; { #AS92       | #w46172 }
+; { #AS94       | #w46174 }
+; { #AS100      | #w46180 }
+; { #AS102      | #w46182 }
 ; TABLE#
 b46080 DEFB 6,12,13,15,20,20,25,28,6,6,63,63,6,6,0,0
  46096 DEFB 6,12,13,15,20,20,25,28,0,27,0,31,0,27,0,0
@@ -12391,7 +12393,7 @@ c46202 LD (HL),A     ; Set the character's animatory state
  46204 LD (HL),164   ; Set the character's y-coordinate to 164
  46206 RET           ;
 
-; UDG references for animatory states #N127-#N231 at row 3, column 1
+; UDG references for animatory states #b127-#b231 at row 3, column 1
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12399,25 +12401,25 @@ c46202 LD (HL),A     ; Set the character's animatory state
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N46212 }
-; { #AS142-#N143 | #N46222-#N46223 }
-; { #AS148       | #N46228 }
-; { #AS152-#N159 | #N46232-#N46239 }
-; { #AS164       | #N46244 }
-; { #AS168-#N169 | #N46248-#N46249 }
-; { #AS172-#N175 | #N46252-#N46255 }
-; { #AS180       | #N46260 }
-; { #AS186-#N187 | #N46266-#N46267 }
-; { #AS190       | #N46270 }
-; { #AS196       | #N46276 }
-; { #AS204       | #N46284 }
-; { #AS206       | #N46286 }
-; { #AS212       | #N46292 }
-; { #AS214       | #N46294 }
-; { #AS220       | #N46300 }
-; { #AS222       | #N46302 }
-; { #AS228       | #N46308 }
-; { #AS230       | #N46310 }
+; { #AS132       | #w46212 }
+; { #AS142-#b143 | #w46222-#w46223 }
+; { #AS148       | #w46228 }
+; { #AS152-#b159 | #w46232-#w46239 }
+; { #AS164       | #w46244 }
+; { #AS168-#b169 | #w46248-#w46249 }
+; { #AS172-#b175 | #w46252-#w46255 }
+; { #AS180       | #w46260 }
+; { #AS186-#b187 | #w46266-#w46267 }
+; { #AS190       | #w46270 }
+; { #AS196       | #w46276 }
+; { #AS204       | #w46284 }
+; { #AS206       | #w46286 }
+; { #AS212       | #w46292 }
+; { #AS214       | #w46294 }
+; { #AS220       | #w46300 }
+; { #AS222       | #w46302 }
+; { #AS228       | #w46308 }
+; { #AS230       | #w46310 }
 ; TABLE#
 b46207 DEFB 0
  46208 DEFB 134,140,141,143,148,148,153,156,134,134,191,191,134,134,0,0
@@ -12455,12 +12457,12 @@ c46312 CALL 25108    ; Update the SRB for the character's current location
                      ; update the SRB
  46332 JP 27026      ; Update the display
 
-; UDG reference for animatory state #N255 at row 3, column 1
+; UDG reference for animatory state #b255 at row 3, column 1
 ;
 ; Used by the routine at #R24843.
 b46335 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 0, column 2
+; UDG references for animatory states #b0-#b103 at row 0, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12468,25 +12470,25 @@ b46335 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N46340 }
-; { #AS14-#N15  | #N46350-#N46351 }
-; { #AS20       | #N46356 }
-; { #AS24-#N31  | #N46360-#N46367 }
-; { #AS36       | #N46372 }
-; { #AS40-#N41  | #N46376-#N46377 }
-; { #AS44-#N47  | #N46380-#N46383 }
-; { #AS52       | #N46388 }
-; { #AS58-#N59  | #N46394-#N46395 }
-; { #AS62       | #N46398 }
-; { #AS68       | #N46404 }
-; { #AS76       | #N46412 }
-; { #AS78       | #N46414 }
-; { #AS84       | #N46420 }
-; { #AS86       | #N46422 }
-; { #AS92       | #N46428 }
-; { #AS94       | #N46430 }
-; { #AS100      | #N46436 }
-; { #AS102      | #N46438 }
+; { #AS4        | #w46340 }
+; { #AS14-#b15  | #w46350-#w46351 }
+; { #AS20       | #w46356 }
+; { #AS24-#b31  | #w46360-#w46367 }
+; { #AS36       | #w46372 }
+; { #AS40-#b41  | #w46376-#w46377 }
+; { #AS44-#b47  | #w46380-#w46383 }
+; { #AS52       | #w46388 }
+; { #AS58-#b59  | #w46394-#w46395 }
+; { #AS62       | #w46398 }
+; { #AS68       | #w46404 }
+; { #AS76       | #w46412 }
+; { #AS78       | #w46414 }
+; { #AS84       | #w46420 }
+; { #AS86       | #w46422 }
+; { #AS92       | #w46428 }
+; { #AS94       | #w46430 }
+; { #AS100      | #w46436 }
+; { #AS102      | #w46438 }
 ; TABLE#
 b46336 DEFB 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
  46352 DEFB 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -12506,7 +12508,7 @@ t46440 DEFM "THE SCIENCE TEACHER"
 ; Unused
 s46460 DEFS 3
 
-; UDG references for animatory states #N127-#N231 at row 0, column 2
+; UDG references for animatory states #b127-#b231 at row 0, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12514,25 +12516,25 @@ s46460 DEFS 3
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N46468 }
-; { #AS142-#N143 | #N46478-#N46479 }
-; { #AS148       | #N46484 }
-; { #AS152-#N159 | #N46488-#N46495 }
-; { #AS164       | #N46500 }
-; { #AS168-#N169 | #N46504-#N46505 }
-; { #AS172-#N175 | #N46508-#N46511 }
-; { #AS180       | #N46516 }
-; { #AS186-#N187 | #N46522-#N46523 }
-; { #AS190       | #N46526 }
-; { #AS196       | #N46532 }
-; { #AS204       | #N46540 }
-; { #AS206       | #N46542 }
-; { #AS212       | #N46548 }
-; { #AS214       | #N46550 }
-; { #AS220       | #N46556 }
-; { #AS222       | #N46558 }
-; { #AS228       | #N46564 }
-; { #AS230       | #N46566 }
+; { #AS132       | #w46468 }
+; { #AS142-#b143 | #w46478-#w46479 }
+; { #AS148       | #w46484 }
+; { #AS152-#b159 | #w46488-#w46495 }
+; { #AS164       | #w46500 }
+; { #AS168-#b169 | #w46504-#w46505 }
+; { #AS172-#b175 | #w46508-#w46511 }
+; { #AS180       | #w46516 }
+; { #AS186-#b187 | #w46522-#w46523 }
+; { #AS190       | #w46526 }
+; { #AS196       | #w46532 }
+; { #AS204       | #w46540 }
+; { #AS206       | #w46542 }
+; { #AS212       | #w46548 }
+; { #AS214       | #w46550 }
+; { #AS220       | #w46556 }
+; { #AS222       | #w46558 }
+; { #AS228       | #w46564 }
+; { #AS230       | #w46566 }
 ; TABLE#
 b46463 DEFB 0
  46464 DEFB 0,0,0,0,0,0,0,0,0,0,0,0,0,199,0,0
@@ -12568,12 +12570,12 @@ c46568 LD B,38       ; The character will take 38 steps along the catwalk
 ; Unused
 s46590 DEFB 0
 
-; UDG reference for animatory state #N255 at row 0, column 2
+; UDG reference for animatory state #b255 at row 0, column 2
 ;
 ; Used by the routine at #R24843.
 b46591 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 1, column 2
+; UDG references for animatory states #b0-#b103 at row 1, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12581,25 +12583,25 @@ b46591 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N46596 }
-; { #AS14-#N15  | #N46606-#N46607 }
-; { #AS20       | #N46612 }
-; { #AS24-#N31  | #N46616-#N46623 }
-; { #AS36       | #N46628 }
-; { #AS40-#N41  | #N46632-#N46633 }
-; { #AS44-#N47  | #N46636-#N46639 }
-; { #AS52       | #N46644 }
-; { #AS58-#N59  | #N46650-#N46651 }
-; { #AS62       | #N46654 }
-; { #AS68       | #N46660 }
-; { #AS76       | #N46668 }
-; { #AS78       | #N46670 }
-; { #AS84       | #N46676 }
-; { #AS86       | #N46678 }
-; { #AS92       | #N46684 }
-; { #AS94       | #N46686 }
-; { #AS100      | #N46692 }
-; { #AS102      | #N46694 }
+; { #AS4        | #w46596 }
+; { #AS14-#b15  | #w46606-#w46607 }
+; { #AS20       | #w46612 }
+; { #AS24-#b31  | #w46616-#w46623 }
+; { #AS36       | #w46628 }
+; { #AS40-#b41  | #w46632-#w46633 }
+; { #AS44-#b47  | #w46636-#w46639 }
+; { #AS52       | #w46644 }
+; { #AS58-#b59  | #w46650-#w46651 }
+; { #AS62       | #w46654 }
+; { #AS68       | #w46660 }
+; { #AS76       | #w46668 }
+; { #AS78       | #w46670 }
+; { #AS84       | #w46676 }
+; { #AS86       | #w46678 }
+; { #AS92       | #w46684 }
+; { #AS94       | #w46686 }
+; { #AS100      | #w46692 }
+; { #AS102      | #w46694 }
 ; TABLE#
 b46592 DEFB 2,0,2,0,2,2,0,0,2,2,2,2,2,2,0,0
  46608 DEFB 39,0,39,0,39,39,0,0,0,0,0,0,0,0,0,0
@@ -12619,7 +12621,7 @@ t46696 DEFM "THE GEOGRAPHY TEACHER"
 ; Unused
 s46718 DEFB 0
 
-; UDG references for animatory states #N127-#N231 at row 1, column 2
+; UDG references for animatory states #b127-#b231 at row 1, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12627,25 +12629,25 @@ s46718 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N46724 }
-; { #AS142-#N143 | #N46734-#N46735 }
-; { #AS148       | #N46740 }
-; { #AS152-#N159 | #N46744-#N46751 }
-; { #AS164       | #N46756 }
-; { #AS168-#N169 | #N46760-#N46761 }
-; { #AS172-#N175 | #N46764-#N46767 }
-; { #AS180       | #N46772 }
-; { #AS186-#N187 | #N46778-#N46779 }
-; { #AS190       | #N46782 }
-; { #AS196       | #N46788 }
-; { #AS204       | #N46796 }
-; { #AS206       | #N46798 }
-; { #AS212       | #N46804 }
-; { #AS214       | #N46806 }
-; { #AS220       | #N46812 }
-; { #AS222       | #N46814 }
-; { #AS228       | #N46820 }
-; { #AS230       | #N46822 }
+; { #AS132       | #w46724 }
+; { #AS142-#b143 | #w46734-#w46735 }
+; { #AS148       | #w46740 }
+; { #AS152-#b159 | #w46744-#w46751 }
+; { #AS164       | #w46756 }
+; { #AS168-#b169 | #w46760-#w46761 }
+; { #AS172-#b175 | #w46764-#w46767 }
+; { #AS180       | #w46772 }
+; { #AS186-#b187 | #w46778-#w46779 }
+; { #AS190       | #w46782 }
+; { #AS196       | #w46788 }
+; { #AS204       | #w46796 }
+; { #AS206       | #w46798 }
+; { #AS212       | #w46804 }
+; { #AS214       | #w46806 }
+; { #AS220       | #w46812 }
+; { #AS222       | #w46814 }
+; { #AS228       | #w46820 }
+; { #AS230       | #w46822 }
 ; TABLE#
 b46719 DEFB 0
  46720 DEFB 166,135,166,135,166,166,0,0,166,185,166,194,197,200,0,0
@@ -12673,12 +12675,12 @@ c46824 LD HL,23611   ; This is the FLAGS system variable
 ; Unused
 s46842 DEFS 5
 
-; UDG reference for animatory state #N255 at row 1, column 2
+; UDG reference for animatory state #b255 at row 1, column 2
 ;
 ; Used by the routine at #R24843.
 b46847 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 2, column 2
+; UDG references for animatory states #b0-#b103 at row 2, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12686,25 +12688,25 @@ b46847 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N46852 }
-; { #AS14-#N15  | #N46862-#N46863 }
-; { #AS20       | #N46868 }
-; { #AS24-#N31  | #N46872-#N46879 }
-; { #AS36       | #N46884 }
-; { #AS40-#N41  | #N46888-#N46889 }
-; { #AS44-#N47  | #N46892-#N46895 }
-; { #AS52       | #N46900 }
-; { #AS58-#N59  | #N46906-#N46907 }
-; { #AS62       | #N46910 }
-; { #AS68       | #N46916 }
-; { #AS76       | #N46924 }
-; { #AS78       | #N46926 }
-; { #AS84       | #N46932 }
-; { #AS86       | #N46934 }
-; { #AS92       | #N46940 }
-; { #AS94       | #N46942 }
-; { #AS100      | #N46948 }
-; { #AS102      | #N46950 }
+; { #AS4        | #w46852 }
+; { #AS14-#b15  | #w46862-#w46863 }
+; { #AS20       | #w46868 }
+; { #AS24-#b31  | #w46872-#w46879 }
+; { #AS36       | #w46884 }
+; { #AS40-#b41  | #w46888-#w46889 }
+; { #AS44-#b47  | #w46892-#w46895 }
+; { #AS52       | #w46900 }
+; { #AS58-#b59  | #w46906-#w46907 }
+; { #AS62       | #w46910 }
+; { #AS68       | #w46916 }
+; { #AS76       | #w46924 }
+; { #AS78       | #w46926 }
+; { #AS84       | #w46932 }
+; { #AS86       | #w46934 }
+; { #AS92       | #w46940 }
+; { #AS94       | #w46942 }
+; { #AS100      | #w46948 }
+; { #AS102      | #w46950 }
 ; TABLE#
 b46848 DEFB 5,0,5,0,18,18,23,0,54,56,5,5,5,5,0,0
  46864 DEFB 5,0,5,0,18,18,36,0,0,0,0,0,0,0,0,0
@@ -12724,7 +12726,7 @@ t46952 DEFM "THE HISTORY MASTER"
 ; Unused
 s46971 DEFS 4
 
-; UDG references for animatory states #N127-#N231 at row 2, column 2
+; UDG references for animatory states #b127-#b231 at row 2, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12732,25 +12734,25 @@ s46971 DEFS 4
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N46980 }
-; { #AS142-#N143 | #N46990-#N46991 }
-; { #AS148       | #N46996 }
-; { #AS152-#N159 | #N47000-#N47007 }
-; { #AS164       | #N47012 }
-; { #AS168-#N169 | #N47016-#N47017 }
-; { #AS172-#N175 | #N47020-#N47023 }
-; { #AS180       | #N47028 }
-; { #AS186-#N187 | #N47034-#N47035 }
-; { #AS190       | #N47038 }
-; { #AS196       | #N47044 }
-; { #AS204       | #N47052 }
-; { #AS206       | #N47054 }
-; { #AS212       | #N47060 }
-; { #AS214       | #N47062 }
-; { #AS220       | #N47068 }
-; { #AS222       | #N47070 }
-; { #AS228       | #N47076 }
-; { #AS230       | #N47078 }
+; { #AS132       | #w46980 }
+; { #AS142-#b143 | #w46990-#w46991 }
+; { #AS148       | #w46996 }
+; { #AS152-#b159 | #w47000-#w47007 }
+; { #AS164       | #w47012 }
+; { #AS168-#b169 | #w47016-#w47017 }
+; { #AS172-#b175 | #w47020-#w47023 }
+; { #AS180       | #w47028 }
+; { #AS186-#b187 | #w47034-#w47035 }
+; { #AS190       | #w47038 }
+; { #AS196       | #w47044 }
+; { #AS204       | #w47052 }
+; { #AS206       | #w47054 }
+; { #AS212       | #w47060 }
+; { #AS214       | #w47062 }
+; { #AS220       | #w47068 }
+; { #AS222       | #w47070 }
+; { #AS228       | #w47076 }
+; { #AS230       | #w47078 }
 ; TABLE#
 b46975 DEFB 0
  46976 DEFB 131,136,131,136,145,145,0,0,180,183,188,192,198,198,0,0
@@ -12788,12 +12790,12 @@ c47080 PUSH HL       ; Save the message address for the character's name
  47101 SUB L         ; far}
  47102 RET           ;
 
-; UDG reference for animatory state #N255 at row 2, column 2
+; UDG reference for animatory state #b255 at row 2, column 2
 ;
 ; Used by the routine at #R24843.
 b47103 DEFB 0
 
-; UDG references for animatory states #N0-#N103 at row 3, column 2
+; UDG references for animatory states #b0-#b103 at row 3, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12801,25 +12803,25 @@ b47103 DEFB 0
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s) | =h Address(es) }
-; { #AS4        | #N47108 }
-; { #AS14-#N15  | #N47118-#N47119 }
-; { #AS20       | #N47124 }
-; { #AS24-#N31  | #N47128-#N47135 }
-; { #AS36       | #N47140 }
-; { #AS40-#N41  | #N47144-#N47145 }
-; { #AS44-#N47  | #N47148-#N47151 }
-; { #AS52       | #N47156 }
-; { #AS58-#N59  | #N47162-#N47163 }
-; { #AS62       | #N47166 }
-; { #AS68       | #N47172 }
-; { #AS76       | #N47180 }
-; { #AS78       | #N47182 }
-; { #AS84       | #N47188 }
-; { #AS86       | #N47190 }
-; { #AS92       | #N47196 }
-; { #AS94       | #N47198 }
-; { #AS100      | #N47204 }
-; { #AS102      | #N47206 }
+; { #AS4        | #w47108 }
+; { #AS14-#b15  | #w47118-#w47119 }
+; { #AS20       | #w47124 }
+; { #AS24-#b31  | #w47128-#w47135 }
+; { #AS36       | #w47140 }
+; { #AS40-#b41  | #w47144-#w47145 }
+; { #AS44-#b47  | #w47148-#w47151 }
+; { #AS52       | #w47156 }
+; { #AS58-#b59  | #w47162-#w47163 }
+; { #AS62       | #w47166 }
+; { #AS68       | #w47172 }
+; { #AS76       | #w47180 }
+; { #AS78       | #w47182 }
+; { #AS84       | #w47188 }
+; { #AS86       | #w47190 }
+; { #AS92       | #w47196 }
+; { #AS94       | #w47198 }
+; { #AS100      | #w47204 }
+; { #AS102      | #w47206 }
 ; TABLE#
 b47104 DEFB 0,0,0,0,0,0,26,29,0,0,5,5,0,0,0,0
  47120 DEFB 0,0,0,0,0,0,26,37,0,0,0,0,0,0,0,0
@@ -12849,7 +12851,7 @@ c47208 PUSH HL       ; Save the message address
                      ; #REGde
  47228 JP 47336      ;
 
-; UDG references for animatory states #N127-#N231 at row 3, column 2
+; UDG references for animatory states #b127-#b231 at row 3, column 2
 ;
 @ignoreua
 ; Used by the routine at #R24843. The following animatory states and
@@ -12857,25 +12859,25 @@ c47208 PUSH HL       ; Save the message address
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h State(s)  | =h Address(es) }
-; { #AS132       | #N47236 }
-; { #AS142-#N143 | #N47246-#N47247 }
-; { #AS148       | #N47252 }
-; { #AS152-#N159 | #N47256-#N47263 }
-; { #AS164       | #N47268 }
-; { #AS168-#N169 | #N47272-#N47273 }
-; { #AS172-#N175 | #N47276-#N47279 }
-; { #AS180       | #N47284 }
-; { #AS186-#N187 | #N47290-#N47291 }
-; { #AS190       | #N47294 }
-; { #AS196       | #N47300 }
-; { #AS204       | #N47308 }
-; { #AS206       | #N47310 }
-; { #AS212       | #N47316 }
-; { #AS214       | #N47318 }
-; { #AS220       | #N47324 }
-; { #AS222       | #N47326 }
-; { #AS228       | #N47332 }
-; { #AS230       | #N47334 }
+; { #AS132       | #w47236 }
+; { #AS142-#b143 | #w47246-#w47247 }
+; { #AS148       | #w47252 }
+; { #AS152-#b159 | #w47256-#w47263 }
+; { #AS164       | #w47268 }
+; { #AS168-#b169 | #w47272-#w47273 }
+; { #AS172-#b175 | #w47276-#w47279 }
+; { #AS180       | #w47284 }
+; { #AS186-#b187 | #w47290-#w47291 }
+; { #AS190       | #w47294 }
+; { #AS196       | #w47300 }
+; { #AS204       | #w47308 }
+; { #AS206       | #w47310 }
+; { #AS212       | #w47316 }
+; { #AS214       | #w47318 }
+; { #AS220       | #w47324 }
+; { #AS222       | #w47326 }
+; { #AS228       | #w47332 }
+; { #AS230       | #w47334 }
 ; TABLE#
 b47231 DEFB 0
  47232 DEFB 0,139,0,142,147,147,152,155,0,0,190,190,0,0,0,0
@@ -12892,7 +12894,7 @@ b47231 DEFB 0
 ; after entering the character's name.
 ;
 ; DE Address of the character's name message
-; HL #N23611 (FLAGS)
+; HL #w23611 (FLAGS)
 @label=CHANGENAME2
 c47336 RES 5,(HL)    ; Signal: no key pressed
  47338 LD H,D        ; {Set #REGhl to the message address for the character's
@@ -12913,7 +12915,7 @@ c47336 RES 5,(HL)    ; Signal: no key pressed
 ; Unused
 u47358 DEFB 184
 
-; UDG reference for animatory state #N255 at row 3, column 2
+; UDG reference for animatory state #b255 at row 3, column 2
 ;
 ; Used by the routine at #R24843.
 b47359 DEFB 0
@@ -13721,10 +13723,10 @@ s56085 DEFS 11
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h ASCII code | =h Address }
-; { 33 [!]        | #N56097 }
-; { 105 [i]       | #N56169 }
-; { 108 [l]       | #N56172 }
-; { 124 [|]       | #N56188 }
+; { 33 [!]        | #w56097 }
+; { 105 [i]       | #w56169 }
+; { 108 [l]       | #w56172 }
+; { 124 [|]       | #w56188 }
 ; TABLE#
 b56096 DEFB 0,0,0,254,42,16,146,128,130,124,124,8,2,8,3,56
  56112 DEFB 138,254,138,146,72,146,146,134,146,146,54,50,20,20,20,138
@@ -13816,16 +13818,16 @@ s56341 DEFS 11
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h ASCII code(s) | =h Address(es) }
-; { 33 [!]           | #N56353 }
-; { 39-41 ['()]      | #N56359-#N56361 }
-; { 44 [,]           | #N56364 }
-; { 46 [.]           | #N56366 }
-; { 58-59 [:;]       | #N56378-#N56379 }
-; { 91 [[]           | #N56411 }
-; { 93 []]           | #N56413 }
-; { 105 [i]          | #N56425 }
-; { 108 [l]          | #N56428 }
-; { 124 [|]          | #N56444 }
+; { 33 [!]           | #w56353 }
+; { 39-41 ['()]      | #w56359-#w56361 }
+; { 44 [,]           | #w56364 }
+; { 46 [.]           | #w56366 }
+; { 58-59 [:;]       | #w56378-#w56379 }
+; { 91 [[]           | #w56411 }
+; { 93 []]           | #w56413 }
+; { 105 [i]          | #w56425 }
+; { 108 [l]          | #w56428 }
+; { 124 [|]          | #w56444 }
 ; TABLE#
 b56352 DEFB 0,0,192,40,127,228,146,0,0,0,56,62,0,8,0,192
  56368 DEFB 146,2,146,178,254,146,146,152,146,146,0,0,20,20,20,144
@@ -13924,20 +13926,20 @@ s56597 DEFS 11
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h ASCII code(s) | =h Address(es) }
-; { 32-34 [ !"]      | #N56608-#N56610 }
-; { 37 [%]           | #N56613 }
-; { 39-41 ['()]      | #N56615-#N56617 }
-; { 44 [,]           | #N56620 }
-; { 46-47 [./]       | #N56622-#N56623 }
-; { 49 [1]           | #N56625 }
-; { 58-59 [:;]       | #N56634-#N56635 }
-; { 73 [I]           | #N56649 }
-; { 91-93 [[\]]      | #N56667-#N56669 }
-; { 105-106 [ij]     | #N56681-#N56682 }
-; { 108 [l]          | #N56684 }
-; { 116 [t]          | #N56692 }
-; { 118 [v]          | #N56694 }
-; { 123-125 [{|}]    | #N56699-#N56701 }
+; { 32-34 [ !"]      | #w56608-#w56610 }
+; { 37 [%]           | #w56613 }
+; { 39-41 ['()]      | #w56615-#w56617 }
+; { 44 [,]           | #w56620 }
+; { 46-47 [./]       | #w56622-#w56623 }
+; { 49 [1]           | #w56625 }
+; { 58-59 [:;]       | #w56634-#w56635 }
+; { 73 [I]           | #w56649 }
+; { 91-93 [[\]]      | #w56667-#w56669 }
+; { 105-106 [ij]     | #w56681-#w56682 }
+; { 108 [l]          | #w56684 }
+; { 116 [t]          | #w56692 }
+; { 118 [v]          | #w56694 }
+; { 123-125 [{|}]    | #w56699-#w56701 }
 ; TABLE#
 b56608 DEFB 0,0,0,254,42,0,109,0,0,0,124,8,0,8,0,0
  56624 DEFB 124,0,98,204,8,140,140,224,108,124,0,0,34,20,8,96
@@ -14009,18 +14011,18 @@ s56862 DEFS 2
 ; .
 ; #TABLE(default,centre,centre)
 ; { =h ASCII code(s)             | =h Address(es) }
-; { 32-34 [ !"]                  | #N56864-#N56866 }
-; { 37 [%]                       | #N56869 }
-; { 39-41 ['()]                  | #N56871-#N56873 }
-; { 44-63 [,-./0123456789:;<=>?] | #N56876-#N56895 }
-; { 65-76 [ABCDEFGHIJKL]         | #N56897-#N56908 }
-; { 78-80 [NOP]                  | #N56910-#N56912 }
-; { 82-83 [RS]                   | #N56914-#N56915 }
-; { 85 [U]                       | #N56917 }
-; { 91-93 [[\]]                  | #N56923-#N56925 }
-; { 96-108 [`abcdefghijkl]       | #N56928-#N56940 }
-; { 110-118 [nopqrstuv]          | #N56942-#N56950 }
-; { 121-126 [yz{|}~]             | #N56953-#N56958 }
+; { 32-34 [ !"]                  | #w56864-#w56866 }
+; { 37 [%]                       | #w56869 }
+; { 39-41 ['()]                  | #w56871-#w56873 }
+; { 44-63 [,-./0123456789:;<=>?] | #w56876-#w56895 }
+; { 65-76 [ABCDEFGHIJKL]         | #w56897-#w56908 }
+; { 78-80 [NOP]                  | #w56910-#w56912 }
+; { 82-83 [RS]                   | #w56914-#w56915 }
+; { 85 [U]                       | #w56917 }
+; { 91-93 [[\]]                  | #w56923-#w56925 }
+; { 96-108 [`abcdefghijkl]       | #w56928-#w56940 }
+; { 110-118 [nopqrstuv]          | #w56942-#w56950 }
+; { 121-126 [yz{|}~]             | #w56953-#w56958 }
 ; TABLE#
 b56864 DEFB 0,0,0,40,36,0,2,0,0,0,16,8,0,0,0,0
  56880 DEFB 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -15699,11 +15701,11 @@ c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
 @ofix-begin
 @ignoreua
 c60139 LD HL,784     ; {These parameters were meant for the routine at #R65122;
- 60142 LD DE,12896   ; however, the CALL below is to #N62818 (98,245) instead
+ 60142 LD DE,12896   ; however, the CALL below is to #w62818 (98,245) instead
  60145 LD A,1        ; of #R65122 (98,254), which is a #BUG#jumpSound(bug)}
 @nowarn
 @ignoreua
- 60147 CALL 62818    ; #N62818 holds the operand of a JR NZ instruction, so in
+ 60147 CALL 62818    ; #w62818 holds the operand of a JR NZ instruction, so in
                      ; effect this is CALL #R62819; anyway, this call does
                      ; nothing significant
 @ofix+else
@@ -15932,7 +15934,7 @@ s61144 DEFS 8
 ; names.
 ;
 ; B 32
-; HL #N20480
+; HL #w20480
 @label=GETNAMES
 c61152 LD (HL),255   ; {Draw a solid line across the screen (the catwalk)
  61154 INC HL        ;
@@ -16461,7 +16463,7 @@ c62495 LD HL,32758   ; #R32758 holds the catapult-firing action timer
 ; It's time to launch the catapult pellet.
  62532 LD L,96       ; Byte 96 of ERIC's buffer holds his animatory state
  62534 LD A,(HL)     ; Pick this up in #REGa
- 62535 OR 127        ; #REGa=#AS127(#N127 or #N255) (catapult pellet)
+ 62535 OR 127        ; #REGa=#AS127(#b127 or #b255) (catapult pellet)
  62537 INC L         ; {Pick up ERIC's coordinates in #REGde; they will be the
  62538 LD D,(HL)     ; initial coordinates of the catapult pellet
  62539 INC L         ;
@@ -16938,7 +16940,7 @@ c62938 LD HL,32746   ; #R32746 holds the game mode indicator
  63045 LD B,A        ; }
 ; Now #REGb holds the ASCII code of the simulated keypress: Q, A, O or P.
 ; Decide whether to switch to lower case (slow).
-*63046 LD A,(23672)  ; #N23672=LSB of the FRAMES system variable
+*63046 LD A,(23672)  ; #w23672=LSB of the FRAMES system variable
  63049 AND 128       ; {#REGa=32 (lower case, slow) or 0 (upper case, fast)
  63051 RRCA          ;
  63052 RRCA          ; }
@@ -17016,7 +17018,7 @@ c63056 LD HL,32763   ; #R32763 holds ERIC's status flags
  63136 LD H,D        ; {Copy ERIC's coordinates to #REGhl
  63137 LD L,E        ; }
  63138 LD A,B        ; #REGa=ERIC's current animatory state
- 63139 AND 128       ; {#REGa=#AS13(#N13 or #N141): ERIC with arm up, as if
+ 63139 AND 128       ; {#REGa=#AS13(#b13 or #b141): ERIC with arm up, as if
  63141 ADD A,13      ; writing}
  63143 JP 25916      ; Raise ERIC's arm
 

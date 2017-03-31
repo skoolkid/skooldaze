@@ -100,7 +100,7 @@ SectionType=BulletPoints
 [Changelog:20110510]
 Included in SkoolKit 2.2.
 
-- Inserted comments above the entry points at #N25615 and #N25625 in the
+- Inserted comments above the entry points at #w25615 and #w25625 in the
   routine at #R25534
 
 [Changelog:20110403]
@@ -190,7 +190,7 @@ Included in SkoolKit 1.0.
   documentation) for byte 107
 - Added command list usage info to the command list entries (e.g. see command
   list #R64939(202))
-- Filled in the images for animatory states #AS104(#N104-#N126 and #N232-#N254)
+- Filled in the images for animatory states #AS104(#b104-#b126 and #b232-#b254)
   (they are garbage, not blank)
 - Removed the duplicate question/answer messages from the memory map
 - Added an entry for the message graphic buffer at #R23296
