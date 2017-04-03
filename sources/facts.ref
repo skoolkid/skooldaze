@@ -119,7 +119,7 @@ tell him that EINSTEIN is going to grass him up to MR WACKER) and then head for
 the nearest blackboard:
 
 <div>POKE #R28211(28212),0</div>
-<div>POKE #R28213(28214),#LESSON244</div>
+<div>POKE #R28213(28214),#LESSON244(244)</div>
 
 If you're feeling very patient, you can use this stalling technique to avoid
 having to take part in the special playtime: just stand at the blackboard for

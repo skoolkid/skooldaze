@@ -44,38 +44,38 @@ Copying ../sources/sd.css to {odir}/skool_daze/sd.css
   Writing skool_daze/buffers/cbuffer.html
   Writing skool_daze/lessons/timetables.html
   Writing skool_daze/lessons/index.html
-  Writing skool_daze/lessons/224.html
-  Writing skool_daze/lessons/225.html
-  Writing skool_daze/lessons/226.html
-  Writing skool_daze/lessons/227.html
-  Writing skool_daze/lessons/228.html
-  Writing skool_daze/lessons/229.html
-  Writing skool_daze/lessons/230.html
-  Writing skool_daze/lessons/231.html
-  Writing skool_daze/lessons/232.html
-  Writing skool_daze/lessons/233.html
-  Writing skool_daze/lessons/234.html
-  Writing skool_daze/lessons/235.html
-  Writing skool_daze/lessons/236.html
-  Writing skool_daze/lessons/237.html
-  Writing skool_daze/lessons/238.html
-  Writing skool_daze/lessons/239.html
-  Writing skool_daze/lessons/240.html
-  Writing skool_daze/lessons/241.html
-  Writing skool_daze/lessons/242.html
-  Writing skool_daze/lessons/243.html
-  Writing skool_daze/lessons/244.html
-  Writing skool_daze/lessons/245.html
-  Writing skool_daze/lessons/246.html
-  Writing skool_daze/lessons/247.html
-  Writing skool_daze/lessons/248.html
-  Writing skool_daze/lessons/249.html
-  Writing skool_daze/lessons/250.html
-  Writing skool_daze/lessons/251.html
-  Writing skool_daze/lessons/252.html
-  Writing skool_daze/lessons/253.html
-  Writing skool_daze/lessons/254.html
-  Writing skool_daze/lessons/255.html
+  Writing skool_daze/lessons/#N224.html
+  Writing skool_daze/lessons/#N225.html
+  Writing skool_daze/lessons/#N226.html
+  Writing skool_daze/lessons/#N227.html
+  Writing skool_daze/lessons/#N228.html
+  Writing skool_daze/lessons/#N229.html
+  Writing skool_daze/lessons/#N230.html
+  Writing skool_daze/lessons/#N231.html
+  Writing skool_daze/lessons/#N232.html
+  Writing skool_daze/lessons/#N233.html
+  Writing skool_daze/lessons/#N234.html
+  Writing skool_daze/lessons/#N235.html
+  Writing skool_daze/lessons/#N236.html
+  Writing skool_daze/lessons/#N237.html
+  Writing skool_daze/lessons/#N238.html
+  Writing skool_daze/lessons/#N239.html
+  Writing skool_daze/lessons/#N240.html
+  Writing skool_daze/lessons/#N241.html
+  Writing skool_daze/lessons/#N242.html
+  Writing skool_daze/lessons/#N243.html
+  Writing skool_daze/lessons/#N244.html
+  Writing skool_daze/lessons/#N245.html
+  Writing skool_daze/lessons/#N246.html
+  Writing skool_daze/lessons/#N247.html
+  Writing skool_daze/lessons/#N248.html
+  Writing skool_daze/lessons/#N249.html
+  Writing skool_daze/lessons/#N250.html
+  Writing skool_daze/lessons/#N251.html
+  Writing skool_daze/lessons/#N252.html
+  Writing skool_daze/lessons/#N253.html
+  Writing skool_daze/lessons/#N254.html
+  Writing skool_daze/lessons/#N255.html
   Writing skool_daze/tables/keys.html
   Parsing ../sources/load.skool
     Writing skool_daze/load/load.html
