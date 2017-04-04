@@ -395,20 +395,20 @@ with <i>udg_page</i>=#b201 (as used by a teacher, i.e. character numbers
 PageContent=#INCLUDE(CharacterBuffers)
 
 [CharacterBuffers]
-<p>The character buffers occupy bytes 96-127 in pages 152-172.</p>
+<p>The character buffers occupy bytes #b96-#b127 in pages #b152-#b172.</p>
 #CALL:cast()
 #CALL:cbuffer()
 
 [Template:cast]
 #TABLE(cbuffer,cbufPage,cbufAddress,cbufCharacter,transparent,cbufPage,cbufAddress,cbufCharacter,transparent,cbufPage,cbufAddress,cbufCharacter)
 {{ =h Page | =h Address | =h Character      |  | =h Page | =h Address | =h Character      |  | =h Page | =h Address | =h Character }}
-{{ 152     | #R39008    | {characters[152]} |  | 159     | #R40800    | {characters[159]} |  | 166     | #R42592    | {characters[166]} }}
-{{ 153     | #R39264    | {characters[153]} |  | 160     | #R41056    | {characters[160]} |  | 167     | #R42848    | {characters[167]} }}
-{{ 154     | #R39520    | {characters[154]} |  | 161     | #R41312    | {characters[161]} |  | 168     | #R43104    | {characters[168]} }}
-{{ 155     | #R39776    | {characters[155]} |  | 162     | #R41568    | {characters[162]} |  | 169     | #R43360    | {characters[169]} }}
-{{ 156     | #R40032    | {characters[156]} |  | 163     | #R41824    | {characters[163]} |  | 170     | #R43616    | {characters[170]} }}
-{{ 157     | #R40288    | {characters[157]} |  | 164     | #R42080    | {characters[164]} |  | 171     | #R43872    | {characters[171]} }}
-{{ 158     | #R40544    | {characters[158]} |  | 165     | #R42336    | {characters[165]} |  | 172     | #R44128    | {characters[172]} }}
+{{ #b152   | #R39008    | {characters[152]} |  | #b159   | #R40800    | {characters[159]} |  | #b166   | #R42592    | {characters[166]} }}
+{{ #b153   | #R39264    | {characters[153]} |  | #b160   | #R41056    | {characters[160]} |  | #b167   | #R42848    | {characters[167]} }}
+{{ #b154   | #R39520    | {characters[154]} |  | #b161   | #R41312    | {characters[161]} |  | #b168   | #R43104    | {characters[168]} }}
+{{ #b155   | #R39776    | {characters[155]} |  | #b162   | #R41568    | {characters[162]} |  | #b169   | #R43360    | {characters[169]} }}
+{{ #b156   | #R40032    | {characters[156]} |  | #b163   | #R41824    | {characters[163]} |  | #b170   | #R43616    | {characters[170]} }}
+{{ #b157   | #R40288    | {characters[157]} |  | #b164   | #R42080    | {characters[164]} |  | #b171   | #R43872    | {characters[171]} }}
+{{ #b158   | #R40544    | {characters[158]} |  | #b165   | #R42336    | {characters[165]} |  | #b172   | #R44128    | {characters[172]} }}
 TABLE#
 
 [Template:cbuffer]
