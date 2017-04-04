@@ -75,8 +75,8 @@ and 47.
 
 The reason for this discrepancy in pace numbers is the method used to calculate
 the teacher's next pace-up or pace-down destination, which is to take his
-current x-coordinate and do an XOR 3 on it: see the sections of code at #R32115
-and #R62429.
+current x-coordinate and do an #S/XOR/ #n3 on it: see the sections of code at
+#R32115 and #R62429.
 
 [Fact:invulnerableMoments:Invulnerable moments]
 ERIC can usually throw a punch or fire his catapult and be confident that the
