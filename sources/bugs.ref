@@ -135,17 +135,17 @@ out of eight on average (see #R28211).
 The problem is that the routine at #R31815 looks up the current lesson (whose
 number is stored at #R32761) in the main timetable in order to find out which
 command list to restart, and then copies the start address of that command list
-into bytes 119 and 120 of the character's buffer, overwriting the command list
-start address that was already there.
+into bytes #b119 and #b120 of the character's buffer, overwriting the command
+list start address that was already there.
 
 The most noticeable effect of this bug will occur during a special playtime
 that has replaced a 'stampede' playtime (#LESSON252 or #LESSON253). Little boys
 1-9 and 11 (not 10, because he's busy looking for ERIC to tell him what's going
 on) start with command list #R64914(196) (walkabout), but when the restart
-command is reached, will switch to command list #R64947(204) (stampede leader)
-or #R64975(206) (stampede follower). Thus a special playtime in which ERIC must
-watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the presence
-of stampeding boys tripping everyone up.
+command is reached, will switch to command list #R64947(#b204) (stampede
+leader) or #R64975(#b206) (stampede follower). Thus a special playtime in which
+ERIC must watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the
+presence of stampeding boys tripping everyone up.
 
 <div>POKE #R31825(31825),0</div>
 <div>POKE 31826,203</div>
@@ -235,13 +235,13 @@ considers moving the following characters (after MR CREAK) in this order:
 <li>EINSTEIN</li>
 </ul>
 
-A character will be moved if bit 7 of byte 122 of his buffer is reset (which is
-true for kids half the time on average, and true for teachers only when they're
-running), or if byte 123 of his buffer (which is decremented on each pass
-through the character-moving routine) holds an even number. If either of these
-is true for EINSTEIN, he will get to speak next. When he's finished answering
-MR CREAK's question, the character-moving routine considers moving the
-following characters (after EINSTEIN) in this order:
+A character will be moved if bit 7 of byte #b122 of his buffer is reset (which
+is true for kids half the time on average, and true for teachers only when
+they're running), or if byte #b123 of his buffer (which is decremented on each
+pass through the character-moving routine) holds an even number. If either of
+these is true for EINSTEIN, he will get to speak next. When he's finished
+answering MR CREAK's question, the character-moving routine considers moving
+the following characters (after EINSTEIN) in this order:
 
 <ul>
 <li>little boys</li>
@@ -251,15 +251,15 @@ following characters (after EINSTEIN) in this order:
 <li>MR CREAK</li>
 </ul>
 
-If, on MR ROCKITT's turn, byte 123 of his buffer holds an odd number, he will
+If, on MR ROCKITT's turn, byte #b123 of his buffer holds an odd number, he will
 not be moved, and will therefore not start speaking before MR CREAK. If, on MR
-CREAK's turn, byte 123 of his buffer holds an even number, he will be moved and
-therefore start speaking before MR ROCKITT's next turn.
+CREAK's turn, byte #b123 of his buffer holds an even number, he will be moved
+and therefore start speaking before MR ROCKITT's next turn.
 
 Thus MR ROCKITT could spend quite a while waiting at the blackboard before
-telling the kids what to do, all depending on the contents of byte 123 of his,
-MR CREAK's and EINSTEIN's buffers (and also bit 7 of byte 122 of EINSTEIN's
-buffer) on their turns to be moved.
+telling the kids what to do, all depending on the contents of byte #b123 of
+his, MR CREAK's and EINSTEIN's buffers (and also bit 7 of byte #b122 of
+EINSTEIN's buffer) on their turns to be moved.
 
 [Bug:backSeat:Inaccessible back seat]
 Kids are unable to sit in the back seat in the Reading Room (see #R27632). This

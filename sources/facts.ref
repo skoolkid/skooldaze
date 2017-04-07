@@ -129,13 +129,13 @@ Rather more interesting is that you can use this technique to
 #BUG#avoidingExpulsion(avoid expulsion).
 
 [Fact:doppelwacker:Doppelwacker]
-The sprite graphic data is split between two base pages: page #R47360(185) for
-the boys and the catapult pellet, and page #R51456(201) for the teachers (see
-#R27914). However, the graphic data based in page 185 contains exact copies of
-most of MR WACKER's sprites:
+The sprite graphic data is split between two base pages: page #R47360(#b185)
+for the boys and the catapult pellet, and page #R51456(#b201) for the teachers
+(see #R27914). However, the graphic data based in page #b185 contains exact
+copies of most of MR WACKER's sprites:
 
 #UDGTABLE(gallery)
-{ =c2 185 | =c2 201 }
+{ =c2 #b185 | =c2 #b201 }
 { #CALL:as_img(80, 2, 1, 120, 185) | #CALL:as_img(208, 2, 1, 120, 185) |
   #CALL:as_img(80, 2, 1, 120, 201) | #CALL:as_img(208, 2, 1, 120, 201) }
 { #CALL:as_img(81, 2, 1, 120, 185) | #CALL:as_img(209, 2, 1, 120, 185) |
@@ -151,9 +151,9 @@ most of MR WACKER's sprites:
 TABLE#
 
 This suggests that the original plan was to have the graphic data for every
-character based in page 185, but space ran out while adding MR WACKER's
+character based in page #b185, but space ran out while adding MR WACKER's
 sprites, so the graphic data for him and the other teachers had to go to page
-201.
+#b201.
 
 [Fact:wackersOldShoes:MR WACKER's old shoes]
 The #FACT#doppelwacker(copies of MR WACKER's sprites based in page #b185) show
@@ -452,24 +452,25 @@ chosen at random (see #R28211).
 
 [Fact:initialPlaytimes:Initial playtimes]
 When demo mode or a new game starts, the timetable index is always
-#R65024#65024(0), #R65040(16), #R65056(32) or #R65072(48) (which are all
-playtime, of course).
+#R65024#65024(#b0), #R65040(#b16), #R65056(#b32) or #R65072(#b48) (which are
+all playtime, of course).
 
 When demo mode starts for the first time after the game has loaded, the
-timetable index is #R65040(16). When a new game is started as soon as possible
-after the game has loaded, the timetable index is #R65056(32).
+timetable index is #R65040(#b16). When a new game is started as soon as
+possible after the game has loaded, the timetable index is #R65056(#b32).
 
 [Fact:doublePlaytimes:Double playtimes]
 There are five places in the #R65024(main timetable) where one playtime is
-followed immediately by another: timetable indexes #R65032(8/9),
-#R65043(19/20), #R65065(41/42), #R65075(51/52), and #R65081(57/58). However,
-you might be forgiven for not having noticed this because the bell does not
-ring between the playtimes in each pair (see #R26360).
+followed immediately by another: timetable indexes #R65032(#b8/#b9),
+#R65043(#b19/#b20), #R65065(#b41/#b42), #R65075(#b51/#b52), and
+#R65081(#b57/#b58). However, you might be forgiven for not having noticed this
+because the bell does not ring between the playtimes in each pair (see
+#R26360).
 
 Also note that playtimes #LESSON254 and #LESSON255 are used exclusively as the
 second playtime in double playtime periods. There's nothing special about those
-playtimes, except that their numbers (254, 255) are easily checked by the code
-at #R26360.
+playtimes, except that their numbers (#b254, #b255) are easily checked by the
+code at #R26360.
 
 [Fact:playtimeDistribution:Playtime distribution]
 Understandably, ERIC is always eager for playtime to come, but the number of
@@ -477,10 +478,10 @@ lesson or Revision Library periods he has to tolerate between each break varies
 between one and three throughout the #R65024(main timetable).
 
 #LIST
-{ There is one period between playtimes at timetable indexes #R65036(13) and
-  #R65038(15) }
-{ There are three periods between playtimes at timetable indexes #R65049(26-28)
-  and #R65056(33-35) }
+{ There is one period between playtimes at timetable indexes #R65036(#b13) and
+  #R65038(#b15) }
+{ There are three periods between playtimes at timetable indexes
+  #R65049(#b26-#b28) and #R65056(#b33-#b35) }
 { There are two periods between all the other playtimes (not counting dinner
   periods) }
 LIST#

@@ -12,14 +12,14 @@ Number denoting one of the #AS()(phases of animation) of a character's sprite.
 
 [Glossary:Continual subcommand]
 One of various character-controlling command routines whose address is stored
-in bytes 124 and 125 of a character's buffer. The command is executed each time
-the character is moved - before the interruptible subcommand or primary command
-- unless the character is under the control of an uninterruptible subcommand
-(see #R25126).
+in bytes #b124 and #b125 of a character's buffer. The command is executed each
+time the character is moved - before the interruptible subcommand or primary
+command - unless the character is under the control of an uninterruptible
+subcommand (see #R25126).
 
 [Glossary:Interruptible subcommand]
 One of various character-controlling command routines whose address is stored
-in bytes 105 and 106 of a character's buffer. If present, the command is
+in bytes #b105 and #b106 of a character's buffer. If present, the command is
 executed each time the character is moved, unless the character is under the
 control of an uninterruptible subcommand (see #R25126).
 
@@ -32,7 +32,7 @@ TABLE#
 
 [Glossary:Primary command]
 One of various character-controlling command routines whose address is stored
-in bytes 99 and 100 of a character's buffer. If present, the command is
+in bytes #b99 and #b100 of a character's buffer. If present, the command is
 executed each time the character is moved, unless the character is under the
 control of an uninterruptible or interruptible subcommand (see #R25126).
 
@@ -41,6 +41,6 @@ Screen refresh buffer at #R32524.
 
 [Glossary:Uninterruptible subcommand]
 One of various character-controlling command routines whose address is stored
-in bytes 111 and 112 of a character's buffer. If present, the command is
+in bytes #b111 and #b112 of a character's buffer. If present, the command is
 executed each time the character is moved, and overrides any other command (see
 #R25126).

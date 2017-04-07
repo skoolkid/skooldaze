@@ -45,8 +45,8 @@ SectionType=BulletPoints
   - #BUG#wackersNumberBlindness()
 - In the trivia entry #FACT#boy11(), added a note about ERIC's strange
   behaviour on staircases
-- Added images of some of the unused sprite tiles in base page 185 to the entry
-  at #R47360
+- Added images of some of the unused sprite tiles in base page #b185 to the
+  entry at #R47360
 - Added CSS files to complete the 'dark', 'green', 'plum' and 'spectrum' themes
 
 [Changelog:20121119]
@@ -69,8 +69,9 @@ SectionType=BulletPoints
 -
 
 - Added a trivia entry: #FACT#slashDot()
-- Fixed the entries for the characters '#CHR8593' (code 94) and '#CHR163' (code
-  96) in the #LINK:Keys(keypress table) and the #R26656(keypress offset table)
+- Fixed the entries for the characters '#CHR8593' (code #b94) and '#CHR163'
+  (code #b96) in the #LINK:Keys(keypress table) and the #R26656(keypress offset
+  table)
 
 [Changelog:20120411]
 -
@@ -187,9 +188,9 @@ Included in SkoolKit 1.0.
   - #POKE#ringBell()
   - #POKE#alwaysRun()
 - Supplied missing entries to the #LINK:CharacterBuffers(character buffer
-  documentation) for byte 107
+  documentation) for byte #b107
 - Added command list usage info to the command list entries (e.g. see command
-  list #R64939(202))
+  list #R64939(#b202))
 - Filled in the images for animatory states #AS104(#b104-#b126 and #b232-#b254)
   (they are garbage, not blank)
 - Removed the duplicate question/answer messages from the memory map

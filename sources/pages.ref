@@ -151,9 +151,9 @@ PageContent=#INCLUDE(AnimatoryStatesPage)
 <p>The appearance of an animatory state depends on the character using it. In
 each row of the table below, the first and second images correspond to the
 appearance of the animatory state when used by a boy or a catapult pellet
-(character numbers 152-162 and 167-172); the third and fourth images correspond
-to the appearance of the animatory state when used by a teacher (character
-numbers 163-166). (See #R27914.)</p>
+(character numbers #b152-#b162 and #b167-#b172); the third and fourth images
+correspond to the appearance of the animatory state when used by a teacher
+(character numbers #b163-#b166). (See #R27914.)</p>
 <table class="animatoryStates">
 #CALL:animatory_states()
 </table>
@@ -312,10 +312,10 @@ animatory state (and in more than one place in a single animatory state).
 <p>
 In each row of the table below, the first and second tile grids correspond to
 the appearance of the animatory state with <i>udg_page</i>=#b185 (as used by a
-boy or a catapult pellet, i.e. character numbers 152-162 and 167-172); the
-third and fourth tile grids correspond to the appearance of the animatory state
-with <i>udg_page</i>=#b201 (as used by a teacher, i.e. character numbers
-163-166). (See #R27914.)
+boy or a catapult pellet, i.e. character numbers #b152-#b162 and #b167-#b172);
+the third and fourth tile grids correspond to the appearance of the animatory
+state with <i>udg_page</i>=#b201 (as used by a teacher, i.e. character numbers
+#b163-#b166). (See #R27914.)
 </p>
 </div>
 <table class="asTiles">
