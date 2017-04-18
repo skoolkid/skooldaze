@@ -4624,7 +4624,8 @@ c28446 LD L,112      ; {Return now if there is an uninterruptible subcommand
 ; EINSTEIN and BOY WANDER weren't potential targets either. What about the
 ; little boys?
  28516 LD H,152      ; #b152=little boy no. 1
- 28518 LD B,7        ; We check only the first seven little boys - interesting!
+ 28518 LD B,7        ; We check only the first seven little boys -
+                     ; #FACT#bullyFriends(interesting)!
 *28520 CALL 28416    ; Is this little boy a potential target?
  28523 JR NC,28527   ; Jump if not
  28525 JR 28490      ; Otherwise throw a punch

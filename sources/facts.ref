@@ -233,6 +233,23 @@ It's also possible for one of BOY WANDER's pellets to bounce off a teacher's
 head, hit a shield, and make it flash - scoring even more points - but that
 would be a rare occurrence indeed.
 
+[Fact:bullyFriends:ANGELFACE's friends]
+When ANGELFACE is throwing his fists around in hopes of landing a sweet one on
+somebody's jaw, his fist-throwing actions are under the control of the
+continual subcommand routine at #R28446, which checks whether there are any
+potential victims within punching distance. One interesting feature of this
+routine is that it neglects to check little boys 8-11. Are these four boys
+ANGELFACE's secret best friends, or his most dangerous enemies?
+
+Though the routine does not check little boys 8-11, if any one of those boys
+happens to be within range when ANGELFACE lashes out, he will still go down,
+because the routine at #R28569 does a full check.
+
+To get rid of ANGELFACE's favouritism and make the routine at #R28446 check all
+11 little boys:
+
+POKE #R28518(28519),11
+
 [Fact:seatSelection:Seat selection]
 Typically, when a teacher arrives at the classroom doorway to start the lesson,
 the boys will rush to the back seat and sit down. However, if a boy is late for
