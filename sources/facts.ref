@@ -317,6 +317,17 @@ ERIC's animatory state in some way: see #R26250.
 
 What was this flag used for originally? The mystery may never be solved.
 
+[Fact:unusedMSB:The mystery of the unused MSB]
+Byte #b121 of a character's buffer is unused and always zero. However, the
+character-moving routine at #R25126 checks whether there is a routine address
+MSB in byte #b121, and if it finds one, copies it to byte #b112 (which
+otherwise holds the MSB of the address of the uninterruptible subcommand
+routine that's currently in use).
+
+What could this mechanism - which seems to provide for a sort of secondary
+uninterruptible subcommand - have been used for while the game was in
+development? We'll probably never know.
+
 [Fact:pitchImperfect:Pitch imperfect]
 When ERIC walks, fires his catapult, throws a punch, is knocked out, or
 receives lines, the accompanying sound effects are played with interrupts

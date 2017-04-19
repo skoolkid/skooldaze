@@ -8,7 +8,9 @@ SectionType=BulletPoints
 
 - Ported the disassembly to SkoolKit 6
 - Made various improvements to the hexadecimal version of the disassembly
-- Added a trivia entry: #FACT#bullyFriends()
+- Added trivia entries:
+  - #FACT#bullyFriends()
+  - #FACT#unusedMSB()
 
 [Changelog:20151011]
 -
