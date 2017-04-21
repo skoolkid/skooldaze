@@ -11,6 +11,7 @@ Logo=#UDGARRAY8,6,,8;61208-61343-1-64(/images/logo|Skool Daze)
 StyleSheet=skoolkit.css;sd.css
 Release=The complete Skool Daze RAM disassembly YYYYMMDD
 Copyright=&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).
+AddressAnchor={address#IF({base}==16)(:04x)}
 
 [Links]
 DataMap=[Data] (just the data)
@@ -92,6 +93,7 @@ start-Index=Startup code
 start-Asm-c=Startup routine
 
 [Paths]
+CodeFiles={address#IF({base}==16)(:04#S/X/)}.html
 PlayAreaImagePath=images/play_area
 AnimatoryStateImagePath=images/animatory_states
 Graphics=graphics/graphics.html
@@ -160,6 +162,12 @@ PersonalTimetables
 LessonIndex
 CommandLists
 Keys
+
+[MemoryMap:MemoryMap]
+PageByteColumns=#IF({base}==16)(0,1)
+
+[MemoryMap:DataMap]
+PageByteColumns=#IF({base}==16)(0,1)
 
 [MemoryMap:UnusedMap]
 Write=0

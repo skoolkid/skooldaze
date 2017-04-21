@@ -439,7 +439,7 @@ TABLE#
 </td>
 
 [Page:MainTimetable]
-Content=asm/65024.html
+Content=asm/#N65024.html
 
 [Page:PersonalTimetables]
 PageContent=#INCLUDE(PersonalTimetables)
@@ -574,7 +574,7 @@ PageContent=#CALL:lesson(254)
 PageContent=#CALL:lesson(255)
 
 [Page:CommandLists]
-Content=asm/65152.html
+Content=asm/#N65152.html
 
 [Template:lesson]
 <table class="asm-navigation">
