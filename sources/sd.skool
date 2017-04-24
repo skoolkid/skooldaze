@@ -325,7 +325,7 @@ i23552 DEFS 1024
 @replace=/#FACT(?![A-Z])/#LINK:Facts
 @replace=/#POKE(?![A-Z])/#LINK:Pokes
 @replace=/#n\i/#N\1,,,1($)
-@replace=/#b\i/#N(\1)/ (byte)
+@replace=/#b\i/#N\1,,,1(0x)/ (byte)
 @replace=/#w\i/#N(\1,4)/ (word)
 @writer=:skooldaze.SkoolDazeAsmWriter
 ; Skool Daze disassembly
@@ -9746,7 +9746,8 @@ b39136 DEFB 170 ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64761(#b170)
                 ; #R64947(#b204) (Stampede)
  39165 DEFB 204 ; Lesson #LESSON253 (PLAYTIME (little boys stampede)):
                 ; #R64947(#b204) (Stampede)
- 39166 DEFB 176 ; Lesson #LESSON254 (PLAYTIME): #R64801(#b176) (Revision Library)
+ 39166 DEFB 176 ; Lesson #LESSON254 (PLAYTIME): #R64801(#b176) (Revision
+                ; Library)
  39167 DEFB 196 ; Lesson #LESSON255 (PLAYTIME): #R64914(#b196) (Walkabout)
 
 ; Skool UDG references (LSBs) for row 1
@@ -10484,7 +10485,8 @@ b41184 DEFB 170 ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64761(#b170)
                 ; #R64975(#b206) (Stampede)
  41213 DEFB 206 ; Lesson #LESSON253 (PLAYTIME (little boys stampede)):
                 ; #R64975(#b206) (Stampede)
- 41214 DEFB 176 ; Lesson #LESSON254 (PLAYTIME): #R64801(#b176) (Revision Library)
+ 41214 DEFB 176 ; Lesson #LESSON254 (PLAYTIME): #R64801(#b176) (Revision
+                ; Library)
  41215 DEFB 200 ; Lesson #LESSON255 (PLAYTIME): #R64931(#b200) (Walk around the
                 ; gym)
 
