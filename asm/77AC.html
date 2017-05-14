@@ -47,7 +47,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a>. Checks whether ERIC is some
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="77ac"></span>77AC</td>
 <td class="instruction">LD HL,$7FF2</td>
-<td class="comment-11" rowspan="7">Check (and decrement) the lines-giving delay counter at <a href="7FF2.html">7FF2</a>, and proceed only if it was &lt;75 (the counter starts off at 0 for a new game, and is set to 150 by this routine after ERIC has been given lines)</td>
+<td class="comment-11" rowspan="7">Check (and decrement) the lines-giving delay counter at <a href="7FF2.html">7FF2</a>, and proceed only if it was &lt;0x4B (the counter starts off at 0 for a new game, and is set to 0x96 by this routine after ERIC has been given lines)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -119,7 +119,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a>. Checks whether ERIC is some
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="77c2"></span>77C2</td>
 <td class="instruction">LD C,$9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -137,7 +137,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a>. Checks whether ERIC is some
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="77c8"></span>77C8</td>
 <td class="instruction">LD C,$A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -155,7 +155,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a>. Checks whether ERIC is some
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="77ce"></span>77CE</td>
 <td class="instruction">LD C,$A9</td>
-<td class="comment-11" rowspan="1">169=bottom floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -261,7 +261,7 @@ ERIC is on a staircase. Is he sitting on the stairs?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="77ec"></span>77EC</td>
 <td class="instruction">LD A,$00</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DB80.html">0</a>: DON'T SIT ON THE STAIRS</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DB80.html">0x00</a>: DON'T SIT ON THE STAIRS</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -387,7 +387,7 @@ At this point, <span class="register">HL</span> holds the base address of a data
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="77fa"></span>77FA</td>
 <td class="instruction">LD A,$01</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DBA0.html">1</a>: THE ROOM IS PRIVATE</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DBA0.html">0x01</a>: THE ROOM IS PRIVATE</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -453,7 +453,7 @@ At this point, <span class="register">HL</span> holds the base address of a data
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="780d"></span>780D</td>
 <td class="instruction">LD A,$02</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DBC0.html">2</a>: GET TO WHERE YOU SHOULD BE</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DBC0.html">0x02</a>: GET TO WHERE YOU SHOULD BE</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -513,7 +513,7 @@ At this point, <span class="register">HL</span> holds the base address of a data
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="781e"></span>781E</td>
 <td class="instruction">LD A,$03</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DBE0.html">3</a>: NOW FIND A SEAT</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DBE0.html">0x03</a>: NOW FIND A SEAT</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -553,7 +553,7 @@ ERIC's lesson has not started yet.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7827"></span>7827</td>
 <td class="instruction">LD A,$04</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DC80.html">4</a>: GET OFF THE FLOOR</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DC80.html">0x04</a>: GET OFF THE FLOOR</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -655,7 +655,7 @@ ERIC is not where he should be, or is not sitting down when he should be, or is 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7839"></span>7839</td>
 <td class="instruction">LD L,$F2</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7FF2.html">7FF2</a>: lines-giving delay counter (0-73)</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7FF2.html">7FF2</a>: lines-giving delay counter (0x00-0x49)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -739,7 +739,7 @@ ERIC is not where he should be, or is not sitting down when he should be, or is 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="784d"></span>784D</td>
 <td class="instruction">CALL <a href="6E90.html#6e96">$6E96</a></td>
-<td class="comment-11" rowspan="1">Get the floor closest to ERIC (155, 162 or 169) in <span class="register">D</span></td>
+<td class="comment-11" rowspan="1">Get the floor closest to ERIC (0x9B, 0xA2 or 0xA9) in <span class="register">D</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -887,7 +887,7 @@ Time to dish out some lines to ERIC.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7870"></span>7870</td>
 <td class="instruction">LD L,$96</td>
-<td class="comment-11" rowspan="2">Reset the lines-giving delay counter at <a href="7FF2.html">7FF2</a> to 150, and set <a href="7FF3.html">7FF3</a> to the character number of the teacher who saw ERIC</td>
+<td class="comment-11" rowspan="2">Reset the lines-giving delay counter at <a href="7FF2.html">7FF2</a> to 0x96, and set <a href="7FF3.html">7FF3</a> to the character number of the teacher who saw ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -999,7 +999,7 @@ ERIC was spotted somewhere other than where he should be. The appropriate lines 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="788b"></span>788B</td>
 <td class="instruction">JR NZ,$78A3</td>
-<td class="comment-11" rowspan="1">Jump if not (with <span class="register">B</span>=<a href="DBC0.html">2</a>: GET TO WHERE YOU SHOULD BE)</td>
+<td class="comment-11" rowspan="1">Jump if not (with <span class="register">B</span>=<a href="DBC0.html">0x02</a>: GET TO WHERE YOU SHOULD BE)</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
@@ -1015,7 +1015,7 @@ The truant ERIC has been spotted by his teacher for this period.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="788d"></span>788D</td>
 <td class="instruction">LD B,$05</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DCA0.html">5</a>: COME ALONG WITH ME BOY</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DCA0.html">0x05</a>: COME ALONG WITH ME BOY</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -1051,7 +1051,7 @@ The truant ERIC has been spotted by his teacher for this period.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="789a"></span>789A</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DCC0.html">6</a>: HURRY UP YOU HORROR</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DCC0.html">0x06</a>: HURRY UP YOU HORROR</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -1069,7 +1069,7 @@ The truant ERIC has been spotted by his teacher for this period.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="789f"></span>789F</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DCE0.html">7</a>: DON'T TRY MY PATIENCE BOY</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DCE0.html">0x07</a>: DON'T TRY MY PATIENCE BOY</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -1091,7 +1091,7 @@ Now <span class="register">B</span> holds the appropriate lines reprimand ID. Fi
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78a3"></span>78A3</td>
 <td class="instruction">LD A,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -1108,9 +1108,9 @@ Now <span class="register">B</span> holds the appropriate lines reprimand ID. Fi
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -35,7 +35,7 @@ Used by the routine at <a href="7986.html">7986</a>. Returns with the carry flag
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Number of the character about to speak (152-169)</td>
+<td class="register-desc">Number of the character about to speak (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -62,7 +62,7 @@ Used by the routine at <a href="7986.html">7986</a>. Returns with the carry flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7352"></span>7352</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of a character's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of a character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -156,13 +156,13 @@ The character is on-screen and no one else is speaking at the moment.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7365"></span>7365</td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character number (152-169)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character number (0x98-0xA9)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7366"></span>7366</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x61</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -174,7 +174,7 @@ The character is on-screen and no one else is speaking at the moment.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7369"></span>7369</td>
 <td class="instruction">SBC A,A</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=0 if EINSTEIN is speaking, 255 otherwise</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=0x00 if EINSTEIN is speaking, 0xFF otherwise</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -282,7 +282,7 @@ The character is on-screen and no one else is speaking at the moment.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7384"></span>7384</td>
 <td class="instruction">LD A,$EF</td>
-<td class="comment-11" rowspan="1">239=UDG reference for the speech bubble lip</td>
+<td class="comment-11" rowspan="1">0xEF=UDG reference for the speech bubble lip</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -312,7 +312,7 @@ The character is on-screen and no one else is speaking at the moment.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="738d"></span>738D</td>
 <td class="instruction">LD A,$38</td>
-<td class="comment-11" rowspan="1">56=PAPER 7: INK 0</td>
+<td class="comment-11" rowspan="1">0x38=PAPER 7: INK 0</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -406,7 +406,7 @@ The skool UDG reference and attribute byte for the location of the speech bubble
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="73a0"></span>73A0</td>
 <td class="instruction">LD B,$08</td>
-<td class="comment-11" rowspan="4">Fill in the top row of 8 character squares with the speech bubble attribute (56=PAPER 7: INK 0)</td>
+<td class="comment-11" rowspan="4">Fill in the top row of 8 character squares with the speech bubble attribute (0x38=PAPER 7: INK 0)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -442,7 +442,7 @@ The skool UDG reference and attribute byte for the location of the speech bubble
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="73aa"></span>73AA</td>
 <td class="instruction">LD B,$08</td>
-<td class="comment-11" rowspan="4">Fill in the bottom row of 8 character squares with the speech bubble attribute (56=PAPER 7: INK 0)</td>
+<td class="comment-11" rowspan="4">Fill in the bottom row of 8 character squares with the speech bubble attribute (0x38=PAPER 7: INK 0)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -496,7 +496,7 @@ The skool UDG reference and attribute byte for the location of the speech bubble
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="73ba"></span>73BA</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="6">Replace the 8 UDG references for the part of the skool that will be overwritten by the top row of the speech bubble with the appropriate speech bubble UDG references (240-247)</td>
+<td class="comment-11" rowspan="6">Replace the 8 UDG references for the part of the skool that will be overwritten by the top row of the speech bubble with the appropriate speech bubble UDG references (0xF0-0xF7)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -556,7 +556,7 @@ The skool UDG reference and attribute byte for the location of the speech bubble
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="73c9"></span>73C9</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="6">Replace the 8 UDG references for the part of the skool that will be overwritten by the bottom row of the speech bubble with the appropriate speech bubble UDG references (248-255)</td>
+<td class="comment-11" rowspan="6">Replace the 8 UDG references for the part of the skool that will be overwritten by the bottom row of the speech bubble with the appropriate speech bubble UDG references (0xF8-0xFF)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -622,7 +622,7 @@ The skool UDG reference and attribute byte for the location of the speech bubble
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="73da"></span>73DA</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="5">Replace the 8 attribute bytes for the part of the skool that will be overwritten by the top row of the speech bubble with the appropriate speech bubble attribute byte (<span class="register">C</span>=56=PAPER 7: INK 0)</td>
+<td class="comment-11" rowspan="5">Replace the 8 attribute bytes for the part of the skool that will be overwritten by the top row of the speech bubble with the appropriate speech bubble attribute byte (<span class="register">C</span>=0x38=PAPER 7: INK 0)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -676,7 +676,7 @@ The skool UDG reference and attribute byte for the location of the speech bubble
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="73e8"></span>73E8</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="5">Replace the 8 attribute bytes for the part of the skool that will be overwritten by the bottom row of the speech bubble with the appropriate speech bubble attribute byte (<span class="register">C</span>=56=PAPER 7: INK 0)</td>
+<td class="comment-11" rowspan="5">Replace the 8 attribute bytes for the part of the skool that will be overwritten by the bottom row of the speech bubble with the appropriate speech bubble attribute byte (<span class="register">C</span>=0x38=PAPER 7: INK 0)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -753,9 +753,9 @@ The skool UDG reference and attribute byte for the location of the speech bubble
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

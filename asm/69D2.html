@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at random from the table of locations at <a href="69CA.html">69CA</a> and places its coordinates into bytes 101 and 102 of the character's buffer.
+Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at random from the table of locations at <a href="69CA.html">69CA</a> and places its coordinates into bytes 0x65 and 0x66 of the character's buffer.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at ra
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -56,7 +56,7 @@ Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at ra
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="69d5"></span>69D5</td>
 <td class="instruction">AND $06</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=202, 204, 206 or 208</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=0xCA, 0xCC, 0xCE or 0xD0</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -110,7 +110,7 @@ Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at ra
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="69e1"></span>69E1</td>
 <td class="instruction">LD L,$65</td>
-<td class="comment-11" rowspan="4">Place the coordinates of the skool location into bytes 101 and 102 of the character's buffer to make it his next destination</td>
+<td class="comment-11" rowspan="4">Place the coordinates of the skool location into bytes 0x65 and 0x66 of the character's buffer to make it his next destination</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -145,9 +145,9 @@ Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at ra
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

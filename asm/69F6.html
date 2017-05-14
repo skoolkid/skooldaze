@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this continual subcommand routine is placed into bytes 124 and 125 of little boy no. 1's character buffer by the routine at <a href="6A6E.html">6A6E</a>, and into bytes 124 and 125 of the character buffers of little boys 2-11 by the routine at <a href="6A82.html">6A82</a>.
+The address of this continual subcommand routine is placed into bytes 0x7C and 0x7D of little boy no. 1's character buffer by the routine at <a href="6A6E.html">6A6E</a>, and into bytes 0x7C and 0x7D of the character buffers of little boys 2-11 by the routine at <a href="6A82.html">6A82</a>.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Little boy's character number (152-162)</td>
+<td class="register-desc">Little boy's character number (0x98-0xA2)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -74,19 +74,19 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="69fd"></span>69FD</td>
 <td class="instruction">LD B,$0A</td>
-<td class="comment-11" rowspan="1">We will check characters 163-172 (teachers and main kids)</td>
+<td class="comment-11" rowspan="1">We will check characters 0xA3-0xAC (teachers and main kids)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="69ff"></span>69FF</td>
 <td class="instruction">LD DE,$A362</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=163 (MR WACKER), <span class="register">E</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=0xA3 (MR WACKER), <span class="register">E</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a02"></span>6A02</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -150,7 +150,7 @@ A teacher or main kid is at the same x-coordinate as the little boy. Now check t
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6a0d"></span>6A0D</td>
 <td class="instruction">DEC E</td>
-<td class="comment-11" rowspan="2"><span class="register">E</span>=<span class="register">L</span>=97</td>
+<td class="comment-11" rowspan="2"><span class="register">E</span>=<span class="register">L</span>=0x61</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -168,7 +168,7 @@ A teacher or main kid is at the same x-coordinate as the little boy. Now check t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a10"></span>6A10</td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">E</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -180,7 +180,7 @@ A teacher or main kid is at the same x-coordinate as the little boy. Now check t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a12"></span>6A12</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -202,7 +202,7 @@ A teacher or main kid is at the same location as the little boy.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a15"></span>6A15</td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="2">Bytes 111 and 112 of the character's buffer may hold a routine address; pick up the MSB in <span class="register">A</span></td>
+<td class="comment-11" rowspan="2">Bytes 0x6F and 0x70 of the character's buffer may hold a routine address; pick up the MSB in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -220,7 +220,7 @@ A teacher or main kid is at the same location as the little boy.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a1a"></span>6A1A</td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Is there an uninterruptible subcommand routine address in bytes 111 and 112?</td>
+<td class="comment-11" rowspan="1">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -250,7 +250,7 @@ A teacher or main kid is at the same location as the little boy.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a22"></span>6A22</td>
 <td class="instruction">LD L,$6F</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6A46.html">6A46</a> into bytes 111 and 112 of the teacher's or main kid's buffer</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6A46.html">6A46</a> into bytes 0x6F and 0x70 of the teacher's or main kid's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -274,7 +274,7 @@ A teacher or main kid is at the same location as the little boy.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a29"></span>6A29</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Initialise the timing parameter in byte 113 of the character's buffer (which determines how long the character will stay down)</td>
+<td class="comment-11" rowspan="2">Initialise the timing parameter in byte 0x71 of the character's buffer (which determines how long the character will stay down)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -337,9 +337,9 @@ ERIC is in the same location as the little boy. Knock ERIC out.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

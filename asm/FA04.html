@@ -35,11 +35,11 @@ Used by the routine at <a href="F78E.html">F78E</a>. Before little boy no. 10, M
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">255</td>
+<td class="register-desc">0xFF</td>
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (161, 163, 164)</td>
+<td class="register-desc">Character number (0xA1, 0xA3, 0xA4)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -54,7 +54,7 @@ Used by the routine at <a href="F78E.html">F78E</a>. Before little boy no. 10, M
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fa04"></span>FA04</td>
 <td class="instruction">LD ($7FF8),A</td>
-<td class="comment-11" rowspan="1">Set the MSB of the lesson clock to 255 (so that the character looking for ERIC will have time to find him before the bell rings)</td>
+<td class="comment-11" rowspan="1">Set the MSB of the lesson clock to 0xFF (so that the character looking for ERIC will have time to find him before the bell rings)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -66,7 +66,7 @@ Used by the routine at <a href="F78E.html">F78E</a>. Before little boy no. 10, M
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa0a"></span>FA0A</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the character's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the character's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -95,9 +95,9 @@ Used by the routine at <a href="F78E.html">F78E</a>. Before little boy no. 10, M
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

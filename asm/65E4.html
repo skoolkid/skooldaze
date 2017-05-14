@@ -206,7 +206,7 @@ ERIC's at the bottom of or on a staircase, facing the top of it.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="660c"></span>660C</td>
 <td class="instruction">LD B,$02</td>
-<td class="comment-11" rowspan="1"><a href="../graphics/as.html#2">2</a>=ERIC standing, facing left</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#2">0x02</a>=ERIC standing, facing left</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -224,7 +224,7 @@ ERIC's at the bottom of or on a staircase, facing the top of it.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6612"></span>6612</td>
 <td class="instruction">LD B,$82</td>
-<td class="comment-11" rowspan="1"><a href="../graphics/as.html#130">130</a>=ERIC standing, facing right</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#130">0x82</a>=ERIC standing, facing right</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -242,13 +242,13 @@ ERIC's at the bottom of or on a staircase, facing the top of it.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6616"></span>6616</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#2">2/130</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#2">0x02/0x82</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6617"></span>6617</td>
 <td class="instruction">BIT 0,L</td>
-<td class="comment-11" rowspan="6"><span class="register">A</span>=<a href="../graphics/as.html#3">3/131</a>, <span class="register">B</span>=<a href="../graphics/as.html#2">2/130</a> if ERIC's current x-coordinate is even (which is a <a href="../reference/bugs.html#oneFourThreeFour">bug</a>); <span class="register">A</span>=<a href="../graphics/as.html#3">3/131</a>, <span class="register">B</span>=<a href="../graphics/as.html#0">0/128</a> if ERIC's current x-coordinate is odd</td>
+<td class="comment-11" rowspan="6"><span class="register">A</span>=<a href="../graphics/as.html#3">0x03/0x83</a>, <span class="register">B</span>=<a href="../graphics/as.html#2">0x02/0x82</a> if ERIC's current x-coordinate is even (which is a <a href="../reference/bugs.html#oneFourThreeFour">bug</a>); <span class="register">A</span>=<a href="../graphics/as.html#3">0x03/0x83</a>, <span class="register">B</span>=<a href="../graphics/as.html#0">0x00/0x80</a> if ERIC's current x-coordinate is odd</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -306,7 +306,7 @@ ERIC is on the middle floor or the top floor.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6624"></span>6624</td>
 <td class="instruction">CP $13</td>
-<td class="comment-11" rowspan="1">19=x-coordinate of the bottoms of the staircases at the left of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -336,7 +336,7 @@ ERIC is on the middle floor or the top floor.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="662f"></span>662F</td>
 <td class="instruction">CP $46</td>
-<td class="comment-11" rowspan="1">70=x-coordinate of the bottoms of the staircases at the right of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the right of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -383,9 +383,9 @@ ERIC is on the middle floor or the top floor.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a href="FAE6.html">208</a>, <a href="FAF0.html">210</a>, <a href="FB20.html">214</a>, <a href="FB55.html">218</a> and <a href="FADB.html">222</a> to make little boy no. 10, MR WACKER or MR ROCKITT track down ERIC (to deliver a message).
+Used by command lists <a href="FAE6.html">0xD0</a>, <a href="FAF0.html">0xD2</a>, <a href="FB20.html">0xD6</a>, <a href="FB55.html">0xDA</a> and <a href="FADB.html">0xDE</a> to make little boy no. 10, MR WACKER or MR ROCKITT track down ERIC (to deliver a message).
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by command lists <a href="FAE6.html">208</a>, <a href="FAF0.html">210</a>, 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (161, 163, 164)</td>
+<td class="register-desc">Character number (0xA1, 0xA3, 0xA4)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -63,7 +63,7 @@ Used by command lists <a href="FAE6.html">208</a>, <a href="FAF0.html">210</a>, 
 <span id="f793"></span>
 <div class="comments">
 <div class="paragraph">
-This routine places <a href="F78E.html#f79e">F79E</a> into bytes 111 and 112 of the character's buffer, but also uses byte 105 (which normally holds the LSB of a routine address) for coordination. When byte 105 holds 160 (the LSB of the routine at <a href="7BA0.html">7BA0</a>), ERIC's coordinates are compared with those of the character looking for him, and the decision is made whether to keep moving. If the character does need to keep moving, <a href="7BA0.html#7bdf">7BDF</a> is called, which either (a) turns the character round, or (b) puts the character midstride, and places 251 (the LSB of the routine at <a href="7BFB.html">7BFB</a>) into byte 105. When byte 105 holds 251, this routine jumps to <a href="7BFB.html">7BFB</a> to move the character from the midstride position, and set byte 105 back to 160.
+This routine places <a href="F78E.html#f79e">F79E</a> into bytes 0x6F and 0x70 of the character's buffer, but also uses byte 0x69 (which normally holds the LSB of a routine address) for coordination. When byte 0x69 holds 0xA0 (the LSB of the routine at <a href="7BA0.html">7BA0</a>), ERIC's coordinates are compared with those of the character looking for him, and the decision is made whether to keep moving. If the character does need to keep moving, <a href="7BA0.html#7bdf">7BDF</a> is called, which either (a) turns the character round, or (b) puts the character midstride, and places 0xFB (the LSB of the routine at <a href="7BFB.html">7BFB</a>) into byte 0x69. When byte 0x69 holds 0xFB, this routine jumps to <a href="7BFB.html">7BFB</a> to move the character from the midstride position, and set byte 0x69 back to 0xA0.
 </div>
 </div>
 </td>
@@ -72,7 +72,7 @@ This routine places <a href="F78E.html#f79e">F79E</a> into bytes 111 and 112 of 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f793"></span>F793</td>
 <td class="instruction">LD L,$69</td>
-<td class="comment-11" rowspan="2">Initialise byte 105 to 160, so on this first pass we compare ERIC's location with that of his chaser</td>
+<td class="comment-11" rowspan="2">Initialise byte 0x69 to 0xA0, so on this first pass we compare ERIC's location with that of his chaser</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -84,7 +84,7 @@ This routine places <a href="F78E.html#f79e">F79E</a> into bytes 111 and 112 of 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f797"></span>F797</td>
 <td class="instruction">LD L,$6F</td>
-<td class="comment-11" rowspan="4">Place <a href="F78E.html#f79e">F79E</a> into bytes 111 and 112 of the character's buffer (thus setting the character's uninterruptible subcommand)</td>
+<td class="comment-11" rowspan="4">Place <a href="F78E.html#f79e">F79E</a> into bytes 0x6F and 0x70 of the character's buffer (thus setting the character's uninterruptible subcommand)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -109,7 +109,7 @@ This routine places <a href="F78E.html#f79e">F79E</a> into bytes 111 and 112 of 
 <span id="f79e"></span>
 <div class="comments">
 <div class="paragraph">
-Subsequent calls to this routine will enter at this point, by virtue of its address being placed into bytes 111 and 112 of the character's buffer.
+Subsequent calls to this routine will enter at this point, by virtue of its address being placed into bytes 0x6F and 0x70 of the character's buffer.
 </div>
 </div>
 </td>
@@ -176,7 +176,7 @@ The character looking for ERIC is not midstride at the moment. Decide which way 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7af"></span>F7AF</td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 97 of the character's buffer holds his y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 of the character's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -206,7 +206,7 @@ The character looking for ERIC is not midstride at the moment. Decide which way 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7b8"></span>F7B8</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -258,7 +258,7 @@ The character looking for ERIC is within 3 x-coordinates and 3 y-coordinates of 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c3"></span>F7C3</td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="2">Remove the address of the entry point at <a href="F78E.html#f79e">F79E</a> from bytes 111 and 112 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Remove the address of the entry point at <a href="F78E.html#f79e">F79E</a> from bytes 0x6F and 0x70 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -270,7 +270,7 @@ The character looking for ERIC is within 3 x-coordinates and 3 y-coordinates of 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c6"></span>F7C6</td>
 <td class="instruction">LD L,$6A</td>
-<td class="comment-11" rowspan="2">Remove any interruptible subcommand routine address from bytes 105 and 106 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Remove any interruptible subcommand routine address from bytes 0x69 and 0x6A of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -349,9 +349,9 @@ The character has not yet found ERIC.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

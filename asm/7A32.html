@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="F400.html">F400</a>. Prepares a question message and stores its address in bytes 107 and 108 of the teacher's buffer; also prepares the answer message and stores its address in bytes 107 and 108 of EINSTEIN's buffer. Places the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 105 and 106 of the teacher's buffer before returning.
+Used by the routine at <a href="F400.html">F400</a>. Prepares a question message and stores its address in bytes 0x6B and 0x6C of the teacher's buffer; also prepares the answer message and stores its address in bytes 0x6B and 0x6C of EINSTEIN's buffer. Places the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 0x69 and 0x6A of the teacher's buffer before returning.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the routine at <a href="F400.html">F400</a>. Prepares a question message
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -492,7 +492,7 @@ Now <span class="register">HL</span> points at one of the data tables at <a href
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7aa6"></span>7AA6</td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
-<td class="comment-11" rowspan="3">Get a random number between 0 and 41 in <span class="register">A</span></td>
+<td class="comment-11" rowspan="3">Get a random number between 0x00 and 0x29 in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -510,7 +510,7 @@ Now <span class="register">HL</span> points at one of the data tables at <a href
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7aad"></span>7AAD</td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=128-169 (MR ROCKITT), 170-211 (MR WITHIT), or 212-253 (MR CREAK)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=0x80-0xA9 (MR ROCKITT), 0xAA-0xD3 (MR WITHIT), or 0xD4-0xFD (MR CREAK)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -600,7 +600,7 @@ Now <span class="register">HL</span> points at one of the data tables at <a href
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7ac0"></span>7AC0</td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-11" rowspan="3">Store the address of the answer message in bytes 107 and 108 of EINSTEIN's buffer</td>
+<td class="comment-11" rowspan="3">Store the address of the answer message in bytes 0x6B and 0x6C of EINSTEIN's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -646,7 +646,7 @@ This entry point is used by the routine at <a href="F923.html">F923</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7aca"></span>7ACA</td>
 <td class="instruction">LD L,$6B</td>
-<td class="comment-11" rowspan="4">Store the address of the question message in bytes 107 and 108 of the teacher's buffer</td>
+<td class="comment-11" rowspan="4">Store the address of the question message in bytes 0x6B and 0x6C of the teacher's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -670,7 +670,7 @@ This entry point is used by the routine at <a href="F923.html">F923</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7acf"></span>7ACF</td>
 <td class="instruction">LD L,$6A</td>
-<td class="comment-11" rowspan="4">Place the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 105 and 106 of the teacher's buffer</td>
+<td class="comment-11" rowspan="4">Place the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 0x69 and 0x6A of the teacher's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -705,9 +705,9 @@ This entry point is used by the routine at <a href="F923.html">F923</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

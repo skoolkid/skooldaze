@@ -47,7 +47,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 2 of ERIC's status 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f533"></span>F533</td>
 <td class="instruction">LD HL,$7FF6</td>
-<td class="comment-11" rowspan="1">Decrement the jumping action timer at <a href="7FF6.html">7FF6</a> (which starts at 16)</td>
+<td class="comment-11" rowspan="1">Decrement the jumping action timer at <a href="7FF6.html">7FF6</a> (which starts at 0x10)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -77,7 +77,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 2 of ERIC's status 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f53d"></span>F53D</td>
 <td class="instruction">LD B,$0F</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DEE0.html">15</a>: YOU ARE NOT A KANGAROO</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DEE0.html">0x0F</a>: YOU ARE NOT A KANGAROO</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -89,7 +89,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 2 of ERIC's status 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f542"></span>F542</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -161,7 +161,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 2 of ERIC's status 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f55e"></span>F55E</td>
 <td class="instruction">CP $06</td>
-<td class="comment-11" rowspan="2">Return if <span class="register">A</span> &lt; 6 (nothing to check or do)</td>
+<td class="comment-11" rowspan="2">Return if <span class="register">A</span> &lt; 0x06 (nothing to check or do)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -174,7 +174,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 2 of ERIC's status 
 <span id="f561"></span>
 <div class="comments">
 <div class="paragraph">
-At this point <span class="register">A</span>=6 (which means it's time to check whether ERIC has jumped onto a boy, or ERIC is already standing on a boy), or <span class="register">A</span> is one of {7, 8, 10, 11, 15}, or <span class="register">A</span>&gt;128 (which means ERIC has jumped while standing on a boy).
+At this point <span class="register">A</span>=0x06 (which means it's time to check whether ERIC has jumped onto a boy, or ERIC is already standing on a boy), or <span class="register">A</span> is one of {0x07, 0x08, 0x0A, 0x0B, 0x0F}, or <span class="register">A</span>&gt;0x80 (which means ERIC has jumped while standing on a boy).
 </div>
 </div>
 </td>
@@ -190,7 +190,7 @@ At this point <span class="register">A</span>=6 (which means it's time to check 
 <span id="f563"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is erroneously used by the routine at <a href="EAEB.html">EAEB</a> with <span class="register">H</span>=3 (which means (<span class="register">D</span>,<span class="register">E</span>) is set to (198,32) by the code that follows, and the routine exits at <a href="F533.html#f579">F579</a>).
+This entry point is erroneously used by the routine at <a href="EAEB.html">EAEB</a> with <span class="register">H</span>=0x03 (which means (<span class="register">D</span>,<span class="register">E</span>) is set to (198,32) by the code that follows, and the routine exits at <a href="F533.html#f579">F579</a>).
 </div>
 </div>
 </td>
@@ -199,7 +199,7 @@ This entry point is erroneously used by the routine at <a href="EAEB.html">EAEB<
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f563"></span>F563</td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 97 of ERIC's buffer holds his y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 of ERIC's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -217,7 +217,7 @@ This entry point is erroneously used by the routine at <a href="EAEB.html">EAEB<
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f567"></span>F567</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1">Byte 98 holds ERIC's x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 holds ERIC's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -235,7 +235,7 @@ This entry point is erroneously used by the routine at <a href="EAEB.html">EAEB<
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f56b"></span>F56B</td>
 <td class="instruction">LD H,$98</td>
-<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+<td class="comment-11" rowspan="1">0x98=little boy no. 1</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -253,7 +253,7 @@ This entry point is erroneously used by the routine at <a href="EAEB.html">EAEB<
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f572"></span>F572</td>
 <td class="instruction">LD H,$A7</td>
-<td class="comment-11" rowspan="1">167=BOY WANDER</td>
+<td class="comment-11" rowspan="1">0xA7=BOY WANDER</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -293,7 +293,7 @@ ERIC is standing on a kid who's been knocked out.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f57d"></span>F57D</td>
 <td class="instruction">LD HL,$7FF6</td>
-<td class="comment-11" rowspan="2">Set the jumping action timer at <a href="7FF6.html">7FF6</a> to 7, so that we keep returning to this section of code while ERIC is standing on a boy</td>
+<td class="comment-11" rowspan="2">Set the jumping action timer at <a href="7FF6.html">7FF6</a> to 0x07, so that we keep returning to this section of code while ERIC is standing on a boy</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -329,7 +329,7 @@ ERIC is standing on a kid who's been knocked out.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f589"></span>F589</td>
 <td class="instruction">LD (HL),$90</td>
-<td class="comment-11" rowspan="1">Set the jumping action timer at <a href="7FF6.html">7FF6</a> to 144 to indicate that ERIC has jumped while standing on a boy</td>
+<td class="comment-11" rowspan="1">Set the jumping action timer at <a href="7FF6.html">7FF6</a> to 0x90 to indicate that ERIC has jumped while standing on a boy</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -351,13 +351,13 @@ A key other than 'j' was pressed while ERIC was standing on a boy.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f58c"></span>F58C</td>
 <td class="instruction">CP $6F</td>
-<td class="comment-11" rowspan="1">111='o'</td>
+<td class="comment-11" rowspan="1">0x6F='o'</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f58e"></span>F58E</td>
 <td class="instruction">LD B,$00</td>
-<td class="comment-11" rowspan="1">Set <span class="register">B</span>=<a href="../graphics/as.html#0">0</a> (ERIC facing left) for later comparison</td>
+<td class="comment-11" rowspan="1">Set <span class="register">B</span>=<a href="../graphics/as.html#0">0x00</a> (ERIC facing left) for later comparison</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -369,7 +369,7 @@ A key other than 'j' was pressed while ERIC was standing on a boy.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f592"></span>F592</td>
 <td class="instruction">LD B,$80</td>
-<td class="comment-11" rowspan="1">Set <span class="register">B</span>=<a href="../graphics/as.html#128">128</a> (ERIC facing right) for later comparison</td>
+<td class="comment-11" rowspan="1">Set <span class="register">B</span>=<a href="../graphics/as.html#128">0x80</a> (ERIC facing right) for later comparison</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -387,7 +387,7 @@ A key other than 'j' was pressed while ERIC was standing on a boy.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f597"></span>F597</td>
 <td class="instruction">LD HL,$AC66</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=animatory state of ERIC before he jumped (stored in byte 102 of his buffer)</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=animatory state of ERIC before he jumped (stored in byte 0x66 of his buffer)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -454,7 +454,7 @@ A key other than 'j' was pressed while ERIC was standing on a boy.
 <span id="f5ab"></span>
 <div class="comments">
 <div class="paragraph">
-At this point <span class="register">A</span> is one of {7, 8, 10, 11, 15} (which means there is nothing to do), or <span class="register">A</span>=128-143 (which means ERIC has jumped while standing on a boy).
+At this point <span class="register">A</span> is one of {0x07, 0x08, 0x0A, 0x0B, 0x0F} (which means there is nothing to do), or <span class="register">A</span>=0x80-0x8F (which means ERIC has jumped while standing on a boy).
 </div>
 </div>
 </td>
@@ -463,7 +463,7 @@ At this point <span class="register">A</span> is one of {7, 8, 10, 11, 15} (whic
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f5ab"></span>F5AB</td>
 <td class="instruction">CP $86</td>
-<td class="comment-11" rowspan="2">Return now if the SUB 128 instruction below would make <span class="register">A</span>=6</td>
+<td class="comment-11" rowspan="2">Return now if the SUB $80 instruction below would make <span class="register">A</span>=0x06</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -488,7 +488,7 @@ At this point <span class="register">A</span> is one of {7, 8, 10, 11, 15} (whic
 <span id="f5b1"></span>
 <div class="comments">
 <div class="paragraph">
-So ERIC has jumped while standing on a boy. Now either <span class="register">A</span>=0, meaning it's time to set the jumping action timer at <a href="7FF6.html">7FF6</a> back to 7, so we can deal with ERIC while he's standing on a boy; or <span class="register">A</span>=1-15 (but not 6, because that would lead us into the code at <a href="F533.html#f563">F563</a> to perform a redundant check on whether ERIC is standing on a boy), meaning we need to run the usual checks while ERIC is in mid-air.
+So ERIC has jumped while standing on a boy. Now either <span class="register">A</span>=0x00, meaning it's time to set the jumping action timer at <a href="7FF6.html">7FF6</a> back to 7, so we can deal with ERIC while he's standing on a boy; or <span class="register">A</span>=0x01-0x0F (but not 0x06, because that would lead us into the code at <a href="F533.html#f563">F563</a> to perform a redundant check on whether ERIC is standing on a boy), meaning we need to run the usual checks while ERIC is in mid-air.
 </div>
 </div>
 </td>
@@ -514,9 +514,9 @@ So ERIC has jumped while standing on a boy. Now either <span class="register">A<
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

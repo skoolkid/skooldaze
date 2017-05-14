@@ -35,7 +35,7 @@ Used by the routines at <a href="7142.html">7142</a> and <a href="740A.html">740
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Number of the character speaking or writing (152-169)</td>
+<td class="register-desc">Number of the character speaking or writing (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the routines at <a href="7142.html">7142</a> and <a href="740A.html">740
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="70d2"></span>70D2</td>
 <td class="instruction">LD L,$6E</td>
-<td class="comment-11" rowspan="2">Bytes 109 and 110 of the character's buffer hold the address of the next character in the submessage</td>
+<td class="comment-11" rowspan="2">Bytes 0x6D and 0x6E of the character's buffer hold the address of the next character in the submessage</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -116,7 +116,7 @@ Used by the routines at <a href="7142.html">7142</a> and <a href="740A.html">740
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="70e0"></span>70E0</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="4">Move to the next character in the submessage, and store its address in bytes 109 and 110 of the character's buffer</td>
+<td class="comment-11" rowspan="4">Move to the next character in the submessage, and store its address in bytes 0x6D and 0x6E of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -156,7 +156,7 @@ The submessage has finished.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="70e5"></span>70E5</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="3">Zero out bytes 109 and 110 of the character's buffer to indicate that the submessage is finished</td>
+<td class="comment-11" rowspan="3">Zero out bytes 0x6D and 0x6E of the character's buffer to indicate that the submessage is finished</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -184,7 +184,7 @@ We are dealing with the main message.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="70e8"></span>70E8</td>
 <td class="instruction">LD L,$6C</td>
-<td class="comment-11" rowspan="4"><span class="register">DE</span>=address of the next character in the main message (collected from bytes 107 and 108 of the character's buffer)</td>
+<td class="comment-11" rowspan="4"><span class="register">DE</span>=address of the next character in the main message (collected from bytes 0x6B and 0x6C of the character's buffer)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -214,7 +214,7 @@ We are dealing with the main message.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="70ee"></span>70EE</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="4">Move to the next character in the main message, and store its address in bytes 107 and 108 of the character's buffer</td>
+<td class="comment-11" rowspan="4">Move to the next character in the main message, and store its address in bytes 0x6B and 0x6C of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -238,13 +238,13 @@ We are dealing with the main message.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="70f2"></span>70F2</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=109</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x6D</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="70f3"></span>70F3</td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">Is the ASCII code of the next character &lt; 128?</td>
+<td class="comment-11" rowspan="1">Is the ASCII code of the next character &lt; 0x80?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -257,7 +257,7 @@ We are dealing with the main message.
 <span id="70f7"></span>
 <div class="comments">
 <div class="paragraph">
-The ASCII code of the next character is &gt;= 128, which refers to an entry in one of the symbol/element, capital city/country and date/battle question-and-answer pairs.
+The ASCII code of the next character is &gt;= 0x80, which refers to an entry in one of the symbol/element, capital city/country and date/battle question-and-answer pairs.
 </div>
 </div>
 </td>
@@ -266,7 +266,7 @@ The ASCII code of the next character is &gt;= 128, which refers to an entry in o
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="70f7"></span>70F7</td>
 <td class="instruction">AND $7F</td>
-<td class="comment-11" rowspan="13">Set <span class="register">DE</span> to <a href="DF00.html">DF00</a>+12*(<span class="register">A</span>-128)</td>
+<td class="comment-11" rowspan="13">Set <span class="register">DE</span> to <a href="DF00.html">DF00</a>+0x0C*(<span class="register">A</span>-0x80)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -344,7 +344,7 @@ The ASCII code of the next character is &gt;= 128, which refers to an entry in o
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7107"></span>7107</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="2">Pick up the first character of this submessage in <span class="register">A</span> and store the next address in bytes 109 and 110 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Pick up the first character of this submessage in <span class="register">A</span> and store the next address in bytes 0x6D and 0x6E of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -357,7 +357,7 @@ The ASCII code of the next character is &gt;= 128, which refers to an entry in o
 <span id="710a"></span>
 <div class="comments">
 <div class="paragraph">
-The ASCII code of the next character in the message is &lt; 128.
+The ASCII code of the next character in the message is &lt; 0x80.
 </div>
 </div>
 </td>
@@ -366,7 +366,7 @@ The ASCII code of the next character in the message is &lt; 128.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="710a"></span>710A</td>
 <td class="instruction">CP $20</td>
-<td class="comment-11" rowspan="2">Return if the next character is a normal, printable character (ASCII code &gt;= 32)</td>
+<td class="comment-11" rowspan="2">Return if the next character is a normal, printable character (ASCII code &gt;= 0x20)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -378,7 +378,7 @@ The ASCII code of the next character in the message is &lt; 128.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="710d"></span>710D</td>
 <td class="instruction">CP $10</td>
-<td class="comment-11" rowspan="2">Return if the ASCII code of the next character in the message is &lt; 16</td>
+<td class="comment-11" rowspan="2">Return if the ASCII code of the next character in the message is &lt; 0x10</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -391,7 +391,7 @@ The ASCII code of the next character in the message is &lt; 128.
 <span id="7110"></span>
 <div class="comments">
 <div class="paragraph">
-The ASCII code of the next character in the message is 16-24. We have a submessage to deal with, which will be one of the following:
+The ASCII code of the next character in the message is 0x10-0x18. We have a submessage to deal with, which will be one of the following:
 </div>
 <div class="paragraph">
 <table class="default">
@@ -401,47 +401,47 @@ The ASCII code of the next character in the message is 16-24. We have a submessa
 <th colspan="1" rowspan="1">Submessage</th>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">16</td>
+<td class="centre" colspan="1" rowspan="1">0x10</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D980.html">D980</a></td>
 <td class="" colspan="1" rowspan="1">'ERIC'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">17</td>
+<td class="centre" colspan="1" rowspan="1">0x11</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D98E.html">D98E</a></td>
 <td class="" colspan="1" rowspan="1">'BOY WANDER'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">18</td>
+<td class="centre" colspan="1" rowspan="1">0x12</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D99C.html">D99C</a></td>
 <td class="" colspan="1" rowspan="1">'ANGELFACE'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">19</td>
+<td class="centre" colspan="1" rowspan="1">0x13</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D9AA.html">D9AA</a></td>
 <td class="" colspan="1" rowspan="1">'EINSTEIN'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">20</td>
+<td class="centre" colspan="1" rowspan="1">0x14</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D9B8.html">D9B8</a></td>
 <td class="" colspan="1" rowspan="1">'MR WACKER'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">21</td>
+<td class="centre" colspan="1" rowspan="1">0x15</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D9C6.html">D9C6</a></td>
 <td class="" colspan="1" rowspan="1">'MR ROCKITT'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">22</td>
+<td class="centre" colspan="1" rowspan="1">0x16</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D9D4.html">D9D4</a></td>
 <td class="" colspan="1" rowspan="1">'MR WITHIT'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">23</td>
+<td class="centre" colspan="1" rowspan="1">0x17</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D9E2.html">D9E2</a></td>
 <td class="" colspan="1" rowspan="1">'MR CREAK'</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">24</td>
+<td class="centre" colspan="1" rowspan="1">0x18</td>
 <td class="centre" colspan="1" rowspan="1"><a href="D9F0.html">D9F0</a></td>
 <td class="" colspan="1" rowspan="1">'Please Sir - I cannot tell a lie . . '</td>
 </tr>
@@ -531,9 +531,9 @@ The ASCII code of the next character in the message is 16-24. We have a submessa
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="7C6E.html">7C6E</a>, which also places the address of this interruptible subcommand routine into bytes 105 and 106 of the teacher's buffer when ERIC is absent during dinner or class. It makes the teacher run after and stalk ERIC until he goes to wherever he should be (the dinner hall or the classroom).
+Used by the routine at <a href="7C6E.html">7C6E</a>, which also places the address of this interruptible subcommand routine into bytes 0x69 and 0x6A of the teacher's buffer when ERIC is absent during dinner or class. It makes the teacher run after and stalk ERIC until he goes to wherever he should be (the dinner hall or the classroom).
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the routine at <a href="7C6E.html">7C6E</a>, which also places the addre
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -168,7 +168,7 @@ ERIC is back where he should be, so it's time for the teacher to resume his clas
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7bc3"></span>7BC3</td>
 <td class="instruction">LD B,$02</td>
-<td class="comment-11" rowspan="6">190 is the LSB of the address of the routine at <a href="63BE.html">63BE</a>; point <span class="register">DE</span> at the second-from-last occurrence of this routine address in the teacher's command list (which will take him to the side of the blackboard where he waits for EINSTEIN to grass, or back to the dinner hall)</td>
+<td class="comment-11" rowspan="6">0xBE is the LSB of the address of the routine at <a href="63BE.html">63BE</a>; point <span class="register">DE</span> at the second-from-last occurrence of this routine address in the teacher's command list (which will take him to the side of the blackboard where he waits for EINSTEIN to grass, or back to the dinner hall)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -232,7 +232,7 @@ ERIC is not where he should be, or the teacher is on a staircase.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7bd2"></span>7BD2</td>
 <td class="instruction">LD A,($5C78)</td>
-<td class="comment-11" rowspan="1">23672=LSB of FRAMES system variable</td>
+<td class="comment-11" rowspan="1">5C78=LSB of FRAMES system variable</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -296,7 +296,7 @@ This entry point is used by the routine at <a href="F78E.html">F78E</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7be7"></span>7BE7</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the buffer holds the animatory state of ERIC's chaser</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the buffer holds the animatory state of ERIC's chaser</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -367,9 +367,9 @@ This entry point is used by the routine at <a href="F78E.html">F78E</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

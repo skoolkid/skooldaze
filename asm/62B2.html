@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="6226.html">6226</a>. Returns to that routine if the character under consideration should be moved on this pass; otherwise drops the return address from the stack, thus skipping ahead to consider the next character. Also reinitialises the walking speed change delay counter in byte 123 of the character's buffer when it reaches 0, and sets the new walking speed as appropriate: slow for teachers, fast or slow (at random) for boys.
+Used by the routine at <a href="6226.html">6226</a>. Returns to that routine if the character under consideration should be moved on this pass; otherwise drops the return address from the stack, thus skipping ahead to consider the next character. Also reinitialises the walking speed change delay counter in byte 0x7B of the character's buffer when it reaches 0, and sets the new walking speed as appropriate: slow for teachers, fast or slow (at random) for boys.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the routine at <a href="6226.html">6226</a>. Returns to that routine if 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-171)</td>
+<td class="register-desc">Character number (0x98-0xAB)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the routine at <a href="6226.html">6226</a>. Returns to that routine if 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62b2"></span>62B2</td>
 <td class="instruction">LD L,$7B</td>
-<td class="comment-11" rowspan="2">Byte 123 contains a counter that is reset to a random even number between 2 and 32; see below</td>
+<td class="comment-11" rowspan="2">Byte 0x7B contains a counter that is reset to a random even number between 2 and 32; see below</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -80,7 +80,7 @@ Used by the routine at <a href="6226.html">6226</a>. Returns to that routine if 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ba"></span>62BA</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=122</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x7A</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -144,19 +144,19 @@ It's time to consider a change of pace for the character being moved.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62c8"></span>62C8</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Place this even number into byte 123 of the character's buffer</td>
+<td class="comment-11" rowspan="1">Place this even number into byte 0x7B of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62c9"></span>62C9</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=122</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x7A</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ca"></span>62CA</td>
 <td class="instruction">RL (HL)</td>
-<td class="comment-11" rowspan="2">Bit 7 of byte 122 is now equal to the random bit that was pushed into the carry flag by the RRA instruction above</td>
+<td class="comment-11" rowspan="2">Bit 7 of byte 0x7A is now equal to the random bit that was pushed into the carry flag by the RRA instruction above</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -168,7 +168,7 @@ It's time to consider a change of pace for the character being moved.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ce"></span>62CE</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="2">Bit 5 of byte 122 is set for catapult pellets and stampeding boys to ensure they always go at top speed</td>
+<td class="comment-11" rowspan="2">Bit 5 of byte 0x7A is set for catapult pellets and stampeding boys to ensure they always go at top speed</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -203,9 +203,9 @@ It's time to consider a change of pace for the character being moved.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

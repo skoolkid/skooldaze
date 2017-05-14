@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.html">130</a>, <a href="FBB4.html">132</a>, <a href="FBCA.html">134</a> and <a href="FD59.html">184</a>. Restarts the teacher's command list if it's not time to start the class (or the dinner period) yet; otherwise moves to the next command in the command list.
+Used by the teachers' command lists <a href="FB80.html">0x80</a>, <a href="FB9A.html">0x82</a>, <a href="FBB4.html">0x84</a>, <a href="FBCA.html">0x86</a> and <a href="FD59.html">0xB8</a>. Restarts the teacher's command list if it's not time to start the class (or the dinner period) yet; otherwise moves to the next command in the command list.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.h
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.h
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7c3f"></span>7C3F</td>
 <td class="instruction">LD A,($7FF8)</td>
-<td class="comment-11" rowspan="1">Pick up the MSB of the lesson clock (0-21)</td>
+<td class="comment-11" rowspan="1">Pick up the MSB of the lesson clock (0x00-0x15)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -73,9 +73,9 @@ Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.h
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

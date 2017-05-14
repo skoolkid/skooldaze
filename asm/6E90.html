@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78AA</a>. Returns with <span class="register">D</span> holding 155 (top), 162 (middle), or 169 (bottom), corresponding to the floor nearest to the character.
+Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78AA</a>. Returns with <span class="register">D</span> holding 0x9B (top), 0xA2 (middle), or 0xA9 (bottom), corresponding to the floor nearest to the character.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">167 (BOY WANDER), 168 (ANGELFACE), 169 (EINSTEIN) or 172 (ERIC)</td>
+<td class="register-desc">0xA7 (BOY WANDER), 0xA8 (ANGELFACE), 0xA9 (EINSTEIN) or 0xAC (ERIC)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e90"></span>6E90</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of a character's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of a character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -62,7 +62,7 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e93"></span>6E93</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x61</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -74,7 +74,7 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e95"></span>6E95</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=96</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x60</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
@@ -112,7 +112,7 @@ The character is on a staircase. Which floor is he nearest?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e9a"></span>6E9A</td>
 <td class="instruction">LD D,$9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -130,7 +130,7 @@ The character is on a staircase. Which floor is he nearest?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e9f"></span>6E9F</td>
 <td class="instruction">LD D,$A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -148,7 +148,7 @@ The character is on a staircase. Which floor is he nearest?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ea4"></span>6EA4</td>
 <td class="instruction">LD D,$A9</td>
-<td class="comment-11" rowspan="1">169=bottom floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -165,9 +165,9 @@ The character is on a staircase. Which floor is he nearest?
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

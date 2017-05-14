@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this interruptible subcommand routine is placed into bytes 105 and 106 of a character's buffer by the routine at <a href="63BE.html">63BE</a> when the character has reached the bottom of a staircase he needs to descend to reach his destination.
+The address of this interruptible subcommand routine is placed into bytes 0x69 and 0x6A of a character's buffer by the routine at <a href="63BE.html">63BE</a> when the character has reached the top of a staircase he needs to descend to reach his destination.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -57,7 +57,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 <span id="6392"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="638C.html">638C</a> with <span class="register">B</span>=255.
+This entry point is used by the routine at <a href="638C.html">638C</a> with <span class="register">B</span>=0xFF.
 </div>
 </div>
 </td>
@@ -66,7 +66,7 @@ This entry point is used by the routine at <a href="638C.html">638C</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6392"></span>6392</td>
 <td class="instruction">LD L,$6B</td>
-<td class="comment-11" rowspan="1">Byte 107 of the character's buffer holds the number of movements remaining</td>
+<td class="comment-11" rowspan="1">Byte 0x6B of the character's buffer holds the number of movements remaining</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -269,9 +269,9 @@ The character is midstride. Now we calculate his next x-coordinate.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

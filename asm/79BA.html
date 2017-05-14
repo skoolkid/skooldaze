@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a href="FC18.html">144</a>, <a href="FC5F.html">152</a>, <a href="FCA6.html">160</a> and <a href="FCED.html">168</a>. Makes EINSTEIN wait for his turn to speak, and then hands over control to the interruptible subcommand routine at <a href="7986.html#798c">798C</a>; when EINSTEIN has finished speaking, control returns to the primary command routine at <a href="79CA.html">79CA</a>.
+Used by command lists <a href="FC18.html">0x90</a>, <a href="FC5F.html">0x98</a>, <a href="FCA6.html">0xA0</a> and <a href="FCED.html">0xA8</a>. Makes EINSTEIN wait for his turn to speak, and then hands over control to the interruptible subcommand routine at <a href="7986.html#798c">798C</a>; when EINSTEIN has finished speaking, control returns to the primary command routine at <a href="79CA.html">79CA</a>.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by command lists <a href="FC18.html">144</a>, <a href="FC5F.html">152</a>, 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">169 (EINSTEIN)</td>
+<td class="register-desc">0xA9 (EINSTEIN)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -68,7 +68,7 @@ Used by command lists <a href="FC18.html">144</a>, <a href="FC5F.html">152</a>, 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="79bf"></span>79BF</td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 99 and 100 of EINSTEIN's buffer with that of <a href="79CA.html">79CA</a> (so that we go there after EINSTEIN has finished speaking)</td>
+<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of EINSTEIN's buffer with that of <a href="79CA.html">79CA</a> (so that we go there after EINSTEIN has finished speaking)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -80,7 +80,7 @@ Used by command lists <a href="FC18.html">144</a>, <a href="FC5F.html">152</a>, 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="79c3"></span>79C3</td>
 <td class="instruction">LD L,$6A</td>
-<td class="comment-11" rowspan="2">Set the routine address MSB in byte 106 of EINSTEIN's buffer to that of <a href="7986.html#798c">798C</a>; the LSB will be set later</td>
+<td class="comment-11" rowspan="2">Set the routine address MSB in byte 0x6A of EINSTEIN's buffer to that of <a href="7986.html#798c">798C</a>; the LSB will be set later</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -103,9 +103,9 @@ Used by command lists <a href="FC18.html">144</a>, <a href="FC5F.html">152</a>, 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

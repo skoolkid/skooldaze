@@ -35,7 +35,7 @@ Continues from <a href="71DC.html">71DC</a>.
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">Blackboard identifier (236, 238 or 240)</td>
+<td class="register-desc">Blackboard identifier (0xEC, 0xEE or 0xF0)</td>
 </tr>
 <tr>
 <td class="register">DE</td>
@@ -43,7 +43,7 @@ Continues from <a href="71DC.html">71DC</a>.
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -58,7 +58,7 @@ Continues from <a href="71DC.html">71DC</a>.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="71e8"></span>71E8</td>
 <td class="instruction">LD L,$69</td>
-<td class="comment-11" rowspan="2">Replace the address of the interruptible subcommand routine at <a href="71DC.html">71DC</a> in bytes 105 and 106 of the teacher's buffer with <a href="71E8.html#71f7">71F7</a> (below)</td>
+<td class="comment-11" rowspan="2">Replace the address of the interruptible subcommand routine at <a href="71DC.html">71DC</a> in bytes 0x69 and 0x6A of the teacher's buffer with <a href="71E8.html#71f7">71F7</a> (below)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -82,7 +82,7 @@ Continues from <a href="71DC.html">71DC</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="71f0"></span>71F0</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="4">Store the x-coordinate of the rightmost column of the blackboard (which will be wiped first) in byte 108 of the teacher's buffer</td>
+<td class="comment-11" rowspan="4">Store the x-coordinate of the rightmost column of the blackboard (which will be wiped first) in byte 0x6C of the teacher's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -106,7 +106,7 @@ Continues from <a href="71DC.html">71DC</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="71f5"></span>71F5</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Store the y-coordinate of the top row of the blackboard in byte 109 of the teacher's buffer</td>
+<td class="comment-11" rowspan="2">Store the y-coordinate of the top row of the blackboard in byte 0x6D of the teacher's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -505,9 +505,9 @@ The teacher has finished wiping the board.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

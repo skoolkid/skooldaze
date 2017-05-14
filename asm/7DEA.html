@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this continual subcommand routine is placed into bytes 124 and 125 of a character's buffer by command lists <a href="FB20.html">214</a> and <a href="FB55.html">218</a>. This routine is also used directly by the routines at <a href="7BA0.html">7BA0</a>, <a href="F78E.html">F78E</a> and <a href="FA2A.html">FA2A</a>.
+The address of this continual subcommand routine is placed into bytes 0x7C and 0x7D of a character's buffer by command lists <a href="FB20.html">0xD6</a> and <a href="FB55.html">0xDA</a>. This routine is also used directly by the routines at <a href="7BA0.html">7BA0</a>, <a href="F78E.html">F78E</a> and <a href="FA2A.html">FA2A</a>.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7dea"></span>7DEA</td>
 <td class="instruction">LD L,$7B</td>
-<td class="comment-11" rowspan="2">Set the speed change delay counter in byte 123 of the character's buffer to 4, preventing any speed change by the routine at <a href="62B2.html">62B2</a></td>
+<td class="comment-11" rowspan="2">Set the speed change delay counter in byte 0x7B of the character's buffer to 4, preventing any speed change by the routine at <a href="62B2.html">62B2</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -62,7 +62,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7dee"></span>7DEE</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="2">Reset bit 7 of byte 122 of the character's buffer, indicating that he is walking fast</td>
+<td class="comment-11" rowspan="2">Reset bit 7 of byte 0x7A of the character's buffer, indicating that he is walking fast</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -85,9 +85,9 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

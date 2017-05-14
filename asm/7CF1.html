@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</a>, <a href="7D9E.html">7D9E</a>, <a href="F300.html">F300</a> and <a href="F400.html">F400</a>. Drops the return address from the stack and copies its LSB into byte 99 of the character's buffer (where the LSB of the address of the primary command routine is held), copies the address of the interruptible subcommand routine from <span class="register">BC</span> into bytes 106 and 107 of the character's buffer, and then jumps to that routine.
+Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</a>, <a href="7D9E.html">7D9E</a>, <a href="F300.html">F300</a> and <a href="F400.html">F400</a>. Drops the return address from the stack and copies its LSB into byte 0x63 of the character's buffer (where the LSB of the address of the primary command routine is held), copies the address of the interruptible subcommand routine from <span class="register">BC</span> into bytes 0x6A and 0x6B of the character's buffer, and then jumps to that routine.
 </div>
 </div>
 <table class="input-1">
@@ -39,7 +39,7 @@ Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -54,7 +54,7 @@ Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7cf1"></span>7CF1</td>
 <td class="instruction">LD L,$6A</td>
-<td class="comment-11" rowspan="4">Copy the routine address from <span class="register">BC</span> into bytes 105 and and 106 of the character's buffer</td>
+<td class="comment-11" rowspan="4">Copy the routine address from <span class="register">BC</span> into bytes 0x69 and 0x6A of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -78,7 +78,7 @@ Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cf6"></span>7CF6</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="3">Drop the return address off the stack and place its LSB into byte 99 of the character's buffer; this ensures that when the interruptible subcommand has finished, control resumes in the caller of this routine</td>
+<td class="comment-11" rowspan="3">Drop the return address off the stack and place its LSB into byte 0x63 of the character's buffer; this ensures that when the interruptible subcommand has finished, control resumes in the caller of this routine</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -113,9 +113,9 @@ Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

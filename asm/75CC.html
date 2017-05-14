@@ -35,7 +35,7 @@ Used by the routine at <a href="7700.html">7700</a>. Generates the graphic data 
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">Reprimand message identifier (0-15)</td>
+<td class="register-desc">Reprimand message identifier (0x00-0x0F)</td>
 </tr>
 <tr>
 <td class="register">DE</td>
@@ -137,82 +137,82 @@ Now <span class="register">HL</span> points at the appropriate message.
 <th colspan="1" rowspan="1">Message</th>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="centre" colspan="1" rowspan="1">0x00</td>
 <td class="" colspan="1" rowspan="1"><a href="DB80.html">DB80</a></td>
 <td class="" colspan="1" rowspan="1">DON'T SIT ON THE STAIRS</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="centre" colspan="1" rowspan="1">0x01</td>
 <td class="" colspan="1" rowspan="1"><a href="DBA0.html">DBA0</a></td>
 <td class="" colspan="1" rowspan="1">THE ROOM IS PRIVATE</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="centre" colspan="1" rowspan="1">0x02</td>
 <td class="" colspan="1" rowspan="1"><a href="DBC0.html">DBC0</a></td>
 <td class="" colspan="1" rowspan="1">GET TO WHERE YOU SHOULD BE</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="centre" colspan="1" rowspan="1">0x03</td>
 <td class="" colspan="1" rowspan="1"><a href="DBE0.html">DBE0</a></td>
 <td class="" colspan="1" rowspan="1">NOW FIND A SEAT</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="centre" colspan="1" rowspan="1">0x04</td>
 <td class="" colspan="1" rowspan="1"><a href="DC80.html">DC80</a></td>
 <td class="" colspan="1" rowspan="1">GET OFF THE FLOOR</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="centre" colspan="1" rowspan="1">0x05</td>
 <td class="" colspan="1" rowspan="1"><a href="DCA0.html">DCA0</a></td>
 <td class="" colspan="1" rowspan="1">COME ALONG WITH ME BOY</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="centre" colspan="1" rowspan="1">0x06</td>
 <td class="" colspan="1" rowspan="1"><a href="DCC0.html">DCC0</a></td>
 <td class="" colspan="1" rowspan="1">HURRY UP YOU HORROR</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="centre" colspan="1" rowspan="1">0x07</td>
 <td class="" colspan="1" rowspan="1"><a href="DCE0.html">DCE0</a></td>
 <td class="" colspan="1" rowspan="1">DON'T TRY MY PATIENCE BOY</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">8</td>
+<td class="centre" colspan="1" rowspan="1">0x08</td>
 <td class="" colspan="1" rowspan="1"><a href="DD80.html">DD80</a></td>
 <td class="" colspan="1" rowspan="1">NOW DON'T DO IT AGAIN</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">9</td>
+<td class="centre" colspan="1" rowspan="1">0x09</td>
 <td class="" colspan="1" rowspan="1"><a href="DDA0.html">DDA0</a></td>
 <td class="" colspan="1" rowspan="1">DON'T TELL TALES</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">10</td>
+<td class="centre" colspan="1" rowspan="1">0x0A</td>
 <td class="" colspan="1" rowspan="1"><a href="DDC0.html">DDC0</a></td>
 <td class="" colspan="1" rowspan="1">NEVER BE LATE AGAIN</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">11</td>
+<td class="centre" colspan="1" rowspan="1">0x0B</td>
 <td class="" colspan="1" rowspan="1"><a href="DDE0.html">DDE0</a></td>
 <td class="" colspan="1" rowspan="1">AND STAY THIS TIME</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">12</td>
+<td class="centre" colspan="1" rowspan="1">0x0C</td>
 <td class="" colspan="1" rowspan="1"><a href="DE80.html">DE80</a></td>
 <td class="" colspan="1" rowspan="1">DON'T TOUCH BLACKBOARDS</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">13</td>
+<td class="centre" colspan="1" rowspan="1">0x0D</td>
 <td class="" colspan="1" rowspan="1"><a href="DEA0.html">DEA0</a></td>
 <td class="" colspan="1" rowspan="1">CATAPULTS ARE FORBIDDEN</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">14</td>
+<td class="centre" colspan="1" rowspan="1">0x0E</td>
 <td class="" colspan="1" rowspan="1"><a href="DEC0.html">DEC0</a></td>
 <td class="" colspan="1" rowspan="1">DON'T HIT YOUR MATES</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">15</td>
+<td class="centre" colspan="1" rowspan="1">0x0F</td>
 <td class="" colspan="1" rowspan="1"><a href="DEE0.html">DEE0</a></td>
 <td class="" colspan="1" rowspan="1">YOU ARE NOT A KANGAROO</td>
 </tr>
@@ -314,9 +314,9 @@ Now <span class="register">HL</span> points at the appropriate message.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

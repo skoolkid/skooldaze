@@ -67,7 +67,7 @@ Used by the routines at <a href="7BA0.html">7BA0</a>, <a href="F5DA.html">F5DA</
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Follower's character number (152-172)</td>
+<td class="register-desc">Follower's character number (0x98-0xAC)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -82,7 +82,7 @@ Used by the routines at <a href="7BA0.html">7BA0</a>, <a href="F5DA.html">F5DA</
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7adc"></span>7ADC</td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 97 of the follower's buffer holds his y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 of the follower's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -140,7 +140,7 @@ The follower is on a staircase. Find out whether he's going up or down and set <
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7aeb"></span>7AEB</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of the follower's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of the follower's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -152,7 +152,7 @@ The follower is on a staircase. Find out whether he's going up or down and set <
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7aee"></span>7AEE</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 holds the follower's animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 holds the follower's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -284,7 +284,7 @@ The follower and target are both on the bottom floor, so the follower should sim
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b05"></span>7B05</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -330,19 +330,19 @@ The follower and target are both on the middle floor or both on the top floor.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7b0d"></span>7B0D</td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the follower and target are on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b0f"></span>7B0F</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b10"></span>7B10</td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -354,7 +354,7 @@ The follower and target are both on the middle floor or both on the top floor.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b14"></span>7B14</td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -400,7 +400,7 @@ The follower is on the left side of the skool and must go downstairs to get to t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b1d"></span>7B1D</td>
 <td class="instruction">CP $0C</td>
-<td class="comment-11" rowspan="1">12=x-coordinate of the tops of the staircases at the left of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the tops of the staircases at the left of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -412,7 +412,7 @@ The follower is on the left side of the skool and must go downstairs to get to t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b21"></span>7B21</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the follower's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -476,7 +476,7 @@ The follower is on the right side of the skool. Is the target there too?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b2f"></span>7B2F</td>
 <td class="instruction">CP $4D</td>
-<td class="comment-11" rowspan="1">77=x-coordinate of the tops of the staircases at the right of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the tops of the staircases at the right of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -488,7 +488,7 @@ The follower is on the right side of the skool. Is the target there too?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b33"></span>7B33</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the follower's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -540,19 +540,19 @@ The follower and target are on different floors.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b3f"></span>7B3F</td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the follower is on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b41"></span>7B41</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b42"></span>7B42</td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -564,7 +564,7 @@ The follower and target are on different floors.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b46"></span>7B46</td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -604,19 +604,19 @@ The target is on a floor above the follower. Which staircase should the follower
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b4e"></span>7B4E</td>
 <td class="instruction">LD D,$9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b50"></span>7B50</td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b52"></span>7B52</td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -628,13 +628,13 @@ The target is on a floor above the follower. Which staircase should the follower
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b56"></span>7B56</td>
 <td class="instruction">LD D,$A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b58"></span>7B58</td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -670,13 +670,13 @@ The target is on a floor above the follower. Which staircase should the follower
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b62"></span>7B62</td>
 <td class="instruction">CP $A9</td>
-<td class="comment-11" rowspan="1">169=bottom floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the follower is on the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b64"></span>7B64</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -688,7 +688,7 @@ The target is on a floor above the follower. Which staircase should the follower
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7b67"></span>7B67</td>
 <td class="instruction">LD A,$13</td>
-<td class="comment-11" rowspan="1">19=x-coordinate of the bottoms of the staircases at the left of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -706,7 +706,7 @@ The target is on a floor above the follower. Which staircase should the follower
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b6c"></span>7B6C</td>
 <td class="instruction">LD A,$46</td>
-<td class="comment-11" rowspan="1">70=x-coordinate of the bottoms of the staircases at the right of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the right of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -730,13 +730,13 @@ The target is on a floor above the follower. Which staircase should the follower
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b72"></span>7B72</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the follower's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b74"></span>7B74</td>
 <td class="instruction">CP $13</td>
-<td class="comment-11" rowspan="1">19=x-coordinate of the bottoms of the staircases at the left of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -812,7 +812,7 @@ The follower is on the middle floor, and the target is on the top floor.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7b86"></span>7B86</td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -871,9 +871,9 @@ The follower is on the middle floor, and the target is on the top floor.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

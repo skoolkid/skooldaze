@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this continual subcommand routine is placed into bytes 124 and 125 of ANGELFACE's buffer by command list <a href="FAFF.html">220</a>. It checks whether ERIC and ANGELFACE are in the same location; if they are, and ERIC has already been informed of ANGELFACE's medical condition, bit 5 at <a href="7FCB.html">7FCB</a> is set, indicating that ERIC has mumps (whereupon MR ROCKITT will come looking for ERIC to send him home).
+The address of this continual subcommand routine is placed into bytes 0x7C and 0x7D of ANGELFACE's buffer by command list <a href="FAFF.html">0xDC</a>. It checks whether ERIC and ANGELFACE are in the same location; if they are, and ERIC has already been informed of ANGELFACE's medical condition, bit 5 at <a href="7FCB.html">7FCB</a> is set, indicating that ERIC has mumps (whereupon MR ROCKITT will come looking for ERIC to send him home).
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">168 (ANGELFACE)</td>
+<td class="register-desc">0xA8 (ANGELFACE)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -80,7 +80,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa36"></span>FA36</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of ANGELFACE's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of ANGELFACE's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -104,7 +104,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa3d"></span>FA3D</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=97 (which byte holds ANGELFACE's y-coordinate)</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x61 (which byte holds ANGELFACE's y-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -161,9 +161,9 @@ ERIC and ANGELFACE are in the same location, thus facilitating transmission of t
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -35,7 +35,7 @@ Continues from the routine at <a href="7DB2.html">7DB2</a>. Makes a teacher cond
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -114,7 +114,7 @@ This entry point is used by the routine at <a href="F400.html">F400</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f319"></span>F319</td>
 <td class="instruction">SET 7,A</td>
-<td class="comment-11" rowspan="2">Set bit 7 at <a href="7FC8.html">7FC8</a>, indicating that the next lines message for absence (if any) should be no. <a href="DDE0.html">11</a> (AND STAY THIS TIME)</td>
+<td class="comment-11" rowspan="2">Set bit 7 at <a href="7FC8.html">7FC8</a>, indicating that the next lines message for absence (if any) should be no. <a href="DDE0.html">0x0B</a> (AND STAY THIS TIME)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -138,7 +138,7 @@ This entry point is used by the routine at <a href="F400.html">F400</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f322"></span>F322</td>
 <td class="instruction">LD B,$0B</td>
-<td class="comment-11" rowspan="1">...<a href="DDE0.html">11</a>: AND STAY THIS TIME</td>
+<td class="comment-11" rowspan="1">...<a href="DDE0.html">0x0B</a>: AND STAY THIS TIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -150,13 +150,13 @@ This entry point is used by the routine at <a href="F400.html">F400</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f326"></span>F326</td>
 <td class="instruction">DEC B</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DDC0.html">10</a>: NEVER BE LATE AGAIN</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DDC0.html">0x0A</a>: NEVER BE LATE AGAIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f327"></span>F327</td>
 <td class="instruction">LD A,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -284,13 +284,13 @@ This is EINSTEIN's opportunity to tell tales about hitting and blackboard deface
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f352"></span>F352</td>
 <td class="instruction">LD B,$08</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DD80.html">8</a>: NOW DON'T DO IT AGAIN</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DD80.html">0x08</a>: NOW DON'T DO IT AGAIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f354"></span>F354</td>
 <td class="instruction">LD A,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -338,7 +338,7 @@ This is EINSTEIN's opportunity to tell tales about hitting and blackboard deface
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f366"></span>F366</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -422,7 +422,7 @@ This is EINSTEIN's opportunity to tell tales about hitting and blackboard deface
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f37e"></span>F37E</td>
 <td class="instruction">LD A,$11</td>
-<td class="comment-11" rowspan="1"><a href="D98E.html">17</a>='BOY WANDER'</td>
+<td class="comment-11" rowspan="1"><a href="D98E.html">0x11</a>='BOY WANDER'</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -434,7 +434,7 @@ This is EINSTEIN's opportunity to tell tales about hitting and blackboard deface
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f382"></span>F382</td>
 <td class="instruction">LD A,$10</td>
-<td class="comment-11" rowspan="1"><a href="D980.html">16</a>='ERIC'</td>
+<td class="comment-11" rowspan="1"><a href="D980.html">0x10</a>='ERIC'</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -482,7 +482,7 @@ This is EINSTEIN's opportunity to tell tales about hitting and blackboard deface
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f392"></span>F392</td>
 <td class="instruction">LD A,($F113)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="D980.html">16</a> ('ERIC') or <a href="D98E.html">17</a> ('BOY WANDER')</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="D980.html">0x10</a> ('ERIC') or <a href="D98E.html">0x11</a> ('BOY WANDER')</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -494,7 +494,7 @@ This is EINSTEIN's opportunity to tell tales about hitting and blackboard deface
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f396"></span>F396</td>
 <td class="instruction">LD A,$A7</td>
-<td class="comment-11" rowspan="1">167=BOY WANDER</td>
+<td class="comment-11" rowspan="1">0xA7=BOY WANDER</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -506,13 +506,13 @@ This is EINSTEIN's opportunity to tell tales about hitting and blackboard deface
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f39a"></span>F39A</td>
 <td class="instruction">LD A,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f39c"></span>F39C</td>
 <td class="instruction">LD B,$0C</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DE80.html">12</a>: DON'T TOUCH BLACKBOARDS</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DE80.html">0x0C</a>: DON'T TOUCH BLACKBOARDS</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -568,7 +568,7 @@ Control returns here after the teacher has wiped the blackboard.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f3aa"></span>F3AA</td>
 <td class="instruction">ADD A,$03</td>
-<td class="comment-11" rowspan="5">Place the x-coordinate of the middle of the blackboard into byte 107 of the teacher's buffer, and the same value into byte 108 (which ensures that the routine at <a href="633C.html">633C</a> will not relinquish control before the teacher has reached the middle of the blackboard)</td>
+<td class="comment-11" rowspan="5">Place the x-coordinate of the middle of the blackboard into byte 0x6B of the teacher's buffer, and the same value into byte 0x6C (which ensures that the routine at <a href="633C.html">633C</a> will not relinquish control before the teacher has reached the middle of the blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -742,7 +742,7 @@ Now we enter a loop that makes the teacher walk up and down next to the blackboa
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f3e3"></span>F3E3</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="2">Collect the teacher's x-coordinate from byte 98 of his buffer</td>
+<td class="comment-11" rowspan="2">Collect the teacher's x-coordinate from byte 0x62 of his buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -760,7 +760,7 @@ Now we enter a loop that makes the teacher walk up and down next to the blackboa
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f3e8"></span>F3E8</td>
 <td class="instruction">LD L,$6B</td>
-<td class="comment-11" rowspan="4">Place this into byte 107 of his buffer, and the same value into byte 108 (which ensures that the routine at <a href="633C.html">633C</a> will not relinquish control before the teacher has reached that destination)</td>
+<td class="comment-11" rowspan="4">Place this into byte 0x6B of his buffer, and the same value into byte 0x6C (which ensures that the routine at <a href="633C.html">633C</a> will not relinquish control before the teacher has reached that destination)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -807,9 +807,9 @@ Now we enter a loop that makes the teacher walk up and down next to the blackboa
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

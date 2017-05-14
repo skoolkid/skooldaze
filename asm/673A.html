@@ -63,7 +63,7 @@ This entry point is used by the routines at <a href="68A0.html">68A0</a> and <a 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="673d"></span>673D</td>
 <td class="instruction">BIT 5,(HL)</td>
-<td class="comment-11" rowspan="2">Check bit 5 of 23611, which will be set if a key was pressed; reset bit 5 afterwards</td>
+<td class="comment-11" rowspan="2">Check bit 5 of 5C3B, which will be set if a key was pressed; reset bit 5 afterwards</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -99,7 +99,7 @@ This entry point is used by the routines at <a href="68A0.html">68A0</a> and <a 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6749"></span>6749</td>
 <td class="instruction">CP $20</td>
-<td class="comment-11" rowspan="4">Return with the zero flag reset if the last key pressed had an ASCII code between 32 and 127 inclusive (or it was ENTER)</td>
+<td class="comment-11" rowspan="4">Return with the zero flag reset if the last key pressed had an ASCII code between 0x20 and 0x7F inclusive (or it was ENTER)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -150,9 +150,9 @@ The address of this entry point appears in the table of keypress handling routin
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

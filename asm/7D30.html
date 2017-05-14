@@ -35,7 +35,7 @@ Used by the routine at <a href="7DB2.html">7DB2</a>. Makes the teacher wipe the 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -74,7 +74,7 @@ Used by the routine at <a href="7DB2.html">7DB2</a>. Makes the teacher wipe the 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d38"></span>7D38</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -132,7 +132,7 @@ Control returns here when the teacher has finished wiping the blackboard.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d47"></span>7D47</td>
 <td class="instruction">ADD A,$03</td>
-<td class="comment-11" rowspan="5">Place the x-coordinate of the middle of the blackboard into byte 107 of the teacher's buffer, and the same value into byte 108 (which ensures that the routine at <a href="633C.html">633C</a> will not relinquish control before the teacher has reached the middle of the blackboard)</td>
+<td class="comment-11" rowspan="5">Place the x-coordinate of the middle of the blackboard into byte 0x6B of the teacher's buffer, and the same value into byte 0x6C (which ensures that the routine at <a href="633C.html">633C</a> will not relinquish control before the teacher has reached the middle of the blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -288,7 +288,7 @@ Now we enter a loop that makes the teacher walk up and down next to the blackboa
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d76"></span>7D76</td>
 <td class="instruction">XOR $03</td>
-<td class="comment-11" rowspan="3">Store the x-coordinate of the location 1 or 3 spaces behind the teacher in byte 107 of his buffer</td>
+<td class="comment-11" rowspan="3">Store the x-coordinate of the location 1 or 3 spaces behind the teacher in byte 0x6B of his buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -329,9 +329,9 @@ Now we enter a loop that makes the teacher walk up and down next to the blackboa
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

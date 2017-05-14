@@ -35,7 +35,7 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 </tr>
 <tr>
 <td class="register">D</td>
-<td class="register-desc">Target character's floor: 155 (top), 162 (middle) or 169 (bottom)</td>
+<td class="register-desc">Target character's floor: 0x9B (top), 0xA2 (middle) or 0xA9 (bottom)</td>
 </tr>
 <tr>
 <td class="register">E</td>
@@ -60,7 +60,7 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ea8"></span>6EA8</td>
 <td class="instruction">LD BC,$6000</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=96, <span class="register">C</span>=0 (maximum and minimum bounds)</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=0x60, <span class="register">C</span>=0x00 (maximum and minimum bounds)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -102,13 +102,13 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb5"></span>6EB5</td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the character is nearest the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb7"></span>6EB7</td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">38=x-coordinate of the Exam Room wall</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the Exam Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -120,7 +120,7 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ebb"></span>6EBB</td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">57=x-coordinate of the Map Room wall</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the Map Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -214,13 +214,13 @@ Now <span class="register">C</span> holds the lower x-coordinate of the visibili
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ece"></span>6ECE</td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the character is nearest the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed0"></span>6ED0</td>
 <td class="instruction">LD A,$25</td>
-<td class="comment-11" rowspan="1">37=x-coordinate of the White Room wall</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the White Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -232,7 +232,7 @@ Now <span class="register">C</span> holds the lower x-coordinate of the visibili
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed4"></span>6ED4</td>
 <td class="instruction">LD A,$38</td>
-<td class="comment-11" rowspan="1">56=x-coordinate of the Reading Room wall</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the Reading Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -279,9 +279,9 @@ Now <span class="register">C</span> holds the lower x-coordinate of the visibili
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

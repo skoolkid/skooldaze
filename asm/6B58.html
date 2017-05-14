@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a href="FB80.html">128</a>, <a href="FB9A.html">130</a>, <a href="FBB4.html">132</a>, <a href="FBCA.html">134</a>, <a href="FDB3.html">204</a>, <a href="FAE6.html">208</a>, <a href="FAF0.html">210</a>, <a href="FB09.html">212</a>, <a href="FB20.html">214</a>, <a href="FB3A.html">216</a> and <a href="FB55.html">218</a>.
+Used by command lists <a href="FB80.html">0x80</a>, <a href="FB9A.html">0x82</a>, <a href="FBB4.html">0x84</a>, <a href="FBCA.html">0x86</a>, <a href="FDB3.html">0xCC</a>, <a href="FAE6.html">0xD0</a>, <a href="FAF0.html">0xD2</a>, <a href="FB09.html">0xD4</a>, <a href="FB20.html">0xD6</a>, <a href="FB3A.html">0xD8</a> and <a href="FB55.html">0xDA</a>.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by command lists <a href="FB80.html">128</a>, <a href="FB9A.html">130</a>, 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,14 +50,14 @@ Used by command lists <a href="FB80.html">128</a>, <a href="FB9A.html">130</a>, 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6b58"></span>6B58</td>
 <td class="instruction">LD B,$C6</td>
-<td class="comment-11" rowspan="1">198 is the code for 'SET 0,(HL)'</td>
+<td class="comment-11" rowspan="1">0xC6 is the code for 'SET 0,(HL)'</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
 <span id="6b5a"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="6B54.html">6B54</a> with <span class="register">B</span>=134 (the code for 'RES 0,(HL)').
+This entry point is used by the routine at <a href="6B54.html">6B54</a> with <span class="register">B</span>=0x86 (the code for 'RES 0,(HL)').
 </div>
 </div>
 </td>
@@ -66,7 +66,7 @@ This entry point is used by the routine at <a href="6B54.html">6B54</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6b5a"></span>6B5A</td>
 <td class="instruction">CALL <a href="618C.html">$618C</a></td>
-<td class="comment-11" rowspan="1">Get the event identifier (0-29) from the command list</td>
+<td class="comment-11" rowspan="1">Get the event identifier (0x00-0x1D) from the command list</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -185,9 +185,9 @@ This entry point is used by the routine at <a href="6B54.html">6B54</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

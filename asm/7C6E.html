@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command list <a href="FD59.html">184</a>. Makes the teacher on dinner duty pace up and down the dinner hall, checking whether ERIC is present. If ERIC is absent, the teacher is sent to find him, after which the command list is restarted.
+Used by command list <a href="FD59.html">0xB8</a>. Makes the teacher on dinner duty pace up and down the dinner hall, checking whether ERIC is present. If ERIC is absent, the teacher is sent to find him, after which the command list is restarted.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by command list <a href="FD59.html">184</a>. Makes the teacher on dinner du
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">163 (MR WACKER) or 165 (MR WITHIT)</td>
+<td class="register-desc">0xA3 (MR WACKER) or 0xA5 (MR WITHIT)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -90,14 +90,14 @@ This entry point is used on subsequent calls when the teacher on dinner duty has
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c78"></span>7C78</td>
 <td class="instruction">LD DE,$9721</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=151 (LSB of <a href="7C97.html">7C97</a>), <span class="register">E</span>=33 (x-coordinate of the left end of the teacher's dinner duty orbit)</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=0x97 (LSB of <a href="7C97.html">7C97</a>), <span class="register">E</span>=33 (x-coordinate of the left end of the teacher's dinner duty orbit)</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
 <span id="7c7b"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="7C97.html">7C97</a> with <span class="register">D</span>=117 (LSB of the entry point at <a href="7C6E.html#7c75">7C75</a>, above) and <span class="register">E</span>=62 (x-coordinate of the right end of the teacher's dinner duty orbit), and also by the routine at <a href="F300.html">F300</a> with the zero flag reset.
+This entry point is used by the routine at <a href="7C97.html">7C97</a> with <span class="register">D</span>=0x75 (LSB of the entry point at <a href="7C6E.html#7c75">7C75</a>, above) and <span class="register">E</span>=62 (x-coordinate of the right end of the teacher's dinner duty orbit), and also by the routine at <a href="F300.html">F300</a> with the zero flag reset.
 </div>
 </div>
 </td>
@@ -118,7 +118,7 @@ This entry point is used by the routine at <a href="7C97.html">7C97</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c7f"></span>7C7F</td>
 <td class="instruction">LD (HL),$A0</td>
-<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="7BA0.html">7BA0</a> into bytes 105 and 106 of the character's buffer</td>
+<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="7BA0.html">7BA0</a> into bytes 0x69 and 0x6A of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -152,7 +152,7 @@ ERIC is where he should be, so there's no need to chase him.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7c87"></span>7C87</td>
 <td class="instruction">LD (HL),$3C</td>
-<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="633C.html">633C</a> into bytes 105 and 106 of the teacher's buffer</td>
+<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="633C.html">633C</a> into bytes 0x69 and 0x6A of the teacher's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -170,7 +170,7 @@ ERIC is where he should be, so there's no need to chase him.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c8c"></span>7C8C</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Place 33 or 62 into byte 107 of the teacher's buffer (to make him go to that x-coordinate next)</td>
+<td class="comment-11" rowspan="2">Place 33 or 62 into byte 0x6B of the teacher's buffer (to make him go to that x-coordinate next)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -182,7 +182,7 @@ ERIC is where he should be, so there's no need to chase him.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c8e"></span>7C8E</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Place 0 into byte 108 of the teacher's buffer, giving him more than enough time to reach the other end of the dinner hall without interruption</td>
+<td class="comment-11" rowspan="2">Place 0 into byte 0x6C of the teacher's buffer, giving him more than enough time to reach the other end of the dinner hall without interruption</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -194,7 +194,7 @@ ERIC is where he should be, so there's no need to chase him.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c91"></span>7C91</td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 99 and 100 of the teacher's buffer with that of <a href="7C97.html">7C97</a> or <a href="7C6E.html#7c75">7C75</a></td>
+<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of the teacher's buffer with that of <a href="7C97.html">7C97</a> or <a href="7C6E.html#7c75">7C75</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -217,9 +217,9 @@ ERIC is where he should be, so there's no need to chase him.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -105,19 +105,19 @@ ERIC has 10000 lines or more. The end (of the game) is nigh.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9ca"></span>F9CA</td>
 <td class="instruction">LD HL,$FAE2</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the first of the last two commands in command list <a href="FADB.html">222</a> ('Find ERIC', and 'Send ERIC home')</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the first of the last two commands in command list <a href="FADB.html">0xDE</a> ('Find ERIC', and 'Send ERIC home')</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9cd"></span>F9CD</td>
 <td class="instruction">LD ($A377),HL</td>
-<td class="comment-11" rowspan="1">Place this address into bytes 119 and 120 of MR WACKER's buffer, so that these commands become his command list</td>
+<td class="comment-11" rowspan="1">Place this address into bytes 0x77 and 0x78 of MR WACKER's buffer, so that these commands become his command list</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9d0"></span>F9D0</td>
 <td class="instruction">LD HL,$A37A</td>
-<td class="comment-11" rowspan="2">Set bit 0 of byte 122 of MR WACKER's buffer, triggering a command list restart</td>
+<td class="comment-11" rowspan="2">Set bit 0 of byte 0x7A of MR WACKER's buffer, triggering a command list restart</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -129,7 +129,7 @@ ERIC has 10000 lines or more. The end (of the game) is nigh.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9d5"></span>F9D5</td>
 <td class="instruction">LD HL,$7FF8</td>
-<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 255 (so that the lesson cannot end before MR WACKER has begun looking for ERIC)</td>
+<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 0xFF (so that the lesson cannot end before MR WACKER has begun looking for ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -158,9 +158,9 @@ ERIC has 10000 lines or more. The end (of the game) is nigh.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

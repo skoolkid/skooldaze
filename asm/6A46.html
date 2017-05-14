@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this uninterruptible subcommand routine is placed into bytes 111 and 112 of a character's buffer by the routines at <a href="69F6.html">69F6</a> and <a href="6F99.html">6F99</a>. It knocks the character to the floor, makes him give lines to any nearby kids or reveal his safe combination letter (if he's a teacher), and then makes him get up.
+The address of this uninterruptible subcommand routine is placed into bytes 0x6F and 0x70 of a character's buffer by the routines at <a href="69F6.html">69F6</a> and <a href="6F99.html">6F99</a>. It knocks the character to the floor, makes him give lines to any nearby kids or reveal his safe combination letter (if he's a teacher), and then makes him get up.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6a46"></span>6A46</td>
 <td class="instruction">LD L,$71</td>
-<td class="comment-11" rowspan="1">Byte 113 of the character's buffer holds the knockout delay counter</td>
+<td class="comment-11" rowspan="1">Byte 0x71 of the character's buffer holds the knockout delay counter</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -110,7 +110,7 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a57"></span>6A57</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Copy the character's pre-decked animatory state (stored in byte 114 of the character's buffer) to <span class="register">A</span></td>
+<td class="comment-11" rowspan="2">Copy the character's pre-decked animatory state (stored in byte 0x72 of the character's buffer) to <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -162,7 +162,7 @@ The character has only just been hit, so adjust his animatory state to that of '
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a64"></span>6A64</td>
 <td class="instruction">LD L,$72</td>
-<td class="comment-11" rowspan="2">Store the character's pre-decked animatory state in byte 114 of the buffer</td>
+<td class="comment-11" rowspan="2">Store the character's pre-decked animatory state in byte 0x72 of the buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -197,9 +197,9 @@ The character has only just been hit, so adjust his animatory state to that of '
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

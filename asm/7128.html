@@ -36,17 +36,17 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <th colspan="1" rowspan="1">Description</th>
 </tr>
 <tr>
-<td class="" colspan="1" rowspan="1">236</td>
+<td class="" colspan="1" rowspan="1">0xEC</td>
 <td class="" colspan="1" rowspan="1">(155,42)</td>
 <td class="" colspan="1" rowspan="1">Reading Room blackboard</td>
 </tr>
 <tr>
-<td class="" colspan="1" rowspan="1">238</td>
+<td class="" colspan="1" rowspan="1">0xEE</td>
 <td class="" colspan="1" rowspan="1">(161,26)</td>
 <td class="" colspan="1" rowspan="1">White Room blackboard</td>
 </tr>
 <tr>
-<td class="" colspan="1" rowspan="1">240</td>
+<td class="" colspan="1" rowspan="1">0xF0</td>
 <td class="" colspan="1" rowspan="1">(161,41)</td>
 <td class="" colspan="1" rowspan="1">Exam Room blackboard</td>
 </tr>
@@ -59,7 +59,7 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (163-167)</td>
+<td class="register-desc">Character number (0xA3-0xA7)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -74,7 +74,7 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7128"></span>7128</td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 97 of the character's buffer holds his y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 of the character's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -98,7 +98,7 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7130"></span>7130</td>
 <td class="instruction">LD A,$EC</td>
-<td class="comment-11" rowspan="1">236=Reading Room blackboard</td>
+<td class="comment-11" rowspan="1">0xEC=Reading Room blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -110,7 +110,7 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7133"></span>7133</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -128,13 +128,13 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7138"></span>7138</td>
 <td class="instruction">CP $25</td>
-<td class="comment-11" rowspan="1">37=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="713a"></span>713A</td>
 <td class="instruction">LD A,$EE</td>
-<td class="comment-11" rowspan="1">238=White Room blackboard</td>
+<td class="comment-11" rowspan="1">0xEE=White Room blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -152,7 +152,7 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="713f"></span>713F</td>
 <td class="instruction">LD A,$F0</td>
-<td class="comment-11" rowspan="1">240=Exam Room blackboard</td>
+<td class="comment-11" rowspan="1">0xF0=Exam Room blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -169,9 +169,9 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

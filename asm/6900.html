@@ -117,7 +117,7 @@ This entry point is used by the routine at <a href="F9F6.html">F9F6</a> when ERI
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6916"></span>6916</td>
 <td class="instruction">LD A,$FF</td>
-<td class="comment-11" rowspan="1">255: demo mode</td>
+<td class="comment-11" rowspan="1">0xFF: demo mode</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -151,7 +151,7 @@ This entry point is used by the routine at <a href="7DFA.html">7DFA</a> when exi
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6920"></span>6920</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">0: game mode (as opposed to demo mode)</td>
+<td class="comment-11" rowspan="1">0x00: game mode (as opposed to demo mode)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -169,19 +169,19 @@ This entry point is used by the routine at <a href="7DFA.html">7DFA</a> when exi
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6925"></span>6925</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=255 (demo mode) or 0</td>
+<td class="comment-11" rowspan="1"><span class="register">E</span>=0xFF (demo mode) or 0x00</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6926"></span>6926</td>
 <td class="instruction">LD A,($7FF9)</td>
-<td class="comment-11" rowspan="1">Collect the current lesson number (0-63) from <a href="7FF9.html">7FF9</a></td>
+<td class="comment-11" rowspan="1">Collect the current lesson number (0x00-0x3F) from <a href="7FF9.html">7FF9</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6929"></span>6929</td>
 <td class="instruction">AND $30</td>
-<td class="comment-11" rowspan="2">Set <span class="register">A</span> to 15, 31, 47 or 63 (lessons 0, 16, 32, and 48 are PLAYTIME)</td>
+<td class="comment-11" rowspan="2">Set <span class="register">A</span> to 0x0F, 0x1F, 0x2F or 0x3F (lessons 0x00, 0x10, 0x20, and 0x30 are PLAYTIME)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -211,13 +211,13 @@ This entry point is used by the routine at <a href="7DFA.html">7DFA</a> when exi
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6932"></span>6932</td>
 <td class="instruction">LD HL,$7FFD</td>
-<td class="comment-11" rowspan="1"><a href="7FFD.html">7FFD</a> holds the number (152-171) of the last character moved</td>
+<td class="comment-11" rowspan="1"><a href="7FFD.html">7FFD</a> holds the number (0x98-0xAB) of the last character moved</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6935"></span>6935</td>
 <td class="instruction">LD (HL),$97</td>
-<td class="comment-11" rowspan="1">Reset this number so 152 (little boy no. 1) is moved next</td>
+<td class="comment-11" rowspan="1">Reset this number so 0x98 (little boy no. 1) is moved next</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -241,7 +241,7 @@ This entry point is used by the routine at <a href="7DFA.html">7DFA</a> when exi
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="693c"></span>693C</td>
 <td class="instruction">LD L,$E8</td>
-<td class="comment-11" rowspan="2">Initialise ERIC's main action timer at <a href="7FE8.html">7FE8</a> to 17</td>
+<td class="comment-11" rowspan="2">Initialise ERIC's main action timer at <a href="7FE8.html">7FE8</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -253,13 +253,13 @@ This entry point is used by the routine at <a href="7DFA.html">7DFA</a> when exi
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6940"></span>6940</td>
 <td class="instruction">LD L,$F9</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7FF9.html">7FF9</a> (which holds the lesson number, 0-63)</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7FF9.html">7FF9</a> (which holds the lesson number, 0x00-0x3F)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6942"></span>6942</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore the lesson number to <span class="register">D</span> and game mode indicator (0 or 255) to <span class="register">E</span></td>
+<td class="comment-11" rowspan="1">Restore the lesson number to <span class="register">D</span> and game mode indicator (0x00 or 0xFF) to <span class="register">E</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -308,7 +308,7 @@ This entry point is used by the routine at <a href="7DFA.html">7DFA</a> when exi
 <span id="694f"></span>
 <div class="comments">
 <div class="paragraph">
-The following loop sets the initial animatory state, location and character flags (byte 122 of the buffer) for each character (including ERIC).
+The following loop sets the initial animatory state, location and character flags (byte 0x7A of the buffer) for each character (including ERIC).
 </div>
 </div>
 </td>
@@ -317,7 +317,7 @@ The following loop sets the initial animatory state, location and character flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="694f"></span>694F</td>
 <td class="instruction">LD H,$98</td>
-<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+<td class="comment-11" rowspan="1">0x98=little boy no. 1</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -329,7 +329,7 @@ The following loop sets the initial animatory state, location and character flag
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6954"></span>6954</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 96 of the character buffer</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x60 of the character buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -347,7 +347,7 @@ The following loop sets the initial animatory state, location and character flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6958"></span>6958</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x61</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -365,7 +365,7 @@ The following loop sets the initial animatory state, location and character flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="695c"></span>695C</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -389,7 +389,7 @@ The following loop sets the initial animatory state, location and character flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6960"></span>6960</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Pick up the character flags (0=kid; 16=adult; 32=pellet)</td>
+<td class="comment-11" rowspan="1">Pick up the character flags (0x00=kid; 0x10=adult; 0x20=pellet)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -437,7 +437,7 @@ The following loop sets the initial animatory state, location and character flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="696b"></span>696B</td>
 <td class="instruction">LD L,$7A</td>
-<td class="comment-11" rowspan="2">Place the character flags into byte 122 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Place the character flags into byte 0x7A of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -455,13 +455,13 @@ The following loop sets the initial animatory state, location and character flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="696f"></span>696F</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=124</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x7C</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6970"></span>6970</td>
 <td class="instruction">LD (HL),$9F</td>
-<td class="comment-11" rowspan="3">Place the address of the continual subcommand routine at <a href="6226.html#629f">629F</a> (RET) into bytes 124 and 125 of the character's buffer</td>
+<td class="comment-11" rowspan="3">Place the address of the continual subcommand routine at <a href="6226.html#629f">629F</a> (RET) into bytes 0x7C and 0x7D of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -524,9 +524,9 @@ All that remains now is to print the logo, lesson box and score box, and bring t
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

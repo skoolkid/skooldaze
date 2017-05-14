@@ -35,7 +35,7 @@ Used by the routine at <a href="799A.html">799A</a>.
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Number of the character who is speaking (152-169)</td>
+<td class="register-desc">Number of the character who is speaking (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -74,7 +74,7 @@ Used by the routine at <a href="799A.html">799A</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7410"></span>7410</td>
 <td class="instruction">CP $02</td>
-<td class="comment-11" rowspan="2">Replace an ASCII code of 2 with 32 (space)</td>
+<td class="comment-11" rowspan="2">Replace an ASCII code of 0x02 with 0x20 (space)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -86,7 +86,7 @@ Used by the routine at <a href="799A.html">799A</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7414"></span>7414</td>
 <td class="instruction">CP $03</td>
-<td class="comment-11" rowspan="2">Jump unless the ASCII code is 3, which stands for 8 spaces</td>
+<td class="comment-11" rowspan="2">Jump unless the ASCII code is 0x03, which stands for 8 spaces</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -98,7 +98,7 @@ Used by the routine at <a href="799A.html">799A</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7418"></span>7418</td>
 <td class="instruction">LD L,$6C</td>
-<td class="comment-11" rowspan="4"><a href="DA16.html">DA16</a>='&lt;8 spaces&gt;'; place the address of this message into bytes 107 and 108 of the speaking character's buffer</td>
+<td class="comment-11" rowspan="4"><a href="DA16.html">DA16</a>='&lt;8 spaces&gt;'; place the address of this message into bytes 0x6B and 0x6C of the speaking character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -122,7 +122,7 @@ Used by the routine at <a href="799A.html">799A</a>.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="741f"></span>741F</td>
 <td class="instruction">LD A,$20</td>
-<td class="comment-11" rowspan="1">32=' ' (space)</td>
+<td class="comment-11" rowspan="1">0x20=' ' (space)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -139,9 +139,9 @@ Used by the routine at <a href="799A.html">799A</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

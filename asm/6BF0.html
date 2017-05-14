@@ -43,7 +43,7 @@ Used by the routine at <a href="6C7C.html">6C7C</a>. Returns with the zero flag 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -65,7 +65,7 @@ Used by the routine at <a href="6C7C.html">6C7C</a>. Returns with the zero flag 
 <span id="6bf2"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="6CAF.html">6CAF</a> with <span class="register">H</span>=172 (ERIC).
+This entry point is used by the routine at <a href="6CAF.html">6CAF</a> with <span class="register">H</span>=0xAC (ERIC).
 </div>
 </div>
 </td>
@@ -86,7 +86,7 @@ This entry point is used by the routine at <a href="6CAF.html">6CAF</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6bf5"></span>6BF5</td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the character is on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -116,7 +116,7 @@ This entry point is used by the routine at <a href="6CAF.html">6CAF</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6bfe"></span>6BFE</td>
 <td class="instruction">CP $30</td>
-<td class="comment-11" rowspan="1">48=x-coordinate of the leftmost chair in the Reading Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the Reading Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -134,7 +134,7 @@ This entry point is used by the routine at <a href="6CAF.html">6CAF</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c02"></span>6C02</td>
 <td class="instruction">CP $38</td>
-<td class="comment-11" rowspan="1">56=x-coordinate of the rightmost chair in the Reading Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Reading Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -180,7 +180,7 @@ The character is on the top floor to the right of the Map Room wall.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6c0b"></span>6C0B</td>
 <td class="instruction">CP $40</td>
-<td class="comment-11" rowspan="1">64=x-coordinate of the leftmost chair in the Map Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the Map Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -192,7 +192,7 @@ The character is on the top floor to the right of the Map Room wall.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c0e"></span>6C0E</td>
 <td class="instruction">CP $48</td>
-<td class="comment-11" rowspan="1">72=x-coordinate of the rightmost chair in the Map Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Map Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -226,7 +226,7 @@ The character is somewhere on the middle floor.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c16"></span>6C16</td>
 <td class="instruction">CP $1D</td>
-<td class="comment-11" rowspan="1">29=x-coordinate of the leftmost chair in the White Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the White Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -238,7 +238,7 @@ The character is somewhere on the middle floor.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c19"></span>6C19</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="2">37=x-coordinate of the rightmost chair in the White Room</td>
+<td class="comment-11" rowspan="2">This is the x-coordinate (+1) of the rightmost chair in the White Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -266,7 +266,7 @@ The character is on the middle floor to the right of the Exam Room wall.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6c1e"></span>6C1E</td>
 <td class="instruction">CP $2B</td>
-<td class="comment-11" rowspan="1">43=x-coordinate of the leftmost chair in the Exam Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the Exam Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -278,7 +278,7 @@ The character is on the middle floor to the right of the Exam Room wall.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c21"></span>6C21</td>
 <td class="instruction">CP $3C</td>
-<td class="comment-11" rowspan="1">60=x-coordinate of the left end of the first set of chairs in the Exam Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the left end of the first set of chairs in the Exam Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -290,7 +290,7 @@ The character is on the middle floor to the right of the Exam Room wall.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c25"></span>6C25</td>
 <td class="instruction">CP $44</td>
-<td class="comment-11" rowspan="1">68=x-coordinate of the rightmost chair in the Exam Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Exam Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -312,7 +312,7 @@ The character is in the Exam Room, to the left of the first set of chairs.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6c29"></span>6C29</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="2">53=x-coordinate of the right end of the second set of chairs in the Exam Room</td>
+<td class="comment-11" rowspan="2">This is the x-coordinate (+1) of the right end of the second set of chairs in the Exam Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -340,7 +340,7 @@ The character is facing right.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6c2e"></span>6C2E</td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the character is on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -358,7 +358,7 @@ The character is facing right.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c33"></span>6C33</td>
 <td class="instruction">CP $3A</td>
-<td class="comment-11" rowspan="1">58=x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -370,7 +370,7 @@ The character is facing right.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c37"></span>6C37</td>
 <td class="instruction">CP $37</td>
-<td class="comment-11" rowspan="1">55=x-coordinate of the spot between the two chairs at the right in the Reading Room; if this were 'CP 56' instead, kids would be able to find the rightmost seat in the room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the spot between the two chairs at the right in the Reading Room; if this were 'CP $38' instead, kids would be able to find the rightmost seat in the room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -406,7 +406,7 @@ The character is facing right.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6c3e"></span>6C3E</td>
 <td class="instruction">CP $48</td>
-<td class="comment-11" rowspan="1">72=x-coordinate of the rightmost seat in the Map Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost seat in the Map Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -418,7 +418,7 @@ The character is facing right.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6c42"></span>6C42</td>
 <td class="instruction">CP $27</td>
-<td class="comment-11" rowspan="1">39=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -430,7 +430,7 @@ The character is facing right.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6c46"></span>6C46</td>
 <td class="instruction">CP $25</td>
-<td class="comment-11" rowspan="1">37=x-coordinate of the rightmost chair in the White Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the White Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -442,7 +442,7 @@ The character is facing right.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6c4a"></span>6C4A</td>
 <td class="instruction">CP $44</td>
-<td class="comment-11" rowspan="1">68=x-coordinate of the rightmost chair in the Exam Room</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Exam Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -459,9 +459,9 @@ The character is facing right.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

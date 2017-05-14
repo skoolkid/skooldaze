@@ -154,13 +154,13 @@ ERIC is facing left, and is not on a staircase.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6670"></span>6670</td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if ERIC is on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6672"></span>6672</td>
 <td class="instruction">LD A,$3A</td>
-<td class="comment-11" rowspan="1">58=x-coordinate of the wall between the Map and Reading Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Map and Reading Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -172,7 +172,7 @@ ERIC is facing left, and is not on a staircase.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6676"></span>6676</td>
 <td class="instruction">LD A,$27</td>
-<td class="comment-11" rowspan="1">39=x-coordinate of the wall between the Exam and White Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Exam and White Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -200,7 +200,7 @@ There is no wall obstructing ERIC, so it's time to put him midstride.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="667a"></span>667A</td>
 <td class="instruction">LD A,$01</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#1">1</a> (ERIC midstride, facing left)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#1">0x01</a> (ERIC midstride, facing left)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -219,7 +219,7 @@ There is no wall obstructing ERIC, so it's time to put him midstride.
 <span id="667e"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="66AA.html">66AA</a> with <span class="register">A</span>=<a href="../graphics/as.html#129">129</a> (ERIC facing right, midstride).
+This entry point is used by the routine at <a href="66AA.html">66AA</a> with <span class="register">A</span>=<a href="../graphics/as.html#129">0x81</a> (ERIC facing right, midstride).
 </div>
 </div>
 </td>
@@ -228,7 +228,7 @@ This entry point is used by the routine at <a href="66AA.html">66AA</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="667e"></span>667E</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1"><span class="register">C</span>=<a href="../graphics/as.html#1">1/129</a> (ERIC midstride)</td>
+<td class="comment-11" rowspan="1"><span class="register">C</span>=<a href="../graphics/as.html#1">0x01/0x81</a> (ERIC midstride)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -306,7 +306,7 @@ This entry point is used by the routine at <a href="66AA.html">66AA</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6695"></span>6695</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#1">1/129</a> (ERIC midstride)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#1">0x01/0x81</a> (ERIC midstride)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -318,7 +318,7 @@ This entry point is used by the routine at <a href="66AA.html">66AA</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6697"></span>6697</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="2"><span class="register">B</span>=<a href="../graphics/as.html#2">2/130</a> (ERIC standing, phase 3)</td>
+<td class="comment-11" rowspan="2"><span class="register">B</span>=<a href="../graphics/as.html#2">0x02/0x82</a> (ERIC standing, phase 3)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -342,7 +342,7 @@ This entry point is used by the routine at <a href="66AA.html">66AA</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="669d"></span>669D</td>
 <td class="instruction">DEC B</td>
-<td class="comment-11" rowspan="3">Adjust ERIC's midstride animatory state (in <span class="register">A</span>) to <a href="../graphics/as.html#3">3/131</a> and post-midstride animatory state (in <span class="register">B</span>) to <a href="../graphics/as.html#0">0/128</a> if ERIC's current x-coordinate is odd</td>
+<td class="comment-11" rowspan="3">Adjust ERIC's midstride animatory state (in <span class="register">A</span>) to <a href="../graphics/as.html#3">0x03/0x83</a> and post-midstride animatory state (in <span class="register">B</span>) to <a href="../graphics/as.html#0">0x00/0x80</a> if ERIC's current x-coordinate is odd</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -371,9 +371,9 @@ This entry point is used by the routine at <a href="66AA.html">66AA</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

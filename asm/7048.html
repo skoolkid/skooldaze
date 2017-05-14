@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this uninterruptible subcommand routine is placed into bytes 111 and 112 of BOY WANDER's buffer by the routine at <a href="703D.html">703D</a>. At this point BOY WANDER's catapult is fully raised, and so a pellet is launched.
+The address of this uninterruptible subcommand routine is placed into bytes 0x6F and 0x70 of BOY WANDER's buffer by the routine at <a href="703D.html">703D</a>. At this point BOY WANDER's catapult is fully raised, and so a pellet is launched.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">167 (BOY WANDER)</td>
+<td class="register-desc">0xA7 (BOY WANDER)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7048"></span>7048</td>
 <td class="instruction">LD L,$6F</td>
-<td class="comment-11" rowspan="2">Replace the address of this uninterruptible subcommand routine in bytes 111 and 112 of BOY WANDER's buffer with <a href="7067.html">7067</a></td>
+<td class="comment-11" rowspan="2">Replace the address of this uninterruptible subcommand routine in bytes 0x6F and 0x70 of BOY WANDER's buffer with <a href="7067.html">7067</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -62,7 +62,7 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="704c"></span>704C</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of BOY WANDER's buffer holds his animatory state (<a href="../graphics/as.html#57">57/185</a>)</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of BOY WANDER's buffer holds his animatory state (<a href="../graphics/as.html#57">0x39/0xB9</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -74,7 +74,7 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="704f"></span>704F</td>
 <td class="instruction">ADD A,$46</td>
-<td class="comment-11" rowspan="1">Now <span class="register">A</span>=<a href="../graphics/as.html#127">127 or 255</a> (catapult pellet)</td>
+<td class="comment-11" rowspan="1">Now <span class="register">A</span>=<a href="../graphics/as.html#127">0x7F or 0xFF</a> (catapult pellet)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -104,14 +104,14 @@ The address of this uninterruptible subcommand routine is placed into bytes 111 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7055"></span>7055</td>
 <td class="instruction">LD H,$AA</td>
-<td class="comment-11" rowspan="1">170=character number of BOY WANDER's catapult pellet</td>
+<td class="comment-11" rowspan="1">0xAA=character number of BOY WANDER's catapult pellet</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
 <span id="7057"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="F41F.html">F41F</a> with <span class="register">H</span>=171 (ERIC's catapult pellet).
+This entry point is used by the routine at <a href="F41F.html">F41F</a> with <span class="register">H</span>=0xAB (ERIC's catapult pellet).
 </div>
 </div>
 </td>
@@ -150,7 +150,7 @@ This entry point is used by the routine at <a href="F41F.html">F41F</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="705c"></span>705C</td>
 <td class="instruction">LD L,$6F</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6D1C.html">6D1C</a> into bytes 111 and 112 of the catapult pellet's buffer</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6D1C.html">6D1C</a> into bytes 0x6F and 0x70 of the catapult pellet's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -197,9 +197,9 @@ This entry point is used by the routine at <a href="F41F.html">F41F</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

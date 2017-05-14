@@ -50,7 +50,7 @@ Used by the routine at <a href="734E.html">734E</a>. Removes the solid line abov
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f4fa"></span>F4FA</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="4">UDG references 248-255 correspond to the 8 UDGs that make up the bottom half of the speech bubble; set <span class="register">E</span> to the reference of the UDG that is above the lip</td>
+<td class="comment-11" rowspan="4">UDG references 0xF8-0xFF correspond to the 8 UDGs that make up the bottom half of the speech bubble; set <span class="register">E</span> to the reference of the UDG that is above the lip</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -122,7 +122,7 @@ Used by the routine at <a href="734E.html">734E</a>. Removes the solid line abov
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f50c"></span>F50C</td>
 <td class="instruction">LD (HL),$7E</td>
-<td class="comment-11" rowspan="4">Open the bottom edge (129=10000001) of this speech bubble UDG if the lip is underneath, or close it (126=01111110) otherwise</td>
+<td class="comment-11" rowspan="4">Open the bottom edge (0x81=10000001) of this speech bubble UDG if the lip is underneath, or close it (0x7E=01111110) otherwise</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -181,9 +181,9 @@ Used by the routine at <a href="734E.html">734E</a>. Removes the solid line abov
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

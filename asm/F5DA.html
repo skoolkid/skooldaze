@@ -139,7 +139,7 @@ We're in demo mode and there was no keyboard or joystick input. Time to simulate
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f5f3"></span>F5F3</td>
 <td class="instruction">CP $05</td>
-<td class="comment-11" rowspan="1"><a href="../graphics/as.html#5">5</a>=ERIC sitting in a chair</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#5">0x05</a>=ERIC sitting in a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -163,7 +163,7 @@ We're in demo mode and there was no keyboard or joystick input. Time to simulate
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f5fd"></span>F5FD</td>
 <td class="instruction">CP $45</td>
-<td class="comment-11" rowspan="1"><a href="../graphics/as.html#69">69</a>=little boy sitting in a chair</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#69">0x45</a>=little boy sitting in a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -185,7 +185,7 @@ ERIC is sitting in a chair, but little boy no. 11 isn't. ERIC should stand up no
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f601"></span>F601</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="3">The stand-up delay counter at <a href="7FC1.html">7FC1</a> normally holds 0; if little boy no. 11 has just stood up, initialise the delay counter to 29</td>
+<td class="comment-11" rowspan="3">The stand-up delay counter at <a href="7FC1.html">7FC1</a> normally holds 0x00; if little boy no. 11 has just stood up, initialise the delay counter to 0x1D</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -215,7 +215,7 @@ ERIC is sitting in a chair, but little boy no. 11 isn't. ERIC should stand up no
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f608"></span>F608</td>
 <td class="instruction">LD A,$73</td>
-<td class="comment-11" rowspan="1">Set <span class="register">A</span> to 115 to simulate 's' (sit/stand) being pressed</td>
+<td class="comment-11" rowspan="1">Set <span class="register">A</span> to 0x73 to simulate 's' (sit/stand) being pressed</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -245,7 +245,7 @@ ERIC is sitting in a chair, but little boy no. 11 isn't. ERIC should stand up no
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f60e"></span>F60E</td>
 <td class="instruction">LD (HL),$1D</td>
-<td class="comment-11" rowspan="1">Initialise the stand-up delay counter at <a href="7FC1.html">7FC1</a> to 29</td>
+<td class="comment-11" rowspan="1">Initialise the stand-up delay counter at <a href="7FC1.html">7FC1</a> to 0x1D</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -257,7 +257,7 @@ ERIC is sitting in a chair, but little boy no. 11 isn't. ERIC should stand up no
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f611"></span>F611</td>
 <td class="instruction">LD (HL),$00</td>
-<td class="comment-11" rowspan="1">Set the stand-up delay counter at <a href="7FC1.html">7FC1</a> to 0</td>
+<td class="comment-11" rowspan="1">Set the stand-up delay counter at <a href="7FC1.html">7FC1</a> to 0x00</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -279,7 +279,7 @@ ERIC isn't sitting in a chair. Is he sitting on the floor or lying on his back?
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f614"></span>F614</td>
 <td class="instruction">LD (HL),$00</td>
-<td class="comment-11" rowspan="1">Set the stand-up delay counter at <a href="7FC1.html">7FC1</a> to 0</td>
+<td class="comment-11" rowspan="1">Set the stand-up delay counter at <a href="7FC1.html">7FC1</a> to 0x00</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -337,7 +337,7 @@ ERIC is upright. Seek little boy no. 11 for guidance on where to go next.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f622"></span>F622</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -423,7 +423,7 @@ Now <span class="register">A</span>=1 if ERIC should go up, 2 if down, 3 if left
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f639"></span>F639</td>
 <td class="instruction">LD B,$51</td>
-<td class="comment-11" rowspan="1">81=ASCII code for 'Q' (up)</td>
+<td class="comment-11" rowspan="1">0x51=ASCII code for 'Q' (up)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -441,7 +441,7 @@ Now <span class="register">A</span>=1 if ERIC should go up, 2 if down, 3 if left
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f63e"></span>F63E</td>
 <td class="instruction">LD B,$41</td>
-<td class="comment-11" rowspan="1">65=ASCII code for 'A' (down)</td>
+<td class="comment-11" rowspan="1">0x41=ASCII code for 'A' (down)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -459,7 +459,7 @@ Now <span class="register">A</span>=1 if ERIC should go up, 2 if down, 3 if left
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f643"></span>F643</td>
 <td class="instruction">ADD A,$4E</td>
-<td class="comment-11" rowspan="2"><span class="register">B</span>=79 ('O') or 80 ('P')</td>
+<td class="comment-11" rowspan="2"><span class="register">B</span>=0x4F ('O') or 0x50 ('P')</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -481,13 +481,13 @@ Now <span class="register">B</span> holds the ASCII code of the simulated keypre
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f646"></span>F646</td>
 <td class="instruction">LD A,($5C78)</td>
-<td class="comment-11" rowspan="1">23672=LSB of the FRAMES system variable</td>
+<td class="comment-11" rowspan="1">5C78=LSB of the FRAMES system variable</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f649"></span>F649</td>
 <td class="instruction">AND $80</td>
-<td class="comment-11" rowspan="3"><span class="register">A</span>=32 (lower case, slow) or 0 (upper case, fast)</td>
+<td class="comment-11" rowspan="3"><span class="register">A</span>=0x20 (lower case, slow) or 0x00 (upper case, fast)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -522,9 +522,9 @@ Now <span class="register">B</span> holds the ASCII code of the simulated keypre
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

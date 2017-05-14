@@ -89,7 +89,7 @@ The address of this routine is found in the table of keypress handling routines 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f65d"></span>F65D</td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if ERIC's on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -177,7 +177,7 @@ Now <span class="register">C</span> and <span class="register">B</span> hold the
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f675"></span>F675</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -207,7 +207,7 @@ Now <span class="register">C</span> and <span class="register">B</span> hold the
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f67e"></span>F67E</td>
 <td class="instruction">SUB $B4</td>
-<td class="comment-11" rowspan="2"><span class="register">B</span>=56 (Reading Room), 58 (White Room) or 60 (Exam Room)</td>
+<td class="comment-11" rowspan="2"><span class="register">B</span>=0x38 (Reading Room), 0x3A (White Room) or 0x3C (Exam Room)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -225,13 +225,13 @@ Now <span class="register">C</span> and <span class="register">B</span> hold the
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f682"></span>F682</td>
 <td class="instruction">LD (HL),$AC</td>
-<td class="comment-11" rowspan="1">Signal that ERIC (172) wrote on this board</td>
+<td class="comment-11" rowspan="1">Signal that ERIC (0xAC) wrote on this board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f684"></span>F684</td>
 <td class="instruction">XOR $80</td>
-<td class="comment-11" rowspan="2"><span class="register">C</span>=128 (bit 7 set) if the board is clean, &lt;128 (bit 7 reset) if not</td>
+<td class="comment-11" rowspan="2"><span class="register">C</span>=0x80 (bit 7 set) if the board is clean, &lt;0x80 (bit 7 reset) if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -307,7 +307,7 @@ This entry point is used by the routine at <a href="F6AA.html">F6AA</a>.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f693"></span>F693</td>
 <td class="instruction">LD HL,$AC60</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 96 of ERIC's buffer</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x60 of ERIC's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -373,7 +373,7 @@ This entry point is used by the routine at <a href="F6AA.html">F6AA</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6a3"></span>F6A3</td>
 <td class="instruction">AND $80</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=<a href="../graphics/as.html#13">13 or 141</a>: ERIC with arm up, as if writing</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=<a href="../graphics/as.html#13">0x0D or 0x8D</a>: ERIC with arm up, as if writing</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -396,9 +396,9 @@ This entry point is used by the routine at <a href="F6AA.html">F6AA</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

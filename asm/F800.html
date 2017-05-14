@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a href="FAE6.html">208</a> and <a href="FAF0.html">210</a>. Makes little boy no. 10 tell ERIC about BOY WANDER having hidden a pea-shooter on the fire escape, EINSTEIN's intent to grass him up to MR WACKER, or ANGELFACE's medical condition.
+Used by command lists <a href="FAE6.html">0xD0</a> and <a href="FAF0.html">0xD2</a>. Makes little boy no. 10 tell ERIC about BOY WANDER having hidden a pea-shooter on the fire escape, EINSTEIN's intent to grass him up to MR WACKER, or ANGELFACE's medical condition.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by command lists <a href="FAE6.html">208</a> and <a href="FAF0.html">210</a
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">161 (little boy no. 10)</td>
+<td class="register-desc">0xA1 (little boy no. 10)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -90,13 +90,13 @@ Figure out which message the boy should deliver, depending on what MR ROCKITT an
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f80d"></span>F80D</td>
 <td class="instruction">LD A,($A478)</td>
-<td class="comment-11" rowspan="1">Collect byte 120 of MR ROCKITT's buffer, which holds the MSB of the command list start address</td>
+<td class="comment-11" rowspan="1">Collect byte 0x78 of MR ROCKITT's buffer, which holds the MSB of the command list start address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f810"></span>F810</td>
 <td class="instruction">CP $FA</td>
-<td class="comment-11" rowspan="1">250 is the MSB of <a href="FADB.html">FADB</a> (command list <a href="FADB.html">222</a>)</td>
+<td class="comment-11" rowspan="1">This is the MSB of <a href="FADB.html">FADB</a> (command list <a href="FADB.html">0xDE</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -108,7 +108,7 @@ Figure out which message the boy should deliver, depending on what MR ROCKITT an
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f815"></span>F815</td>
 <td class="instruction">JR Z,$F822</td>
-<td class="comment-11" rowspan="1">Jump if MR ROCKITT is using command list <a href="FADB.html">222</a></td>
+<td class="comment-11" rowspan="1">Jump if MR ROCKITT is using command list <a href="FADB.html">0xDE</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -120,19 +120,19 @@ Figure out which message the boy should deliver, depending on what MR ROCKITT an
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f819"></span>F819</td>
 <td class="instruction">LD A,($A375)</td>
-<td class="comment-11" rowspan="1">Collect byte 117 of MR WACKER's buffer, which holds the LSB of the address reached in the command list</td>
+<td class="comment-11" rowspan="1">Collect byte 0x75 of MR WACKER's buffer, which holds the LSB of the address reached in the command list</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f81c"></span>F81C</td>
 <td class="instruction">CP $3C</td>
-<td class="comment-11" rowspan="1">Is MR WACKER using command list <a href="FB3A.html">216</a>?</td>
+<td class="comment-11" rowspan="1">Is MR WACKER using command list <a href="FB3A.html">0xD8</a>?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f81e"></span>F81E</td>
 <td class="instruction">JR C,$F822</td>
-<td class="comment-11" rowspan="1">Jump if not (he must be using command list <a href="FB20.html">214</a>)</td>
+<td class="comment-11" rowspan="1">Jump if not (he must be using command list <a href="FB20.html">0xD6</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -160,7 +160,7 @@ Now <span class="register">BC</span> holds the address of the message to be deli
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f825"></span>F825</td>
 <td class="instruction">LD L,$68</td>
-<td class="comment-11" rowspan="2">Initialise the message repetition delay counter in byte 104 of the little boy's buffer to 40</td>
+<td class="comment-11" rowspan="2">Initialise the message repetition delay counter in byte 0x68 of the little boy's buffer to 40</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -230,7 +230,7 @@ ERIC has acknowledged delivery of the message ('U' was pressed).
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f83e"></span>F83E</td>
 <td class="instruction">LD A,$0C</td>
-<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 12, giving enough time for the ensuing drama to play out</td>
+<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 0x0C, giving enough time for the ensuing drama to play out</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -258,7 +258,7 @@ ERIC has not yet acknowledged delivery of the message ('U' has not been pressed)
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f846"></span>F846</td>
 <td class="instruction">LD L,$68</td>
-<td class="comment-11" rowspan="3">Decrement the message repetition delay counter in byte 104 of the little boy's buffer and return unless it has reached 0</td>
+<td class="comment-11" rowspan="3">Decrement the message repetition delay counter in byte 0x68 of the little boy's buffer and return unless it has reached 0</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -305,9 +305,9 @@ ERIC has not yet acknowledged delivery of the message ('U' has not been pressed)
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

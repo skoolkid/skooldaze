@@ -43,11 +43,11 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 <tr>
 <td class="register">L</td>
-<td class="register-desc">101</td>
+<td class="register-desc">0x65</td>
 </tr>
 </table>
 <table class="output-0">
@@ -68,13 +68,13 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6465"></span>6465</td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the character is going to the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6467"></span>6467</td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -86,7 +86,7 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="646b"></span>646B</td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Map and Reading Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Map and Reading Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -104,7 +104,7 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="646f"></span>646F</td>
 <td class="instruction">LD A,$46</td>
-<td class="comment-11" rowspan="1">70=x-coordinate of the bottoms of the staircases at the right of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the right of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -116,7 +116,7 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6473"></span>6473</td>
 <td class="instruction">LD A,$13</td>
-<td class="comment-11" rowspan="1">19=x-coordinate of the bottoms of the staircases at the left of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -134,7 +134,7 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6479"></span>6479</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the character's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the character's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -194,7 +194,7 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6490"></span>6490</td>
 <td class="instruction">LD C,$8C</td>
-<td class="comment-11" rowspan="2">Set <span class="register">BC</span>=<a href="638C.html">638C</a> (guide character up stairs) and place this interruptible subcommand routine address into bytes 105 and 106 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Set <span class="register">BC</span>=<a href="638C.html">638C</a> (guide character up stairs) and place this interruptible subcommand routine address into bytes 0x69 and 0x6A of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -211,9 +211,9 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, this routine returns with the identifier of a 'special' playtime (<a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a>) in <span class="register">A</span>; the rest of the time it returns with <span class="register">A</span> holding the PLAYTIME identifier from the <a href="FE00.html">main timetable</a>.
+Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, this routine returns with the identifier of a 'special' playtime (<a href="../lessons/F3.html">0xF3</a>, <a href="../lessons/F4.html">0xF4</a> or <a href="../lessons/F5.html">0xF5</a>) in <span class="register">A</span>; the rest of the time it returns with <span class="register">A</span> holding the PLAYTIME identifier from the <a href="FE00.html">main timetable</a>.
 </div>
 </div>
 <table class="input-1">
@@ -54,7 +54,7 @@ Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, t
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e33"></span>6E33</td>
 <td class="instruction">AND $07</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=random number between 238 and 245</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=random number between 0xEE and 0xF5</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -66,7 +66,7 @@ Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e37"></span>6E37</td>
 <td class="instruction">CP $F3</td>
-<td class="comment-11" rowspan="2">Return if <span class="register">A</span> is 243, 244, or 245 (one of the 'special' playtimes)</td>
+<td class="comment-11" rowspan="2">Return if <span class="register">A</span> is 0xF3, 0xF4, or 0xF5 (one of the 'special' playtimes)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -95,9 +95,9 @@ Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, t
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

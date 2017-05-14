@@ -47,7 +47,7 @@ Used by the routines at <a href="6F1E.html">6F1E</a> and <a href="6F99.html">6F9
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number of the potential victim (152-172)</td>
+<td class="register-desc">Character number of the potential victim (0x98-0xAC)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -62,7 +62,7 @@ Used by the routines at <a href="6F1E.html">6F1E</a> and <a href="6F99.html">6F9
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6f00"></span>6F00</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of a character's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of a character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -98,7 +98,7 @@ Used by the routines at <a href="6F1E.html">6F1E</a> and <a href="6F99.html">6F9
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6f08"></span>6F08</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1">Byte 97 holds the character's y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 holds the character's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -132,7 +132,7 @@ The character being checked has been found at the target coordinates. But is he 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f0d"></span>6F0D</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1">Byte 96 holds the character's animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 holds the character's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -144,7 +144,7 @@ The character being checked has been found at the target coordinates. But is he 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f0f"></span>6F0F</td>
 <td class="instruction">XOR C</td>
-<td class="comment-11" rowspan="2">Now <span class="register">A</span>=128 if the character and puncher are facing each other, and 0 otherwise</td>
+<td class="comment-11" rowspan="2">Now <span class="register">A</span>=0x80 if the character and puncher are facing each other, and 0x00 otherwise</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -162,7 +162,7 @@ The character being checked has been found at the target coordinates. But is he 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f13"></span>6F13</td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 111 and 112 of the potential victim's buffer (i.e. is he not in a punchable state at the moment)?</td>
+<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70 of the potential victim's buffer (i.e. is he not in a punchable state at the moment)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -203,9 +203,9 @@ The character being checked has been found at the target coordinates. But is he 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

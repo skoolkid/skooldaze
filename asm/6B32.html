@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this primary command routine is placed into bytes 99 and 100 of a character's buffer by the routine at <a href="6B3D.html">6B3D</a>. It either sends the character to his next walkabout destination (the walkabout origin or some spot within 7 spaces to the left of it), or moves to the next command in the command list if the designated number of walkabouts has been completed.
+The address of this primary command routine is placed into bytes 0x63 and 0x64 of a character's buffer by the routine at <a href="6B3D.html">6B3D</a>. It either sends the character to his next walkabout destination (the walkabout origin or some spot within 7 spaces to the left of it), or moves to the next command in the command list if the designated number of walkabouts has been completed.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this primary command routine is placed into bytes 99 and 100 of a
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ The address of this primary command routine is placed into bytes 99 and 100 of a
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6b32"></span>6B32</td>
 <td class="instruction">LD L,$67</td>
-<td class="comment-11" rowspan="2">Decrement the walkabouts counter in byte 103 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Decrement the walkabouts counter in byte 0x67 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -79,9 +79,9 @@ The address of this primary command routine is placed into bytes 99 and 100 of a
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

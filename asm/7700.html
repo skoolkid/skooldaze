@@ -35,11 +35,11 @@ Used by the routines at <a href="77AC.html">77AC</a>, <a href="78AA.html">78AA</
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">Lines recipient's character number (167-169, 172)</td>
+<td class="register-desc">Lines recipient's character number (0xA7-0xA9, 0xAC)</td>
 </tr>
 <tr>
 <td class="register">B</td>
-<td class="register-desc">Reprimand message identifier (0-15)</td>
+<td class="register-desc">Reprimand message identifier (0x00-0x0F)</td>
 </tr>
 <tr>
 <td class="register">DE</td>
@@ -460,7 +460,7 @@ Now that the lines have been dished out, the teacher should explain why.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7767"></span>7767</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore the reprimand message identifier (0-15) to <span class="register">B</span></td>
+<td class="comment-11" rowspan="1">Restore the reprimand message identifier (0x00-0x0F) to <span class="register">B</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -478,7 +478,7 @@ Now that the lines have been dished out, the teacher should explain why.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="776a"></span>776A</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=reprimand message identifier (0-15)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=reprimand message identifier (0x00-0x0F)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -595,9 +595,9 @@ This entry point is used by the routine at <a href="F955.html">F955</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

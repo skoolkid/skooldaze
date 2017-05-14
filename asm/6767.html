@@ -231,7 +231,7 @@ Time to check the keyboard (or simulate a keypress in demo mode) to see how ERIC
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="67a1"></span>67A1</td>
 <td class="instruction">CP $20</td>
-<td class="comment-11" rowspan="1">Was the keypress ASCII code &gt;= 32?</td>
+<td class="comment-11" rowspan="1">Was the keypress ASCII code &gt;= 0x20?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -303,7 +303,7 @@ Time to check the keyboard (or simulate a keypress in demo mode) to see how ERIC
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="67b3"></span>67B3</td>
 <td class="instruction">LD HL,$AC60</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 96 of ERIC's buffer</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x60 of ERIC's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -371,7 +371,7 @@ The next section of code ensures that we don't pass through the main loop more t
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="67bf"></span>67BF</td>
 <td class="instruction">LD HL,$7FFA</td>
-<td class="comment-11" rowspan="5">Wait until the system variable FRAMES at 23672 has been incremented since the last time it was checked (FRAMES is incremented every 20ms)</td>
+<td class="comment-11" rowspan="5">Wait until the system variable FRAMES at 5C78 has been incremented since the last time it was checked (FRAMES is incremented every 20ms)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -412,9 +412,9 @@ The next section of code ensures that we don't pass through the main loop more t
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

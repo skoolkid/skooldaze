@@ -35,7 +35,7 @@ Used by the routine at <a href="6A3C.html">6A3C</a>. Makes a teacher who has bee
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -110,7 +110,7 @@ Used by the routine at <a href="6A3C.html">6A3C</a>. Makes a teacher who has bee
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78bc"></span>78BC</td>
 <td class="instruction">LD D,$9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -128,7 +128,7 @@ Used by the routine at <a href="6A3C.html">6A3C</a>. Makes a teacher who has bee
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78c2"></span>78C2</td>
 <td class="instruction">LD D,$A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -146,7 +146,7 @@ Used by the routine at <a href="6A3C.html">6A3C</a>. Makes a teacher who has bee
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78c8"></span>78C8</td>
 <td class="instruction">LD D,$A9</td>
-<td class="comment-11" rowspan="1">169=bottom floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -158,7 +158,7 @@ Used by the routine at <a href="6A3C.html">6A3C</a>. Makes a teacher who has bee
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78cc"></span>78CC</td>
 <td class="instruction">CALL <a href="6E90.html#6e96">$6E96</a></td>
-<td class="comment-11" rowspan="1">Get the floor nearest ERIC (155, 162, 169) in <span class="register">D</span></td>
+<td class="comment-11" rowspan="1">Get the floor nearest ERIC (0x9B, 0xA2, 0xA9) in <span class="register">D</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -180,19 +180,19 @@ Here we enter a loop that calculates BOY WANDER's, ANGELFACE's and EINSTEIN's no
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78d3"></span>78D3</td>
 <td class="instruction">LD H,$A7</td>
-<td class="comment-11" rowspan="1">167=BOY WANDER</td>
+<td class="comment-11" rowspan="1">0xA7=BOY WANDER</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78d5"></span>78D5</td>
 <td class="instruction">CALL <a href="6E90.html">$6E90</a></td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=floor nearest the kid (155, 162, 169)</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=floor nearest the kid (0x9B, 0xA2, 0xA9)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78d8"></span>78D8</td>
 <td class="instruction">LD L,C</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=142, 144 or 146</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x8E, 0x90 or 0x92</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -240,7 +240,7 @@ Here we enter a loop that calculates BOY WANDER's, ANGELFACE's and EINSTEIN's no
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e1"></span>78E1</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">Restore the kid's character number (167-169) to <span class="register">H</span></td>
+<td class="comment-11" rowspan="1">Restore the kid's character number (0xA7-0xA9) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -258,7 +258,7 @@ Here we enter a loop that calculates BOY WANDER's, ANGELFACE's and EINSTEIN's no
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e5"></span>78E5</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="2">Restore the teacher's character number (163-166) to <span class="register">H</span></td>
+<td class="comment-11" rowspan="2">Restore the teacher's character number (0xA3-0xA6) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -464,13 +464,13 @@ Finally, we enter a loop to determine which main kid (if any) is closest to the 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7913"></span>7913</td>
 <td class="instruction">LD A,$FF</td>
-<td class="comment-11" rowspan="1">255 was used to signal that the kid was not on the same floor as the teacher</td>
+<td class="comment-11" rowspan="1">0xFF was used to signal that the kid was not on the same floor as the teacher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7915"></span>7915</td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="6">When this loop is finished, <span class="register">A</span> will hold the distance between the teacher and the closest main kid (or 255 if none of the kids were nearby)</td>
+<td class="comment-11" rowspan="6">When this loop is finished, <span class="register">A</span> will hold the distance between the teacher and the closest main kid (or 0xFF if none of the kids were nearby)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -558,7 +558,7 @@ So at least one of the main kids is within range. Which one will get lines?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7926"></span>7926</td>
 <td class="instruction">LD BC,$08AC</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DD80.html">8</a> (NOW DON'T DO IT AGAIN), <span class="register">C</span>=172 (ERIC)</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DD80.html">0x08</a> (NOW DON'T DO IT AGAIN), <span class="register">C</span>=0xAC (ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -576,7 +576,7 @@ So at least one of the main kids is within range. Which one will get lines?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="792c"></span>792C</td>
 <td class="instruction">LD C,$A6</td>
-<td class="comment-11" rowspan="6">On exit from this loop, <span class="register">C</span> will hold 167 (BOY WANDER), 168 (ANGELFACE), or 169 (EINSTEIN)</td>
+<td class="comment-11" rowspan="6">On exit from this loop, <span class="register">C</span> will hold 0xA7 (BOY WANDER), 0xA8 (ANGELFACE), or 0xA9 (EINSTEIN)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -641,9 +641,9 @@ So at least one of the main kids is within range. Which one will get lines?
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

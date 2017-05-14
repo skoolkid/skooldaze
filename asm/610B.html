@@ -60,7 +60,7 @@ Used by the routines at <a href="6000.html">6000</a> and <a href="6992.html">699
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="610c"></span>610C</td>
 <td class="instruction">AND $60</td>
-<td class="comment-11" rowspan="5">Now <span class="register">H</span> is 128 if 0&lt;=<span class="register">E</span>&lt;32; 136 if 32&lt;=<span class="register">E</span>&lt;64; or 144 if 64&lt;=<span class="register">E</span>&lt;96</td>
+<td class="comment-11" rowspan="5">Now <span class="register">H</span> is 0x80 if 0&lt;=<span class="register">E</span>&lt;32; 0x88 if 32&lt;=<span class="register">E</span>&lt;64; or 0x90 if 64&lt;=<span class="register">E</span>&lt;96</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -168,7 +168,7 @@ Used by the routines at <a href="6000.html">6000</a> and <a href="6992.html">699
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6125"></span>6125</td>
 <td class="instruction">LD H,$98</td>
-<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+<td class="comment-11" rowspan="1">0x98=little boy no. 1</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
@@ -184,7 +184,7 @@ Now we enter a loop that checks which part (if any) of each character's sprite a
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6127"></span>6127</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of the character's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of the character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -202,7 +202,7 @@ Now we enter a loop that checks which part (if any) of each character's sprite a
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="612b"></span>612B</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Byte 97 of the character's buffer holds his y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 of the character's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -274,7 +274,7 @@ Now we enter a loop that checks which part (if any) of each character's sprite a
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="613d"></span>613D</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=0-11, corresponding to the sprite tile that appears at (<span class="register">E</span>,<span class="register">D</span>)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=0x00-0x0B, corresponding to the sprite tile that appears at (<span class="register">E</span>,<span class="register">D</span>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -292,7 +292,7 @@ Now we enter a loop that checks which part (if any) of each character's sprite a
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6141"></span>6141</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1"><span class="register">H'</span>=173-184</td>
+<td class="comment-11" rowspan="1"><span class="register">H'</span>=0xAD-0xB8</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -609,9 +609,9 @@ Having computed the appropriate display file address in <span class="register">H
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -35,7 +35,7 @@ Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F40
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -56,7 +56,7 @@ Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F40
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cd3"></span>7CD3</td>
 <td class="instruction">CP $15</td>
-<td class="comment-11" rowspan="1"><a href="../graphics/as.html#21">21</a>=EINSTEIN sitting in a chair</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#21">0x15</a>=EINSTEIN sitting in a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -68,7 +68,7 @@ Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F40
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cd8"></span>7CD8</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="5">Place the address of the instruction that called this routine into bytes 99 and 100 of the teacher's buffer, so that control of the teacher remains in this routine until EINSTEIN is seated</td>
+<td class="comment-11" rowspan="5">Place the address of the instruction that called this routine into bytes 0x63 and 0x64 of the teacher's buffer, so that control of the teacher remains in this routine until EINSTEIN is seated</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -109,9 +109,9 @@ Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F40
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

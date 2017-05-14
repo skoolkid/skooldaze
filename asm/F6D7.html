@@ -35,7 +35,7 @@ Used by the routine at <a href="7D84.html">7D84</a>. A teacher is standing at th
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 <tr>
 <td class="register">L</td>
@@ -78,7 +78,7 @@ Used by the routine at <a href="7D84.html">7D84</a>. A teacher is standing at th
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6df"></span>F6DF</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=56 (Reading Room blackboard) or 58 (White Room blackboard)</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=0x38 (Reading Room blackboard) or 0x3A (White Room blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -200,7 +200,7 @@ The first four characters written on the board by ERIC match the digits in MR CR
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6f5"></span>F6F5</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore CREAK's character number (166) to <span class="register">H</span></td>
+<td class="comment-11" rowspan="1">Restore CREAK's character number (0xA6) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -218,7 +218,7 @@ The first four characters written on the board by ERIC match the digits in MR CR
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f6fa"></span>F6FA</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore CREAK's character number (166) to <span class="register">H</span></td>
+<td class="comment-11" rowspan="1">Restore CREAK's character number (0xA6) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -241,9 +241,9 @@ The first four characters written on the board by ERIC match the digits in MR CR
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

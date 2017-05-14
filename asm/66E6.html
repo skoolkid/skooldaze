@@ -59,7 +59,7 @@ This routine is called from the main loop at <a href="6767.html">6767</a> when t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66ec"></span>66EC</td>
 <td class="instruction">LD HL,$7FF9</td>
-<td class="comment-11" rowspan="7">Advance the lesson number at <a href="7FF9.html">7FF9</a> by one and get the next lesson number (0-63) in <span class="register">A</span></td>
+<td class="comment-11" rowspan="7">Advance the lesson number at <a href="7FF9.html">7FF9</a> by one and get the next lesson number (0x00-0x3F) in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -101,7 +101,7 @@ This routine is called from the main loop at <a href="6767.html">6767</a> when t
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="66f7"></span>66F7</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=lesson number (0-63)</td>
+<td class="comment-11" rowspan="1"><span class="register">E</span>=lesson number (0x00-0x3F)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -113,7 +113,7 @@ This routine is called from the main loop at <a href="6767.html">6767</a> when t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66fb"></span>66FB</td>
 <td class="instruction">CP D</td>
-<td class="comment-11" rowspan="3"><span class="register">D</span>=254; ring the bell unless this is the second PLAYTIME in a row (only PLAYTIMEs <a href="../lessons/254.html">254</a> and <a href="../lessons/255.html">255</a> follow another PLAYTIME)</td>
+<td class="comment-11" rowspan="3"><span class="register">D</span>=0xFE; ring the bell unless this is the second PLAYTIME in a row (only PLAYTIMEs <a href="../lessons/FE.html">0xFE</a> and <a href="../lessons/FF.html">0xFF</a> follow another PLAYTIME)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -167,7 +167,7 @@ This routine is called from the main loop at <a href="6767.html">6767</a> when t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="670b"></span>670B</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=lesson identifier (224-255) from the <a href="FE00.html">main timetable</a></td>
+<td class="comment-11" rowspan="1"><span class="register">E</span>=lesson identifier (0xE0-0xFF) from the <a href="FE00.html">main timetable</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -209,7 +209,7 @@ This routine is called from the main loop at <a href="6767.html">6767</a> when t
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6717"></span>6717</td>
 <td class="instruction">LD B,$14</td>
-<td class="comment-11" rowspan="2">There are 20 non-player characters to prepare for the new lesson, starting with little boy no. 1 (152)</td>
+<td class="comment-11" rowspan="2">There are 20 non-player characters to prepare for the new lesson, starting with little boy no. 1 (0x98)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -237,7 +237,7 @@ This entry point is used by the routine at <a href="7C47.html">7C47</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="671c"></span>671C</td>
 <td class="instruction">LD H,$FE</td>
-<td class="comment-11" rowspan="1">The addresses of the command lists are in page 254 at <a href="FE80.html">FE80</a></td>
+<td class="comment-11" rowspan="1">The addresses of the command lists are in page 0xFE at <a href="FE80.html">FE80</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -249,13 +249,13 @@ This entry point is used by the routine at <a href="7C47.html">7C47</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="671f"></span>671F</td>
 <td class="instruction">LD D,H</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=character number (152-171)</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=character number (0x98-0xAB)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6720"></span>6720</td>
 <td class="instruction">LD L,$7A</td>
-<td class="comment-11" rowspan="2">Set bit 0 of byte 122 of the character's buffer; this will trigger a restart of the command list (see <a href="6226.html">6226</a>)</td>
+<td class="comment-11" rowspan="2">Set bit 0 of byte 0x7A of the character's buffer; this will trigger a restart of the command list (see <a href="6226.html">6226</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -309,13 +309,13 @@ This entry point is used by the routine at <a href="7C47.html">7C47</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="672c"></span>672C</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Copy the LSB to byte 119 of the character's buffer</td>
+<td class="comment-11" rowspan="1">Copy the LSB to byte 0x77 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="672d"></span>672D</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=120</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x78</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -339,7 +339,7 @@ This entry point is used by the routine at <a href="7C47.html">7C47</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6731"></span>6731</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Copy the MSB to byte 120 of the character's buffer</td>
+<td class="comment-11" rowspan="1">Copy the MSB to byte 0x78 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -368,9 +368,9 @@ This entry point is used by the routine at <a href="7C47.html">7C47</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a href="FBE4.html">136</a>, <a href="FBF0.html">140</a>, <a href="FC04.html">142</a>, <a href="FC18.html">144</a>, <a href="FC24.html">146</a>, <a href="FC30.html">148</a>, <a href="FC4B.html">150</a>, <a href="FC5F.html">152</a>, <a href="FC6B.html">154</a>, <a href="FC77.html">156</a>, <a href="FC92.html">158</a>, <a href="FCA6.html">160</a>, <a href="FCB2.html">162</a>, <a href="FCBE.html">164</a>, <a href="FCD9.html">166</a>, <a href="FCED.html">168</a>, <a href="FCF9.html">170</a>, <a href="FD01.html">172</a>, <a href="FD11.html">174</a>, <a href="FD21.html">176</a>, <a href="FD29.html">178</a>, <a href="FD39.html">180</a>, <a href="FD65.html">186</a>, <a href="FD6C.html">188</a>, <a href="FD9B.html">198</a>, <a href="FDA3.html">200</a>, <a href="FDAB.html">202</a>, <a href="FDCF.html">206</a>, <a href="FAE6.html">208</a>, <a href="FAF0.html">210</a>, <a href="FB09.html">212</a>, <a href="FB20.html">214</a>, <a href="FB3A.html">216</a>, <a href="FB55.html">218</a> and <a href="FADB.html">222</a> to make a character walk up and down within 7 spaces to the left of a fixed location (the 'walkabout origin') until a specified time, e.g. the end of the lesson or when a teacher arrives at the doorway of the classroom.
+Used by command lists <a href="FBE4.html">0x88</a>, <a href="FBF0.html">0x8C</a>, <a href="FC04.html">0x8E</a>, <a href="FC18.html">0x90</a>, <a href="FC24.html">0x92</a>, <a href="FC30.html">0x94</a>, <a href="FC4B.html">0x96</a>, <a href="FC5F.html">0x98</a>, <a href="FC6B.html">0x9A</a>, <a href="FC77.html">0x9C</a>, <a href="FC92.html">0x9E</a>, <a href="FCA6.html">0xA0</a>, <a href="FCB2.html">0xA2</a>, <a href="FCBE.html">0xA4</a>, <a href="FCD9.html">0xA6</a>, <a href="FCED.html">0xA8</a>, <a href="FCF9.html">0xAA</a>, <a href="FD01.html">0xAC</a>, <a href="FD11.html">0xAE</a>, <a href="FD21.html">0xB0</a>, <a href="FD29.html">0xB2</a>, <a href="FD39.html">0xB4</a>, <a href="FD65.html">0xBA</a>, <a href="FD6C.html">0xBC</a>, <a href="FD9B.html">0xC6</a>, <a href="FDA3.html">0xC8</a>, <a href="FDAB.html">0xCA</a>, <a href="FDCF.html">0xCE</a>, <a href="FAE6.html">0xD0</a>, <a href="FAF0.html">0xD2</a>, <a href="FB09.html">0xD4</a>, <a href="FB20.html">0xD6</a>, <a href="FB3A.html">0xD8</a>, <a href="FB55.html">0xDA</a> and <a href="FADB.html">0xDE</a> to make a character walk up and down within 7 spaces to the left of a fixed location (the 'walkabout origin') until a specified time, e.g. the end of the lesson or when a teacher arrives at the doorway of the classroom.
 </div>
 </div>
 <table class="input-1">
@@ -35,11 +35,11 @@ Used by command lists <a href="FBE4.html">136</a>, <a href="FBF0.html">140</a>, 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 <tr>
 <td class="register">L</td>
-<td class="register-desc">122</td>
+<td class="register-desc">0x7A</td>
 </tr>
 </table>
 <table class="output-0">
@@ -54,7 +54,7 @@ Used by command lists <a href="FBE4.html">136</a>, <a href="FBF0.html">140</a>, 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62d7"></span>62D7</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 122 of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
+<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 0x7A of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -78,7 +78,7 @@ Used by command lists <a href="FBE4.html">136</a>, <a href="FBF0.html">140</a>, 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62de"></span>62DE</td>
 <td class="instruction">LD L,$65</td>
-<td class="comment-11" rowspan="2">Place the signal byte in byte 101 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Place the signal byte in byte 0x65 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -90,7 +90,7 @@ Used by command lists <a href="FBE4.html">136</a>, <a href="FBF0.html">140</a>, 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62e1"></span>62E1</td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Change the address in bytes 99 and 100 of the character's buffer from <a href="62D7.html">62D7</a> to <a href="62D7.html#62e5">62E5</a> (below)</td>
+<td class="comment-11" rowspan="2">Change the address in bytes 0x63 and 0x64 of the character's buffer from <a href="62D7.html">62D7</a> to <a href="62D7.html#62e5">62E5</a> (below)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -112,7 +112,7 @@ This entry point is used by the routines at <a href="6B32.html">6B32</a> and <a 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62e5"></span>62E5</td>
 <td class="instruction">LD L,$65</td>
-<td class="comment-11" rowspan="2">Collect the signal byte from byte 101 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Collect the signal byte from byte 0x65 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -146,7 +146,7 @@ The time has come to stop moving about. However, before we move on in the comman
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ed"></span>62ED</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Collect the x-coordinate of the walkabout origin from byte 102 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Collect the x-coordinate of the walkabout origin from byte 0x66 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -158,7 +158,7 @@ The time has come to stop moving about. However, before we move on in the comman
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ef"></span>62EF</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 holds the character's x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 holds the character's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -176,7 +176,7 @@ The time has come to stop moving about. However, before we move on in the comman
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62f4"></span>62F4</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 holds the character's animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 holds the character's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -206,7 +206,7 @@ The time has come to stop moving about. However, before we move on in the comman
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62fe"></span>62FE</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Initialise the counter at byte 108 to 30, which will give the character enough time to get to the destination</td>
+<td class="comment-11" rowspan="2">Initialise the counter at byte 0x6C to 0x1E, which will give the character enough time to get to the destination</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -218,7 +218,7 @@ The time has come to stop moving about. However, before we move on in the comman
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6301"></span>6301</td>
 <td class="instruction">LD BC,$633C</td>
-<td class="comment-11" rowspan="5">Place the address of the interruptible subcommand routine at <a href="633C.html">633C</a> (guide character to destination) into bytes 105 and 106 of the character's buffer</td>
+<td class="comment-11" rowspan="5">Place the address of the interruptible subcommand routine at <a href="633C.html">633C</a> (guide character to destination) into bytes 0x69 and 0x6A of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -317,9 +317,9 @@ The signal has not been raised yet, so it's time for another mini-walkabout.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

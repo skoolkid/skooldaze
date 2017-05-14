@@ -39,11 +39,11 @@ Used by the routine at <a href="6B7D.html">6B7D</a>. Returns with the carry flag
 </tr>
 <tr>
 <td class="register">D</td>
-<td class="register-desc">Number of the first potential occupant to check (152, 167, or 172)</td>
+<td class="register-desc">Number of the first potential occupant to check (0x98, 0xA7, or 0xAC)</td>
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Number of the character looking for a seat (152-169)</td>
+<td class="register-desc">Number of the character looking for a seat (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -58,7 +58,7 @@ Used by the routine at <a href="6B7D.html">6B7D</a>. Returns with the carry flag
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6b97"></span>6B97</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="2">Byte 98 of a character's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="2">Byte 0x62 of a character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -88,7 +88,7 @@ Used by the routine at <a href="6B7D.html">6B7D</a>. Returns with the carry flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6b9e"></span>6B9E</td>
 <td class="instruction">DEC E</td>
-<td class="comment-11" rowspan="2"><span class="register">E</span>=<span class="register">L</span>=97 (which byte holds the character's y-coordinate)</td>
+<td class="comment-11" rowspan="2"><span class="register">E</span>=<span class="register">L</span>=0x61 (which byte holds the character's y-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -118,7 +118,7 @@ Used by the routine at <a href="6B7D.html">6B7D</a>. Returns with the carry flag
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ba4"></span>6BA4</td>
 <td class="instruction">DEC E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=96</td>
+<td class="comment-11" rowspan="1"><span class="register">E</span>=0x60</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -224,7 +224,7 @@ This entry point is used by the routine at <a href="6B7D.html">6B7D</a> to make 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6bbd"></span>6BBD</td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="2">Remove the uninterruptible subcommand routine address from bytes 111 and 112 of the buffer of the character who is going to sit down</td>
+<td class="comment-11" rowspan="2">Remove the uninterruptible subcommand routine address from bytes 0x6F and 0x70 of the buffer of the character who is going to sit down</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -312,7 +312,7 @@ Someone is sitting in the chair, but it isn't ERIC.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6bd1"></span>6BD1</td>
 <td class="instruction">LD E,$70</td>
-<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 111 and 112 of the seated character's buffer?</td>
+<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70 of the seated character's buffer?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -337,7 +337,7 @@ Someone is sitting in the chair, but it isn't ERIC.
 <span id="6bd7"></span>
 <div class="comments">
 <div class="paragraph">
-The current occupant of the chair must be in the process of being dethroned by someone else at the moment (i.e. bytes 111 and 112 of his buffer hold the address of the uninterruptible subcommand routine at <a href="6C55.html">6C55</a>). In that case, the chair-seeking character will give way to the dethroner and look for another chair.
+The current occupant of the chair must be in the process of being dethroned by someone else at the moment (i.e. bytes 0x6F and 0x70 of his buffer hold the address of the uninterruptible subcommand routine at <a href="6C55.html">6C55</a>). In that case, the chair-seeking character will give way to the dethroner and look for another chair.
 </div>
 </div>
 </td>
@@ -386,7 +386,7 @@ The current occupant of the chair can be dethroned. Make it so.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6bde"></span>6BDE</td>
 <td class="instruction">LD (HL),$6C</td>
-<td class="comment-11" rowspan="3">Place the address of the uninterruptible subcommand routine at <a href="6C55.html">6C55</a> into bytes 111 and 112 of the seated character's buffer</td>
+<td class="comment-11" rowspan="3">Place the address of the uninterruptible subcommand routine at <a href="6C55.html">6C55</a> into bytes 0x6F and 0x70 of the seated character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -415,9 +415,9 @@ The current occupant of the chair can be dethroned. Make it so.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -47,7 +47,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 0 of ERIC's status 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f41f"></span>F41F</td>
 <td class="instruction">LD HL,$7FF6</td>
-<td class="comment-11" rowspan="1"><a href="7FF6.html">7FF6</a> holds the catapult-firing action timer (initially 24)</td>
+<td class="comment-11" rowspan="1"><a href="7FF6.html">7FF6</a> holds the catapult-firing action timer (initially 0x18)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -87,7 +87,7 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> and <a 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f429"></span>F429</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -133,7 +133,7 @@ ERIC hasn't finished firing the catapult. Check which phase of the firing action
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f435"></span>F435</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -185,7 +185,7 @@ It's time to launch the catapult pellet.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f444"></span>F444</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of ERIC's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of ERIC's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -197,7 +197,7 @@ It's time to launch the catapult pellet.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f447"></span>F447</td>
 <td class="instruction">OR $7F</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#127">127 or 255</a> (catapult pellet)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#127">0x7F or 0xFF</a> (catapult pellet)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -227,7 +227,7 @@ It's time to launch the catapult pellet.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f44d"></span>F44D</td>
 <td class="instruction">DEC H</td>
-<td class="comment-11" rowspan="1"><span class="register">H</span>=171 (ERIC's catapult pellet)</td>
+<td class="comment-11" rowspan="1"><span class="register">H</span>=0xAB (ERIC's catapult pellet)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -245,14 +245,14 @@ It's time to launch the catapult pellet.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f454"></span>F454</td>
 <td class="instruction">LD B,$0D</td>
-<td class="comment-11" rowspan="1">Reprimand message <a href="DEA0.html">13</a>: CATAPULTS ARE FORBIDDEN</td>
+<td class="comment-11" rowspan="1">Reprimand message <a href="DEA0.html">0x0D</a>: CATAPULTS ARE FORBIDDEN</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
 <span id="f456"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <span class="register">B</span>=<a href="DEC0.html">14</a>: DON'T HIT YOUR MATES) and <a href="F533.html">F533</a> (with <span class="register">B</span>=<a href="DEE0.html">15</a>: YOU ARE NOT A KANGAROO).
+This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <span class="register">B</span>=<a href="DEC0.html">0x0E</a>: DON'T HIT YOUR MATES) and <a href="F533.html">F533</a> (with <span class="register">B</span>=<a href="DEE0.html">0x0F</a>: YOU ARE NOT A KANGAROO).
 </div>
 </div>
 </td>
@@ -261,7 +261,7 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f456"></span>F456</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -297,7 +297,7 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f45f"></span>F45F</td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 97 of the teacher's buffer holds his y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 of the teacher's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -339,7 +339,7 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f467"></span>F467</td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=172 (ERIC)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=0xAC (ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -356,9 +356,9 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.html">130</a>, <a href="FBB4.html">132</a> and <a href="FBCA.html">134</a>. Determines whether the teacher is conducting ERIC's class, and hands over to <a href="F300.html">F300</a> if so or <a href="7D30.html">7D30</a> if not.
+Used by the teachers' command lists <a href="FB80.html">0x80</a>, <a href="FB9A.html">0x82</a>, <a href="FBB4.html">0x84</a> and <a href="FBCA.html">0x86</a>. Determines whether the teacher is conducting ERIC's class, and hands over to <a href="F300.html">F300</a> if so or <a href="7D30.html">7D30</a> if not.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.h
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -62,7 +62,7 @@ Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.h
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7db7"></span>7DB7</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="5"><span class="register">A</span>=character number of the teacher (163-166) that is teaching ERIC and EINSTEIN this period</td>
+<td class="comment-11" rowspan="5"><span class="register">A</span>=character number of the teacher (0xA3-0xA6) who is teaching ERIC and EINSTEIN this period</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -110,7 +110,7 @@ Used by the teachers' command lists <a href="FB80.html">128</a>, <a href="FB9A.h
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7dc2"></span>7DC2</td>
 <td class="instruction">LD (HL),$30</td>
-<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 99 and 100 of the teacher's buffer with <a href="7D30.html">7D30</a>, and jump there now to start the lesson</td>
+<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 0x63 and 0x64 of the teacher's buffer with <a href="7D30.html">7D30</a>, and jump there now to start the lesson</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -132,7 +132,7 @@ This teacher has the pleasure of conducting ERIC's class this period.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7dc7"></span>7DC7</td>
 <td class="instruction">LD (HL),$00</td>
-<td class="comment-11" rowspan="3">Replace the address of this routine in bytes 99 and 100 of the teacher's buffer with that of <a href="F300.html">F300</a></td>
+<td class="comment-11" rowspan="3">Replace the address of this routine in bytes 0x63 and 0x64 of the teacher's buffer with that of <a href="F300.html">F300</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -173,9 +173,9 @@ This teacher has the pleasure of conducting ERIC's class this period.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

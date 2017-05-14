@@ -143,7 +143,7 @@ Used by the routine at <a href="64D2.html">64D2</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="601f"></span>601F</td>
 <td class="instruction">LD C,$1F</td>
-<td class="comment-11" rowspan="1"><span class="register">BC</span>=31</td>
+<td class="comment-11" rowspan="1"><span class="register">BC</span>=001F</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -215,7 +215,7 @@ Used by the routine at <a href="64D2.html">64D2</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="602f"></span>602F</td>
 <td class="instruction">LD C,$1F</td>
-<td class="comment-11" rowspan="1"><span class="register">BC'</span>=31</td>
+<td class="comment-11" rowspan="1"><span class="register">BC'</span>=001F</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -357,7 +357,7 @@ The 21 rows of character squares have been scrolled one place to the right. Now 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="604f"></span>604F</td>
 <td class="instruction">LD HL,$5800</td>
-<td class="comment-11" rowspan="3">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the attribute file and display file addresses for the top left of the screen, and set <span class="register">BC'</span>=32; however, these values are not used</td>
+<td class="comment-11" rowspan="3">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the attribute file and display file addresses for the top left of the screen, and set <span class="register">BC'</span>=0020; however, these values are not used</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -415,13 +415,13 @@ This entry point is used by the routine at <a href="609B.html">609B</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="605f"></span>605F</td>
 <td class="instruction">LD D,$98</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=Y (152=y-coordinate of the top row of the screen)</td>
+<td class="comment-11" rowspan="1"><span class="register">D</span>=Y (this is the y-coordinate of the top row of the screen)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6061"></span>6061</td>
 <td class="instruction">LD B,$15</td>
-<td class="comment-11" rowspan="1">There are 21 rows (152&lt;=Y&lt;=172) on the screen</td>
+<td class="comment-11" rowspan="1">There are 21 rows on the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -540,9 +540,9 @@ This entry point is used by the routine at <a href="609B.html">609B</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

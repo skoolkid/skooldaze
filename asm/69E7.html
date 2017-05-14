@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a href="FD49.html">182</a>, <a href="FD73.html">190</a>, <a href="FD7C.html">192</a>, <a href="FDDC.html">194</a>, <a href="FD92.html">196</a>, <a href="FAE6.html">208</a>, <a href="FAF0.html">210</a>, <a href="FB09.html">212</a>, <a href="FB3A.html">216</a> and <a href="FAFF.html">220</a> to make a character go to a place at random (selected from the table at <a href="69CA.html">69CA</a>).
+Used by command lists <a href="FD49.html">0xB6</a>, <a href="FD73.html">0xBE</a>, <a href="FD7C.html">0xC0</a>, <a href="FDDC.html">0xC2</a>, <a href="FD92.html">0xC4</a>, <a href="FAE6.html">0xD0</a>, <a href="FAF0.html">0xD2</a>, <a href="FB09.html">0xD4</a>, <a href="FB3A.html">0xD8</a> and <a href="FAFF.html">0xDC</a> to make a character go to a place at random (selected from the table at <a href="69CA.html">69CA</a>).
 </div>
 </div>
 <table class="input-1">
@@ -35,11 +35,11 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD73.html">190</a>, 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 <tr>
 <td class="register">L</td>
-<td class="register-desc">122</td>
+<td class="register-desc">0x7A</td>
 </tr>
 </table>
 <table class="output-0">
@@ -54,7 +54,7 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD73.html">190</a>, 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="69e7"></span>69E7</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 122 of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
+<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 0x7A of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -88,7 +88,7 @@ This entry point is used by the routine at <a href="6A6E.html">6A6E</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="69ee"></span>69EE</td>
 <td class="instruction">LD L,$64</td>
-<td class="comment-11" rowspan="2">Prepare the MSB of the primary command routine address in bytes 99 and 100 of the character's buffer; the LSB will be set to 209 soon (making the routine address <a href="63BE.html#63d1">63D1</a>)</td>
+<td class="comment-11" rowspan="2">Prepare the MSB of the primary command routine address in bytes 0x63 and 0x64 of the character's buffer; the LSB will be set to 0xD1 soon (making the routine address <a href="63BE.html#63d1">63D1</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -111,9 +111,9 @@ This entry point is used by the routine at <a href="6A6E.html">6A6E</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

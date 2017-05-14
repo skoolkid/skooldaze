@@ -68,20 +68,20 @@ The address of this routine is found in the table of keypress handling routines 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f473"></span>F473</td>
 <td class="instruction">LD BC,$0801</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="../graphics/as.html#8">8</a> (ERIC raising catapult), <span class="register">C</span>=1 (bit 0 set)</td>
+<td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="../graphics/as.html#8">0x08</a> (ERIC raising catapult), <span class="register">C</span>=0x01 (bit 0 set)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f476"></span>F476</td>
 <td class="instruction">LD A,$18</td>
-<td class="comment-11" rowspan="1">This will initialise the catapult-firing action timer at <a href="7FF6.html">7FF6</a> to 24</td>
+<td class="comment-11" rowspan="1">This will initialise the catapult-firing action timer at <a href="7FF6.html">7FF6</a> to 0x18</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
 <span id="f478"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="F492.html">F492</a> with <span class="register">A</span>=18, <span class="register">B</span>=<a href="../graphics/as.html#10">10</a> (ERIC raising fist), <span class="register">C</span>=2 (bit 1 set); and by the routine at <a href="F499.html">F499</a> with <span class="register">A</span>=16, <span class="register">B</span>=<a href="../graphics/as.html#12">12</a> (ERIC with arm raised), <span class="register">C</span>=4 (bit 2 set).
+This entry point is used by the routine at <a href="F492.html">F492</a> with <span class="register">A</span>=0x12, <span class="register">B</span>=<a href="../graphics/as.html#10">0x0A</a> (ERIC raising fist), <span class="register">C</span>=0x02 (bit 1 set); and by the routine at <a href="F499.html">F499</a> with <span class="register">A</span>=0x10, <span class="register">B</span>=<a href="../graphics/as.html#12">0x0C</a> (ERIC with arm raised), <span class="register">C</span>=0x04 (bit 2 set).
 </div>
 </div>
 </td>
@@ -132,7 +132,7 @@ This entry point is used by the routine at <a href="F492.html">F492</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f483"></span>F483</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -150,7 +150,7 @@ This entry point is used by the routine at <a href="F492.html">F492</a> with <sp
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f489"></span>F489</td>
 <td class="instruction">LD L,$66</td>
-<td class="comment-11" rowspan="2">Store ERIC's current animatory state in byte 102 of his buffer</td>
+<td class="comment-11" rowspan="2">Store ERIC's current animatory state in byte 0x66 of his buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -185,9 +185,9 @@ This entry point is used by the routine at <a href="F492.html">F492</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by command lists <a href="FD49.html">182</a>, <a href="FD7C.html">192</a>, <a href="FDDC.html">194</a>, <a href="FD92.html">196</a> and <a href="FDB3.html">204</a> to make a character walk about a fixed location until a specified time, or until a certain number of walkabouts have been performed.
+Used by command lists <a href="FD49.html">0xB6</a>, <a href="FD7C.html">0xC0</a>, <a href="FDDC.html">0xC2</a>, <a href="FD92.html">0xC4</a> and <a href="FDB3.html">0xCC</a> to make a character walk about a fixed location until a specified time, or until a certain number of walkabouts have been performed.
 </div>
 </div>
 <table class="input-1">
@@ -35,11 +35,11 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD7C.html">192</a>, 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 <tr>
 <td class="register">L</td>
-<td class="register-desc">122</td>
+<td class="register-desc">0x7A</td>
 </tr>
 </table>
 <table class="output-0">
@@ -54,7 +54,7 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD7C.html">192</a>, 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6b3d"></span>6B3D</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 122 of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
+<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 0x7A of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -72,7 +72,7 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD7C.html">192</a>, 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6b41"></span>6B41</td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 99 and 100 of the character's buffer with that of <a href="6B32.html">6B32</a></td>
+<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 0x63 and 0x64 of the character's buffer with that of <a href="6B32.html">6B32</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -84,7 +84,7 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD7C.html">192</a>, 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6b45"></span>6B45</td>
 <td class="instruction">LD L,$67</td>
-<td class="comment-11" rowspan="3">Collect the next byte (the number of walkabouts) from the command list and place it in byte 103 of the character's buffer</td>
+<td class="comment-11" rowspan="3">Collect the next byte (the number of walkabouts) from the command list and place it in byte 0x67 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -102,7 +102,7 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD7C.html">192</a>, 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6b4b"></span>6B4B</td>
 <td class="instruction">LD L,$65</td>
-<td class="comment-11" rowspan="3">Collect the next byte (the signal byte - always 0) from the command list and place it in byte 101 of the character's buffer</td>
+<td class="comment-11" rowspan="3">Collect the next byte (the signal byte - always 0) from the command list and place it in byte 0x65 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -131,9 +131,9 @@ Used by command lists <a href="FD49.html">182</a>, <a href="FD7C.html">192</a>, 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

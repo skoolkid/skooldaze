@@ -35,7 +35,7 @@ Used by the routine at <a href="F8B4.html">F8B4</a>. Generates a new safe combin
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">0</td>
+<td class="register-desc">0x00</td>
 </tr>
 </table>
 <table class="output-0">
@@ -80,7 +80,7 @@ Used by the routine at <a href="F8B4.html">F8B4</a>. Generates a new safe combin
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f85e"></span>F85E</td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="2"><span class="register">DE</span>=0</td>
+<td class="comment-11" rowspan="2"><span class="register">DE</span>=0000</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -104,7 +104,7 @@ Used by the routine at <a href="F8B4.html">F8B4</a>. Generates a new safe combin
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f865"></span>F865</td>
 <td class="instruction">AND $0F</td>
-<td class="comment-11" rowspan="1">0&lt;=<span class="register">A</span>&lt;=15</td>
+<td class="comment-11" rowspan="1">0x00&lt;=<span class="register">A</span>&lt;=0x0F</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -164,7 +164,7 @@ Used by the routine at <a href="F8B4.html">F8B4</a>. Generates a new safe combin
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f876"></span>F876</td>
 <td class="instruction">AND $1F</td>
-<td class="comment-11" rowspan="2">Is <span class="register">A</span> between 0 and 25?</td>
+<td class="comment-11" rowspan="2">Is <span class="register">A</span> between 0x00 and 0x19?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -252,7 +252,7 @@ The safe combination code has been generated. Now for MR CREAK's birth year.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f88c"></span>F88C</td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
-<td class="comment-11" rowspan="3">Get a random number between 0 and 20 in <span class="register">A</span></td>
+<td class="comment-11" rowspan="3">Get a random number between 0x00 and 0x14 in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -270,7 +270,7 @@ The safe combination code has been generated. Now for MR CREAK's birth year.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f893"></span>F893</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=random odd number between 213 and 253</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=random odd number between 0xD5 and 0xFD</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -411,9 +411,9 @@ Finally, adjust the game mode.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

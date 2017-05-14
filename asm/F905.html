@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="66E6.html">66E6</a>. Returns with <span class="register">A</span> holding the identifier (224-255) for the next lesson. If the next lesson is PLAYTIME, one of the 'special' PLAYTIMEs (<a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a>) may be chosen in place of the main timetable entry.
+Used by the routine at <a href="66E6.html">66E6</a>. Returns with <span class="register">A</span> holding the identifier (0xE0-0xFF) for the next lesson. If the next lesson is PLAYTIME, one of the 'special' PLAYTIMEs (<a href="../lessons/F3.html">0xF3</a>, <a href="../lessons/F4.html">0xF4</a> or <a href="../lessons/F5.html">0xF5</a>) may be chosen in place of the main timetable entry.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the routine at <a href="66E6.html">66E6</a>. Returns with <span class="r
 </tr>
 <tr>
 <td class="register">E</td>
-<td class="register-desc">Lesson number (0-63)</td>
+<td class="register-desc">Lesson number (0x00-0x3F)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the routine at <a href="66E6.html">66E6</a>. Returns with <span class="r
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f905"></span>F905</td>
 <td class="instruction">LD D,$FE</td>
-<td class="comment-11" rowspan="2">Pick up the lesson identifier (224-255) from the <a href="FE00.html">main timetable</a></td>
+<td class="comment-11" rowspan="2">Pick up the lesson identifier (0xE0-0xFF) from the <a href="FE00.html">main timetable</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -62,7 +62,7 @@ Used by the routine at <a href="66E6.html">66E6</a>. Returns with <span class="r
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f908"></span>F908</td>
 <td class="instruction">CP $F3</td>
-<td class="comment-11" rowspan="1">Is it PLAYTIME (243-255)?</td>
+<td class="comment-11" rowspan="1">Is it PLAYTIME (0xF3-0xFF)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -115,9 +115,9 @@ Used by the routine at <a href="66E6.html">66E6</a>. Returns with <span class="r
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

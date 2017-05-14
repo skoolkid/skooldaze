@@ -39,11 +39,11 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 <tr>
 <td class="register">L</td>
-<td class="register-desc">101</td>
+<td class="register-desc">0x65</td>
 </tr>
 </table>
 <table class="output-0">
@@ -82,7 +82,7 @@ Used by the routine at <a href="63BE.html">63BE</a> when the character under con
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="649b"></span>649B</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 holds the character's animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 holds the character's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -122,7 +122,7 @@ The character hasn't reached his destination yet. Figure out his next move.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="64a6"></span>64A6</td>
 <td class="instruction">CP $A9</td>
-<td class="comment-11" rowspan="1">169=bottom floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the character is on the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -156,13 +156,13 @@ The character is on the middle floor or the top floor. But which side of the wal
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="64ad"></span>64AD</td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">Set the zero flag if the character is on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="64af"></span>64AF</td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">57=x-coordinate of the wall between the Map and Reading Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Map and Reading Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -174,7 +174,7 @@ The character is on the middle floor or the top floor. But which side of the wal
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="64b3"></span>64B3</td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">38=x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -254,7 +254,7 @@ The character is on the left side of the wall.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="64c5"></span>64C5</td>
 <td class="instruction">LD A,$0C</td>
-<td class="comment-11" rowspan="1">12=x-coordinate of the tops of the staircases at the left of the skool</td>
+<td class="comment-11" rowspan="1">This is the x-coordinate of the tops of the staircases at the left of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -271,9 +271,9 @@ The character is on the left side of the wall.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

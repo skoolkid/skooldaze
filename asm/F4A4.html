@@ -47,7 +47,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 1 of ERIC's status 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f4a4"></span>F4A4</td>
 <td class="instruction">LD HL,$7FF6</td>
-<td class="comment-11" rowspan="1"><a href="7FF6.html">7FF6</a> holds the hitting action timer (initially 18)</td>
+<td class="comment-11" rowspan="1"><a href="7FF6.html">7FF6</a> holds the hitting action timer (initially 0x12)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -71,7 +71,7 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 1 of ERIC's status 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ac"></span>F4AC</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -135,7 +135,7 @@ ERIC's fist is fully raised. Check whether it's in someone's face.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4be"></span>F4BE</td>
 <td class="instruction">CP $A8</td>
-<td class="comment-11" rowspan="1">168=ANGELFACE</td>
+<td class="comment-11" rowspan="1">0xA8=ANGELFACE</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -159,7 +159,7 @@ ERIC's fist is fully raised. Check whether it's in someone's face.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4c8"></span>F4C8</td>
 <td class="instruction">LD B,$0E</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DEC0.html">14</a>: DON'T HIT YOUR MATES</td>
+<td class="comment-11" rowspan="1">Lines reprimand <a href="DEC0.html">0x0E</a>: DON'T HIT YOUR MATES</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -176,9 +176,9 @@ ERIC's fist is fully raised. Check whether it's in someone's face.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

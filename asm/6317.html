@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Continues from <a href="62B2.html">62B2</a>. So far, byte 123 and bit 7 of byte 122 of the character's buffer have been adjusted to designate a new period of walking or running. All that remains is to ensure that bit 7 of byte 122 is set if the character is a teacher (teachers usually walk slowly).
+Continues from <a href="62B2.html">62B2</a>. So far, byte 0x7B and bit 7 of byte 0x7A of the character's buffer have been adjusted to designate a new period of walking or running. All that remains is to ensure that bit 7 of byte 0x7A is set if the character is a teacher (teachers usually walk slowly).
 </div>
 </div>
 <table class="input-1">
@@ -35,15 +35,15 @@ Continues from <a href="62B2.html">62B2</a>. So far, byte 123 and bit 7 of byte 
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">Contents of byte 122 of the character's buffer</td>
+<td class="register-desc">Contents of byte 0x7A of the character's buffer</td>
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-171)</td>
+<td class="register-desc">Character number (0x98-0xAB)</td>
 </tr>
 <tr>
 <td class="register">L</td>
-<td class="register-desc">122</td>
+<td class="register-desc">0x7A</td>
 </tr>
 </table>
 <table class="output-0">
@@ -58,7 +58,7 @@ Continues from <a href="62B2.html">62B2</a>. So far, byte 123 and bit 7 of byte 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6317"></span>6317</td>
 <td class="instruction">AND $50</td>
-<td class="comment-11" rowspan="2">Check bit 6 (always reset) and bit 4 (set for teachers) of byte 122, and return (to move the character) if both are reset</td>
+<td class="comment-11" rowspan="2">Check bit 6 (always reset) and bit 4 (set for teachers) of byte 0x7A, and return (to move the character) if both are reset</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -87,9 +87,9 @@ Continues from <a href="62B2.html">62B2</a>. So far, byte 123 and bit 7 of byte 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

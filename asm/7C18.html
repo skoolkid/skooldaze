@@ -39,19 +39,19 @@ Continues from <a href="7BA0.html">7BA0</a>. Moves the character looking for ERI
 </tr>
 <tr>
 <td class="register">BC</td>
-<td class="register-desc">0</td>
+<td class="register-desc">0000</td>
 </tr>
 <tr>
 <td class="register">DE</td>
-<td class="register-desc">0</td>
+<td class="register-desc">0000</td>
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Number of the character looking for ERIC (161, 163-166)</td>
+<td class="register-desc">Number of the character looking for ERIC (0xA1, 0xA3-0xA6)</td>
 </tr>
 <tr>
 <td class="register">L</td>
-<td class="register-desc">96</td>
+<td class="register-desc">0x60</td>
 </tr>
 </table>
 <table class="output-0">
@@ -146,7 +146,7 @@ This entry point is used by the routine at <a href="7BA0.html">7BA0</a> when the
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7c25"></span>7C25</td>
 <td class="instruction">LD L,$6B</td>
-<td class="comment-11" rowspan="4"><span class="register">C</span>=-1 if the chaser is to ERIC's left, or 1 if to his right; <span class="register">B</span>=1 if the chaser is going downstairs, 0 otherwise; place these values into bytes 107 and 108 of of the chaser's buffer</td>
+<td class="comment-11" rowspan="4"><span class="register">C</span>=-1 if the chaser is to ERIC's left, or 1 if to his right; <span class="register">B</span>=1 if the chaser is going downstairs, 0 otherwise; place these values into bytes 0x6B and 0x6C of the chaser's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -170,7 +170,7 @@ This entry point is used by the routine at <a href="7BA0.html">7BA0</a> when the
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c2a"></span>7C2A</td>
 <td class="instruction">LD L,$69</td>
-<td class="comment-11" rowspan="2">Change the interruptible subcommand routine address in bytes 105 and 106 of the chaser's buffer from <a href="7BA0.html">7BA0</a> to <a href="7BFB.html">7BFB</a></td>
+<td class="comment-11" rowspan="2">Change the interruptible subcommand routine address in bytes 0x69 and 0x6A of the chaser's buffer from <a href="7BA0.html">7BA0</a> to <a href="7BFB.html">7BFB</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -265,9 +265,9 @@ This entry point is used by the routine at <a href="7BA0.html">7BA0</a> when the
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

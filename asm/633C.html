@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this interruptible subcommand routine is placed into bytes 105 and 106 of the character's buffer by the routines at <a href="62D7.html">62D7</a>, <a href="63BE.html">63BE</a>, <a href="7C6E.html">7C6E</a> and <a href="7D30.html">7D30</a>. It is used to make a character go straight to a destination (or intermediate destination) that is reachable without negotiating any staircases.
+The address of this interruptible subcommand routine is placed into bytes 0x69 and 0x6A of the character's buffer by the routines at <a href="62D7.html">62D7</a>, <a href="63BE.html">63BE</a>, <a href="7C6E.html">7C6E</a> and <a href="7D30.html">7D30</a>. It is used to make a character go straight to a destination (or intermediate destination) that is reachable without negotiating any staircases.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Character number (152-169)</td>
+<td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="633c"></span>633C</td>
 <td class="instruction">LD L,$6C</td>
-<td class="comment-11" rowspan="3">The counter at byte 108 of the character's buffer is initialised by the calling routine to limit the amount of time that this routine has control; terminate this interruptible subcommand if the counter is now zero</td>
+<td class="comment-11" rowspan="3">The counter at byte 0x6C of the character's buffer is initialised by the calling routine to limit the amount of time that this routine has control; terminate this interruptible subcommand if the counter is now zero</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -68,7 +68,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6342"></span>6342</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 107 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 0x6B of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -80,7 +80,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6344"></span>6344</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of the character's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of the character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -98,7 +98,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6349"></span>6349</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the character's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the character's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -128,7 +128,7 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6353"></span>6353</td>
 <td class="instruction">LD L,$6B</td>
-<td class="comment-11" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 107 of the character's buffer</td>
+<td class="comment-11" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 0x6B of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -347,9 +347,9 @@ The character is to the left of his destination, and so must proceed rightwards.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

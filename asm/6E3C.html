@@ -35,7 +35,7 @@ Used by the routines at <a href="6F1E.html">6F1E</a>, <a href="7000.html">7000</
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">167 (BOY WANDER), 168 (ANGELFACE) or 172 (ERIC)</td>
+<td class="register-desc">0xA7 (BOY WANDER), 0xA8 (ANGELFACE) or 0xAC (ERIC)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the routines at <a href="6F1E.html">6F1E</a>, <a href="7000.html">7000</
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e3c"></span>6E3C</td>
 <td class="instruction">CALL <a href="6E90.html">$6E90</a></td>
-<td class="comment-11" rowspan="1">Get the floor (155, 162, 169) nearest to the character in <span class="register">D</span></td>
+<td class="comment-11" rowspan="1">Get the floor (0x9B, 0xA2, 0xA9) nearest to the character in <span class="register">D</span></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="4">
@@ -84,13 +84,13 @@ This entry point is used by the routine at <a href="77AC.html">77AC</a>.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e45"></span>6E45</td>
 <td class="instruction">LD H,$A3</td>
-<td class="comment-11" rowspan="1">And the first is 163=MR WACKER</td>
+<td class="comment-11" rowspan="1">And the first is 0xA3=MR WACKER</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e47"></span>6E47</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="2">Collect the teacher's x-coordinate from byte 98 of his buffer</td>
+<td class="comment-11" rowspan="2">Collect the teacher's x-coordinate from byte 0x62 of his buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -190,7 +190,7 @@ The teacher's x-coordinate is within the visibility range [<span class="register
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e5b"></span>6E5B</td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 111 and 112 of the teacher's buffer?</td>
+<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70 of the teacher's buffer?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -214,7 +214,7 @@ The teacher's x-coordinate is within the visibility range [<span class="register
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e61"></span>6E61</td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="2">Collect the teacher's y-coordinate from byte 97 of his buffer</td>
+<td class="comment-11" rowspan="2">Collect the teacher's y-coordinate from byte 0x61 of his buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -226,7 +226,7 @@ The teacher's x-coordinate is within the visibility range [<span class="register
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e64"></span>6E64</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -250,7 +250,7 @@ The teacher's x-coordinate is within the visibility range [<span class="register
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e6a"></span>6E6A</td>
 <td class="instruction">LD A,$9B</td>
-<td class="comment-11" rowspan="1">155=top floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -268,7 +268,7 @@ The teacher's x-coordinate is within the visibility range [<span class="register
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e70"></span>6E70</td>
 <td class="instruction">LD A,$A2</td>
-<td class="comment-11" rowspan="1">162=middle floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -280,7 +280,7 @@ The teacher's x-coordinate is within the visibility range [<span class="register
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e74"></span>6E74</td>
 <td class="instruction">LD A,$A9</td>
-<td class="comment-11" rowspan="1">169=bottom floor</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -344,7 +344,7 @@ The teacher is close enough to the boy to see him. But is the teacher facing the
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e7f"></span>6E7F</td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="3"><span class="register">A</span>=128 if the boy is to the right of the teacher, 0 if the boy is to the left</td>
+<td class="comment-11" rowspan="3"><span class="register">A</span>=0x80 if the boy is to the right of the teacher, 0x00 if the boy is to the left</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -368,7 +368,7 @@ The teacher is close enough to the boy to see him. But is the teacher facing the
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e84"></span>6E84</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 of the teacher's buffer holds his animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 of the teacher's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -421,9 +421,9 @@ The teacher is close enough to the boy to see him. But is the teacher facing the
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="F78E.html">F78E</a>. The address of this interruptible subcommand routine is also placed into bytes 105 and 106 of a character's buffer by the routine at <a href="7C18.html">7C18</a>. It moves ERIC's chaser from the midstride position.
+Used by the routine at <a href="F78E.html">F78E</a>. The address of this interruptible subcommand routine is also placed into bytes 0x69 and 0x6A of a character's buffer by the routine at <a href="7C18.html">7C18</a>. It moves ERIC's chaser from the midstride position.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ Used by the routine at <a href="F78E.html">F78E</a>. The address of this interru
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Number of the character looking for ERIC (161, 163-166)</td>
+<td class="register-desc">Number of the character looking for ERIC (0xA1, 0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the routine at <a href="F78E.html">F78E</a>. The address of this interru
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7bfb"></span>7BFB</td>
 <td class="instruction">LD L,$69</td>
-<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 105 and 106 of the character's buffer (if present) with that of <a href="7BA0.html">7BA0</a></td>
+<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 0x69 and 0x6A of the character's buffer (if present) with that of <a href="7BA0.html">7BA0</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -68,7 +68,7 @@ Used by the routine at <a href="F78E.html">F78E</a>. The address of this interru
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c02"></span>7C02</td>
 <td class="instruction">LD L,$6C</td>
-<td class="comment-11" rowspan="5"><span class="register">D</span>=character's new y-coordinate (adjusted by the value in byte 108 of his buffer, placed there by the routine at <a href="7C18.html">7C18</a>)</td>
+<td class="comment-11" rowspan="5"><span class="register">D</span>=character's new y-coordinate (adjusted by the value in byte 0x6C of his buffer, placed there by the routine at <a href="7C18.html">7C18</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -98,7 +98,7 @@ Used by the routine at <a href="F78E.html">F78E</a>. The address of this interru
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c08"></span>7C08</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="4"><span class="register">E</span>=character's new x-coordinate (adjusted by the value in byte 107 of his buffer, placed there by the routine at <a href="7C18.html">7C18</a>)</td>
+<td class="comment-11" rowspan="4"><span class="register">E</span>=character's new x-coordinate (adjusted by the value in byte 0x6B of his buffer, placed there by the routine at <a href="7C18.html">7C18</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -185,9 +185,9 @@ The character's post-midstride coordinates have been calculated; now we consider
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

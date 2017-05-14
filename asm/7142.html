@@ -35,7 +35,7 @@ Used by the routine at <a href="7264.html">7264</a>. Returns with the zero flag 
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Number of the character writing on the board (163-167)</td>
+<td class="register-desc">Number of the character writing on the board (0xA3-0xA7)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -98,7 +98,7 @@ Used by the routine at <a href="7264.html">7264</a>. Returns with the zero flag 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7150"></span>7150</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=255</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=0xFF</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -428,7 +428,7 @@ Now we enter the loop that draws the pixel columns of the font character bitmap 
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7197"></span>7197</td>
 <td class="instruction">LD H,$80</td>
-<td class="comment-11" rowspan="8">Point <span class="register">HL</span> at the graphic data for the skool UDG reference in <span class="register">A</span>; the skool UDG references are 206-191 for the Reading Room board, 238-223 for the White Room board, and 222-207 for the Exam Room board, decreasing from left to right</td>
+<td class="comment-11" rowspan="8">Point <span class="register">HL</span> at the graphic data for the skool UDG reference in <span class="register">A</span>; the skool UDG references are 0xCE-0xBF for the Reading Room board, 0xEE-0xDF for the White Room board, and 0xDE-0xCF for the Exam Room board, decreasing from left to right</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -637,9 +637,9 @@ Now we enter the loop that draws the pixel columns of the font character bitmap 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

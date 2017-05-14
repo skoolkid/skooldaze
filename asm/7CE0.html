@@ -35,7 +35,7 @@ Used by the routine at <a href="F300.html">F300</a>.
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">Teacher's character number (163-166)</td>
+<td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Used by the routine at <a href="F300.html">F300</a>.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7ce0"></span>7CE0</td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="7"><span class="register">L</span>=0 (MR WACKER), 16 (MR ROCKITT), 32 (MR WITHIT), or 48 (MR CREAK)</td>
+<td class="comment-11" rowspan="7"><span class="register">L</span>=0x00 (MR WACKER), 0x10 (MR ROCKITT), 0x20 (MR WITHIT), or 0x30 (MR CREAK)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -138,7 +138,7 @@ The number in <span class="register">L</span> determines how often the teacher w
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cec"></span>7CEC</td>
 <td class="instruction">LD L,$FF</td>
-<td class="comment-11" rowspan="2">Return with <span class="register">L</span>=255 if the teacher's not in the mood to give lines to EINSTEIN</td>
+<td class="comment-11" rowspan="2">Return with <span class="register">L</span>=0xFF if the teacher's not in the mood to give lines to EINSTEIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -161,9 +161,9 @@ The number in <span class="register">L</span> determines how often the teacher w
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

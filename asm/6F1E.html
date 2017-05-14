@@ -26,7 +26,7 @@
 <td class="routine-comment" colspan="4">
 <div class="details">
 <div class="paragraph">
-The address of this continual subcommand routine is placed into bytes 124 and 125 of ANGELFACE's buffer by command lists <a href="FC04.html">142</a>, <a href="FC4B.html">150</a>, <a href="FC92.html">158</a>, <a href="FCD9.html">166</a>, <a href="FD11.html">174</a>, <a href="FD39.html">180</a> and <a href="FD49.html">182</a>. It decides whether ANGELFACE should throw a punch, and gets the punching action under way if so.
+The address of this continual subcommand routine is placed into bytes 0x7C and 0x7D of ANGELFACE's buffer by command lists <a href="FC04.html">0x8E</a>, <a href="FC4B.html">0x96</a>, <a href="FC92.html">0x9E</a>, <a href="FCD9.html">0xA6</a>, <a href="FD11.html">0xAE</a>, <a href="FD39.html">0xB4</a> and <a href="FD49.html">0xB6</a>. It decides whether ANGELFACE should throw a punch, and gets the punching action under way if so.
 </div>
 </div>
 <table class="input-1">
@@ -35,7 +35,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">168 (ANGELFACE)</td>
+<td class="register-desc">0xA8 (ANGELFACE)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6f1e"></span>6F1E</td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="4">Return now if there is an uninterruptible subcommand routine address in bytes 111 and 112 of ANGELFACE's buffer (meaning he is currently occupied)</td>
+<td class="comment-11" rowspan="4">Return now if there is an uninterruptible subcommand routine address in bytes 0x6F and 0x70 of ANGELFACE's buffer (meaning he is currently occupied)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -74,7 +74,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f23"></span>6F23</td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 96 holds ANGELFACE's animatory state</td>
+<td class="comment-11" rowspan="1">Byte 0x60 holds ANGELFACE's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -92,7 +92,7 @@ The address of this continual subcommand routine is placed into bytes 124 and 12
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f28"></span>6F28</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1">Byte 97 holds ANGELFACE's y-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x61 holds ANGELFACE's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -138,7 +138,7 @@ ANGELFACE is not on a staircase, and there are no teachers nearby. Are there any
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f32"></span>6F32</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 holds ANGELFACE's x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 holds ANGELFACE's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -162,7 +162,7 @@ ANGELFACE is not on a staircase, and there are no teachers nearby. Are there any
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f37"></span>6F37</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=96 (which byte holds ANGELFACE's animatory state)</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x60 (which byte holds ANGELFACE's animatory state)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -204,7 +204,7 @@ ANGELFACE is not on a staircase, and there are no teachers nearby. Are there any
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f42"></span>6F42</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -244,7 +244,7 @@ If we get here, there is a potential victim in front of ANGELFACE for him to tak
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f4b"></span>6F4B</td>
 <td class="instruction">LD HL,$A871</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 113 of ANGELFACE's buffer</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x71 of ANGELFACE's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -256,7 +256,7 @@ If we get here, there is a potential victim in front of ANGELFACE for him to tak
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f4f"></span>6F4F</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6F80.html">6F80</a> (throw a punch) into bytes 111 and 112 of ANGELFACE's buffer</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6F80.html">6F80</a> (throw a punch) into bytes 0x6F and 0x70 of ANGELFACE's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -296,7 +296,7 @@ ERIC is not a potential target for ANGELFACE's fist. What about the other main k
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6f56"></span>6F56</td>
 <td class="instruction">LD H,$A9</td>
-<td class="comment-11" rowspan="1">169=EINSTEIN</td>
+<td class="comment-11" rowspan="1">0xA9=EINSTEIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -348,13 +348,13 @@ EINSTEIN and BOY WANDER weren't potential targets either. What about the little 
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f64"></span>6F64</td>
 <td class="instruction">LD H,$98</td>
-<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+<td class="comment-11" rowspan="1">0x98=little boy no. 1</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f66"></span>6F66</td>
 <td class="instruction">LD B,$07</td>
-<td class="comment-11" rowspan="1">We check only the first seven little boys - interesting!</td>
+<td class="comment-11" rowspan="1">We check only the first seven little boys - <a href="../reference/facts.html#bullyFriends">interesting</a>!</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -407,9 +407,9 @@ EINSTEIN and BOY WANDER weren't potential targets either. What about the little 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>

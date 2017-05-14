@@ -35,7 +35,7 @@ Continues from <a href="6F8E.html">6F8E</a>. Also used by the routine at <a href
 </tr>
 <tr>
 <td class="register">H</td>
-<td class="register-desc">168 (ANGELFACE) or 172 (ERIC)</td>
+<td class="register-desc">0xA8 (ANGELFACE) or 0xAC (ERIC)</td>
 </tr>
 </table>
 <table class="output-0">
@@ -50,7 +50,7 @@ Continues from <a href="6F8E.html">6F8E</a>. Also used by the routine at <a href
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6f99"></span>6F99</td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 98 of the puncher's buffer holds his x-coordinate</td>
+<td class="comment-11" rowspan="1">Byte 0x62 of the puncher's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -62,7 +62,7 @@ Continues from <a href="6F8E.html">6F8E</a>. Also used by the routine at <a href
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f9c"></span>6F9C</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x61</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -74,7 +74,7 @@ Continues from <a href="6F8E.html">6F8E</a>. Also used by the routine at <a href
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f9e"></span>6F9E</td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=96</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=0x60</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -134,7 +134,7 @@ Continues from <a href="6F8E.html">6F8E</a>. Also used by the routine at <a href
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6faf"></span>6FAF</td>
 <td class="instruction">LD H,$AC</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -198,7 +198,7 @@ Now we check whether anyone was punched. We start with the three main kids.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6fc0"></span>6FC0</td>
 <td class="instruction">LD H,$A9</td>
-<td class="comment-11" rowspan="1">169=EINSTEIN</td>
+<td class="comment-11" rowspan="1">0xA9=EINSTEIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -216,7 +216,7 @@ Now we check whether anyone was punched. We start with the three main kids.
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6fc7"></span>6FC7</td>
 <td class="instruction">LD L,$6F</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6A46.html">6A46</a> into bytes 111 and 112 of the victim's character buffer</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6A46.html">6A46</a> into bytes 0x6F and 0x70 of the victim's character buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -240,7 +240,7 @@ Now we check whether anyone was punched. We start with the three main kids.
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6fce"></span>6FCE</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Initialise the parameter determining how long the character will stay down (in byte 113)</td>
+<td class="comment-11" rowspan="2">Initialise the parameter determining how long the character will stay down (in byte 0x71)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -280,7 +280,7 @@ None of the main kids was hit. What about the little boys?
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6fd5"></span>6FD5</td>
 <td class="instruction">LD H,$98</td>
-<td class="comment-11" rowspan="1">152=character number of little boy no. 1</td>
+<td class="comment-11" rowspan="1">0x98=character number of little boy no. 1</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
@@ -327,9 +327,9 @@ None of the main kids was hit. What about the little boys?
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20151011</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd (Skool Daze). &#169; 2015 Richard Dymond (this disassembly).</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 5.1.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20170514</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
 </footer>
 </body>
 </html>
