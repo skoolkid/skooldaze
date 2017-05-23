@@ -1897,7 +1897,7 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
 @nowarn
  25989 JR NZ,26068   ; (which should be to #R26067)
 @ofix+else
-       JR NZ,26067
+ 25989 JR NZ,26067
 @ofix+end
                      ; is never made}
 @rsub-end
@@ -3992,7 +3992,7 @@ c27823 LD HL,32763   ; {Flip bit 7 of ERIC's status flags at #R32763
  27872 CALL 27633    ; This should be #S/CALL/ #R27634 - is ERIC beside a
                      ; chair?
 @ofix+else
-       CALL 27634    ; Is ERIC beside a chair?
+ 27872 CALL 27634    ; Is ERIC beside a chair?
 @ofix+end
  27875 JP Z,27517    ; Seat him if so
 *27878 LD A,B        ; {#REGa=#AS6(#b6 or #b134) (ERIC sitting on the floor)
@@ -7948,8 +7948,8 @@ c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
 @bfix-begin
  31825 CALL 26395    ; Set this character's command list up for a restart
 @bfix+else
-       NOP
-       SET 0,(HL)    ; Set this character's command list up for a restart
+ 31825 NOP
+ 31826 SET 0,(HL)    ; Set this character's command list up for a restart
                      ; (without replacing the command list start address in the
                      ; character's buffer, thus circumventing the bug mentioned
                      ; above)
@@ -14012,10 +14012,10 @@ b56576 DEFB 0   ; {Initial value of byte #b122 for the little boys
  56589 DEFB 16  ; making them run at the start of the game (which is a
  56590 DEFB 16  ; #BUG#runningTeachers(bug))}
 @bfix+else
-       DEFB 144 ; {MR WACKER, MR ROCKITT, MR WITHIT and MR CREAK have bit 4 set
-       DEFB 144 ; to indicate that they are teachers, and bit 7 set to make
-       DEFB 144 ; them walk instead of run
-       DEFB 144 ; }
+ 56587 DEFB 144 ; {MR WACKER, MR ROCKITT, MR WITHIT and MR CREAK have bit 4 set
+ 56588 DEFB 144 ; to indicate that they are teachers, and bit 7 set to make
+ 56589 DEFB 144 ; them walk instead of run
+ 56590 DEFB 144 ; }
 @bfix+end
  56591 DEFB 0   ; {Initial value of byte #b122 for BOY WANDER, ANGELFACE and
  56592 DEFB 0   ; EINSTEIN
@@ -14566,7 +14566,7 @@ t57520 DEFM "P"
 t57532 DEFM "Phosphorous"
  57543 DEFB 0 ; End marker
 @bfix+begin
-       DEFB 0
+ 57543 DEFB 0
 @bfix+end
 
 ; 'Br'
@@ -15906,9 +15906,9 @@ c60139 LD HL,784     ; {These parameters were meant for the routine at #R65122;
                      ; does nothing significant
 @ofix+else
 c60139 LD HL,784     ; {Initialise the jumping sound effect parameters
-       LD DE,12896   ;
-       LD A,1        ; }
-       CALL 65122    ; Make the jumping sound effect
+ 60142 LD DE,12896   ;
+ 60145 LD A,1        ; }
+ 60147 CALL 65122    ; Make the jumping sound effect
 @ofix+end
  60150 JP 65106      ; Make a walking sound effect
 
@@ -17004,7 +17004,7 @@ c62771 LD HL,32758   ; Decrement the jumping action timer at #R32758 (which
 @nowarn
  62900 JR 62844      ; This should be #S/JR/ #R62845
 @ofix+else
-       JR 62845      ; Set the jumping action timer at #R32758 back to #b7
+ 62900 JR 62845      ; Set the jumping action timer at #R32758 back to #b7
 @ofix+end
 
 @rsub-begin
