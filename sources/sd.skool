@@ -7770,7 +7770,7 @@ c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
 c31895 CALL 31188    ; Set the zero flag if ERIC is in the dinner hall
 @rem=31861 first so skool2asm spots it; no brackets so pasmo is OK with it
 @ssub=LD DE,31861%256*256+62
-@keep
+@keep=30014
  31898 LD DE,30014   ; #REGd=#b117 (LSB of #R31861), #REGe=62 (x-coordinate of
                      ; the right end of the teacher's dinner duty orbit)
  31901 JR 31867      ; Go and look for ERIC, or go to the right end of the
