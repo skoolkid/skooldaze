@@ -5,7 +5,7 @@
 @replace=/#w\i/#N(\1,4)/ (word)
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
 ; Copyright 2008-2013, 2015, 2017, 2018 Richard Dymond (this disassembly)
-@org=24288
+@org
 
 ; Start
 ;

@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017, 2018 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -21,7 +21,7 @@ i23552 DEFS 1024
 ; http://skoolkit.ca/
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017, 2018 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -53,7 +53,7 @@ i23552 DEFS 1024
 @bfix+end
 
 @isub+begin
-@org=24573
+@org
 c24573 JP 26880
 @isub+end
 
@@ -8471,7 +8471,7 @@ c32497 LD DE,39722    ; The Reading Room blackboard is at
        RET            ;
 @rfix+end
 
-@org=32512
+@org
 ; x-coordinate of the leftmost column of the skool on screen
 ;
 ; Modified by the routines at #R24576 and #R24731.
@@ -8943,7 +8943,7 @@ g32765 DEFB 0
 @keep
 g32766 DEFW 512 ; This is the initial value of the seed
 
-@org=32768
+@org
 ; Skool graphic data for columns 0-31 (tiles #b0-#b255)
 ;
 ; Used by the routine at #R24843. Tiles #b220-#b224, #b231 and #b232 are unused
@@ -17862,7 +17862,7 @@ c64073 LD DE,16448   ; Set #REGde to the appropriate display file address
 s64107 DEFB 0
 @rsub-end
 
-@org=64108
+@org
 ; 'Do you want to put in your own names Y/N?'
 ;
 ; Used by the routine at #R64073.
