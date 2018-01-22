@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017, 2018 Richard Dymond (rjdymond@gmail.com)
 
 [Config]
 RefFiles=bugs.ref;changelog.ref;data.ref;facts.ref;glossary.ref;graphics.ref;pages.ref;pokes.ref
@@ -7,7 +7,7 @@ GameDir=skool_daze
 
 [Game]
 Game=Skool Daze
-Logo=#UDGARRAY8,6,,8;61208-61343-1-64(/images/logo|Skool Daze)
+Logo=#UDGARRAY8,6,,8;61208-61343-1-64({ImagePath}/logo|Skool Daze)
 StyleSheet=skoolkit.css;sd.css
 Release=The complete Skool Daze RAM disassembly 20170514
 Copyright=&#169; 1984 Microsphere Computer Services Ltd. &#169; 2017 Richard Dymond.
