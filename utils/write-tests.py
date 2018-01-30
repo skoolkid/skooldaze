@@ -12,16 +12,16 @@ if not os.path.isdir(SKOOLKIT_HOME):
 sys.path.insert(0, '{}/tools'.format(SKOOLKIT_HOME))
 from testwriter import write_tests
 
-SKOOL = 'sources/sd.skool'
+SKOOL = 'sd.skool'
 
 SNAPSHOT = 'build/skool_daze.z80'
 
-OUTPUT = """Using skool file: sources/sd.skool
-Using ref files: sources/sd.ref, sources/bugs.ref, sources/changelog.ref, sources/data.ref, sources/facts.ref, sources/glossary.ref, sources/graphics.ref, sources/pages.ref, sources/pokes.ref
-Parsing sources/sd.skool
+OUTPUT = """Using skool file: sd.skool
+Using ref files: sd.ref, bugs.ref, changelog.ref, data.ref, facts.ref, glossary.ref, graphics.ref, pages.ref, pokes.ref
+Parsing sd.skool
 Creating directory {odir}/skool_daze
 Copying {SKOOLKIT_HOME}/skoolkit/resources/skoolkit.css to {odir}/skool_daze/skoolkit.css
-Copying sources/sd.css to {odir}/skool_daze/sd.css
+Copying sd.css to {odir}/skool_daze/sd.css
   Writing disassembly files in skool_daze/asm
   Writing skool_daze/maps/all.html
   Writing skool_daze/maps/routines.html
@@ -36,7 +36,7 @@ Copying sources/sd.css to {odir}/skool_daze/sd.css
   Writing skool_daze/reference/pokes.html
   Writing skool_daze/graphics/graphics.html
   Writing skool_daze/graphics/playarea.html
-  Copying sources/tiles.js to {odir}/skool_daze/tiles.js
+  Copying tiles.js to {odir}/skool_daze/tiles.js
   Writing skool_daze/graphics/patiles/patiles.html
   Writing skool_daze/graphics/asstart.html
   Writing skool_daze/graphics/as.html
@@ -77,19 +77,15 @@ Copying sources/sd.css to {odir}/skool_daze/sd.css
   Writing skool_daze/lessons/#N254.html
   Writing skool_daze/lessons/#N255.html
   Writing skool_daze/tables/keys.html
-  Parsing sources/load.skool
+  Parsing load.skool
     Writing skool_daze/load/load.html
     Writing disassembly files in skool_daze/load
-  Parsing sources/save.skool
+  Parsing save.skool
     Writing skool_daze/save/save.html
     Writing disassembly files in skool_daze/save
-  Parsing sources/start.skool
+  Parsing start.skool
     Writing skool_daze/start/start.html
     Writing disassembly files in skool_daze/start
   Writing skool_daze/index.html"""
 
-HTML_WRITER = 'sources:skooldaze.SkoolDazeHtmlWriter'
-
-ASM_WRITER = 'sources:skooldaze.SkoolDazeAsmWriter'
-
-write_tests(SKOOL, SNAPSHOT, OUTPUT, HTML_WRITER, ASM_WRITER)
+write_tests(SKOOL, SNAPSHOT, OUTPUT)
