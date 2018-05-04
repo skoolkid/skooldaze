@@ -1700,15 +1700,12 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
  26132 INC E         ; {One pace to the right (taking into the account the one
  26133 INC E         ; pace to the left made above)}
 *26134 LD A,B        ; #REGa=#AS2(#b2/#b130)
-@bfix-begin
+@bfix=BIT 0,L        ; {#REGa=#AS1(#b1/#b129), #REGb=#AS2(#b2/#b130) if ERIC's
  26135 BIT 0,L       ; {#REGa=#AS3(#b3/#b131), #REGb=#AS2(#b2/#b130) if ERIC's
+@bfix=JR Z,26143     ; current x-coordinate is even;
  26137 JR Z,26141    ; current x-coordinate is even (which is a
+@bfix=DEC B          ;
  26139 DEC B         ; #BUG#oneFourThreeFour(bug));
-@bfix+else
- 26135 BIT 0,L       ; {#REGa=#AS1(#b1/#b129), #REGb=#AS2(#b2/#b130) if ERIC's
- 26137 JR Z,26143    ; current x-coordinate is even;
- 26139 DEC B         ;
-@bfix+end
  26140 DEC B         ; #REGa=#AS3(#b3/#b131), #REGb=#AS0(#b0/#b128) if ERIC's
 @bfix-begin
 *26141 ADD A,2       ; current x-coordinate is odd
