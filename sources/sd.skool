@@ -1,3 +1,4 @@
+@retain
 ; Copyright 2008-2015, 2017, 2018 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
@@ -9,6 +10,7 @@ b23296 DEFS 256
 ; System variables and BASIC program area
 i23552 DEFS 1024
 
+@retain
 @start
 @replace=/#BUG(?![A-Z])/#LINK:Bugs
 @replace=/#FACT(?![A-Z])/#LINK:Facts
