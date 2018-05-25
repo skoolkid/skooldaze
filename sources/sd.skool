@@ -7515,8 +7515,7 @@ c31739 LD L,105      ; {Replace the address of this routine in bytes #b105 and
  31754 ADD A,(HL)    ; routine at #R31768)
  31755 LD E,A        ; }
 ; The character's post-midstride coordinates have been calculated; now we
-; consider his post-midstride animatory state.
-@bfix-begin
+; consider his post-midstride animatory state.#IF({fix}<2)//
 ; Usually, a character's animatory state is incremented as he moves to or from
 ; the midstride position, which makes his walking animation cycle through
 ; phases 1, 2, 3 and 4. However, the next section of code - unlike its
@@ -7525,14 +7524,12 @@ c31739 LD L,105      ; {Replace the address of this routine in bytes #b105 and
 ; moving leftwards, and increments it if the character is moving rightwards. So
 ; when a character is moving leftwards while chasing ERIC, his walking
 ; animation will cycle through phases 1 and 2 only, or 3 and 4 only. This is a
-; #BUG#oneTwoOneTwo(bug).
+; #BUG#oneTwoOneTwo(bug).//
+@bfix=LD A,B         ; #REGa=character's current animatory state
  31756 LD A,(HL)     ; #REGa=x-coordinate increment (-1 or +1)
+@bfix=INC A          ; Increment it (to move the character to the next walking
+@bfix=               ; phase)
  31757 ADD A,B       ; Add this to the character's current animatory state
-@bfix+else
- 31756 LD A,B        ; #REGa=character's current animatory state
- 31757 INC A         ; Increment it (to move the character to the next walking
-                     ; phase)
-@bfix+end
  31758 AND 3         ; {Now #REGc holds the new walking phase bits
  31760 LD C,A        ; }
  31761 LD A,B        ; #REGa=character's current animatory state
