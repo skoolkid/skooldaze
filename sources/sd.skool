@@ -7630,15 +7630,12 @@ c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
  31824 LD E,A        ; the identifier of the current lesson if the current
                      ; lesson is a 'special' playtime - #LESSON243, #LESSON244
                      ; or #LESSON245 - which is a #BUG#wrongCommandList(bug)}
-@bfix-begin
+@bfix=NOP            ;
+@bfix=SET 0,(HL)     ; Set this character's command list up for a restart
+@bfix=               ; (without replacing the command list start address in the
+@bfix=               ; character's buffer, thus circumventing the bug mentioned
+@bfix=               ; above)
  31825 CALL 26395    ; Set this character's command list up for a restart
-@bfix+else
- 31825 NOP
- 31826 SET 0,(HL)    ; Set this character's command list up for a restart
-                     ; (without replacing the command list start address in the
-                     ; character's buffer, thus circumventing the bug mentioned
-                     ; above)
-@bfix+end
 @rfix+else
 ; L #b122
 c31815 SET 0,(HL)    ; Set this character's command list up for a restart
