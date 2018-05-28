@@ -10479,13 +10479,10 @@ b42208 DEFB 188 ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64876(#b188) (Staff
                 ; (Exam Room)
  42212 DEFB 132 ; Lesson #LESSON228 (REVISION LIBRARY): #R64436(#b132) (Exam
                 ; Room)
-@bfix-begin
+@bfix=DEFB 188  ; Lesson #LESSON229 (REVISION LIBRARY): #R64876(#b188) (Staff
+@bfix=          ; room)
  42213 DEFB 154 ; Lesson #LESSON229 (REVISION LIBRARY): #R64619(#b154) (Exam
                 ; Room) (this is a #BUG#rockittExamRoom(bug))
-@bfix+else
- 42213 DEFB 188 ; Lesson #LESSON229 (REVISION LIBRARY): #R64876(#b188) (Staff
-                ; room)
-@bfix+end
  42214 DEFB 134 ; Lesson #LESSON230 (REVISION LIBRARY): #R64458(#b134) (White
                 ; Room)
  42215 DEFB 134 ; Lesson #LESSON231 (MR WITHIT - MAP ROOM): #R64458(#b134)
