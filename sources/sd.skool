@@ -1707,13 +1707,10 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
 @bfix=DEC B          ;
  26139 DEC B         ; #BUG#oneFourThreeFour(bug));
  26140 DEC B         ; #REGa=#AS3(#b3/#b131), #REGb=#AS0(#b0/#b128) if ERIC's
-@bfix-begin
+@if({fix}>1)(label=)
 *26141 ADD A,2       ; current x-coordinate is odd
+@if({fix}>1)(label=*)
  26143 DEC A         ; }
-@bfix+else
- 26141 ADD A,2       ; current x-coordinate is odd
-*26143 DEC A         ; }
-@bfix+end
  26144 JP 25916      ; Update ERIC's animatory state and location
 ; ERIC is on the middle floor or the top floor.
 *26147 LD A,E        ; #REGa=ERIC's x-coordinate
