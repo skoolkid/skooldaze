@@ -14234,11 +14234,10 @@ t57520 DEFM "P"
 ; at #R31282.
 @label=M_ELEMENT18
 @bfix=DEFM "Phosphorus"
+@bfix=DEFB 0  ; End marker
+@bfix=DEFB 0
 t57532 DEFM "Phosphorous"
  57543 DEFB 0 ; End marker
-@bfix+begin
- 57543 DEFB 0
-@bfix+end
 
 ; 'Br'
 ;
