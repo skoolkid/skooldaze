@@ -10646,13 +10646,10 @@ b42720 DEFB 188 ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64876(#b188) (Staff
                 ; room)
  42722 DEFB 188 ; Lesson #LESSON226 (MR WACKER - EXAM ROOM): #R64876(#b188)
                 ; (Staff room)
-@bfix-begin
+@bfix=DEFB 134  ; Lesson #LESSON227 (MR ROCKITT - EXAM ROOM): #R64458(#b134)
+@bfix=          ; (White Room)
  42723 DEFB 188 ; Lesson #LESSON227 (MR ROCKITT - EXAM ROOM): #R64876(#b188)
                 ; (Staff room)
-@bfix+else
- 42723 DEFB 134 ; Lesson #LESSON227 (MR ROCKITT - EXAM ROOM): #R64458(#b134)
-                ; (White Room)
-@bfix+end
  42724 DEFB 134 ; Lesson #LESSON228 (REVISION LIBRARY): #R64458(#b134) (White
                 ; Room)
  42725 DEFB 130 ; Lesson #LESSON229 (REVISION LIBRARY): #R64410(#b130) (Reading
