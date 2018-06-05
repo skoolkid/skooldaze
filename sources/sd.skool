@@ -10654,13 +10654,10 @@ b42720 DEFB 188 ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64876(#b188) (Staff
                 ; Room)
  42725 DEFB 130 ; Lesson #LESSON229 (REVISION LIBRARY): #R64410(#b130) (Reading
                 ; Room)
-@bfix-begin
+@bfix=DEFB 188  ; Lesson #LESSON230 (REVISION LIBRARY): #R64876(#b188) (Staff
+@bfix=          ; room)
  42726 DEFB 130 ; Lesson #LESSON230 (REVISION LIBRARY): #R64410(#b130) (Reading
                 ; Room) (this is a #BUG#emptyClass(bug))
-@bfix+else
- 42726 DEFB 188 ; Lesson #LESSON230 (REVISION LIBRARY): #R64876(#b188) (Staff
-                ; room)
-@bfix+end
  42727 DEFB 130 ; Lesson #LESSON231 (MR WITHIT - MAP ROOM): #R64410(#b130)
                 ; (Reading Room)
  42728 DEFB 134 ; Lesson #LESSON232 (MR WACKER - READING ROOM): #R64458(#b134)
