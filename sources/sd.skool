@@ -851,12 +851,10 @@ c25303 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  25312 LD (HL),A     ; buffer}
  25313 LD L,99       ; {Change the address in bytes #b99 and #b100 of the
 @ssub=LD (HL),25317%256
- 25315 LD (HL),229   ; character's buffer from #R25303 to #R25317 (below)
-@rsub+begin
-       INC L
-       LD (HL),25317/256
-@rsub+end
-                     ; }
+@rsub=LD (HL),25317%256 ; character's buffer from #R25303 to #R25317 (below)
+@rsub=INC L
+@rsub=LD (HL),25317/256 ; }
+ 25315 LD (HL),229   ; character's buffer from #R25303 to #R25317 (below)}
 ; This entry point is used by the routines at #R27442 and #R27453.
 *25317 LD L,101      ; {Collect the signal byte from byte #b101 of the
  25319 LD A,(HL)     ; character's buffer}
