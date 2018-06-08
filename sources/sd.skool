@@ -383,10 +383,9 @@ c24843 LD A,E        ; #REGa=skool x-coordinate (0-95)
  24960 DJNZ 24956    ; }
  24962 RET           ;
 
-@rsub-begin
 ; Unused
+@if({asm}>2)(remove=24963)
 s24963 DEFS 9
-@rsub-end
 
 ; Collect one byte from a command list
 ;
