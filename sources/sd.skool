@@ -3046,18 +3046,16 @@ c27266 LD A,(HL)     ; {Reset bit 6 (do not walk slowly continuously) and bit 7
  27275 LD A,(DE)     ; holds the MSB of a continual subcommand routine address}
 @ssub=CP 27126/256
  27276 CP 105        ; {Return unless little boy no. 1's continual subcommand
+@rsub=RET NZ
+@rsub=               ; as he proceeds to his destination
+@rsub=DEC E
+@rsub=LD A,(DE)
+@rsub=INC E
+@rsub=CP 27126%256
+@rsub=LD A,27126/256
+@rsub=RET NZ         ; }
  27278 RET NZ        ; is the routine at #R27126, i.e. he's tripping people up
-                     ; as he proceeds to his destination
-@rsub+begin
-       DEC E
-       LD A,(DE)
-       INC E
-       CP 27126%256
-@nowarn
-       LD A,27126/256
-       RET NZ
-@rsub+end
-                     ; }
+                     ; as he proceeds to his destination}
  27279 LD L,E        ; {Place the address of the continual subcommand routine
  27280 LD (HL),A     ; at #R27126 into bytes #b124 and #b125 of this boy's
  27281 DEC L         ; character buffer (making him trip people up as he
