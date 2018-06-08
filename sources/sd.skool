@@ -2041,16 +2041,14 @@ c26471 LD HL,(32759) ; #R32759 holds the lesson clock
  26537 LD L,A        ; {Point #REGhl at the appropriate entry in the
 @ssub=LD H,26656/256
 @rsub=LD HL,26656
+@rsub=SUB 32
+@rsub=ADD A,A
+@rsub=LD C,A
+@rsub=ADD HL,BC
+@rsub=LD C,(HL)
+@rsub=INC HL
+@rsub=LD H,(HL)
  26538 LD H,104      ; #R26656(keypress offset table)
-@rsub+begin
-       SUB 32
-       ADD A,A
-       LD C,A
-       ADD HL,BC
-       LD C,(HL)
-       INC HL
-       LD H,(HL)
-@rsub+end
 @rsub=LD L,C
  26540 LD L,(HL)     ; }
  26541 LDI           ; Copy the ASCII code of the keypress into #R32764
