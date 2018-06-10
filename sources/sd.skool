@@ -2652,9 +2652,7 @@ c26880 LD SP,23806   ; Put the stack pointer somewhere safe
  26925 LD D,A        ; #REGd=new lesson number minus one
  26926 PUSH DE       ; Save this for now
  26927 CALL 63242    ; Unflash the safe and all shields
-@rfix+begin
-       CALL 32497    ; Wipe the blackboards
-@rfix+end
+@rfix=<CALL 32497    ; Wipe the blackboards
  26930 LD HL,32765   ; #R32765 holds the number (#b152-#b171) of the last
                      ; character moved
  26933 LD (HL),151   ; Reset this number so #b152 (little boy no. 1) is moved
@@ -3807,15 +3805,12 @@ c27932 CALL 25108    ; Update the SRB for the pellet's current location
  28014 CP (HL)       ; Compare ERIC's y-coordinate with that of the pellet
  28015 LD L,E        ; #REGl=#b98
  28016 JR NZ,28036   ; Jump unless ERIC's location matches that of the pellet
-@rfix-begin
-; ERIC has been hit by the pellet. Knock him over.
-@rfix+else
-; ERIC is in the same location as the pellet. Can he be knocked over?
- 28017 LD A,(44128)  ; #REGa=ERIC's animatory state
-       AND 15        ; Keep only the 'action' bits (bits 0-3)
-       CP 6          ; Is ERIC standing, midstride, or sitting in a chair?
-       RET NC        ; Return if not (he can't be knocked over)
-@rfix+end
+; #IF({fix}<3)//ERIC has been hit by the pellet. Knock him over./ERIC is in the
+; same location as the pellet. Can he be knocked over?//
+@rfix=<LD A,(44128)  ; #REGa=ERIC's animatory state
+@rfix=<AND 15        ; Keep only the 'action' bits (bits 0-3)
+@rfix=<CP 6          ; Is ERIC standing, midstride, or sitting in a chair?
+@rfix=<RET NC        ; Return if not (he can't be knocked over)
  28018 LD DE,32763   ; {Signal that ERIC has been knocked over by setting bit 4
  28021 EX DE,HL      ; of ERIC's status flags at #R32763
  28022 SET 4,(HL)    ; }
@@ -17130,11 +17125,9 @@ c63374 LD A,255      ; {Adjust the length of the lesson to allow the character
 ; address being placed into bytes #b111 and #b112 of the character's buffer.
 @label=LOOKING
  63390 LD A,H        ; #REGa=number of the character looking for ERIC
-@rfix+begin
-       LD (32759+1),A ; Set the MSB of the lesson clock to a high number to
-                      ; ensure that the bell doesn't ring before this routine
-                      ; exits
-@rfix+end
+@rfix=<LD (32759+1),A ; Set the MSB of the lesson clock to a high number to
+@rfix=<               ; ensure that the bell doesn't ring before this routine
+@rfix=<               ; exits
  63391 CP 163        ; Is MR WACKER looking for ERIC?
  63393 CALL Z,32234  ; If so, make him walk fast
  63396 LD L,105      ; {Is the character midstride?
