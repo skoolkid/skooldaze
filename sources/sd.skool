@@ -2824,15 +2824,11 @@ c27090 CALL 24993    ; #REGa=random number
  27095 ADD A,202     ; }
  27097 LD E,A        ; {Point #REGde at one of the four skool locations in the
 @ssub=LD D,27082/256
- 27098 LD D,105      ; table at #R27082
-@rsub+begin
-       JR NC,27100
-       INC D
-@rsub+end
-                     ; }
-@rsub+begin
-@label=RANDDEST2
-@rsub+end
+@rsub=LD D,27082/256 ; table at #R27082
+@rsub=JR NC,27100
+@rsub=INC D          ; }
+ 27098 LD D,105      ; table at #R27082}
+@rsub=RANDDEST2:
  27100 EX DE,HL      ; {Pick up the coordinates of the skool location in #REGa
  27101 LD A,(HL)     ; and #REGd
 @rsub=INC HL
@@ -2862,20 +2858,18 @@ c27111 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
 *27115 CALL 27090    ; Set a random destination for the character
  27118 LD L,100      ; {Prepare the MSB of the primary command routine address
 @ssub=LD (HL),25553/256
+@rsub=LD (HL),25553/256
+@rsub=                  ;
+@rsub=DEC L             ; LSB will be set to #b209 soon (making the routine
+@rsub=LD (HL),25553%256 ; address #R25553)}
  27120 LD (HL),99    ; in bytes #b99 and #b100 of the character's buffer; the
                      ; LSB will be set to #b209 soon (making the routine
-                     ; address #R25553)
-@rsub+begin
-       DEC L
-       LD (HL),25553%256
-@rsub+end
-                     ; }
+                     ; address #R25553)}
  27122 JP 25549      ; Set the character on his way
 
-@rsub-begin
 ; Unused
+@if({asm}>2)(remove=27125)
 s27125 DEFB 0
-@rsub-end
 
 ; Make a little boy trip people up
 ;
