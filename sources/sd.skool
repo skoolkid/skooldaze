@@ -7594,8 +7594,8 @@ c31807 LD A,(32760)  ; Pick up the MSB of the lesson clock (#b0-#b21)
 ; #R64988(#b194), #R64914(#b196), #R64947(#b204) and #R64975(#b206).
 ;
 ; H Character number (#b152-#b169)
+@if({fix}>2)(remove=31815-31828)
 @label=RESTART
-@rfix-begin
 c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
                      ; #R32761
  31818 LD E,A        ; Copy this to #REGe
@@ -7613,11 +7613,20 @@ c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
 @bfix=               ; character's buffer, thus circumventing the bug mentioned
 @bfix=               ; above)
  31825 CALL 26395    ; Set this character's command list up for a restart
-@rfix+else
-; L #b122
-c31815 SET 0,(HL)    ; Set this character's command list up for a restart
-@rfix+end
  31828 JP 25252      ; Move to the first command in the command list
+
+@rfix+begin
+; Restart the command list
+;
+; Used by command lists #R64841(#b182), #R64883(#b190), #R64892(#b192),
+; #R64988(#b194), #R64914(#b196), #R64947(#b204) and #R64975(#b206).
+;
+; H Character number (#b152-#b169)
+; L #b122
+@label=RESTART
+c31815 SET 0,(HL)    ; Set this character's command list up for a restart
+       JP 25252      ; Move to the first command in the command list
+@rfix+end
 
 @rsub-begin
 ; Unused
