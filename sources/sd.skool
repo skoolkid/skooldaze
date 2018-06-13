@@ -1571,12 +1571,9 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
 @rsub-begin
  25987 BIT 6,A       ; {Bit 6 of ERIC's status flags at #R32763 is always
                      ; reset, so this jump
-@ofix-begin
 @nowarn
+@ofix=JR NZ,26067    ;
  25989 JR NZ,26068   ; (which should be to #R26067)
-@ofix+else
- 25989 JR NZ,26067
-@ofix+end
                      ; is never made}
 @rsub-end
  25991 LD A,D        ; #REGa=ERIC's y-coordinate
@@ -3647,13 +3644,11 @@ c27823 LD HL,32763   ; {Flip bit 7 of ERIC's status flags at #R32763
  27866 JR Z,27878    ; Jump if so
  27868 BIT 7,B       ; Is ERIC facing right?
  27870 JR NZ,27878   ; Jump if so
-@ofix-begin
 @nowarn
+@ofix=CALL 27634     ; Is ERIC beside a chair?
+@ofix=               ;
  27872 CALL 27633    ; This should be #S/CALL/ #R27634 - is ERIC beside a
                      ; chair?
-@ofix+else
- 27872 CALL 27634    ; Is ERIC beside a chair?
-@ofix+end
  27875 JP Z,27517    ; Seat him if so
 *27878 LD A,B        ; {#REGa=#AS6(#b6 or #b134) (ERIC sitting on the floor)
  27879 AND 128       ;
@@ -15540,23 +15535,22 @@ c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
 ;
 ; Used by the routine at #R62771.
 @label=JUMPSOUND
-@ofix-begin
 @ignoreua
+@ofix=               ; {Initialise the jumping sound effect parameters
 c60139 LD HL,784     ; {These parameters were meant for the routine at #R65122;
+@ofix=               ;
  60142 LD DE,12896   ; however, the #S/CALL/ below is to #w62818 (98,245)
+@ofix=               ; }
+@ofix=               ;
  60145 LD A,1        ; instead of #R65122 (98,254), which is a
                      ; #BUG#jumpSound(bug)}
 @nowarn
 @ignoreua
+@ofix=CALL 65122     ; Make the jumping sound effect
+@ofix=               ;
  60147 CALL 62818    ; #w62818 holds the operand of a #S/JR NZ/ instruction, so
                      ; in effect this is #S/CALL/ #R62819; anyway, this call
                      ; does nothing significant
-@ofix+else
-c60139 LD HL,784     ; {Initialise the jumping sound effect parameters
- 60142 LD DE,12896   ;
- 60145 LD A,1        ; }
- 60147 CALL 65122    ; Make the jumping sound effect
-@ofix+end
  60150 JP 65106      ; Make a walking sound effect
 
 ; Unused
@@ -16647,12 +16641,9 @@ c62771 LD HL,32758   ; Decrement the jumping action timer at #R32758 (which
 ; checks while ERIC is in mid-air.
  62897 JP NZ,62779   ; Run the usual checks while ERIC is in mid-air above a
                      ; supine boy
-@ofix-begin
 @nowarn
+@ofix=JR 62845       ; Set the jumping action timer at #R32758 back to #b7
  62900 JR 62844      ; This should be #S/JR/ #R62845
-@ofix+else
- 62900 JR 62845      ; Set the jumping action timer at #R32758 back to #b7
-@ofix+end
 
 @rsub-begin
 ; Unused
