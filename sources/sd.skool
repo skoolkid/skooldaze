@@ -134,9 +134,7 @@ c24576 EXX           ;
  24680 POP BC        ;
  24681 POP DE        ;
  24682 LD A,H        ; {Point #REGhl at the attribute file address
-@rsub-begin
-@label=XRSCROLLA
-@rsub-end
+@if({asm}<3)(label=XRSCROLLA)
  24683 RRCA          ; corresponding to the skool coordinates (X,Y)
  24684 RRCA          ;
  24685 RRCA          ;
@@ -151,10 +149,10 @@ c24576 EXX           ;
  24696 DJNZ 24675    ; Jump back until all 21 rows are done
  24698 RET           ;
 
-@rsub-begin
 ; Unused
 ;
 ; Remnants of an old version of the routine at #R24576.
+@if({asm}>2)(remove=24699-24724)
 @label=XRSCROLL
 u24699 SET 7,E       ; Point #REGde at the attribute byte for the skool
                      ; coordinates (X,Y)
@@ -178,7 +176,6 @@ u24699 SET 7,E       ; Point #REGde at the attribute byte for the skool
  24721 JR NZ,24683   ; Jump back until all 21 rows are done
  24723 RET           ;
  24724 DEFS 7
-@rsub-end
 
 ; Scroll the screen left one column
 ;
@@ -244,10 +241,10 @@ c24731 EXX           ;
  24821 ADD A,C       ; #REGa=rightmost column of the skool on-screen (31-95)
  24822 JP 24670      ; Fill in the rightmost column
 
-@rsub-begin
 ; Unused
 ;
 ; Probably remnants of an old version of the routine at #R24731.
+@if({asm}>2)(remove=24825-24830)
 u24825 LD A,30       ;
  24827 LD (32512),A  ; Set the new leftmost column of the skool on-screen
  24830 LD B,32       ; There are 32 character squares in each row of the screen
@@ -258,6 +255,7 @@ u24825 LD A,30       ;
 ;
 ; D Skool y-coordinate (152-172)
 ; E Skool x-coordinate (0-95)
+@if({asm}>2)(remove=24832-24842)
 @label=XPRINTTILE
 c24832 LD A,(32512)  ; #REGa=leftmost column of the skool on-screen (0-64)
  24835 CP E          ; {Return if #REGe corresponds to a column that is
@@ -266,7 +264,6 @@ c24832 LD A,(32512)  ; #REGa=leftmost column of the skool on-screen (0-64)
  24839 ADD A,31      ;
  24841 CP E          ;
  24842 RET C         ; }
-@rsub-end
 
 ; Print a tile
 ;
@@ -296,9 +293,8 @@ c24843 LD A,E        ; #REGa=skool x-coordinate (0-95)
  24861 INC H         ;
  24862 INC E         ;
  24863 DJNZ 24859    ; }
-@rsub-begin
+@if({asm}>2)(remove=24865)
  24865 NOP           ;
-@rsub-end
  24866 POP DE        ; Restore the skool coordinates to #REGde
  24867 LD B,21       ; There are 21 characters to consider
  24869 LD H,152      ; #b152=little boy no. 1
@@ -389,13 +385,9 @@ s24963 DEFS 9
 
 ; Collect one byte from a command list
 ;
-@rsub-begin
-; Used by the routines at #R25126, #R25303, #R25534, #R27453, #R27480, #R31834
-@rsub+else
-; Used by the routines at #R25126, #R25303, #R25534, #R27453, #R27480, #R31838
-@rsub+end
-; and #R32167. Collects a byte from a character's current command list and
-; returns it in #REGa.
+; Used by the routines at #R25126, #R25303, #R25534, #R27453, #R27480,
+; #IF({asm}<3)(#R31834,#R31838) and #R32167. Collects a byte from a character's
+; current command list and returns it in #REGa.
 ;
 ; H Character number (#b152-#b169)
 @label=GETPARAM
