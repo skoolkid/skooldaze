@@ -2847,8 +2847,7 @@ c27111 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
 *27115 CALL 27090    ; Set a random destination for the character
  27118 LD L,100      ; {Prepare the MSB of the primary command routine address
 @ssub=LD (HL),25553/256
-@rsub=LD (HL),25553/256
-@rsub=                  ;
+@rsub=/LD (HL),25553/256
 @rsub=DEC L             ; LSB will be set to #b209 soon (making the routine
 @rsub=LD (HL),25553%256 ; address #R25553)}
  27120 LD (HL),99    ; in bytes #b99 and #b100 of the character's buffer; the
@@ -3645,8 +3644,7 @@ c27823 LD HL,32763   ; {Flip bit 7 of ERIC's status flags at #R32763
  27868 BIT 7,B       ; Is ERIC facing right?
  27870 JR NZ,27878   ; Jump if so
 @nowarn
-@ofix=CALL 27634     ; Is ERIC beside a chair?
-@ofix=               ;
+@ofix=/CALL 27634    ; Is ERIC beside a chair?
  27872 CALL 27633    ; This should be #S/CALL/ #R27634 - is ERIC beside a
                      ; chair?
  27875 JP Z,27517    ; Seat him if so
@@ -15540,14 +15538,12 @@ c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
 c60139 LD HL,784     ; {These parameters were meant for the routine at #R65122;
 @ofix=               ;
  60142 LD DE,12896   ; however, the #S/CALL/ below is to #w62818 (98,245)
-@ofix=               ; }
-@ofix=               ;
+@ofix=/              ; }
  60145 LD A,1        ; instead of #R65122 (98,254), which is a
                      ; #BUG#jumpSound(bug)}
 @nowarn
 @ignoreua
-@ofix=CALL 65122     ; Make the jumping sound effect
-@ofix=               ;
+@ofix=/CALL 65122    ; Make the jumping sound effect
  60147 CALL 62818    ; #w62818 holds the operand of a #S/JR NZ/ instruction, so
                      ; in effect this is #S/CALL/ #R62819; anyway, this call
                      ; does nothing significant
