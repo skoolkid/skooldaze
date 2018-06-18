@@ -397,10 +397,9 @@ c24972 PUSH HL       ; Save the character number temporarily
  24975 LD A,(HL)     ; Pick up the LSB of this address
  24976 INC (HL)      ; Move along one byte in the command list
  24977 JR NZ,24989   ; Jump unless the LSB flipped over to zero
-@rsub-begin
+@if({asm}>2)(remove=24979-24980)
  24979 NOP           ;
  24980 NOP           ;
-@rsub-end
  24981 INC L         ; #REGl=#b118
  24982 INC (HL)      ; Increment the MSB
  24983 LD H,(HL)     ; {Set #REGh to the old MSB
@@ -526,10 +525,9 @@ c25008 LD L,96       ; Point #REGhl at byte #b96 of the character's buffer
 *25104 POP HL        ; Restore the character number (#b152-#b172) to #REGh
  25105 RET           ;
 
-@rsub-begin
 ; Unused
+@if({asm}>2)(remove=25106)
 s25106 DEFS 2
-@rsub-end
 
 ; Update the SRB for a character's current animatory state and location
 ;
@@ -668,7 +666,7 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
  25175 AND A         ; Is there an interruptible subcommand routine address
                      ; here?
  25176 JR NZ,25241   ; Jump to it if so
-@rsub-begin
+@if({asm}>2)(remove=25178-25189)
  25178 LD L,121      ; {Byte #b121 of the character buffers is unused and
  25180 LD A,(HL)     ; always contains zero; hence this jump is always made
  25181 AND A         ;
@@ -677,7 +675,6 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
  25186 LD L,112      ; treat it as the MSB of a routine address, copy it to
  25188 LD (HL),A     ; byte #b112, and then jump to that routine
  25189 JR 25241      ; }
-@rsub-end
 ; If we get here, that means there's no uninterruptible subcommand routine
 ; address in bytes #b111 and #b112 and no interruptible subcommand routine
 ; address in bytes #b105 and #b106 of the character's buffer at the moment. We
@@ -713,11 +710,7 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
  25223 INC L         ; subcommand
 @ssub=LD (HL),25247/256
  25224 LD (HL),98    ; }
-@rsub-begin
-; This entry point is used by the routine at #R31834.
-@rsub+else
-; This entry point is used by the routine at #R31838.
-@rsub+end
+; This entry point is used by the routine at #IF({asm}<3)(#R31834,#R31838).
 *25226 LD L,99       ; {Get the address of the next primary command routine
  25228 CALL 24972    ; from the command list and place it into bytes #b99 and
  25231 LD (HL),A     ; #b100 of the character's buffer and also into #REGbc
@@ -901,10 +894,9 @@ c25367 AND 80        ; {Check bit 6 (always reset) and bit 4 (set for teachers)
  25370 SET 7,(HL)    ; Signal: walk slowly (the norm for teachers)
  25372 RET           ; Return to the routine at #R25126 to move the character
 
-@rsub-begin
 ; Unused
+@if({asm}>2)(remove=25373)
 s25373 DEFB 0
-@rsub-end
 
 ; Check whether a signal has been raised
 ;
