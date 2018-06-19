@@ -950,10 +950,9 @@ c25374 PUSH AF       ; Save the event identifier briefly
                      ; the appropriate bit)
  25401 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!25402
 s25402 DEFS 2
-@rsub-end
 
 ; Guide a character to an intermediate destination
 ;
@@ -1026,10 +1025,9 @@ c25404 LD L,108      ; {The counter at byte #b108 of the character's buffer is
  25478 JR 25456      ; Jump back to update the character's animatory state and
                      ; location and update the SRB
 
-@rsub-begin
 ; Unused
+@rsub=!25480
 s25480 DEFS 4
-@rsub-end
 
 ; Guide a character up a staircase
 ;
@@ -1090,10 +1088,9 @@ c25488 LD B,1        ; Signal that the character is going down a staircase
  25528 SUB 4         ; Adjust the animatory state to standing (phase 1)
  25530 JR 25508      ;
 
-@rsub-begin
 ; Unused
+@rsub=!25532
 s25532 DEFS 2
-@rsub-end
 
 ; Make a character go to a location
 ;
@@ -1122,12 +1119,10 @@ c25534 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  25545 CALL 24972    ; and place it in byte #b102 of the character's buffer
  25548 LD (HL),A     ; }
 ; This entry point is used by the routines at #R27111 and #R27266.
-@rsub-begin
+@rsub=CALL 27888     ; Make the character stand up if he's not already
 *25549 NOP           ;
+@rsub=!25550
  25550 CALL 27888    ; Make the character stand up if he's not already
-@rsub+else
-*25549 CALL 27888    ; Make the character stand up if he's not already
-@rsub+end
 ; The address of this entry point is placed into bytes #b99 and #b100 of the
 ; character's buffer (by the routine at #R27888, called above, and by the
 ; routine at #R27111) so that we return here after the character has stood up.
@@ -1267,10 +1262,9 @@ c25534 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  25687 LD C,140      ; #REGbc=#R25484 (guide character up stairs)
  25689 JR 25625      ;
 
-@rsub-begin
 ; Unused
+@rsub=!25691
 s25691 DEFS 4
-@rsub-end
 
 ; Guide a character from the top floor to another floor
 ;
