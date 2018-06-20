@@ -1323,10 +1323,9 @@ c25700 LD A,(HL)     ; #REGa=destination y-coordinate
  25746 JP 25625      ; place this interruptible subcommand routine address into
                      ; bytes #b105 and #b106 of the character's buffer}
 
-@rsub-begin
 ; Unused
+@rsub=!25749
 s25749 DEFB 0
-@rsub-end
 
 ; Guide a character to a location on the same floor
 ;
@@ -1377,10 +1376,9 @@ c25750 INC L         ; Point #REGhl at the destination x-coordinate
                      ; at the left of the skool
  25799 JP 25592      ; Send the character to the top of the staircase
 
-@rsub-begin
 ; Unused
+@rsub=!25802
 s25802 DEFS 8
-@rsub-end
 
 ; Scroll the screen right 8 columns
 ;
@@ -1404,12 +1402,12 @@ c25820 LD B,8        ; There are 8 columns to scroll
  25827 DJNZ 25822    ; Jump back till all 8 columns are done
  25829 RET           ;
 
-@rsub-begin
 ; Update the display (unused)
 ;
 ; This routine is not used. It is probably the predecessor of the routine at
 ; #R27026.
 @label=XUPDATE
+@rsub=!25830-25851
 c25830 LD HL,32521   ; At one time, #R32521 would have held the number of
                      ; on-screen character squares that need refreshing
  25833 LD A,(HL)     ; Pick up this number in #REGa
@@ -1430,8 +1428,8 @@ c25830 LD HL,32521   ; At one time, #R32521 would have held the number of
  25851 JR 25837      ; Jump back until all character squares have been printed
 
 ; Unused
+@rsub=!25853
 s25853 DEFS 3
-@rsub-end
 
 ; Move ERIC from the midstride position and scroll the screen if necessary
 ;
@@ -1506,10 +1504,9 @@ c25916 PUSH HL       ; {Store ERIC's midstride/arm-up animatory state and
  25946 LD (32744),HL ; (#R32744) and midstride action timer (#R32745)}
  25949 JP 65106      ; Make a walking (or writing-on-board) sound effect
 
-@rsub-begin
 ; Unused
+@rsub=!25952
 s25952 DEFS 4
-@rsub-end
 
 ; Check whether ERIC is sitting or lying down
 ;
@@ -1534,14 +1531,13 @@ c25962 LD H,172      ; #b172=ERIC
  25978 LD (HL),5     ; }
  25980 RET           ;
 
-@rsub-begin
 ; Unused
 ;
 ; Probably remnants of an old version of the routine at #R25962.
+@rsub=!25981-25982
 u25981 DEFB 9        ; Probably the operand of #S/LD (HL)/,n (which would have
                      ; set ERIC's action timer at #R32744 to 9)
  25982 RET
-@rsub-end
 
 ; 'A' pressed - down
 ;
@@ -1621,10 +1617,9 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
  26069 JP Z,26194    ; Move ERIC left if so
  26072 JP 26282      ; Otherwise move ERIC right
 
-@rsub-begin
 ; Unused
+@rsub=!26075
 s26075 DEFS 9
-@rsub-end
 
 ; 'Q' pressed - up
 ;
@@ -1701,10 +1696,9 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
  26169 JP Z,26194    ; Move ERIC left if so
  26172 JP 26282      ; Otherwise move ERIC right
 
-@rsub-begin
 ; Unused
+@rsub=!26175
 s26175 DEFS 9
-@rsub-end
 
 ; Check whether a character is on a staircase
 ;
@@ -1792,10 +1786,9 @@ c26194 CALL 25956    ; Is ERIC sitting or lying down?
                      ; is odd}
 *26273 JP 25916      ; Put ERIC midstride
 
-@rsub-begin
 ; Unused
+@rsub=!26276
 s26276 DEFS 6
-@rsub-end
 
 ; 'P' pressed - right
 ;
@@ -1842,10 +1835,9 @@ c26282 CALL 25956    ; Is ERIC sitting or lying down?
 @rsub=JP 26262
  26333 JP 26238      ; Put ERIC midstride
 
-@rsub-begin
 ; Unused
+@rsub=!26336
 s26336 DEFS 6
-@rsub-end
 
 ; Change the lesson
 ;
@@ -1914,13 +1906,12 @@ c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
  26419 DJNZ 26399    ; Jump back until all characters have been done
  26421 RET           ;
 
-@rsub-begin
 ; Get the ASCII code of the last key pressed (unused)
 ;
 ; This routine is not used.
 @label=XREADKEY
+@rsub=!26422
 c26422 SET 3,(IY+48) ; Put CAPS LOCK on, and continue into #R26426
-@rsub-end
 
 ; Get the ASCII code of the last key pressed
 ;
@@ -2050,8 +2041,8 @@ c26471 LD HL,(32759) ; #R32759 holds the lesson clock
 *26568 LD (HL),A     ; }
  26569 JP 26471      ; Jump back to the beginning of the main loop
 
-@rsub-begin
 ; Unused
+@rsub=!26572-26583
 u26572 JR Z,26568    ; {Remains of the main loop at #R26471
  26574 JP 26471      ; }
  26577 LD H,L        ;
@@ -2061,7 +2052,6 @@ u26572 JR Z,26568    ; {Remains of the main loop at #R26471
  26581 EX (SP),HL    ;
  26582 LD B,D        ;
  26583 LD C,E        ;
-@rsub-end
 
 ; Get input from the Kempston joystick if it's in use
 ;
@@ -2096,14 +2086,13 @@ c26584 LD HL,23611   ; Prepare #REGhl in case we return to #R26426
  26619 AND A         ; Reset the zero flag
  26620 RET           ;
 
-@rsub-begin
 ; Unused
 ;
 ; Probably remnants of an old version of the routine at #R26584.
+@rsub=!26621-26623
 u26621 DEFB 81       ; #b81='Q' (up)
  26622 RET
  26623 DEFB 0
-@rsub-end
 
 ; ASCII codes and routine addresses for the keypress offset table
 ;
@@ -2142,10 +2131,9 @@ b26624 DEFB 32    ; ' ' (SPACE)
  26651 DEFB 115   ; 's'
  26652 DEFW 27823 ; Sit/stand
 
-@rsub-begin
 ; Unused
+@rsub=!26654
 s26654 DEFB 0
-@rsub-end
 
 ; Input device indicator
 ;
@@ -2692,10 +2680,9 @@ c26880 LD SP,23806   ; Put the stack pointer somewhere safe
  27001 CALL 27406    ; Print the bottom 3 lines of the screen
  27004 JP 63768      ; Scroll the skool into view and enter the main loop
 
-@rsub-begin
 ; Unused
+@rsub=!27007
 u27007 DEFB 101
-@rsub-end
 
 ; Update the SRB for one column of a sprite
 ;
@@ -2909,10 +2896,9 @@ c27126 LD L,97       ; {Pick up the little boy's y-coordinate in #REGa
  27189 EX DE,HL      ;
  27190 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!27191
 s27191 DEFS 5
-@rsub-end
 
 ; Make a stricken character give lines if he's a teacher
 ;
@@ -2990,10 +2976,9 @@ c27246 LD A,(HL)     ; {Reset bit 6 (do not walk slowly continuously) and bit 7
  27257 LD (HL),105   ; }
  27259 JP 27115      ; Make little boy no. 1 go to a random location
 
-@rsub-begin
 ; Unused
+@rsub=!27262
 s27262 DEFS 4
-@rsub-end
 
 ; Make a little boy find and follow little boy no. 1
 ;
@@ -3034,10 +3019,9 @@ c27266 LD A,(HL)     ; {Reset bit 6 (do not walk slowly continuously) and bit 7
  27293 EX DE,HL      ;
  27294 JP 25549      ; Make this little boy follow little boy no. 1
 
-@rsub-begin
 ; Unused
+@rsub=!27297
 s27297 DEFS 6
-@rsub-end
 
 ; Deal with ERIC when he's been knocked over
 ;
@@ -3180,10 +3164,9 @@ c27442 LD L,103      ; {Decrement the walkabouts counter in byte #b103 of the
                      ; walkabouts have been done
  27448 JP 25317      ; Otherwise go for another mini-walkabout
 
-@rsub-begin
 ; Unused
+@rsub=!27451
 s27451 DEFS 2
-@rsub-end
 
 ; Make a character walk up and down a few times or until a certain time
 ;
@@ -3258,10 +3241,9 @@ c27480 LD B,198      ; #b198 is the code for '#S/SET 0,(HL)/'
  27508 EX DE,HL      ; Restore the character number to #REGh
  27509 JP 25256      ; Move to the next command in the command list
 
-@rsub-begin
 ; Unused
+@rsub=!27512
 s27512 DEFS 5
-@rsub-end
 
 ; Knock the current occupant (if any) out of a chair
 ;
@@ -3284,10 +3266,9 @@ c27517 LD B,11       ; There are 11 little boys
  27539 JR NC,27581   ; Jump unless ERIC was knocked out of the chair
  27541 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!27542
 s27542 DEFB 0
-@rsub-end
 
 ; Check whether a chair is occupied and unseat any occupant
 ;
@@ -3367,10 +3348,9 @@ c27543 LD L,98       ; {Byte #b98 of a character's buffer holds his
  27617 LD (HL),85    ; seated character's buffer}
  27619 JR 27580      ;
 
-@rsub-begin
 ; Unused
+@rsub=!27621
 s27621 DEFS 11
-@rsub-end
 
 ; Check whether a character is beside a chair
 ;
@@ -3467,10 +3447,9 @@ c27632 BIT 7,A       ; Set the zero flag if the character is facing left
                      ; Exam Room
  27724 JR 27705      ;
 
-@rsub-begin
 ; Unused
+@rsub=!27726
 s27726 DEFS 7
-@rsub-end
 
 ; Deal with a character who's been dethroned (1)
 ;
@@ -3560,10 +3539,9 @@ c27772 CALL 25108    ; Update the SRB for the character's current location
  27795 JP 25008      ; Update the character's animatory state and update the
                      ; SRB
 
-@rsub-begin
 ; Unused
+@rsub=!27798
 s27798 DEFS 10
-@rsub-end
 
 ; Make a character find a seat
 ;
@@ -3589,10 +3567,9 @@ c27808 LD L,100      ; {Remove the address of this primary command routine from
  27817 LD (HL),108   ; }
  27819 JP 27772      ; Set the character off in search of a seat
 
-@rsub-begin
 ; Unused
+@rsub=!27822
 s27822 DEFB 0
-@rsub-end
 
 ; 'S' pressed - sit/stand
 ;
@@ -3639,10 +3616,9 @@ c27823 LD HL,32763   ; {Flip bit 7 of ERIC's status flags at #R32763
  27881 ADD A,6       ; }
  27883 JP 25008      ; Update ERIC's animatory state and update the SRB
 
-@rsub-begin
 ; Unused
+@rsub=!27886
 s27886 DEFS 2
-@rsub-end
 
 ; Make a character stand up if he's not already standing
 ;
@@ -3671,10 +3647,9 @@ c27888 LD L,99       ; {Change the primary command routine address in bytes
  27906 JP 25008      ; Update the character's animatory state and update the
                      ; SRB
 
-@rsub-begin
 ; Unused
+@rsub=!27909
 s27909 DEFS 5
-@rsub-end
 
 ; Get the base address of the graphic data for a sprite tile
 ;
@@ -3850,10 +3825,9 @@ c27932 CALL 25108    ; Update the SRB for the pellet's current location
  28098 LD (HL),5     ; spaces}
  28100 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!28101
 s28101 DEFB 0
-@rsub-end
 
 ; Control the vertical flight of a catapult pellet
 ;
@@ -4051,10 +4025,9 @@ c28220 CALL 28304    ; Get the floor (#b155, #b162, #b169) nearest to the
  28300 RET C         ; the boy}
  28301 JR 28240      ; Otherwise consider the next teacher
 
-@rsub-begin
 ; Unused
+@rsub=!28303
 s28303 DEFB 0
-@rsub-end
 
 ; Determine which floor is nearest to a character
 ;
@@ -4138,10 +4111,9 @@ c28327 LD A,E        ; #REGa=x (character's x-coordinate)
  28378 LD B,A        ; #REGb=x-coordinate of the wall
  28379 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!28380
 s28380 DEFS 36
-@rsub-end
 
 ; Check whether a character was or can be punched by ERIC or ANGELFACE
 ;
@@ -4183,10 +4155,9 @@ c28416 LD L,98       ; Byte #b98 of a character's buffer holds his x-coordinate
                      ; target
  28441 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!28442
 s28442 DEFS 4
-@rsub-end
 
 ; Make ANGELFACE hit now and then
 ;
@@ -4270,10 +4241,9 @@ c28446 LD L,112      ; {Return now if there is an uninterruptible subcommand
  28530 LD H,168      ; Restore ANGELFACE's character number to #REGh
  28532 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!28533
 s28533 DEFS 11
-@rsub-end
 
 ; Make ANGELFACE throw a punch (1)
 ;
@@ -4403,10 +4373,9 @@ c28642 LD L,111      ; {Place the address of the uninterruptible subcommand
 c28655 JP 25248      ; Terminate this uninterruptible subcommand (ANGELFACE has
                      ; finished the punch)
 
-@rsub-begin
 ; Unused
+@rsub=!28658
 s28658 DEFS 7
-@rsub-end
 
 ; Make BOY WANDER fire his catapult (1)
 ;
@@ -4461,10 +4430,9 @@ c28672 LD L,98       ; Byte #b98 of BOY WANDER's buffer holds his x-coordinate
  28709 LD L,111      ;
  28711 JR 28665      ; Make BOY WANDER fire his catapult
 
-@rsub-begin
 ; Unused
+@rsub=!28713
 s28713 DEFS 3
-@rsub-end
 
 ; Make BOY WANDER fire his catapult (2)
 ;
@@ -4613,10 +4581,9 @@ c28786 CALL 25108    ; Update the SRB for BOY WANDER's current animatory state
 c28799 JP 25248      ; Terminate this uninterruptible subcommand (BOY WANDER
                      ; has finished firing)
 
-@rsub-begin
 ; Unused
+@rsub=!28802
 s28802 DEFS 5
-@rsub-end
 
 ; Update the SRB for a blackboard or the speech bubble lip
 ;
@@ -4785,10 +4752,9 @@ c28882 LD L,110      ; {Bytes #b109 and #b110 of the character's buffer hold
  28958 JR 28896      ; Store the address of the next character in the
                      ; submessage
 
-@rsub-begin
 ; Unused
+@rsub=!28960
 s28960 DEFS 8
-@rsub-end
 
 ; Get the identifier and coordinates of the blackboard closest to a character
 ;
@@ -4946,10 +4912,9 @@ c28994 CALL 28882    ; #REGa=next character in the message being written
  29135 POP HL        ; Restore the character number to #REGh
  29136 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!29137
 u29137 DEFB 120,120,120,120,120,120,120,120,120,120,120
-@rsub-end
 
 ; Make a teacher wipe a blackboard (1)
 ;
@@ -4964,12 +4929,14 @@ c29148 CALL 28968    ; #REGa=identifier of the blackboard the teacher is next
  29151 JR 29160      ; Jump over the unused code remnants at #R29153 (which
                      ; apparently would have made the teacher skip wiping the
                      ; board if it was already clean)
+@rsub-end
 
 ; Unused
 ;
 ; Code remnants in the routine at #R29148. If this code were still in use, it
 ; would make the teacher skip wiping the board if it was already clean.
 @label=WIPESKIP
+@rsub=!29153-29157
 u29153 DEFB 127      ; This was probably the operand of '#S/LD B/,#n127'
  29154 INC C         ; #REGc=1 + blackboard identifier
  29155 LD A,(BC)     ; #REGa=number of the character who last wrote on the
@@ -4977,7 +4944,6 @@ u29153 DEFB 127      ; This was probably the operand of '#S/LD B/,#n127'
  29156 AND A         ; Is the board clean?
  29157 JP Z,25252    ; Terminate this interruptible subcommand if so (there is
                      ; nothing to wipe)
-@rsub-end
 
 ; Make a teacher wipe a blackboard (2)
 ;
@@ -5075,10 +5041,9 @@ c29160 LD L,105      ; {Replace the address of the interruptible subcommand
  29273 LD (HL),0     ; }
  29275 JP 25252      ; Terminate this interruptible subcommand
 
-@rsub-begin
 ; Unused
+@rsub=!29278
 s29278 DEFS 6
-@rsub-end
 
 ; Make a character write on a blackboard
 ;
@@ -5165,10 +5130,9 @@ c29284 CALL 28968    ; Collect the identifier of the nearest blackboard in
  29380 ADD A,5       ; #REGa=animatory state of the teacher with his arm raised
 *29382 JP 25008      ; Update the teacher's animatory state and update the SRB
 
-@rsub-begin
 ; Unused
+@rsub=!29385
 s29385 DEFS 9
-@rsub-end
 
 ; Update the SRB for the middle six columns of the speech bubble
 ;
@@ -5212,10 +5176,9 @@ c29394 LD DE,(32612) ; Copy the speech bubble lip coordinates from #R32612 to
                      ; refreshed)}
  29440 RET           ; Return with the carry flag reset
 
-@rsub-begin
 ; Unused
+@rsub=!29441
 s29441 DEFB 0
-@rsub-end
 
 ; Slide a message character into the speech bubble text window (2)
 ;
@@ -5283,15 +5246,14 @@ c29442 LD E,A        ; #REGe=ASCII code of the character from the message being
  29511 XOR A         ; Reset the carry flag
  29512 RET           ;
 
-@rsub-begin
 ; Unused
 ;
 ; Remnants of an old version of the routine at #R29442.
+@rsub=!29513-29517
 u29513 CALL 32216    ; Slide the bottom four pixel rows of the text window one
                      ; pixel to the left
  29516 POP HL        ; Restore the display file address to #REGhl
  29517 RET           ;
-@rsub-end
 
 ; Print the speech bubble
 ;
@@ -5424,11 +5386,11 @@ c29518 LD A,(32512)  ; #REGa=leftmost column of the skool on screen (0-64)
  29694 INC A         ; Set the zero flag
  29695 RET           ; Return with the zero flag set to indicate success
 
-@rsub-begin
 ; Unused
 ;
 ; Code remnants, perhaps from an old version of the routine at #R29518.
 @label=XSPKWAIT
+@rsub=!29696-29705
 u29696 LD B,6        ; The text window in the speech bubble is 6 character
                      ; squares wide
  29698 LD L,249      ; UDG #b249 corresponds to the second tile on the bottom
@@ -5437,7 +5399,6 @@ u29696 LD B,6        ; The text window in the speech bubble is 6 character
  29702 INC L         ; window in the speech bubble UDGs
  29703 DJNZ 29700    ; }
  29705 INC H         ; Next pixel row down
-@rsub-end
 
 ; Slide a message character into the speech bubble text window (1)
 ;
@@ -5462,11 +5423,10 @@ c29706 CALL 28882    ; Get the next character from the message being spoken
 *29727 LD A,32       ; #b32=' ' (space)
 *29729 JP 29442      ;
 
-@rsub-begin
 ; Unused
+@rsub=!29732-29733
 u29732 RET
  29733 DEFS 2
-@rsub-end
 
 ; Update the SRB for the speech bubble
 ;
@@ -5585,10 +5545,9 @@ c29746 PUSH HL       ; Save the character number
  29866 XOR A         ;
  29867 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!29868
 u29868 DEFB 120,120,120
-@rsub-end
 
 ; Save the area of the screen that will be overwritten by a lines bubble
 ;
@@ -5678,10 +5637,9 @@ c29871 LD A,(32512)  ; #REGa=leftmost column of the skool on screen (0-64)
  29970 POP HL        ;
  29971 RET           ; Return with the carry flag reset
 
-@rsub-begin
 ; Unused
+@rsub=!29972
 s29972 DEFS 5
-@rsub-end
 
 ; Copy a graphic buffer to the screen
 ;
@@ -5738,10 +5696,9 @@ c29977 PUSH DE       ; Save the attribute file address
  30036 JR NZ,30011   ; Jump back until all three rows of UDGs have been copied
  30038 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!30039
 s30039 DEFS 3
-@rsub-end
 
 ; Write a line of text into a graphic buffer
 ;
@@ -5790,10 +5747,9 @@ c30042 XOR A         ; {Clear the buffer ready for writing
  30090 JR NZ,30085   ; Jump back until the text has been centred
  30092 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!30093
 s30093 DEFS 4
-@rsub-end
 
 ; Insert a pixel column into a graphic buffer
 ;
@@ -5932,10 +5888,9 @@ c30156 PUSH DE       ; Save the attribute file address
  30200 JP 30001      ; Transfer the lines bubble graphic data to the screen
                      ; (the lines bubble attribute bytes are already on-screen)
 
-@rsub-begin
 ; Unused
+@rsub=!30203
 s30203 DEFS 5
-@rsub-end
 
 ; Write a character's name into the lines bubble graphic buffer
 ;
@@ -5974,10 +5929,9 @@ c30208 LD BC,6167    ; #REGb=#b24; #REGc=#b23 (INK 7: PAPER 2)
 *30245 CALL 30042    ; Write the message into the graphic buffer
  30248 JP 30132      ; Draw the left and right edges of the bubble
 
-@rsub-begin
 ; Unused
+@rsub=!30251
 s30251 DEFS 7
-@rsub-end
 
 ; Insert a pixel column into the number graphic buffer
 ;
@@ -6000,10 +5954,9 @@ c30258 LD HL,55583   ; Point #REGhl at the end of the buffer at #R55563
  30273 JR NZ,30264   ; Jump back until all 7 bits in the column are done
  30275 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!30276
 s30276 DEFS 2
-@rsub-end
 
 ; Generate graphic data for a number
 ;
@@ -6106,10 +6059,9 @@ c30278 PUSH HL       ;
  30403 EXX           ;
  30404 JR 30380      ; Jump back to collect the next digit
 
-@rsub-begin
 ; Unused
+@rsub=!30406
 s30406 DEFS 2
-@rsub-end
 
 ; Print the score, lines total or hi-score (1)
 ;
@@ -6284,10 +6236,9 @@ c30464 PUSH BC       ;
                      ; screen overwritten by the lines bubble
  30600 JP 29977      ; Restore the area of the screen that was overwritten
 
-@rsub-begin
 ; Unused
+@rsub=!30603
 u30603 DEFB 120,120,120,120,120
-@rsub-end
 
 ; Skool region data table for the top floor
 ;
@@ -6534,10 +6485,9 @@ c30636 LD HL,32754   ; {Check (and decrement) the lines-giving delay counter at
 *30883 LD A,172      ; #b172=ERIC
  30885 JP 30464      ; Give lines to ERIC
 
-@rsub-begin
 ; Unused
+@rsub=!30888
 s30888 DEFS 2
-@rsub-end
 
 ; Make a teacher give lines to the closest main kid
 ;
@@ -6665,10 +6615,9 @@ c30890 PUSH HL       ;
  31032 POP HL        ; Restore the teacher's character number to #REGh
  31033 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!31034
 s31034 DEFS 6
-@rsub-end
 
 ; Print the lesson
 ;
@@ -6727,10 +6676,9 @@ c31040 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
                      ; box
  31105 JP 29977      ; Copy the lesson box graphic buffer to the screen
 
-@rsub-begin
 ; Unused
+@rsub=!31108
 u31108 DEFB 120,120
-@rsub-end
 
 ; Make a character speak (1)
 ;
@@ -6801,18 +6749,17 @@ c31130 CALL 32242    ; Make sure the character speaks slowly
                      ; speaking
  31151 RET           ;
 
-@rsub-begin
 ; Remnants of an old version of the previous routine
 ;
 ; This unused code appears to be the remnants of an early version of the
 ; routine at #R31130; the job previously done by this code is now done by the
 ; routine at #R29706.
+@rsub=!31152-31159
 u31152 LD (HL),218   ; {(#b22,#b218)=#R55830='<8 spaces>'
  31154 DEC L         ;
  31155 LD (HL),22    ; }
  31157 LD A,32       ; #b32=' ' (space)
  31159 JP 29442      ;
-@rsub-end
 
 ; Control EINSTEIN during class (1)
 ;
@@ -6928,10 +6875,9 @@ c31229 LD DE,(44129) ; Pick up ERIC's coordinates in #REGde
  31252 LD D,169      ; This is the y-coordinate of the bottom floor
  31254 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!31255
 s31255 DEFB 0
-@rsub-end
 
 ; Data table for MR WACKER's questions and answers
 ;
@@ -7156,10 +7102,9 @@ c31282 PUSH HL       ; Save the teacher's character number
  31444 LD (HL),134   ; }
  31446 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!31447
 s31447 DEFS 5
-@rsub-end
 
 ; Determine the next move of a character following another character
 ;
@@ -7337,10 +7282,9 @@ c31452 LD L,97       ; Byte #b97 of the follower's buffer holds his
                      ; must go down a staircase at the left of the skool
  31635 JR 31561      ;
 
-@rsub-begin
 ; Unused
+@rsub=!31637
 s31637 DEFB 0
-@rsub-end
 
 ; Rewind to a specific point in a command list
 ;
@@ -7599,10 +7543,9 @@ c31815 SET 0,(HL)    ; Set this character's command list up for a restart
        JP 25252      ; Move to the first command in the command list
 @rfix+end
 
-@rsub-begin
 ; Unused
+@rsub=!31831
 s31831 DEFS 3
-@rsub-end
 
 ; Place a continual subcommand routine address into a character's buffer
 ;
@@ -7644,10 +7587,9 @@ c31838 LD L,124      ; {Collect the address of the continual subcommand routine
  31848 LD (HL),A     ; }
  31849 JP 25226      ; Move to the next command in the command list
 
-@rsub-begin
 ; Unused
+@rsub=!31852
 s31852 DEFS 2
-@rsub-end
 
 ; Make a teacher perform dinner duty (1)
 ;
@@ -7726,10 +7668,9 @@ c31895 CALL 31188    ; Set the zero flag if ERIC is in the dinner hall
  31901 JR 31867      ; Go and look for ERIC, or go to the right end of the
                      ; dinner hall
 
-@rsub-begin
 ; Unused
+@rsub=!31903
 s31903 DEFB 0
-@rsub-end
 
 ; Make a teacher give lines to EINSTEIN for telling tales
 ;
@@ -8008,10 +7949,9 @@ c32048 CALL 28968    ; #REGa=identifier of the blackboard the teacher is next
  32126 CALL 31985    ; teacher turn round and walk 1 or 3 paces}
  32129 JR 32115      ; Make the teacher turn round and walk 1 or 3 paces again
 
-@rsub-begin
 ; Unused
+@rsub=!32131
 s32131 DEFB 0
-@rsub-end
 
 ; Make a teacher tell the kids to sit down
 ;
@@ -8106,10 +8046,9 @@ c32178 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
  32206 LD (32712),A  ; }
  32209 JP 62208      ; Start the lesson
 
-@rsub-begin
 ; Unused
+@rsub=!32212
 u32212 DEFB 120,120,120,120
-@rsub-end
 
 ; Insert a pixel column into the top or bottom half of the speech bubble text
 ; window
@@ -8173,14 +8112,13 @@ c32242 LD L,123      ; {Set the speed change delay counter in byte #b123 of the
 c32250 CALL 32470    ; Remove the speech bubble (if present)
  32253 JP 26906      ; Exit demo mode and offer to change the characters' names
 
-@rsub-begin
 ; Unused
 ;
 ; Probably remnants of a routine similar to #R32470.
+@rsub=!32256-32260
 u32256 AND A         ; Is anyone speaking at the moment?
  32257 CALL NZ,29746 ; Remove the speech bubble if so
  32260 JP 26906      ; Exit demo mode
-@rsub-end
 
 ; Note duration and pitch data for tunes
 ;
@@ -8276,10 +8214,9 @@ b32353 DEFB 121,53,119,51,121,53,113
  32377 DEFB 51,51,53,55,53,51,121,53,177
  32386 DEFB 0                             ; End marker
 
-@rsub-begin
 ; Unused
+@rsub=!32387
 s32387 DEFS 3
-@rsub-end
 
 ; Play the theme tune for the first time
 ;
@@ -8339,10 +8276,9 @@ b32446 DEFB 57,57,57,57,115,115
  32463 DEFB 55,59,57,57,247
  32468 DEFB 0 ; End marker
 
-@rsub-begin
 ; Unused
+@rsub=!32469
 s32469 DEFB 0
-@rsub-end
 
 ; Remove the speech bubble if present
 ;
@@ -8357,12 +8293,12 @@ c32470 LD A,(32613)  ; #REGa=x-coordinate of the speech bubble lip (if present)
  32480 LD HL,(32706) ; Collect the high score from #R32706
  32483 RET           ;
 
-@rsub-begin
 ; Save Skool Daze to tape
 ;
 ; This routine was used to save the high-speed block to tape.
 @label=SD2TAPE
 @keep
+@rsub=!32484-32494
 c32484 LD HL,24288   ; #R24288@start is where the game starts after loading
 @keep
  32487 LD (23833),HL ; Store this address where it will be popped off the stack
@@ -8373,8 +8309,8 @@ c32484 LD HL,24288   ; #R24288@start is where the game starts after loading
  32494 JP 33024      ; Jump into the #R33024@save(save routine)
 
 ; Unused
+@rsub=!32497
 u32497 DEFB 120,120,120,120,120,120,120,120,120,120,120,120,120,120,120
-@rsub-end
 
 @rfix+begin
 ; Wipe the blackboards
@@ -16205,10 +16141,9 @@ c62208 CALL 31952    ; Make the teacher wait for EINSTEIN to sit down
  62448 CALL 31985    ; teacher turn round and walk 1 or 3 paces}
  62451 JR 62429      ; Make the teacher turn round and walk 1 or 3 paces again
 
-@rsub-begin
 ; Unused
+@rsub=!62453
 s62453 DEFS 11
-@rsub-end
 
 ; Make a teacher conduct a question-and-answer session
 ;
@@ -16313,10 +16248,9 @@ c62495 LD HL,32758   ; #R32758 holds the catapult-firing action timer
  62567 LD A,H        ; #REGa=#b172 (ERIC)
  62568 JP 30464      ; Make the teacher give ERIC lines
 
-@rsub-begin
 ; Unused
+@rsub=!62571
 s62571 DEFS 3
-@rsub-end
 
 ; 'F' pressed - fire catapult
 ;
@@ -16406,10 +16340,9 @@ c62628 LD HL,32758   ; #R32758 holds the hitting action timer (initially #b18)
  62664 LD B,14       ; Lines reprimand #R57024(#b14): DON'T HIT YOUR MATES
  62666 JP 62550      ; Make any nearby teacher give ERIC lines
 
-@rsub-begin
 ; Unused
+@rsub=!62669
 s62669 DEFS 5
-@rsub-end
 
 ; Get the attribute file address of a pellet's potential target or the safe
 ;
@@ -16494,10 +16427,9 @@ c62714 LD A,E        ; {UDG references #b248-#b255 correspond to the 8 UDGs
  62745 JP 29394      ; Update the SRB for the middle 6 UDG columns of the
                      ; bubble
 
-@rsub-begin
 ; Unused
+@rsub=!62748
 s62748 DEFS 2
-@rsub-end
 
 ; Check whether ERIC has jumped up to the safe or a shield (1)
 ;
@@ -16627,10 +16559,9 @@ c62771 LD HL,32758   ; Decrement the jumping action timer at #R32758 (which
 @ofix=JR 62845       ; Set the jumping action timer at #R32758 back to #b7
  62900 JR 62844      ; This should be #S/JR/ #R62845
 
-@rsub-begin
 ; Unused
+@rsub=!62902
 s62902 DEFS 3
-@rsub-end
 
 ; Check whether ERIC is standing on a boy who's been knocked out
 ;
@@ -16670,10 +16601,9 @@ c62905 LD C,E        ; {Set #REGe=x-1 and #REGc=x+2 where x is ERIC's
  62935 AND A         ; {Return with the carry flag reset to indicate that ERIC
  62936 RET           ; is not standing on a boy}
 
-@rsub-begin
 ; Unused
+@rsub=!62937
 s62937 DEFB 0
-@rsub-end
 
 ; Collect a keypress during the game (or simulate one in demo mode)
 ;
@@ -16766,10 +16696,9 @@ c62938 LD HL,32746   ; #R32746 holds the game mode indicator
  63053 ADD A,B       ; #REGa=simulated keycode
  63054 RET           ; Return with the zero flag reset to indicate input
 
-@rsub-begin
 ; Unused
+@rsub=!63055
 s63055 DEFB 0
-@rsub-end
 
 ; 'W' pressed - write on a blackboard
 ;
@@ -17033,10 +16962,9 @@ c63270 LD A,(32746)  ; Pick up the game mode indicator from #R32746
                      ; it flash
  63345 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!63346
 s63346 DEFS 6
-@rsub-end
 
 ; Deal with ERIC when he's being spoken to by a little boy
 ;
@@ -17055,10 +16983,9 @@ c63352 LD HL,32715   ; #R32715 holds the special playtime signal flags
  63370 RES 3,(HL)    ; Signal: ERIC's conference with the little boy is over
  63372 RET           ; Return to #R27351
 
-@rsub-begin
 ; Unused
+@rsub=!63373
 s63373 DEFB 0
-@rsub-end
 
 ; Make a character find ERIC
 ;
@@ -17139,13 +17066,12 @@ c63374 LD A,255      ; {Adjust the length of the lesson to allow the character
 *63444 CALL 31452    ; Determine this character's next move
  63447 JP 31711      ; Set him off in the appropriate direction
 
-@rsub-begin
 ; Unused
 ;
 ; Code remnants.
+@rsub=!63450-63453
 u63450 CALL 63668    ; Adjust the status of the shields and the safe
  63453 JP 25256      ; Move to the next command in the command list
-@rsub-end
 
 ; Make MR WACKER give ERIC 2000 lines
 ;
@@ -17168,10 +17094,9 @@ c63456 LD BC,56832   ; #R56832: 'TAKE 2000 LINES YOU NASTY BOY'
  63480 LD (32760),A  ; will end soon}
  63483 JP 25256      ; Move to the next command in MR WACKER's command list
 
-@rsub-begin
 ; Unused
+@rsub=!63486
 s63486 DEFS 2
-@rsub-end
 
 ; Make little boy no. 10 give ERIC a message
 ;
@@ -17312,10 +17237,9 @@ c63573 LD HL,32696   ; {Clear the safe combination code (stored at #R32671),
  63662 LD (32746),A  ; that the shields need to be flashed}
  63665 RET           ;
 
-@rsub-begin
 ; Unused
+@rsub=!63666
 s63666 DEFS 2
-@rsub-end
 
 ; Adjust the game mode
 ;
@@ -17404,10 +17328,9 @@ c63749 LD D,254      ; {Pick up the lesson identifier (#b224-#b255) from the
  63761 CALL 24993    ; #REGa=random number
  63764 JP 28211      ; Select a 'special' PLAYTIME occasionally
 
-@rsub-begin
 ; Unused
+@rsub=!63767
 u63767 RET
-@rsub-end
 
 ; Scroll the skool into view and enter the main loop
 ;
@@ -17525,10 +17448,9 @@ c63829 CP 18         ; Is it time to reveal a safe combination letter?
  63904 XOR A         ; #REGa=0 (black border for the sound effect)
  63905 JP 30575      ; Make a sound effect and remove the bubble
 
-@rsub-begin
 ; Unused
+@rsub=!63908
 s63908 DEFB 0
-@rsub-end
 
 ; Print the lesson
 ;
@@ -17562,10 +17484,9 @@ c63909 LD A,(32746)  ; Collect the game mode indicator from #R32746
  63927 JP 31093      ; Write the second line of text into the lesson box
                      ; graphic buffer and copy the buffer to the screen
 
-@rsub-begin
 ; Unused
+@rsub=!63930
 s63930 DEFB 0
-@rsub-end
 
 ; Check whether ERIC has 10000 lines
 ;
@@ -17612,10 +17533,9 @@ c63964 CALL 63231    ; Get the address of the appropriate 'Go home' message in
  63967 LD A,201      ; #b201=#S/RET/
  63969 JP 63990      ;
 
-@rsub-begin
 ; Unused
+@rsub=!63972
 s63972 DEFB 0
-@rsub-end
 
 ; Compare a character's coordinates with ERIC's
 ;
@@ -17786,10 +17706,9 @@ c64073 LD DE,16448   ; Set #REGde to the appropriate display file address
  64105 POP HL        ; Drop the return address (#R60922)
  64106 RET           ; Return to #R26909
 
-@rsub-begin
 ; Unused
+@rsub=!64107
 s64107 DEFB 0
-@rsub-end
 
 @org
 ; 'Do you want to put in your own names Y/N?'
