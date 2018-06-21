@@ -7522,8 +7522,8 @@ c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
  31824 LD E,A        ; the identifier of the current lesson if the current
                      ; lesson is a 'special' playtime - #LESSON243, #LESSON244
                      ; or #LESSON245 - which is a #BUG#wrongCommandList(bug)}
-@bfix=NOP            ;
-@bfix=SET 0,(HL)     ; Set this character's command list up for a restart
+@bfix=|NOP           ;
+@bfix=|SET 0,(HL)    ; Set this character's command list up for a restart
 @bfix=               ; (without replacing the command list start address in the
 @bfix=               ; character's buffer, thus circumventing the bug mentioned
 @bfix=               ; above)
@@ -14125,9 +14125,9 @@ t57520 DEFM "P"
 ; question/answer word (no. #b164) is located at #R57520. Used by the routine
 ; at #R31282.
 @label=M_ELEMENT18
-@bfix=DEFM "Phosphorus"
-@bfix=DEFB 0  ; End marker
-@bfix=DEFB 0
+@bfix=|DEFM "Phosphorus"
+@bfix=|DEFB 0 ; End marker
+@bfix=|DEFB 0
 t57532 DEFM "Phosphorous"
  57543 DEFB 0 ; End marker
 
