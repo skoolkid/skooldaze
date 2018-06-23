@@ -1550,14 +1550,12 @@ u25981 DEFB 9        ; Probably the operand of #S/LD (HL)/,n (which would have
 @label=DOWN
 c25983 CALL 25956    ; Is ERIC sitting or lying down?
  25986 RET NZ        ; Return if so
-@rsub-begin
+@rsub=!25987-25989
  25987 BIT 6,A       ; {Bit 6 of ERIC's status flags at #R32763 is always
                      ; reset, so this jump
 @nowarn
-@ofix=JR NZ,26067    ;
- 25989 JR NZ,26068   ; (which should be to #R26067)
-                     ; is never made}
-@rsub-end
+@ofix=JR NZ,26067    ; is never made}
+ 25989 JR NZ,26068   ; (which should be to #R26067) is never made}
  25991 LD A,D        ; #REGa=ERIC's y-coordinate
  25992 CP 169        ; Is ERIC on the bottom floor?
  25994 JR Z,26067    ; Jump forward to move him left or right if so
@@ -1580,9 +1578,8 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
 ; ERIC's at the top of or on a staircase, facing the bottom of it.
 *26019 LD H,D        ; {Copy ERIC's coordinates to #REGhl
  26020 LD L,E        ; }
-@rsub-begin
+@rsub=!26021
  26021 NOP           ;
-@rsub-end
  26022 INC D         ; Down a step
  26023 DEC E         ; One pace to the left
  26024 LD B,2        ; #AS2=ERIC standing, facing left
@@ -1632,10 +1629,9 @@ s26075 DEFS 9
 @label=UP
 c26084 CALL 25956    ; Is ERIC sitting or lying down?
  26087 RET NZ        ; Return if so
-@rsub-begin
+@rsub=!26088-26090
  26088 BIT 6,A       ; {Bit 6 of ERIC's status flags at #R32763 is always
  26090 JR NZ,26067   ; reset, so this jump is never made}
-@rsub-end
  26092 LD A,D        ; #REGa=ERIC's y-coordinate
  26093 CP 155        ; Is ERIC on the top floor?
  26095 JR Z,26067    ; Jump if so
@@ -2933,9 +2929,8 @@ c27206 LD L,113      ; Byte #b113 of the character's buffer holds the knockout
  27217 CALL 63829    ; If the character is a teacher, make him reveal his safe
                      ; combination letter or give lines (as appropriate) and
                      ; exit, or else return here
-@rsub-begin
+@rsub=!27220
  27220 NOP           ;
-@rsub-end
  27221 DEC A         ; Is it time for the character to get up?
  27222 RET NZ        ; Return if not
  27223 INC L         ; {Copy the character's pre-decked animatory state (stored
@@ -3374,9 +3369,8 @@ c27632 BIT 7,A       ; Set the zero flag if the character is facing left
  27646 CP 48         ; This is the x-coordinate of the leftmost chair in the
                      ; Reading Room
  27648 RET C         ; Return if the character is to the left of this
-@rsub-begin
+@rsub=!27649
  27649 NOP           ;
-@rsub-end
  27650 CP 56         ; This is the x-coordinate of the rightmost chair in the
                      ; Reading Room
 *27652 JR Z,27655    ; Jump if the character is beside the rightmost chair in
@@ -3527,9 +3521,8 @@ c27772 CALL 25108    ; Update the SRB for the character's current location
                      ; make this character sit down, and remove the address of
                      ; this routine from bytes #b111 and #b112 of his buffer
  27787 LD A,C        ; Restore the character's animatory state to #REGa
-@rsub-begin
+@rsub=!27788
  27788 NOP           ;
-@rsub-end
  27789 JR NC,27794   ; Jump unless the character should turn round
  27791 XOR 128       ; Flip bit 7 of the animatory state, thus turning him
                      ; round
@@ -4199,9 +4192,8 @@ c28446 LD L,112      ; {Return now if there is an uninterruptible subcommand
  28482 LD H,172      ; #b172=ERIC
  28484 CALL 28416    ; Is ERIC a potential target?
  28487 JR NC,28502   ; Jump if not
-@rsub-begin
+@rsub=!28489
  28489 NOP           ;
-@rsub-end
 ; If we get here, there is a potential victim in front of ANGELFACE for him to
 ; take a swing at.
 *28490 POP HL        ; Drop the return address (#R25172) from the stack; this
@@ -4674,9 +4666,8 @@ c28882 LD L,110      ; {Bytes #b109 and #b110 of the character's buffer hold
  28891 LD A,(DE)     ; Pick up this character in #REGa
  28892 AND A         ; Has the submessage finished?
  28893 JR Z,28901    ; Jump if so
-@rsub-begin
+@rsub=!28895
  28895 NOP           ;
-@rsub-end
 *28896 INC DE        ; {Move to the next character in the submessage, and store
  28897 LD (HL),E     ; its address in bytes #b109 and #b110 of the character's
  28898 INC L         ; buffer
@@ -4925,11 +4916,10 @@ u29137 DEFB 120,120,120,120,120,120,120,120,120,120,120
 @label=WIPE1
 c29148 CALL 28968    ; #REGa=identifier of the blackboard the teacher is next
                      ; to
-@rsub-begin
+@rsub=!29151
  29151 JR 29160      ; Jump over the unused code remnants at #R29153 (which
                      ; apparently would have made the teacher skip wiping the
                      ; board if it was already clean)
-@rsub-end
 
 ; Unused
 ;
@@ -5062,11 +5052,10 @@ c29284 CALL 28968    ; Collect the identifier of the nearest blackboard in
                      ; board
  29292 AND A         ; Is the board dirty?
  29293 JP NZ,25252   ; Terminate this interruptible subcommand if so
-@rsub-begin
+@rsub=!29296-29298
  29296 NOP           ;
  29297 NOP           ;
  29298 NOP           ;
-@rsub-end
 ; The board is clean, so the character can go ahead and write on it.
  29299 LD A,H        ; {Store this character's number in the blackboard buffer,
  29300 LD (BC),A     ; indicating that he wrote on it}
@@ -7854,9 +7843,8 @@ c31996 LD DE,62063   ; {#REGbc=#R62050 (TURN TO PAGE 123 OF YOUR BOOKS...);
                      ; message)}
 *32012 SCF           ; {#REGa=128-255 (random page number to insert into the
  32013 RRA           ; message)}
-@rsub-begin
+@rsub=!32014
  32014 NOP           ;
-@rsub-end
  32015 EX DE,HL      ; Point #REGhl at the slot for the 100s digit of the page
                      ; number in the message
  32016 LD (HL),47    ; {Compute and insert the ASCII code for the 100s digit of
@@ -8371,10 +8359,8 @@ g32512 DEFB 0
 g32513 DEFS 8
 
 ; Number of on-screen character squares that need refreshing (unused)
-@rsub-begin
 ;
-; Used by the (unused) routine at #R25830.
-@rsub-end
+; #IF({asm}<3)(Used by the (unused) routine at #R25830.)
 @label=XTILES
 g32521 DEFB 0
 
@@ -11721,10 +11707,9 @@ c45544 PUSH BC       ;
  45560 POP BC        ;
  45561 LD A,B        ; #REGa=1-8 (corresponding to one of the eight main
                      ; characters)
-@rsub-begin
+@rsub=!45562-45563
  45562 NOP           ;
  45563 NOP           ;
-@rsub-end
  45564 JP 45800      ;
 @rsub+begin
        DEFS 2
@@ -11970,9 +11955,8 @@ b45951 DEFB 0
 c46056 PUSH BC       ;
  46057 CALL 44919    ; Set the animatory state and y-coordinate of the
                      ; character to be walked on screen
-@rsub-begin
+@rsub=!46060
  46060 NOP           ;
-@rsub-end
  46061 INC L         ; #REGl=#b98
  46062 LD (HL),3     ; Set the character's x-coordinate to 3
  46064 CALL 46568    ; Walk the character to the middle of the screen
@@ -16027,12 +16011,11 @@ c62208 CALL 31952    ; Make the teacher wait for EINSTEIN to sit down
  62268 CP 226        ; Should EINSTEIN tell the teacher that ERIC hit him?
  62270 JR C,62302    ; Jump if not (226 times out of 256)
  62272 LD BC,61689   ; #R61689: 'Please Sir...ERIC hit me'
-@rsub-begin
+@rsub=!62275-62278
  62275 CP C          ; The result of this comparison is ignored
  62276 JR 62281      ;
  62278 LD BC,61741   ; This instruction is never executed; anyway,
                      ; #R61741='WHAT HAPPENED IN THE YEAR THAT I WAS BORN'
-@rsub-end
 *62281 CALL 31919    ; Make EINSTEIN tell the teacher that ERIC hit him
  62284 CALL 31968    ; Make the teacher give lines to EINSTEIN for telling
                      ; tales (if he's in the mood)
@@ -16833,9 +16816,8 @@ c63191 CALL 63734    ; {Return unless we're dealing with CREAK and ERIC has not
  63203 LD L,A        ; {#REGhl=#R32680 (Reading Room blackboard contents
  63204 ADD A,A       ; buffer) or #R32686 (White Room blackboard contents
  63205 ADD A,L       ; buffer)
-@rsub-begin
+@rsub=!63206
  63206 NOP           ;
-@rsub-end
  63207 LD L,A        ;
  63208 LD H,D        ; }
 ; Check whether CREAK's birth year has been written on the board.
