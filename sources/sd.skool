@@ -152,7 +152,7 @@ c24576 EXX           ;
 ; Unused
 ;
 ; Remnants of an old version of the routine at #R24576.
-@if({asm}>2)(remove=24699-24724)
+@rsub=!24699-24724
 @label=XRSCROLL
 u24699 SET 7,E       ; Point #REGde at the attribute byte for the skool
                      ; coordinates (X,Y)
@@ -244,7 +244,7 @@ c24731 EXX           ;
 ; Unused
 ;
 ; Probably remnants of an old version of the routine at #R24731.
-@if({asm}>2)(remove=24825-24830)
+@rsub=!24825-24830
 u24825 LD A,30       ;
  24827 LD (32512),A  ; Set the new leftmost column of the skool on-screen
  24830 LD B,32       ; There are 32 character squares in each row of the screen
@@ -255,7 +255,7 @@ u24825 LD A,30       ;
 ;
 ; D Skool y-coordinate (152-172)
 ; E Skool x-coordinate (0-95)
-@if({asm}>2)(remove=24832-24842)
+@rsub=!24832-24842
 @label=XPRINTTILE
 c24832 LD A,(32512)  ; #REGa=leftmost column of the skool on-screen (0-64)
  24835 CP E          ; {Return if #REGe corresponds to a column that is
@@ -293,7 +293,7 @@ c24843 LD A,E        ; #REGa=skool x-coordinate (0-95)
  24861 INC H         ;
  24862 INC E         ;
  24863 DJNZ 24859    ; }
-@if({asm}>2)(remove=24865)
+@rsub=!24865
  24865 NOP           ;
  24866 POP DE        ; Restore the skool coordinates to #REGde
  24867 LD B,21       ; There are 21 characters to consider
@@ -380,7 +380,7 @@ c24843 LD A,E        ; #REGa=skool x-coordinate (0-95)
  24962 RET           ;
 
 ; Unused
-@if({asm}>2)(remove=24963)
+@rsub=!24963
 s24963 DEFS 9
 
 ; Collect one byte from a command list
@@ -397,7 +397,7 @@ c24972 PUSH HL       ; Save the character number temporarily
  24975 LD A,(HL)     ; Pick up the LSB of this address
  24976 INC (HL)      ; Move along one byte in the command list
  24977 JR NZ,24989   ; Jump unless the LSB flipped over to zero
-@if({asm}>2)(remove=24979-24980)
+@rsub=!24979-24980
  24979 NOP           ;
  24980 NOP           ;
  24981 INC L         ; #REGl=#b118
@@ -526,7 +526,7 @@ c25008 LD L,96       ; Point #REGhl at byte #b96 of the character's buffer
  25105 RET           ;
 
 ; Unused
-@if({asm}>2)(remove=25106)
+@rsub=!25106
 s25106 DEFS 2
 
 ; Update the SRB for a character's current animatory state and location
@@ -666,7 +666,7 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
  25175 AND A         ; Is there an interruptible subcommand routine address
                      ; here?
  25176 JR NZ,25241   ; Jump to it if so
-@if({asm}>2)(remove=25178-25189)
+@rsub=!25178-25189
  25178 LD L,121      ; {Byte #b121 of the character buffers is unused and
  25180 LD A,(HL)     ; always contains zero; hence this jump is always made
  25181 AND A         ;
@@ -895,7 +895,7 @@ c25367 AND 80        ; {Check bit 6 (always reset) and bit 4 (set for teachers)
  25372 RET           ; Return to the routine at #R25126 to move the character
 
 ; Unused
-@if({asm}>2)(remove=25373)
+@rsub=!25373
 s25373 DEFB 0
 
 ; Check whether a signal has been raised
@@ -2825,7 +2825,7 @@ c27111 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  27122 JP 25549      ; Set the character on his way
 
 ; Unused
-@if({asm}>2)(remove=27125)
+@rsub=!27125
 s27125 DEFB 0
 
 ; Make a little boy trip people up
@@ -7498,7 +7498,7 @@ c31807 LD A,(32760)  ; Pick up the MSB of the lesson clock (#b0-#b21)
 ; #R64988(#b194), #R64914(#b196), #R64947(#b204) and #R64975(#b206).
 ;
 ; H Character number (#b152-#b169)
-@if({fix}>2)(remove=31815-31828)
+@rfix=!31815-31828
 @label=RESTART
 c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
                      ; #R32761
