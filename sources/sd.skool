@@ -1753,7 +1753,7 @@ c26194 CALL 25956    ; Is ERIC sitting or lying down?
  26237 DEC E         ; #REGe=ERIC's post-midstride x-coordinate
 ; This entry point is used by the routine at #R26282 with
 ; #REGa=#AS129 (ERIC facing right, midstride).
-@rsub-begin
+@rsub=!26238-26261
 *26238 LD C,A        ; #REGc=#AS1(#b1/#b129) (ERIC midstride)
  26239 LD A,(32764)  ; #R32764 holds the ASCII code of the last keypress
  26242 BIT 5,A       ; Was the last keypress upper case (fast)?
@@ -1768,9 +1768,7 @@ c26194 CALL 25956    ; Is ERIC sitting or lying down?
  26258 ADD A,0       ; wonders what they might once have been and done
  26260 LD C,A        ; }
 *26261 LD A,C        ; #REGa=#AS1(#b1/#b129) (ERIC midstride)
-@rsub+else
-@label=ERICMID
-@rsub+end
+@rsub=ERICMID:
  26262 LD H,D        ; #REGh=ERIC's current y-coordinate
  26263 LD B,A        ; {#REGb=#AS2(#b2/#b130) (ERIC standing, phase 3)
  26264 INC B         ; }
@@ -2140,14 +2138,11 @@ b26655 DEFB 0
 
 ; Keypress offset table
 ;
-; Used by the routine at #R26471.
-@rsub-begin
-; Each non-zero entry in this table corresponds to a game key, and is the LSB
-@rsub+else
-; Each entry in this table corresponds to a game key, and is the address
-@rsub+end
-; of an entry in the table at #R26624 or the table at #R26752. For more
-; details, see the #LINK:Keys(keypress table).
+; Used by the routine at #R26471. Each #IF({asm}<3)//non-zero entry in this
+; table corresponds to a game key, and is the LSB/entry in this table
+; corresponds to a game key, and is the address// of an entry in the table at
+; #R26624 or the table at #R26752. For more details, see the
+; #LINK:Keys(keypress table).
 @label=KEYTABLE
 @ssub=DEFB 26624%256
 @rsub=DEFW 26624
@@ -3178,12 +3173,10 @@ c27453 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  27456 LD (HL),A     ; slow continuously (if he was doing so)}
  27457 LD L,99       ; {Replace the address of this routine in bytes #b99 and
 @ssub=LD (HL),27442%256
- 27459 LD (HL),50    ; #b100 of the character's buffer with that of #R27442
-@rsub+begin
-       INC L
-       LD (HL),27442/256
-@rsub+end
-                     ; }
+@rsub=LD (HL),27442%256 ; #b100 of the character's buffer with that of #R27442
+@rsub=INC L
+@rsub=LD (HL),27442/256 ; }
+ 27459 LD (HL),50    ; #b100 of the character's buffer with that of #R27442}
  27461 LD L,103      ; {Collect the next byte (the number of walkabouts) from
  27463 CALL 24972    ; the command list and place it in byte #b103 of the
  27466 LD (HL),A     ; character's buffer}
@@ -3457,13 +3450,11 @@ c27733 LD L,113      ; {Set the delay counter determining how long the
  27735 LD (HL),4     ; character will sit on the floor before rising}
  27737 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),27748%256
+@rsub=/LD (HL),27748%256 ; routine in bytes #b111 and #b112 of the character's
+@rsub=INC L              ; buffer with that of #R27748
+@rsub=LD (HL),27748/256  ; }
  27739 LD (HL),100   ; routine in bytes #b111 and #b112 of the character's
-                     ; buffer with that of #R27748
-@rsub+begin
-       INC L
-       LD (HL),27748/256
-@rsub+end
-                     ; }
+                     ; buffer with that of #R27748}
  27741 CALL 25108    ; Update the SRB for the character's current animatory
                      ; state
  27744 INC A         ; #REGa=animatory state of the character sitting on the
@@ -3483,12 +3474,10 @@ c27748 LD L,113      ; Byte #b113 holds the delay counter
  27751 RET NZ        ; Return if not
  27752 LD L,111      ; {Replace the address of this routine in bytes #b111 and
 @ssub=LD (HL),27772%256
- 27754 LD (HL),124   ; #b112 of the character's buffer with that of #R27772
-@rsub+begin
-       INC L
-       LD (HL),27772/256
-@rsub+end
-                     ; }
+@rsub=LD (HL),27772%256 ; #b112 of the character's buffer with that of #R27772
+@rsub=INC L
+@rsub=LD (HL),27772/256 ; }
+ 27754 LD (HL),124   ; #b112 of the character's buffer with that of #R27772}
  27756 CALL 25108    ; Update the SRB for the character's current animatory
                      ; state
  27759 AND 248       ; {#REGc=animatory state of the character standing up
@@ -3622,12 +3611,10 @@ s27886 DEFS 2
 @label=STANDUP
 c27888 LD L,99       ; {Change the primary command routine address in bytes
 @ssub=LD (HL),25553%256
- 27890 LD (HL),209   ; #b99 and #b100 of the character's buffer to #R25553
-@rsub+begin
-       INC L
-       LD (HL),25553/256
-@rsub+end
-                     ; }
+@rsub=LD (HL),25553%256 ; #b99 and #b100 of the character's buffer to #R25553
+@rsub=INC L
+@rsub=LD (HL),25553/256 ; }
+ 27890 LD (HL),209   ; #b99 and #b100 of the character's buffer to #R25553}
  27892 LD L,96       ; Point #REGhl at the character's animatory state
  27894 LD A,(HL)     ; Pick this up in #REGa
  27895 AND 7         ; Keep only bits 0-2
@@ -3805,14 +3792,12 @@ c27932 CALL 25108    ; Update the SRB for the pellet's current location
 ; vertical flight.
  28092 LD L,111      ; {Place the address of the uninterruptible subcommand
 @ssub=LD (HL),28102%256
+@rsub=/LD (HL),28102%256
+@rsub=INC L             ; pellet's character buffer, which will make the pellet
+@rsub=LD (HL),28102/256 ; travel upwards from now on}
  28094 LD (HL),198   ; routine at #R28102 into bytes #b111 and #b112 of the
                      ; pellet's character buffer, which will make the pellet
-                     ; travel upwards from now on
-@rsub+begin
-       INC L
-       LD (HL),28102/256
-@rsub+end
-                     ; }
+                     ; travel upwards from now on}
 @rsub=INC L
  28096 LD L,113      ; {Set the pellet's remaining distance to travel to 5
  28098 LD (HL),5     ; spaces}
@@ -4246,13 +4231,11 @@ s28533 DEFS 11
 @label=PUNCH1
 c28544 LD L,111      ; {Place the address of the uninterruptible subcommand
 @ssub=LD (HL),28558%256
+@rsub=/LD (HL),28558%256
+@rsub=INC L              ; ANGELFACE's buffer
+@rsub=LD (HL),28558/256  ; }
  28546 LD (HL),142   ; routine at #R28558 into bytes #b111 and #b112 of
-                     ; ANGELFACE's buffer
-@rsub+begin
-       INC L
-       LD (HL),28558/256
-@rsub+end
-                     ; }
+                     ; ANGELFACE's buffer}
  28548 CALL 25108    ; Update the SRB for ANGELFACE's current animatory state
  28551 AND 128       ; Retain the direction bit of ANGELFACE's animatory state
  28553 ADD A,42      ; #AS42=animatory state of ANGELFACE hitting (phase 1)
@@ -4267,13 +4250,11 @@ c28544 LD L,111      ; {Place the address of the uninterruptible subcommand
 @label=PUNCH2
 c28558 LD L,111      ; {Place the address of the uninterruptible subcommand
 @ssub=LD (HL),28642%256
+@rsub=/LD (HL),28642%256
+@rsub=INC L              ; ANGELFACE's buffer
+@rsub=LD (HL),28642/256  ; }
  28560 LD (HL),226   ; routine at #R28642 into bytes #b111 and #b112 of
-                     ; ANGELFACE's buffer
-@rsub+begin
-       INC L
-       LD (HL),28642/256
-@rsub+end
-                     ; }
+                     ; ANGELFACE's buffer}
  28562 CALL 25108    ; Update the SRB for ANGELFACE's current animatory state
  28565 INC A         ; #REGa=#AS43(#b43/#b171): ANGELFACE hitting (phase 2)
  28566 CALL 25008    ; Update ANGELFACE's animatory state and update the SRB,
@@ -4342,13 +4323,11 @@ c28569 LD L,98       ; Byte #b98 of the puncher's buffer holds his x-coordinate
 @label=PUNCH3
 c28642 LD L,111      ; {Place the address of the uninterruptible subcommand
 @ssub=LD (HL),28655%256
+@rsub=/LD (HL),28655%256
+@rsub=INC L              ; ANGELFACE's buffer
+@rsub=LD (HL),28655/256  ; }
  28644 LD (HL),239   ; routine at #R28655 into bytes #b111 and #b112 of
-                     ; ANGELFACE's buffer
-@rsub+begin
-       INC L
-       LD (HL),28655/256
-@rsub+end
-                     ; }
+                     ; ANGELFACE's buffer}
  28646 CALL 25108    ; Update the SRB for ANGELFACE's current animatory state
  28649 LD L,113      ; {Collect the animatory state of ANGELFACE before he
  28651 LD A,(HL)     ; threw the punch (from byte #b113 of his buffer)}
@@ -4435,13 +4414,11 @@ s28713 DEFS 3
 @label=FIRE2
 c28716 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28733%256
+@rsub=/LD (HL),28733%256
+@rsub=INC L              ; with #R28733
+@rsub=LD (HL),28733/256  ; }
  28718 LD (HL),61    ; routine in bytes #b111 and #b112 of BOY WANDER's buffer
-                     ; with #R28733
-@rsub+begin
-       INC L
-       LD (HL),28733/256
-@rsub+end
-                     ; }
+                     ; with #R28733}
  28720 CALL 25108    ; Update the SRB for BOY WANDER's current animatory state
  28723 LD L,113      ; {Store BOY WANDER's pre-fire animatory state in byte
  28725 LD (HL),A     ; #b113 of his buffer}
@@ -4458,13 +4435,11 @@ c28716 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @label=FIRE3
 c28733 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28744%256
+@rsub=/LD (HL),28744%256
+@rsub=INC L              ; with #R28744
+@rsub=LD (HL),28744/256  ; }
  28735 LD (HL),72    ; routine in bytes #b111 and #b112 of BOY WANDER's buffer
-                     ; with #R28744
-@rsub+begin
-       INC L
-       LD (HL),28744/256
-@rsub+end
-                     ; }
+                     ; with #R28744}
 ; This entry point is used by the routines at #R62495 and #R62628 with
 ; #REGh=#b172 (ERIC).
 *28737 CALL 25108    ; Update the SRB for the character's current animatory
@@ -4483,13 +4458,11 @@ c28733 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @label=FIRE4
 c28744 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28775%256
+@rsub=/LD (HL),28775%256
+@rsub=INC L              ; with #R28775
+@rsub=LD (HL),28775/256  ; }
  28746 LD (HL),103   ; routine in bytes #b111 and #b112 of BOY WANDER's buffer
-                     ; with #R28775
-@rsub+begin
-       INC L
-       LD (HL),28775/256
-@rsub+end
-                     ; }
+                     ; with #R28775}
  28748 LD L,96       ; Byte #b96 of BOY WANDER's buffer holds his animatory
                      ; state (#AS57(#b57/#b185))
  28750 LD A,(HL)     ; Pick this up in #REGa
@@ -4525,13 +4498,11 @@ c28744 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @label=FIRE5
 c28775 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28786%256
+@rsub=/LD (HL),28786%256
+@rsub=INC L              ; with #R28786
+@rsub=LD (HL),28786/256  ; }
  28777 LD (HL),114   ; routine in bytes #b111 and #b112 of BOY WANDER's buffer
-                     ; with #R28786
-@rsub+begin
-       INC L
-       LD (HL),28786/256
-@rsub+end
-                     ; }
+                     ; with #R28786}
 ; This entry point is used by the routines at #R62495 and #R62771 with
 ; #REGh=#b172 (ERIC).
 *28779 CALL 25108    ; Update the SRB for the character's current animatory
@@ -4553,13 +4524,11 @@ c28786 CALL 25108    ; Update the SRB for BOY WANDER's current animatory state
  28791 LD A,(HL)     ; animatory state; pick this up in #REGa}
  28792 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28799%256
+@rsub=/LD (HL),28799%256
+@rsub=INC L              ; with #R28799
+@rsub=LD (HL),28799/256  ; }
  28794 LD (HL),127   ; routine in bytes #b111 and #b112 of BOY WANDER's buffer
-                     ; with #R28799
-@rsub+begin
-       INC L
-       LD (HL),28799/256
-@rsub+end
-                     ; }
+                     ; with #R28799}
  28796 JP 25008      ; Restore BOY WANDER's pre-fire animatory state and update
                      ; the SRB
 
@@ -4945,13 +4914,11 @@ u29153 DEFB 127      ; This was probably the operand of '#S/LD B/,#n127'
 @label=WIPE2
 c29160 LD L,105      ; {Replace the address of the interruptible subcommand
 @ssub=LD (HL),29175%256
+@rsub=/LD (HL),29175%256
+@rsub=INC L              ; teacher's buffer with #R29175 (below)
+@rsub=LD (HL),29175/256  ; }
  29162 LD (HL),247   ; routine at #R29148 in bytes #b105 and #b106 of the
-                     ; teacher's buffer with #R29175 (below)
-@rsub+begin
-       INC L
-       LD (HL),29175/256
-@rsub+end
-                     ; }
+                     ; teacher's buffer with #R29175 (below)}
 @rsub=INC L
  29164 LD L,107      ; {Wiping a blackboard requires 32 distinct actions (in 8
  29166 LD (HL),32    ; groups of 4: two paces forward, arm up, arm down)}
@@ -5075,13 +5042,11 @@ c29284 CALL 28968    ; Collect the identifier of the nearest blackboard in
  29324 LD (HL),A     ; }
  29325 LD L,105      ; {Replace the address of this routine in bytes #b105 and
 @ssub=LD (HL),29329%256
+@rsub=/LD (HL),29329%256
+@rsub=INC L              ; point at #R29329 (below)
+@rsub=LD (HL),29329/256  ; }
  29327 LD (HL),145   ; #b106 of the character's buffer with that of the entry
-                     ; point at #R29329 (below)
-@rsub+begin
-       INC L
-       LD (HL),29329/256
-@rsub+end
-                     ; }
+                     ; point at #R29329 (below)}
 ; This entry point is used on subsequent calls.
 @label=WRITELTR
  29329 CALL 28994    ; Write a single letter on the blackboard
@@ -6693,25 +6658,21 @@ c31110 LD L,110      ; {Zero out bytes #b109 and #b110 of the character's
                      ; is off-screen
  31122 LD L,105      ; {Set the interruptible subcommand routine address in
 @ssub=LD (HL),31116%256
+@rsub=/LD (HL),31116%256
+@rsub=INC HL             ; entry point at #R31116
+@rsub=LD (HL),31116/256
+@rsub=DEC HL             ; }
  31124 LD (HL),140   ; bytes #b105 and #b106 of the character's buffer to the
-                     ; entry point at #R31116
-@rsub+begin
-       INC HL
-       LD (HL),31116/256
-       DEC HL
-@rsub+end
-                     ; }
+                     ; entry point at #R31116}
  31126 RET NZ        ; Return if somebody else is speaking at the moment
 ; Now it's this character's turn to speak.
 @ssub=LD (HL),31130%256
+@rsub=/LD (HL),31130%256
+@rsub=INC L              ; bytes #b105 and #b106 of the character's buffer to
+@rsub=LD (HL),31130/256  ; #R31130}
  31127 LD (HL),154   ; {Set the interruptible subcommand routine address in
                      ; bytes #b105 and #b106 of the character's buffer to
-                     ; #R31130
-@rsub+begin
-       INC L
-       LD (HL),31130/256
-@rsub+end
-                     ; }
+                     ; #R31130}
  31129 RET           ;
 
 ; Make a character speak (2)
@@ -6765,14 +6726,12 @@ c31162 LD A,(32713)  ; Pick up the lesson signal flags from #R32713
  31166 RET NC        ; Return if not
  31167 LD L,99       ; {Replace the address of this primary command routine in
 @ssub=LD (HL),31178%256
+@rsub=/LD (HL),31178%256
+@rsub=INC L              ; #R31178 (so that we go there after EINSTEIN has
+@rsub=LD (HL),31178/256  ; finished speaking)}
  31169 LD (HL),202   ; bytes #b99 and #b100 of EINSTEIN's buffer with that of
                      ; #R31178 (so that we go there after EINSTEIN has finished
-                     ; speaking)
-@rsub+begin
-       INC L
-       LD (HL),31178/256
-@rsub+end
-                     ; }
+                     ; speaking)}
  31171 LD L,106      ; {Set the routine address MSB in byte #b106 of EINSTEIN's
 @ssub=LD (HL),31110/256
  31173 LD (HL),121   ; buffer to that of #R31116; the LSB will be set later}
@@ -6788,13 +6747,11 @@ c31162 LD A,(32713)  ; Pick up the lesson signal flags from #R32713
 @label=GRASS2
 c31178 LD L,99       ; {Replace the address of this primary command routine in
 @ssub=LD (HL),31162%256
+@rsub=/LD (HL),31162%256
+@rsub=INC L              ; #R31162
+@rsub=LD (HL),31162/256  ; }
  31180 LD (HL),186   ; bytes #b99 and #b100 of EINSTEIN's buffer with that of
-                     ; #R31162
-@rsub+begin
-       INC L
-       LD (HL),31162/256
-@rsub+end
-                     ; }
+                     ; #R31162}
  31182 LD HL,32713   ; #R32713 holds the lesson signal flags
  31185 RES 7,(HL)    ; Signal: EINSTEIN has just spoken (so it's now the
                      ; teacher's turn to speak)
@@ -7328,13 +7285,11 @@ c31648 CALL 31229    ; Get ERIC's coordinates in #REGde
 @ssub=CP 25534%256
  31687 CP 190        ; (which will take him to the side of the blackboard where
  31689 JR NZ,31685   ; he waits for EINSTEIN to grass, or back to the dinner
-@rsub+begin
-       INC DE
-       LD A,(DE)
-       CP 25534/256
-       DEC DE
-       JR NZ,31685
-@rsub+end
+@rsub=<INC DE
+@rsub=<LD A,(DE)
+@rsub=<CP 25534/256
+@rsub=<DEC DE
+@rsub=<JR NZ,31685
  31691 DJNZ 31685    ; hall)}
  31693 JR 31638      ; Restart the teacher's command list from this point
 ; ERIC is not where he should be, or the teacher is on a staircase.
@@ -7380,13 +7335,11 @@ c31648 CALL 31229    ; Get ERIC's coordinates in #REGde
 @label=TOERIC
 c31739 LD L,105      ; {Replace the address of this routine in bytes #b105 and
 @ssub=LD (HL),31648%256
+@rsub=/LD (HL),31648%256
+@rsub=INC L              ; of #R31648
+@rsub=LD (HL),31648/256  ; }
  31741 LD (HL),160   ; #b106 of the character's buffer (if present) with that
-                     ; of #R31648
-@rsub+begin
-       INC L
-       LD (HL),31648/256
-@rsub+end
-                     ; }
+                     ; of #R31648}
  31743 CALL 25108    ; Update the SRB for the character's current location
  31746 LD L,108      ; {#REGd=character's new y-coordinate (adjusted by the
  31748 LD B,A        ; value in byte #b108 of his buffer, placed there by the
@@ -7453,13 +7406,11 @@ c31768 INC B         ; #REGb=1
  31785 LD (HL),B     ; of the chaser's buffer}
  31786 LD L,105      ; {Change the interruptible subcommand routine address in
 @ssub=LD (HL),31739%256
+@rsub=/LD (HL),31739%256
+@rsub=INC L              ; #R31648 to #R31739
+@rsub=LD (HL),31739/256  ; }
  31788 LD (HL),251   ; bytes #b105 and #b106 of the chaser's buffer from
-                     ; #R31648 to #R31739
-@rsub+begin
-       INC L
-       LD (HL),31739/256
-@rsub+end
-                     ; }
+                     ; #R31648 to #R31739}
  31790 PUSH DE       ; Save the x- and y-coordinate increments for the chaser's
                      ; next move
  31791 CALL 25108    ; Update the SRB for the chaser's current location
@@ -7625,20 +7576,16 @@ c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
  31887 LD (HL),0     ; him more than enough time to reach the other end of the
                      ; dinner hall without interruption}
  31889 LD L,99       ; {Replace the address of this primary command routine in
+@rsub=/
+@rsub=INC L             ; of #R31895 or #R31861
+@rsub=LD (HL),31861/256
+@rsub=LD A,E
+@rsub=CP 62
+@rsub=JR Z,31892
+@rsub=LD (HL),31895/256 ; }
  31891 LD (HL),D     ; bytes #b99 and #b100 of the teacher's buffer with that
-                     ; of #R31895 or #R31861
-@rsub+begin
-       INC L
-       LD (HL),31861/256
-       LD A,E
-       CP 62
-       JR Z,31892
-       LD (HL),31895/256
-@rsub+end
-                     ; }
-@rsub+begin
-@label=DINSTEP
-@rsub+end
+                     ; of #R31895 or #R31861}
+@rsub=DINSTEP:
  31892 JP 25404      ; Proceed to the other end of the dinner hall
 
 ; Make a teacher perform dinner duty (2)
@@ -7710,12 +7657,10 @@ c31919 LD DE,43371   ; {Point #REGhl at byte #b107 of EINSTEIN's buffer
  31937 LD (HL),200   ; }
  31939 POP DE        ; {Collect the return address in #REGde and copy it to
  31940 LD L,99       ; bytes #b99 and #b100 of the teacher's buffer (so that
- 31942 LD (HL),E     ; control will resume there when #R31944 relinquishes it)
-@rsub+begin
-       INC L
-       LD (HL),D
-@rsub+end
-                     ; }
+@rsub=LD (HL),E      ; control will resume there when #R31944 relinquishes it)
+@rsub=INC L
+@rsub=LD (HL),D      ; }
+ 31942 LD (HL),E     ; control will resume there when #R31944 relinquishes it)}
  31943 RET           ; Return to the main loop
 
 ; Make a teacher wait for EINSTEIN to finish speaking
@@ -7746,14 +7691,12 @@ c31952 LD A,(43360)  ; #REGa=EINSTEIN's animatory state
  31961 LD L,99       ; routine into bytes #b99 and #b100 of the teacher's
  31963 LD A,E        ; buffer, so that control of the teacher remains in this
  31964 SUB 3         ; routine until EINSTEIN is seated
- 31966 LD (HL),A     ;
-@rsub+begin
-       RET NC
-       DEC D
-       INC L
-       LD (HL),D
-@rsub+end
-                     ; }
+@rsub=               ;
+@rsub=RET NC
+@rsub=DEC D
+@rsub=INC L
+@rsub=LD (HL),D      ; }
+ 31966 LD (HL),A     ; }
  31967 RET           ;
 
 ; Make a teacher decide whether to give EINSTEIN lines for telling tales
@@ -7804,13 +7747,11 @@ c31985 LD L,106      ; {Copy the routine address from #REGbc into bytes #b105
  31989 LD (HL),C     ; }
  31990 POP DE        ; {Drop the return address off the stack and place its LSB
  31991 LD L,99       ; into byte #b99 of the character's buffer; this ensures
+@rsub=/
+@rsub=INC L          ; control resumes in the caller of this routine
+@rsub=LD (HL),D      ; }
  31993 LD (HL),E     ; that when the interruptible subcommand has finished,
-                     ; control resumes in the caller of this routine
-@rsub+begin
-       INC L
-       LD (HL),D
-@rsub+end
-                     ; }
+                     ; control resumes in the caller of this routine}
  31994 PUSH BC       ; {Make an indirect jump to the routine address in #REGbc
  31995 RET           ; }
 
@@ -7822,15 +7763,10 @@ c31985 LD L,106      ; {Copy the routine address from #REGbc into bytes #b105
 ; H Teacher's character number (#b163-#b166)
 @label=GOTOPAGE
 c31996 LD DE,62063   ; {#REGbc=#R62050 (TURN TO PAGE 123 OF YOUR BOOKS...);
-                     ; #REGde=#R62063 (the '123' in this message)
-@rsub-begin
 @ssub=LD C,62050%256
- 31999 LD C,98
- 32001 LD B,D
-@rsub+else
-       LD BC,62050
-@rsub+end
-                     ; }
+@rsub=|LD BC,62050   ; #REGde=#R62063 (the '123' in this message)}
+ 31999 LD C,98       ; #REGde=#R62063 (the '123' in this message)
+ 32001 LD B,D        ; }
  32002 CALL 24993    ; #REGa=random number
  32005 RLCA          ; {This jump (which decides between the message at #R62050
  32006 JR C,32012    ; and the message at #R62109) is performed half the time}
@@ -8018,10 +7954,8 @@ c32178 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
  32192 JR Z,32199    ; Jump if we're dealing with ERIC's teacher
 @ssub=LD (HL),32048%256
  32194 LD (HL),48    ; {Replace the address of this routine in bytes #b99 and
-@rsub+begin
-       INC L
-       LD (HL),32048/256
-@rsub+end
+@rsub=<INC L
+@rsub=<LD (HL),32048/256
  32196 JP 32048      ; #b100 of the teacher's buffer with #R32048, and jump
                      ; there now to start the lesson}
 ; This teacher has the pleasure of conducting ERIC's class this period.
@@ -8153,15 +8087,11 @@ c32279 DI            ; Disable interrupts
  32308 ADD A,7       ; pitch/duration data table at #R32263
  32310 LD L,A        ;
 @ssub=LD H,32263/256
- 32311 LD H,126      ;
-@rsub+begin
-       JR NC,32313
-       INC H
-@rsub+end
-                     ; }
-@rsub+begin
-@label=NOINC
-@rsub+end
+@rsub=LD H,32263/256 ;
+@rsub=JR NC,32313
+@rsub=INC H          ; }
+ 32311 LD H,126      ; }
+@rsub=NOINC:
  32313 LD A,B        ; #REGa=original tune datum
  32314 RLCA          ; {Obtain the note frequency parameter in #REGe and the
  32315 RLCA          ; note duration parameter in #REGhl
@@ -11710,10 +11640,9 @@ c45544 PUSH BC       ;
 @rsub=!45562-45563
  45562 NOP           ;
  45563 NOP           ;
+@rsub=JP 45800
+@rsub=DEFS 2
  45564 JP 45800      ;
-@rsub+begin
-       DEFS 2
-@rsub+end
 
 ; UDG reference for animatory state #b255 at row 0, column 1
 ;
@@ -11963,10 +11892,9 @@ c46056 PUSH BC       ;
  46067 POP BC        ;
  46068 POP HL        ; Restore the message address for the character's name to
                      ; #REGhl
+@rsub=RET
+@rsub=DEFB 0
  46069 RET           ;
-@rsub+begin
-       DEFB 0
-@rsub+end
 
 ; Print 'PRESS'C'TO CHANGE NAME'
 ;
@@ -16138,25 +16066,21 @@ s62453 DEFS 11
 @label=QALESSON
 c62464 LD L,100      ; {Replace the primary command routine address in bytes
 @ssub=LD (HL),62464/256
+@rsub=/LD (HL),62464/256
+@rsub=DEC L              ; (this routine)
+@rsub=LD (HL),62464%256  ; }
  62466 LD (HL),244   ; #b99 and #b100 of the teacher's buffer with #R62464
-                     ; (this routine)
-@rsub+begin
-       DEC L
-       LD (HL),62464%256
-@rsub+end
-                     ; }
+                     ; (this routine)}
 *62468 CALL 31952    ; Is ERIC in the room?
  62471 JR Z,62480    ; Jump if so
 ; ERIC is absent.
  62473 LD L,100      ; {Replace the address of this primary command routine in
 @ssub=LD (HL),62208/256
+@rsub=/LD (HL),62208/256
+@rsub=DEC L              ; of #R62208
+@rsub=LD (HL),62208%256  ; }
  62475 LD (HL),243   ; bytes #b99 and #b100 of the teacher's buffer with that
-                     ; of #R62208
-@rsub+begin
-       DEC L
-       LD (HL),62208%256
-@rsub+end
-                     ; }
+                     ; of #R62208}
  62477 JP 62213      ; Make EINSTEIN tell the teacher that ERIC is not in class
 ; ERIC is in class, so fire off a question and answer.
 *62480 CALL 31282    ; Prepare a question and the answer
@@ -17445,24 +17369,19 @@ c63909 LD A,(32746)  ; Collect the game mode indicator from #R32746
  63916 LD HL,60384   ; #R60384: 'DEMO. - PRESS A KEY TO PLAY'
 ; This entry point is used by the routine at #R63668 with #REGhl=#R65248 ('WELL
 ; DONE! GO UP A YEAR').
-@rsub+begin
-       PUSH HL
-@rsub+end
 @ssub=LD DE,60672+48
+@rsub=<PUSH HL
+@rsub=LD DE,60672+48
 @nowarn
 *63919 LD DE,60720   ; Point #REGde at the lesson box graphic buffer
  63922 CALL 30042    ; Write the first line of text into the lesson box graphic
                      ; buffer
-@rsub+begin
-       POP HL
-@rsub+end
 @ssub=LD L,60400%256
+@rsub=<POP HL
 @rsub=LD C,16
  63925 LD L,240      ; #REGhl=#R60400 ('A KEY TO PLAY') or #R65264 ('UP A
                      ; YEAR')
-@rsub+begin
-       ADD HL,BC
-@rsub+end
+@rsub=<ADD HL,BC
  63927 JP 31093      ; Write the second line of text into the lesson box
                      ; graphic buffer and copy the buffer to the screen
 
@@ -17619,12 +17538,10 @@ c64016 CALL 28968    ; #REGa=identifier of the blackboard nearest to CREAK
 @label=RST220
 c64035 LD L,117      ; {Place #R64257 into bytes #b117 and #b118 of ANGELFACE's
 @ssub=LD (HL),+(64255+2)%256
- 64037 LD (HL),1     ; buffer
-@rsub+begin
-       INC L
-       LD (HL),+(64255+2)/256
-@rsub+end
-                     ; }
+@rsub=LD (HL),+(64255+2)%256 ; buffer
+@rsub=INC L
+@rsub=LD (HL),+(64255+2)/256 ; }
+ 64037 LD (HL),1     ; buffer}
 @rsub=JP 31838
  64039 JP 31834      ; Pick up the continual subcommand routine address
                      ; (#R64042: check whether ANGELFACE is touching ERIC) from
