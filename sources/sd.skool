@@ -385,9 +385,9 @@ s24963 DEFS 9
 
 ; Collect one byte from a command list
 ;
-; Used by the routines at #R25126, #R25303, #R25534, #R27453, #R27480,
-; #IF({asm}<3)(#R31834,#R31838) and #R32167. Collects a byte from a character's
-; current command list and returns it in #REGa.
+; Used by the routines at #R25126, #R25303, #R25534, #R27453, #R27480, #R31834
+; and #R32167. Collects a byte from a character's current command list and
+; returns it in #REGa.
 ;
 ; H Character number (#b152-#b169)
 @label=GETPARAM
@@ -710,7 +710,7 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
  25223 INC L         ; subcommand
 @ssub=LD (HL),25247/256
  25224 LD (HL),98    ; }
-; This entry point is used by the routine at #IF({asm}<3)(#R31834,#R31838).
+; This entry point is used by the routine at #R31834.
 *25226 LD L,99       ; {Get the address of the next primary command routine
  25228 CALL 24972    ; from the command list and place it into bytes #b99 and
  25231 LD (HL),A     ; #b100 of the character's buffer and also into #REGbc
@@ -7507,19 +7507,15 @@ s31831 DEFS 3
 ; TABLE#
 ;
 ; H Character number (#b152-#b169)
-@rsub-begin
 @label=ADDR2BUF
+@rsub=LD L,124       ; {Collect the address of the continual subcommand routine
 c31834 NOP           ;
+@rsub=!31835-31838
  31835 NOP           ;
  31836 NOP           ;
  31837 NOP           ;
-@rsub-end
 @label=ADDR2CBUF
-@rsub-begin
  31838 LD L,124      ; {Collect the address of the continual subcommand routine
-@rsub+else
-c31838 LD L,124      ; {Collect the address of the continual subcommand routine
-@rsub+end
  31840 CALL 24972    ; from the command list and place it into bytes #b124 and
  31843 LD (HL),A     ; #b125 of the character's buffer
  31844 INC L         ;
@@ -17542,7 +17538,6 @@ c64035 LD L,117      ; {Place #R64257 into bytes #b117 and #b118 of ANGELFACE's
 @rsub=INC L
 @rsub=LD (HL),+(64255+2)/256 ; }
  64037 LD (HL),1     ; buffer}
-@rsub=JP 31838
  64039 JP 31834      ; Pick up the continual subcommand routine address
                      ; (#R64042: check whether ANGELFACE is touching ERIC) from
                      ; that point in command list #R64255(#b220), place it into
@@ -17676,7 +17671,6 @@ s64252 DEFS 3
 ;
 ; Used only by ANGELFACE in lesson #LESSON243.
 @label=CLIST220
-@rsub=DEFW 31838
 b64255 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
 @label=CLIST220A
  64257 DEFW 64042  ; ...check whether he's touching ERIC
@@ -17717,6 +17711,7 @@ b64288 DEFW 25534  ; Go to...
  64294 DEFB 27     ; ...MR WACKER is ready
  64295 DEFW 25303  ; Move about until...
  64297 DEFB 29     ; ...EINSTEIN has grassed on ERIC
+@rsub=DEFW 31834
  64298 DEFW 31838  ; Put the next address in MR WACKER's buffer, making him...
  64300 DEFW 32234  ; ...walk fast
  64302 DEFW 63374  ; Find ERIC
@@ -17739,7 +17734,6 @@ b64314 DEFW 25534  ; Go to...
  64320 DEFB 26     ; ...BOY WANDER is ready
  64321 DEFW 25303  ; Move about until...
  64323 DEFB 28     ; ...ERIC has been told about BOY WANDER
-@rsub=DEFW 31838
  64324 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64326 DEFW 28672  ; ...fire the catapult now and then
  64328 DEFW 25534  ; Go to...
@@ -17763,12 +17757,14 @@ b64341 DEFW 25534  ; Go to...
  64347 DEFB 27     ; ...MR WACKER is ready
  64348 DEFW 25303  ; Move about until...
  64350 DEFB 28     ; ...ERIC has been told about BOY WANDER
+@rsub=DEFW 31834
  64351 DEFW 31838  ; Put the next address in MR WACKER's buffer, making him...
  64353 DEFW 32234  ; ...walk fast
  64355 DEFW 25534  ; Go to...
  64357 DEFB 155,94 ; ...the far end of the fire escape
  64359 DEFW 25303  ; Move about until the bell rings unless...
  64361 DEFB 26     ; ...BOY WANDER has not collected the pea-shooter
+@rsub=DEFW 31834
  64362 DEFW 31838  ; Put the next address in MR WACKER's buffer, making him...
  64364 DEFW 32234  ; ...walk fast
  64366 DEFW 63374  ; Find ERIC
@@ -17908,12 +17904,10 @@ s64495 DEFB 0
 ;
 ; Used by BOY WANDER in lessons #LESSON229 and #LESSON240.
 @label=CLIST140
-@rsub=DEFW 31838
 b64496 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64498 DEFW 28672  ; ...fire the catapult now and then
  64500 DEFW 25534  ; Go to...
  64502 DEFB 155,65 ; ...the Map Room
-@rsub=DEFW 31838
  64504 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64506 DEFW 28672  ; ...fire the catapult now and then
  64508 DEFW 25303  ; Move about until...
@@ -17928,12 +17922,10 @@ s64515 DEFB 0
 ;
 ; Used by ANGELFACE in lessons #LESSON231, #LESSON239 and #LESSON240.
 @label=CLIST142
-@rsub=DEFW 31838
 b64516 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64518 DEFW 28446  ; ...hit now and then
  64520 DEFW 25534  ; Go to...
  64522 DEFB 155,68 ; ...the Map Room
-@rsub=DEFW 31838
  64524 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64526 DEFW 28446  ; ...hit now and then
  64528 DEFW 25303  ; Move about until...
@@ -17977,7 +17969,6 @@ s64559 DEFB 0
 ; Used by BOY WANDER in lessons #LESSON232, #LESSON233, #LESSON234 and
 ; #LESSON242.
 @label=CLIST148
-@rsub=DEFW 31838
 b64560 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64562 DEFW 28672  ; ...fire the catapult now and then
  64564 DEFW 25534  ; Go to...
@@ -17986,7 +17977,6 @@ b64560 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64570 DEFB 9      ; ...the teacher has arrived at the Reading Room
  64571 DEFW 25534  ; Go to...
  64573 DEFB 155,55 ; ...the Reading Room
-@rsub=DEFW 31838
  64575 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64577 DEFW 28672  ; ...fire the catapult now and then
  64579 DEFW 25303  ; Move about until...
@@ -18001,12 +17991,10 @@ s64586 DEFB 0
 ;
 ; Used by ANGELFACE in lessons #LESSON233, #LESSON234 and #LESSON242.
 @label=CLIST150
-@rsub=DEFW 31838
 b64587 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64589 DEFW 28446  ; ...hit now and then
  64591 DEFW 25534  ; Go to...
  64593 DEFB 155,53 ; ...the Reading Room
-@rsub=DEFW 31838
  64595 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64597 DEFW 28446  ; ...hit now and then
  64599 DEFW 25303  ; Move about until...
@@ -18052,7 +18040,6 @@ s64630 DEFB 0
 ; Used by BOY WANDER in lessons #LESSON226, #LESSON227, #LESSON231 and
 ; #LESSON239.
 @label=CLIST156
-@rsub=DEFW 31838
 b64631 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64633 DEFW 28672  ; ...fire the catapult now and then
  64635 DEFW 25534  ; Go to...
@@ -18061,7 +18048,6 @@ b64631 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64641 DEFB 10     ; ...the teacher has arrived at the Exam Room
  64642 DEFW 25534  ; Go to...
  64644 DEFB 162,60 ; ...the Exam Room
-@rsub=DEFW 31838
  64646 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64648 DEFW 28672  ; ...fire the catapult now and then
  64650 DEFW 25303  ; Move about until...
@@ -18076,12 +18062,10 @@ s64657 DEFB 0
 ;
 ; Used by ANGELFACE in lessons #LESSON226 and #LESSON227.
 @label=CLIST158
-@rsub=DEFW 31838
 b64658 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64660 DEFW 28446  ; ...hit now and then
  64662 DEFW 25534  ; Go to...
  64664 DEFB 162,59 ; ...the Exam Room
-@rsub=DEFW 31838
  64666 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64668 DEFW 28446  ; ...hit now and then
  64670 DEFW 25303  ; Move about until...
@@ -18124,7 +18108,6 @@ s64701 DEFB 0
 ;
 ; Used by BOY WANDER in lessons #LESSON235, #LESSON238 and #LESSON241.
 @label=CLIST164
-@rsub=DEFW 31838
 b64702 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64704 DEFW 28672  ; ...fire the catapult now and then
  64706 DEFW 25534  ; Go to...
@@ -18134,7 +18117,6 @@ b64702 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64713 DEFW 25534  ; Go to...
  64715 DEFB 162,35 ; ...the spot just past the right end of the board in the
                    ; White Room
-@rsub=DEFW 31838
  64717 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64719 DEFW 28672  ; ...fire the catapult now and then
  64721 DEFW 25303  ; Move about until...
@@ -18150,12 +18132,10 @@ s64728 DEFB 0
 ; Used by ANGELFACE in lessons #LESSON228, #LESSON232, #LESSON235, #LESSON236
 ; and #LESSON241.
 @label=CLIST166
-@rsub=DEFW 31838
 b64729 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64731 DEFW 28446  ; ...hit now and then
  64733 DEFW 25534  ; Go to...
  64735 DEFB 162,36 ; ...the White Room
-@rsub=DEFW 31838
  64737 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64739 DEFW 28446  ; ...hit now and then
  64741 DEFW 25303  ; Move about until...
@@ -18197,12 +18177,10 @@ s64768 DEFB 0
 ;
 ; Used by BOY WANDER in lessons #LESSON224 and #LESSON225.
 @label=CLIST172
-@rsub=DEFW 31838
 b64769 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64771 DEFW 28672  ; ...fire the catapult now and then
  64773 DEFW 25534  ; Go to...
  64775 DEFB 169,45 ; ...the dinner hall
-@rsub=DEFW 31838
  64777 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64779 DEFW 28672  ; ...fire the catapult now and then
  64781 DEFW 25303  ; Move about until...
@@ -18215,12 +18193,10 @@ s64784 DEFB 0
 ;
 ; Used by ANGELFACE in lessons #LESSON224 and #LESSON225.
 @label=CLIST174
-@rsub=DEFW 31838
 b64785 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64787 DEFW 28446  ; ...hit now and then
  64789 DEFW 25534  ; Go to...
  64791 DEFB 169,45 ; ...the dinner hall
-@rsub=DEFW 31838
  64793 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64795 DEFW 28446  ; ...hit now and then
  64797 DEFW 25303  ; Move about until...
@@ -18247,12 +18223,10 @@ s64808 DEFB 0
 ; Used by BOY WANDER in lessons #LESSON228, #LESSON230, #LESSON236 and
 ; #LESSON237.
 @label=CLIST178
-@rsub=DEFW 31838
 b64809 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64811 DEFW 28672  ; ...fire the catapult now and then
  64813 DEFW 25534  ; Go to...
  64815 DEFB 155,35 ; ...the Revision Library
-@rsub=DEFW 31838
  64817 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64819 DEFW 28672  ; ...fire the catapult now and then
  64821 DEFW 25303  ; Move about until...
@@ -18266,12 +18240,10 @@ s64824 DEFB 0
 ; Used by ANGELFACE in lessons #LESSON229, #LESSON230, #LESSON237 and
 ; #LESSON238.
 @label=CLIST180
-@rsub=DEFW 31838
 b64825 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64827 DEFW 28446  ; ...hit now and then
  64829 DEFW 25534  ; Go to...
  64831 DEFB 155,35 ; ...the Revision Library
-@rsub=DEFW 31838
  64833 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64835 DEFW 28446  ; ...hit now and then
  64837 DEFW 25303  ; Move about until...
@@ -18285,11 +18257,9 @@ s64840 DEFB 0
 ; Used by ANGELFACE in lessons #LESSON246, #LESSON247, #LESSON248, #LESSON249,
 ; #LESSON250, #LESSON251, #LESSON252, #LESSON253, #LESSON254 and #LESSON255.
 @label=CLIST182
-@rsub=DEFW 31838
 b64841 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64843 DEFW 28446  ; ...hit now and then
  64845 DEFW 27111  ; Go to a random location
-@rsub=DEFW 31838
  64847 DEFW 31834  ; Put the next address in ANGELFACE's buffer, making him...
  64849 DEFW 28446  ; ...hit now and then
  64851 DEFW 27453  ; Walk up and down...
@@ -18362,7 +18332,6 @@ b64892 DEFW 25534  ; Go to...
  64904 DEFW 25534  ; Go to...
  64906 DEFB 155,45 ; ...the Reading Room board
  64908 DEFW 32158  ; Write on the board (if it's clean)
-@rsub=DEFW 31838
  64910 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64912 DEFW 28672  ; ...fire the catapult now and then
 ; This command list continues at #R64914.
@@ -18463,11 +18432,9 @@ s64987 DEFB 0
 ; Used by BOY WANDER in lessons #LESSON247, #LESSON251, #LESSON252, #LESSON253
 ; and #LESSON255.
 @label=CLIST194
-@rsub=DEFW 31838
 b64988 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64990 DEFW 28672  ; ...fire the catapult now and then
  64992 DEFW 27111  ; Go to a random location
-@rsub=DEFW 31838
  64994 DEFW 31834  ; Put the next address in BOY WANDER's buffer, making him...
  64996 DEFW 28672  ; ...fire the catapult now and then
  64998 DEFW 27453  ; Walk up and down...
