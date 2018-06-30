@@ -17533,10 +17533,10 @@ c64016 CALL 28968    ; #REGa=identifier of the blackboard nearest to CREAK
 ; H #b168 (ANGELFACE)
 @label=RST220
 c64035 LD L,117      ; {Place #R64257 into bytes #b117 and #b118 of ANGELFACE's
-@ssub=LD (HL),+(64255+2)%256
-@rsub=LD (HL),+(64255+2)%256 ; buffer
+@ssub=LD (HL),64257%256
+@rsub=LD (HL),64257%256 ; buffer
 @rsub=INC L
-@rsub=LD (HL),+(64255+2)/256 ; }
+@rsub=LD (HL),64257/256 ; }
  64037 LD (HL),1     ; buffer}
  64039 JP 31834      ; Pick up the continual subcommand routine address
                      ; (#R64042: check whether ANGELFACE is touching ERIC) from
