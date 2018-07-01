@@ -2606,7 +2606,7 @@ c26880 LD SP,23806   ; Put the stack pointer somewhere safe
  26925 LD D,A        ; #REGd=new lesson number minus one
  26926 PUSH DE       ; Save this for now
  26927 CALL 63242    ; Unflash the safe and all shields
-@rfix=<CALL 32497    ; Wipe the blackboards
+@rfix=>CALL 32497    ; Wipe the blackboards
  26930 LD HL,32765   ; #R32765 holds the number (#b152-#b171) of the last
                      ; character moved
  26933 LD (HL),151   ; Reset this number so #b152 (little boy no. 1) is moved
@@ -3727,10 +3727,10 @@ c27932 CALL 25108    ; Update the SRB for the pellet's current location
  28016 JR NZ,28036   ; Jump unless ERIC's location matches that of the pellet
 ; #IF({fix}<3)//ERIC has been hit by the pellet. Knock him over./ERIC is in the
 ; same location as the pellet. Can he be knocked over?//
-@rfix=<LD A,(44128)  ; #REGa=ERIC's animatory state
-@rfix=<AND 15        ; Keep only the 'action' bits (bits 0-3)
-@rfix=<CP 6          ; Is ERIC standing, midstride, or sitting in a chair?
-@rfix=<RET NC        ; Return if not (he can't be knocked over)
+@rfix=>LD A,(44128)  ; #REGa=ERIC's animatory state
+@rfix=>AND 15        ; Keep only the 'action' bits (bits 0-3)
+@rfix=>CP 6          ; Is ERIC standing, midstride, or sitting in a chair?
+@rfix=>RET NC        ; Return if not (he can't be knocked over)
  28018 LD DE,32763   ; {Signal that ERIC has been knocked over by setting bit 4
  28021 EX DE,HL      ; of ERIC's status flags at #R32763
  28022 SET 4,(HL)    ; }
@@ -7285,11 +7285,11 @@ c31648 CALL 31229    ; Get ERIC's coordinates in #REGde
 @ssub=CP 25534%256
  31687 CP 190        ; (which will take him to the side of the blackboard where
  31689 JR NZ,31685   ; he waits for EINSTEIN to grass, or back to the dinner
-@rsub=<INC DE
-@rsub=<LD A,(DE)
-@rsub=<CP 25534/256
-@rsub=<DEC DE
-@rsub=<JR NZ,31685
+@rsub=>INC DE
+@rsub=>LD A,(DE)
+@rsub=>CP 25534/256
+@rsub=>DEC DE
+@rsub=>JR NZ,31685
  31691 DJNZ 31685    ; hall)}
  31693 JR 31638      ; Restart the teacher's command list from this point
 ; ERIC is not where he should be, or the teacher is on a staircase.
@@ -7950,8 +7950,8 @@ c32178 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
  32192 JR Z,32199    ; Jump if we're dealing with ERIC's teacher
 @ssub=LD (HL),32048%256
  32194 LD (HL),48    ; {Replace the address of this routine in bytes #b99 and
-@rsub=<INC L
-@rsub=<LD (HL),32048/256
+@rsub=>INC L
+@rsub=>LD (HL),32048/256
  32196 JP 32048      ; #b100 of the teacher's buffer with #R32048, and jump
                      ; there now to start the lesson}
 ; This teacher has the pleasure of conducting ERIC's class this period.
@@ -16922,9 +16922,9 @@ c63374 LD A,255      ; {Adjust the length of the lesson to allow the character
 ; address being placed into bytes #b111 and #b112 of the character's buffer.
 @label=LOOKING
  63390 LD A,H        ; #REGa=number of the character looking for ERIC
-@rfix=<LD (32759+1),A ; Set the MSB of the lesson clock to a high number to
-@rfix=<               ; ensure that the bell doesn't ring before this routine
-@rfix=<               ; exits
+@rfix=>LD (32759+1),A ; Set the MSB of the lesson clock to a high number to
+@rfix=>               ; ensure that the bell doesn't ring before this routine
+@rfix=>               ; exits
  63391 CP 163        ; Is MR WACKER looking for ERIC?
  63393 CALL Z,32234  ; If so, make him walk fast
  63396 LD L,105      ; {Is the character midstride?
@@ -17366,18 +17366,18 @@ c63909 LD A,(32746)  ; Collect the game mode indicator from #R32746
 ; This entry point is used by the routine at #R63668 with #REGhl=#R65248 ('WELL
 ; DONE! GO UP A YEAR').
 @ssub=LD DE,60672+48
-@rsub=<PUSH HL
+@rsub=>PUSH HL
 @rsub=LD DE,60672+48
 @nowarn
 *63919 LD DE,60720   ; Point #REGde at the lesson box graphic buffer
  63922 CALL 30042    ; Write the first line of text into the lesson box graphic
                      ; buffer
 @ssub=LD L,60400%256
-@rsub=<POP HL
+@rsub=>POP HL
 @rsub=LD C,16
  63925 LD L,240      ; #REGhl=#R60400 ('A KEY TO PLAY') or #R65264 ('UP A
                      ; YEAR')
-@rsub=<ADD HL,BC
+@rsub=>ADD HL,BC
  63927 JP 31093      ; Write the second line of text into the lesson box
                      ; graphic buffer and copy the buffer to the screen
 
