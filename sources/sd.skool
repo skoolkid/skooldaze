@@ -2032,7 +2032,8 @@ c26471 LD HL,(32759) ; #R32759 holds the lesson clock
 *26562 LD A,(23672)  ; been incremented since the last time it was checked
  26565 CP (HL)       ; (FRAMES is incremented every 20ms)
  26566 JR Z,26562    ;
-*26568 LD (HL),A     ; }
+@if({asm}<3)(label=*)
+ 26568 LD (HL),A     ; }
  26569 JP 26471      ; Jump back to the beginning of the main loop
 
 ; Unused
