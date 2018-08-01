@@ -1126,8 +1126,8 @@ c25534 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
 ; The address of this entry point is placed into bytes #b99 and #b100 of the
 ; character's buffer (by the routine at #R27888, called above, and by the
 ; routine at #R27111) so that we return here after the character has stood up.
-@label=READYTOGO
-*25553 LD L,97       ; {Collect the character's x- and y-coordinates in #REGe
+@label=*READYTOGO
+ 25553 LD L,97       ; {Collect the character's x- and y-coordinates in #REGe
  25555 LD D,(HL)     ; and #REGd
  25556 INC L         ;
  25557 LD E,(HL)     ; }
@@ -2032,7 +2032,7 @@ c26471 LD HL,(32759) ; #R32759 holds the lesson clock
 *26562 LD A,(23672)  ; been incremented since the last time it was checked
  26565 CP (HL)       ; (FRAMES is incremented every 20ms)
  26566 JR Z,26562    ;
-@if({asm}<3)(label=*)
+@if(0<{asm}<3)(label=*)
  26568 LD (HL),A     ; }
  26569 JP 26471      ; Jump back to the beginning of the main loop
 
@@ -3353,7 +3353,8 @@ s27621 DEFS 11
 @label=BYSEAT
 c27632 BIT 7,A       ; Set the zero flag if the character is facing left
 ; This entry point is used by the routine at #R27823 with #REGh=#b172 (ERIC).
-*27634 LD A,D        ; #REGa=character's y-coordinate
+@label=*
+ 27634 LD A,D        ; #REGa=character's y-coordinate
  27635 JR NZ,27694   ; Jump if the character is facing right
  27637 CP 155        ; Set the zero flag if the character is on the top floor
  27639 LD A,E        ; #REGa=character's x-coordinate
@@ -16395,7 +16396,8 @@ c62771 LD HL,32758   ; Decrement the jumping action timer at #R32758 (which
 ; This entry point is erroneously used by the routine at #R60139 with #REGh=#b3
 ; (which means (#REGd,#REGe) is set to (198,32) by the code that follows, and
 ; the routine exits at #R62841).
-*62819 LD L,97       ; Byte #b97 of ERIC's buffer holds his y-coordinate
+@label=*
+ 62819 LD L,97       ; Byte #b97 of ERIC's buffer holds his y-coordinate
  62821 LD D,(HL)     ; Pick this up in #REGd
  62822 INC D         ; Down a level (where the boy that ERIC is standing on
                      ; would be, if any)
