@@ -115,8 +115,8 @@ c24576 EXX           ;
 *24654 EXX           ;
  24655 LD HL,22528   ; {Point #REGhl' and #REGde' at the attribute file and
  24658 LD DE,16384   ; display file addresses for the top left of the screen,
- 24661 INC C         ; and set #REGbc'=#w32; however, these values are not
-                     ; used}
+ 24661 INC C         ; and set #REGbc'=#w32; however, these values are not used
+                     ; }
  24662 EXX           ;
  24663 LD A,(32512)  ; #REGa=leftmost column of the skool on-screen (0-64)
  24666 DEC A         ; {We are scrolling one column right
@@ -232,8 +232,8 @@ c24731 EXX           ;
 *24805 EXX           ;
  24806 LD HL,22559   ; {Point #REGhl' and #REGde' at the attribute file and
  24809 LD DE,16415   ; display file addresses for the top right of the screen,
- 24812 INC C         ; and set #REGbc'=#w32; however, these values are not
-                     ; used}
+ 24812 INC C         ; and set #REGbc'=#w32; however, these values are not used
+                     ; }
  24813 EXX           ;
  24814 LD A,(32512)  ; #REGa=leftmost column of the skool on-screen (0-64)
  24817 INC A         ; {We are scrolling one column left
@@ -518,8 +518,8 @@ c25008 LD L,96       ; Point #REGhl at byte #b96 of the character's buffer
  25097 LD A,L        ; {The zero flag will be set now if we 'wrapped around' to
  25098 AND 3         ; the left side of the screen, i.e. the next column of the
                      ; character sprite is off-screen to the right}
- 25100 LD A,198      ; This will change the instruction at #R27015 to
-                     ; #S/SET 0,(HL)/
+ 25100 LD A,198      ; This will change the instruction at #R27015 to #S/SET
+                     ; 0,(HL)/
  25102 JR NZ,25091   ; Jump back to consider the remaining on-screen columns of
                      ; the sprite
 *25104 POP HL        ; Restore the character number (#b152-#b172) to #REGh
@@ -1294,8 +1294,8 @@ c25700 LD A,(HL)     ; #REGa=destination y-coordinate
  25707 LD A,57       ; This is the x-coordinate of the wall between the Map and
                      ; Reading Rooms
 *25709 INC L         ; {Set the carry flag if the character is destined for
- 25710 CP (HL)       ; some place to the right of the wall referred to by
-                     ; #REGa}
+ 25710 CP (HL)       ; some place to the right of the wall referred to by #REGa
+                     ; }
  25711 LD A,70       ; This is the x-coordinate of the bottoms of the
                      ; staircases at the right of the skool
  25713 JR C,25717    ; Jump if the character must go to a staircase on the
@@ -1552,10 +1552,10 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
  25986 RET NZ        ; Return if so
 @rsub=!25987-25989
  25987 BIT 6,A       ; {Bit 6 of ERIC's status flags at #R32763 is always
-                     ; reset, so this jump
 @nowarn
-@ofix=JR NZ,26067    ; is never made}
- 25989 JR NZ,26068   ; (which should be to #R26067) is never made}
+@ofix=/JR NZ,26067   ; reset, so this jump is never made}
+ 25989 JR NZ,26068   ; reset, so this jump (which should be to #R26067) is
+                     ; never made}
  25991 LD A,D        ; #REGa=ERIC's y-coordinate
  25992 CP 169        ; Is ERIC on the bottom floor?
  25994 JR Z,26067    ; Jump forward to move him left or right if so
@@ -1665,13 +1665,13 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
 *26134 LD A,B        ; #REGa=#AS2(#b2/#b130)
 @bfix=BIT 0,L        ; {#REGa=#AS1(#b1/#b129), #REGb=#AS2(#b2/#b130) if ERIC's
  26135 BIT 0,L       ; {#REGa=#AS3(#b3/#b131), #REGb=#AS2(#b2/#b130) if ERIC's
-@bfix=JR Z,26143     ; current x-coordinate is even;
- 26137 JR Z,26141    ; current x-coordinate is even (which is a
-@bfix=DEC B          ;
- 26139 DEC B         ; #BUG#oneFourThreeFour(bug));
- 26140 DEC B         ; #REGa=#AS3(#b3/#b131), #REGb=#AS0(#b0/#b128) if ERIC's
+@bfix=JR Z,26143
+ 26137 JR Z,26141    ; current x-coordinate is even#IF({fix}<2)( (which is a
+@bfix=DEC B
+ 26139 DEC B         ; #BUG#oneFourThreeFour(bug))); #REGa=#AS3(#b3/#b131),
+ 26140 DEC B         ; #REGb=#AS0(#b0/#b128) if ERIC's current x-coordinate is
 @if({fix}>1)(label=)
-*26141 ADD A,2       ; current x-coordinate is odd
+*26141 ADD A,2       ; odd
 @if({fix}>1)(label=*)
  26143 DEC A         ; }
  26144 JP 25916      ; Update ERIC's animatory state and location
@@ -1751,8 +1751,8 @@ c26194 CALL 25956    ; Is ERIC sitting or lying down?
 *26234 LD A,1        ; #REGa=#AS1 (ERIC midstride, facing left)
  26236 LD L,E        ; #REGl=ERIC's current x-coordinate
  26237 DEC E         ; #REGe=ERIC's post-midstride x-coordinate
-; This entry point is used by the routine at #R26282 with
-; #REGa=#AS129 (ERIC facing right, midstride).
+; This entry point is used by the routine at #R26282 with #REGa=#AS129 (ERIC
+; facing right, midstride).
 @rsub=!26238-26261
 *26238 LD C,A        ; #REGc=#AS1(#b1/#b129) (ERIC midstride)
  26239 LD A,(32764)  ; #R32764 holds the ASCII code of the last keypress
@@ -1838,7 +1838,6 @@ s26336 DEFS 6
 ; This routine is called from the main loop at #R26471 when the lesson clock
 ; has counted down to zero. It sets each character up with the appropriate
 ; command list for the next lesson.
-;
 @label=NEWLESSON
 c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
  26345 LD (32759),HL ; }
@@ -1878,8 +1877,8 @@ c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
  26398 EXX           ;
 *26399 LD D,H        ; #REGd=character number (#b152-#b171)
  26400 LD L,122      ; {Set bit 0 of byte #b122 of the character's buffer; this
- 26402 SET 0,(HL)    ; will trigger a restart of the command list (see
-                     ; #R25126)}
+ 26402 SET 0,(HL)    ; will trigger a restart of the command list (see #R25126)
+                     ; }
  26404 LD L,119      ;
  26406 LD A,(DE)     ; Pick up the command list number for this lesson from the
                      ; character's personal timetable
@@ -1892,8 +1891,7 @@ c26342 LD HL,5376    ; {Reset the lesson clock at #R32759
  26412 LD (HL),A     ; Copy the LSB to byte #b119 of the character's buffer
  26413 INC L         ; #REGl=#b120
  26414 EXX           ;
- 26415 LD A,(HL)     ; {#REGa=MSB of the address of the command list
-                     ; }
+ 26415 LD A,(HL)     ; #REGa=MSB of the address of the command list
  26416 EXX           ;
  26417 LD (HL),A     ; Copy the MSB to byte #b120 of the character's buffer
  26418 INC H         ; Next character
@@ -3048,8 +3046,7 @@ c27303 LD HL,32757   ; {#R32757 holds the delay counter used when ERIC has been
                      ; again)
  27328 LD H,172      ; #b172=ERIC
  27330 CALL 25108    ; Update the SRB for ERIC's current location
- 27333 CP 5          ; #AS5=animatory state of ERIC
-                     ; sitting on a chair
+ 27333 CP 5          ; #AS5=animatory state of ERIC sitting on a chair
  27335 JR Z,27341    ; Jump if ERIC's sitting on a chair
  27337 AND 128       ;
  27339 ADD A,6       ;
@@ -3216,8 +3213,8 @@ c27480 LD B,198      ; #b198 is the code for '#S/SET 0,(HL)/'
  27493 LD E,A        ;
  27494 LD D,127      ;
  27496 EX DE,HL      ; }
- 27497 LD A,C        ; {Modify the instruction at #R27506 below to
- 27498 RRCA          ; '#S/SET n,(HL)/' or '#S/RES n,(HL)/' as appropriate
+ 27497 LD A,C        ; {Modify the instruction at #R27506 below to '#S/SET
+ 27498 RRCA          ; n,(HL)/' or '#S/RES n,(HL)/' as appropriate
  27499 RRCA          ;
  27500 AND 56        ;
  27502 ADD A,B       ;
@@ -5163,9 +5160,9 @@ c29442 LD E,A        ; #REGe=ASCII code of the character from the message being
  29460 LD A,(32613)  ; #REGa=y-coordinate of the speech bubble lip
  29463 SUB 154       ; {#REGd=screen y-coordinate of the top row of the speech
  29465 LD D,A        ; bubble (0-17)}
- 29466 RRCA          ; {Set #REGhl to the display file address corresponding
- 29467 RRCA          ; to the top right edge of the text window within the
- 29468 RRCA          ; speech bubble
+ 29466 RRCA          ; {Set #REGhl to the display file address corresponding to
+ 29467 RRCA          ; the top right edge of the text window within the speech
+ 29468 RRCA          ; bubble
  29469 AND 224       ;
  29471 ADD A,C       ;
  29472 LD L,A        ;
@@ -5188,9 +5185,9 @@ c29442 LD E,A        ; #REGe=ASCII code of the character from the message being
                      ; pixel to the left
  29495 LD B,A        ; Store the message character pixel column in #REGb
                      ; temporarily
- 29496 LD A,L        ; {Set #REGhl to the display file address corresponding
- 29497 ADD A,32      ; to the fifth pixel row down from the top right edge of
- 29499 LD L,A        ; the text window within the speech bubble
+ 29496 LD A,L        ; {Set #REGhl to the display file address corresponding to
+ 29497 ADD A,32      ; the fifth pixel row down from the top right edge of the
+ 29499 LD L,A        ; text window within the speech bubble
  29500 JR C,29506    ;
  29502 LD A,H        ;
  29503 SUB 8         ;
@@ -5230,9 +5227,8 @@ c29518 LD A,(32512)  ; #REGa=leftmost column of the skool on screen (0-64)
  29529 CP 32         ; {Return with the carry flag set if the character is
  29531 CCF           ; off-screen to the right
  29532 RET C         ; }
- 29533 LD C,A        ; #REGc=screen x-coordinate (0-31) of the spot above
-                     ; the character's head (where the speech bubble lip will
-                     ; be)
+ 29533 LD C,A        ; #REGc=screen x-coordinate (0-31) of the spot above the
+                     ; character's head (where the speech bubble lip will be)
 @ssub=LD A,(32612+1)
  29534 LD A,(32613)  ; #REGa=current speech bubble lip x-coordinate (if any)
  29537 AND A         ; Is somebody else speaking at the moment?
@@ -6285,8 +6281,8 @@ c30636 LD HL,32754   ; {Check (and decrement) the lines-giving delay counter at
  30708 JR NC,30705   ; Jump back until we've determined where ERIC is
  30710 DEC HL        ; {Point #REGde at the ID byte of the region table entry
  30711 EX DE,HL      ; }
-; #HTML(<span id="regionID" />)
-; The ID bytes in the region tables have the following meanings:
+; #HTML(<span id="regionID" />) The ID bytes in the region tables have the
+; following meanings:
 ; .
 ; #TABLE(default,centre)
 ; { =h ID | =h Meaning }
@@ -6360,8 +6356,8 @@ c30636 LD HL,32754   ; {Check (and decrement) the lines-giving delay counter at
  30780 AND A         ; twice in a row?}
  30781 JR Z,30790    ; Jump if not
  30783 INC HL        ; {Otherwise, collect from #R32755 into #REGh the
- 30784 LD H,(HL)     ; character number of the teacher who last gave ERIC
-                     ; lines}
+ 30784 LD H,(HL)     ; character number of the teacher who last gave ERIC lines
+                     ; }
  30785 LD L,98       ; {Store this teacher's x-coordinate in #REGe, and set his
  30787 LD E,(HL)     ; x-coordinate to 255 temporarily, so he's out of range
  30788 LD (HL),255   ; and will not be regarded as a lines-giving candidate}
@@ -6597,9 +6593,9 @@ c31040 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
 ; This period takes place in a classroom. With which teacher?
  31059 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
  31062 AND 240       ; Keep only the 'teacher' bits (bits 4-7)
- 31064 LD L,A        ; {Point #REGhl at the appropriate teacher's name:
- 31065 RRCA          ; #R55736 (MR WACKER), #R55750 (MR ROCKITT), #R55764 (MR
- 31066 RRCA          ; WITHIT), or #R55778 (MR CREAK)
+ 31064 LD L,A        ; {Point #REGhl at the appropriate teacher's name: #R55736
+ 31065 RRCA          ; (MR WACKER), #R55750 (MR ROCKITT), #R55764 (MR WITHIT),
+ 31066 RRCA          ; or #R55778 (MR CREAK)
  31067 RRCA          ;
  31068 LD H,A        ;
  31069 LD A,L        ;
@@ -6669,12 +6665,12 @@ c31110 LD L,110      ; {Zero out bytes #b109 and #b110 of the character's
  31126 RET NZ        ; Return if somebody else is speaking at the moment
 ; Now it's this character's turn to speak.
 @ssub=LD (HL),31130%256
-@rsub=/LD (HL),31130%256
+@rsub=/LD (HL),31130%256 ; {Set the interruptible subcommand routine address in
 @rsub=INC L              ; bytes #b105 and #b106 of the character's buffer to
 @rsub=LD (HL),31130/256  ; #R31130}
- 31127 LD (HL),154   ; {Set the interruptible subcommand routine address in
+ 31127 LD (HL),154   ; Set the interruptible subcommand routine address in
                      ; bytes #b105 and #b106 of the character's buffer to
-                     ; #R31130}
+                     ; #R31130
  31129 RET           ;
 
 ; Make a character speak (2)
@@ -7353,16 +7349,15 @@ c31739 LD L,105      ; {Replace the address of this routine in bytes #b105 and
  31754 ADD A,(HL)    ; routine at #R31768)
  31755 LD E,A        ; }
 ; The character's post-midstride coordinates have been calculated; now we
-; consider his post-midstride animatory state.#IF({fix}<2)//
-; Usually, a character's animatory state is incremented as he moves to or from
-; the midstride position, which makes his walking animation cycle through
-; phases 1, 2, 3 and 4. However, the next section of code - unlike its
-; counterpart in the routine at #R31768, which moves ERIC's chaser to the
-; midstride position - decrements the animatory state if the character is
-; moving leftwards, and increments it if the character is moving rightwards. So
-; when a character is moving leftwards while chasing ERIC, his walking
-; animation will cycle through phases 1 and 2 only, or 3 and 4 only. This is a
-; #BUG#oneTwoOneTwo(bug).//
+; consider his post-midstride animatory state.#IF({fix}<2)// Usually, a
+; character's animatory state is incremented as he moves to or from the
+; midstride position, which makes his walking animation cycle through phases 1,
+; 2, 3 and 4. However, the next section of code - unlike its counterpart in the
+; routine at #R31768, which moves ERIC's chaser to the midstride position -
+; decrements the animatory state if the character is moving leftwards, and
+; increments it if the character is moving rightwards. So when a character is
+; moving leftwards while chasing ERIC, his walking animation will cycle through
+; phases 1 and 2 only, or 3 and 4 only. This is a #BUG#oneTwoOneTwo(bug).//
 @bfix=LD A,B         ; #REGa=character's current animatory state
  31756 LD A,(HL)     ; #REGa=x-coordinate increment (-1 or +1)
 @bfix=INC A          ; Increment it (to move the character to the next walking
@@ -7590,8 +7585,8 @@ c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
 ;
 ; The address of this primary command routine is placed into bytes #b99 and
 ; #b100 of the teacher's buffer by the routine at #R31854. The teacher has
-; walked to the left end of the dinner hall, so it's time to check whether
-; ERIC is present.
+; walked to the left end of the dinner hall, so it's time to check whether ERIC
+; is present.
 @label=DDUTY2
 c31895 CALL 31188    ; Set the zero flag if ERIC is in the dinner hall
 @rem=31861 first so skool2asm spots it; no brackets so pasmo is OK with it
@@ -7808,8 +7803,8 @@ c31996 LD DE,62063   ; {#REGbc=#R62050 (TURN TO PAGE 123 OF YOUR BOOKS...);
 @nowarn
  32043 LD BC,31110   ; {Place the address of the interruptible subcommand
  32046 JR 31985      ; routine at #R31110 (make character speak) into bytes
-                     ; #b105 and #b106 of the character's buffer and jump to
-                     ; it}
+                     ; #b105 and #b106 of the character's buffer and jump to it
+                     ; }
 
 ; Make a teacher conduct a class without ERIC
 ;
@@ -7942,8 +7937,8 @@ c32167 CALL 24972    ; Get the event ID (#b9, #b10 or #b11) from the command
 @label=DOCLASS
 c32178 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
  32181 AND 240       ; Keep only the 'teacher' bits (4-7)
- 32183 RLCA          ; {#REGa=character number of the teacher (#b163-#b166)
- 32184 RLCA          ; who is teaching ERIC and EINSTEIN this period
+ 32183 RLCA          ; {#REGa=character number of the teacher (#b163-#b166) who
+ 32184 RLCA          ; is teaching ERIC and EINSTEIN this period
  32185 RLCA          ;
  32186 RLCA          ;
  32187 ADD A,163     ; }
@@ -11900,7 +11895,7 @@ c46056 PUSH BC       ;
 @label=PRTCPROMPT
 c46070 LD HL,44648   ; #R44648: 'PRESS'C'TO CHANGE NAME'
 ; This entry point is used by the routines at #R45544 (with #REGhl=#R46199:
-; ' ') and #R47208 (with #REGhl=#R44904: 'ENTER NEW NAME').
+; '#SPACE') and #R47208 (with #REGhl=#R44904: 'ENTER NEW NAME').
 @label=PRTNAME
 *46073 LD DE,20640   ; Set #REGde to the display file address at which to print
                      ; the message
@@ -16714,8 +16709,8 @@ c63146 CP 13         ; Was ENTER pressed?
  63182 CALL 29023    ; Write a single character on the blackboard
  63185 JP 63123      ; Move ERIC's arm
 ; ERIC has finished writing on the board (ENTER was pressed).
-*63188 RES 5,(HL)    ; {Reset bit 5 of ERIC's status flags at #R32763 to
-                     ; indicate that ERIC has finished writing on the board}
+*63188 RES 5,(HL)    ; Reset bit 5 of ERIC's status flags at #R32763 to
+                     ; indicate that ERIC has finished writing on the board
  63190 RET           ; Return to the main loop
 
 ; Make MR CREAK reveal his safe combination letter if appropriate
@@ -16818,8 +16813,8 @@ c63270 LD A,(32746)  ; Pick up the game mode indicator from #R32746
  63283 CP 10         ; Has ERIC jumped up to the safe?
  63285 RET NZ        ; Return if not
 ; ERIC has jumped up to the safe. Can he open it?
- 63286 LD HL,32749   ; #R32749 holds the number of the character who last
-                     ; wrote on the Reading Room blackboard
+ 63286 LD HL,32749   ; #R32749 holds the number of the character who last wrote
+                     ; on the Reading Room blackboard
  63289 LD DE,32680   ; #R32680=Reading Room blackboard contents buffer
  63292 LD C,3        ; There are 3 blackboards
 *63294 LD A,(HL)     ; #REGa=number of the character who last wrote on this
@@ -18687,8 +18682,8 @@ t65333 DEFB 19 ; #R55722: 'EINSTEIN'
  65422 DEFB 3  ; #R55830: '#SPACE8' (8 spaces)
 
 ; '{BOY WANDER} has hidden a pea-shooter with your name on it on the
-; fire-escape. If {MR WACKER} gets there before {BOY WANDER} you'll get
-; lines{8 spaces}'
+; fire-escape. If {MR WACKER} gets there before {BOY WANDER} you'll get lines{8
+; spaces}'
 ;
 ; Used by the routine at #R63488.
 @label=M_WANDERHIDDEN
