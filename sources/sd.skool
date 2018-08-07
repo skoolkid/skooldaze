@@ -1127,7 +1127,7 @@ c25534 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
 ; character's buffer (by the routine at #R27888, called above, and by the
 ; routine at #R27111) so that we return here after the character has stood up.
 @label=*READYTOGO
- 25553 LD L,97       ; {Collect the character's x- and y-coordinates in #REGe
+*25553 LD L,97       ; {Collect the character's x- and y-coordinates in #REGe
  25555 LD D,(HL)     ; and #REGd
  25556 INC L         ;
  25557 LD E,(HL)     ; }
@@ -3351,7 +3351,7 @@ s27621 DEFS 11
 c27632 BIT 7,A       ; Set the zero flag if the character is facing left
 ; This entry point is used by the routine at #R27823 with #REGh=#b172 (ERIC).
 @label=*
- 27634 LD A,D        ; #REGa=character's y-coordinate
+*27634 LD A,D        ; #REGa=character's y-coordinate
  27635 JR NZ,27694   ; Jump if the character is facing right
  27637 CP 155        ; Set the zero flag if the character is on the top floor
  27639 LD A,E        ; #REGa=character's x-coordinate
@@ -8765,6 +8765,7 @@ b32768 DEFB 0,255,170,255,170,171,171,170,170,128,129,128,128,255,170,170
  32976 DEFB 255,255,0,95,255,255,255,96,192,255,255,127,255,255,255,255
  32992 DEFB 255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,129
  33008 DEFB 14,126,126,126,126,126,126,112,64,0,0,0,0,0,0,2
+@label=
  33024 DEFB 0,223,213,255,213,213,213,219,214,128,254,128,128,255,85,85
  33040 DEFB 80,80,255,85,0,0,85,85,127,1,1,1,1,255,85,67
  33056 DEFB 67,85,103,255,1,113,101,192,128,129,191,255,95,85,1,0
@@ -16447,7 +16448,7 @@ c62771 LD HL,32758   ; Decrement the jumping action timer at #R32758 (which
 ; (which means (#REGd,#REGe) is set to (198,32) by the code that follows, and
 ; the routine exits at #R62841).
 @label=*
- 62819 LD L,97       ; Byte #b97 of ERIC's buffer holds his y-coordinate
+*62819 LD L,97       ; Byte #b97 of ERIC's buffer holds his y-coordinate
  62821 LD D,(HL)     ; Pick this up in #REGd
  62822 INC D         ; Down a level (where the boy that ERIC is standing on
                      ; would be, if any)
