@@ -158,23 +158,23 @@ u24699 SET 7,E       ; Point #REGde at the attribute byte for the skool
                      ; coordinates (X,Y)
  24701 LD A,(DE)     ; Pick the attribute byte up in #REGa
  24702 RES 7,E       ; Restore the skool coordinates (X,Y) to #REGde
- 24704 EXX           ;
+ 24704 EXX
  24705 LD (HL),A     ; Poke the attribute byte onto the screen
- 24706 LD A,C        ;
- 24707 ADD A,E       ;
- 24708 LD E,A        ;
- 24709 JR C,24715    ;
- 24711 LD A,D        ;
- 24712 SUB 8         ;
- 24714 LD D,A        ;
-*24715 ADD HL,BC     ;
- 24716 EXX           ;
- 24717 EX DE,HL      ;
- 24718 INC H         ;
+ 24706 LD A,C
+ 24707 ADD A,E
+ 24708 LD E,A
+ 24709 JR C,24715
+ 24711 LD A,D
+ 24712 SUB 8
+ 24714 LD D,A
+*24715 ADD HL,BC
+ 24716 EXX
+ 24717 EX DE,HL
+ 24718 INC H
  24719 DEC C         ; One more row done
- 24720 POP DE        ;
+ 24720 POP DE
  24721 JR NZ,24683   ; Jump back until all 21 rows are done
- 24723 RET           ;
+ 24723 RET
  24724 DEFS 7
 
 ; Scroll the screen left one column
@@ -245,7 +245,7 @@ c24731 EXX           ;
 ;
 ; Probably remnants of an old version of the routine at #R24731.
 @rsub=!24825-24830
-u24825 LD A,30       ;
+u24825 LD A,30
  24827 LD (32512),A  ; Set the new leftmost column of the skool on-screen
  24830 LD B,32       ; There are 32 character squares in each row of the screen
 
@@ -2038,13 +2038,13 @@ c26471 LD HL,(32759) ; #R32759 holds the lesson clock
 @rsub=!26572-26583
 u26572 JR Z,26568    ; {Remains of the main loop at #R26471
  26574 JP 26471      ; }
- 26577 LD H,L        ;
- 26578 ADD HL,BC     ;
- 26579 PUSH DE       ;
- 26580 EXX           ;
- 26581 EX (SP),HL    ;
- 26582 LD B,D        ;
- 26583 LD C,E        ;
+ 26577 LD H,L
+ 26578 ADD HL,BC
+ 26579 PUSH DE
+ 26580 EXX
+ 26581 EX (SP),HL
+ 26582 LD B,D
+ 26583 LD C,E
 
 ; Get input from the Kempston joystick if it's in use
 ;
@@ -6707,7 +6707,7 @@ u31152 LD (HL),218   ; {(#b22,#b218)=#R55830='<8 spaces>'
  31154 DEC L         ;
  31155 LD (HL),22    ; }
  31157 LD A,32       ; #b32=' ' (space)
- 31159 JP 29442      ;
+ 31159 JP 29442
 
 ; Control EINSTEIN during class (1)
 ;
