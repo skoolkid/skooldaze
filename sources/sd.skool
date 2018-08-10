@@ -570,7 +570,7 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
  25152 CALL 25266    ; Stop now unless it's time to move this character
 ; The character shall be moved. From this point, the following steps are taken:
 ; .
-; #TABLE(default,centre,:w)
+; #TABLE(default,centre,:w)<wrapalign>
 ; { =h Step | =h Action }
 ; { 1       | If there is an uninterruptible subcommand routine address in
 ;             bytes #b111 and #b112 of the character's buffer, jump to it }
@@ -903,7 +903,7 @@ s25373 DEFB 0
 ; Used by the routines at #R25303 and #R32167. On entry, #REGa holds the event
 ; identifier, which will be one of:
 ; .
-; #TABLE(default,centre,:w,,centre)
+; #TABLE(default,centre,:w,,centre)<nowrap>
 ; { =h A | =h Description                                                   | =h Flags | =h Bit }
 ; { #b0  | End of lesson/playtime                                           | #R32712  | 0 }
 ; { #b8  | Teacher has arrived at the Map Room                              | #R32713  | 0 }
@@ -8472,7 +8472,7 @@ g32710 DEFW 0
 ;
 ; Various status flags for the current lesson.
 ; .
-; #TABLE(default,centre,:w)
+; #TABLE(default,centre,:w)<wrapalign>
 ; { =h Bit(s) | =h Meaning }
 ; { 0         | End of lesson/playtime (always reset) }
 ; { 1-3       | Unused }
@@ -8494,7 +8494,7 @@ g32712 DEFB 0
 ; that or check whether a teacher has arrived at the classroom door to start
 ; the lesson.
 ; .
-; #TABLE(default,centre,:w)
+; #TABLE(default,centre,:w)<wrapalign>
 ; { =h Bit(s) | =h Meaning if set }
 ; { 0         | Teacher has arrived at the Map Room }
 ; { 1         | Teacher has arrived at the Reading Room }
@@ -8527,7 +8527,7 @@ g32714 DEFB 0
 ; tell MR WACKER what ERIC's up to, BOY WANDER has hidden a pea-shooter on the
 ; fire escape, or ANGELFACE has mumps).
 ; .
-; #TABLE(default,centre,:w)
+; #TABLE(default,centre,:w)<wrapalign>
 ; { =h Bit(s) | =h Meaning if set }
 ; { 0         | Little boy no. 10 is waiting for ERIC to respond to the message
 ;               just delivered (set and reset by #R63488; checked by #R63352) }
@@ -8709,7 +8709,7 @@ g32762 DEFB 0
 ; If ERIC is doing anything other than walking or standing still, one of the
 ; bits here will be set.
 ; .
-; #TABLE(default,centre,:w,centre,:w)
+; #TABLE(default,centre,:w,centre,:w)<nowrap>
 ; { =h Bit | =h Meaning if set                                         | =h Handler | =h Checked by }
 ; { 0      | ERIC is firing the catapult                               | #R62495    | #R27353 }
 ; { 1      | ERIC is hitting                                           | #R62628    | #R27353 }
