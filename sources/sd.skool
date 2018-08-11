@@ -730,8 +730,8 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
 ; #R64496(#b140), #R64516(#b142), #R64548(#b146), #R64560(#b148),
 ; #R64587(#b150), #R64619(#b154), #R64631(#b156), #R64658(#b158),
 ; #R64690(#b162), #R64702(#b164) and #R64729(#b166).
-@label=DONOWT
- 25247 RET           ;
+@label=*DONOWT
+*25247 RET           ;
 
 ; Terminate a command
 ;
@@ -5047,8 +5047,8 @@ c29284 CALL 28968    ; Collect the identifier of the nearest blackboard in
  29327 LD (HL),145   ; #b106 of the character's buffer with that of the entry
                      ; point at #R29329 (below)}
 ; This entry point is used on subsequent calls.
-@label=WRITELTR
- 29329 CALL 28994    ; Write a single letter on the blackboard
+@label=*WRITELTR
+*29329 CALL 28994    ; Write a single letter on the blackboard
  29332 JR NZ,29351   ; Jump unless the character has finished writing
  29334 CALL 25108    ; Update the SRB for the character's current animatory
                      ; state
@@ -6650,8 +6650,8 @@ c31110 LD L,110      ; {Zero out bytes #b109 and #b110 of the character's
  31115 LD (HL),A     ; }
 ; This entry point is used while the character is waiting for someone else to
 ; stop speaking.
-@label=WAITSPK
- 31116 CALL 29518    ; Make the character start speaking if possible
+@label=*WAITSPK
+*31116 CALL 29518    ; Make the character start speaking if possible
  31119 JP C,25252    ; Terminate this interruptible subcommand if the character
                      ; is off-screen
  31122 LD L,105      ; {Set the interruptible subcommand routine address in
@@ -7540,8 +7540,8 @@ c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
  31860 EX DE,HL      ; }
 ; This entry point is used on subsequent calls when the teacher on dinner duty
 ; has reached the right end of the dinner hall.
-@label=ONDUTY
- 31861 CALL 31188    ; Set the zero flag if ERIC is where he should be
+@label=*ONDUTY
+*31861 CALL 31188    ; Set the zero flag if ERIC is where he should be
 @rem=31895 first so skool2asm spots it; no brackets so pasmo is OK with it
 @ssub=LD DE,31895%256*256+33
  31864 LD DE,38689   ; #REGd=#b151 (LSB of #R31895), #REGe=33 (x-coordinate of
