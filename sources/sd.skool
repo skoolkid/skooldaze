@@ -11164,6 +11164,7 @@ b44415 DEFB 0
  44496 DEFB 228,0,228,0,228,228,0,0,130,0,130,0,130,130,0,0
  44512 DEFB 158,228,158,228,158,158,0,0
 
+@assemble=2
 ; Insert a pixel column into the message graphic buffer
 ;
 ; Used by the routines at #R44776 and #R45937. Slides the current contents of
@@ -11172,7 +11173,6 @@ b44415 DEFB 0
 ;
 ; A Pixel column byte
 @label=SLIDECOL
-@assemble=2
 c44520 EXX           ;
  44521 LD HL,23551   ; Point #REGhl' at the end of the graphic buffer at
                      ; #R23296
@@ -12533,8 +12533,8 @@ c47336 RES 5,(HL)    ; Signal: no key pressed
  47353 CALL 46824    ; Print 'PRESS'C'TO CHANGE NAME' and wait for a keypress
  47356 POP HL        ; Restore the character name message address to #REGhl
  47357 RET           ;
-@assemble=1
 
+@assemble=1
 ; Unused
 u47358 DEFB 184
 
