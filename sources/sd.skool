@@ -7542,8 +7542,7 @@ c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
 ; has reached the right end of the dinner hall.
 @label=*ONDUTY
 *31861 CALL 31188    ; Set the zero flag if ERIC is where he should be
-@rem=31895 first so skool2asm spots it; no brackets so pasmo is OK with it
-@ssub=LD DE,31895%256*256+33
+@ssub=LD DE,33+256*(31895%256)
  31864 LD DE,38689   ; #REGd=#b151 (LSB of #R31895), #REGe=33 (x-coordinate of
                      ; the left end of the teacher's dinner duty orbit)
 ; This entry point is used by the routine at #R31895 with #REGd=#b117 (LSB of
@@ -7590,8 +7589,7 @@ c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
 ; is present.
 @label=DDUTY2
 c31895 CALL 31188    ; Set the zero flag if ERIC is in the dinner hall
-@rem=31861 first so skool2asm spots it; no brackets so pasmo is OK with it
-@ssub=LD DE,31861%256*256+62
+@ssub=LD DE,62+256*(31861%256)
 @keep=30014
  31898 LD DE,30014   ; #REGd=#b117 (LSB of #R31861), #REGe=62 (x-coordinate of
                      ; the right end of the teacher's dinner duty orbit)
