@@ -122,6 +122,7 @@ c23831 DI            ; Disable interrupts
 @replace=/#n\i/#N\1,,,1($)
 @replace=/#b\i/#N\1,,,1(0x)/ (byte)
 @replace=/#w\i/#N(\1,4)/ (word)
+@writer=:skooldaze.SkoolDazeAsmWriter
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
 ; Copyright 2001, 2008-2013, 2015, 2017, 2018 Richard Dymond (this disassembly)
 @org
