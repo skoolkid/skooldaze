@@ -11674,8 +11674,7 @@ c45544 PUSH BC       ;
 @rsub=!45562-45563
  45562 NOP           ;
  45563 NOP           ;
-@rsub=JP 45800
-@rsub=DEFS 2
+@rsub=+DEFS 2
  45564 JP 45800      ;
 
 ; UDG reference for animatory state #b255 at row 0, column 1
@@ -11926,8 +11925,7 @@ c46056 PUSH BC       ;
  46067 POP BC        ;
  46068 POP HL        ; Restore the message address for the character's name to
                      ; #REGhl
-@rsub=RET
-@rsub=DEFB 0
+@rsub=+DEFB 0
  46069 RET           ;
 
 ; Print 'PRESS'C'TO CHANGE NAME'
