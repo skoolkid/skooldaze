@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017, 2018 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2019 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -6,6 +6,7 @@
 ; copied to the screen by the routine at #R45032.
 b23296 DEFS 256
 
+@defs=23552:1024
 ; System variables and BASIC program area
 i23552 DEFS 1024
 
@@ -21,7 +22,7 @@ i23552 DEFS 1024
 ; http://skoolkit.ca/
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017, 2018 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017-2019 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
