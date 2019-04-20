@@ -1553,10 +1553,11 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
  25986 RET NZ        ; Return if so
 @rsub=!25987-25989
  25987 BIT 6,A       ; {Bit 6 of ERIC's status flags at #R32763 is always
+                     ; reset, so this jump
 @nowarn
-@ofix=/JR NZ,26067   ; reset, so this jump is never made}
- 25989 JR NZ,26068   ; reset, so this jump (which should be to #R26067) is
-                     ; never made}
+@ofix=JR NZ,26067    ;
+ 25989 JR NZ,26068   ; (which should be to #R26067)
+                     ; is never made}
  25991 LD A,D        ; #REGa=ERIC's y-coordinate
  25992 CP 169        ; Is ERIC on the bottom floor?
  25994 JR Z,26067    ; Jump forward to move him left or right if so
