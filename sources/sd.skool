@@ -1665,15 +1665,15 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
  26132 INC E         ; {One pace to the right (taking into the account the one
  26133 INC E         ; pace to the left made above)}
 *26134 LD A,B        ; #REGa=#AS2(#b2/#b130)
-@bfix=BIT 0,L        ; {#REGa=#AS1(#b1/#b129), #REGb=#AS2(#b2/#b130) if ERIC's
- 26135 BIT 0,L       ; {#REGa=#AS3(#b3/#b131), #REGb=#AS2(#b2/#b130) if ERIC's
+@bfix=BIT 0,L        ; {#REGa=#AS1(#b1/#b129),
+ 26135 BIT 0,L       ; {#REGa=#AS3(#b3/#b131),
 @bfix=JR Z,26143
- 26137 JR Z,26141    ; current x-coordinate is even#IF({fix}<2)( (which is a
-@bfix=DEC B
- 26139 DEC B         ; #BUG#oneFourThreeFour(bug))); #REGa=#AS3(#b3/#b131),
- 26140 DEC B         ; #REGb=#AS0(#b0/#b128) if ERIC's current x-coordinate is
+ 26137 JR Z,26141    ; #REGb=#AS2(#b2/#b130) if ERIC's current x-coordinate is
+@bfix=DEC B          ; even;
+ 26139 DEC B         ; even (which is a #BUG#oneFourThreeFour(bug));
+ 26140 DEC B         ; #REGa=#AS3(#b3/#b131), #REGb=#AS0(#b0/#b128) if ERIC's
 @if({fix}>1)(label=)
-*26141 ADD A,2       ; odd
+*26141 ADD A,2       ; current x-coordinate is odd
 @if({fix}>1)(label=*)
  26143 DEC A         ; }
  26144 JP 25916      ; Update ERIC's animatory state and location
