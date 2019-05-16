@@ -19,7 +19,7 @@ i23552 DEFS 1024
 @replace=/#w\i/#N(\1,4)/ (word)
 @writer=:skooldaze.SkoolDazeAsmWriter
 ; Skool Daze disassembly
-; http://skoolkit.ca/
+; https://skoolkit.ca
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
 ; Copyright 2008-2015, 2017-2019 Richard Dymond (this disassembly)
@@ -44,13 +44,13 @@ i23552 DEFS 1024
 ;   * Doubly dirty blackboards
 @rfix+end
 @ofix+begin
-; See http://skoolkit.ca/disassemblies/skool_daze/reference/bugs.html for full
+; See https://skoolkit.ca/disassemblies/skool_daze/reference/bugs.html for full
 ; descriptions of these bugs.
 @ofix+end
 @bfix+begin
 ;
 ; This disassembly also contains fixes for the graphic glitches described at
-; http://skoolkit.ca/disassemblies/skool_daze/graphics/glitches.html
+; https://skoolkit.ca/disassemblies/skool_daze/graphics/glitches.html
 @bfix+end
 
 @isub+begin
