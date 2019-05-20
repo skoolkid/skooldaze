@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017, 2019 Richard Dymond (rjdymond@gmail.com)
 
 [Page:PlayArea]
 PageContent=<div>#CALL:play_area(play_area,0,0,96,21,2,0,8)</div>
@@ -16,7 +16,7 @@ PageContent=#INCLUDE(PlayAreaTiles)
 <div class="H">(x,y)=(10,9)</div>
 <table>
 <tr>
-<td><img alt="10,9" src="80db20.png"/></td>
+<td><img alt="10,9" src="#IF({vars[pub]}>2)(../)../images/patiles/80db20.png"/></td>
 <td>
 <i>ref_addr</i>=(x,y+#b152)=#w41226<br/>
 <i>ref</i>=#b219, <i>udg_page</i>=#b128<br/>
@@ -116,13 +116,13 @@ location in the play area.
 [Template:play_area_tile]
 <td>
 <div class="T" onclick="s('s{x}x{y}')">
-<img alt="{x},{y}" src="{img_fname}"/>
+{img}
 </div>
 <div id="s{x}x{y}" class="B P" onclick="h(this)">
 <div class="H">(x,y)=({x},{y})</div>
 <table>
 <tr>
-<td><img alt="{x},{y}" src="{img_fname}"/></td>
+<td>{img}</td>
 <td>
 <i>ref_addr</i>=(x,y+{y_offset})={ref_addr}<br/>
 <i>ref</i>={ref}, <i>udg_page</i>={udg_page}<br/>
@@ -181,7 +181,7 @@ PageContent=#INCLUDE(AnimatoryStateTiles)
 <div class="H">#b0: row 1, column 1</div>
 <table>
 <tr>
-<td><img alt="#b0:1,1" src="b901.png"/></td>
+<td><img alt="#b0:1,1" src="#IF({vars[pub]}>2)(../)../images/astiles/b901.png"/></td>
 <td>
 <i>lsb</i>=#b0, <i>ref_page</i>=#b178<br/>
 <i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)=#w45568<br/>
@@ -356,13 +356,13 @@ state with <i>udg_page</i>=#b201 (as used by a teacher, i.e. character numbers
 
 [Template:astile]
 <div class="T" onclick="s('{bubble_id}')">
-<img alt="{state}:{row},{column}" src="{img_fname}"/>
+{img}
 </div>
 <div id="{bubble_id}" class="B P" onclick="h(this)">
 <div class="H">{state}: row {row}, column {column}</div>
 <table>
 <tr>
-<td><img alt="{state}:{row},{column}" src="{img_fname}"/></td>
+<td>{img}</td>
 <td>
 <i>lsb</i>={lsb}, <i>ref_page</i>={ref_page}<br/>
 <i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={ref_addr}<br/>
@@ -375,13 +375,13 @@ state with <i>udg_page</i>=#b201 (as used by a teacher, i.e. character numbers
 
 [Template:astile_null]
 <div class="T" onclick="s('{bubble_id}')">
-<img alt="{state}:{row},{column}" src="{img_fname}"/>
+{img}
 </div>
 <div id="{bubble_id}" class="B P" onclick="h(this)">
 <div class="H">{state}: row {row}, column {column}</div>
 <table>
 <tr>
-<td><img alt="{state}:{row},{column}" src="{img_fname}"/></td>
+<td>{img}</td>
 <td>
 <i>lsb</i>={lsb}, <i>ref_page</i>={ref_page}<br/>
 <i>ref_addr</i>=(<i>lsb</i>,<i>ref_page</i>)={ref_addr}<br/>
