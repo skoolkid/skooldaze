@@ -23,7 +23,7 @@
 <div class="description">78AA: Make a teacher give lines to the closest main kid</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="6A3C.html">6A3C</a>. Makes a teacher who has been knocked over give lines to the closest main kid (if any).
@@ -49,125 +49,145 @@ Used by the routine at <a href="6A3C.html">6A3C</a>. Makes a teacher who has bee
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78aa"></span>78AA</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78ab"></span>78AB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FFB)</td>
 <td class="comment-11" rowspan="1">Copy ERIC's status flags from <a href="7FFB.html">7FFB</a> to <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78ae"></span>78AE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$AC62</td>
 <td class="comment-11" rowspan="4">Pick up ERIC's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78b1"></span>78B1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78b2"></span>78B2</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78b3"></span>78B3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78b4"></span>78B4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$038E</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=3 (number of main kids besides ERIC), <span class="register">C</span>=LSB of <a href="7F8C.html#7f8e">7F8E</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78b7"></span>78B7</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 2,A</td>
 <td class="comment-11" rowspan="1">Is ERIC jumping?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78b9"></span>78B9</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$78CC</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78bb"></span>78BB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78bc"></span>78BC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$9B</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78be"></span>78BE</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $9C</td>
 <td class="comment-11" rowspan="1">Is ERIC jumping on the top floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78c0"></span>78C0</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$78CF</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78c2"></span>78C2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$A2</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78c4"></span>78C4</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A3</td>
 <td class="comment-11" rowspan="1">Is ERIC jumping on the middle floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78c6"></span>78C6</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$78CF</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78c8"></span>78C8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$A9</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78ca"></span>78CA</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR $78CF</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78cc"></span>78CC</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6E90.html#6e96">$6E96</a></td>
 <td class="comment-11" rowspan="1">Get the floor nearest ERIC (0x9B, 0xA2, 0xA9) in <span class="register">D</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78cf"></span>78CF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD ($7F8C),DE</td>
 <td class="comment-11" rowspan="1">Store ERIC's normalised coordinates in <a href="7F8C.html">7F8C</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="78d3"></span>
 <div class="comments">
 <div class="paragraph">
@@ -179,125 +199,145 @@ Here we enter a loop that calculates BOY WANDER's, ANGELFACE's and EINSTEIN's no
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78d3"></span>78D3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$A7</td>
 <td class="comment-11" rowspan="1">0xA7=BOY WANDER</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78d5"></span>78D5</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6E90.html">$6E90</a></td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=floor nearest the kid (0x9B, 0xA2, 0xA9)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78d8"></span>78D8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,C</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x8E, 0x90 or 0x92</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78d9"></span>78D9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
 <td class="comment-11" rowspan="1">Store the kid's character number in <span class="register">A</span> temporarily</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78da"></span>78DA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$7F</td>
 <td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7F8C.html#7f8e">7F8E</a>, <a href="7F8C.html#7f90">7F90</a> or <a href="7F8C.html#7f92">7F92</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78dc"></span>78DC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
 <td class="comment-11" rowspan="3">Store the kid's normalised coordinates here</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78dd"></span>78DD</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78de"></span>78DE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78df"></span>78DF</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the next normalised coordinates slot</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e0"></span>78E0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,L</td>
 <td class="comment-11" rowspan="1">Save <span class="register">L</span> in <span class="register">C</span> temporarily</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e1"></span>78E1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
 <td class="comment-11" rowspan="1">Restore the kid's character number (0xA7-0xA9) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e2"></span>78E2</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
 <td class="comment-11" rowspan="1">Next kid</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e3"></span>78E3</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $78D5</td>
 <td class="comment-11" rowspan="1">Jump back until the three main kids have been done</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e5"></span>78E5</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="2">Restore the teacher's character number (0xA3-0xA6) to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e6"></span>78E6</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e7"></span>78E7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
 <td class="comment-11" rowspan="4">Pick up the teacher's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78e9"></span>78E9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78ea"></span>78EA</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78eb"></span>78EB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78ec"></span>78EC</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6EA7.html">$6EA7</a></td>
 <td class="comment-11" rowspan="1">Get the lower and upper limits of the teacher's visibility range in <span class="register">C</span> and <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="78ef"></span>
 <div class="comments">
 <div class="paragraph">
@@ -309,137 +349,159 @@ Now we enter a loop to calculate the distance of each main kid from the teacher.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78ef"></span>78EF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7F93</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at EINSTEIN's normalised y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78f2"></span>78F2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$04</td>
 <td class="comment-11" rowspan="1">There are four main kids to check</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="78f4"></span>78F4</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH AF</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78f5"></span>78F5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick up a kid's normalised y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78f6"></span>78F6</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the kid's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78f7"></span>78F7</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP D</td>
 <td class="comment-11" rowspan="1">Compare the normalised y-coordinate with the teacher's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78f8"></span>78F8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=kid's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78f9"></span>78F9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$FF</td>
 <td class="comment-11" rowspan="1">Default assumption: kid and teacher are on different floors</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78fb"></span>78FB</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$790B</td>
 <td class="comment-11" rowspan="1">Jump unless the kid's normalised y-coordinate matches the teacher's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78fd"></span>78FD</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP B</td>
 <td class="comment-11" rowspan="5">Jump forward if the teacher cannot see the kid</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="78fe"></span>78FE</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7902</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7900"></span>7900</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NC,$790B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7902"></span>7902</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7903"></span>7903</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$790B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7905"></span>7905</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=distance between the teacher and the kid (possibly &lt; 0)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7906"></span>7906</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NC,$790A</td>
 <td class="comment-11" rowspan="1">Jump if the kid is to the right of the teacher (<span class="register">A</span>&gt;=0)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7908"></span>7908</td>
+<td class="bytes-0"></td>
 <td class="instruction">NEG</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="790a"></span>790A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-11" rowspan="1">Store the absolute distance between the teacher and the kid (if they are close to each other)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="790b"></span>790B</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
 <td class="comment-11" rowspan="4">Point <span class="register">HL</span> at the normalised y-coordinate of the next main kid and jump back until all four have been checked</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="790c"></span>790C</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP AF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="790d"></span>790D</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="790e"></span>790E</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$78F4</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="7910"></span>
 <div class="comments">
 <div class="paragraph">
@@ -451,83 +513,96 @@ Finally, we enter a loop to determine which main kid (if any) is closest to the 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7910"></span>7910</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
 <td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7F8C.html">7F8C</a> (holding ERIC's distance from the teacher)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7911"></span>7911</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$04</td>
 <td class="comment-11" rowspan="1">There are four main kids to consider</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7913"></span>7913</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$FF</td>
 <td class="comment-11" rowspan="1">0xFF was used to signal that the kid was not on the same floor as the teacher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7915"></span>7915</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="6">When this loop is finished, <span class="register">A</span> will hold the distance between the teacher and the closest main kid (or 0xFF if none of the kids were nearby)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7916"></span>7916</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$7919</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7918"></span>7918</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7919"></span>7919</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="791a"></span>791A</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="791b"></span>791B</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $7915</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="791d"></span>791D</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="1">Were any of the main kids close to the teacher?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="791e"></span>791E</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7922</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7920"></span>7920</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1">Restore the teacher's character number to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7921"></span>7921</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="7922"></span>
 <div class="comments">
 <div class="paragraph">
@@ -539,96 +614,112 @@ So at least one of the main kids is within range. Which one will get lines?
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7922"></span>7922</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=distance between the teacher and the nearest kid</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7923"></span>7923</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$8C</td>
 <td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7F8C.html">7F8C</a> (holding ERIC's distance from the teacher)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7925"></span>7925</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC D</td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=teacher's y-coordinate + 1</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7926"></span>7926</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$08AC</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=<a href="DD80.html">0x08</a> (NOW DON'T DO IT AGAIN), <span class="register">C</span>=0xAC (ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7929"></span>7929</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-11" rowspan="1">Is ERIC closest to the teacher?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="792a"></span>792A</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7934</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="792c"></span>792C</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,$A6</td>
 <td class="comment-11" rowspan="6">On exit from this loop, <span class="register">C</span> will hold 0xA7 (BOY WANDER), 0xA8 (ANGELFACE), or 0xA9 (EINSTEIN)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="792e"></span>792E</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="792f"></span>792F</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7930"></span>7930</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7931"></span>7931</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7932"></span>7932</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$792E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7934"></span>7934</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,C</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character number of the kid closest to the teacher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7935"></span>7935</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7700.html">$7700</a></td>
 <td class="comment-11" rowspan="1">Give lines to the kid who is closest to the teacher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7938"></span>7938</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1">Restore the teacher's character number to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7939"></span>7939</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -641,10 +732,10 @@ So at least one of the main kids is within range. Which one will get lines?
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/30890.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/30890.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

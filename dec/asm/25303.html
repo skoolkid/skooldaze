@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 25303</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="25266.html">25266</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25303">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25367.html">25367</a></span></td>
+</tr>
+</table>
+<div class="description">25303: Make a character walk up and down until a certain time</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by command lists <a href="64484.html">136</a>, <a href="64496.html">140</a>, <a href="64516.html">142</a>, <a href="64536.html">144</a>, <a href="64548.html">146</a>, <a href="64560.html">148</a>, <a href="64587.html">150</a>, <a href="64607.html">152</a>, <a href="64619.html">154</a>, <a href="64631.html">156</a>, <a href="64658.html">158</a>, <a href="64678.html">160</a>, <a href="64690.html">162</a>, <a href="64702.html">164</a>, <a href="64729.html">166</a>, <a href="64749.html">168</a>, <a href="64761.html">170</a>, <a href="64769.html">172</a>, <a href="64785.html">174</a>, <a href="64801.html">176</a>, <a href="64809.html">178</a>, <a href="64825.html">180</a>, <a href="64869.html">186</a>, <a href="64876.html">188</a>, <a href="64923.html">198</a>, <a href="64931.html">200</a>, <a href="64939.html">202</a>, <a href="64975.html">206</a>, <a href="64230.html">208</a>, <a href="64240.html">210</a>, <a href="64265.html">212</a>, <a href="64288.html">214</a>, <a href="64314.html">216</a>, <a href="64341.html">218</a> and <a href="64219.html">222</a> to make a character walk up and down within 7 spaces to the left of a fixed location (the 'walkabout origin') until a specified time, e.g. the end of the lesson or when a teacher arrives at the doorway of the classroom.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (152-169)</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">122</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25303"></span>25303</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 122 of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25304"></span>25304</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 159</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25306"></span>25306</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25307"></span>25307</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="24972.html">24972</a></td>
+<td class="comment-11" rowspan="1">Collect the signal byte from the command list</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25310"></span>25310</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,101</td>
+<td class="comment-11" rowspan="2">Place the signal byte in byte 101 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25312"></span>25312</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25313"></span>25313</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,99</td>
+<td class="comment-11" rowspan="2">Change the address in bytes 99 and 100 of the character's buffer from <a href="25303.html">25303</a> to <a href="25303.html#25317">25317</a> (below)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25315"></span>25315</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),229</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25317"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="27442.html">27442</a> and <a href="27453.html">27453</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25317"></span>25317</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,101</td>
+<td class="comment-11" rowspan="2">Collect the signal byte from byte 101 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25319"></span>25319</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25320"></span>25320</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="25374.html">25374</a></td>
+<td class="comment-11" rowspan="1">Has this signal been raised?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25323"></span>25323</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,25356</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25325"></span>
+<div class="comments">
+<div class="paragraph">
+The time has come to stop moving about. However, before we move on in the command list, the character needs to return to the walkabout origin.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25325"></span>25325</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2">Collect the x-coordinate of the walkabout origin from byte 102 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25326"></span>25326</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25327"></span>25327</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="1">Byte 98 holds the character's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25329"></span>25329</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Is the character at the walkabout origin?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25330"></span>25330</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,25339</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25332"></span>25332</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 holds the character's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25334"></span>25334</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 0,(HL)</td>
+<td class="comment-11" rowspan="1">Is the character midstride?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25336"></span>25336</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP Z,<a href="25248.html#25256">25256</a></td>
+<td class="comment-11" rowspan="1">Move to the next command in the command list if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25339"></span>25339</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,107</td>
+<td class="comment-11" rowspan="2">Fill in the new walkabout destination (either the origin or some location within 7 spaces to the left of the origin)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25341"></span>25341</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25342"></span>25342</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2">Initialise the counter at byte 108 to 30, which will give the character enough time to get to the destination</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25343"></span>25343</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),30</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25345"></span>25345</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD BC,25404</td>
+<td class="comment-11" rowspan="5">Place the address of the interruptible subcommand routine at <a href="25404.html">25404</a> (guide character to destination) into bytes 105 and 106 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25348"></span>25348</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,105</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25350"></span>25350</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25351"></span>25351</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25352"></span>25352</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),B</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25353"></span>25353</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25354"></span>25354</td>
+<td class="bytes-0"></td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25355"></span>25355</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Make an indirect jump to <a href="25404.html">25404</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25356"></span>
+<div class="comments">
+<div class="paragraph">
+The signal has not been raised yet, so it's time for another mini-walkabout.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25356"></span>25356</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the x-coordinate of the walkabout origin</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25357"></span>25357</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="24993.html">24993</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25360"></span>25360</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="2">-7&lt;=<span class="register">A</span>&lt;=0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25362"></span>25362</td>
+<td class="bytes-0"></td>
+<td class="instruction">SUB 7</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25364"></span>25364</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,(HL)</td>
+<td class="comment-11" rowspan="1">Add the x-coordinate of the walkabout origin</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25365"></span>25365</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 25339</td>
+<td class="comment-11" rowspan="1">Make this the new walkabout destination</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="25266.html">25266</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25303">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25367.html">25367</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/62D7.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

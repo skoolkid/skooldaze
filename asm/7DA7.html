@@ -23,7 +23,7 @@
 <div class="description">7DA7: Make BOY WANDER write on a blackboard if the teacher hasn't arrived yet</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by BOY WANDER's command lists <a href="FC30.html">0x94</a>, <a href="FC77.html">0x9C</a> and <a href="FCBE.html">0xA4</a>.
@@ -49,24 +49,28 @@ Used by BOY WANDER's command lists <a href="FC30.html">0x94</a>, <a href="FC77.h
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7da7"></span>7DA7</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="618C.html">$618C</a></td>
 <td class="comment-11" rowspan="1">Get the event ID (0x09, 0x0A or 0x0B) from the command list</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7daa"></span>7DAA</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="631E.html">$631E</a></td>
 <td class="comment-11" rowspan="1">Has the teacher arrived yet?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7dad"></span>7DAD</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,<a href="7D9E.html">$7D9E</a></td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7daf"></span>7DAF</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="62A0.html#62a8">$62A8</a></td>
 <td class="comment-11" rowspan="1">Otherwise move to the next command in the command list</td>
 </tr>
@@ -79,10 +83,10 @@ Used by BOY WANDER's command lists <a href="FC30.html">0x94</a>, <a href="FC77.h
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/32167.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/32167.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

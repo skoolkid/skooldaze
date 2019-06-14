@@ -23,7 +23,7 @@
 <div class="description">6AA7: Deal with ERIC when he's been knocked over</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="6AD9.html">6AD9</a> when bit 4 of ERIC's status flags at <a href="7FFB.html">7FFB</a> is set (by the routine at <a href="6F99.html">6F99</a>, <a href="6D1C.html">6D1C</a> or <a href="6B97.html">6B97</a>).
@@ -46,41 +46,47 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 4 of ERIC's status 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6aa7"></span>6AA7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FF5</td>
 <td class="comment-11" rowspan="2"><a href="7FF5.html">7FF5</a> holds the delay counter used when ERIC has been knocked over; pick up its value (0x00-0x28) in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6aaa"></span>6AAA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6aab"></span>6AAB</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Has ERIC just been struck (<span class="register">A</span>=0x00)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6aac"></span>6AAC</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6AB7</td>
 <td class="comment-11" rowspan="1">Adjust his animatory state if so (and initialise the delay counter to 0x28)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6aae"></span>6AAE</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
 <td class="comment-11" rowspan="1">Decrement the knockout delay counter</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6aaf"></span>6AAF</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP NZ,<a href="FE57.html">$FE57</a></td>
 <td class="comment-11" rowspan="1">Make a knocked-out sound effect if ERIC's just been struck</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6ab2"></span>
 <div class="comments">
 <div class="paragraph">
@@ -92,23 +98,26 @@ The knockout delay counter at <a href="7FF5.html">7FF5</a> has reached zero, so 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ab2"></span>6AB2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$FB</td>
 <td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7FFB.html">7FFB</a> (ERIC's status flags)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ab4"></span>6AB4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$80</td>
 <td class="comment-11" rowspan="1">Set bit 7 (indicating that ERIC is sitting or lying down) and reset bit 4 (so that we don't visit this routine again)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ab6"></span>6AB6</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6ab7"></span>
 <div class="comments">
 <div class="paragraph">
@@ -120,102 +129,119 @@ ERIC has just been struck; decide whether he should be sitting on the floor or l
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6ab7"></span>6AB7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$28</td>
 <td class="comment-11" rowspan="1">Initialise the knockout delay counter at <a href="7FF5.html">7FF5</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ab9"></span>6AB9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$E9</td>
 <td class="comment-11" rowspan="2">Set <a href="7FE9.html">7FE9</a> to 0, indicating that ERIC is not midstride</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6abb"></span>6ABB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6abc"></span>6ABC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$FB</td>
 <td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7FFB.html">7FFB</a> (ERIC's status flags)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6abe"></span>6ABE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$90</td>
 <td class="comment-11" rowspan="1">Set bit 7 (indicating that ERIC is sitting or lying down) and keep bit 4 set (so that we visit this routine again)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ac0"></span>6AC0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$AC</td>
 <td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ac2"></span>6AC2</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for ERIC's current location</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ac5"></span>6AC5</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $05</td>
 <td class="comment-11" rowspan="1"><a href="../graphics/as.html#5">0x05</a>=animatory state of ERIC sitting on a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ac7"></span>6AC7</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6ACD</td>
 <td class="comment-11" rowspan="1">Jump if ERIC's sitting on a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ac9"></span>6AC9</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $80</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6acb"></span>6ACB</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$06</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6acd"></span>6ACD</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#6">0x06</a> (ERIC sitting on the floor) or <a href="../graphics/as.html#7">0x07/0x87</a> (ERIC lying on his back)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ace"></span>6ACE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
 <td class="comment-11" rowspan="1">Store ERIC's new animatory state in <span class="register">B</span> temporarily</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6acf"></span>6ACF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ad0"></span>6AD0</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="79FD.html#7a0a">$7A0A</a></td>
 <td class="comment-11" rowspan="1">Get the y-coordinate of the floor ERIC's on in <span class="register">D</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ad3"></span>6AD3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="1">Restore ERIC's new animatory state to <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ad4"></span>6AD4</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update ERIC's animatory state and update the SRB</td>
 </tr>
@@ -228,10 +254,10 @@ ERIC has just been struck; decide whether he should be sitting on the floor or l
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/27303.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/27303.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

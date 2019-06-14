@@ -23,7 +23,7 @@
 <div class="description">7072: Make BOY WANDER fire his catapult (6)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The address of this uninterruptible subcommand routine is placed into bytes 0x6F and 0x70 of BOY WANDER's buffer by the routine at <a href="7067.html">7067</a>.
@@ -49,36 +49,42 @@ The address of this uninterruptible subcommand routine is placed into bytes 0x6F
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7072"></span>7072</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for BOY WANDER's current animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7075"></span>7075</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$71</td>
 <td class="comment-11" rowspan="2">Byte 0x71 of BOY WANDER's buffer holds his pre-fire animatory state; pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7077"></span>7077</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7078"></span>7078</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6F</td>
 <td class="comment-11" rowspan="2">Replace the address of this uninterruptible subcommand routine in bytes 0x6F and 0x70 of BOY WANDER's buffer with <a href="707F.html">707F</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="707a"></span>707A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$7F</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="707c"></span>707C</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Restore BOY WANDER's pre-fire animatory state and update the SRB</td>
 </tr>
@@ -91,10 +97,10 @@ The address of this uninterruptible subcommand routine is placed into bytes 0x6F
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/28786.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/28786.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

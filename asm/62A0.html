@@ -23,7 +23,7 @@
 <div class="description">62A0: Terminate a command</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The main entry point is used by the routines at <a href="6A46.html">6A46</a>, <a href="6FEF.html">6FEF</a> and <a href="707F.html">707F</a>. Removes the uninterruptible subcommand routine address from bytes 0x6F and 0x70 of the character's buffer, which has the effect of making the routine at <a href="6226.html">6226</a> immediately hand control of the character back to the interruptible subcommand or the primary command.
@@ -46,17 +46,19 @@ The main entry point is used by the routines at <a href="6A46.html">6A46</a>, <a
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62a0"></span>62A0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$70</td>
 <td class="comment-11" rowspan="1">Byte 0x70 of the buffer contains the MSB of the uninterruptible subcommand routine address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62a2"></span>62A2</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR $62AA</td>
 <td class="comment-11" rowspan="1">Jump forward to replace it with 0</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="62a4"></span>
 <div class="comments">
 <div class="paragraph">
@@ -68,17 +70,19 @@ This entry point is used by the routines at <a href="633C.html">633C</a>, <a hre
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62a4"></span>62A4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6A</td>
 <td class="comment-11" rowspan="1">Byte 0x6A of the buffer contains the MSB of the interruptible subcommand routine address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62a6"></span>62A6</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR $62AA</td>
 <td class="comment-11" rowspan="1">Jump forward to replace it with 0</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="62a8"></span>
 <div class="comments">
 <div class="paragraph">
@@ -90,30 +94,35 @@ This entry point is used by the routines at <a href="62D7.html">62D7</a>, <a hre
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62a8"></span>62A8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$64</td>
 <td class="comment-11" rowspan="1">Byte 0x64 of the buffer contains the MSB of the primary command routine address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62aa"></span>62AA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FFD)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character being worked on (0x98-0xAB)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ad"></span>62AD</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
 <td class="comment-11" rowspan="2">Zero out the relevant routine address MSB (in byte 0x64, 0x6A or 0x70) in the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ae"></span>62AE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$00</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62b0"></span>62B0</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR <a href="6226.html#6254">$6254</a></td>
 <td class="comment-11" rowspan="1">Re-enter the character-moving routine (<a href="6226.html">6226</a>) at the checkpoint for the interruptible subcommand</td>
 </tr>
@@ -126,10 +135,10 @@ This entry point is used by the routines at <a href="62D7.html">62D7</a>, <a hre
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/25248.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/25248.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 27543</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27542.html">27542</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27543">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27621.html">27621</a></span></td>
+</tr>
+</table>
+<div class="description">27543: Check whether a chair is occupied and unseat any occupant</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="27517.html">27517</a>. Returns with the carry flag reset if the chair next to the character looking for a seat is not occupied by any of the potential occupants being checked. Otherwise knocks the occupant out of the chair and returns with the carry flag set.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Number of potential occupants to check (11, 3, or 1)</td>
+</tr>
+<tr>
+<td class="register">D</td>
+<td class="register-desc">Number of the first potential occupant to check (152, 167, or 172)</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Number of the character looking for a seat (152-169)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27543"></span>27543</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="2">Byte 98 of a character's buffer holds his x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27545"></span>27545</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27546"></span>27546</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=x-coordinate of the potential dethronee</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27547"></span>27547</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Do the x-coordinates match?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27548"></span>27548</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,27564</td>
+<td class="comment-11" rowspan="1">Jump ahead to consider the next character if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27550"></span>27550</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC E</td>
+<td class="comment-11" rowspan="2"><span class="register">E</span>=<span class="register">L</span>=97 (which byte holds the character's y-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27551"></span>27551</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27552"></span>27552</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=y-coordinate of the potential dethronee</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27553"></span>27553</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Do the y-coordinates match?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27554"></span>27554</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,27564</td>
+<td class="comment-11" rowspan="1">Jump ahead to consider the next character if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27556"></span>27556</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC E</td>
+<td class="comment-11" rowspan="1"><span class="register">E</span>=96</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27557"></span>27557</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of the potential dethronee</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27558"></span>27558</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 15</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27560"></span>27560</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 5</td>
+<td class="comment-11" rowspan="1">Is this character sitting in the chair?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27562"></span>27562</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,27569</td>
+<td class="comment-11" rowspan="1">Dethrone him if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27564"></span>27564</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC D</td>
+<td class="comment-11" rowspan="1">Next character to check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27565"></span>27565</td>
+<td class="bytes-0"></td>
+<td class="instruction">DJNZ 27543</td>
+<td class="comment-11" rowspan="1">Jump back until all potential dethronees have been checked</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27567"></span>27567</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="2">Return with the carry flag reset to indicate that no one was knocked out of the chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27568"></span>27568</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27569"></span>27569</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character sitting in the chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27570"></span>27570</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 172</td>
+<td class="comment-11" rowspan="1">Is ERIC sitting here?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27572"></span>27572</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,27601</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27574"></span>27574</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD DE,32763</td>
+<td class="comment-11" rowspan="1"><a href="32763.html">32763</a> holds ERIC's status flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27577"></span>27577</td>
+<td class="bytes-0"></td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27578"></span>27578</td>
+<td class="bytes-0"></td>
+<td class="instruction">SET 4,(HL)</td>
+<td class="comment-11" rowspan="1">Signal: ERIC has been knocked out of his chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27580"></span>27580</td>
+<td class="bytes-0"></td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="27581"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="27517.html">27517</a> to make the chair-seeking character sit down after having found a vacant seat.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27581"></span>27581</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,112</td>
+<td class="comment-11" rowspan="2">Remove the uninterruptible subcommand routine address from bytes 111 and 112 of the buffer of the character who is going to sit down</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27583"></span>27583</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27585"></span>27585</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=this character's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27587"></span>27587</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27588"></span>27588</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 248</td>
+<td class="comment-11" rowspan="2">Set <span class="register">A</span> to the animatory state of this character sitting in a chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27590"></span>27590</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,5</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27592"></span>27592</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="4">Pick up the character's coordinates in <span class="register">DE</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27593"></span>27593</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27594"></span>27594</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27595"></span>27595</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27596"></span>27596</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27599"></span>27599</td>
+<td class="bytes-0"></td>
+<td class="instruction">SCF</td>
+<td class="comment-11" rowspan="2">Return with the carry flag set to indicate that a character was pushed out of his chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27600"></span>27600</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="27601"></span>
+<div class="comments">
+<div class="paragraph">
+Someone is sitting in the chair, but it isn't ERIC.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27601"></span>27601</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,112</td>
+<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 111 and 112 of the seated character's buffer?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27603"></span>27603</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27604"></span>27604</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27605"></span>27605</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,27613</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="27607"></span>
+<div class="comments">
+<div class="paragraph">
+The current occupant of the chair must be in the process of being dethroned by someone else at the moment (i.e. bytes 111 and 112 of his buffer hold the address of the uninterruptible subcommand routine at <a href="27733.html">27733</a>). In that case, the chair-seeking character will give way to the dethroner and look for another chair.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27607"></span>27607</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="2"><span class="register">A</span>=current animatory state of the character who wants to sit down</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27609"></span>27609</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27610"></span>27610</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="2">Put this character midstride; this has the effect of making him walk to the next chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27611"></span>27611</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 27592</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="27613"></span>
+<div class="comments">
+<div class="paragraph">
+The current occupant of the chair can be dethroned. Make it so.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27613"></span>27613</td>
+<td class="bytes-0"></td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27614"></span>27614</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),108</td>
+<td class="comment-11" rowspan="3">Place the address of the uninterruptible subcommand routine at <a href="27733.html">27733</a> into bytes 111 and 112 of the seated character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27616"></span>27616</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27617"></span>27617</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),85</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27619"></span>27619</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 27580</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27542.html">27542</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27543">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27621.html">27621</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/6B97.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

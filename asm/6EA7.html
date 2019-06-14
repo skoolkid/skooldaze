@@ -23,7 +23,7 @@
 <div class="description">6EA7: Get the x-coordinate range within which a character can see or be seen</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78AA</a>. Returns with <span class="register">C</span> and <span class="register">B</span> holding the lower and upper x-coordinates of the range within which the target character can see or be seen. This routine is called with <span class="register">DE</span> holding either (a) the coordinates of a teacher (to determine where kids must be in order to get lines), or (b) the coordinates of a kid (to determine where a teacher must be in order to give lines).
@@ -53,107 +53,124 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6ea7"></span>6EA7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=x (character's x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ea8"></span>6EA8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$6000</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=0x60, <span class="register">C</span>=0x00 (maximum and minimum bounds)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eab"></span>6EAB</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $0A</td>
 <td class="comment-11" rowspan="1">Is the character's x-coordinate &lt; 10?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ead"></span>6EAD</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$6EC4</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eaf"></span>6EAF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
 <td class="comment-11" rowspan="1"><span class="register">C</span>=x-10</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb0"></span>6EB0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=floor nearest to the character</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb1"></span>6EB1</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
 <td class="comment-11" rowspan="1">Is the character nearest the bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb3"></span>6EB3</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6EC4</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb5"></span>6EB5</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A2</td>
 <td class="comment-11" rowspan="1">Set the zero flag if the character is nearest the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb7"></span>6EB7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$26</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the Exam Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eb9"></span>6EB9</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6EBD</td>
 <td class="comment-11" rowspan="1">Jump if the character is nearest the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ebb"></span>6EBB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$39</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the Map Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6ebd"></span>6EBD</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP C</td>
 <td class="comment-11" rowspan="1">Is the character more than 10 paces to the right of a wall?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ebe"></span>6EBE</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$6EC4</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ec0"></span>6EC0</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
 <td class="comment-11" rowspan="1">Is the character to the left of a wall?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ec1"></span>6EC1</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NC,$6EC4</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ec3"></span>6EC3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
 <td class="comment-11" rowspan="1"><span class="register">C</span>=x-coordinate of the wall that the character is within 10 paces to the right of</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6ec4"></span>
 <div class="comments">
 <div class="paragraph">
@@ -165,108 +182,126 @@ Now <span class="register">C</span> holds the lower x-coordinate of the visibili
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6ec4"></span>6EC4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=x (character's x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ec5"></span>6EC5</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$0A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=x+10</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ec7"></span>6EC7</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP B</td>
 <td class="comment-11" rowspan="1">Is the character within 10 paces of the far right wall?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ec8"></span>6EC8</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ec9"></span>6EC9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=x+10</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eca"></span>6ECA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=floor nearest to the character</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ecb"></span>6ECB</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
 <td class="comment-11" rowspan="1">Is the character nearest the bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ecd"></span>6ECD</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ece"></span>6ECE</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A2</td>
 <td class="comment-11" rowspan="1">Set the zero flag if the character is nearest the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed0"></span>6ED0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$25</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the White Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed2"></span>6ED2</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6ED6</td>
 <td class="comment-11" rowspan="1">Jump if the character is nearest the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed4"></span>6ED4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$38</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the Reading Room wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6ed6"></span>6ED6</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP B</td>
 <td class="comment-11" rowspan="1">Is the character more than 10 paces to the left of a wall?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed7"></span>6ED7</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed8"></span>6ED8</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
 <td class="comment-11" rowspan="1">Is the character to the right of a wall?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ed9"></span>6ED9</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6eda"></span>6EDA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=x-coordinate of the wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6edb"></span>6EDB</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -279,10 +314,10 @@ Now <span class="register">C</span> holds the lower x-coordinate of the visibili
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/28327.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/28327.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

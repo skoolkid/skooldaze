@@ -23,7 +23,7 @@
 <div class="description">6E33: Select a special PLAYTIME occasionally</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, this routine returns with the identifier of a 'special' playtime (<a href="../lessons/F3.html">0xF3</a>, <a href="../lessons/F4.html">0xF4</a> or <a href="../lessons/F5.html">0xF5</a>) in <span class="register">A</span>; the rest of the time it returns with <span class="register">A</span> holding the PLAYTIME identifier from the <a href="FE00.html">main timetable</a>.
@@ -53,36 +53,42 @@ Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, t
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e33"></span>6E33</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $07</td>
 <td class="comment-11" rowspan="2"><span class="register">A</span>=random number between 0xEE and 0xF5</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e35"></span>6E35</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$EE</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e37"></span>6E37</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $F3</td>
 <td class="comment-11" rowspan="2">Return if <span class="register">A</span> is 0xF3, 0xF4, or 0xF5 (one of the 'special' playtimes)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e39"></span>6E39</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e3a"></span>6E3A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="2">Otherwise return with <span class="register">A</span> holding the PLAYTIME identifier from the main timetable</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e3b"></span>6E3B</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
@@ -95,10 +101,10 @@ Used by the routine at <a href="F905.html">F905</a>. Three times out of eight, t
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/28211.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/28211.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

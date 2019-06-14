@@ -23,7 +23,7 @@
 <div class="description">7CD0: Check whether ERIC and EINSTEIN are in class</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F400</a>. If EINSTEIN is in class, this routine returns to the caller with the zero flag set if and only if ERIC is present too. If EINSTEIN is not yet sitting down in class, it makes the teacher wait until he shows up.
@@ -49,54 +49,63 @@ Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F40
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7cd0"></span>7CD0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($A960)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=EINSTEIN's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cd3"></span>7CD3</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $15</td>
 <td class="comment-11" rowspan="1"><a href="../graphics/as.html#21">0x15</a>=EINSTEIN sitting in a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cd5"></span>7CD5</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="79D4.html">$79D4</a></td>
 <td class="comment-11" rowspan="1">Jump if EINSTEIN is sitting in a chair</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cd8"></span>7CD8</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="5">Place the address of the instruction that called this routine into bytes 0x63 and 0x64 of the teacher's buffer, so that control of the teacher remains in this routine until EINSTEIN is seated</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cd9"></span>7CD9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$63</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cdb"></span>7CDB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cdc"></span>7CDC</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $03</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cde"></span>7CDE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cdf"></span>7CDF</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -109,10 +118,10 @@ Used by the routines at <a href="F300.html">F300</a> and <a href="F400.html">F40
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/31952.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/31952.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

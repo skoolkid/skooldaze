@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 63749</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63734.html">63734</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63749">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63767.html">63767</a></span></td>
+</tr>
+</table>
+<div class="description">63749: Collect the identifier for the next lesson</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="26342.html">26342</a>. Returns with <span class="register">A</span> holding the identifier (224-255) for the next lesson. If the next lesson is PLAYTIME, one of the 'special' PLAYTIMEs (<a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a>) may be chosen in place of the main timetable entry.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">Lesson number (0-63)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63749"></span>63749</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,254</td>
+<td class="comment-11" rowspan="2">Pick up the lesson identifier (224-255) from the <a href="65024.html">main timetable</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63751"></span>63751</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63752"></span>63752</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 243</td>
+<td class="comment-11" rowspan="1">Is it PLAYTIME (243-255)?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63754"></span>63754</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">Return if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63755"></span>63755</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32746)</td>
+<td class="comment-11" rowspan="1"><a href="32746.html">32746</a> holds the game mode indicator</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63758"></span>63758</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Set the zero flag if we're in demo mode</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63759"></span>63759</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="2">Restore the lesson identifier to <span class="register">A</span> and return if we're in demo mode</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63760"></span>63760</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET Z</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63761"></span>63761</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="24993.html">24993</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63764"></span>63764</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="28211.html">28211</a></td>
+<td class="comment-11" rowspan="1">Select a 'special' PLAYTIME occasionally</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63734.html">63734</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63749">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63767.html">63767</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/F905.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

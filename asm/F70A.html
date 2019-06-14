@@ -23,7 +23,7 @@
 <div class="description">F70A: Unflash the safe and all the shields</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="6900.html">6900</a> (before starting a new game) and <a href="F8B4.html">F8B4</a> (after ERIC has gone up a year).
@@ -46,96 +46,112 @@ Used by the routines at <a href="6900.html">6900</a> (before starting a new game
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f70a"></span>F70A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$5A00</td>
 <td class="comment-11" rowspan="6">Make anything that is currently flashing on-screen (shields or the safe) not flash any more by directly modifying the attribute file</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f70d"></span>F70D</td>
+<td class="bytes-0"></td>
 <td class="instruction">RES 7,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f70f"></span>F70F</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f710"></span>F710</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f711"></span>F711</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $57</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f713"></span>F713</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F70D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f715"></span>F715</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$9A</td>
 <td class="comment-11" rowspan="9">Reset bit 7 (i.e. turn off FLASH) of the graphic data attribute bytes of everything in the skool from the third row (<span class="register">H</span>=0x9A, where the top floor shields are) to the 15th row (<span class="register">H</span>=0xA6, where the bottom floor shields are)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f717"></span>F717</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$0D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f719"></span>F719</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$DF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f71b"></span>F71B</td>
+<td class="bytes-0"></td>
 <td class="instruction">RES 7,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f71d"></span>F71D</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f71e"></span>F71E</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 7,L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f720"></span>F720</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F71B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f722"></span>F722</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f723"></span>F723</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $F719</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f725"></span>F725</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -148,10 +164,10 @@ Used by the routines at <a href="6900.html">6900</a> (before starting a new game
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/63242.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/63242.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

@@ -23,7 +23,7 @@
 <div class="description">EEE0: Prepare to change the names of the characters</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Continues from <a href="EDE0.html">EDE0</a>. Sets the scene for changing the main characters' names.
@@ -53,84 +53,98 @@ Continues from <a href="EDE0.html">EDE0</a>. Sets the scene for changing the mai
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="eee0"></span>EEE0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$FF</td>
 <td class="comment-11" rowspan="3">Draw a solid line across the screen (the catwalk)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eee2"></span>EEE2</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eee3"></span>EEE3</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $EEE0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eee5"></span>EEE5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$AD68</td>
 <td class="comment-11" rowspan="1"><a href="AD68.html">AD68</a>: 'CAST OF CHARACTERS'</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eee8"></span>EEE8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$4040</td>
 <td class="comment-11" rowspan="1">Set <span class="register">DE</span> to the display file address at which to print this message</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eeeb"></span>EEEB</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="AFE8.html">$AFE8</a></td>
 <td class="comment-11" rowspan="1">Print this message</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eeee"></span>EEEE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$611B</td>
 <td class="comment-11" rowspan="2">Change the instruction at <a href="610B.html#611b">611B</a> in the routine at <a href="610B.html">610B</a> to XOR A, so that the skool is not drawn in the background</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eef1"></span>EEF1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$AF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eef3"></span>EEF3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$9862</td>
 <td class="comment-11" rowspan="5">Set the x-coordinate of every character to 150 (entirely off-screen)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eef6"></span>EEF6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$15</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="eef8"></span>EEF8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$96</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eefa"></span>EEFA</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eefb"></span>EEFB</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $EEF8</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eefd"></span>EEFD</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="EFE0.html">$EFE0</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -143,10 +157,10 @@ Continues from <a href="EDE0.html">EDE0</a>. Sets the scene for changing the mai
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/61152.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/61152.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

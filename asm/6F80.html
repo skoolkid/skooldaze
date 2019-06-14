@@ -23,7 +23,7 @@
 <div class="description">6F80: Make ANGELFACE throw a punch (1)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The address of this uninterruptible subcommand routine is placed into bytes 0x6F and 0x70 of ANGELFACE's buffer by the routine at <a href="6F1E.html">6F1E</a>.
@@ -49,36 +49,42 @@ The address of this uninterruptible subcommand routine is placed into bytes 0x6F
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6f80"></span>6F80</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6F</td>
 <td class="comment-11" rowspan="2">Place the address of the uninterruptible subcommand routine at <a href="6F8E.html">6F8E</a> into bytes 0x6F and 0x70 of ANGELFACE's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f82"></span>6F82</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$8E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f84"></span>6F84</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for ANGELFACE's current animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f87"></span>6F87</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $80</td>
 <td class="comment-11" rowspan="1">Retain the direction bit of ANGELFACE's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f89"></span>6F89</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$2A</td>
 <td class="comment-11" rowspan="1"><a href="../graphics/as.html#42">0x2A</a>=animatory state of ANGELFACE hitting (phase 1)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6f8b"></span>6F8B</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update ANGELFACE's animatory state and update the SRB</td>
 </tr>
@@ -91,10 +97,10 @@ The address of this uninterruptible subcommand routine is placed into bytes 0x6F
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/28544.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/28544.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

@@ -23,7 +23,7 @@
 <div class="description">6980: Update the SRB for one column of a sprite</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="61B0.html">61B0</a>. Sets the bits in the <a href="7F0C.html">screen refresh buffer</a> (SRB) that correspond to the four tiles in the left, middle or right column of a sprite.
@@ -53,72 +53,84 @@ Used by the routine at <a href="61B0.html">61B0</a>. Sets the bits in the <a hre
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6980"></span>6980</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$04</td>
 <td class="comment-11" rowspan="1">There are 4 rows (and 3 columns) in a sprite</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6982"></span>6982</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1">Pick up a sprite UDG reference</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6983"></span>6983</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC D</td>
 <td class="comment-11" rowspan="1">Next row of the sprite</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6984"></span>6984</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Is this the blank UDG?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6985"></span>6985</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6989</td>
 <td class="comment-11" rowspan="1">Jump if so (no need to update this SRB byte)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6987"></span>6987</td>
+<td class="bytes-0"></td>
 <td class="instruction">SET 0,(HL)</td>
 <td class="comment-11" rowspan="1">Set the appropriate bit in the SRB byte; this instruction is modified by the routine at <a href="61B0.html">61B0</a> before this routine is called</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6989"></span>6989</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$04</td>
 <td class="comment-11" rowspan="3">Point <span class="register">HL</span> at the byte of the SRB corresponding to the next row of the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="698b"></span>698B</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="698c"></span>698C</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="698d"></span>698D</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $6982</td>
 <td class="comment-11" rowspan="1">Jump back until all 4 squares in the column are done</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="698f"></span>698F</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 3,D</td>
 <td class="comment-11" rowspan="2">Return with the zero flag reset if we have just updated the SRB for the rightmost column of the sprite</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6991"></span>6991</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
@@ -131,10 +143,10 @@ Used by the routine at <a href="61B0.html">61B0</a>. Sets the bits in the <a hre
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/27008.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/27008.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

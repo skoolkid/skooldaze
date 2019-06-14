@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 62938</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62937.html">62937</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62938">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63055.html">63055</a></span></td>
+</tr>
+</table>
+<div class="description">62938: Collect a keypress during the game (or simulate one in demo mode)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Called from the main loop at <a href="26471.html">26471</a>. Returns with <span class="register">A</span> holding the ASCII code of the last (actual or simulated) keypress, or the zero flag set if there was no (actual or simulated) keypress.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62938"></span>62938</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,32746</td>
+<td class="comment-11" rowspan="1"><a href="32746.html">32746</a> holds the game mode indicator</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62941"></span>62941</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="2">Are we in demo mode?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62942"></span>62942</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62943"></span>62943</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP NZ,<a href="26426.html">26426</a></td>
+<td class="comment-11" rowspan="1">Collect a keypress if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="62946"></span>
+<div class="comments">
+<div class="paragraph">
+We're in demo mode.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62946"></span>62946</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,199</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the MSB of the lines total</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62948"></span>62948</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,4</td>
+<td class="comment-11" rowspan="4">Reset the score (stored at <a href="32708.html">32708</a>) and lines total (stored at <a href="32710.html">32710</a>) to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62950"></span>62950</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62951"></span>62951</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62952"></span>62952</td>
+<td class="bytes-0"></td>
+<td class="instruction">DJNZ 62950</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62954"></span>62954</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="26426.html">26426</a></td>
+<td class="comment-11" rowspan="1">Check for input from the keyboard or joystick</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62957"></span>62957</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP NZ,<a href="32250.html">32250</a></td>
+<td class="comment-11" rowspan="1">Exit demo mode if there was input</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="62960"></span>
+<div class="comments">
+<div class="paragraph">
+We're in demo mode and there was no keyboard or joystick input. Time to simulate a keypress to move ERIC.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62960"></span>62960</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(44128)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62963"></span>62963</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 5</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#5">5</a>=ERIC sitting in a chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62965"></span>62965</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,32705</td>
+<td class="comment-11" rowspan="1"><a href="32705.html">32705</a> holds the stand-up delay counter</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62968"></span>62968</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,62996</td>
+<td class="comment-11" rowspan="1">Jump unless ERIC is sitting in a chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62970"></span>62970</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(41568)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of little boy no. 11</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62973"></span>62973</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 69</td>
+<td class="comment-11" rowspan="1"><a href="../graphics/as.html#69">69</a>=little boy sitting in a chair</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62975"></span>62975</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,62993</td>
+<td class="comment-11" rowspan="1">Jump if little boy no. 11 is sitting in a chair</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="62977"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC is sitting in a chair, but little boy no. 11 isn't. ERIC should stand up now or soon.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62977"></span>62977</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="3">The stand-up delay counter at <a href="32705.html">32705</a> normally holds 0; if little boy no. 11 has just stood up, initialise the delay counter to 29</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62978"></span>62978</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62979"></span>62979</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,62990</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62981"></span>62981</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-11" rowspan="1">Is it time for ERIC to stand up?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62982"></span>62982</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,62988</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62984"></span>62984</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,115</td>
+<td class="comment-11" rowspan="1">Set <span class="register">A</span> to 115 to simulate 's' (sit/stand) being pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62986"></span>62986</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="2">Return with the zero flag reset to indicate input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62987"></span>62987</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62988"></span>62988</td>
+<td class="bytes-0"></td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="2">Return with the zero flag set to indicate no input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62989"></span>62989</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62990"></span>62990</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),29</td>
+<td class="comment-11" rowspan="1">Initialise the stand-up delay counter at <a href="32705.html">32705</a> to 29</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62992"></span>62992</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return with the zero flag set to indicate no input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62993"></span>62993</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-11" rowspan="1">Set the stand-up delay counter at <a href="32705.html">32705</a> to 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62995"></span>62995</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return with the zero flag set to indicate no input</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="62996"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC isn't sitting in a chair. Is he sitting on the floor or lying on his back?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62996"></span>62996</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-11" rowspan="1">Set the stand-up delay counter at <a href="32705.html">32705</a> to 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62998"></span>62998</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,251</td>
+<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="32763.html">32763</a> (ERIC's status flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63000"></span>63000</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is ERIC sitting on the floor or lying on his back?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63002"></span>63002</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,62984</td>
+<td class="comment-11" rowspan="1">Simulate 's' to make ERIC stand up if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63004"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC is upright. Seek little boy no. 11 for guidance on where to go next.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63004"></span>63004</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,41569</td>
+<td class="comment-11" rowspan="4">Pick up the coordinates of little boy no. 11 in <span class="register">DE</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63007"></span>63007</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63008"></span>63008</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63009"></span>63009</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63010"></span>63010</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63012"></span>63012</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31452.html">31452</a></td>
+<td class="comment-11" rowspan="1">Determine ERIC's next move in his pursuit of little boy no. 11</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63015"></span>63015</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Are ERIC and this boy in the same location?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63016"></span>63016</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,63033</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63018"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC and little boy no. 11 are in the same location.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63018"></span>63018</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(41568)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of little boy no. 11</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63021"></span>63021</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 69</td>
+<td class="comment-11" rowspan="1">Is little boy no. 11 sitting in a chair?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63023"></span>63023</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,62988</td>
+<td class="comment-11" rowspan="1">Jump if not (without simulating a keypress)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63025"></span>63025</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(44128)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63028"></span>63028</td>
+<td class="bytes-0"></td>
+<td class="instruction">RLCA</td>
+<td class="comment-11" rowspan="1">Is ERIC facing left?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63029"></span>63029</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,62984</td>
+<td class="comment-11" rowspan="1">Simulate 's' (sit down) if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63031"></span>63031</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1">Otherwise set <span class="register">A</span>=3: ERIC should go left (i.e. turn round)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63033"></span>
+<div class="comments">
+<div class="paragraph">
+Now <span class="register">A</span>=1 if ERIC should go up, 2 if down, 3 if left, or 4 if right (to follow little boy no. 11).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63033"></span>63033</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,81</td>
+<td class="comment-11" rowspan="1">81=ASCII code for 'Q' (up)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63035"></span>63035</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Should ERIC go up?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63036"></span>63036</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,63046</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63038"></span>63038</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,65</td>
+<td class="comment-11" rowspan="1">65=ASCII code for 'A' (down)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63040"></span>63040</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Should ERIC go down?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63041"></span>63041</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,63046</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63043"></span>63043</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,78</td>
+<td class="comment-11" rowspan="2"><span class="register">B</span>=79 ('O') or 80 ('P')</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63045"></span>63045</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63046"></span>
+<div class="comments">
+<div class="paragraph">
+Now <span class="register">B</span> holds the ASCII code of the simulated keypress: Q, A, O or P. Decide whether to switch to lower case (slow).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63046"></span>63046</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(23672)</td>
+<td class="comment-11" rowspan="1">23672=LSB of the FRAMES system variable</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63049"></span>63049</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 128</td>
+<td class="comment-11" rowspan="3"><span class="register">A</span>=32 (lower case, slow) or 0 (upper case, fast)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63051"></span>63051</td>
+<td class="bytes-0"></td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63052"></span>63052</td>
+<td class="bytes-0"></td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63053"></span>63053</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=simulated keycode</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63054"></span>63054</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return with the zero flag reset to indicate input</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62937.html">62937</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62938">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63055.html">63055</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/F5DA.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

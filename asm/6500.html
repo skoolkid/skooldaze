@@ -23,7 +23,7 @@
 <div class="description">6500: Move ERIC from the midstride position and scroll the screen if necessary</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Called from the main loop at <a href="6767.html">6767</a> when ERIC is midstride.
@@ -46,101 +46,117 @@ Called from the main loop at <a href="6767.html">6767</a> when ERIC is midstride
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6500"></span>6500</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FE9</td>
 <td class="comment-11" rowspan="3">Set ERIC's midstride action timer at <a href="7FE9.html">7FE9</a> to 0 to indicate that ERIC will no longer be midstride after this movement</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6503"></span>6503</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6504"></span>6504</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$00</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6506"></span>6506</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="2">Set ERIC's main action timer at <a href="7FE8.html">7FE8</a> equal to the previous contents of <a href="7FE9.html">7FE9</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6507"></span>6507</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6508"></span>6508</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$AC63</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x63 of ERIC's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="650b"></span>650B</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for ERIC's current location</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="650e"></span>650E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$63</td>
 <td class="comment-11" rowspan="6">Pick up ERIC's next animatory state in <span class="register">A</span> (from byte 0x63 of his buffer) and his next location in <span class="register">DE</span> (from bytes 0x64 and 0x65)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6510"></span>6510</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6511"></span>6511</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6512"></span>6512</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6513"></span>6513</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6514"></span>6514</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6515"></span>6515</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update ERIC's animatory state and location and update the SRB</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6518"></span>6518</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6992.html">$6992</a></td>
 <td class="comment-11" rowspan="1">Update the display</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="651b"></span>651B</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="FE52.html">$FE52</a></td>
 <td class="comment-11" rowspan="1">Make a walking sound effect</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="651e"></span>
 <div class="comments">
 <div class="paragraph">
@@ -152,102 +168,119 @@ Decide whether the screen should be scrolled left or right.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="651e"></span>651E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$AC60</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x60 of ERIC's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6521"></span>6521</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7F00)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=X: leftmost column of the skool on screen (0-64)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6524"></span>6524</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
 <td class="comment-11" rowspan="1">Is ERIC facing left?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6526"></span>6526</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6528"></span>6528</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6533</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="652a"></span>652A</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $40</td>
 <td class="comment-11" rowspan="1">Is the far right end of the skool on screen?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="652c"></span>652C</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="652d"></span>652D</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB (HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=X-x (x=ERIC's x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="652e"></span>652E</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $EA</td>
 <td class="comment-11" rowspan="1">Is ERIC's screen x-coordinate 22?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6530"></span>6530</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6531"></span>6531</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR <a href="64DC.html">$64DC</a></td>
 <td class="comment-11" rowspan="1">Otherwise scroll the screen left 8 columns</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6533"></span>6533</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Is the far left end of the skool on screen (X=0)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6534"></span>6534</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6535"></span>6535</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB (HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=X-x (x=ERIC's x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6536"></span>6536</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $F7</td>
 <td class="comment-11" rowspan="1">Is ERIC's screen x-coordinate 9?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6538"></span>6538</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6539"></span>6539</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="64D2.html">$64D2</a></td>
 <td class="comment-11" rowspan="1">Otherwise scroll the screen right 8 columns</td>
 </tr>
@@ -260,10 +293,10 @@ Decide whether the screen should be scrolled left or right.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/25856.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/25856.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

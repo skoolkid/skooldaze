@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Pokes</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Pokes">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Pokes</td>
+</tr>
+</table>
+<ul class="contents">
+<li><a href="#infiniteLines">Infinite lines</a></li>
+<li><a href="#noLines">No lines</a></li>
+<li><a href="#someLines">Some lines</a></li>
+<li><a href="#linesLimit">Lines limit</a></li>
+<li><a href="#silentSnitch">Silent snitch</a></li>
+<li><a href="#singleShield">Single shield</a></li>
+<li><a href="#unsafeCombination">Unsafe combination</a></li>
+<li><a href="#lessonLength">Lesson length</a></li>
+<li><a href="#ringBell">Ring the bell</a></li>
+<li><a href="#alwaysRun">Always run</a></li>
+<li><a href="#superCatty">Super catapult</a></li>
+<li><a href="#throughWalls">Walk through walls</a></li>
+</ul>
+<div><span id="infiniteLines"></span></div>
+<div class="box box-1">
+<div class="box-title">Infinite lines</div>
+<div class="paragraph">
+To stop MR WACKER expelling ERIC after 10000 lines:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/63931.html">63931</a>,201
+</div>
+</div>
+<div><span id="noLines"></span></div>
+<div class="box box-2">
+<div class="box-title">No lines</div>
+<div class="paragraph">
+To prevent teachers from giving lines to ERIC or anyone else:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/30464.html">30464</a>,201
+</div>
+<div class="paragraph">
+However, that won't prevent MR WACKER from giving ERIC 2000 lines during the
+'special' playtimes (if EINSTEIN tells WACKER what ERIC's up to, or WACKER
+finds the pea-shooter on the fire escape). For that you need:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/63456.html#63468">63468</a>,0
+</div>
+<div class="paragraph">
+One harmless side-effect of this POKE is that the lines total will be printed
+as '00' instead of '0' when WACKER delivers his 'TAKE 2000 LINES...' speech.
+</div>
+</div>
+<div><span id="someLines"></span></div>
+<div class="box box-1">
+<div class="box-title">Some lines</div>
+<div class="paragraph">
+If 'Infinite lines' or 'No lines' makes things too easy, use a selection of
+these POKEs that disable lines-giving for specific infractions:
+</div>
+<div class="paragraph">
+CATAPULTS ARE FORBIDDEN - POKE <a href="../asm/62495.html#62545">62545</a>,195
+</div>
+<div class="paragraph">
+DON'T HIT YOUR MATES - POKE <a href="../asm/62628.html#62661">62661</a>,195
+</div>
+<div class="paragraph">
+DON'T SIT ON THE STAIRS - POKE <a href="../asm/30636.html#30698">30698</a>,24
+</div>
+<div class="paragraph">
+DON'T TOUCH BLACKBOARDS - POKE <a href="../asm/62208.html#62366">62366</a>,1
+</div>
+<div class="paragraph">
+GET OFF THE FLOOR - POKE <a href="../asm/30636.html#30758">30758</a>,201
+</div>
+<div class="paragraph">
+GET TO WHERE YOU SHOULD BE/COME ALONG WITH ME BOY/HURRY UP YOU HORROR/DON'T TRY
+MY PATIENCE BOY - POKE <a href="../asm/30636.html#30735">30736</a>,0
+</div>
+<div class="paragraph">
+NEVER BE LATE AGAIN/AND STAY THIS TIME - POKE <a href="../asm/62208.html#62249">62249</a>,1
+</div>
+<div class="paragraph">
+NOW DON'T DO IT AGAIN - POKE <a href="../asm/27196.html">27196</a>,201 (after a teacher has been
+knocked over)
+</div>
+<div class="paragraph">
+NOW DON'T DO IT AGAIN - POKE <a href="../asm/62208.html#62294">62294</a>,1 (when EINSTEIN says 'ERIC hit
+me')
+</div>
+<div class="paragraph">
+NOW FIND A SEAT - POKE <a href="../asm/30636.html#30749">30749</a>,201
+</div>
+<div class="paragraph">
+THE ROOM IS PRIVATE - POKE <a href="../asm/30636.html#30716">30717</a>,31 (also suppresses GET TO WHERE YOU
+SHOULD BE if ERIC is in the head's study or the staff room when he should be in
+class)
+</div>
+<div class="paragraph">
+YOU ARE NOT A KANGAROO - POKE <a href="../asm/62771.html#62779">62780</a>,99
+</div>
+</div>
+<div><span id="linesLimit"></span></div>
+<div class="box box-2">
+<div class="box-title">Lines limit</div>
+<div class="paragraph">
+To change the lines limit from 10000 to 10N:
+</div>
+<div class="paragraph">
+<div>POKE <a href="../asm/63931.html#63934">63935</a>,INT(N/256)</div>
+<div>POKE <a href="../asm/63931.html#63942">63943</a>,N-256*INT(N/256)</div>
+</div>
+<div class="paragraph">
+To change the expulsion message MR WACKER delivers (at <a href="../asm/61926.html">61926</a>) accordingly,
+you will need to POKE the ASCII codes of the digits of the new lines limit into
+addresses 61940-61944.
+</div>
+<div class="paragraph">
+For example, to change the lines limit to 20000 and adjust the expulsion
+message to match:
+</div>
+<div class="paragraph">
+POKE 63935,7: POKE 63943,208: POKE 61940,50
+</div>
+</div>
+<div><span id="silentSnitch"></span></div>
+<div class="box box-1">
+<div class="box-title">Silent snitch</div>
+<div class="paragraph">
+To make sure that EINSTEIN never tells tales:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/62208.html#62270">62270</a>,24: POKE <a href="../asm/62208.html#62321">62321</a>,24
+</div>
+<div class="paragraph">
+Alternatively, to make the teacher always give lines to EINSTEIN for telling
+tales:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/31968.html#31982">31982</a>,0
+</div>
+</div>
+<div><span id="singleShield"></span></div>
+<div class="box box-2">
+<div class="box-title">Single shield</div>
+<div class="paragraph">
+Hitting all 15 shields before obtaining the safe combination, and then hitting
+all 15 shields again after opening the safe can be hard work for a busy
+skoolboy. To reduce ERIC's task to hitting just one shield (any shield):
+</div>
+<div class="paragraph">
+POKE <a href="../asm/63668.html#63672">63673</a>,1
+</div>
+<div class="paragraph">
+Note that in order to go up a year, ERIC will have to hit the same shield as he
+hit before opening the safe.
+</div>
+</div>
+<div><span id="unsafeCombination"></span></div>
+<div class="box box-1">
+<div class="box-title">Unsafe combination</div>
+<div class="paragraph">
+Having to knock down the teachers (or, in CREAK's case, discover his year of
+birth and then write it on the blackboard in the classroom he'll be teaching in
+next) in order to obtain the safe combination letters, and then try up to six
+permutations of those letters before hitting the right one, can be a tiresome
+task. How much easier it would be if BOY WANDER and the teachers took it upon
+themselves to reveal the safe combination every time they wrote on a
+blackboard:
+</div>
+<div class="paragraph">
+<div>POKE <a href="../asm/29284.html#29312">29313</a>,0</div>
+<div>POKE 29315,127</div>
+<div>POKE 29322,62</div>
+<div>POKE 29323,159</div>
+</div>
+<div class="paragraph">
+The teachers and BOY WANDER will actually write the safe combination followed
+by WACKER's, ROCKITT's, WITHIT's and CREAK's individual safe combination
+letters, in that order, but those last four letters can be ignored.
+</div>
+</div>
+<div><span id="lessonLength"></span></div>
+<div class="box box-2">
+<div class="box-title">Lesson length</div>
+<div class="paragraph">
+Normally the lesson clock (at <a href="../asm/32759.html">32759</a>) counts down from 5376 (21*256) to 0, at
+which point the bell rings. To make the lesson clock count down from N*256 to 0
+instead:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/26342.html">26344</a>,N
+</div>
+<div class="paragraph">
+If you are extending the lesson length, it's a good idea to also adjust the
+time at which teachers will tell the kids to sit down. Normally this is 3840
+(15*256); to change it to M*256 (M=N-6 is a good choice):
+</div>
+<div class="paragraph">
+POKE <a href="../asm/31807.html#31810">31811</a>,M
+</div>
+<div class="paragraph">
+If, on the other hand, you are shortening the lesson, it's a good idea to also
+adjust the time at which teachers will start giving lines to ERIC for being in
+the wrong classroom. Normally this is 4864 (19*256); to change it to G*256
+(G=N-2 is a good choice):
+</div>
+<div class="paragraph">
+POKE <a href="../asm/30636.html#30770">30771</a>,G
+</div>
+</div>
+<div><span id="ringBell"></span></div>
+<div class="box box-1">
+<div class="box-title">Ring the bell</div>
+<div class="paragraph">
+To put ERIC in charge of ringing the bell:
+</div>
+<div class="paragraph">
+<div>POKE <a href="../asm/26656.html#26700">26700</a>,123 (points 'L' at <a href="../asm/26656.html#26747">26747</a>)</div>
+<div>POKE 26748,230: POKE 26749,102 (sets the keypress-handling routine for 'L'
+to <a href="../asm/26342.html">26342</a>)</div>
+</div>
+<div class="paragraph">
+Now whenever 'L' (upper case) is pressed, the bell will ring and the next
+lesson will begin (which could prove handy if ERIC is found playing truant,
+cannot be bothered to hide from ANGELFACE when he has mumps, or simply cannot
+wait any longer for playtime).
+</div>
+</div>
+<div><span id="alwaysRun"></span></div>
+<div class="box box-2">
+<div class="box-title">Always run</div>
+<div class="paragraph">
+Normally 'q', 'a', 'o' and 'p' make ERIC walk, and 'Q', 'A', 'O' and 'P' make
+him run. To make ERIC always run, regardless of whether SHIFT is held down:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/25916.html#25941">25941</a>,24
+</div>
+<div class="paragraph">
+Or, to make ERIC walk when SHIFT is held down and run when it isn't:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/25916.html#25941">25941</a>,32
+</div>
+</div>
+<div><span id="superCatty"></span></div>
+<div class="box box-1">
+<div class="box-title">Super catapult</div>
+<div class="paragraph">
+To extend the range of the catapult from 13 to N:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/28744.html#28772">28773</a>,N
+</div>
+<div class="paragraph">
+However, this doesn't extend the 'hit zone' of the pellet (the portion of its
+flight where it can hit something). To change the hit zone from the last 7
+stages of its flight to the last M stages (M=N-6 is a good choice):
+</div>
+<div class="paragraph">
+POKE <a href="../asm/27932.html#27999">28000</a>,M+1
+</div>
+</div>
+<div><span id="throughWalls"></span></div>
+<div class="box box-2">
+<div class="box-title">Walk through walls</div>
+<div class="paragraph">
+To enable ERIC to walk through specific walls:
+</div>
+<div class="paragraph">
+<div>POKE <a href="../asm/26194.html#26233">26233</a>,0 (classroom walls, from the right side)</div>
+<div>POKE <a href="../asm/26282.html#26328">26328</a>,0 (classroom walls, from the left side)</div>
+<div>POKE <a href="../asm/26282.html#26320">26320</a>,0 (wall at the top of the right-hand staircase on the
+middle floor)</div>
+</div>
+</div>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../reference/pokes.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

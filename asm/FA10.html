@@ -23,7 +23,7 @@
 <div class="description">FA10: Check whether MR CREAK is near a blackboard last written on by ERIC</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="F6D7.html">F6D7</a>. Returns with the zero flag set if MR CREAK is near a blackboard that was last written on by ERIC.
@@ -49,72 +49,84 @@ Used by the routine at <a href="F6D7.html">F6D7</a>. Returns with the zero flag 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fa10"></span>FA10</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7128.html">$7128</a></td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=identifier of the blackboard nearest to CREAK</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa13"></span>FA13</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $EC</td>
 <td class="comment-11" rowspan="1">Is CREAK on the top floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa15"></span>FA15</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$FA1B</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa17"></span>FA17</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x62 (which byte holds CREAK's x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa18"></span>FA18</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 6,(HL)</td>
 <td class="comment-11" rowspan="2">Return with the zero flag reset if CREAK's x-coordinate is &gt;= 64, i.e. he's standing at the doorway of the (blackboardless) Map Room (which never happens, because CREAK never teaches in that room)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa1a"></span>FA1A</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fa1b"></span>FA1B</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="3"><span class="register">DE</span>=<a href="7FED.html">7FED</a> (Reading Room blackboard) or <a href="7FEF.html">7FEF</a> (White Room blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa1c"></span>FA1C</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa1d"></span>FA1D</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$7F</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa1f"></span>FA1F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character who last wrote on this board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa20"></span>FA20</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $AC</td>
 <td class="comment-11" rowspan="1">Set the zero flag if it was ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa22"></span>FA22</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -127,10 +139,10 @@ Used by the routine at <a href="F6D7.html">F6D7</a>. Returns with the zero flag 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/64016.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/64016.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

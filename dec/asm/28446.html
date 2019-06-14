@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 28446</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28442.html">28442</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28446">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28533.html">28533</a></span></td>
+</tr>
+</table>
+<div class="description">28446: Make ANGELFACE hit now and then</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+The address of this continual subcommand routine is placed into bytes 124 and 125 of ANGELFACE's buffer by command lists <a href="64516.html">142</a>, <a href="64587.html">150</a>, <a href="64658.html">158</a>, <a href="64729.html">166</a>, <a href="64785.html">174</a>, <a href="64825.html">180</a> and <a href="64841.html">182</a>. It decides whether ANGELFACE should throw a punch, and gets the punching action under way if so.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">168 (ANGELFACE)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28446"></span>28446</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,112</td>
+<td class="comment-11" rowspan="4">Return now if there is an uninterruptible subcommand routine address in bytes 111 and 112 of ANGELFACE's buffer (meaning he is currently occupied)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28448"></span>28448</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28449"></span>28449</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28450"></span>28450</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET NZ</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28451"></span>28451</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 holds ANGELFACE's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28453"></span>28453</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 0,(HL)</td>
+<td class="comment-11" rowspan="1">Is ANGELFACE midstride?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28455"></span>28455</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28456"></span>28456</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1">Byte 97 holds ANGELFACE's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28457"></span>28457</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28458"></span>28458</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="26184.html#26185">26185</a></td>
+<td class="comment-11" rowspan="1">Is ANGELFACE on a staircase?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28461"></span>28461</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28462"></span>28462</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28220.html">28220</a></td>
+<td class="comment-11" rowspan="1">Can any teachers see ANGELFACE?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28465"></span>28465</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="28466"></span>
+<div class="comments">
+<div class="paragraph">
+ANGELFACE is not on a staircase, and there are no teachers nearby. Are there any potential victims nearby?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28466"></span>28466</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="1">Byte 98 holds ANGELFACE's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28468"></span>28468</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28469"></span>28469</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="2">Pick up ANGELFACE's y-coordinate in <span class="register">D</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28470"></span>28470</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28471"></span>28471</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=96 (which byte holds ANGELFACE's animatory state)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28472"></span>28472</td>
+<td class="bytes-0"></td>
+<td class="instruction">SUB 3</td>
+<td class="comment-11" rowspan="4">Set <span class="register">A</span> equal to the 'target' x-coordinate (i.e. where a character would have to be in order to receive ANGELFACE's punch)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28474"></span>28474</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28476"></span>28476</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,28480</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28478"></span>28478</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,6</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28480"></span>28480</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Place the target x-coordinate in <span class="register">E</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28481"></span>28481</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">C</span>=ANGELFACE's animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28482"></span>28482</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,172</td>
+<td class="comment-11" rowspan="1">172=ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28484"></span>28484</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28416.html">28416</a></td>
+<td class="comment-11" rowspan="1">Is ERIC a potential target?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28487"></span>28487</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,28502</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28489"></span>28489</td>
+<td class="bytes-0"></td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="28490"></span>
+<div class="comments">
+<div class="paragraph">
+If we get here, there is a potential victim in front of ANGELFACE for him to take a swing at.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28490"></span>28490</td>
+<td class="bytes-0"></td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Drop the return address (<a href="25126.html#25172">25172</a>) from the stack; this makes the character-moving routine at <a href="25126.html">25126</a> skip any further consideration of ANGELFACE on this pass, thus preventing him from moving midstride before throwing the punch</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28491"></span>28491</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,43121</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 113 of ANGELFACE's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28494"></span>28494</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-11" rowspan="1">Store his current animatory state there</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28495"></span>28495</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="28544.html">28544</a> (throw a punch) into bytes 111 and 112 of ANGELFACE's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28496"></span>28496</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),111</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28498"></span>28498</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28499"></span>28499</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),128</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28501"></span>28501</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="28502"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC is not a potential target for ANGELFACE's fist. What about the other main kids?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28502"></span>28502</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,169</td>
+<td class="comment-11" rowspan="1">169=EINSTEIN</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28504"></span>28504</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,3</td>
+<td class="comment-11" rowspan="1">There are three main kids</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28506"></span>28506</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28416.html">28416</a></td>
+<td class="comment-11" rowspan="1">Is this main kid a potential target?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28509"></span>28509</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,28513</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28511"></span>28511</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 28490</td>
+<td class="comment-11" rowspan="1">Otherwise throw a punch</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28513"></span>28513</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC H</td>
+<td class="comment-11" rowspan="1">Next main kid</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28514"></span>28514</td>
+<td class="bytes-0"></td>
+<td class="instruction">DJNZ 28506</td>
+<td class="comment-11" rowspan="1">Jump back until the three main kids have been checked</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="28516"></span>
+<div class="comments">
+<div class="paragraph">
+EINSTEIN and BOY WANDER weren't potential targets either. What about the little boys?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28516"></span>28516</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,152</td>
+<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28518"></span>28518</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,7</td>
+<td class="comment-11" rowspan="1">We check only the first seven little boys - <a href="../reference/facts.html#bullyFriends">interesting</a>!</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28520"></span>28520</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28416.html">28416</a></td>
+<td class="comment-11" rowspan="1">Is this little boy a potential target?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28523"></span>28523</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,28527</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28525"></span>28525</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 28490</td>
+<td class="comment-11" rowspan="1">Otherwise throw a punch</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28527"></span>28527</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">Next little boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28528"></span>28528</td>
+<td class="bytes-0"></td>
+<td class="instruction">DJNZ 28520</td>
+<td class="comment-11" rowspan="1">Jump back until the seven little boys have been checked</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28530"></span>28530</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,168</td>
+<td class="comment-11" rowspan="1">Restore ANGELFACE's character number to <span class="register">H</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28532"></span>28532</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28442.html">28442</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28446">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28533.html">28533</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/6F1E.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

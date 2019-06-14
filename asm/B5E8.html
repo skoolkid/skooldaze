@@ -23,7 +23,7 @@
 <div class="description">B5E8: Guide a character onto the catwalk or off it</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="B3E8.html">B3E8</a> and <a href="EFE0.html">EFE0</a>. Makes a character walk in from the left to the middle of the screen (at which point his name may be changed), or from the middle of the screen and off to the right.
@@ -46,72 +46,84 @@ Used by the routines at <a href="B3E8.html">B3E8</a> and <a href="EFE0.html">EFE
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b5e8"></span>B5E8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$26</td>
 <td class="comment-11" rowspan="1">The character will take 38 steps along the catwalk</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b5ea"></span>B5EA</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5eb"></span>B5EB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$98</td>
 <td class="comment-11" rowspan="1">This instruction is set by the routine at <a href="B175.html">B175</a> to either 'LD H,$98' (boy) or 'LD H,$A4' (teacher) as appropriate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5ed"></span>B5ED</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="B4E8.html">$B4E8</a></td>
 <td class="comment-11" rowspan="1">Move the character one step along the catwalk</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5f0"></span>B5F0</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="FE40.html">$FE40</a></td>
 <td class="comment-11" rowspan="1">Make a walking sound effect</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5f3"></span>B5F3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,$64</td>
 <td class="comment-11" rowspan="4">Pause briefly between steps</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b5f5"></span>B5F5</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $B5F5</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5f7"></span>B5F7</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5f8"></span>B5F8</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$B5F5</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5fa"></span>B5FA</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5fb"></span>B5FB</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $B5EA</td>
 <td class="comment-11" rowspan="1">Jump back until 38 steps have been taken</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b5fd"></span>B5FD</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -124,10 +136,10 @@ Used by the routines at <a href="B3E8.html">B3E8</a> and <a href="EFE0.html">EFE
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/46568.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/46568.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

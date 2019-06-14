@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 30132</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30115.html">30115</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30132">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30156.html">30156</a></span></td>
+</tr>
+</table>
+<div class="description">30132: Draw the left and right edges of a lines bubble</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by routines at <a href="30156.html">30156</a> and <a href="30208.html">30208</a>. Draws the left and right edges of the lines bubble against the lines of text just written into the graphic buffer (at <a href="60160.html">60160</a> or <a href="60416.html">60416</a>).
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Graphic buffer address</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30132"></span>30132</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,65473</td>
+<td class="comment-11" rowspan="2">Point <span class="register">HL</span> at the top left corner of the text that was just written into the graphic buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30135"></span>30135</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30136"></span>30136</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD DE,7</td>
+<td class="comment-11" rowspan="1">This is the 'distance' (in bytes) between the left and right edges of the graphic buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30139"></span>30139</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD BC,30115</td>
+<td class="comment-11" rowspan="1">Point <span class="register">BC</span> at the graphic data table at <a href="30115.html">30115</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30142"></span>30142</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(BC)</td>
+<td class="comment-11" rowspan="1">Pick up a bubble left-edge graphic byte in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30143"></span>30143</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Move <span class="register">BC</span> along in the graphic data table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30144"></span>30144</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Have we finished drawing the edges?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30145"></span>30145</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30146"></span>30146</td>
+<td class="bytes-0"></td>
+<td class="instruction">OR (HL)</td>
+<td class="comment-11" rowspan="2">Superimpose the bubble left-edge graphic byte</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30147"></span>30147</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30148"></span>30148</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Move over to the right edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30149"></span>30149</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(BC)</td>
+<td class="comment-11" rowspan="1">Pick up a bubble right-edge graphic byte in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30150"></span>30150</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Move <span class="register">BC</span> along in the graphic data table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30151"></span>30151</td>
+<td class="bytes-0"></td>
+<td class="instruction">OR (HL)</td>
+<td class="comment-11" rowspan="2">Superimpose the bubble right-edge graphic byte</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30152"></span>30152</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30153"></span>30153</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Move back to the left edge, one pixel row down</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30154"></span>30154</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 30142</td>
+<td class="comment-11" rowspan="1">Jump back to superimpose another edge graphic byte</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30115.html">30115</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30132">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30156.html">30156</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/75B4.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

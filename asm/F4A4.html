@@ -23,7 +23,7 @@
 <div class="description">F4A4: Deal with ERIC when he's hitting</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="6AD9.html">6AD9</a> when bit 1 of ERIC's status flags at <a href="7FFB.html">7FFB</a> is set (by the routine at <a href="F46E.html">F46E</a>, via <a href="F492.html">F492</a>).
@@ -46,59 +46,68 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 1 of ERIC's status 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f4a4"></span>F4A4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FF6</td>
 <td class="comment-11" rowspan="1"><a href="7FF6.html">7FF6</a> holds the hitting action timer (initially 0x12)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4a7"></span>F4A7</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
 <td class="comment-11" rowspan="1">Has ERIC finished the punch?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4a8"></span>F4A8</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="F41F.html#f425">$F425</a></td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ab"></span>F4AB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick up the current value of the action timer in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ac"></span>F4AC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$AC</td>
 <td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ae"></span>F4AE</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $0C</td>
 <td class="comment-11" rowspan="1">Is it time to raise the fist to eye level?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4b0"></span>F4B0</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="703D.html#7041">$7041</a></td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4b3"></span>F4B3</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $0B</td>
 <td class="comment-11" rowspan="1">Is it time to see if anyone was hit?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4b5"></span>F4B5</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f4b6"></span>
 <div class="comments">
 <div class="paragraph">
@@ -110,60 +119,70 @@ ERIC's fist is fully raised. Check whether it's in someone's face.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4b6"></span>F4B6</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6F99.html">$6F99</a></td>
 <td class="comment-11" rowspan="1">Check whether ERIC managed to deck anyone</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4b9"></span>F4B9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character number of the decked boy (if any)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ba"></span>F4BA</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A3</td>
 <td class="comment-11" rowspan="1">Was anyone decked?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4bc"></span>F4BC</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F4C5</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4be"></span>F4BE</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A8</td>
 <td class="comment-11" rowspan="1">0xA8=ANGELFACE</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4c0"></span>F4C0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$03</td>
 <td class="comment-11" rowspan="2">Add 30 the score and print it if ANGELFACE was decked</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4c2"></span>F4C2</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL Z,<a href="6AFB.html#6afd">$6AFD</a></td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f4c5"></span>F4C5</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="EAE0.html">$EAE0</a></td>
 <td class="comment-11" rowspan="1">Make a hitting sound effect</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4c8"></span>F4C8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$0E</td>
 <td class="comment-11" rowspan="1">Lines reprimand <a href="DEC0.html">0x0E</a>: DON'T HIT YOUR MATES</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ca"></span>F4CA</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="F41F.html#f456">$F456</a></td>
 <td class="comment-11" rowspan="1">Make any nearby teacher give ERIC lines</td>
 </tr>
@@ -176,10 +195,10 @@ ERIC's fist is fully raised. Check whether it's in someone's face.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/62628.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/62628.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

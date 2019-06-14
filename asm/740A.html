@@ -23,7 +23,7 @@
 <div class="description">740A: Slide a message character into the speech bubble text window (1)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="799A.html">799A</a>.
@@ -49,84 +49,98 @@ Used by the routine at <a href="799A.html">799A</a>.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="740a"></span>740A</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="70D2.html">$70D2</a></td>
 <td class="comment-11" rowspan="1">Get the next character from the message being spoken</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="740d"></span>740D</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="3">Return with the carry flag set if the message has finished</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="740e"></span>740E</td>
+<td class="bytes-0"></td>
 <td class="instruction">SCF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="740f"></span>740F</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7410"></span>7410</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $02</td>
 <td class="comment-11" rowspan="2">Replace an ASCII code of 0x02 with 0x20 (space)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7412"></span>7412</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$741F</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7414"></span>7414</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $03</td>
 <td class="comment-11" rowspan="2">Jump unless the ASCII code is 0x03, which stands for 8 spaces</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7416"></span>7416</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7421</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7418"></span>7418</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6C</td>
 <td class="comment-11" rowspan="4"><a href="DA16.html">DA16</a>='&lt;8 spaces&gt;'; place the address of this message into bytes 0x6B and 0x6C of the speaking character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="741a"></span>741A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$DA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="741c"></span>741C</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="741d"></span>741D</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$16</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="741f"></span>741F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$20</td>
 <td class="comment-11" rowspan="1">0x20=' ' (space)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7421"></span>7421</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="7302.html">$7302</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -139,10 +153,10 @@ Used by the routine at <a href="799A.html">799A</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/29706.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/29706.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

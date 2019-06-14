@@ -23,7 +23,7 @@
 <div class="description">F9E5: Compare a character's coordinates with ERIC's</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="F78E.html">F78E</a>. On entry, the zero flag is set if ERIC's y-coordinate matches that of the character looking for him. On exit, the zero flag is set if the character looking for ERIC is within 3 y-coordinates of ERIC's location and not on a staircase (in which case the routine at <a href="F78E.html">F78E</a> checks whether the character is also within 3 x-coordinates of ERIC's location, i.e. has found ERIC).
@@ -61,60 +61,70 @@ Used by the routine at <a href="F78E.html">F78E</a>. On entry, the zero flag is 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f9e5"></span>F9E5</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F9F2</td>
 <td class="comment-11" rowspan="1">Jump if ERIC and his chaser are on the same floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9e7"></span>F9E7</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB D</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=absolute difference between the y-coordinates of ERIC and his chaser</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9e8"></span>F9E8</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NC,$F9EC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9ea"></span>F9EA</td>
+<td class="bytes-0"></td>
 <td class="instruction">NEG</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f9ec"></span>F9EC</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $04</td>
 <td class="comment-11" rowspan="1">Are ERIC and his chaser within 3 y-coordinates of each other?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9ee"></span>F9EE</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$F9F2</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9f0"></span>F9F0</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Reset the zero flag (ERIC has not been found)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9f1"></span>F9F1</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f9f2"></span>F9F2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=y-coordinate of the character looking for ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9f3"></span>F9F3</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="6648.html#6649">$6649</a></td>
 <td class="comment-11" rowspan="1">Set the zero flag set if the character is not on a staircase</td>
 </tr>
@@ -127,10 +137,10 @@ Used by the routine at <a href="F78E.html">F78E</a>. On entry, the zero flag is 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/63973.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/63973.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

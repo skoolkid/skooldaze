@@ -23,7 +23,7 @@
 <div class="description">6CAF: 'S' pressed - sit/stand</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The address of this routine is found in the table of keypress handling routines at <a href="6800.html">6800</a>. It is called from the main loop at <a href="6767.html">6767</a> when 'S' is pressed.
@@ -46,65 +46,75 @@ The address of this routine is found in the table of keypress handling routines 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6caf"></span>6CAF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FFB</td>
 <td class="comment-11" rowspan="4">Flip bit 7 of ERIC's status flags at <a href="7FFB.html">7FFB</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cb2"></span>6CB2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cb3"></span>6CB3</td>
+<td class="bytes-0"></td>
 <td class="instruction">XOR $80</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cb5"></span>6CB5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cb6"></span>6CB6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$AC</td>
 <td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cb8"></span>6CB8</td>
+<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
 <td class="comment-11" rowspan="1">Is ERIC sitting now?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cb9"></span>6CB9</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$6CC3</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cbb"></span>6CBB</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for ERIC's current animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cbe"></span>6CBE</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $80</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of ERIC standing up</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cc0"></span>6CC0</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update ERIC's animatory state and update the SRB</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6cc3"></span>
 <div class="comments">
 <div class="paragraph">
@@ -116,29 +126,33 @@ ERIC is sitting now - on the floor, the stairs, or a chair?
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6cc3"></span>6CC3</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for ERIC's current animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cc6"></span>6CC6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=ERIC's animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cc7"></span>6CC7</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6648.html">$6648</a></td>
 <td class="comment-11" rowspan="1">Is ERIC on a staircase?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cca"></span>6CCA</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6CD8</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6ccc"></span>
 <div class="comments">
 <div class="paragraph">
@@ -150,41 +164,47 @@ ERIC is on a staircase.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ccc"></span>6CCC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ccd"></span>6CCD</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $30</td>
 <td class="comment-11" rowspan="1">Set the carry flag if ERIC's on the left side of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ccf"></span>6CCF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$85</td>
 <td class="comment-11" rowspan="1"><a href="../graphics/as.html#133">0x85</a>=ERIC sitting down facing right</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cd1"></span>6CD1</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$6CD5</td>
 <td class="comment-11" rowspan="1">Jump if ERIC is on a staircase on the left side of the skool</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cd3"></span>6CD3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$05</td>
 <td class="comment-11" rowspan="1"><a href="../graphics/as.html#5">0x05</a>=ERIC sitting down facing left</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6cd5"></span>6CD5</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update ERIC's animatory state and update the SRB</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6cd8"></span>
 <div class="comments">
 <div class="paragraph">
@@ -196,60 +216,70 @@ ERIC is not on a staircase.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6cd8"></span>6CD8</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
 <td class="comment-11" rowspan="1">Is ERIC on the bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cda"></span>6CDA</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6CE6</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cdc"></span>6CDC</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 7,B</td>
 <td class="comment-11" rowspan="1">Is ERIC facing right?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6cde"></span>6CDE</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6CE6</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ce0"></span>6CE0</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL $6BF1</td>
 <td class="comment-11" rowspan="1">This should be CALL <a href="6BF0.html#6bf2">6BF2</a> - is ERIC beside a chair?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ce3"></span>6CE3</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="6B7D.html">$6B7D</a></td>
 <td class="comment-11" rowspan="1">Seat him if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6ce6"></span>6CE6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=<a href="../graphics/as.html#6">0x06 or 0x86</a> (ERIC sitting on the floor)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ce7"></span>6CE7</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $80</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ce9"></span>6CE9</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$06</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ceb"></span>6CEB</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update ERIC's animatory state and update the SRB</td>
 </tr>
@@ -262,10 +292,10 @@ ERIC is not on a staircase.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/27823.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/27823.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

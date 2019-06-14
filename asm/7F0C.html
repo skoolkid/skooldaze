@@ -23,7 +23,7 @@
 <div class="description">7F0C: Screen refresh buffer (SRB)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="6980.html">6980</a>, <a href="6992.html">6992</a>, <a href="7087.html">7087</a>, <a href="72D2.html">72D2</a> and <a href="7427.html">7427</a>. Each byte of the SRB corresponds to a segment of 8 character squares on the screen, the leftmost of which will be at x=0, x=8, x=16 or x=24. Each bit set in an SRB byte corresponds to a character square in the segment that needs refreshing. Bit 0 corresponds to the leftmost character square in the segment, bit 7 to the rightmost character square.
@@ -46,6 +46,7 @@ Used by the routines at <a href="6980.html">6980</a>, <a href="6992.html">6992</
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7f0c"></span>7F0C</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFS $54</td>
 <td class="comment-10" rowspan="1"></td>
 </tr>
@@ -58,10 +59,10 @@ Used by the routines at <a href="6980.html">6980</a>, <a href="6992.html">6992</
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/32524.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/32524.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

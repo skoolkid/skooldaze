@@ -23,7 +23,7 @@
 <div class="description">B868: Change a character's name (1)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="EFE0.html">EFE0</a> after 'c' was pressed to change a character's name.
@@ -49,66 +49,77 @@ Used by the routine at <a href="EFE0.html">EFE0</a> after 'c' was pressed to cha
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b868"></span>B868</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1">Save the message address</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b869"></span>B869</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$20</td>
 <td class="comment-11" rowspan="5">Set the character's name to ' ' (single space)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b86b"></span>B86B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$0D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b86d"></span>B86D</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b86e"></span>B86E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$00</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b870"></span>B870</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $B86D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b872"></span>B872</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$AF68</td>
 <td class="comment-11" rowspan="1"><a href="AF68.html">AF68</a>: 'ENTER NEW NAME'</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b875"></span>B875</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="B3F6.html#b3f9">$B3F9</a></td>
 <td class="comment-11" rowspan="1">Print this message</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b878"></span>B878</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$5C3B</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the FLAGS system variable</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b87b"></span>B87B</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1">Restore the message address for the character's name to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b87c"></span>B87C</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="B8E8.html">$B8E8</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -121,10 +132,10 @@ Used by the routine at <a href="EFE0.html">EFE0</a> after 'c' was pressed to cha
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/47208.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/47208.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

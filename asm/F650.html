@@ -23,7 +23,7 @@
 <div class="description">F650: 'W' pressed - write on a blackboard</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The address of this routine is found in the table of keypress handling routines at <a href="6880.html">6880</a>. It is called from the main loop at <a href="6767.html">6767</a> when 'W' is pressed.
@@ -46,95 +46,110 @@ The address of this routine is found in the table of keypress handling routines 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f650"></span>F650</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FFB</td>
 <td class="comment-11" rowspan="1"><a href="7FFB.html">7FFB</a> holds ERIC's status flags</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f653"></span>F653</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
 <td class="comment-11" rowspan="1">Is ERIC sitting or lying down?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f655"></span>F655</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f656"></span>F656</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6648.html">$6648</a></td>
 <td class="comment-11" rowspan="1">Is ERIC on a staircase?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f659"></span>F659</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f65a"></span>F65A</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
 <td class="comment-11" rowspan="1">Is ERIC on the bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f65c"></span>F65C</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f65d"></span>F65D</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $9B</td>
 <td class="comment-11" rowspan="1">Set the zero flag if ERIC's on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f65f"></span>F65F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$302C</td>
 <td class="comment-11" rowspan="1"><span class="register">C</span>=44, <span class="register">B</span>=48 (x-coordinates of the edges of the 'writing zone' for the Reading Room blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f662"></span>F662</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f663"></span>F663</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F66F</td>
 <td class="comment-11" rowspan="1">Jump if ERIC's on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f665"></span>F665</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$201C</td>
 <td class="comment-11" rowspan="1"><span class="register">C</span>=28, <span class="register">B</span>=32 (x-coordinates of the edges of the writing zone for the White Room blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f668"></span>F668</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $28</td>
 <td class="comment-11" rowspan="1">Is ERIC to the left of the White Room wall?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f66a"></span>F66A</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$F66F</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f66c"></span>F66C</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$2F2B</td>
 <td class="comment-11" rowspan="1"><span class="register">C</span>=43, <span class="register">B</span>=47 (x-coordinates of the edges of the writing zone for the Exam Room blackboard)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f66f"></span>
 <div class="comments">
 <div class="paragraph">
@@ -146,155 +161,180 @@ Now <span class="register">C</span> and <span class="register">B</span> hold the
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f66f"></span>F66F</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP C</td>
 <td class="comment-11" rowspan="4">Return if ERIC is not standing close enough to the blackboard to write on it</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f670"></span>F670</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f671"></span>F671</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f672"></span>F672</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f673"></span>F673</td>
+<td class="bytes-0"></td>
 <td class="instruction">SET 5,(HL)</td>
 <td class="comment-11" rowspan="1">Set bit 5 of ERIC's status flags at <a href="7FFB.html">7FFB</a>: ERIC is writing on a blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f675"></span>F675</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$AC</td>
 <td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f677"></span>F677</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7128.html">$7128</a></td>
 <td class="comment-11" rowspan="1">Get the blackboard identifier in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f67a"></span>F67A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
 <td class="comment-11" rowspan="3"><span class="register">HL</span>=<a href="7FED.html">7FED</a> (Reading Room), <a href="7FEF.html">7FEF</a> (White Room) or <a href="7FF1.html">7FF1</a> (Exam Room)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f67b"></span>F67B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$7F</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f67d"></span>F67D</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f67e"></span>F67E</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $B4</td>
 <td class="comment-11" rowspan="2"><span class="register">B</span>=0x38 (Reading Room), 0x3A (White Room) or 0x3C (Exam Room)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f680"></span>F680</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f681"></span>F681</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character who last wrote on this board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f682"></span>F682</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$AC</td>
 <td class="comment-11" rowspan="1">Signal that ERIC (0xAC) wrote on this board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f684"></span>F684</td>
+<td class="bytes-0"></td>
 <td class="instruction">XOR $80</td>
 <td class="comment-11" rowspan="2"><span class="register">C</span>=0x80 (bit 7 set) if the board is clean, &lt;0x80 (bit 7 reset) if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f686"></span>F686</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f687"></span>F687</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="4"><span class="register">HL</span>=<a href="7FA8.html">7FA8</a> (Reading Room blackboard), <a href="7FAE.html">7FAE</a> (White Room blackboard), or <a href="7FB4.html">7FB4</a> (Exam Room blackboard)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f688"></span>F688</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f689"></span>F689</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f68a"></span>F68A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f68b"></span>F68B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$04</td>
 <td class="comment-11" rowspan="4">Prepare the 4 slots in the blackboard buffer that will store the first 4 characters written on the board by ERIC; each slot will have bit 7 set if the board was clean before ERIC started writing</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f68d"></span>F68D</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f68e"></span>F68E</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f68f"></span>F68F</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $F68D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f691"></span>F691</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$01</td>
 <td class="comment-11" rowspan="1">ERIC will start writing at pixel column 1</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f693"></span>
 <div class="comments">
 <div class="paragraph">
@@ -306,84 +346,98 @@ This entry point is used by the routine at <a href="F6AA.html">F6AA</a>.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f693"></span>F693</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$AC60</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x60 of ERIC's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f696"></span>F696</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,(HL)</td>
 <td class="comment-11" rowspan="5">Pick up ERIC's animatory state in <span class="register">B</span>, and his coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f697"></span>F697</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f698"></span>F698</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f699"></span>F699</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f69a"></span>F69A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f69b"></span>F69B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$57</td>
 <td class="comment-11" rowspan="2">Set <a href="7FFC.html">7FFC</a> (which holds the ASCII code of the last keypress) to 'W' (upper case, so ERIC can write fast)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f69d"></span>F69D</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD ($7FFC),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6a0"></span>F6A0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,D</td>
 <td class="comment-11" rowspan="2">Copy ERIC's coordinates to <span class="register">HL</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6a1"></span>F6A1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6a2"></span>F6A2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's current animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6a3"></span>F6A3</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $80</td>
 <td class="comment-11" rowspan="2"><span class="register">A</span>=<a href="../graphics/as.html#13">0x0D or 0x8D</a>: ERIC with arm up, as if writing</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6a5"></span>F6A5</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$0D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f6a7"></span>F6A7</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="653C.html">$653C</a></td>
 <td class="comment-11" rowspan="1">Raise ERIC's arm</td>
 </tr>
@@ -396,10 +450,10 @@ This entry point is used by the routine at <a href="F6AA.html">F6AA</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/63056.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/63056.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

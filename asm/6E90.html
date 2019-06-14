@@ -23,7 +23,7 @@
 <div class="description">6E90: Determine which floor is nearest to a character</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78AA</a>. Returns with <span class="register">D</span> holding 0x9B (top), 0xA2 (middle), or 0xA9 (bottom), corresponding to the floor nearest to the character.
@@ -49,35 +49,40 @@ Used by the routines at <a href="6E3C.html">6E3C</a> and <a href="78AA.html">78A
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e90"></span>6E90</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
 <td class="comment-11" rowspan="1">Byte 0x62 of a character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e92"></span>6E92</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">E</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e93"></span>6E93</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x61</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e94"></span>6E94</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=character's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e95"></span>6E95</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x60</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6e96"></span>
 <div class="comments">
 <div class="paragraph">
@@ -89,17 +94,19 @@ This entry point is used by the routines at <a href="77AC.html">77AC</a> and <a 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e96"></span>6E96</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6648.html">$6648</a></td>
 <td class="comment-11" rowspan="1">Is the character on a staircase?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e99"></span>6E99</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6e9a"></span>
 <div class="comments">
 <div class="paragraph">
@@ -111,48 +118,56 @@ The character is on a staircase. Which floor is he nearest?
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e9a"></span>6E9A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$9B</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e9c"></span>6E9C</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $9E</td>
 <td class="comment-11" rowspan="1">Is the character nearest the top floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e9e"></span>6E9E</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e9f"></span>6E9F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$A2</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ea1"></span>6EA1</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A5</td>
 <td class="comment-11" rowspan="1">Is the character nearest the middle floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ea3"></span>6EA3</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ea4"></span>6EA4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$A9</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6ea6"></span>6EA6</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -165,10 +180,10 @@ The character is on a staircase. Which floor is he nearest?
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/28304.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/28304.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

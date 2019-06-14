@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 25126</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="25108.html">25108</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25126">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25248.html">25248</a></span></td>
+</tr>
+</table>
+<div class="description">25126: Move the characters</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Called from the main loop at <a href="26471.html">26471</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25126"></span>25126</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32765)</td>
+<td class="comment-11" rowspan="1"><a href="32765.html">32765</a> holds the number of the last character moved</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25129"></span>25129</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL 25141</td>
+<td class="comment-11" rowspan="1">Move a character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25132"></span>25132</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32765)</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25135"></span>25135</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL 25141</td>
+<td class="comment-11" rowspan="1">Move another character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25138"></span>25138</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32765)</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25141"></span>25141</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 171</td>
+<td class="comment-11" rowspan="5">Get the number of the next character to be moved (152-171) in <span class="register">A</span> and copy it to <a href="32765.html">32765</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25143"></span>25143</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,25147</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25145"></span>25145</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,151</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25147"></span>25147</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25148"></span>25148</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (32765),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25151"></span>25151</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1"><span class="register">H</span>=number of the character to be moved</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25152"></span>25152</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="25266.html">25266</a></td>
+<td class="comment-11" rowspan="1">Stop now unless it's time to move this character</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25155"></span>
+<div class="comments">
+<div class="paragraph">
+The character shall be moved. From this point, the following steps are taken:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Step</th>
+<th colspan="1" rowspan="1">Action</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">If there is an uninterruptible subcommand routine address in bytes 111 and 112 of the character's buffer, jump to it</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Call the continual subcommand routine address in bytes 124 and 125 of the character's buffer (and then return to step 3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">If there is an interruptible subcommand routine address in bytes 105 and 106 of the character's buffer, jump to it</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Restart the command list if bits 1 and 0 of byte 122 of the character's buffer are reset and set respectively</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">If there is a primary command routine address in bytes 99 and 100 of the character's buffer, jump to it</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Replace any continual subcommand routine address in bytes 124 and 125 of the character's buffer with <a href="25126.html#25247">25247</a> (RET)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Collect the next primary command routine address from the command list, place it into bytes 99 and 100 of the character's buffer, and jump to it</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The address of one of the following uninterruptible subcommand routines may be present in bytes 111 and 112 of a character's buffer:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Address</th>
+<th colspan="1" rowspan="1">Description</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="27206.html">27206</a></td>
+<td class="" colspan="1" rowspan="1">Deal with a character who has been knocked over</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="27733.html">27733</a></td>
+<td class="" colspan="1" rowspan="1">Deal with a character who's been dethroned (1)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="27748.html">27748</a></td>
+<td class="" colspan="1" rowspan="1">Deal with a character who's been dethroned (2)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="27772.html">27772</a></td>
+<td class="" colspan="1" rowspan="1">Deal with a character who is looking for a seat</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="27932.html">27932</a></td>
+<td class="" colspan="1" rowspan="1">Control the horizontal flight of a catapult pellet</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28102.html">28102</a></td>
+<td class="" colspan="1" rowspan="1">Control the vertical flight of a catapult pellet</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28544.html">28544</a></td>
+<td class="" colspan="1" rowspan="1">Make ANGELFACE throw a punch (1)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28558.html">28558</a></td>
+<td class="" colspan="1" rowspan="1">Make ANGELFACE throw a punch (2)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28642.html">28642</a></td>
+<td class="" colspan="1" rowspan="1">Make ANGELFACE throw a punch (3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28655.html">28655</a></td>
+<td class="" colspan="1" rowspan="1">Make ANGELFACE throw a punch (4)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28716.html">28716</a></td>
+<td class="" colspan="1" rowspan="1">Make BOY WANDER fire his catapult (2)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28733.html">28733</a></td>
+<td class="" colspan="1" rowspan="1">Make BOY WANDER fire his catapult (3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28744.html">28744</a></td>
+<td class="" colspan="1" rowspan="1">Make BOY WANDER fire his catapult (4)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28775.html">28775</a></td>
+<td class="" colspan="1" rowspan="1">Make BOY WANDER fire his catapult (5)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28786.html">28786</a></td>
+<td class="" colspan="1" rowspan="1">Make BOY WANDER fire his catapult (6)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28799.html">28799</a></td>
+<td class="" colspan="1" rowspan="1">Make BOY WANDER his fire catapult (7)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="63374.html#63390">63390</a></td>
+<td class="" colspan="1" rowspan="1">Make a character find ERIC</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The address of one of the following continual subcommand routines will be present in bytes 124 and 125 of a character's buffer:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Address</th>
+<th colspan="1" rowspan="1">Description</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="25126.html#25247">25247</a></td>
+<td class="" colspan="1" rowspan="1">RET (do nothing)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="27126.html">27126</a></td>
+<td class="" colspan="1" rowspan="1">Make a little boy trip people up</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28446.html">28446</a></td>
+<td class="" colspan="1" rowspan="1">Make ANGELFACE hit now and then</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="28672.html">28672</a></td>
+<td class="" colspan="1" rowspan="1">Make BOY WANDER fire his catapult now and then</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="32234.html">32234</a></td>
+<td class="" colspan="1" rowspan="1">Make a character walk fast</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="64042.html">64042</a></td>
+<td class="" colspan="1" rowspan="1">Check whether ANGELFACE is touching ERIC</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The address of one of the following interruptible subcommand routines (or an entry point thereof) may be present in bytes 105 and 106 of a character's buffer:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Address</th>
+<th colspan="1" rowspan="1">Description</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="25404.html">25404</a></td>
+<td class="" colspan="1" rowspan="1">Guide a character to an intermediate destination</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="25484.html">25484</a></td>
+<td class="" colspan="1" rowspan="1">Guide a character up a staircase</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="25488.html">25488</a></td>
+<td class="" colspan="1" rowspan="1">Guide a character down a staircase</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="29148.html">29148</a></td>
+<td class="" colspan="1" rowspan="1">Make a teacher wipe a blackboard (1)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="29160.html#29175">29175</a></td>
+<td class="" colspan="1" rowspan="1">Make a teacher wipe a blackboard (2)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="29284.html">29284</a></td>
+<td class="" colspan="1" rowspan="1">Make a character write on a blackboard</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="31110.html">31110</a></td>
+<td class="" colspan="1" rowspan="1">Make a character speak (1)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="31130.html">31130</a></td>
+<td class="" colspan="1" rowspan="1">Make a character speak (2)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="31648.html">31648</a></td>
+<td class="" colspan="1" rowspan="1">Make a teacher find the truant ERIC</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="31739.html">31739</a></td>
+<td class="" colspan="1" rowspan="1">Move a character looking for ERIC from the midstride position</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1"><a href="31944.html">31944</a></td>
+<td class="" colspan="1" rowspan="1">Make a teacher wait for EINSTEIN to finish speaking</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25155"></span>25155</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,112</td>
+<td class="comment-11" rowspan="1">Bytes 111 and 112 of the character's buffer may contain the address of an uninterruptible subcommand</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25157"></span>25157</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick up the MSB in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25158"></span>25158</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Is there an uninterruptible subcommand routine address here?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25159"></span>25159</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,25241</td>
+<td class="comment-11" rowspan="1">Jump to it if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25161"></span>25161</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,124</td>
+<td class="comment-11" rowspan="4">Pick up in <span class="register">DE</span> the continual subcommand routine address from bytes 124 and 125 of the character's buffer; this is set to <a href="25126.html#25247">25247</a> (RET) initially by the startup routine at <a href="26880.html">26880</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25163"></span>25163</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25164"></span>25164</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25165"></span>25165</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25166"></span>25166</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD BC,25172</td>
+<td class="comment-11" rowspan="4">Go to the continual subcommand routine address in bytes 124 and 125 of the character's buffer, and then return to <a href="25126.html#25172">25172</a> (below)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25169"></span>25169</td>
+<td class="bytes-0"></td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25170"></span>25170</td>
+<td class="bytes-0"></td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25171"></span>25171</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25172"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="25248.html">25248</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25172"></span>25172</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,106</td>
+<td class="comment-11" rowspan="1">Bytes 105 and 106 of the character's buffer may contain the address of an interruptible subcommand</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25174"></span>25174</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick up the MSB in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25175"></span>25175</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Is there an interruptible subcommand routine address here?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25176"></span>25176</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,25241</td>
+<td class="comment-11" rowspan="1">Jump to it if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25178"></span>25178</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,121</td>
+<td class="comment-11" rowspan="4">Byte 121 of the character buffers is unused and always contains zero; hence this jump is always made</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25180"></span>25180</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25181"></span>25181</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25182"></span>25182</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,25191</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25184"></span>25184</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-11" rowspan="4">If the value of byte 121 were not zero, this would treat it as the MSB of a routine address, copy it to byte 112, and then jump to that routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25186"></span>25186</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,112</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25188"></span>25188</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25189"></span>25189</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 25241</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25191"></span>
+<div class="comments">
+<div class="paragraph">
+If we get here, that means there's no uninterruptible subcommand routine address in bytes 111 and 112 and no interruptible subcommand routine address in bytes 105 and 106 of the character's buffer at the moment. We take this opportunity to check whether a command list restart has been requested, by inspecting bit 0 of byte 122. This bit is set by the routine at <a href="26342.html">26342</a> when starting a new lesson, and by the routine at <a href="63931.html">63931</a> when ERIC has accumulated 10000 lines or more and MR WACKER must find him and send him home. In addition, a command in the command list may have requested a restart (see <a href="31807.html">31807</a>, <a href="31815.html">31815</a>).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25191"></span>25191</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,122</td>
+<td class="comment-11" rowspan="2">Pick up byte 122 of the character's buffer in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25193"></span>25193</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25194"></span>25194</td>
+<td class="bytes-0"></td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="4">If bit 1 is reset (which it always is) and bit 0 is set, the command list will be restarted</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25195"></span>25195</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,25213</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25197"></span>25197</td>
+<td class="bytes-0"></td>
+<td class="instruction">RRCA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25198"></span>25198</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,25213</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25200"></span>
+<div class="comments">
+<div class="paragraph">
+The command list will be restarted.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25200"></span>25200</td>
+<td class="bytes-0"></td>
+<td class="instruction">RES 0,(HL)</td>
+<td class="comment-11" rowspan="1">Reset bit 0 of byte 122</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25202"></span>25202</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,119</td>
+<td class="comment-11" rowspan="5">Copy the start address of the command list from bytes 119 and 120 of the character's buffer into bytes 117 and 118 (which hold the address currently reached in the command list); in effect, this restarts the command list</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25204"></span>25204</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,117</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25206"></span>25206</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25207"></span>25207</td>
+<td class="bytes-0"></td>
+<td class="instruction">LDI</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25209"></span>25209</td>
+<td class="bytes-0"></td>
+<td class="instruction">LDI</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25211"></span>25211</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 25219</td>
+<td class="comment-11" rowspan="1">Collect the address of the first command from the command list and jump to it</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25213"></span>
+<div class="comments">
+<div class="paragraph">
+The command list was not marked for a restart.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25213"></span>25213</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,100</td>
+<td class="comment-11" rowspan="4">Bytes 99 and 100 of the character's buffer hold the address of the current primary command routine from the command list; jump to this routine address if it's present</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25215"></span>25215</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25216"></span>25216</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25217"></span>25217</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,25241</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25219"></span>25219</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,124</td>
+<td class="comment-11" rowspan="4">Place <a href="25126.html#25247">25247</a> (RET) into bytes 124 and 125 of the character's buffer, thus resetting the continual subcommand</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25221"></span>25221</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),159</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25223"></span>25223</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25224"></span>25224</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),98</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25226"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="31834.html">31834</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25226"></span>25226</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,99</td>
+<td class="comment-11" rowspan="8">Get the address of the next primary command routine from the command list and place it into bytes 99 and 100 of the character's buffer and also into <span class="register">BC</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25228"></span>25228</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="24972.html">24972</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25231"></span>25231</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25232"></span>25232</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD C,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25233"></span>25233</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25234"></span>25234</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="24972.html">24972</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25237"></span>25237</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25238"></span>25238</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25239"></span>25239</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 25244</td>
+<td class="comment-11" rowspan="1">Make an indirect jump to the routine address in <span class="register">BC</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25241"></span>25241</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="3">Pick up in <span class="register">BC</span> the address of the routine to hand over control of this character to</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25242"></span>25242</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25243"></span>25243</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25244"></span>25244</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,122</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25246"></span>25246</td>
+<td class="bytes-0"></td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Prepare to make an indirect jump to the routine address in <span class="register">BC</span></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="25247"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by command lists <a href="64484.html">136</a>, <a href="64493.html">138</a>, <a href="64496.html">140</a>, <a href="64516.html">142</a>, <a href="64548.html">146</a>, <a href="64560.html">148</a>, <a href="64587.html">150</a>, <a href="64619.html">154</a>, <a href="64631.html">156</a>, <a href="64658.html">158</a>, <a href="64690.html">162</a>, <a href="64702.html">164</a> and <a href="64729.html">166</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="25247"></span>25247</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="25108.html">25108</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25126">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25248.html">25248</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/6226.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

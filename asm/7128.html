@@ -23,7 +23,7 @@
 <div class="description">7128: Get the identifier and coordinates of the blackboard closest to a character</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</a>, <a href="71E8.html">71E8</a>, <a href="7264.html">7264</a>, <a href="7D30.html">7D30</a>, <a href="F300.html">F300</a>, <a href="F650.html">F650</a>, <a href="F6AA.html">F6AA</a> and <a href="FA10.html">FA10</a>. Returns with <span class="register">A</span> holding the blackboard identifier (the LSB of <a href="7FEC.html">7FEC</a>, <a href="7FEE.html">7FEE</a> or <a href="7FF0.html">7FF0</a>) and <span class="register">DE</span> holding the coordinates:
@@ -73,90 +73,105 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7128"></span>7128</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
 <td class="comment-11" rowspan="1">Byte 0x61 of the character's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="712a"></span>712A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="712b"></span>712B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$9B2A</td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=155 (y-coordinate), <span class="register">E</span>=42 (x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="712e"></span>712E</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A0</td>
 <td class="comment-11" rowspan="1">Set the carry flag if the character's on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7130"></span>7130</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$EC</td>
 <td class="comment-11" rowspan="1">0xEC=Reading Room blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7132"></span>7132</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if the character's on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7133"></span>7133</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7134"></span>7134</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$A11A</td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=26 (x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7137"></span>7137</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7138"></span>7138</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $25</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="713a"></span>713A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$EE</td>
 <td class="comment-11" rowspan="1">0xEE=White Room blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="713c"></span>713C</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if the character's to the left of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="713d"></span>713D</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,$29</td>
 <td class="comment-11" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=41 (x-coordinate)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="713f"></span>713F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$F0</td>
 <td class="comment-11" rowspan="1">0xF0=Exam Room blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7141"></span>7141</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -169,10 +184,10 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/28968.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/28968.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

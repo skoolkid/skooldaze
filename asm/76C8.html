@@ -23,7 +23,7 @@
 <div class="description">76C8: Print the score, lines total or hi-score (1)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="6AFB.html">6AFB</a>, <a href="6B0E.html">6B0E</a>, <a href="7700.html">7700</a>, <a href="F4F1.html">F4F1</a> and <a href="F7E0.html">F7E0</a>. Prepares the buffer at <a href="D900.html#d90b">D90B</a> with the graphic data for the digits of the number in <span class="register">HL</span>, then copies the graphic data to the screen at the location specified by <span class="register">DE</span>.
@@ -53,78 +53,91 @@ Used by the routines at <a href="6AFB.html">6AFB</a>, <a href="6B0E.html">6B0E</
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="76c8"></span>76C8</td>
+<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1">Transfer the score, lines total or hi-score to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76c9"></span>76C9</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7646.html">$7646</a></td>
 <td class="comment-11" rowspan="1">Generate a 7x24-bit graphic for the number stored in <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76cc"></span>76CC</td>
+<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1">Transfer the display file address back to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76cd"></span>76CD</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$D90B</td>
 <td class="comment-11" rowspan="1">The graphic data for the number is stored in the buffer at <a href="D900.html#d90b">D90B</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76d0"></span>76D0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$07FF</td>
 <td class="comment-11" rowspan="1"><span class="register">B</span>=0x07 (number of pixel rows), <span class="register">C</span>=0xFF</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="76d3"></span>76D3</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="1">Save the display file address temporarily</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76d4"></span>76D4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LDI</td>
 <td class="comment-11" rowspan="3">Transfer a 24-bit wide row of pixels to the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76d6"></span>76D6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LDI</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76d8"></span>76D8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LDI</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76da"></span>76DA</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1">Restore the display file address to <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76db"></span>76DB</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC D</td>
 <td class="comment-11" rowspan="1">Next pixel row on the screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76dc"></span>76DC</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $76D3</td>
 <td class="comment-11" rowspan="1">Jump back until all 7 pixel rows are done</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="76de"></span>76DE</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR <a href="76F9.html">$76F9</a></td>
 <td class="comment-11" rowspan="1">Jump over the routine at <a href="76E0.html">76E0</a></td>
 </tr>
@@ -137,10 +150,10 @@ Used by the routines at <a href="6AFB.html">6AFB</a>, <a href="6B0E.html">6B0E</
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/30408.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/30408.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

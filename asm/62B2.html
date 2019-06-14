@@ -23,7 +23,7 @@
 <div class="description">62B2: Determine whether a character should be moved (1)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="6226.html">6226</a>. Returns to that routine if the character under consideration should be moved on this pass; otherwise drops the return address from the stack, thus skipping ahead to consider the next character. Also reinitialises the walking speed change delay counter in byte 0x7B of the character's buffer when it reaches 0, and sets the new walking speed as appropriate: slow for teachers, fast or slow (at random) for boys.
@@ -49,65 +49,75 @@ Used by the routine at <a href="6226.html">6226</a>. Returns to that routine if 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62b2"></span>62B2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$7B</td>
 <td class="comment-11" rowspan="2">Byte 0x7B contains a counter that is reset to a random even number between 2 and 32; see below</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62b4"></span>62B4</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62b5"></span>62B5</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$62C0</td>
 <td class="comment-11" rowspan="1">Jump if it's time to consider a change of pace</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62b7"></span>62B7</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 0,(HL)</td>
 <td class="comment-11" rowspan="1">Is the counter even?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62b9"></span>62B9</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return (to move the character) if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ba"></span>62BA</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x7A</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62bb"></span>62BB</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
 <td class="comment-11" rowspan="1">Is this character walking fast?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62bd"></span>62BD</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return (to move the character) if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62be"></span>62BE</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1">Drop the return address from the stack so that the character will not be moved this time round</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62bf"></span>62BF</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1">Return to consider the next character, or return to the main loop</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="62c0"></span>
 <div class="comments">
 <div class="paragraph">
@@ -119,78 +129,91 @@ It's time to consider a change of pace for the character being moved.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="62c0"></span>62C0</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62c3"></span>62C3</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $3D</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=even number between 2 and 32, and the carry flag holds a random bit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62c5"></span>62C5</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$04</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62c7"></span>62C7</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62c8"></span>62C8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-11" rowspan="1">Place this even number into byte 0x7B of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62c9"></span>62C9</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x7A</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ca"></span>62CA</td>
+<td class="bytes-0"></td>
 <td class="instruction">RL (HL)</td>
 <td class="comment-11" rowspan="2">Bit 7 of byte 0x7A is now equal to the random bit that was pushed into the carry flag by the RRA instruction above</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62cc"></span>62CC</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRC (HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62ce"></span>62CE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="2">Bit 5 of byte 0x7A is set for catapult pellets and stampeding boys to ensure they always go at top speed</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62cf"></span>62CF</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 5,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62d1"></span>62D1</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,<a href="6317.html">$6317</a></td>
 <td class="comment-11" rowspan="1">Jump if we're not dealing with such a thing</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62d3"></span>62D3</td>
+<td class="bytes-0"></td>
 <td class="instruction">RES 7,(HL)</td>
 <td class="comment-11" rowspan="1">Signal: fly or run at top speed</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="62d5"></span>62D5</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR <a href="6317.html">$6317</a></td>
 <td class="comment-11" rowspan="1">Jump over the routine at <a href="62D7.html">62D7</a></td>
 </tr>
@@ -203,10 +226,10 @@ It's time to consider a change of pace for the character being moved.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/25266.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/25266.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

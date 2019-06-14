@@ -23,7 +23,7 @@
 <div class="description">79FD: Get ERIC's coordinates</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="79D4.html">79D4</a>, <a href="7BA0.html">7BA0</a> and <a href="F78E.html">F78E</a>. Returns with ERIC's coordinates (adjusted appropriately if he's jumping) in <span class="register">DE</span>.
@@ -46,47 +46,54 @@ Used by the routines at <a href="79D4.html">79D4</a>, <a href="7BA0.html">7BA0</
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="79fd"></span>79FD</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,($AC61)</td>
 <td class="comment-11" rowspan="1">Pick up ERIC's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a01"></span>7A01</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FFB)</td>
 <td class="comment-11" rowspan="1"><a href="7FFB.html">7FFB</a> holds ERIC's status flags</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a04"></span>7A04</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 2,A</td>
 <td class="comment-11" rowspan="1">Bit 2 will be set if ERIC is jumping</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a06"></span>7A06</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="3">Get ERIC's y-coordinate in <span class="register">D</span> and x-coordinate in <span class="register">E</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a07"></span>7A07</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a08"></span>7A08</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a09"></span>7A09</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return unless ERIC is jumping</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="7a0a"></span>
 <div class="comments">
 <div class="paragraph">
@@ -98,48 +105,56 @@ This entry point is used by the routine at <a href="6AA7.html">6AA7</a> with ERI
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7a0a"></span>7A0A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$9B</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a0c"></span>7A0C</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $9C</td>
 <td class="comment-11" rowspan="1">Is ERIC on the top floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a0e"></span>7A0E</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a0f"></span>7A0F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$A2</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a11"></span>7A11</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A3</td>
 <td class="comment-11" rowspan="1">Is ERIC on the middle floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a13"></span>7A13</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a14"></span>7A14</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$A9</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7a16"></span>7A16</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -152,10 +167,10 @@ This entry point is used by the routine at <a href="6AA7.html">6AA7</a> with ERI
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/31229.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/31229.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

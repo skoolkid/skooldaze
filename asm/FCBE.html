@@ -23,7 +23,7 @@
 <div class="description">FCBE: Command list 0xA4: White Room - BOY WANDER</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by BOY WANDER in lessons <a href="../lessons/EB.html">0xEB</a>, <a href="../lessons/EE.html">0xEE</a> and <a href="../lessons/F1.html">0xF1</a>.
@@ -46,84 +46,98 @@ Used by BOY WANDER in lessons <a href="../lessons/EB.html">0xEB</a>, <a href="..
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcbe"></span>FCBE</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="7C5A.html">$7C5A</a></td>
 <td class="comment-11" rowspan="1">Put the next address in BOY WANDER's buffer, making him...</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcc0"></span>FCC0</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="7000.html">$7000</a></td>
 <td class="comment-11" rowspan="1">...fire the catapult now and then</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcc2"></span>FCC2</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="63BE.html">$63BE</a></td>
 <td class="comment-11" rowspan="1">Go to...</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcc4"></span>FCC4</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $A2,$1E</td>
 <td class="comment-11" rowspan="1">...the White Room board</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcc6"></span>FCC6</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="7DA7.html">$7DA7</a></td>
 <td class="comment-11" rowspan="1">Write on the board unless...</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcc8"></span>FCC8</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $0B</td>
 <td class="comment-11" rowspan="1">...the teacher has arrived at the White Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcc9"></span>FCC9</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="63BE.html">$63BE</a></td>
 <td class="comment-11" rowspan="1">Go to...</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fccb"></span>FCCB</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $A2,$23</td>
 <td class="comment-11" rowspan="1">...the spot just past the right end of the board in the White Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fccd"></span>FCCD</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="7C5A.html">$7C5A</a></td>
 <td class="comment-11" rowspan="1">Put the next address in BOY WANDER's buffer, making him...</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fccf"></span>FCCF</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="7000.html">$7000</a></td>
 <td class="comment-11" rowspan="1">...fire the catapult now and then</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcd1"></span>FCD1</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="62D7.html">$62D7</a></td>
 <td class="comment-11" rowspan="1">Move about until...</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcd3"></span>FCD3</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $0B</td>
 <td class="comment-11" rowspan="1">...the teacher arrives at the White Room</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcd4"></span>FCD4</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="6CA0.html">$6CA0</a></td>
 <td class="comment-11" rowspan="1">Find a seat and sit down</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fcd6"></span>FCD6</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFW <a href="6226.html#629f">$629F</a></td>
 <td class="comment-11" rowspan="1">Sit still</td>
 </tr>
@@ -136,10 +150,10 @@ Used by BOY WANDER in lessons <a href="../lessons/EB.html">0xEB</a>, <a href="..
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/64702.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/64702.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

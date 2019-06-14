@@ -23,7 +23,7 @@
 <div class="description">F41F: Deal with ERIC when he's firing the catapult</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="6AD9.html">6AD9</a> when bit 0 of ERIC's status flags at <a href="7FFB.html">7FFB</a> is set (by the routine at <a href="F46E.html">F46E</a>).
@@ -46,23 +46,26 @@ Used by the routine at <a href="6AD9.html">6AD9</a> when bit 0 of ERIC's status 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f41f"></span>F41F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FF6</td>
 <td class="comment-11" rowspan="1"><a href="7FF6.html">7FF6</a> holds the catapult-firing action timer (initially 0x18)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f422"></span>F422</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
 <td class="comment-11" rowspan="1">Has ERIC finished firing the catapult?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f423"></span>F423</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F434</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f425"></span>
 <div class="comments">
 <div class="paragraph">
@@ -74,47 +77,54 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> and <a 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f425"></span>F425</td>
+<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
 <td class="comment-11" rowspan="2">Clear all of ERIC's status flags at <a href="7FFB.html">7FFB</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f426"></span>F426</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD ($7FFB),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f429"></span>F429</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$AC</td>
 <td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f42b"></span>F42B</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for ERIC's current animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f42e"></span>F42E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$66</td>
 <td class="comment-11" rowspan="2">Restore ERIC's animatory state to what it was before he fired the catapult, jumped, or threw the punch</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f430"></span>F430</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f431"></span>F431</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update ERIC's animatory state and location and update the SRB</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f434"></span>
 <div class="comments">
 <div class="paragraph">
@@ -126,53 +136,61 @@ ERIC hasn't finished firing the catapult. Check which phase of the firing action
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f434"></span>F434</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick up the current value of the action timer in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f435"></span>F435</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$AC</td>
 <td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f437"></span>F437</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $12</td>
 <td class="comment-11" rowspan="1">Is it time to raise the catapult to eye level?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f439"></span>F439</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="703D.html#7041">$7041</a></td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f43c"></span>F43C</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $06</td>
 <td class="comment-11" rowspan="1">Is it time to start lowering the catapult?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f43e"></span>F43E</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="7067.html#706b">$706B</a></td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f441"></span>F441</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $0C</td>
 <td class="comment-11" rowspan="1">Is it time to launch the pellet?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f443"></span>F443</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if not</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f444"></span>
 <div class="comments">
 <div class="paragraph">
@@ -184,71 +202,82 @@ It's time to launch the catapult pellet.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f444"></span>F444</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
 <td class="comment-11" rowspan="1">Byte 0x60 of ERIC's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f446"></span>F446</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f447"></span>F447</td>
+<td class="bytes-0"></td>
 <td class="instruction">OR $7F</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=<a href="../graphics/as.html#127">0x7F or 0xFF</a> (catapult pellet)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f449"></span>F449</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="4">Pick up ERIC's coordinates in <span class="register">DE</span>; they will be the initial coordinates of the catapult pellet</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f44a"></span>F44A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f44b"></span>F44B</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f44c"></span>F44C</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f44d"></span>F44D</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC H</td>
 <td class="comment-11" rowspan="1"><span class="register">H</span>=0xAB (ERIC's catapult pellet)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f44e"></span>F44E</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7048.html#7057">$7057</a></td>
 <td class="comment-11" rowspan="1">Launch the catapult pellet</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f451"></span>F451</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="FE75.html">$FE75</a></td>
 <td class="comment-11" rowspan="1">Play the catapult sound effect</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f454"></span>F454</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$0D</td>
 <td class="comment-11" rowspan="1">Reprimand message <a href="DEA0.html">0x0D</a>: CATAPULTS ARE FORBIDDEN</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f456"></span>
 <div class="comments">
 <div class="paragraph">
@@ -260,90 +289,105 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f456"></span>F456</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,$AC</td>
 <td class="comment-11" rowspan="1">0xAC=ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f458"></span>F458</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-11" rowspan="1">Save the reprimand message identifier</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f459"></span>F459</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6E3C.html">$6E3C</a></td>
 <td class="comment-11" rowspan="1">Check whether any teachers saw ERIC throw a punch, fire his catapult, or jump</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f45c"></span>F45C</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
 <td class="comment-11" rowspan="1">Restore the reprimand message identifier to <span class="register">B</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f45d"></span>F45D</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-11" rowspan="1">Return if ERIC wasn't seen by a teacher</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f45e"></span>F45E</td>
+<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f45f"></span>F45F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
 <td class="comment-11" rowspan="1">Byte 0x61 of the teacher's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f461"></span>F461</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-11" rowspan="3">Pick up the coordinates of the teacher who saw ERIC in <span class="register">DE'</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f462"></span>F462</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f463"></span>F463</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f464"></span>F464</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f465"></span>F465</td>
+<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f466"></span>F466</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
 <td class="comment-11" rowspan="1">Now <span class="register">DE</span> holds the coordinates of the teacher who saw ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f467"></span>F467</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=0xAC (ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f468"></span>F468</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="7700.html">$7700</a></td>
 <td class="comment-11" rowspan="1">Make the teacher give ERIC lines</td>
 </tr>
@@ -356,10 +400,10 @@ This entry point is used by the routines at <a href="F4A4.html">F4A4</a> (with <
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/62495.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/62495.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

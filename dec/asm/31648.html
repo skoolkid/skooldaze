@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 31648</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31638.html">31638</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31648">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31739.html">31739</a></span></td>
+</tr>
+</table>
+<div class="description">31648: Make a teacher find the truant ERIC</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="31854.html">31854</a>, which also places the address of this interruptible subcommand routine into bytes 105 and 106 of the teacher's buffer when ERIC is absent during dinner or class. It makes the teacher run after and stalk ERIC until he goes to wherever he should be (the dinner hall or the classroom).
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31648"></span>31648</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31229.html">31229</a></td>
+<td class="comment-11" rowspan="1">Get ERIC's coordinates in <span class="register">DE</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31651"></span>31651</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="32234.html">32234</a></td>
+<td class="comment-11" rowspan="1">Make this teacher walk fast</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31654"></span>31654</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31452.html">31452</a></td>
+<td class="comment-11" rowspan="1">Determine which way the teacher needs to go to find ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31657"></span>31657</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Are ERIC and this teacher in the same location?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31658"></span>31658</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,31664</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31660"></span>31660</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 3</td>
+<td class="comment-11" rowspan="1">Is this teacher going up or down a staircase?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31662"></span>31662</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,31695</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31664"></span>31664</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,122</td>
+<td class="comment-11" rowspan="3">If this teacher's command list has been marked for a restart (by the routine at <a href="26342.html">26342</a>), terminate this interruptible subcommand and restart now</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31666"></span>31666</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 0,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31668"></span>31668</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP NZ,<a href="25248.html#25252">25252</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31671"></span>31671</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31672"></span>31672</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31188.html">31188</a></td>
+<td class="comment-11" rowspan="1">Check whether ERIC is where he should be</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31675"></span>31675</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31676"></span>31676</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,31695</td>
+<td class="comment-11" rowspan="1">Jump if ERIC is not where he should be</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="31678"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC is back where he should be, so it's time for the teacher to resume his classroom duties.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31678"></span>31678</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,117</td>
+<td class="comment-11" rowspan="4">Pick up in <span class="register">DE</span> the address the teacher has reached in his command list</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31680"></span>31680</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31681"></span>31681</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31682"></span>31682</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31683"></span>31683</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,2</td>
+<td class="comment-11" rowspan="6">190 is the LSB of the address of the routine at <a href="25534.html">25534</a>; point <span class="register">DE</span> at the second-from-last occurrence of this routine address in the teacher's command list (which will take him to the side of the blackboard where he waits for EINSTEIN to grass, or back to the dinner hall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31685"></span>31685</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC DE</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31686"></span>31686</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31687"></span>31687</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 190</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31689"></span>31689</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,31685</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31691"></span>31691</td>
+<td class="bytes-0"></td>
+<td class="instruction">DJNZ 31685</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31693"></span>31693</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR <a href="31638.html">31638</a></td>
+<td class="comment-11" rowspan="1">Restart the teacher's command list from this point</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="31695"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC is not where he should be, or the teacher is on a staircase.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31695"></span>31695</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Are ERIC and the teacher in exactly the same location?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31696"></span>31696</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,31711</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31698"></span>31698</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(23672)</td>
+<td class="comment-11" rowspan="1">23672=LSB of FRAMES system variable</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31701"></span>31701</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">This LSB will be 0 once every 5.12 seconds</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31702"></span>31702</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">Return if it's not zero now</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31703"></span>31703</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for the teacher's current animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31706"></span>31706</td>
+<td class="bytes-0"></td>
+<td class="instruction">XOR 128</td>
+<td class="comment-11" rowspan="1">Make the teacher turn round</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31708"></span>31708</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the teacher's animatory state and update the SRB</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="31711"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="63374.html">63374</a> with <span class="register">H</span> holding the number of a character looking for ERIC (which will be little boy no. 10 or a teacher), and <span class="register">A</span> holding 1, 2, 3 or 4 (indicating the character's next move).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31711"></span>31711</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 3</td>
+<td class="comment-11" rowspan="1">Set the carry flag if the chaser is on a staircase</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31713"></span>31713</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD BC,0</td>
+<td class="comment-11" rowspan="2"><span class="register">DE</span> will hold the appropriate x- and y-coordinate increments for the chaser's next move (to the midstride position), and <span class="register">BC</span> will hold the appropriate x- and y-coordinate increments for the chaser's move after that (from the midstride position); initialise these increments to 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31716"></span>31716</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD DE,0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31719"></span>31719</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 of the buffer holds the animatory state of ERIC's chaser</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31721"></span>31721</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,<a href="31768.html">31768</a></td>
+<td class="comment-11" rowspan="1">Jump if the chaser is currently going up or down stairs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31723"></span>31723</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,31732</td>
+<td class="comment-11" rowspan="1">Jump if the chaser must go right (<span class="register">A</span>=4)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31725"></span>31725</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is the chaser facing right?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31727"></span>31727</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,31703</td>
+<td class="comment-11" rowspan="1">Turn him round if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31729"></span>31729</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1"><span class="register">C</span>=-1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31730"></span>31730</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR <a href="31768.html#31781">31781</a></td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31732"></span>31732</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Is the chaser facing left?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31734"></span>31734</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,31703</td>
+<td class="comment-11" rowspan="1">Turn him round if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31736"></span>31736</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1"><span class="register">C</span>=1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31737"></span>31737</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR <a href="31768.html#31781">31781</a></td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31638.html">31638</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31648">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31739.html">31739</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/7BA0.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

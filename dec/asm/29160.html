@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 29160</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29153.html">29153</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29160">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29278.html">29278</a></span></td>
+</tr>
+</table>
+<div class="description">29160: Make a teacher wipe a blackboard (2)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Continues from <a href="29148.html">29148</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Blackboard identifier (236, 238 or 240)</td>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Coordinates of the top-left corner of the blackboard</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29160"></span>29160</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,105</td>
+<td class="comment-11" rowspan="2">Replace the address of the interruptible subcommand routine at <a href="29148.html">29148</a> in bytes 105 and 106 of the teacher's buffer with <a href="29160.html#29175">29175</a> (below)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29162"></span>29162</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),247</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29164"></span>29164</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,107</td>
+<td class="comment-11" rowspan="2">Wiping a blackboard requires 32 distinct actions (in 8 groups of 4: two paces forward, arm up, arm down)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29166"></span>29166</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),32</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29168"></span>29168</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="4">Store the x-coordinate of the rightmost column of the blackboard (which will be wiped first) in byte 108 of the teacher's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29169"></span>29169</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,E</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29170"></span>29170</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,7</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29172"></span>29172</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29173"></span>29173</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2">Store the y-coordinate of the top row of the blackboard in byte 109 of the teacher's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29174"></span>29174</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="29175"></span>
+<div class="comments">
+<div class="paragraph">
+After the initial call to this routine, each subsequent call enters here.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29175"></span>29175</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,107</td>
+<td class="comment-11" rowspan="2">Decrement the number of board-wiping actions remaining</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29177"></span>29177</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29178"></span>29178</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">Has the teacher finished wiping the board?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29180"></span>29180</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,29264</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29182"></span>29182</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="25108.html">25108</a></td>
+<td class="comment-11" rowspan="1">Update the SRB for the teacher's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29185"></span>29185</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,107</td>
+<td class="comment-11" rowspan="2">Is the teacher midstride or is his arm raised?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29187"></span>29187</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 0,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29189"></span>29189</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,29248</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29191"></span>29191</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 1,(HL)</td>
+<td class="comment-11" rowspan="1">Is the teacher ready to raise his arm (and wipe)?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29193"></span>29193</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,29199</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29195"></span>29195</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of the teacher midstride</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29196"></span>29196</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the teacher's animatory state and update the SRB</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="29199"></span>
+<div class="comments">
+<div class="paragraph">
+The teacher is ready to raise his arm and wipe a column of the board.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29199"></span>29199</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,5</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of the teacher with his arm raised</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29201"></span>29201</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 72</td>
+<td class="comment-11" rowspan="1">Are we actually dealing with a teacher?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29203"></span>29203</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,29207</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29205"></span>29205</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,8</td>
+<td class="comment-11" rowspan="1">If ANGELFACE or BOY WANDER were wiping the board, <span class="register">A</span> would now hold the animatory state of the boy with his arm raised</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29207"></span>29207</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the teacher's animatory state and update the SRB</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29210"></span>29210</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,108</td>
+<td class="comment-11" rowspan="2"><span class="register">E</span>=x-coordinate of the blackboard column to wipe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29212"></span>29212</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29213"></span>29213</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-11" rowspan="1">Decrement the blackboard column x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29214"></span>29214</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2"><span class="register">D</span>=y-coordinate of the top row of the blackboard column to wipe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29215"></span>29215</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29216"></span>29216</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28807.html">28807</a></td>
+<td class="comment-11" rowspan="3">Update the SRB for the upper and lower character squares of the blackboard column that will be wiped</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29219"></span>29219</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29220"></span>29220</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28807.html">28807</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29223"></span>29223</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="2"><span class="register">L</span>=skool UDG reference for the lower character square of the blackboard column</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29224"></span>29224</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29225"></span>29225</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,8</td>
+<td class="comment-11" rowspan="2"><span class="register">E</span>=skool UDG reference for the upper character square of the blackboard column</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29227"></span>29227</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD E,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29228"></span>29228</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,128</td>
+<td class="comment-11" rowspan="5">Point <span class="register">HL</span> at the base address of the UDG data for the lower character square of the blackboard column, and <span class="register">DE</span> at the base address of the UDG data for the upper character square of the blackboard column</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29230"></span>29230</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 233</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29232"></span>29232</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,29236</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29234"></span>29234</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,136</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29236"></span>29236</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD D,H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29237"></span>29237</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">There are 8 bytes in a UDG</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29239"></span>29239</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="1">All bits set means clean (no chalk)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29241"></span>29241</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="5">Wipe the blackboard column clean by altering the skool UDG data directly</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29242"></span>29242</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29243"></span>29243</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29244"></span>29244</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC D</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29245"></span>29245</td>
+<td class="bytes-0"></td>
+<td class="instruction">DJNZ 29241</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29247"></span>29247</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="29248"></span>
+<div class="comments">
+<div class="paragraph">
+The teacher is midstride or his arm is raised.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29248"></span>29248</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 248</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=base animatory state of the teacher</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29250"></span>29250</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 72</td>
+<td class="comment-11" rowspan="1">Are we actually dealing with a teacher?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29252"></span>29252</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,29256</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29254"></span>29254</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 240</td>
+<td class="comment-11" rowspan="1">If ANGELFACE or BOY WANDER were wiping the board, <span class="register">A</span> would now hold the base animatory state of the boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29256"></span>29256</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 1,(HL)</td>
+<td class="comment-11" rowspan="1">Is the teacher's arm raised?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29258"></span>29258</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,29261</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29260"></span>29260</td>
+<td class="bytes-0"></td>
+<td class="instruction">DEC E</td>
+<td class="comment-11" rowspan="1">The teacher was midstride, so move him forward to the next blackboard column</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29261"></span>29261</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="25008.html">25008</a></td>
+<td class="comment-11" rowspan="1">Update the teacher's animatory state and location and update the SRB</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="29264"></span>
+<div class="comments">
+<div class="paragraph">
+The teacher has finished wiping the board.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29264"></span>29264</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28968.html">28968</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=identifier of the blackboard the teacher is next to</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29267"></span>29267</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="2"><span class="register">HL</span>=<a href="32748.html">32748</a> (Reading Room blackboard), <a href="32750.html">32750</a> (White Room blackboard), or <a href="32752.html">32752</a> (Exam Room blackboard)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29268"></span>29268</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,127</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29270"></span>29270</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),1</td>
+<td class="comment-11" rowspan="1">The first clean pixel column is now column no. 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29272"></span>29272</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="2">Signal: no one has written on this blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29273"></span>29273</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29275"></span>29275</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="25248.html#25252">25252</a></td>
+<td class="comment-11" rowspan="1">Terminate this interruptible subcommand</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29153.html">29153</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29160">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29278.html">29278</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/71E8.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 63779</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63768.html">63768</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63779">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63829.html">63829</a></span></td>
+</tr>
+</table>
+<div class="description">63779: Make MR CREAK ask the birth year question if appropriate</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="31282.html">31282</a>. Makes MR CREAK ask the birth year question if (a) he hasn't asked it yet this lesson, and (b) ERIC hasn't opened the safe yet.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">0 (MR ROCKITT), 1 (MR WITHIT), or 2 (MR CREAK)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63779"></span>63779</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Save the teacher identifier in <span class="register">B</span> for now</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63780"></span>63780</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,31258</td>
+<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at MR ROCKITT's question/answer data table (ready for the return to the calling routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63783"></span>63783</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">Are we dealing with MR CREAK?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63785"></span>63785</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,63790</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63787"></span>63787</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Restore the teacher identifier (0-2) to <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63788"></span>63788</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Set the zero flag if we're dealing with MR ROCKITT</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63789"></span>63789</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63790"></span>
+<div class="comments">
+<div class="paragraph">
+We're dealing with MR CREAK, so we need to determine whether he should ask the birth year question.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63790"></span>63790</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32746)</td>
+<td class="comment-11" rowspan="1">Collect the game mode indicator from <a href="32746.html">32746</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63793"></span>63793</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 3</td>
+<td class="comment-11" rowspan="1">Has ERIC already opened the safe?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63795"></span>63795</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,63787</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63797"></span>63797</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Are we in demo mode?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63798"></span>63798</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,63787</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63800"></span>63800</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32730)</td>
+<td class="comment-11" rowspan="2">Has MR CREAK already asked the birth year question this lesson?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63803"></span>63803</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63804"></span>63804</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,63787</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63806"></span>
+<div class="comments">
+<div class="paragraph">
+MR CREAK hasn't asked the birth year question yet. Make him do so now.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63806"></span>63806</td>
+<td class="bytes-0"></td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Drop the return address from the stack; we'll be re-entering the calling routine at a different point</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63807"></span>63807</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="2">Set <a href="32730.html">32730</a> to 1, indicating that MR CREAK has asked the birth year question this period</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63808"></span>63808</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (32730),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63811"></span>63811</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32666)</td>
+<td class="comment-11" rowspan="2">Copy the identifier of CREAK's birth year battle into the 'Q' spot in 'It was the BATTLE OF Q'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63814"></span>63814</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (61687),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63817"></span>63817</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,61665</td>
+<td class="comment-11" rowspan="1"><a href="61665.html">61665</a>: '{Please Sir - I cannot tell a lie . . }It was the BATTLE OF Q'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63820"></span>63820</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (43371),HL</td>
+<td class="comment-11" rowspan="1">Place this message address into bytes 107 and 108 of EINSTEIN's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63823"></span>63823</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD DE,61741</td>
+<td class="comment-11" rowspan="1"><a href="61741.html">61741</a>='WHAT HAPPENED IN THE YEAR THAT I WAS BORN'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63826"></span>63826</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="31282.html#31433">31433</a></td>
+<td class="comment-11" rowspan="1">Re-enter the calling routine to make MR CREAK ask the birth year question</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63768.html">63768</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63779">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63829.html">63829</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/F923.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

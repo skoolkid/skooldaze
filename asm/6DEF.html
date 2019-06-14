@@ -23,7 +23,7 @@
 <div class="description">6DEF: Check whether a shield has been hit</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="6DC6.html">6DC6</a>. Returns with the carry flag set if a shield was hit (either by a catapult pellet or by ERIC while jumping).
@@ -53,107 +53,124 @@ Used by the routine at <a href="6DC6.html">6DC6</a>. Returns with the carry flag
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6def"></span>6DEF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FEA)</td>
 <td class="comment-11" rowspan="1"><a href="7FEA.html">7FEA</a> holds the game mode indicator</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6df2"></span>6DF2</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="1">Are the shields hittable at the moment?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6df3"></span>6DF3</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-11" rowspan="1">Return if not (it's either demo mode, or ERIC's looking for the safe combination)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6df4"></span>6DF4</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="2">Now bit 7 of <span class="register">C</span> is reset if we're in 'flash the shields' mode, or set if in 'unflash the shields' mode</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6df5"></span>6DF5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6df6"></span>6DF6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$0A</td>
 <td class="comment-11" rowspan="1">100 points for hitting a shield on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6df8"></span>6DF8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=y-coordinate of the potential target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6df9"></span>6DF9</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $9A</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the shields on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6dfb"></span>6DFB</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6E0B</td>
 <td class="comment-11" rowspan="1">Jump if the pellet or ERIC's hand is at shield-height on the top floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6dfd"></span>6DFD</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A0</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the shields on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6dff"></span>6DFF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$14</td>
 <td class="comment-11" rowspan="1">200 points for hitting a shield on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e01"></span>6E01</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6E0B</td>
 <td class="comment-11" rowspan="1">Jump if the pellet or ERIC's hand is at shield-height on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e03"></span>6E03</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$28</td>
 <td class="comment-11" rowspan="1">400 points for hitting a shield on the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e05"></span>6E05</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A6</td>
 <td class="comment-11" rowspan="1">This is the y-coordinate of the shields on the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e07"></span>6E07</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6E0B</td>
 <td class="comment-11" rowspan="1">Jump if the pellet or ERIC's hand is at shield-height on the bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e09"></span>6E09</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Reset the carry flag to indicate that no shield was hit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e0a"></span>6E0A</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="6e0b"></span>
 <div class="comments">
 <div class="paragraph">
@@ -165,162 +182,189 @@ The pellet or ERIC's hand is at the right height to hit a shield. Is it at the r
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6e0b"></span>6E0B</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="F4D2.html">$F4D2</a></td>
 <td class="comment-11" rowspan="1">Is the potential target on-screen?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e0e"></span>6E0E</td>
+<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e0f"></span>6E0F</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-11" rowspan="1">Return with the carry flag reset if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e10"></span>6E10</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=attribute of the potential target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e11"></span>6E11</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $38</td>
 <td class="comment-11" rowspan="5">Return if the potential target is drawn in black paper or black ink (which is normally true only if it's not a shield, but is also true if a speech bubble has been drawn over a shield; in this case, the routine exits here, which is a <a href="../reference/bugs.html#hiddenShield">bug</a>)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e13"></span>6E13</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e14"></span>6E14</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e15"></span>6E15</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $07</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e17"></span>6E17</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e18"></span>6E18</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=attribute of the shield</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e19"></span>6E19</td>
+<td class="bytes-0"></td>
 <td class="instruction">XOR C</td>
 <td class="comment-11" rowspan="3">Check whether we should make the shields flash or not flash, and return unless the flash status of the shield should be toggled</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e1a"></span>6E1A</td>
+<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e1b"></span>6E1B</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e1c"></span>6E1C</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=attribute of the shield</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e1d"></span>6E1D</td>
+<td class="bytes-0"></td>
 <td class="instruction">XOR $80</td>
 <td class="comment-11" rowspan="1">Toggle the FLASH status of the shield</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e1f"></span>6E1F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
 <td class="comment-11" rowspan="1">Insert the new attribute byte into the skool graphic data</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e20"></span>6E20</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-11" rowspan="1">Apply the new attribute on-screen</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e21"></span>6E21</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=10 (top floor), 20 (middle) or 40 (bottom)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e22"></span>6E22</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6AFB.html#6afd">$6AFD</a></td>
 <td class="comment-11" rowspan="1">Add 100, 200 or 400 to the score and print it</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e25"></span>6E25</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="E4EC.html">$E4EC</a></td>
 <td class="comment-11" rowspan="1">Play the 'hit a shield' sound effect</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e28"></span>6E28</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FEB</td>
 <td class="comment-11" rowspan="1"><a href="7FEB.html">7FEB</a> holds the shield counter</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e2b"></span>6E2B</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
 <td class="comment-11" rowspan="1">One more shield hit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e2c"></span>6E2C</td>
+<td class="bytes-0"></td>
 <td class="instruction">SCF</td>
 <td class="comment-11" rowspan="1">Set the carry flag to indicate that a shield was hit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e2d"></span>6E2D</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return unless the last shield was hit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e2e"></span>6E2E</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="F8B4.html">$F8B4</a></td>
 <td class="comment-11" rowspan="1">All the shields have been hit; take appropriate action</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e31"></span>6E31</td>
+<td class="bytes-0"></td>
 <td class="instruction">SCF</td>
 <td class="comment-11" rowspan="1">Set the carry flag to indicate that a shield was hit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6e32"></span>6E32</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -333,10 +377,10 @@ The pellet or ERIC's hand is at the right height to hit a shield. Is it at the r
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/28143.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/28143.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

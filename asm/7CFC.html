@@ -23,7 +23,7 @@
 <div class="description">7CFC: Make a teacher tell the kids to go to a certain page in their books</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="7D30.html">7D30</a> and <a href="F300.html">F300</a>. Makes the teacher tell the kids to turn to or answer the questions on a randomly chosen page of their books.
@@ -49,161 +49,187 @@ Used by the routines at <a href="7D30.html">7D30</a> and <a href="F300.html">F30
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7cfc"></span>7CFC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$F26F</td>
 <td class="comment-11" rowspan="3"><span class="register">BC</span>=<a href="F262.html">F262</a> (TURN TO PAGE 123 OF YOUR BOOKS...); <span class="register">DE</span>=<a href="F262.html#f26f">F26F</a> (the '123' in this message)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cff"></span>7CFF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,$62</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d01"></span>7D01</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d02"></span>7D02</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d05"></span>7D05</td>
+<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
 <td class="comment-11" rowspan="2">This jump (which decides between the message at <a href="F262.html">F262</a> and the message at <a href="F29D.html">F29D</a>) is performed half the time</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d06"></span>7D06</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$7D0C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d08"></span>7D08</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,$BA</td>
 <td class="comment-11" rowspan="2"><span class="register">BC</span>=<a href="F29D.html">F29D</a> (ANSWER THE QUESTIONS ON PAGE 123 OF YOUR LOVELY TEXTBOOK); <span class="register">DE</span>=<a href="F29D.html#f2ba">F2BA</a> (the '123' in this message)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d0a"></span>7D0A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,$9D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7d0c"></span>7D0C</td>
+<td class="bytes-0"></td>
 <td class="instruction">SCF</td>
 <td class="comment-11" rowspan="2"><span class="register">A</span>=128-255 (random page number to insert into the message)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d0d"></span>7D0D</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d0e"></span>7D0E</td>
+<td class="bytes-0"></td>
 <td class="instruction">NOP</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d0f"></span>7D0F</td>
+<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the slot for the 100s digit of the page number in the message</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d10"></span>7D10</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$2F</td>
 <td class="comment-11" rowspan="4">Compute and insert the ASCII code for the 100s digit of the page number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7d12"></span>7D12</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC (HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d13"></span>7D13</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $64</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d15"></span>7D15</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7D12</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d17"></span>7D17</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the slot for the 10s digit of the page number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d18"></span>7D18</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$64</td>
 <td class="comment-11" rowspan="1">Compensate for the trial subtraction of 100 above</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d1a"></span>7D1A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$2F</td>
 <td class="comment-11" rowspan="4">Compute and insert the ASCII code for the 10s digit of the page number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7d1c"></span>7D1C</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC (HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d1d"></span>7D1D</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $0A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d1f"></span>7D1F</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7D1C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d21"></span>7D21</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the slot for the units digit of the page number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d22"></span>7D22</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$3A</td>
 <td class="comment-11" rowspan="1">Compensate for the trial subtraction of ten above, and add an extra 0x30 (the ASCII code for '0')</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d24"></span>7D24</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-11" rowspan="1">Insert the ASCII code for the units digit of the page number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d25"></span>7D25</td>
+<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-11" rowspan="1">Restore the teacher's character number to <span class="register">H</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="7d26"></span>
 <div class="comments">
 <div class="paragraph">
@@ -215,36 +241,42 @@ This entry point is used by the routines at <a href="7D30.html">7D30</a>, <a hre
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7d26"></span>7D26</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6C</td>
 <td class="comment-11" rowspan="4">Place the address of the message into bytes 0x6B and 0x6C of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d28"></span>7D28</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d29"></span>7D29</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d2a"></span>7D2A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d2b"></span>7D2B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$7986</td>
 <td class="comment-11" rowspan="2">Place the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 0x69 and 0x6A of the character's buffer and jump to it</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7d2e"></span>7D2E</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR <a href="7CF1.html">$7CF1</a></td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
@@ -257,10 +289,10 @@ This entry point is used by the routines at <a href="7D30.html">7D30</a>, <a hre
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/31996.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/31996.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

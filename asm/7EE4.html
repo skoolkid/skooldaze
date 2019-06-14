@@ -23,7 +23,7 @@
 <div class="description">7EE4: Save Skool Daze to tape</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 This routine was used to save the high-speed block to tape.
@@ -46,30 +46,35 @@ This routine was used to save the high-speed block to tape.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7ee4"></span>7EE4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$5EE0</td>
 <td class="comment-11" rowspan="1"><a href="../start/5EE0.html">5EE0</a> is where the game starts after loading</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ee7"></span>7EE7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD ($5D19),HL</td>
 <td class="comment-11" rowspan="1">Store this address where it will be popped off the stack by the <a href="../load/802F.html">load routine</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7eea"></span>7EEA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$0017</td>
 <td class="comment-11" rowspan="1">This parameter is used by the save routine</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7eed"></span>7EED</td>
+<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7eee"></span>7EEE</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP $8100</td>
 <td class="comment-11" rowspan="1">Jump into the <a href="../save/8100.html">save routine</a></td>
 </tr>
@@ -82,10 +87,10 @@ This routine was used to save the high-speed block to tape.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/32484.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/32484.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

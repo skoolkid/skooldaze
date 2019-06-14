@@ -23,7 +23,7 @@
 <div class="description">ACE0: Lesson descriptors</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 When a lesson starts, the routine at <a href="66E6.html">66E6</a> picks up the lesson descriptor from this table and copies it into <a href="7FF4.html">7FF4</a>. Each entry in this table defines the teacher for the period (if any), and the room. The teacher is identified by bits 4-7:
@@ -113,192 +113,224 @@ The room is identified by bits 0-3:
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace0"></span>ACE0</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $26</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E0.html">0xE0</a>: DINNER (MR WITHIT)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace1"></span>ACE1</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $06</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E1.html">0xE1</a>: DINNER (MR WACKER)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace2"></span>ACE2</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $04</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E2.html">0xE2</a>: MR WACKER - EXAM ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace3"></span>ACE3</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $14</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E3.html">0xE3</a>: MR ROCKITT - EXAM ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace4"></span>ACE4</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $45</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E4.html">0xE4</a>: REVISION LIBRARY</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace5"></span>ACE5</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $45</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E5.html">0xE5</a>: REVISION LIBRARY</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace6"></span>ACE6</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $45</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E6.html">0xE6</a>: REVISION LIBRARY</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace7"></span>ACE7</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $22</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E7.html">0xE7</a>: MR WITHIT - MAP ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace8"></span>ACE8</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $01</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E8.html">0xE8</a>: MR WACKER - READING ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="ace9"></span>ACE9</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $11</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/E9.html">0xE9</a>: MR ROCKITT - READING ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acea"></span>ACEA</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $31</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/EA.html">0xEA</a>: MR CREAK - READING ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="aceb"></span>ACEB</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $33</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/EB.html">0xEB</a>: MR CREAK - WHITE ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acec"></span>ACEC</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $03</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/EC.html">0xEC</a>: MR WACKER - WHITE ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="aced"></span>ACED</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $23</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/ED.html">0xED</a>: MR WITHIT - WHITE ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acee"></span>ACEE</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $13</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/EE.html">0xEE</a>: MR ROCKITT - WHITE ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acef"></span>ACEF</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $02</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/EF.html">0xEF</a>: MR WACKER - MAP ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf0"></span>ACF0</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $22</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F0.html">0xF0</a>: MR WITHIT - MAP ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf1"></span>ACF1</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $13</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F1.html">0xF1</a>: MR ROCKITT - WHITE ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf2"></span>ACF2</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $31</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F2.html">0xF2</a>: MR CREAK - READING ROOM</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf3"></span>ACF3</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F3.html">0xF3</a>: PLAYTIME (ANGELFACE has mumps)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf4"></span>ACF4</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F4.html">0xF4</a>: PLAYTIME (EINSTEIN is going to grass on ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf5"></span>ACF5</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F5.html">0xF5</a>: PLAYTIME (BOY WANDER has hidden a pea-shooter)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf6"></span>ACF6</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F6.html">0xF6</a>: PLAYTIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf7"></span>ACF7</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F7.html">0xF7</a>: PLAYTIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf8"></span>ACF8</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F8.html">0xF8</a>: PLAYTIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acf9"></span>ACF9</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/F9.html">0xF9</a>: PLAYTIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acfa"></span>ACFA</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/FA.html">0xFA</a>: PLAYTIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acfb"></span>ACFB</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/FB.html">0xFB</a>: PLAYTIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acfc"></span>ACFC</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/FC.html">0xFC</a>: PLAYTIME (little boys stampede)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acfd"></span>ACFD</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/FD.html">0xFD</a>: PLAYTIME (little boys stampede)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acfe"></span>ACFE</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/FE.html">0xFE</a>: PLAYTIME</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="acff"></span>ACFF</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEFB $47</td>
 <td class="comment-11" rowspan="1">Lesson <a href="../lessons/FF.html">0xFF</a>: PLAYTIME</td>
 </tr>
@@ -311,10 +343,10 @@ The room is identified by bits 0-3:
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/44256.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/44256.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

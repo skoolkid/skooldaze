@@ -23,7 +23,7 @@
 <div class="description">5EE0: Start</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 We jump here from the load routine at <a href="../load/802F.html">802F</a>.
@@ -46,66 +46,77 @@ We jump here from the load routine at <a href="../load/802F.html">802F</a>.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="5ee0"></span>5EE0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD SP,$5CFE</td>
 <td class="comment-11" rowspan="1">Put the stack pointer somewhere safe</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5ee3"></span>5EE3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7E00</td>
 <td class="comment-11" rowspan="4">Copy 7E00-7FFF into 8000-81FF</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5ee6"></span>5EE6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$8000</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5ee9"></span>5EE9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$0200</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5eec"></span>5EEC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LDIR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5eee"></span>5EEE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7DFF</td>
 <td class="comment-11" rowspan="4">Move 5F00-7DFF up to 6000-7EFF</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5ef1"></span>5EF1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$7EFF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5ef4"></span>5EF4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD BC,$1F00</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5ef7"></span>5EF7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LDDR</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5ef9"></span>5EF9</td>
+<td class="bytes-0"></td>
 <td class="instruction">EI</td>
 <td class="comment-11" rowspan="1">Enable interrupts</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="5efa"></span>5EFA</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="../asm/6900.html">$6900</a></td>
 <td class="comment-11" rowspan="1">Play the theme tune and enter demo mode</td>
 </tr>
@@ -118,10 +129,10 @@ We jump here from the load routine at <a href="../load/802F.html">802F</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/start/24288.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/start/24288.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

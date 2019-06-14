@@ -23,7 +23,7 @@
 <div class="description">7CE0: Make a teacher decide whether to give EINSTEIN lines for telling tales</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="F300.html">F300</a>.
@@ -49,47 +49,54 @@ Used by the routine at <a href="F300.html">F300</a>.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7ce0"></span>7CE0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
 <td class="comment-11" rowspan="7"><span class="register">L</span>=0x00 (MR WACKER), 0x10 (MR ROCKITT), 0x20 (MR WITHIT), or 0x30 (MR CREAK)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ce1"></span>7CE1</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $A3</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ce3"></span>7CE3</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ce4"></span>7CE4</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ce5"></span>7CE5</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ce6"></span>7CE6</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ce7"></span>7CE7</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="7ce8"></span>
 <div class="comments">
 <div class="paragraph">
@@ -125,30 +132,35 @@ The number in <span class="register">L</span> determines how often the teacher w
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ce8"></span>7CE8</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ceb"></span>7CEB</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP L</td>
 <td class="comment-11" rowspan="1">Set the carry flag if the teacher is going to give lines to EINSTEIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cec"></span>7CEC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$FF</td>
 <td class="comment-11" rowspan="2">Return with <span class="register">L</span>=0xFF if the teacher's not in the mood to give lines to EINSTEIN</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cee"></span>7CEE</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7cef"></span>7CEF</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR <a href="7CA0.html">$7CA0</a></td>
 <td class="comment-11" rowspan="1">Make the teacher give EINSTEIN lines for telling tales</td>
 </tr>
@@ -161,10 +173,10 @@ The number in <span class="register">L</span> determines how often the teacher w
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/31968.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/31968.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

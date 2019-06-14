@@ -23,7 +23,7 @@
 <div class="description">B2E8: Print a character's title and name, and walk him onto the screen (3)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Continues from <a href="B1E8.html">B1E8</a>. Determines the animatory state of the character to be walked onto the screen.
@@ -53,84 +53,98 @@ Continues from <a href="B1E8.html">B1E8</a>. Determines the animatory state of t
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b2e8"></span>B2E8</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $05</td>
 <td class="comment-11" rowspan="1">Are we dealing with one of the teachers?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2ea"></span>B2EA</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$B2F3</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2ec"></span>B2EC</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$09</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=9, 10, 11, 12</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2ee"></span>B2EE</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $0B</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=9, 10, 11, 8</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2f0"></span>B2F0</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=18, 20, 22, 16</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2f1"></span>B2F1</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR $B2F9</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b2f3"></span>B2F3</td>
+<td class="bytes-0"></td>
 <td class="instruction">CPL</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=0, 1, 2, 3</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2f4"></span>B2F4</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=1, 2, 3, 4</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2f5"></span>B2F5</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $03</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=1, 2, 3, 0</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2f7"></span>B2F7</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$19</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=26, 27, 28, 25</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b2f9"></span>B2F9</td>
+<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=<a href="../graphics/as.html#208">0xD0</a> (MR WACKER), <a href="../graphics/as.html#216">0xD8</a> (MR ROCKITT), <a href="../graphics/as.html#224">0xE0</a> (MR WITHIT), <a href="../graphics/as.html#200">0xC8</a> (MR CREAK), <a href="../graphics/as.html#144">0x90</a> (EINSTEIN), <a href="../graphics/as.html#160">0xA0</a> (ANGELFACE), <a href="../graphics/as.html#176">0xB0</a> (BOY WANDER), or <a href="../graphics/as.html#128">0x80</a> (ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2fa"></span>B2FA</td>
+<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2fb"></span>B2FB</td>
+<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b2fc"></span>B2FC</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="B3E8.html">$B3E8</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -143,10 +157,10 @@ Continues from <a href="B1E8.html">B1E8</a>. Determines the animatory state of t
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/45800.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/45800.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

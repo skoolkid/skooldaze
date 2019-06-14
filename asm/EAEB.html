@@ -23,7 +23,7 @@
 <div class="description">EAEB: Make a jumping sound effect</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="F533.html">F533</a>.
@@ -46,30 +46,35 @@ Used by the routine at <a href="F533.html">F533</a>.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="eaeb"></span>EAEB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$0310</td>
 <td class="comment-11" rowspan="3">These parameters were meant for the routine at <a href="FE57.html#fe62">FE62</a>; however, the CALL below is to F562 (98,245) instead of <a href="FE57.html#fe62">FE62</a> (98,254), which is a <a href="../reference/bugs.html#jumpSound">bug</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eaee"></span>EAEE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$3260</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eaf1"></span>EAF1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$01</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eaf3"></span>EAF3</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL $F562</td>
 <td class="comment-11" rowspan="1">F562 holds the operand of a JR NZ instruction, so in effect this is CALL <a href="F533.html#f563">F563</a>; anyway, this call does nothing significant</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="eaf6"></span>EAF6</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="FE52.html">$FE52</a></td>
 <td class="comment-11" rowspan="1">Make a walking sound effect</td>
 </tr>
@@ -82,10 +87,10 @@ Used by the routine at <a href="F533.html">F533</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/60139.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/60139.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

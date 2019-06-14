@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 28220</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28211.html">28211</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28220">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28303.html">28303</a></span></td>
+</tr>
+</table>
+<div class="description">28220: Check whether a boy can be seen by a teacher</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="28446.html">28446</a>, <a href="28672.html">28672</a> and <a href="62495.html">62495</a>. Returns with the carry flag set if the boy can be seen by a teacher, and the teacher's character number in <span class="register">H'</span>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">167 (BOY WANDER), 168 (ANGELFACE) or 172 (ERIC)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28220"></span>28220</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28304.html">28304</a></td>
+<td class="comment-11" rowspan="1">Get the floor (155, 162, 169) nearest to the character in <span class="register">D</span></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="28223"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="30636.html">30636</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28223"></span>28223</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="28327.html">28327</a></td>
+<td class="comment-11" rowspan="1">Get the teacher's visibility range in [<span class="register">C</span>,<span class="register">B</span>]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28226"></span>28226</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28227"></span>28227</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD B,4</td>
+<td class="comment-11" rowspan="1">There are 4 teachers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28229"></span>28229</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,163</td>
+<td class="comment-11" rowspan="1">And the first is 163=MR WACKER</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28231"></span>28231</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="2">Collect the teacher's x-coordinate from byte 98 of his buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28233"></span>28233</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28234"></span>28234</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28235"></span>28235</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">Is the teacher at or to the left of the upper bound of the visibility range?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28236"></span>28236</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,28247</td>
+<td class="comment-11" rowspan="2">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28238"></span>28238</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,28247</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28240"></span>28240</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28241"></span>28241</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">Next teacher</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28242"></span>28242</td>
+<td class="bytes-0"></td>
+<td class="instruction">DJNZ 28231</td>
+<td class="comment-11" rowspan="1">Jump back until all four teachers are done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28244"></span>28244</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-11" rowspan="1">Clear the carry flag to indicate that the boy wasn't seen by a teacher</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28245"></span>28245</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28246"></span>28246</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28247"></span>28247</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP C</td>
+<td class="comment-11" rowspan="1">Is the teacher to the left of the lower bound of the visibility range?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28248"></span>28248</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,28240</td>
+<td class="comment-11" rowspan="1">Jump back to consider the next teacher if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="28250"></span>
+<div class="comments">
+<div class="paragraph">
+The teacher's x-coordinate is within the visibility range [<span class="register">C</span>,<span class="register">B</span>]. Now check his y-coordinate.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28250"></span>28250</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28251"></span>28251</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,112</td>
+<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 111 and 112 of the teacher's buffer?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28253"></span>28253</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28254"></span>28254</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28255"></span>28255</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,28241</td>
+<td class="comment-11" rowspan="1">Jump back to consider the next teacher if so (this one is occupied)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28257"></span>28257</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,97</td>
+<td class="comment-11" rowspan="2">Collect the teacher's y-coordinate from byte 97 of his buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28259"></span>28259</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28260"></span>28260</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28261"></span>28261</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28262"></span>28262</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 158</td>
+<td class="comment-11" rowspan="1">Is the teacher near or on the top floor?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28264"></span>28264</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,28270</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28266"></span>28266</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,155</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28268"></span>28268</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 28278</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28270"></span>28270</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 165</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28272"></span>28272</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,162</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28274"></span>28274</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,28278</td>
+<td class="comment-11" rowspan="1">Jump if the teacher is near or on the middle floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28276"></span>28276</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,169</td>
+<td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28278"></span>28278</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP D</td>
+<td class="comment-11" rowspan="1">Is the teacher within the y-coordinate visibility range?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28279"></span>28279</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,28240</td>
+<td class="comment-11" rowspan="1">Jump back to consider the next teacher if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="28281"></span>
+<div class="comments">
+<div class="paragraph">
+The teacher is close enough to the boy to see him. But is the teacher facing the right way?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28281"></span>28281</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28282"></span>28282</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=teacher's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28283"></span>28283</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28284"></span>28284</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">Is the teacher standing right where the boy is?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28285"></span>28285</td>
+<td class="bytes-0"></td>
+<td class="instruction">SCF</td>
+<td class="comment-11" rowspan="2">Return with the carry flag set if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28286"></span>28286</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET Z</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28287"></span>28287</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="3"><span class="register">A</span>=128 if the boy is to the right of the teacher, 0 if the boy is to the left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28288"></span>28288</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,0</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28290"></span>28290</td>
+<td class="bytes-0"></td>
+<td class="instruction">RRA</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28291"></span>28291</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28292"></span>28292</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,96</td>
+<td class="comment-11" rowspan="1">Byte 96 of the teacher's buffer holds his animatory state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28294"></span>28294</td>
+<td class="bytes-0"></td>
+<td class="instruction">XOR (HL)</td>
+<td class="comment-11" rowspan="1">Reset bit 7 of <span class="register">A</span> if the teacher is facing the boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28295"></span>28295</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,98</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28297"></span>28297</td>
+<td class="bytes-0"></td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28298"></span>28298</td>
+<td class="bytes-0"></td>
+<td class="instruction">RLCA</td>
+<td class="comment-11" rowspan="1">Push bit 7 of <span class="register">A</span> into the carry flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28299"></span>28299</td>
+<td class="bytes-0"></td>
+<td class="instruction">CCF</td>
+<td class="comment-11" rowspan="2">Return with the carry flag set if the teacher is facing the boy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28300"></span>28300</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28301"></span>28301</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 28240</td>
+<td class="comment-11" rowspan="1">Otherwise consider the next teacher</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28211.html">28211</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28220">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28303.html">28303</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/6E3C.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

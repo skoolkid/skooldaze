@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 26426</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26422.html">26422</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26426">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="26450.html">26450</a></span></td>
+</tr>
+</table>
+<div class="description">26426: Get the ASCII code of the last key pressed</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="46824.html">46824</a>, <a href="47080.html">47080</a>, <a href="62771.html">62771</a>, <a href="62938.html">62938</a> and <a href="63352.html">63352</a>. Returns with the zero flag set if no key of interest was pressed. Otherwise returns with <span class="register">A</span> holding the ASCII code of the last key pressed.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26426"></span>26426</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="26584.html">26584</a></td>
+<td class="comment-11" rowspan="1">Get input from the Kempston joystick if it's in use</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="26429"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="26784.html">26784</a> and <a href="64073.html">64073</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26429"></span>26429</td>
+<td class="bytes-0"></td>
+<td class="instruction">BIT 5,(HL)</td>
+<td class="comment-11" rowspan="2">Check bit 5 of 23611, which will be set if a key was pressed; reset bit 5 afterwards</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26431"></span>26431</td>
+<td class="bytes-0"></td>
+<td class="instruction">RES 5,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26433"></span>26433</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">Return with the zero flag set if no key was pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26434"></span>26434</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(23560)</td>
+<td class="comment-11" rowspan="1">Get the code of the last key pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26437"></span>26437</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 13</td>
+<td class="comment-11" rowspan="1">Was it ENTER?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26439"></span>26439</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,26445</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26441"></span>26441</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 32</td>
+<td class="comment-11" rowspan="4">Return with the zero flag reset if the last key pressed had an ASCII code between 32 and 127 inclusive (or it was ENTER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26443"></span>26443</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,26448</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26445"></span>26445</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 128</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26447"></span>26447</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET C</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26448"></span>26448</td>
+<td class="bytes-0"></td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set the zero flag to indicate that no key of interest was pressed</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="26449"></span>
+<div class="comments">
+<div class="paragraph">
+The address of this entry point appears in the table of keypress handling routines at <a href="26624.html">26624</a>. It is called from the main loop at <a href="26471.html">26471</a> whenever a non-game key is pressed.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26449"></span>26449</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26422.html">26422</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26426">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="26450.html">26450</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/673A.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

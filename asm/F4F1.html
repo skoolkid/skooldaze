@@ -23,7 +23,7 @@
 <div class="description">F4F1: Set the new score and print it</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="F8B4.html">F8B4</a> after ERIC has made the 15th shield flash, opened the safe, or gone up a year.
@@ -49,18 +49,21 @@ Used by the routine at <a href="F8B4.html">F8B4</a> after ERIC has made the 15th
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f4f1"></span>F4F1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD ($7FC4),HL</td>
 <td class="comment-11" rowspan="1">Save the new score in <a href="7FC4.html">7FC4</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4f4"></span>F4F4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$51BC</td>
 <td class="comment-11" rowspan="1">Set <span class="register">DE</span> to the display file address at which to print the score</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4f7"></span>F4F7</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="76C8.html">$76C8</a></td>
 <td class="comment-11" rowspan="1">Print the new score</td>
 </tr>
@@ -73,10 +76,10 @@ Used by the routine at <a href="F8B4.html">F8B4</a> after ERIC has made the 15th
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/62705.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/62705.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

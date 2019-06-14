@@ -23,7 +23,7 @@
 <div class="description">7C47: Restart the command list</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by command lists <a href="FD49.html">0xB6</a>, <a href="FD73.html">0xBE</a>, <a href="FD7C.html">0xC0</a>, <a href="FDDC.html">0xC2</a>, <a href="FD92.html">0xC4</a>, <a href="FDB3.html">0xCC</a> and <a href="FDCF.html">0xCE</a>.
@@ -49,48 +49,56 @@ Used by command lists <a href="FD49.html">0xB6</a>, <a href="FD73.html">0xBE</a>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7c47"></span>7C47</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FF9)</td>
 <td class="comment-11" rowspan="1">Pick up the current lesson number (0x00-0x3F) from <a href="7FF9.html">7FF9</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c4a"></span>7C4A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
 <td class="comment-11" rowspan="1">Copy this to <span class="register">E</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c4b"></span>7C4B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$01</td>
 <td class="comment-11" rowspan="1">We want to restart the command list for this character only</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c4d"></span>7C4D</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD D,$FE</td>
 <td class="comment-11" rowspan="3">Set <span class="register">E</span> to the lesson identifier (0xE0-0xFF) from the <a href="FE00.html">main timetable</a>; note that this will not be the identifier of the current lesson if the current lesson is a 'special' playtime - <a href="../lessons/F3.html">0xF3</a>, <a href="../lessons/F4.html">0xF4</a> or <a href="../lessons/F5.html">0xF5</a> - which is a <a href="../reference/bugs.html#wrongCommandList">bug</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c4f"></span>7C4F</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c50"></span>7C50</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c51"></span>7C51</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="66E6.html#671b">$671B</a></td>
 <td class="comment-11" rowspan="1">Set this character's command list up for a restart</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7c54"></span>7C54</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="62A0.html#62a4">$62A4</a></td>
 <td class="comment-11" rowspan="1">Move to the first command in the command list</td>
 </tr>
@@ -103,10 +111,10 @@ Used by command lists <a href="FD49.html">0xB6</a>, <a href="FD73.html">0xBE</a>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/31815.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/31815.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

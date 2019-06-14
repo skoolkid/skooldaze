@@ -23,7 +23,7 @@
 <div class="description">7632: Insert a pixel column into the number graphic buffer</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="7646.html">7646</a>. Slides the current contents of the number graphic buffer (at <a href="D900.html#d90b">D90B</a>) one pixel to the left, and places the new pixel column into the slot freed up on the right.
@@ -49,66 +49,77 @@ Used by the routine at <a href="7646.html">7646</a>. Slides the current contents
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7632"></span>7632</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$D91F</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the end of the buffer at <a href="D900.html#d90b">D90B</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7635"></span>7635</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="1">Discard the baseline bit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7636"></span>7636</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,$07</td>
 <td class="comment-11" rowspan="1">We will consider the remaining 7 bits</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7638"></span>7638</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$03</td>
 <td class="comment-11" rowspan="1">The buffer is 3 character squares wide</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="763a"></span>763A</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="1">Drop a bit into the carry flag</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="763b"></span>763B</td>
+<td class="bytes-0"></td>
 <td class="instruction">RL (HL)</td>
 <td class="comment-11" rowspan="3">Pick it up in the buffer and shift the other pixels in this row one to the left</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="763d"></span>763D</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="763e"></span>763E</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $763B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7640"></span>7640</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
 <td class="comment-11" rowspan="1">Next bit</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7641"></span>7641</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7638</td>
 <td class="comment-11" rowspan="1">Jump back until all 7 bits in the column are done</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7643"></span>7643</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -121,10 +132,10 @@ Used by the routine at <a href="7646.html">7646</a>. Slides the current contents
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/30258.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/30258.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

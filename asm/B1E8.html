@@ -23,7 +23,7 @@
 <div class="description">B1E8: Print a character's title and name, and walk him onto the screen (2)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Continues from <a href="B0E8.html">B0E8</a>. Prints the character's name followed by a space.
@@ -53,66 +53,77 @@ Continues from <a href="B0E8.html">B0E8</a>. Prints the character's name followe
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b1e8"></span>B1E8</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1e9"></span>B1E9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$5020</td>
 <td class="comment-11" rowspan="1">This is the display file address at which to print the character's name</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1ec"></span>B1EC</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="AFE8.html">$AFE8</a></td>
 <td class="comment-11" rowspan="1">Print the character's name</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1ef"></span>B1EF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$B477</td>
 <td class="comment-11" rowspan="1"><a href="B477.html">B477</a>: ' '</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1f2"></span>B1F2</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="B3F6.html#b3f9">$B3F9</a></td>
 <td class="comment-11" rowspan="1">Print a space</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1f5"></span>B1F5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$9860</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 0x60 of little boy no. 1's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1f8"></span>B1F8</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1f9"></span>B1F9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=1-8 (corresponding to one of the eight main characters)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1fa"></span>B1FA</td>
+<td class="bytes-0"></td>
 <td class="instruction">NOP</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1fb"></span>B1FB</td>
+<td class="bytes-0"></td>
 <td class="instruction">NOP</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b1fc"></span>B1FC</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="B2E8.html">$B2E8</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -125,10 +136,10 @@ Continues from <a href="B0E8.html">B0E8</a>. Prints the character's name followe
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/45544.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/45544.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

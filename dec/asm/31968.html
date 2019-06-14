@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 31968</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31952.html">31952</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31968">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31985.html">31985</a></span></td>
+</tr>
+</table>
+<div class="description">31968: Make a teacher decide whether to give EINSTEIN lines for telling tales</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="62208.html">62208</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31968"></span>31968</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="7"><span class="register">L</span>=0 (MR WACKER), 16 (MR ROCKITT), 32 (MR WITHIT), or 48 (MR CREAK)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31969"></span>31969</td>
+<td class="bytes-0"></td>
+<td class="instruction">SUB 163</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31971"></span>31971</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31972"></span>31972</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31973"></span>31973</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31974"></span>31974</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31975"></span>31975</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="31976"></span>
+<div class="comments">
+<div class="paragraph">
+The number in <span class="register">L</span> determines how often the teacher will give lines to EINSTEIN for telling tales:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Teacher</th>
+<th colspan="1" rowspan="1">Frequency</th>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">MR WACKER</td>
+<td class="" colspan="1" rowspan="1">Never</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">MR ROCKITT</td>
+<td class="" colspan="1" rowspan="1">1 in 16</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">MR WITHIT</td>
+<td class="" colspan="1" rowspan="1">1 in 8</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">MR CREAK</td>
+<td class="" colspan="1" rowspan="1">3 in 16</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31976"></span>31976</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="24993.html">24993</a></td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31979"></span>31979</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP L</td>
+<td class="comment-11" rowspan="1">Set the carry flag if the teacher is going to give lines to EINSTEIN</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31980"></span>31980</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,255</td>
+<td class="comment-11" rowspan="2">Return with <span class="register">L</span>=255 if the teacher's not in the mood to give lines to EINSTEIN</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31982"></span>31982</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET NC</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31983"></span>31983</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR <a href="31904.html">31904</a></td>
+<td class="comment-11" rowspan="1">Make the teacher give EINSTEIN lines for telling tales</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31952.html">31952</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31968">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31985.html">31985</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/7CE0.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

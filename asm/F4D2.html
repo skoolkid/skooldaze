@@ -23,7 +23,7 @@
 <div class="description">F4D2: Get the attribute file address of a pellet's potential target or the safe</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="6DEF.html">6DEF</a> (to check whether a shield has been hit) and <a href="F726.html">F726</a> (to make the safe flash). If the pellet's potential target or the safe is on-screen, this routine returns with the carry flag reset and <span class="register">HL</span> holding the attribute file address.
@@ -53,53 +53,61 @@ Used by the routines at <a href="6DEF.html">6DEF</a> (to check whether a shield 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f4d2"></span>F4D2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7F00</td>
 <td class="comment-11" rowspan="1"><a href="7F00.html">7F00</a> holds the leftmost column of the skool on screen (0-64)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4d5"></span>F4D5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="2">Set <span class="register">A</span> to the true x-coordinate of the potential target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4d6"></span>F4D6</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $7F</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4d8"></span>F4D8</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB (HL)</td>
 <td class="comment-11" rowspan="2">Return with the carry flag set if the pellet is off-screen to the left</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4d9"></span>F4D9</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4da"></span>F4DA</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $20</td>
 <td class="comment-11" rowspan="1">The screen is 32 columns wide</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4dc"></span>F4DC</td>
+<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
 <td class="comment-11" rowspan="2">Return with carry flag set if the pellet is off-screen to the right</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4dd"></span>F4DD</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f4de"></span>
 <div class="comments">
 <div class="paragraph">
@@ -111,90 +119,105 @@ The potential target is on-screen.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4de"></span>F4DE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=screen x-coordinate (0-31) of the potential target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4df"></span>F4DF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="2"><span class="register">A</span>=screen y-coordinate (2, 8 or 14) of the potential target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e0"></span>F4E0</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $98</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e2"></span>F4E2</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="3"><span class="register">A</span>=0x40 (top floor), 0x01 (middle floor), or 0xC1 (bottom floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e3"></span>F4E3</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e4"></span>F4E4</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e5"></span>F4E5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
 <td class="comment-11" rowspan="1">Save this floor indicator in <span class="register">H</span> for now</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e6"></span>F4E6</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $E0</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=0x40 (top floor), 0x00 (middle) or 0xC0 (bottom)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e8"></span>F4E8</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,L</td>
 <td class="comment-11" rowspan="1">Add the screen x-coordinate to get the LSB of the attribute file address of the potential target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4e9"></span>F4E9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
 <td class="comment-11" rowspan="1">Copy the LSB to <span class="register">L</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ea"></span>F4EA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
 <td class="comment-11" rowspan="2"><span class="register">A</span>=0x00 (top floor) or 0x01 (middle floor or bottom floor)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4eb"></span>F4EB</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $03</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ed"></span>F4ED</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$58</td>
 <td class="comment-11" rowspan="1">Add 0x58 to get the MSB of the attribute file address of the potential target</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4ef"></span>F4EF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
 <td class="comment-11" rowspan="1">Copy the MSB to <span class="register">H</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f4f0"></span>F4F0</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1">Return with the carry flag reset</td>
 </tr>
@@ -207,10 +230,10 @@ The potential target is on-screen.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/62674.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/62674.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

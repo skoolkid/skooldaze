@@ -23,7 +23,7 @@
 <div class="description">F9BB: Check whether ERIC has 10000 lines</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="76F9.html">76F9</a>. The number of lines has just been printed. Has ERIC gone over the limit?
@@ -46,47 +46,54 @@ Used by the routine at <a href="76F9.html">76F9</a>. The number of lines has jus
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f9bb"></span>F9BB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FC7)</td>
 <td class="comment-11" rowspan="1">Collect the MSB of the lines total</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9be"></span>F9BE</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $03</td>
 <td class="comment-11" rowspan="1">Is the lines total &lt; 7680 (30*256)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9c0"></span>F9C0</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9c1"></span>F9C1</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F9C9</td>
 <td class="comment-11" rowspan="1">Jump if the MSB &gt; 3 (lines total &gt; 10240)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9c3"></span>F9C3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FC6)</td>
 <td class="comment-11" rowspan="1">So the MSB is 3; collect the LSB from <a href="7FC6.html">7FC6</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9c6"></span>F9C6</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $E8</td>
 <td class="comment-11" rowspan="1">Is the lines total &lt; 10000 (=232+256*30)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9c8"></span>F9C8</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f9c9"></span>
 <div class="comments">
 <div class="paragraph">
@@ -98,54 +105,63 @@ ERIC has 10000 lines or more. The end (of the game) is nigh.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f9c9"></span>F9C9</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9ca"></span>F9CA</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$FAE2</td>
 <td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the first of the last two commands in command list <a href="FADB.html">0xDE</a> ('Find ERIC', and 'Send ERIC home')</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9cd"></span>F9CD</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD ($A377),HL</td>
 <td class="comment-11" rowspan="1">Place this address into bytes 0x77 and 0x78 of MR WACKER's buffer, so that these commands become his command list</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9d0"></span>F9D0</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$A37A</td>
 <td class="comment-11" rowspan="2">Set bit 0 of byte 0x7A of MR WACKER's buffer, triggering a command list restart</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9d3"></span>F9D3</td>
+<td class="bytes-0"></td>
 <td class="instruction">SET 0,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9d5"></span>F9D5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FF8</td>
 <td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 0xFF (so that the lesson cannot end before MR WACKER has begun looking for ERIC)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9d8"></span>F9D8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$FF</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9da"></span>F9DA</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9db"></span>F9DB</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -158,10 +174,10 @@ ERIC has 10000 lines or more. The end (of the game) is nigh.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/63931.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/63931.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

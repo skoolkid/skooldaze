@@ -23,7 +23,7 @@
 <div class="description">B4E8: Move a character one step along the catwalk</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="B5E8.html">B5E8</a>.
@@ -49,41 +49,47 @@ Used by the routine at <a href="B5E8.html">B5E8</a>.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b4e8"></span>B4E8</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for the character's current location</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4eb"></span>B4EB</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character's next animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4ec"></span>B4EC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
 <td class="comment-11" rowspan="1">Store this in <span class="register">C</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4ed"></span>B4ED</td>
+<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
 <td class="comment-11" rowspan="1">Set the carry flag if this animatory state is midstride</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4ee"></span>B4EE</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,C</td>
 <td class="comment-11" rowspan="1">Restore the next animatory state to <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4ef"></span>B4EF</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$B4F9</td>
 <td class="comment-11" rowspan="1">Jump if the character will be midstride</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="b4f1"></span>
 <div class="comments">
 <div class="paragraph">
@@ -95,35 +101,40 @@ The character will be moving from the midstride position, so move him one space 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4f1"></span>B4F1</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="1">Increment the character's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4f2"></span>B4F2</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $03</td>
 <td class="comment-11" rowspan="1">Keep only the walking phase identifier bits of the animatory state (bits 0-1)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4f4"></span>B4F4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,C</td>
 <td class="comment-11" rowspan="1">Restore the next animatory state to <span class="register">A</span> again</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4f5"></span>B4F5</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$B4F9</td>
 <td class="comment-11" rowspan="1">Jump if the next animatory state is standing/walking phase 3</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4f7"></span>B4F7</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB $04</td>
 <td class="comment-11" rowspan="1">Reset the animatory state to standing/walking phase 1</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="b4f9"></span>
 <div class="comments">
 <div class="paragraph">
@@ -135,12 +146,14 @@ Now <span class="register">A</span> holds the character's new animatory state, a
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="b4f9"></span>B4F9</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61B0.html">$61B0</a></td>
 <td class="comment-11" rowspan="1">Update the character's animatory state and location and update the SRB</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="b4fc"></span>B4FC</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="6992.html">$6992</a></td>
 <td class="comment-11" rowspan="1">Update the display</td>
 </tr>
@@ -153,10 +166,10 @@ Now <span class="register">A</span> holds the character's new animatory state, a
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/46312.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/46312.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

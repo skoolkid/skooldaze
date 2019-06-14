@@ -23,7 +23,7 @@
 <div class="description">F78E: Make a character find ERIC</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by command lists <a href="FAE6.html">0xD0</a>, <a href="FAF0.html">0xD2</a>, <a href="FB20.html">0xD6</a>, <a href="FB55.html">0xDA</a> and <a href="FADB.html">0xDE</a> to make little boy no. 10, MR WACKER or MR ROCKITT track down ERIC (to deliver a message).
@@ -49,17 +49,19 @@ Used by command lists <a href="FAE6.html">0xD0</a>, <a href="FAF0.html">0xD2</a>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f78e"></span>F78E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$FF</td>
 <td class="comment-11" rowspan="2">Adjust the length of the lesson to allow the character enough time to find ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f790"></span>F790</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="FA04.html">$FA04</a></td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f793"></span>
 <div class="comments">
 <div class="paragraph">
@@ -71,41 +73,47 @@ This routine places <a href="F78E.html#f79e">F79E</a> into bytes 0x6F and 0x70 o
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f793"></span>F793</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$69</td>
 <td class="comment-11" rowspan="2">Initialise byte 0x69 to 0xA0, so on this first pass we compare ERIC's location with that of his chaser</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f795"></span>F795</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$A0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f797"></span>F797</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6F</td>
 <td class="comment-11" rowspan="4">Place <a href="F78E.html#f79e">F79E</a> into bytes 0x6F and 0x70 of the character's buffer (thus setting the character's uninterruptible subcommand)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f799"></span>F799</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$9E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f79b"></span>F79B</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f79c"></span>F79C</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$F7</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f79e"></span>
 <div class="comments">
 <div class="paragraph">
@@ -117,47 +125,54 @@ Subsequent calls to this routine will enter at this point, by virtue of its addr
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f79e"></span>F79E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character looking for ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f79f"></span>F79F</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A3</td>
 <td class="comment-11" rowspan="1">Is MR WACKER looking for ERIC?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7a1"></span>F7A1</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL Z,<a href="7DEA.html">$7DEA</a></td>
 <td class="comment-11" rowspan="1">If so, make him walk fast</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7a4"></span>F7A4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$69</td>
 <td class="comment-11" rowspan="3">Is the character midstride?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7a6"></span>F7A6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7a7"></span>F7A7</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $FB</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7a9"></span>F7A9</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="7BFB.html">$7BFB</a></td>
 <td class="comment-11" rowspan="1">Finish the stride if so</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f7ac"></span>
 <div class="comments">
 <div class="paragraph">
@@ -169,65 +184,75 @@ The character looking for ERIC is not midstride at the moment. Decide which way 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7ac"></span>F7AC</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="79FD.html">$79FD</a></td>
 <td class="comment-11" rowspan="1">Get ERIC's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7af"></span>F7AF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
 <td class="comment-11" rowspan="1">Byte 0x61 of the character's buffer holds his y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7b1"></span>F7B1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7b2"></span>F7B2</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP D</td>
 <td class="comment-11" rowspan="1">Set the zero flag if ERIC is on same floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7b3"></span>F7B3</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="F9E5.html">$F9E5</a></td>
 <td class="comment-11" rowspan="1">Compare this character's coordinates with ERIC's</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7b6"></span>F7B6</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F7D4</td>
 <td class="comment-11" rowspan="1">Jump if this character is on a staircase or more than 3 y-coordinates away from ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7b8"></span>F7B8</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7b9"></span>F7B9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7ba"></span>F7BA</td>
+<td class="bytes-0"></td>
 <td class="instruction">SUB E</td>
 <td class="comment-11" rowspan="1">Does it match ERIC's x-coordinate?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7bb"></span>F7BB</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F7CC</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f7bd"></span>
 <div class="comments">
 <div class="paragraph">
@@ -239,53 +264,61 @@ The character looking for ERIC is within 3 x-coordinates and 3 y-coordinates of 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f7bd"></span>F7BD</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FFB)</td>
 <td class="comment-11" rowspan="3">Check ERIC's status flags at <a href="7FFB.html">7FFB</a>, and return if ERIC is firing, hitting, jumping, being spoken to by a little boy, knocked out, or writing on a blackboard</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c0"></span>F7C0</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $7F</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c2"></span>F7C2</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c3"></span>F7C3</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$70</td>
 <td class="comment-11" rowspan="2">Remove the address of the entry point at <a href="F78E.html#f79e">F79E</a> from bytes 0x6F and 0x70 of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c5"></span>F7C5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c6"></span>F7C6</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6A</td>
 <td class="comment-11" rowspan="2">Remove any interruptible subcommand routine address from bytes 0x69 and 0x6A of the character's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c8"></span>F7C8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7c9"></span>F7C9</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="62A0.html#62a8">$62A8</a></td>
 <td class="comment-11" rowspan="1">Move to the next command in the command list</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f7cc"></span>
 <div class="comments">
 <div class="paragraph">
@@ -297,29 +330,33 @@ The character looking for ERIC is within 3 y-coordinates of ERIC's location, but
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f7cc"></span>F7CC</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NC,$F7D0</td>
 <td class="comment-11" rowspan="1">Jump if the character is to the right of ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7ce"></span>F7CE</td>
+<td class="bytes-0"></td>
 <td class="instruction">NEG</td>
 <td class="comment-11" rowspan="1">Get the absolute x-coordinate distance between the character and ERIC</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f7d0"></span>F7D0</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $04</td>
 <td class="comment-11" rowspan="1">Is ERIC less than 4 x-coordinates away?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7d2"></span>F7D2</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR C,$F7BD</td>
 <td class="comment-11" rowspan="1">Jump if so (that's close enough)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f7d4"></span>
 <div class="comments">
 <div class="paragraph">
@@ -331,12 +368,14 @@ The character has not yet found ERIC.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f7d4"></span>F7D4</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7ADC.html">$7ADC</a></td>
 <td class="comment-11" rowspan="1">Determine this character's next move</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f7d7"></span>F7D7</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="7BA0.html#7bdf">$7BDF</a></td>
 <td class="comment-11" rowspan="1">Set him off in the appropriate direction</td>
 </tr>
@@ -349,10 +388,10 @@ The character has not yet found ERIC.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/63374.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/63374.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

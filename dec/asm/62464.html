@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 62464</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62453.html">62453</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62464">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62495.html">62495</a></span></td>
+</tr>
+</table>
+<div class="description">62464: Make a teacher conduct a question-and-answer session</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="62208.html">62208</a>. Controls the teacher during a question-and-answer session, but hands control back to the routine at <a href="62208.html">62208</a> if ERIC goes missing.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Teacher's character number (163-166)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62464"></span>62464</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,100</td>
+<td class="comment-11" rowspan="2">Replace the primary command routine address in bytes 99 and 100 of the teacher's buffer with <a href="62464.html">62464</a> (this routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62466"></span>62466</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),244</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62468"></span>62468</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31952.html">31952</a></td>
+<td class="comment-11" rowspan="1">Is ERIC in the room?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62471"></span>62471</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR Z,62480</td>
+<td class="comment-11" rowspan="1">Jump if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="62473"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC is absent.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62473"></span>62473</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,100</td>
+<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 99 and 100 of the teacher's buffer with that of <a href="62208.html">62208</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62475"></span>62475</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),243</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62477"></span>62477</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="62208.html#62213">62213</a></td>
+<td class="comment-11" rowspan="1">Make EINSTEIN tell the teacher that ERIC is not in class</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="62480"></span>
+<div class="comments">
+<div class="paragraph">
+ERIC is in class, so fire off a question and answer.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62480"></span>62480</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31282.html">31282</a></td>
+<td class="comment-11" rowspan="1">Prepare a question and the answer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62483"></span>62483</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD BC,31110</td>
+<td class="comment-11" rowspan="2">Hand over control to the routine at <a href="31110.html">31110</a>, making the teacher ask the question</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62486"></span>62486</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31985.html">31985</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="62489"></span>
+<div class="comments">
+<div class="paragraph">
+Control returns here when the teacher has finished asking the question.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62489"></span>62489</td>
+<td class="bytes-0"></td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Transfer the teacher's character number to <span class="register">D</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62490"></span>62490</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31919.html#31926">31926</a></td>
+<td class="comment-11" rowspan="1">Make the teacher wait for EINSTEIN to answer the question</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62493"></span>62493</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR 62468</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62453.html">62453</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62464">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62495.html">62495</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/F400.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

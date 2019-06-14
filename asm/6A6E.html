@@ -23,7 +23,7 @@
 <div class="description">6A6E: Make little boy no. 1 go to a place at random and trip people up on the way</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by command list <a href="FDB3.html">0xCC</a> (which is used only by little boy no. 1).
@@ -53,54 +53,63 @@ Used by command list <a href="FDB3.html">0xCC</a> (which is used only by little 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="6a6e"></span>6A6E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-11" rowspan="4">Reset bit 6 (do not walk slowly continuously) and bit 7 (walk fast) and set bit 5 (walk fast continuously) of byte 0x7A of little boy no. 1's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a6f"></span>6A6F</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $1F</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a71"></span>6A71</td>
+<td class="bytes-0"></td>
 <td class="instruction">ADD A,$20</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a73"></span>6A73</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a74"></span>6A74</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$7C</td>
 <td class="comment-11" rowspan="4">Place the address of the continual subcommand routine at <a href="69F6.html">69F6</a> into bytes 0x7C and 0x7D of little boy no. 1's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a76"></span>6A76</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$F6</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a78"></span>6A78</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a79"></span>6A79</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$69</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="6a7b"></span>6A7B</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="69E7.html#69eb">$69EB</a></td>
 <td class="comment-11" rowspan="1">Make little boy no. 1 go to a random location</td>
 </tr>
@@ -113,10 +122,10 @@ Used by command list <a href="FDB3.html">0xCC</a> (which is used only by little 
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/27246.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/27246.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

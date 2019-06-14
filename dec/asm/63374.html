@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 63374</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63373.html">63373</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63374">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63450.html">63450</a></span></td>
+</tr>
+</table>
+<div class="description">63374: Make a character find ERIC</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by command lists <a href="64230.html">208</a>, <a href="64240.html">210</a>, <a href="64288.html">214</a>, <a href="64341.html">218</a> and <a href="64219.html">222</a> to make little boy no. 10, MR WACKER or MR ROCKITT track down ERIC (to deliver a message).
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Character number (161, 163, 164)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63374"></span>63374</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="2">Adjust the length of the lesson to allow the character enough time to find ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63376"></span>63376</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="64004.html">64004</a></td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63379"></span>
+<div class="comments">
+<div class="paragraph">
+This routine places <a href="63374.html#63390">63390</a> into bytes 111 and 112 of the character's buffer, but also uses byte 105 (which normally holds the LSB of a routine address) for coordination. When byte 105 holds 160 (the LSB of the routine at <a href="31648.html">31648</a>), ERIC's coordinates are compared with those of the character looking for him, and the decision is made whether to keep moving. If the character does need to keep moving, <a href="31648.html#31711">31711</a> is called, which either (a) turns the character round, or (b) puts the character midstride, and places 251 (the LSB of the routine at <a href="31739.html">31739</a>) into byte 105. When byte 105 holds 251, this routine jumps to <a href="31739.html">31739</a> to move the character from the midstride position, and set byte 105 back to 160.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63379"></span>63379</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,105</td>
+<td class="comment-11" rowspan="2">Initialise byte 105 to 160, so on this first pass we compare ERIC's location with that of his chaser</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63381"></span>63381</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),160</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63383"></span>63383</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,111</td>
+<td class="comment-11" rowspan="4">Place <a href="63374.html#63390">63390</a> into bytes 111 and 112 of the character's buffer (thus setting the character's uninterruptible subcommand)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63385"></span>63385</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),158</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63387"></span>63387</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63388"></span>63388</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),247</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63390"></span>
+<div class="comments">
+<div class="paragraph">
+Subsequent calls to this routine will enter at this point, by virtue of its address being placed into bytes 111 and 112 of the character's buffer.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63390"></span>63390</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character looking for ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63391"></span>63391</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 163</td>
+<td class="comment-11" rowspan="1">Is MR WACKER looking for ERIC?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63393"></span>63393</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL Z,<a href="32234.html">32234</a></td>
+<td class="comment-11" rowspan="1">If so, make him walk fast</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63396"></span>63396</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,105</td>
+<td class="comment-11" rowspan="3">Is the character midstride?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63398"></span>63398</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63399"></span>63399</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 251</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63401"></span>63401</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP Z,<a href="31739.html">31739</a></td>
+<td class="comment-11" rowspan="1">Finish the stride if so</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63404"></span>
+<div class="comments">
+<div class="paragraph">
+The character looking for ERIC is not midstride at the moment. Decide which way (if any) he should go to find ERIC.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63404"></span>63404</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31229.html">31229</a></td>
+<td class="comment-11" rowspan="1">Get ERIC's coordinates in <span class="register">DE</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63407"></span>63407</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,97</td>
+<td class="comment-11" rowspan="1">Byte 97 of the character's buffer holds his y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63409"></span>63409</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63410"></span>63410</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP D</td>
+<td class="comment-11" rowspan="1">Set the zero flag if ERIC is on same floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63411"></span>63411</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="63973.html">63973</a></td>
+<td class="comment-11" rowspan="1">Compare this character's coordinates with ERIC's</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63414"></span>63414</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,63444</td>
+<td class="comment-11" rowspan="1">Jump if this character is on a staircase or more than 3 y-coordinates away from ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63416"></span>63416</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63417"></span>63417</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63418"></span>63418</td>
+<td class="bytes-0"></td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">Does it match ERIC's x-coordinate?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63419"></span>63419</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NZ,63436</td>
+<td class="comment-11" rowspan="1">Jump if not</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63421"></span>
+<div class="comments">
+<div class="paragraph">
+The character looking for ERIC is within 3 x-coordinates and 3 y-coordinates of ERIC's location, and is not on a staircase. In other words, ERIC has been found.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63421"></span>63421</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,(32763)</td>
+<td class="comment-11" rowspan="3">Check ERIC's status flags at <a href="32763.html">32763</a>, and return if ERIC is firing, hitting, jumping, being spoken to by a little boy, knocked out, or writing on a blackboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63424"></span>63424</td>
+<td class="bytes-0"></td>
+<td class="instruction">AND 127</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63426"></span>63426</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET NZ</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63427"></span>63427</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,112</td>
+<td class="comment-11" rowspan="2">Remove the address of the entry point at <a href="63374.html#63390">63390</a> from bytes 111 and 112 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63429"></span>63429</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63430"></span>63430</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,106</td>
+<td class="comment-11" rowspan="2">Remove any interruptible subcommand routine address from bytes 105 and 106 of the character's buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63432"></span>63432</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63433"></span>63433</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="25248.html#25256">25256</a></td>
+<td class="comment-11" rowspan="1">Move to the next command in the command list</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63436"></span>
+<div class="comments">
+<div class="paragraph">
+The character looking for ERIC is within 3 y-coordinates of ERIC's location, but not at the same x-coordinate. Is he close enough, though?
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63436"></span>63436</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR NC,63440</td>
+<td class="comment-11" rowspan="1">Jump if the character is to the right of ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63438"></span>63438</td>
+<td class="bytes-0"></td>
+<td class="instruction">NEG</td>
+<td class="comment-11" rowspan="1">Get the absolute x-coordinate distance between the character and ERIC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63440"></span>63440</td>
+<td class="bytes-0"></td>
+<td class="instruction">CP 4</td>
+<td class="comment-11" rowspan="1">Is ERIC less than 4 x-coordinates away?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63442"></span>63442</td>
+<td class="bytes-0"></td>
+<td class="instruction">JR C,63421</td>
+<td class="comment-11" rowspan="1">Jump if so (that's close enough)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="63444"></span>
+<div class="comments">
+<div class="paragraph">
+The character has not yet found ERIC.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63444"></span>63444</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="31452.html">31452</a></td>
+<td class="comment-11" rowspan="1">Determine this character's next move</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63447"></span>63447</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="31648.html#31711">31711</a></td>
+<td class="comment-11" rowspan="1">Set him off in the appropriate direction</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63373.html">63373</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63374">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63450.html">63450</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/F78E.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

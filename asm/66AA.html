@@ -23,7 +23,7 @@
 <div class="description">66AA: 'P' pressed - right</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The address of this routine is found in the table of keypress handling routines at <a href="6800.html">6800</a>. It is called from the main loop at <a href="6767.html">6767</a> when 'P' or '8' is pressed, and is also used by the routines at <a href="657F.html">657F</a> and <a href="65E4.html">65E4</a>.
@@ -53,65 +53,75 @@ The address of this routine is found in the table of keypress handling routines 
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="66aa"></span>66AA</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6564.html">$6564</a></td>
 <td class="comment-11" rowspan="1">Is ERIC sitting or lying down?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66ad"></span>66AD</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66ae"></span>66AE</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6648.html">$6648</a></td>
 <td class="comment-11" rowspan="1">Check whether ERIC is on a staircase</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66b1"></span>66B1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66b2"></span>66B2</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$66BC</td>
 <td class="comment-11" rowspan="1">Jump if ERIC's not on a staircase</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66b4"></span>66B4</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $30</td>
 <td class="comment-11" rowspan="1">Is ERIC on a staircase at the right of the skool?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66b6"></span>66B6</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP NC,<a href="65E4.html">$65E4</a></td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66b9"></span>66B9</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="657F.html">$657F</a></td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="66bc"></span>66BC</td>
+<td class="bytes-0"></td>
 <td class="instruction">BIT 7,B</td>
 <td class="comment-11" rowspan="1">Is ERIC facing left?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66be"></span>66BE</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="656A.html">$656A</a></td>
 <td class="comment-11" rowspan="1">Turn ERIC round if so</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="66c1"></span>
 <div class="comments">
 <div class="paragraph">
@@ -123,95 +133,110 @@ ERIC is facing right, and is not on a staircase.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66c1"></span>66C1</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $5D</td>
 <td class="comment-11" rowspan="1">Is ERIC at the far right of the skool?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66c3"></span>66C3</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66c4"></span>66C4</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66c5"></span>66C5</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
 <td class="comment-11" rowspan="1">Is ERIC on the bottom floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66c7"></span>66C7</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR Z,$66D9</td>
 <td class="comment-11" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66c9"></span>66C9</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $A2</td>
 <td class="comment-11" rowspan="1">Is ERIC on the middle floor?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66cb"></span>66CB</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$66D5</td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66cd"></span>66CD</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
 <td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66ce"></span>66CE</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP $4E</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the far right wall on the middle floor</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66d0"></span>66D0</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if ERIC is facing this wall</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66d1"></span>66D1</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$25</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66d3"></span>66D3</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR $66D7</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="66d5"></span>66D5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$38</td>
 <td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="66d7"></span>66D7</td>
+<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
 <td class="comment-11" rowspan="1">Is ERIC facing this wall (from the left side)?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66d8"></span>66D8</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
 <td class="comment-11" rowspan="1">Return if so (ERIC cannot walk through walls)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="66d9"></span>
 <div class="comments">
 <div class="paragraph">
@@ -223,24 +248,28 @@ There is no wall obstructing ERIC, so it's time to put him midstride.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="66d9"></span>66D9</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$81</td>
 <td class="comment-11" rowspan="1"><a href="../graphics/as.html#129">0x81</a>=ERIC midstride, facing right</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66db"></span>66DB</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,E</td>
 <td class="comment-11" rowspan="1"><span class="register">L</span>=ERIC's current x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66dc"></span>66DC</td>
+<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
 <td class="comment-11" rowspan="1"><span class="register">E</span>=ERIC's post-midstride x-coordinate</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="66dd"></span>66DD</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="6652.html#667e">$667E</a></td>
 <td class="comment-11" rowspan="1">Put ERIC midstride</td>
 </tr>
@@ -253,10 +282,10 @@ There is no wall obstructing ERIC, so it's time to put him midstride.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/26282.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/26282.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

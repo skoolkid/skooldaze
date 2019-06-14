@@ -23,7 +23,7 @@
 <div class="description">7B96: Rewind to a specific point in a command list</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="7BA0.html">7BA0</a>. Partially rewinds a teacher's command list after he has fetched the truant ERIC, thus making him resume normal classroom duties.
@@ -57,36 +57,42 @@ Used by the routine at <a href="7BA0.html">7BA0</a>. Partially rewinds a teacher
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7b96"></span>7B96</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
 <td class="comment-11" rowspan="3">Place the command list entry address into bytes 0x75 and 0x76 of the teacher's buffer, which will make the teacher restart the command list from that point</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b97"></span>7B97</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b98"></span>7B98</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b99"></span>7B99</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$6A</td>
 <td class="comment-11" rowspan="2">Remove the interruptible subcommand routine address from bytes 0x69 and 0x6A of the teacher's buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b9b"></span>7B9B</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$00</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7b9d"></span>7B9D</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="62A0.html#62a8">$62A8</a></td>
 <td class="comment-11" rowspan="1">Move to the next command in the command list</td>
 </tr>
@@ -99,10 +105,10 @@ Used by the routine at <a href="7BA0.html">7BA0</a>. Partially rewinds a teacher
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/31638.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/31638.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

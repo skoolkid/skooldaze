@@ -23,7 +23,7 @@
 <div class="description">7EA2: Play the first part of the 'Got all shields/opened safe' tune</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="7E96.html">7E96</a>.
@@ -46,48 +46,56 @@ Used by the routine at <a href="7E96.html">7E96</a>.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7ea2"></span>7EA2</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7EB2</td>
 <td class="comment-11" rowspan="1">The data for the first part of the tune is at <a href="7EB2.html">7EB2</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ea5"></span>7EA5</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7E17.html">$7E17</a></td>
 <td class="comment-11" rowspan="1">Play the first part of the tune</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7ea8"></span>7EA8</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$3C00</td>
 <td class="comment-11" rowspan="5">Pause briefly before returning</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="7eab"></span>7EAB</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC E</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7eac"></span>7EAC</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7EAB</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7eae"></span>7EAE</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC D</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7eaf"></span>7EAF</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7EAB</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="7eb1"></span>7EB1</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -100,10 +108,10 @@ Used by the routine at <a href="7E96.html">7E96</a>.
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/32418.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/32418.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

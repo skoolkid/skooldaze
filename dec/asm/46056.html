@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 46056</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45951.html">45951</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46056">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46070.html">46070</a></span></td>
+</tr>
+</table>
+<div class="description">46056: Print a character's title and name, and walk him onto the screen (4)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Continues from <a href="45800.html">45800</a>. Sets the animatory state and location of the character and walks him to the middle of the screen.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Animatory state</td>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">1-8 (corresponding to one of the eight main characters)</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">39008 (96, 152)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46056"></span>46056</td>
+<td class="bytes-0"></td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46057"></span>46057</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="44919.html">44919</a></td>
+<td class="comment-11" rowspan="1">Set the animatory state and y-coordinate of the character to be walked on screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46060"></span>46060</td>
+<td class="bytes-0"></td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46061"></span>46061</td>
+<td class="bytes-0"></td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46062"></span>46062</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (HL),3</td>
+<td class="comment-11" rowspan="1">Set the character's x-coordinate to 3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46064"></span>46064</td>
+<td class="bytes-0"></td>
+<td class="instruction">CALL <a href="46568.html">46568</a></td>
+<td class="comment-11" rowspan="1">Walk the character to the middle of the screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46067"></span>46067</td>
+<td class="bytes-0"></td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46068"></span>46068</td>
+<td class="bytes-0"></td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore the message address for the character's name to <span class="register">HL</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46069"></span>46069</td>
+<td class="bytes-0"></td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45951.html">45951</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46056">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46070.html">46070</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/B3E8.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

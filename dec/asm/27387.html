@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skool Daze: Routine at 27387</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="Skool Daze" src="../../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27353.html">27353</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27387">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27406.html">27406</a></span></td>
+</tr>
+</table>
+<div class="description">27387: Add to the score and print it</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="27932.html">27932</a>, <a href="28143.html">28143</a> and <a href="62628.html">62628</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27387"></span>27387</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">This will add 10 to the score</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="27389"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="28143.html">28143</a> and <a href="62628.html">62628</a> with <span class="register">A</span> holding the amount (divided by 10) to add to the score.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27389"></span>27389</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD HL,(32708)</td>
+<td class="comment-11" rowspan="1">Pick up the current score in <span class="register">HL</span></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27392"></span>27392</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADD A,L</td>
+<td class="comment-11" rowspan="5">Set <span class="register">HL</span> equal to the new score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27393"></span>27393</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD L,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27394"></span>27394</td>
+<td class="bytes-0"></td>
+<td class="instruction">ADC A,H</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27395"></span>27395</td>
+<td class="bytes-0"></td>
+<td class="instruction">SUB L</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27396"></span>27396</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD H,A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27397"></span>27397</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD (32708),HL</td>
+<td class="comment-11" rowspan="1">Store the new score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27400"></span>27400</td>
+<td class="bytes-0"></td>
+<td class="instruction">LD DE,20924</td>
+<td class="comment-11" rowspan="1">Set <span class="register">DE</span> to the display file address at which to print the score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27403"></span>27403</td>
+<td class="bytes-0"></td>
+<td class="instruction">JP <a href="30408.html">30408</a></td>
+<td class="comment-11" rowspan="1">Print the new score</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27353.html">27353</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27387">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27406.html">27406</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../../asm/6AFB.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

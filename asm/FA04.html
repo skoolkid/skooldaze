@@ -23,7 +23,7 @@
 <div class="description">FA04: Adjust the lesson length and prepare a character for the search for ERIC</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="F78E.html">F78E</a>. Before little boy no. 10, MR WACKER or MR ROCKITT goes off to look for ERIC (to deliver a message), the skool clock is adjusted to allow ERIC's chaser enough time to find him before the bell rings.
@@ -53,36 +53,42 @@ Used by the routine at <a href="F78E.html">F78E</a>. Before little boy no. 10, M
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fa04"></span>FA04</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD ($7FF8),A</td>
 <td class="comment-11" rowspan="1">Set the MSB of the lesson clock to 0xFF (so that the character looking for ERIC will have time to find him before the bell rings)</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa07"></span>FA07</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
 <td class="comment-11" rowspan="1">Update the SRB for the character's current animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa0a"></span>FA0A</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
 <td class="comment-11" rowspan="1">Byte 0x60 of the character's buffer holds his animatory state</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa0c"></span>FA0C</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND $FA</td>
 <td class="comment-11" rowspan="2">Adjust the character's animatory state to ensure that he is not midstride</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa0e"></span>FA0E</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fa0f"></span>FA0F</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -95,10 +101,10 @@ Used by the routine at <a href="F78E.html">F78E</a>. Before little boy no. 10, M
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/64004.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/64004.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

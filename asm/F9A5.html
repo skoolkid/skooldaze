@@ -23,7 +23,7 @@
 <div class="description">F9A5: Print the lesson</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="66E6.html">66E6</a>. Prints the lesson or 'DEMO. - PRESS A KEY TO PLAY' in the lesson box.
@@ -46,29 +46,33 @@ Used by the routine at <a href="66E6.html">66E6</a>. Prints the lesson or 'DEMO.
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f9a5"></span>F9A5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FEA)</td>
 <td class="comment-11" rowspan="1">Collect the game mode indicator from <a href="7FEA.html">7FEA</a></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9a8"></span>F9A8</td>
+<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
 <td class="comment-11" rowspan="1">Are we in demo mode?</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9a9"></span>F9A9</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP NZ,<a href="7940.html">$7940</a></td>
 <td class="comment-11" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9ac"></span>F9AC</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD HL,$EBE0</td>
 <td class="comment-11" rowspan="1"><a href="EBE0.html">EBE0</a>: 'DEMO. - PRESS A KEY TO PLAY'</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="f9af"></span>
 <div class="comments">
 <div class="paragraph">
@@ -80,24 +84,28 @@ This entry point is used by the routine at <a href="F8B4.html">F8B4</a> with <sp
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="f9af"></span>F9AF</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD DE,$ED30</td>
 <td class="comment-11" rowspan="1">Point <span class="register">DE</span> at the lesson box graphic buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9b2"></span>F9B2</td>
+<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="755A.html">$755A</a></td>
 <td class="comment-11" rowspan="1">Write the first line of text into the lesson box graphic buffer</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9b5"></span>F9B5</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD L,$F0</td>
 <td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="EBE0.html#ebf0">EBF0</a> ('A KEY TO PLAY') or <a href="FEE0.html#fef0">FEF0</a> ('UP A YEAR')</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="f9b7"></span>F9B7</td>
+<td class="bytes-0"></td>
 <td class="instruction">JP <a href="7940.html#7975">$7975</a></td>
 <td class="comment-11" rowspan="1">Write the second line of text into the lesson box graphic buffer and copy the buffer to the screen</td>
 </tr>
@@ -110,10 +118,10 @@ This entry point is used by the routine at <a href="F8B4.html">F8B4</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/63909.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/63909.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>

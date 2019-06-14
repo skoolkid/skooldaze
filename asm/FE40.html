@@ -23,7 +23,7 @@
 <div class="description">FE40: Make a walking sound effect (yellow border)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="B5E8.html">B5E8</a> and <a href="EAE0.html">EAE0</a>.
@@ -46,17 +46,19 @@ Used by the routines at <a href="B5E8.html">B5E8</a> and <a href="EAE0.html">EAE
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fe40"></span>FE40</td>
+<td class="bytes-0"></td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fe41"></span>FE41</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD A,$06</td>
 <td class="comment-11" rowspan="1">The border will be yellow</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="fe43"></span>
 <div class="comments">
 <div class="paragraph">
@@ -68,54 +70,63 @@ This entry point is used by the routine at <a href="FE52.html">FE52</a> with <sp
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fe43"></span>FE43</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD C,$08</td>
 <td class="comment-11" rowspan="7">Make the sound effect</td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fe45"></span>FE45</td>
+<td class="bytes-0"></td>
 <td class="instruction">XOR $10</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fe47"></span>FE47</td>
+<td class="bytes-0"></td>
 <td class="instruction">OUT ($FE),A</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fe49"></span>FE49</td>
+<td class="bytes-0"></td>
 <td class="instruction">LD B,$C0</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-2"><span id="fe4b"></span>FE4B</td>
+<td class="bytes-0"></td>
 <td class="instruction">DJNZ $FE4B</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fe4d"></span>FE4D</td>
+<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fe4e"></span>FE4E</td>
+<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$FE45</td>
 <td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fe50"></span>FE50</td>
+<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label-0"></td>
 <td class="address-1"><span id="fe51"></span>FE51</td>
+<td class="bytes-0"></td>
 <td class="instruction">RET</td>
 <td class="comment-11" rowspan="1"></td>
 </tr>
@@ -128,10 +139,10 @@ This entry point is used by the routine at <a href="FE52.html">FE52</a> with <sp
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20181018</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2018 Richard Dymond.</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
-<div><a href="http://skoolkit.ca/disassemblies/skool_daze/asm/65088.html">Switch to decimal</a>.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div><a href="../dec/asm/65088.html">Switch to decimal</a>.</div>
 </footer>
 </body>
 </html>
