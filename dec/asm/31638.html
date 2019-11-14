@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 31638</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31637.html">31637</a></span></td>
+<td class="prev">
+Prev: <a href="31637.html">31637</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31638">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31648.html">31648</a></span></td>
+<td class="next">
+Next: <a href="31648.html">31648</a>
+</td>
 </tr>
 </table>
 <div class="description">31638: Rewind to a specific point in a command list</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="31648.html">31648</a>. Partially rewinds a teacher's command list after he has fetched the truant ERIC, thus making him resume normal classroom duties.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,68 +49,51 @@ Used by the routine at <a href="31648.html">31648</a>. Partially rewinds a teach
 <td class="register-desc">118</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31638"></span>31638</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-11" rowspan="3">Place the command list entry address into bytes 117 and 118 of the teacher's buffer, which will make the teacher restart the command list from that point</td>
+<td class="comment-1" rowspan="3">Place the command list entry address into bytes 117 and 118 of the teacher's buffer, which will make the teacher restart the command list from that point</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31639"></span>31639</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31640"></span>31640</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31641"></span>31641</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,106</td>
-<td class="comment-11" rowspan="2">Remove the interruptible subcommand routine address from bytes 105 and 106 of the teacher's buffer</td>
+<td class="comment-1" rowspan="2">Remove the interruptible subcommand routine address from bytes 105 and 106 of the teacher's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31643"></span>31643</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31645"></span>31645</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="25248.html#25256">25256</a></td>
-<td class="comment-11" rowspan="1">Move to the next command in the command list</td>
+<td class="comment-1" rowspan="1">Move to the next command in the command list</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31637.html">31637</a></span></td>
+<td class="prev">
+Prev: <a href="31637.html">31637</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31638">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31648.html">31648</a></span></td>
+<td class="next">
+Next: <a href="31648.html">31648</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/7B96.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 70D2</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7087.html">7087</a></span></td>
+<td class="prev">
+Prev: <a href="7087.html">7087</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#70d2">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7120.html">7120</a></span></td>
+<td class="next">
+Next: <a href="7120.html">7120</a>
+</td>
 </tr>
 </table>
 <div class="description">70D2: Get the next character of a message being spoken or written</div>
@@ -29,7 +32,7 @@
 Used by the routines at <a href="7142.html">7142</a> and <a href="740A.html">740A</a>. Returns with the next character in <span class="register">A</span>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,125 +41,81 @@ Used by the routines at <a href="7142.html">7142</a> and <a href="740A.html">740
 <td class="register-desc">Number of the character speaking or writing (0x98-0xA9)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="70d2"></span>70D2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6E</td>
-<td class="comment-11" rowspan="2">Bytes 0x6D and 0x6E of the character's buffer hold the address of the next character in the submessage</td>
+<td class="comment-1" rowspan="2">Bytes 0x6D and 0x6E of the character's buffer hold the address of the next character in the submessage</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70d4"></span>70D4</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70d5"></span>70D5</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Are we in a submessage at the moment?</td>
+<td class="comment-1" rowspan="1">Are we in a submessage at the moment?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70d6"></span>70D6</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$70E8</td>
-<td class="comment-11" rowspan="1">Jump if not</td>
+<td class="comment-1" rowspan="1">Jump if not</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70d8"></span>70D8</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="3"><span class="register">DE</span>=address of the next character in the submessage</td>
+<td class="comment-1" rowspan="3"><span class="register">DE</span>=address of the next character in the submessage</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70d9"></span>70D9</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70da"></span>70DA</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70db"></span>70DB</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Pick up this character in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick up this character in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70dc"></span>70DC</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Has the submessage finished?</td>
+<td class="comment-1" rowspan="1">Has the submessage finished?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70dd"></span>70DD</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$70E5</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70df"></span>70DF</td>
-<td class="bytes-0"></td>
 <td class="instruction">NOP</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="70e0"></span>70E0</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="4">Move to the next character in the submessage, and store its address in bytes 0x6D and 0x6E of the character's buffer</td>
+<td class="comment-1" rowspan="4">Move to the next character in the submessage, and store its address in bytes 0x6D and 0x6E of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70e1"></span>70E1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70e2"></span>70E2</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70e3"></span>70E3</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70e4"></span>70E4</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -169,25 +128,17 @@ The submessage has finished.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="70e5"></span>70E5</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="3">Zero out bytes 0x6D and 0x6E of the character's buffer to indicate that the submessage is finished</td>
+<td class="comment-1" rowspan="3">Zero out bytes 0x6D and 0x6E of the character's buffer to indicate that the submessage is finished</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70e6"></span>70E6</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70e7"></span>70E7</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -200,88 +151,58 @@ We are dealing with the main message.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="70e8"></span>70E8</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6C</td>
-<td class="comment-11" rowspan="4"><span class="register">DE</span>=address of the next character in the main message (collected from bytes 0x6B and 0x6C of the character's buffer)</td>
+<td class="comment-1" rowspan="4"><span class="register">DE</span>=address of the next character in the main message (collected from bytes 0x6B and 0x6C of the character's buffer)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70ea"></span>70EA</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70eb"></span>70EB</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70ec"></span>70EC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70ed"></span>70ED</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Pick up the next character of the message</td>
+<td class="comment-1" rowspan="1">Pick up the next character of the message</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70ee"></span>70EE</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="4">Move to the next character in the main message, and store its address in bytes 0x6B and 0x6C of the character's buffer</td>
+<td class="comment-1" rowspan="4">Move to the next character in the main message, and store its address in bytes 0x6B and 0x6C of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70ef"></span>70EF</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70f0"></span>70F0</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70f1"></span>70F1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70f2"></span>70F2</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x6D</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x6D</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70f3"></span>70F3</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">Is the ASCII code of the next character &lt; 0x80?</td>
+<td class="comment-1" rowspan="1">Is the ASCII code of the next character &lt; 0x80?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70f5"></span>70F5</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$710A</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -294,109 +215,66 @@ The ASCII code of the next character is &gt;= 0x80, which refers to an entry in 
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70f7"></span>70F7</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND $7F</td>
-<td class="comment-11" rowspan="13">Set <span class="register">DE</span> to <a href="DF00.html">DF00</a>+0x0C*(<span class="register">A</span>-0x80)</td>
+<td class="comment-1" rowspan="13">Set <span class="register">DE</span> to <a href="DF00.html">DF00</a>+0x0C*(<span class="register">A</span>-0x80)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70f9"></span>70F9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70fa"></span>70FA</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70fb"></span>70FB</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70fc"></span>70FC</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70fd"></span>70FD</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="70fe"></span>70FE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,$38</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7100"></span>7100</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7103</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7102"></span>7102</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7103"></span>7103</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7104"></span>7104</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7105"></span>7105</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7106"></span>7106</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7107"></span>7107</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="2">Pick up the first character of this submessage in <span class="register">A</span> and store the next address in bytes 0x6D and 0x6E of the character's buffer</td>
+<td class="comment-1" rowspan="2">Pick up the first character of this submessage in <span class="register">A</span> and store the next address in bytes 0x6D and 0x6E of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7108"></span>7108</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $70E0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -409,32 +287,22 @@ The ASCII code of the next character in the message is &lt; 0x80.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="710a"></span>710A</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $20</td>
-<td class="comment-11" rowspan="2">Return if the next character is a normal, printable character (ASCII code &gt;= 0x20)</td>
+<td class="comment-1" rowspan="2">Return if the next character is a normal, printable character (ASCII code &gt;= 0x20)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="710c"></span>710C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="710d"></span>710D</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $10</td>
-<td class="comment-11" rowspan="2">Return if the ASCII code of the next character in the message is &lt; 0x10</td>
+<td class="comment-1" rowspan="2">Return if the ASCII code of the next character in the message is &lt; 0x10</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="710f"></span>710F</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -501,101 +369,72 @@ The ASCII code of the next character in the message is 0x10-0x18. We have a subm
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7110"></span>7110</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB $10</td>
-<td class="comment-11" rowspan="10">Point <span class="register">DE</span> at the appropriate submessage from the table above</td>
+<td class="comment-1" rowspan="10">Point <span class="register">DE</span> at the appropriate submessage from the table above</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7112"></span>7112</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7113"></span>7113</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7114"></span>7114</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7115"></span>7115</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7116"></span>7116</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7117"></span>7117</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7118"></span>7118</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,$80</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="711a"></span>711A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="711b"></span>711B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,$D9</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="711d"></span>711D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Pick up the first character of the submessage in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick up the first character of the submessage in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="711e"></span>711E</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $70E0</td>
-<td class="comment-11" rowspan="1">Store the address of the next character in the submessage</td>
+<td class="comment-1" rowspan="1">Store the address of the next character in the submessage</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7087.html">7087</a></span></td>
+<td class="prev">
+Prev: <a href="7087.html">7087</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#70d2">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7120.html">7120</a></span></td>
+<td class="next">
+Next: <a href="7120.html">7120</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/28882.html">Switch to decimal</a>.</div>
 </footer>
 </body>

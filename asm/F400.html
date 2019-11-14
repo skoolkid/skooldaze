@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at F400</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F3F5.html">F3F5</a></span></td>
+<td class="prev">
+Prev: <a href="F3F5.html">F3F5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f400">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F41F.html">F41F</a></span></td>
+<td class="next">
+Next: <a href="F41F.html">F41F</a>
+</td>
 </tr>
 </table>
 <div class="description">F400: Make a teacher conduct a question-and-answer session</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="F300.html">F300</a>. Controls the teacher during a question-and-answer session, but hands control back to the routine at <a href="F300.html">F300</a> if ERIC goes missing.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,41 +41,26 @@ Used by the routine at <a href="F300.html">F300</a>. Controls the teacher during
 <td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f400"></span>F400</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$64</td>
-<td class="comment-11" rowspan="2">Replace the primary command routine address in bytes 0x63 and 0x64 of the teacher's buffer with <a href="F400.html">F400</a> (this routine)</td>
+<td class="comment-1" rowspan="2">Replace the primary command routine address in bytes 0x63 and 0x64 of the teacher's buffer with <a href="F400.html">F400</a> (this routine)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f402"></span>F402</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$F4</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f404"></span>F404</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7CD0.html">$7CD0</a></td>
-<td class="comment-11" rowspan="1">Is ERIC in the room?</td>
+<td class="comment-1" rowspan="1">Is ERIC in the room?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f407"></span>F407</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F410</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -85,25 +73,18 @@ ERIC is absent.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f409"></span>F409</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$64</td>
-<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of the teacher's buffer with that of <a href="F300.html">F300</a></td>
+<td class="comment-1" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of the teacher's buffer with that of <a href="F300.html">F300</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f40b"></span>F40B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$F3</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f40d"></span>F40D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="F300.html#f305">$F305</a></td>
-<td class="comment-11" rowspan="1">Make EINSTEIN tell the teacher that ERIC is not in class</td>
+<td class="comment-1" rowspan="1">Make EINSTEIN tell the teacher that ERIC is not in class</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -116,25 +97,18 @@ ERIC is in class, so fire off a question and answer.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f410"></span>F410</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7A32.html">$7A32</a></td>
-<td class="comment-11" rowspan="1">Prepare a question and the answer</td>
+<td class="comment-1" rowspan="1">Prepare a question and the answer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f413"></span>F413</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$7986</td>
-<td class="comment-11" rowspan="2">Hand over control to the routine at <a href="7986.html">7986</a>, making the teacher ask the question</td>
+<td class="comment-1" rowspan="2">Hand over control to the routine at <a href="7986.html">7986</a>, making the teacher ask the question</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f416"></span>F416</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7CF1.html">$7CF1</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -147,38 +121,36 @@ Control returns here when the teacher has finished asking the question.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f419"></span>F419</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Transfer the teacher's character number to <span class="register">D</span></td>
+<td class="comment-1" rowspan="1">Transfer the teacher's character number to <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f41a"></span>F41A</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7CAF.html#7cb6">$7CB6</a></td>
-<td class="comment-11" rowspan="1">Make the teacher wait for EINSTEIN to answer the question</td>
+<td class="comment-1" rowspan="1">Make the teacher wait for EINSTEIN to answer the question</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f41d"></span>F41D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $F404</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F3F5.html">F3F5</a></span></td>
+<td class="prev">
+Prev: <a href="F3F5.html">F3F5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f400">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F41F.html">F41F</a></span></td>
+<td class="next">
+Next: <a href="F41F.html">F41F</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/62464.html">Switch to decimal</a>.</div>
 </footer>
 </body>

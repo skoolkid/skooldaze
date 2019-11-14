@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7CAF</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7CA0.html">7CA0</a></span></td>
+<td class="prev">
+Prev: <a href="7CA0.html">7CA0</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7caf">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7CC8.html">7CC8</a></span></td>
+<td class="next">
+Next: <a href="7CC8.html">7CC8</a>
+</td>
 </tr>
 </table>
 <div class="description">7CAF: Make EINSTEIN speak</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="F300.html">F300</a>. Copies the message address into bytes 0x6B and 0x6C of EINSTEIN's buffer, and then signals that it's his turn to speak.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,48 +45,29 @@ Used by the routine at <a href="F300.html">F300</a>. Copies the message address 
 <td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7caf"></span>7CAF</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$A96B</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL</span> at byte 0x6B of EINSTEIN's buffer</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL</span> at byte 0x6B of EINSTEIN's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cb2"></span>7CB2</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cb3"></span>7CB3</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),C</td>
-<td class="comment-11" rowspan="3">Copy the message address in <span class="register">BC</span> into bytes 0x6B and 0x6C of EINSTEIN's buffer</td>
+<td class="comment-1" rowspan="3">Copy the message address in <span class="register">BC</span> into bytes 0x6B and 0x6C of EINSTEIN's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cb4"></span>7CB4</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cb5"></span>7CB5</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),B</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -96,94 +80,71 @@ This entry point is used by the routine at <a href="F400.html">F400</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7cb6"></span>7CB6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FC9</td>
-<td class="comment-11" rowspan="1"><a href="7FC9.html">7FC9</a> holds the lesson signal flags</td>
+<td class="comment-1" rowspan="1"><a href="7FC9.html">7FC9</a> holds the lesson signal flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cb9"></span>7CB9</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 7,(HL)</td>
-<td class="comment-11" rowspan="1">Signal (to the routine at <a href="79BA.html">79BA</a>) that it's EINSTEIN's turn to speak</td>
+<td class="comment-1" rowspan="1">Signal (to the routine at <a href="79BA.html">79BA</a>) that it's EINSTEIN's turn to speak</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cbb"></span>7CBB</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cbc"></span>7CBC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6A</td>
-<td class="comment-11" rowspan="4">Place the address of the interruptible subcommand routine at <a href="7CC8.html">7CC8</a> into bytes 0x69 and 0x6A of the teacher's buffer</td>
+<td class="comment-1" rowspan="4">Place the address of the interruptible subcommand routine at <a href="7CC8.html">7CC8</a> into bytes 0x69 and 0x6A of the teacher's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cbe"></span>7CBE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$7C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cc0"></span>7CC0</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cc1"></span>7CC1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$C8</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cc3"></span>7CC3</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="3">Collect the return address in <span class="register">DE</span> and copy it to bytes 0x63 and 0x64 of the teacher's buffer (so that control will resume there when <a href="7CC8.html">7CC8</a> relinquishes it)</td>
+<td class="comment-1" rowspan="3">Collect the return address in <span class="register">DE</span> and copy it to bytes 0x63 and 0x64 of the teacher's buffer (so that control will resume there when <a href="7CC8.html">7CC8</a> relinquishes it)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cc4"></span>7CC4</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cc6"></span>7CC6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cc7"></span>7CC7</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return to the main loop</td>
+<td class="comment-1" rowspan="1">Return to the main loop</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7CA0.html">7CA0</a></span></td>
+<td class="prev">
+Prev: <a href="7CA0.html">7CA0</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7caf">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7CC8.html">7CC8</a></span></td>
+<td class="next">
+Next: <a href="7CC8.html">7CC8</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/31919.html">Switch to decimal</a>.</div>
 </footer>
 </body>

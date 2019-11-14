@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7CA0</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7C9F.html">7C9F</a></span></td>
+<td class="prev">
+Prev: <a href="7C9F.html">7C9F</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7ca0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7CAF.html">7CAF</a></span></td>
+<td class="next">
+Next: <a href="7CAF.html">7CAF</a>
+</td>
 </tr>
 </table>
 <div class="description">7CA0: Make a teacher give lines to EINSTEIN for telling tales</div>
@@ -29,7 +32,7 @@
 Continues from the routine at <a href="7CE0.html">7CE0</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,27 +41,17 @@ Continues from the routine at <a href="7CE0.html">7CE0</a>.
 <td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7ca0"></span>7CA0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$A9</td>
-<td class="comment-11" rowspan="1">0xA9=EINSTEIN</td>
+<td class="comment-1" rowspan="1">0xA9=EINSTEIN</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ca2"></span>7CA2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$09</td>
-<td class="comment-11" rowspan="1">Lines reprimand <a href="DDA0.html">0x09</a>: DON'T TELL TALES</td>
+<td class="comment-1" rowspan="1">Lines reprimand <a href="DDA0.html">0x09</a>: DON'T TELL TALES</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -71,73 +64,59 @@ This entry point is used by the routine at <a href="F300.html">F300</a> with <sp
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7ca4"></span>7CA4</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Bytes 0x61 and 0x62 of the teacher's buffer hold his coordinates</td>
+<td class="comment-1" rowspan="1">Bytes 0x61 and 0x62 of the teacher's buffer hold his coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ca6"></span>7CA6</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Save the teacher's character number briefly</td>
+<td class="comment-1" rowspan="1">Save the teacher's character number briefly</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ca7"></span>7CA7</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
-<td class="comment-11" rowspan="3">Collect the teacher's coordinates in <span class="register">DE</span></td>
+<td class="comment-1" rowspan="3">Collect the teacher's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ca8"></span>7CA8</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ca9"></span>7CA9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7caa"></span>7CAA</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7700.html">$7700</a></td>
-<td class="comment-11" rowspan="1">Make the teacher give lines</td>
+<td class="comment-1" rowspan="1">Make the teacher give lines</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cad"></span>7CAD</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore the teacher's character number to <span class="register">H</span></td>
+<td class="comment-1" rowspan="1">Restore the teacher's character number to <span class="register">H</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7cae"></span>7CAE</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7C9F.html">7C9F</a></span></td>
+<td class="prev">
+Prev: <a href="7C9F.html">7C9F</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7ca0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7CAF.html">7CAF</a></span></td>
+<td class="next">
+Next: <a href="7CAF.html">7CAF</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/31904.html">Switch to decimal</a>.</div>
 </footer>
 </body>

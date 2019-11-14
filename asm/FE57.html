@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at FE57</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="FE52.html">FE52</a></span></td>
+<td class="prev">
+Prev: <a href="FE52.html">FE52</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#fe57">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="FE75.html">FE75</a></span></td>
+<td class="next">
+Next: <a href="FE75.html">FE75</a>
+</td>
 </tr>
 </table>
 <div class="description">FE57: Make a knocked-out sound effect</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="6AA7.html">6AA7</a>. Makes a sound effect just after ERIC has been knocked over or pushed out of his seat.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,48 +41,29 @@ Used by the routine at <a href="6AA7.html">6AA7</a>. Makes a sound effect just a
 <td class="register-desc">1 + knockout delay counter value (<a href="7FF5.html">7FF5</a>)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="fe57"></span>FE57</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $27</td>
-<td class="comment-11" rowspan="2">Return (to <a href="6AD7.html">6AD7</a>) unless ERIC has just been knocked over</td>
+<td class="comment-1" rowspan="2">Return (to <a href="6AD7.html">6AD7</a>) unless ERIC has just been knocked over</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe59"></span>FE59</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe5a"></span>FE5A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$0113</td>
-<td class="comment-11" rowspan="3"><span class="register">A</span>=0x02 (initial border colour: red), <span class="register">H</span>=0x01 (pitch adjustment), <span class="register">L</span>=0x13 (border alternates red/blue), <span class="register">D</span>=0x00 (duration), <span class="register">E</span>=0x00 (initial pitch)</td>
+<td class="comment-1" rowspan="3"><span class="register">A</span>=0x02 (initial border colour: red), <span class="register">H</span>=0x01 (pitch adjustment), <span class="register">L</span>=0x13 (border alternates red/blue), <span class="register">D</span>=0x00 (duration), <span class="register">E</span>=0x00 (initial pitch)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe5d"></span>FE5D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$0000</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe60"></span>FE60</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$02</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -116,115 +100,86 @@ This entry point is used by the routines at <a href="E4EC.html">E4EC</a> (to mak
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="fe62"></span>FE62</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR L</td>
-<td class="comment-11" rowspan="2">Flip the border colour and the state of the speaker</td>
+<td class="comment-1" rowspan="2">Flip the border colour and the state of the speaker</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe63"></span>FE63</td>
-<td class="bytes-0"></td>
 <td class="instruction">OUT ($FE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe65"></span>FE65</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,E</td>
-<td class="comment-11" rowspan="2">Pitch delay</td>
+<td class="comment-1" rowspan="2">Pitch delay</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="fe66"></span>FE66</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $FE66</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe68"></span>FE68</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Save <span class="register">A</span> temporarily</td>
+<td class="comment-1" rowspan="1">Save <span class="register">A</span> temporarily</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe69"></span>FE69</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="3">Adjust the pitch</td>
+<td class="comment-1" rowspan="3">Adjust the pitch</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe6a"></span>FE6A</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe6b"></span>FE6B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe6c"></span>FE6C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Restore <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Restore <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe6d"></span>FE6D</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC D</td>
-<td class="comment-11" rowspan="1">Decrement the duration counter</td>
+<td class="comment-1" rowspan="1">Decrement the duration counter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe6e"></span>FE6E</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$FE62</td>
-<td class="comment-11" rowspan="1">Jump back unless the sound effect is finished</td>
+<td class="comment-1" rowspan="1">Jump back unless the sound effect is finished</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe70"></span>FE70</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$01</td>
-<td class="comment-11" rowspan="2">Make the border blue before returning</td>
+<td class="comment-1" rowspan="2">Make the border blue before returning</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe72"></span>FE72</td>
-<td class="bytes-0"></td>
 <td class="instruction">OUT ($FE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fe74"></span>FE74</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="FE52.html">FE52</a></span></td>
+<td class="prev">
+Prev: <a href="FE52.html">FE52</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#fe57">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="FE75.html">FE75</a></span></td>
+<td class="next">
+Next: <a href="FE75.html">FE75</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/65111.html">Switch to decimal</a>.</div>
 </footer>
 </body>

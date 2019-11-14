@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 65088</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="65024.html">65024</a></span></td>
+<td class="prev">
+Prev: <a href="65024.html">65024</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#65088">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="65106.html">65106</a></span></td>
+<td class="next">
+Next: <a href="65106.html">65106</a>
+</td>
 </tr>
 </table>
 <div class="description">65088: Make a walking sound effect (yellow border)</div>
@@ -29,33 +32,17 @@
 Used by the routines at <a href="46568.html">46568</a> and <a href="60128.html">60128</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="65088"></span>65088</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="65089"></span>65089</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,6</td>
-<td class="comment-11" rowspan="1">The border will be yellow</td>
+<td class="comment-1" rowspan="1">The border will be yellow</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -68,80 +55,60 @@ This entry point is used by the routine at <a href="65106.html">65106</a> with <
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="65091"></span>65091</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,8</td>
-<td class="comment-11" rowspan="7">Make the sound effect</td>
+<td class="comment-1" rowspan="7">Make the sound effect</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="65093"></span>65093</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR 16</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="65095"></span>65095</td>
-<td class="bytes-0"></td>
 <td class="instruction">OUT (254),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="65097"></span>65097</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,192</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="65099"></span>65099</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 65099</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="65101"></span>65101</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="65102"></span>65102</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,65093</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="65104"></span>65104</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="65105"></span>65105</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="65024.html">65024</a></span></td>
+<td class="prev">
+Prev: <a href="65024.html">65024</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#65088">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="65106.html">65106</a></span></td>
+<td class="next">
+Next: <a href="65106.html">65106</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/FE40.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

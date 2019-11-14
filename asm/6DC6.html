@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 6DC6</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6DC5.html">6DC5</a></span></td>
+<td class="prev">
+Prev: <a href="6DC5.html">6DC5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6dc6">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6DEF.html">6DEF</a></span></td>
+<td class="next">
+Next: <a href="6DEF.html">6DEF</a>
+</td>
 </tr>
 </table>
 <div class="description">6DC6: Control the vertical flight of a catapult pellet</div>
@@ -29,7 +32,7 @@
 The address of this uninterruptible subcommand routine is placed into bytes 0x6F and 0x70 of a catapult pellet's buffer by the routine at <a href="6D1C.html">6D1C</a>. It controls the pellet from the beginning of its vertical flight to the end, including any collision with a shield.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,90 +41,62 @@ The address of this uninterruptible subcommand routine is placed into bytes 0x6F
 <td class="register-desc">0xAA (BOY WANDER's pellet) or 0xAB (ERIC's pellet)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6dc6"></span>6DC6</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
-<td class="comment-11" rowspan="1">Update the SRB for the pellet's current location</td>
+<td class="comment-1" rowspan="1">Update the SRB for the pellet's current location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dc9"></span>6DC9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=pellet's animatory state</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=pellet's animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dca"></span>6DCA</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=pellet's y-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=pellet's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dcb"></span>6DCB</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $98</td>
-<td class="comment-11" rowspan="1">Has the pellet hit the ceiling of the top floor?</td>
+<td class="comment-1" rowspan="1">Has the pellet hit the ceiling of the top floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dcd"></span>6DCD</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="6D1C.html#6d24">$6D24</a></td>
-<td class="comment-11" rowspan="1">Terminate the pellet if so</td>
+<td class="comment-1" rowspan="1">Terminate the pellet if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dd0"></span>6DD0</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC D</td>
-<td class="comment-11" rowspan="1">Up a level</td>
+<td class="comment-1" rowspan="1">Up a level</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dd1"></span>6DD1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$71</td>
-<td class="comment-11" rowspan="1">Byte 0x71 of the pellet's buffer holds the distance left to travel</td>
+<td class="comment-1" rowspan="1">Byte 0x71 of the pellet's buffer holds the distance left to travel</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dd3"></span>6DD3</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
-<td class="comment-11" rowspan="1">Has the pellet finished travelling?</td>
+<td class="comment-1" rowspan="1">Has the pellet finished travelling?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dd4"></span>6DD4</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="6D1C.html#6d24">$6D24</a></td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dd7"></span>6DD7</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=pellet's animatory state</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=pellet's animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dd8"></span>6DD8</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61B0.html">$61B0</a></td>
-<td class="comment-11" rowspan="1">Update the pellet's location and update the SRB</td>
+<td class="comment-1" rowspan="1">Update the pellet's location and update the SRB</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -134,46 +109,34 @@ This entry point is used by the routine at <a href="6D1C.html">6D1C</a> to check
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6ddb"></span>6DDB</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 0x61 holds the pellet's y-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 0x61 holds the pellet's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6ddd"></span>6DDD</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
-<td class="comment-11" rowspan="1">Pick this up in <span class="register">D</span></td>
+<td class="comment-1" rowspan="1">Pick this up in <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dde"></span>6DDE</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=y-coordinate of the pellet's potential target</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=y-coordinate of the pellet's potential target</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6ddf"></span>6DDF</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1">Byte 0x62 holds the pellet's x-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 0x62 holds the pellet's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6de0"></span>6DE0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-11" rowspan="1">Pick this up in <span class="register">E</span></td>
+<td class="comment-1" rowspan="1">Pick this up in <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6de1"></span>6DE1</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=x-coordinate of the pellet's potential target</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=x-coordinate of the pellet's potential target</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -186,73 +149,60 @@ This entry point is used by the routine at <a href="F726.html">F726</a> with <sp
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6de2"></span>6DE2</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 7,E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=128 + x-coordinate of the potential target</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=128 + x-coordinate of the potential target</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6de4"></span>6DE4</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6de5"></span>6DE5</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6DEF.html">$6DEF</a></td>
-<td class="comment-11" rowspan="1">Has the pellet (or ERIC's hand) hit a shield?</td>
+<td class="comment-1" rowspan="1">Has the pellet (or ERIC's hand) hit a shield?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6de8"></span>6DE8</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6de9"></span>6DE9</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">Return if not</td>
+<td class="comment-1" rowspan="1">Return if not</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dea"></span>6DEA</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$71</td>
-<td class="comment-11" rowspan="2">If it was a pellet that hit the shield, this sets its remaining distance to travel to 1, so it will be terminated the next time this routine is called</td>
+<td class="comment-1" rowspan="2">If it was a pellet that hit the shield, this sets its remaining distance to travel to 1, so it will be terminated the next time this routine is called</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dec"></span>6DEC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$01</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6dee"></span>6DEE</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6DC5.html">6DC5</a></span></td>
+<td class="prev">
+Prev: <a href="6DC5.html">6DC5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6dc6">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6DEF.html">6DEF</a></span></td>
+<td class="next">
+Next: <a href="6DEF.html">6DEF</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/28102.html">Switch to decimal</a>.</div>
 </footer>
 </body>

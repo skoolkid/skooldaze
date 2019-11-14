@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at FA2A</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="FA23.html">FA23</a></span></td>
+<td class="prev">
+Prev: <a href="FA23.html">FA23</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#fa2a">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="FA49.html">FA49</a></span></td>
+<td class="next">
+Next: <a href="FA49.html">FA49</a>
+</td>
 </tr>
 </table>
 <div class="description">FA2A: Check whether ANGELFACE is touching ERIC</div>
@@ -29,7 +32,7 @@
 The address of this continual subcommand routine is placed into bytes 0x7C and 0x7D of ANGELFACE's buffer by command list <a href="FAFF.html">0xDC</a>. It checks whether ERIC and ANGELFACE are in the same location; if they are, and ERIC has already been informed of ANGELFACE's medical condition, bit 5 at <a href="7FCB.html">7FCB</a> is set, indicating that ERIC has mumps (whereupon MR ROCKITT will come looking for ERIC to send him home).
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,97 +41,67 @@ The address of this continual subcommand routine is placed into bytes 0x7C and 0
 <td class="register-desc">0xA8 (ANGELFACE)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="fa2a"></span>FA2A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FCB)</td>
-<td class="comment-11" rowspan="1"><a href="7FCB.html">7FCB</a> holds the special playtime signal flags</td>
+<td class="comment-1" rowspan="1"><a href="7FCB.html">7FCB</a> holds the special playtime signal flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa2d"></span>FA2D</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 4,A</td>
-<td class="comment-11" rowspan="1">Has ERIC been told (and understood) that ANGELFACE has mumps?</td>
+<td class="comment-1" rowspan="1">Has ERIC been told (and understood) that ANGELFACE has mumps?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa2f"></span>FA2F</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">Return if not</td>
+<td class="comment-1" rowspan="1">Return if not</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa30"></span>FA30</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7DEA.html">$7DEA</a></td>
-<td class="comment-11" rowspan="1">Make ANGELFACE walk fast</td>
+<td class="comment-1" rowspan="1">Make ANGELFACE walk fast</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa33"></span>FA33</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($AC62)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa36"></span>FA36</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 0x62 of ANGELFACE's buffer holds his x-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 0x62 of ANGELFACE's buffer holds his x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa38"></span>FA38</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Compare ERIC's and ANGELFACE's x-coordinates</td>
+<td class="comment-1" rowspan="1">Compare ERIC's and ANGELFACE's x-coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa39"></span>FA39</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return if they do not match</td>
+<td class="comment-1" rowspan="1">Return if they do not match</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa3a"></span>FA3A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($AC61)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa3d"></span>FA3D</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x61 (which byte holds ANGELFACE's y-coordinate)</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x61 (which byte holds ANGELFACE's y-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa3e"></span>FA3E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Compare ERIC's and ANGELFACE's y-coordinates</td>
+<td class="comment-1" rowspan="1">Compare ERIC's and ANGELFACE's y-coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa3f"></span>FA3F</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return if they do not match</td>
+<td class="comment-1" rowspan="1">Return if they do not match</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -141,45 +114,39 @@ ERIC and ANGELFACE are in the same location, thus facilitating transmission of t
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa40"></span>FA40</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FCB)</td>
-<td class="comment-11" rowspan="3">Set bit 5 at <a href="7FCB.html">7FCB</a>, indicating that ERIC has mumps</td>
+<td class="comment-1" rowspan="3">Set bit 5 at <a href="7FCB.html">7FCB</a>, indicating that ERIC has mumps</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa43"></span>FA43</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 5,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa45"></span>FA45</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FCB),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="fa48"></span>FA48</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="FA23.html">FA23</a></span></td>
+<td class="prev">
+Prev: <a href="FA23.html">FA23</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#fa2a">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="FA49.html">FA49</a></span></td>
+<td class="next">
+Next: <a href="FA49.html">FA49</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/64042.html">Switch to decimal</a>.</div>
 </footer>
 </body>

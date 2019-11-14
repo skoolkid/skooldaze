@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at F923</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F918.html">F918</a></span></td>
+<td class="prev">
+Prev: <a href="F918.html">F918</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f923">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F955.html">F955</a></span></td>
+<td class="next">
+Next: <a href="F955.html">F955</a>
+</td>
 </tr>
 </table>
 <div class="description">F923: Make MR CREAK ask the birth year question if appropriate</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="7A32.html">7A32</a>. Makes MR CREAK ask the birth year question if (a) he hasn't asked it yet this lesson, and (b) ERIC hasn't opened the safe yet.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,62 +41,42 @@ Used by the routine at <a href="7A32.html">7A32</a>. Makes MR CREAK ask the birt
 <td class="register-desc">0 (MR ROCKITT), 1 (MR WITHIT), or 2 (MR CREAK)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f923"></span>F923</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Save the teacher identifier in <span class="register">B</span> for now</td>
+<td class="comment-1" rowspan="1">Save the teacher identifier in <span class="register">B</span> for now</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f924"></span>F924</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7A1A</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at MR ROCKITT's question/answer data table (ready for the return to the calling routine)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at MR ROCKITT's question/answer data table (ready for the return to the calling routine)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f927"></span>F927</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $02</td>
-<td class="comment-11" rowspan="1">Are we dealing with MR CREAK?</td>
+<td class="comment-1" rowspan="1">Are we dealing with MR CREAK?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f929"></span>F929</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F92E</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f92b"></span>F92B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Restore the teacher identifier (0-2) to <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Restore the teacher identifier (0-2) to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f92c"></span>F92C</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Set the zero flag if we're dealing with MR ROCKITT</td>
+<td class="comment-1" rowspan="1">Set the zero flag if we're dealing with MR ROCKITT</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f92d"></span>F92D</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -106,60 +89,43 @@ We're dealing with MR CREAK, so we need to determine whether he should ask the b
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f92e"></span>F92E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FEA)</td>
-<td class="comment-11" rowspan="1">Collect the game mode indicator from <a href="7FEA.html">7FEA</a></td>
+<td class="comment-1" rowspan="1">Collect the game mode indicator from <a href="7FEA.html">7FEA</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f931"></span>F931</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $03</td>
-<td class="comment-11" rowspan="1">Has ERIC already opened the safe?</td>
+<td class="comment-1" rowspan="1">Has ERIC already opened the safe?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f933"></span>F933</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$F92B</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f935"></span>F935</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Are we in demo mode?</td>
+<td class="comment-1" rowspan="1">Are we in demo mode?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f936"></span>F936</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F92B</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f938"></span>F938</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FDA)</td>
-<td class="comment-11" rowspan="2">Has MR CREAK already asked the birth year question this lesson?</td>
+<td class="comment-1" rowspan="2">Has MR CREAK already asked the birth year question this lesson?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f93b"></span>F93B</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f93c"></span>F93C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F92B</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -172,80 +138,64 @@ MR CREAK hasn't asked the birth year question yet. Make him do so now.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f93e"></span>F93E</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Drop the return address from the stack; we'll be re-entering the calling routine at a different point</td>
+<td class="comment-1" rowspan="1">Drop the return address from the stack; we'll be re-entering the calling routine at a different point</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f93f"></span>F93F</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="2">Set <a href="7FDA.html">7FDA</a> to 1, indicating that MR CREAK has asked the birth year question this period</td>
+<td class="comment-1" rowspan="2">Set <a href="7FDA.html">7FDA</a> to 1, indicating that MR CREAK has asked the birth year question this period</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f940"></span>F940</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FDA),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f943"></span>F943</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7F9A)</td>
-<td class="comment-11" rowspan="2">Copy the identifier of CREAK's birth year battle into the 'Q' spot in 'It was the BATTLE OF Q'</td>
+<td class="comment-1" rowspan="2">Copy the identifier of CREAK's birth year battle into the 'Q' spot in 'It was the BATTLE OF Q'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f946"></span>F946</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($F0F7),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f949"></span>F949</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$F0E1</td>
-<td class="comment-11" rowspan="1"><a href="F0E1.html">F0E1</a>: '{Please Sir - I cannot tell a lie . . }It was the BATTLE OF Q'</td>
+<td class="comment-1" rowspan="1"><a href="F0E1.html">F0E1</a>: '{Please Sir - I cannot tell a lie . . }It was the BATTLE OF Q'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f94c"></span>F94C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($A96B),HL</td>
-<td class="comment-11" rowspan="1">Place this message address into bytes 0x6B and 0x6C of EINSTEIN's buffer</td>
+<td class="comment-1" rowspan="1">Place this message address into bytes 0x6B and 0x6C of EINSTEIN's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f94f"></span>F94F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$F12D</td>
-<td class="comment-11" rowspan="1"><a href="F12D.html">F12D</a>='WHAT HAPPENED IN THE YEAR THAT I WAS BORN'</td>
+<td class="comment-1" rowspan="1"><a href="F12D.html">F12D</a>='WHAT HAPPENED IN THE YEAR THAT I WAS BORN'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f952"></span>F952</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="7A32.html#7ac9">$7AC9</a></td>
-<td class="comment-11" rowspan="1">Re-enter the calling routine to make MR CREAK ask the birth year question</td>
+<td class="comment-1" rowspan="1">Re-enter the calling routine to make MR CREAK ask the birth year question</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F918.html">F918</a></span></td>
+<td class="prev">
+Prev: <a href="F918.html">F918</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f923">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F955.html">F955</a></span></td>
+<td class="next">
+Next: <a href="F955.html">F955</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/63779.html">Switch to decimal</a>.</div>
 </footer>
 </body>

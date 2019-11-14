@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 25404</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="25402.html">25402</a></span></td>
+<td class="prev">
+Prev: <a href="25402.html">25402</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#25404">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="25480.html">25480</a></span></td>
+<td class="next">
+Next: <a href="25480.html">25480</a>
+</td>
 </tr>
 </table>
 <div class="description">25404: Guide a character to an intermediate destination</div>
@@ -29,7 +32,7 @@
 The address of this interruptible subcommand routine is placed into bytes 105 and 106 of the character's buffer by the routines at <a href="25303.html">25303</a>, <a href="25534.html">25534</a>, <a href="31854.html">31854</a> and <a href="32048.html">32048</a>. It is used to make a character go straight to a destination (or intermediate destination) that is reachable without negotiating any staircases.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,139 +41,93 @@ The address of this interruptible subcommand routine is placed into bytes 105 an
 <td class="register-desc">Character number (152-169)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25404"></span>25404</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,108</td>
-<td class="comment-11" rowspan="3">The counter at byte 108 of the character's buffer is initialised by the calling routine to limit the amount of time that this routine has control; terminate this interruptible subcommand if the counter is now zero</td>
+<td class="comment-1" rowspan="3">The counter at byte 108 of the character's buffer is initialised by the calling routine to limit the amount of time that this routine has control; terminate this interruptible subcommand if the counter is now zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25406"></span>25406</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25407"></span>25407</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="25248.html#25252">25252</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25410"></span>25410</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 107 of the character's buffer</td>
+<td class="comment-1" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 107 of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25411"></span>25411</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25412"></span>25412</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,98</td>
-<td class="comment-11" rowspan="1">Byte 98 of the character's buffer holds his x-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 98 of the character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25414"></span>25414</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Has the character reached the intermediate destination?</td>
+<td class="comment-1" rowspan="1">Has the character reached the intermediate destination?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25415"></span>25415</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,25423</td>
-<td class="comment-11" rowspan="1">Jump if not</td>
+<td class="comment-1" rowspan="1">Jump if not</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25417"></span>25417</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,96</td>
-<td class="comment-11" rowspan="1">Byte 96 of the character's buffer holds his animatory state</td>
+<td class="comment-1" rowspan="1">Byte 96 of the character's buffer holds his animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25419"></span>25419</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 0,(HL)</td>
-<td class="comment-11" rowspan="1">Is the character midstride?</td>
+<td class="comment-1" rowspan="1">Is the character midstride?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25421"></span>25421</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,25407</td>
-<td class="comment-11" rowspan="1">Jump if not (nothing left to do)</td>
+<td class="comment-1" rowspan="1">Jump if not (nothing left to do)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25423"></span>25423</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="25108.html">25108</a></td>
-<td class="comment-11" rowspan="1">Update the SRB for the character's current location</td>
+<td class="comment-1" rowspan="1">Update the SRB for the character's current location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25426"></span>25426</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Store the character's animatory state in <span class="register">C</span></td>
+<td class="comment-1" rowspan="1">Store the character's animatory state in <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25427"></span>25427</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,107</td>
-<td class="comment-11" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 107 of the character's buffer</td>
+<td class="comment-1" rowspan="2">Collect the x-coordinate of the intermediate destination from byte 107 of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25429"></span>25429</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25430"></span>25430</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span> holds the character's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span> holds the character's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25431"></span>25431</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character's animatory state</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=character's animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25432"></span>25432</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,25440</td>
-<td class="comment-11" rowspan="1">Jump unless the character has reached the destination</td>
+<td class="comment-1" rowspan="1">Jump unless the character has reached the destination</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -183,25 +140,19 @@ The character has reached the destination, but he is midstride. To complete the 
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25434"></span>25434</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">Is the character facing left?</td>
+<td class="comment-1" rowspan="1">Is the character facing left?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25436"></span>25436</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,25449</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25438"></span>25438</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR 25471</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -214,18 +165,14 @@ The character has not yet reached the destination. Figure out his next move.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25440"></span>25440</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">Now the zero flag indicates which way the character is facing: set=left, reset=right</td>
+<td class="comment-1" rowspan="1">Now the zero flag indicates which way the character is facing: set=left, reset=right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25442"></span>25442</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,25466</td>
-<td class="comment-11" rowspan="1">Jump if the character is to the left of his destination</td>
+<td class="comment-1" rowspan="1">Jump if the character is to the left of his destination</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -238,88 +185,60 @@ The character is to the right of his destination, and so must proceed leftwards.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25444"></span>25444</td>
-<td class="bytes-0"></td>
 <td class="instruction">RES 7,A</td>
-<td class="comment-11" rowspan="1">Make sure the character is facing left</td>
+<td class="comment-1" rowspan="1">Make sure the character is facing left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25446"></span>25446</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP NZ,<a href="25008.html">25008</a></td>
-<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB if he was facing right</td>
+<td class="comment-1" rowspan="1">Update the character's animatory state and update the SRB if he was facing right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25449"></span>25449</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character's next animatory state</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=character's next animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25450"></span>25450</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">Will the character be midstride?</td>
+<td class="comment-1" rowspan="1">Will the character be midstride?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25452"></span>25452</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP NZ,<a href="25008.html">25008</a></td>
-<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB if so</td>
+<td class="comment-1" rowspan="1">Update the character's animatory state and update the SRB if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25455"></span>25455</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=character's next x-coordinate (one to the left)</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=character's next x-coordinate (one to the left)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25456"></span>25456</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND 3</td>
-<td class="comment-11" rowspan="5">Calculate the character's next animatory state in <span class="register">A</span></td>
+<td class="comment-1" rowspan="5">Calculate the character's next animatory state in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25458"></span>25458</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25459"></span>25459</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25460"></span>25460</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND 252</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25462"></span>25462</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25463"></span>25463</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="25008.html">25008</a></td>
-<td class="comment-11" rowspan="1">Update the character's animatory state and location and update the SRB</td>
+<td class="comment-1" rowspan="1">Update the character's animatory state and location and update the SRB</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -332,66 +251,56 @@ The character is to the left of his destination, and so must proceed rightwards.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25466"></span>25466</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 7,A</td>
-<td class="comment-11" rowspan="1">Make sure the character is facing right</td>
+<td class="comment-1" rowspan="1">Make sure the character is facing right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25468"></span>25468</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP Z,<a href="25008.html">25008</a></td>
-<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB if the character was facing left</td>
+<td class="comment-1" rowspan="1">Update the character's animatory state and update the SRB if the character was facing left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="25471"></span>25471</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character's next animatory state</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=character's next animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25472"></span>25472</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">Will the character be midstride?</td>
+<td class="comment-1" rowspan="1">Will the character be midstride?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25474"></span>25474</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP NZ,<a href="25008.html">25008</a></td>
-<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB if so</td>
+<td class="comment-1" rowspan="1">Update the character's animatory state and update the SRB if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25477"></span>25477</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=character's next x-coordinate (one to the right)</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=character's next x-coordinate (one to the right)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25478"></span>25478</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR 25456</td>
-<td class="comment-11" rowspan="1">Jump back to update the character's animatory state and location and update the SRB</td>
+<td class="comment-1" rowspan="1">Jump back to update the character's animatory state and location and update the SRB</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="25402.html">25402</a></span></td>
+<td class="prev">
+Prev: <a href="25402.html">25402</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#25404">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="25480.html">25480</a></span></td>
+<td class="next">
+Next: <a href="25480.html">25480</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/633C.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

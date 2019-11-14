@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 6E3C</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6E33.html">6E33</a></span></td>
+<td class="prev">
+Prev: <a href="6E33.html">6E33</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6e3c">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6E8F.html">6E8F</a></span></td>
+<td class="next">
+Next: <a href="6E8F.html">6E8F</a>
+</td>
 </tr>
 </table>
 <div class="description">6E3C: Check whether a boy can be seen by a teacher</div>
@@ -29,7 +32,7 @@
 Used by the routines at <a href="6F1E.html">6F1E</a>, <a href="7000.html">7000</a> and <a href="F41F.html">F41F</a>. Returns with the carry flag set if the boy can be seen by a teacher, and the teacher's character number in <span class="register">H'</span>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,20 +41,12 @@ Used by the routines at <a href="6F1E.html">6F1E</a>, <a href="7000.html">7000</
 <td class="register-desc">0xA7 (BOY WANDER), 0xA8 (ANGELFACE) or 0xAC (ERIC)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e3c"></span>6E3C</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6E90.html">$6E90</a></td>
-<td class="comment-11" rowspan="1">Get the floor (0x9B, 0xA2, 0xA9) nearest to the character in <span class="register">D</span></td>
+<td class="comment-1" rowspan="1">Get the floor (0x9B, 0xA2, 0xA9) nearest to the character in <span class="register">D</span></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -64,130 +59,92 @@ This entry point is used by the routine at <a href="77AC.html">77AC</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e3f"></span>6E3F</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6EA7.html">$6EA7</a></td>
-<td class="comment-11" rowspan="1">Get the teacher's visibility range in [<span class="register">C</span>,<span class="register">B</span>]</td>
+<td class="comment-1" rowspan="1">Get the teacher's visibility range in [<span class="register">C</span>,<span class="register">B</span>]</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e42"></span>6E42</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e43"></span>6E43</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$04</td>
-<td class="comment-11" rowspan="1">There are 4 teachers</td>
+<td class="comment-1" rowspan="1">There are 4 teachers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e45"></span>6E45</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,$A3</td>
-<td class="comment-11" rowspan="1">And the first is 0xA3=MR WACKER</td>
+<td class="comment-1" rowspan="1">And the first is 0xA3=MR WACKER</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e47"></span>6E47</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="2">Collect the teacher's x-coordinate from byte 0x62 of his buffer</td>
+<td class="comment-1" rowspan="2">Collect the teacher's x-coordinate from byte 0x62 of his buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e49"></span>6E49</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e4a"></span>6E4A</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e4b"></span>6E4B</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">Is the teacher at or to the left of the upper bound of the visibility range?</td>
+<td class="comment-1" rowspan="1">Is the teacher at or to the left of the upper bound of the visibility range?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e4c"></span>6E4C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6E57</td>
-<td class="comment-11" rowspan="2">Jump if so</td>
+<td class="comment-1" rowspan="2">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e4e"></span>6E4E</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$6E57</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e50"></span>6E50</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e51"></span>6E51</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Next teacher</td>
+<td class="comment-1" rowspan="1">Next teacher</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e52"></span>6E52</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $6E47</td>
-<td class="comment-11" rowspan="1">Jump back until all four teachers are done</td>
+<td class="comment-1" rowspan="1">Jump back until all four teachers are done</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e54"></span>6E54</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Clear the carry flag to indicate that the boy wasn't seen by a teacher</td>
+<td class="comment-1" rowspan="1">Clear the carry flag to indicate that the boy wasn't seen by a teacher</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e55"></span>6E55</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e56"></span>6E56</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e57"></span>6E57</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP C</td>
-<td class="comment-11" rowspan="1">Is the teacher to the left of the lower bound of the visibility range?</td>
+<td class="comment-1" rowspan="1">Is the teacher to the left of the lower bound of the visibility range?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e58"></span>6E58</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$6E50</td>
-<td class="comment-11" rowspan="1">Jump back to consider the next teacher if so</td>
+<td class="comment-1" rowspan="1">Jump back to consider the next teacher if so</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -200,137 +157,96 @@ The teacher's x-coordinate is within the visibility range [<span class="register
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e5a"></span>6E5A</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e5b"></span>6E5B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70 of the teacher's buffer?</td>
+<td class="comment-1" rowspan="3">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70 of the teacher's buffer?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e5d"></span>6E5D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e5e"></span>6E5E</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e5f"></span>6E5F</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6E51</td>
-<td class="comment-11" rowspan="1">Jump back to consider the next teacher if so (this one is occupied)</td>
+<td class="comment-1" rowspan="1">Jump back to consider the next teacher if so (this one is occupied)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e61"></span>6E61</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="2">Collect the teacher's y-coordinate from byte 0x61 of his buffer</td>
+<td class="comment-1" rowspan="2">Collect the teacher's y-coordinate from byte 0x61 of his buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e63"></span>6E63</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e64"></span>6E64</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e65"></span>6E65</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e66"></span>6E66</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $9E</td>
-<td class="comment-11" rowspan="1">Is the teacher near or on the top floor?</td>
+<td class="comment-1" rowspan="1">Is the teacher near or on the top floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e68"></span>6E68</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$6E6E</td>
-<td class="comment-11" rowspan="1">Jump if not</td>
+<td class="comment-1" rowspan="1">Jump if not</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e6a"></span>6E6A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$9B</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e6c"></span>6E6C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6E76</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e6e"></span>6E6E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A5</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e70"></span>6E70</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$A2</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e72"></span>6E72</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$6E76</td>
-<td class="comment-11" rowspan="1">Jump if the teacher is near or on the middle floor</td>
+<td class="comment-1" rowspan="1">Jump if the teacher is near or on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e74"></span>6E74</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$A9</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6e76"></span>6E76</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP D</td>
-<td class="comment-11" rowspan="1">Is the teacher within the y-coordinate visibility range?</td>
+<td class="comment-1" rowspan="1">Is the teacher within the y-coordinate visibility range?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e77"></span>6E77</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6E50</td>
-<td class="comment-11" rowspan="1">Jump back to consider the next teacher if not</td>
+<td class="comment-1" rowspan="1">Jump back to consider the next teacher if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -343,143 +259,107 @@ The teacher is close enough to the boy to see him. But is the teacher facing the
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e79"></span>6E79</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e7a"></span>6E7A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=teacher's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=teacher's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e7b"></span>6E7B</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e7c"></span>6E7C</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1">Is the teacher standing right where the boy is?</td>
+<td class="comment-1" rowspan="1">Is the teacher standing right where the boy is?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e7d"></span>6E7D</td>
-<td class="bytes-0"></td>
 <td class="instruction">SCF</td>
-<td class="comment-11" rowspan="2">Return with the carry flag set if so</td>
+<td class="comment-1" rowspan="2">Return with the carry flag set if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e7e"></span>6E7E</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e7f"></span>6E7F</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="3"><span class="register">A</span>=0x80 if the boy is to the right of the teacher, 0x00 if the boy is to the left</td>
+<td class="comment-1" rowspan="3"><span class="register">A</span>=0x80 if the boy is to the right of the teacher, 0x00 if the boy is to the left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e80"></span>6E80</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$00</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e82"></span>6E82</td>
-<td class="bytes-0"></td>
 <td class="instruction">RRA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e83"></span>6E83</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e84"></span>6E84</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 0x60 of the teacher's buffer holds his animatory state</td>
+<td class="comment-1" rowspan="1">Byte 0x60 of the teacher's buffer holds his animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e86"></span>6E86</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR (HL)</td>
-<td class="comment-11" rowspan="1">Reset bit 7 of <span class="register">A</span> if the teacher is facing the boy</td>
+<td class="comment-1" rowspan="1">Reset bit 7 of <span class="register">A</span> if the teacher is facing the boy</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e87"></span>6E87</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e89"></span>6E89</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e8a"></span>6E8A</td>
-<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">Push bit 7 of <span class="register">A</span> into the carry flag</td>
+<td class="comment-1" rowspan="1">Push bit 7 of <span class="register">A</span> into the carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e8b"></span>6E8B</td>
-<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
-<td class="comment-11" rowspan="2">Return with the carry flag set if the teacher is facing the boy</td>
+<td class="comment-1" rowspan="2">Return with the carry flag set if the teacher is facing the boy</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e8c"></span>6E8C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6e8d"></span>6E8D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6E50</td>
-<td class="comment-11" rowspan="1">Otherwise consider the next teacher</td>
+<td class="comment-1" rowspan="1">Otherwise consider the next teacher</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6E33.html">6E33</a></span></td>
+<td class="prev">
+Prev: <a href="6E33.html">6E33</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6e3c">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6E8F.html">6E8F</a></span></td>
+<td class="next">
+Next: <a href="6E8F.html">6E8F</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/28220.html">Switch to decimal</a>.</div>
 </footer>
 </body>

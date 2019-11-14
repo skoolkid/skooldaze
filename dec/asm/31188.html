@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 31188</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31178.html">31178</a></span></td>
+<td class="prev">
+Prev: <a href="31178.html">31178</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31188">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31229.html">31229</a></span></td>
+<td class="next">
+Next: <a href="31229.html">31229</a>
+</td>
 </tr>
 </table>
 <div class="description">31188: Check whether ERIC is where he should be</div>
@@ -29,117 +32,77 @@
 Used by the routines at <a href="31648.html">31648</a>, <a href="31854.html">31854</a>, <a href="31895.html">31895</a>, <a href="31952.html">31952</a> and <a href="62208.html">62208</a>. Returns with the zero flag set if and only if ERIC is where he should be during dinner or class.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31188"></span>31188</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="31229.html">31229</a></td>
-<td class="comment-11" rowspan="1">Get ERIC's coordinates in <span class="register">DE</span></td>
+<td class="comment-1" rowspan="1">Get ERIC's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31191"></span>31191</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=ERIC's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31192"></span>31192</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31193"></span>31193</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,30608</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the skool region table for the top floor (see <a href="30636.html">30636</a>)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at the skool region table for the top floor (see <a href="30636.html">30636</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31196"></span>31196</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 155</td>
-<td class="comment-11" rowspan="1">Is ERIC on the top floor?</td>
+<td class="comment-1" rowspan="1">Is ERIC on the top floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31198"></span>31198</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,31214</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31200"></span>31200</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 162</td>
-<td class="comment-11" rowspan="1">Set the zero flag if ERIC's on the middle floor</td>
+<td class="comment-1" rowspan="1">Set the zero flag if ERIC's on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31202"></span>31202</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,156</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="30620.html">30620</a> (skool region data table for the middle floor; see <a href="30636.html">30636</a>)</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="30620.html">30620</a> (skool region data table for the middle floor; see <a href="30636.html">30636</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31204"></span>31204</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,31214</td>
-<td class="comment-11" rowspan="1">Jump if ERIC's on the middle floor</td>
+<td class="comment-1" rowspan="1">Jump if ERIC's on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31206"></span>31206</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,166</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="30630.html">30630</a> (skool region data table for the bottom floor; see <a href="30636.html">30636</a>)</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="30630.html">30630</a> (skool region data table for the bottom floor; see <a href="30636.html">30636</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31208"></span>31208</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 169</td>
-<td class="comment-11" rowspan="1">Is ERIC on the bottom floor?</td>
+<td class="comment-1" rowspan="1">Is ERIC on the bottom floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31210"></span>31210</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,31214</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31212"></span>31212</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31213"></span>31213</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return with the zero flag reset</td>
+<td class="comment-1" rowspan="1">Return with the zero flag reset</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -152,94 +115,73 @@ ERIC is on the top, middle or bottom floor (i.e. not on a staircase).
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31214"></span>31214</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=ERIC's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31215"></span>31215</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="4">Find the <a href="30636.html#regionID">region identifier</a> (0-7) for ERIC's current location</td>
+<td class="comment-1" rowspan="4">Find the <a href="30636.html#regionID">region identifier</a> (0-7) for ERIC's current location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31216"></span>31216</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31217"></span>31217</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31218"></span>31218</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,31215</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31220"></span>31220</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span> now points at the region identifier</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span> now points at the region identifier</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31221"></span>31221</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(32756)</td>
-<td class="comment-11" rowspan="1">Pick up the current lesson descriptor from <a href="32756.html">32756</a></td>
+<td class="comment-1" rowspan="1">Pick up the current lesson descriptor from <a href="32756.html">32756</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31224"></span>31224</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">Keep only the room bits (bits 0-2)</td>
+<td class="comment-1" rowspan="1">Keep only the room bits (bits 0-2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31226"></span>31226</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Is ERIC where he should be?</td>
+<td class="comment-1" rowspan="1">Is ERIC where he should be?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31227"></span>31227</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31228"></span>31228</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return with the zero flag set if so</td>
+<td class="comment-1" rowspan="1">Return with the zero flag set if so</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31178.html">31178</a></span></td>
+<td class="prev">
+Prev: <a href="31178.html">31178</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31188">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31229.html">31229</a></span></td>
+<td class="next">
+Next: <a href="31229.html">31229</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/79D4.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

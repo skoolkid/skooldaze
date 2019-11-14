@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 31815</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31807.html">31807</a></span></td>
+<td class="prev">
+Prev: <a href="31807.html">31807</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31815">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31831.html">31831</a></span></td>
+<td class="next">
+Next: <a href="31831.html">31831</a>
+</td>
 </tr>
 </table>
 <div class="description">31815: Restart the command list</div>
@@ -29,7 +32,7 @@
 Used by command lists <a href="64841.html">182</a>, <a href="64883.html">190</a>, <a href="64892.html">192</a>, <a href="64988.html">194</a>, <a href="64914.html">196</a>, <a href="64947.html">204</a> and <a href="64975.html">206</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,82 +41,62 @@ Used by command lists <a href="64841.html">182</a>, <a href="64883.html">190</a>
 <td class="register-desc">Character number (152-169)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31815"></span>31815</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(32761)</td>
-<td class="comment-11" rowspan="1">Pick up the current lesson number (0-63) from <a href="32761.html">32761</a></td>
+<td class="comment-1" rowspan="1">Pick up the current lesson number (0-63) from <a href="32761.html">32761</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31818"></span>31818</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Copy this to <span class="register">E</span></td>
+<td class="comment-1" rowspan="1">Copy this to <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31819"></span>31819</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,1</td>
-<td class="comment-11" rowspan="1">We want to restart the command list for this character only</td>
+<td class="comment-1" rowspan="1">We want to restart the command list for this character only</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31821"></span>31821</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,254</td>
-<td class="comment-11" rowspan="3">Set <span class="register">E</span> to the lesson identifier (224-255) from the <a href="65024.html">main timetable</a>; note that this will not be the identifier of the current lesson if the current lesson is a 'special' playtime - <a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a> - which is a <a href="../reference/bugs.html#wrongCommandList">bug</a></td>
+<td class="comment-1" rowspan="3">Set <span class="register">E</span> to the lesson identifier (224-255) from the <a href="65024.html">main timetable</a>; note that this will not be the identifier of the current lesson if the current lesson is a 'special' playtime - <a href="../lessons/243.html">243</a>, <a href="../lessons/244.html">244</a> or <a href="../lessons/245.html">245</a> - which is a <a href="../reference/bugs.html#wrongCommandList">bug</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31823"></span>31823</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31824"></span>31824</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31825"></span>31825</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="26342.html#26395">26395</a></td>
-<td class="comment-11" rowspan="1">Set this character's command list up for a restart</td>
+<td class="comment-1" rowspan="1">Set this character's command list up for a restart</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31828"></span>31828</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="25248.html#25252">25252</a></td>
-<td class="comment-11" rowspan="1">Move to the first command in the command list</td>
+<td class="comment-1" rowspan="1">Move to the first command in the command list</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31807.html">31807</a></span></td>
+<td class="prev">
+Prev: <a href="31807.html">31807</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31815">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31831.html">31831</a></span></td>
+<td class="next">
+Next: <a href="31831.html">31831</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/7C47.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

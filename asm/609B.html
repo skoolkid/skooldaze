@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 609B</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="607B.html">607B</a></span></td>
+<td class="prev">
+Prev: <a href="607B.html">607B</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#609b">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="60F9.html">60F9</a></span></td>
+<td class="next">
+Next: <a href="60F9.html">60F9</a>
+</td>
 </tr>
 </table>
 <div class="description">609B: Scroll the screen left one column</div>
@@ -29,341 +32,225 @@
 Used by the routine at <a href="64DC.html">64DC</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="609b"></span>609B</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="609c"></span>609C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$5801</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the leftmost end of the top row of attribute bytes on the screen</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the leftmost end of the top row of attribute bytes on the screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="609f"></span>609F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$5800</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60a2"></span>60A2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$001F</td>
-<td class="comment-11" rowspan="1">We need to scroll 31 attribute bytes at a time</td>
+<td class="comment-1" rowspan="1">We need to scroll 31 attribute bytes at a time</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60a5"></span>60A5</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60a6"></span>60A6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$4001</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL</span> and <span class="register">DE</span> at the leftmost end of the top row of pixels on the screen</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL</span> and <span class="register">DE</span> at the leftmost end of the top row of pixels on the screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60a9"></span>60A9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$4000</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60ac"></span>60AC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$001F</td>
-<td class="comment-11" rowspan="1">We need to scroll 31 display file bytes at a time</td>
+<td class="comment-1" rowspan="1">We need to scroll 31 display file bytes at a time</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60af"></span>60AF</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$15</td>
-<td class="comment-11" rowspan="1">There are 21 rows of character squares to scroll</td>
+<td class="comment-1" rowspan="1">There are 21 rows of character squares to scroll</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="60b1"></span>60B1</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="60b2"></span>60B2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$08</td>
-<td class="comment-11" rowspan="1">Each row of character squares contains 8 rows of pixels</td>
+<td class="comment-1" rowspan="1">Each row of character squares contains 8 rows of pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="60b4"></span>60B4</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60b5"></span>60B5</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60b6"></span>60B6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">Scroll a row of pixels left one column</td>
+<td class="comment-1" rowspan="1">Scroll a row of pixels left one column</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60b8"></span>60B8</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60b9"></span>60B9</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60ba"></span>60BA</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL</span> and <span class="register">DE</span> at the next row of pixels</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL</span> and <span class="register">DE</span> at the next row of pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60bb"></span>60BB</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60bc"></span>60BC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$1F</td>
-<td class="comment-11" rowspan="1"><span class="register">BC</span>=001F</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=001F</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60be"></span>60BE</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Next row in this block of 8x32</td>
+<td class="comment-1" rowspan="1">Next row in this block of 8x32</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60bf"></span>60BF</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$60B4</td>
-<td class="comment-11" rowspan="1">Jump back until this 8x32 pixel block has been scrolled</td>
+<td class="comment-1" rowspan="1">Jump back until this 8x32 pixel block has been scrolled</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60c1"></span>60C1</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60c2"></span>60C2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">Scroll a row of attribute bytes left one column</td>
+<td class="comment-1" rowspan="1">Scroll a row of attribute bytes left one column</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60c4"></span>60C4</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the leftmost end of the next row of attribute bytes on the screen</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the leftmost end of the next row of attribute bytes on the screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60c5"></span>60C5</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC DE</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60c6"></span>60C6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$1F</td>
-<td class="comment-11" rowspan="1"><span class="register">BC'</span>=001F</td>
+<td class="comment-1" rowspan="1"><span class="register">BC'</span>=001F</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60c8"></span>60C8</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60c9"></span>60C9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$20</td>
-<td class="comment-11" rowspan="6">Point <span class="register">HL</span> and <span class="register">DE</span> at the leftmost end of the top row of the next 8x32 block of pixels</td>
+<td class="comment-1" rowspan="6">Point <span class="register">HL</span> and <span class="register">DE</span> at the leftmost end of the top row of the next 8x32 block of pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60cb"></span>60CB</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60cc"></span>60CC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60cd"></span>60CD</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$20</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60cf"></span>60CF</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60d0"></span>60D0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60d1"></span>60D1</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60d2"></span>60D2</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Next row of character squares</td>
+<td class="comment-1" rowspan="1">Next row of character squares</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60d3"></span>60D3</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$60E5</td>
-<td class="comment-11" rowspan="1">Exit this loop if all 21 rows have been scrolled left</td>
+<td class="comment-1" rowspan="1">Exit this loop if all 21 rows have been scrolled left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60d5"></span>60D5</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $05</td>
-<td class="comment-11" rowspan="1">Have we reached the bottom third of the screen?</td>
+<td class="comment-1" rowspan="1">Have we reached the bottom third of the screen?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60d7"></span>60D7</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$60B1</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60d9"></span>60D9</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $0D</td>
-<td class="comment-11" rowspan="1">Have we reached the middle third of the screen?</td>
+<td class="comment-1" rowspan="1">Have we reached the middle third of the screen?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60db"></span>60DB</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$60B1</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60dd"></span>60DD</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60de"></span>60DE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="4">Point <span class="register">HL</span> and <span class="register">DE</span> at the leftmost end of the top row of the next 8x32 block of pixels</td>
+<td class="comment-1" rowspan="4">Point <span class="register">HL</span> and <span class="register">DE</span> at the leftmost end of the top row of the next 8x32 block of pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60df"></span>60DF</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB $08</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60e1"></span>60E1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60e2"></span>60E2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60e3"></span>60E3</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $60B2</td>
-<td class="comment-11" rowspan="1">Jump back to deal with the next row of character squares</td>
+<td class="comment-1" rowspan="1">Jump back to deal with the next row of character squares</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -376,87 +263,68 @@ The 21 rows of character squares have been scrolled one place to the left. Now t
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="60e5"></span>60E5</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60e6"></span>60E6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$581F</td>
-<td class="comment-11" rowspan="3">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the attribute file and display file addresses for the top right of the screen, and set <span class="register">BC'</span>=0020; however, these values are not used</td>
+<td class="comment-1" rowspan="3">Point <span class="register">HL'</span> and <span class="register">DE'</span> at the attribute file and display file addresses for the top right of the screen, and set <span class="register">BC'</span>=0020; however, these values are not used</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60e9"></span>60E9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$401F</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60ec"></span>60EC</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60ed"></span>60ED</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60ee"></span>60EE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7F00)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=leftmost column of the skool on-screen (0-64)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=leftmost column of the skool on-screen (0-64)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60f1"></span>60F1</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="2">We are scrolling one column left</td>
+<td class="comment-1" rowspan="2">We are scrolling one column left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60f2"></span>60F2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7F00),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60f5"></span>60F5</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=rightmost column of the skool on-screen (31-95)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=rightmost column of the skool on-screen (31-95)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="60f6"></span>60F6</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="6000.html#605e">$605E</a></td>
-<td class="comment-11" rowspan="1">Fill in the rightmost column</td>
+<td class="comment-1" rowspan="1">Fill in the rightmost column</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="607B.html">607B</a></span></td>
+<td class="prev">
+Prev: <a href="607B.html">607B</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#609b">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="60F9.html">60F9</a></span></td>
+<td class="next">
+Next: <a href="60F9.html">60F9</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/24731.html">Switch to decimal</a>.</div>
 </footer>
 </body>

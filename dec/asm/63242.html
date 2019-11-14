@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 63242</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63231.html">63231</a></span></td>
+<td class="prev">
+Prev: <a href="63231.html">63231</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63242">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63270.html">63270</a></span></td>
+<td class="next">
+Next: <a href="63270.html">63270</a>
+</td>
 </tr>
 </table>
 <div class="description">63242: Unflash the safe and all the shields</div>
@@ -29,144 +32,91 @@
 Used by the routines at <a href="26880.html">26880</a> (before starting a new game) and <a href="63668.html">63668</a> (after ERIC has gone up a year).
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63242"></span>63242</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,23040</td>
-<td class="comment-11" rowspan="6">Make anything that is currently flashing on-screen (shields or the safe) not flash any more by directly modifying the attribute file</td>
+<td class="comment-1" rowspan="6">Make anything that is currently flashing on-screen (shields or the safe) not flash any more by directly modifying the attribute file</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63245"></span>63245</td>
-<td class="bytes-0"></td>
 <td class="instruction">RES 7,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63247"></span>63247</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63248"></span>63248</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63249"></span>63249</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 87</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63251"></span>63251</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,63245</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63253"></span>63253</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,154</td>
-<td class="comment-11" rowspan="9">Reset bit 7 (i.e. turn off FLASH) of the graphic data attribute bytes of everything in the skool from the third row (<span class="register">H</span>=154, where the top floor shields are) to the 15th row (<span class="register">H</span>=166, where the bottom floor shields are)</td>
+<td class="comment-1" rowspan="9">Reset bit 7 (i.e. turn off FLASH) of the graphic data attribute bytes of everything in the skool from the third row (<span class="register">H</span>=154, where the top floor shields are) to the 15th row (<span class="register">H</span>=166, where the bottom floor shields are)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63255"></span>63255</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,13</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63257"></span>63257</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,223</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63259"></span>63259</td>
-<td class="bytes-0"></td>
 <td class="instruction">RES 7,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63261"></span>63261</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63262"></span>63262</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63264"></span>63264</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,63259</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63266"></span>63266</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63267"></span>63267</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 63257</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63269"></span>63269</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63231.html">63231</a></span></td>
+<td class="prev">
+Prev: <a href="63231.html">63231</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63242">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63270.html">63270</a></span></td>
+<td class="next">
+Next: <a href="63270.html">63270</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/F70A.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 6C55</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6C4E.html">6C4E</a></span></td>
+<td class="prev">
+Prev: <a href="6C4E.html">6C4E</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6c55">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6C64.html">6C64</a></span></td>
+<td class="next">
+Next: <a href="6C64.html">6C64</a>
+</td>
 </tr>
 </table>
 <div class="description">6C55: Deal with a character who's been dethroned (1)</div>
@@ -29,7 +32,7 @@
 The address of this uninterruptible subcommand routine is placed into bytes 0x6F and 0x70 of a character's buffer by the routine at <a href="6B97.html">6B97</a> when he's been knocked out of a chair.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,75 +41,57 @@ The address of this uninterruptible subcommand routine is placed into bytes 0x6F
 <td class="register-desc">Dethroned character's number (0x98-0xA9)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c55"></span>6C55</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$71</td>
-<td class="comment-11" rowspan="2">Set the delay counter determining how long the character will sit on the floor before rising</td>
+<td class="comment-1" rowspan="2">Set the delay counter determining how long the character will sit on the floor before rising</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c57"></span>6C57</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$04</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c59"></span>6C59</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6F</td>
-<td class="comment-11" rowspan="2">Replace the address of this uninterruptible subcommand routine in bytes 0x6F and 0x70 of the character's buffer with that of <a href="6C64.html">6C64</a></td>
+<td class="comment-1" rowspan="2">Replace the address of this uninterruptible subcommand routine in bytes 0x6F and 0x70 of the character's buffer with that of <a href="6C64.html">6C64</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c5b"></span>6C5B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$64</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c5d"></span>6C5D</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
-<td class="comment-11" rowspan="1">Update the SRB for the character's current animatory state</td>
+<td class="comment-1" rowspan="1">Update the SRB for the character's current animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c60"></span>6C60</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of the character sitting on the floor</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=animatory state of the character sitting on the floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c61"></span>6C61</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
-<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB</td>
+<td class="comment-1" rowspan="1">Update the character's animatory state and update the SRB</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6C4E.html">6C4E</a></span></td>
+<td class="prev">
+Prev: <a href="6C4E.html">6C4E</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6c55">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6C64.html">6C64</a></span></td>
+<td class="next">
+Next: <a href="6C64.html">6C64</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/27733.html">Switch to decimal</a>.</div>
 </footer>
 </body>

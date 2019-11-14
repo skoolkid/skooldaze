@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 24843</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="24832.html">24832</a></span></td>
+<td class="prev">
+Prev: <a href="24832.html">24832</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#24843">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="24963.html">24963</a></span></td>
+<td class="next">
+Next: <a href="24963.html">24963</a>
+</td>
 </tr>
 </table>
 <div class="description">24843: Print a tile</div>
@@ -29,7 +32,7 @@
 Used by the routines at <a href="24576.html">24576</a> and <a href="27026.html">27026</a>. Copies a tile of the skool into the back buffer at <a href="32513.html">32513</a>, superimposes character sprite tiles as appropriate, and then copies the resultant tile to the screen.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,153 +45,98 @@ Used by the routines at <a href="24576.html">24576</a> and <a href="27026.html">
 <td class="register-desc">Skool x-coordinate (0-95)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24843"></span>24843</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=skool x-coordinate (0-95)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=skool x-coordinate (0-95)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24844"></span>24844</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND 96</td>
-<td class="comment-11" rowspan="5">Now <span class="register">H</span> is 128 if 0&lt;=<span class="register">E</span>&lt;32; 136 if 32&lt;=<span class="register">E</span>&lt;64; or 144 if 64&lt;=<span class="register">E</span>&lt;96</td>
+<td class="comment-1" rowspan="5">Now <span class="register">H</span> is 128 if 0&lt;=<span class="register">E</span>&lt;32; 136 if 32&lt;=<span class="register">E</span>&lt;64; or 144 if 64&lt;=<span class="register">E</span>&lt;96</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24846"></span>24846</td>
-<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24847"></span>24847</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24848"></span>24848</td>
-<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24849"></span>24849</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24850"></span>24850</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=skool UDG reference for the character square at (<span class="register">E</span>,<span class="register">D</span>)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=skool UDG reference for the character square at (<span class="register">E</span>,<span class="register">D</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24851"></span>24851</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24852"></span>24852</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=base address of the UDG bytes for the character square at (<span class="register">E</span>,<span class="register">D</span>)</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=base address of the UDG bytes for the character square at (<span class="register">E</span>,<span class="register">D</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24853"></span>24853</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,2048</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=8, <span class="register">C</span>=0</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=8, <span class="register">C</span>=0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24856"></span>24856</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,32513</td>
-<td class="comment-11" rowspan="6">Copy the 8 bytes of the skool UDG into the back buffer at <a href="32513.html">32513</a></td>
+<td class="comment-1" rowspan="6">Copy the 8 bytes of the skool UDG into the back buffer at <a href="32513.html">32513</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24859"></span>24859</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24860"></span>24860</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24861"></span>24861</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24862"></span>24862</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24863"></span>24863</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 24859</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24865"></span>24865</td>
-<td class="bytes-0"></td>
 <td class="instruction">NOP</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24866"></span>24866</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore the skool coordinates to <span class="register">DE</span></td>
+<td class="comment-1" rowspan="1">Restore the skool coordinates to <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24867"></span>24867</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,21</td>
-<td class="comment-11" rowspan="1">There are 21 characters to consider</td>
+<td class="comment-1" rowspan="1">There are 21 characters to consider</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24869"></span>24869</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,152</td>
-<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+<td class="comment-1" rowspan="1">152=little boy no. 1</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -201,200 +149,137 @@ Now we enter a loop that checks which part (if any) of each character's sprite a
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24871"></span>24871</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,98</td>
-<td class="comment-11" rowspan="1">Byte 98 of the character's buffer holds his x-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 98 of the character's buffer holds his x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24873"></span>24873</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=skool x-coordinate (0-95)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=skool x-coordinate (0-95)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24874"></span>24874</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB (HL)</td>
-<td class="comment-11" rowspan="1">Subtract the character's x-coordinate</td>
+<td class="comment-1" rowspan="1">Subtract the character's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24875"></span>24875</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Byte 97 of the character's buffer holds his y-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 97 of the character's buffer holds his y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24876"></span>24876</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,24926</td>
-<td class="comment-11" rowspan="3">Jump if no part of the character's sprite appears at this x-coordinate</td>
+<td class="comment-1" rowspan="3">Jump if no part of the character's sprite appears at this x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24878"></span>24878</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 3</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24880"></span>24880</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,24926</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24882"></span>24882</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="3">Now <span class="register">C</span> is 0, 4 or 8, corresponding to the column (left, middle or right) of the character's sprite that aligns with x-coordinate <span class="register">E</span></td>
+<td class="comment-1" rowspan="3">Now <span class="register">C</span> is 0, 4 or 8, corresponding to the column (left, middle or right) of the character's sprite that aligns with x-coordinate <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24883"></span>24883</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24884"></span>24884</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24885"></span>24885</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=skool y-coordinate (152-172)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=skool y-coordinate (152-172)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24886"></span>24886</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB (HL)</td>
-<td class="comment-11" rowspan="1">Subtract the character's y-coordinate</td>
+<td class="comment-1" rowspan="1">Subtract the character's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24887"></span>24887</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,24926</td>
-<td class="comment-11" rowspan="3">Jump if no part of the character's sprite appears at this y-coordinate</td>
+<td class="comment-1" rowspan="3">Jump if no part of the character's sprite appears at this y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24889"></span>24889</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 4</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24891"></span>24891</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,24926</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24893"></span>24893</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=0-11, corresponding to the sprite tile that appears at (<span class="register">E</span>,<span class="register">D</span>)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=0-11, corresponding to the sprite tile that appears at (<span class="register">E</span>,<span class="register">D</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24894"></span>24894</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24895"></span>24895</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,173</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24897"></span>24897</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1"><span class="register">H'</span>=173-184</td>
+<td class="comment-1" rowspan="1"><span class="register">H'</span>=173-184</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24898"></span>24898</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24899"></span>24899</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,96</td>
-<td class="comment-11" rowspan="2">Pick up the character's animatory state in <span class="register">A</span></td>
+<td class="comment-1" rowspan="2">Pick up the character's animatory state in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24901"></span>24901</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24902"></span>24902</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24903"></span>24903</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1"><span class="register">L'</span>=character's animatory state</td>
+<td class="comment-1" rowspan="1"><span class="register">L'</span>=character's animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24904"></span>24904</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=sprite tile UDG reference</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=sprite tile UDG reference</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24905"></span>24905</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Is it the blank UDG?</td>
+<td class="comment-1" rowspan="1">Is it the blank UDG?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24906"></span>24906</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,24925</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24908"></span>24908</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="27914.html">27914</a></td>
-<td class="comment-11" rowspan="1">Get the base address of the sprite tile UDG bytes in <span class="register">HL'</span></td>
+<td class="comment-1" rowspan="1">Get the base address of the sprite tile UDG bytes in <span class="register">HL'</span></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -407,95 +292,69 @@ The following inner loop superimposes the sprite tile onto the tile built up so 
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24911"></span>24911</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">There are 8 bytes in the UDG</td>
+<td class="comment-1" rowspan="1">There are 8 bytes in the UDG</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24913"></span>24913</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,32513</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24916"></span>24916</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=back buffer UDG byte</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=back buffer UDG byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24917"></span>24917</td>
-<td class="bytes-0"></td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">OR in the sprite tile UDG byte</td>
+<td class="comment-1" rowspan="1">OR in the sprite tile UDG byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24918"></span>24918</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24919"></span>24919</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND (HL)</td>
-<td class="comment-11" rowspan="1">AND in the sprite tile UDG mask</td>
+<td class="comment-1" rowspan="1">AND in the sprite tile UDG mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24920"></span>24920</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24921"></span>24921</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24922"></span>24922</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24923"></span>24923</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 24916</td>
-<td class="comment-11" rowspan="1">Jump back until the UDG is done</td>
+<td class="comment-1" rowspan="1">Jump back until the UDG is done</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24925"></span>24925</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24926"></span>24926</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Next character</td>
+<td class="comment-1" rowspan="1">Next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24927"></span>24927</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 24871</td>
-<td class="comment-11" rowspan="1">Jump back to consider the next character</td>
+<td class="comment-1" rowspan="1">Jump back to consider the next character</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -508,116 +367,75 @@ The display tile (consisting of the skool UDG with all relevant sprite tiles sup
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24929"></span>24929</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,32512</td>
-<td class="comment-11" rowspan="1"><a href="32512.html">32512</a> holds the leftmost column of the skool on-screen (0-64)</td>
+<td class="comment-1" rowspan="1"><a href="32512.html">32512</a> holds the leftmost column of the skool on-screen (0-64)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24932"></span>24932</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=skool y-coordinate (152-172)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=skool y-coordinate (152-172)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24933"></span>24933</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="5">Set <span class="register">C</span> to the LSB of the display file address corresponding to the screen coordinates (0,<span class="register">D</span>-152)</td>
+<td class="comment-1" rowspan="5">Set <span class="register">C</span> to the LSB of the display file address corresponding to the screen coordinates (0,<span class="register">D</span>-152)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24935"></span>24935</td>
-<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24936"></span>24936</td>
-<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24937"></span>24937</td>
-<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24938"></span>24938</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24939"></span>24939</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=screen x-coordinate (0-31)</td>
+<td class="comment-1" rowspan="2"><span class="register">A</span>=screen x-coordinate (0-31)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24940"></span>24940</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB (HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24941"></span>24941</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="2">Set <span class="register">L</span> to the LSB of the display file address corresponding to the skool coordinates (<span class="register">E</span>,<span class="register">D</span>)</td>
+<td class="comment-1" rowspan="2">Set <span class="register">L</span> to the LSB of the display file address corresponding to the skool coordinates (<span class="register">E</span>,<span class="register">D</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24942"></span>24942</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24943"></span>24943</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=screen y-coordinate (0-20)</td>
+<td class="comment-1" rowspan="2"><span class="register">A</span>=screen y-coordinate (0-20)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24944"></span>24944</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB 152</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24946"></span>24946</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND 24</td>
-<td class="comment-11" rowspan="3">Set <span class="register">H</span> to the MSB of the display file address corresponding to the skool coordinates (<span class="register">E</span>,<span class="register">D</span>)</td>
+<td class="comment-1" rowspan="3">Set <span class="register">H</span> to the MSB of the display file address corresponding to the skool coordinates (<span class="register">E</span>,<span class="register">D</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24948"></span>24948</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,64</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24950"></span>24950</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -630,73 +448,55 @@ Having computed the appropriate display file address in <span class="register">H
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24951"></span>24951</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="7">Copy the tile to the screen</td>
+<td class="comment-1" rowspan="7">Copy the tile to the screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24953"></span>24953</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,32513</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24956"></span>24956</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24957"></span>24957</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24958"></span>24958</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24959"></span>24959</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24960"></span>24960</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 24956</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24962"></span>24962</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="24832.html">24832</a></span></td>
+<td class="prev">
+Prev: <a href="24832.html">24832</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#24843">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="24963.html">24963</a></span></td>
+<td class="next">
+Next: <a href="24963.html">24963</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/610B.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at F955</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F923.html">F923</a></span></td>
+<td class="prev">
+Prev: <a href="F923.html">F923</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f955">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F9A4.html">F9A4</a></span></td>
+<td class="next">
+Next: <a href="F9A4.html">F9A4</a>
+</td>
 </tr>
 </table>
 <div class="description">F955: Make a stricken teacher give lines or reveal his safe combination letter</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="6A46.html">6A46</a>. If the character who has been knocked over is a teacher, this routine makes him reveal his safe combination letter (if all the shields are flashing but the safe has not been opened yet) and give lines to the nearest main kid (if any are close enough).
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,55 +45,37 @@ Used by the routine at <a href="6A46.html">6A46</a>. If the character who has be
 <td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f955"></span>F955</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $12</td>
-<td class="comment-11" rowspan="1">Is it time to reveal a safe combination letter?</td>
+<td class="comment-1" rowspan="1">Is it time to reveal a safe combination letter?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f957"></span>F957</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F960</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f959"></span>F959</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $09</td>
-<td class="comment-11" rowspan="1">Is it time to give lines to the nearest main kid?</td>
+<td class="comment-1" rowspan="1">Is it time to give lines to the nearest main kid?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f95b"></span>F95B</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return if not</td>
+<td class="comment-1" rowspan="1">Return if not</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f95c"></span>F95C</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f95d"></span>F95D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="6A3C.html">$6A3C</a></td>
-<td class="comment-11" rowspan="1">Give lines to the nearest main kid if we're dealing with a teacher</td>
+<td class="comment-1" rowspan="1">Give lines to the nearest main kid if we're dealing with a teacher</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -103,74 +88,50 @@ It's time to reveal a safe combination letter (if all shields are flashing).
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f960"></span>F960</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FEA)</td>
-<td class="comment-11" rowspan="1">Collect the game mode indicator from <a href="7FEA.html">7FEA</a></td>
+<td class="comment-1" rowspan="1">Collect the game mode indicator from <a href="7FEA.html">7FEA</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f963"></span>F963</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $02</td>
-<td class="comment-11" rowspan="1">Set the zero flag if all the shields are flashing but the safe has not been opened</td>
+<td class="comment-1" rowspan="1">Set the zero flag if all the shields are flashing but the safe has not been opened</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f965"></span>F965</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$12</td>
-<td class="comment-11" rowspan="1">Restore the knockout delay counter to <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Restore the knockout delay counter to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f967"></span>F967</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return unless all the shields are flashing</td>
+<td class="comment-1" rowspan="1">Return unless all the shields are flashing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f968"></span>F968</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="5">Return unless we are dealing with a teacher</td>
+<td class="comment-1" rowspan="5">Return unless we are dealing with a teacher</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f969"></span>F969</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A3</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f96b"></span>F96B</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f96c"></span>F96C</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A6</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f96e"></span>F96E</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f96f"></span>F96F</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -183,206 +144,144 @@ This entry point is used by the routine at <a href="F6D7.html">F6D7</a> to make 
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f970"></span>F970</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="4">Pick up the character's coordinates in <span class="register">DE</span></td>
+<td class="comment-1" rowspan="4">Pick up the character's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f972"></span>F972</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f973"></span>F973</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f974"></span>F974</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f975"></span>F975</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,H</td>
-<td class="comment-11" rowspan="3">Pick up the teacher's safe combination letter in <span class="register">A</span></td>
+<td class="comment-1" rowspan="3">Pick up the teacher's safe combination letter in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f976"></span>F976</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,$7F</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f978"></span>F978</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f979"></span>F979</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$96</td>
-<td class="comment-11" rowspan="2">Place this in <a href="7F96.html">7F96</a></td>
+<td class="comment-1" rowspan="2">Place this in <a href="7F96.html">7F96</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f97b"></span>F97B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f97c"></span>F97C</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="74AF.html">$74AF</a></td>
-<td class="comment-11" rowspan="1">Save the area of the screen that will be overwritten by the bubble</td>
+<td class="comment-1" rowspan="1">Save the area of the screen that will be overwritten by the bubble</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f97f"></span>F97F</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if the character is off-screen</td>
+<td class="comment-1" rowspan="1">Return if the character is off-screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f980"></span>F980</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f981"></span>F981</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$EC30</td>
-<td class="comment-11" rowspan="1">Point <span class="register">DE</span> at the graphic data portion of the safe combination letter bubble graphic buffer at <a href="EC00.html">EC00</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at the graphic data portion of the safe combination letter bubble graphic buffer at <a href="EC00.html">EC00</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f984"></span>F984</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$DA89</td>
-<td class="comment-11" rowspan="1"><a href="DA89.html">DA89</a>: ' ' (single space)</td>
+<td class="comment-1" rowspan="1"><a href="DA89.html">DA89</a>: ' ' (single space)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f987"></span>F987</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7600.html#7625">$7625</a></td>
-<td class="comment-11" rowspan="1">Write this into the first line of the graphic buffer</td>
+<td class="comment-1" rowspan="1">Write this into the first line of the graphic buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f98a"></span>F98A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$EC70</td>
-<td class="comment-11" rowspan="3">Write the teacher's safe combination letter into the second line of the graphic buffer</td>
+<td class="comment-1" rowspan="3">Write the teacher's safe combination letter into the second line of the graphic buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f98d"></span>F98D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7F96</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f990"></span>F990</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7600.html#7625">$7625</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f993"></span>F993</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$EC18</td>
-<td class="comment-11" rowspan="4">Set the attribute bytes in the graphic buffer - INK 7: PAPER 0</td>
+<td class="comment-1" rowspan="4">Set the attribute bytes in the graphic buffer - INK 7: PAPER 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f996"></span>F996</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f997"></span>F997</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$07</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f999"></span>F999</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F996</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f99b"></span>F99B</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="2">Restore the attribute file address of the top left corner of the bubble to <span class="register">DE</span> and save it again</td>
+<td class="comment-1" rowspan="2">Restore the attribute file address of the top left corner of the bubble to <span class="register">DE</span> and save it again</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f99c"></span>F99C</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f99d"></span>F99D</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7519.html">$7519</a></td>
-<td class="comment-11" rowspan="1">Display the combination letter in a bubble</td>
+<td class="comment-1" rowspan="1">Display the combination letter in a bubble</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f9a0"></span>F9A0</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=0 (black border for the sound effect)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=0 (black border for the sound effect)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f9a1"></span>F9A1</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="7700.html#776f">$776F</a></td>
-<td class="comment-11" rowspan="1">Make a sound effect and remove the bubble</td>
+<td class="comment-1" rowspan="1">Make a sound effect and remove the bubble</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F923.html">F923</a></span></td>
+<td class="prev">
+Prev: <a href="F923.html">F923</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f955">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F9A4.html">F9A4</a></span></td>
+<td class="next">
+Next: <a href="F9A4.html">F9A4</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/63829.html">Switch to decimal</a>.</div>
 </footer>
 </body>

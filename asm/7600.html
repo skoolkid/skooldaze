@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7600</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="75FB.html">75FB</a></span></td>
+<td class="prev">
+Prev: <a href="75FB.html">75FB</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7600">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="762B.html">762B</a></span></td>
+<td class="next">
+Next: <a href="762B.html">762B</a>
+</td>
 </tr>
 </table>
 <div class="description">7600: Write a character's name into the lines bubble graphic buffer</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="7700.html">7700</a>. Generates the graphic data for the text of the lines recipient's name (e.g. 'ERIC') and stores it in the buffer at <a href="EB00.html">EB00</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,146 +41,100 @@ Used by the routine at <a href="7700.html">7700</a>. Generates the graphic data 
 <td class="register-desc">Lines recipient's character number (0xA7-0xA9, 0xAC)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7600"></span>7600</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$1817</td>
-<td class="comment-11" rowspan="1"><span class="register">B</span>=0x18; <span class="register">C</span>=0x17 (INK 7: PAPER 2)</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=0x18; <span class="register">C</span>=0x17 (INK 7: PAPER 2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7603"></span>7603</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$EB00</td>
-<td class="comment-11" rowspan="1">The lines bubble graphic is stored at <a href="EB00.html">EB00</a></td>
+<td class="comment-1" rowspan="1">The lines bubble graphic is stored at <a href="EB00.html">EB00</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7606"></span>7606</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$D980</td>
-<td class="comment-11" rowspan="1"><a href="D980.html">D980</a>: 'ERIC'</td>
+<td class="comment-1" rowspan="1"><a href="D980.html">D980</a>: 'ERIC'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7609"></span>7609</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $AC</td>
-<td class="comment-11" rowspan="1">Is ERIC being given lines?</td>
+<td class="comment-1" rowspan="1">Is ERIC being given lines?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="760b"></span>760B</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$761E</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="760d"></span>760D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$1F</td>
-<td class="comment-11" rowspan="1">0x1F=INK 7: PAPER 3</td>
+<td class="comment-1" rowspan="1">0x1F=INK 7: PAPER 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="760f"></span>760F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,$8E</td>
-<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a href="D98E.html">D98E</a>: 'BOY WANDER'</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="D98E.html">D98E</a>: 'BOY WANDER'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7611"></span>7611</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB $A7</td>
-<td class="comment-11" rowspan="1">Is BOY WANDER being given lines?</td>
+<td class="comment-1" rowspan="1">Is BOY WANDER being given lines?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7613"></span>7613</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$761E</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7615"></span>7615</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$27</td>
-<td class="comment-11" rowspan="1">0x27=INK 7: PAPER 4</td>
+<td class="comment-1" rowspan="1">0x27=INK 7: PAPER 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7617"></span>7617</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,$9C</td>
-<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a href="D99C.html">D99C</a>: 'ANGELFACE'</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="D99C.html">D99C</a>: 'ANGELFACE'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7619"></span>7619</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Is ANGELFACE being given lines?</td>
+<td class="comment-1" rowspan="1">Is ANGELFACE being given lines?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="761a"></span>761A</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$761E</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="761c"></span>761C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,$AA</td>
-<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a href="D9AA.html">D9AA</a>: 'EINSTEIN'</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="D9AA.html">D9AA</a>: 'EINSTEIN'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="761e"></span>761E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),C</td>
-<td class="comment-11" rowspan="3">Fill in the appropriate attribute bytes for the lines bubble</td>
+<td class="comment-1" rowspan="3">Fill in the appropriate attribute bytes for the lines bubble</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="761f"></span>761F</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7620"></span>7620</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $761E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7622"></span>7622</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$78</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="EB00.html#eb78">EB78</a></td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="EB00.html#eb78">EB78</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7624"></span>7624</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1"><span class="register">DE</span>=<a href="EB00.html#eb78">EB78</a>, <span class="register">HL</span>=address of character name</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="EB00.html#eb78">EB78</a>, <span class="register">HL</span>=address of character name</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -190,31 +147,31 @@ This entry point is used by the routine at <a href="F955.html">F955</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7625"></span>7625</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="755A.html">$755A</a></td>
-<td class="comment-11" rowspan="1">Write the message into the graphic buffer</td>
+<td class="comment-1" rowspan="1">Write the message into the graphic buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7628"></span>7628</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="75B4.html">$75B4</a></td>
-<td class="comment-11" rowspan="1">Draw the left and right edges of the bubble</td>
+<td class="comment-1" rowspan="1">Draw the left and right edges of the bubble</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="75FB.html">75FB</a></span></td>
+<td class="prev">
+Prev: <a href="75FB.html">75FB</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7600">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="762B.html">762B</a></span></td>
+<td class="next">
+Next: <a href="762B.html">762B</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/30208.html">Switch to decimal</a>.</div>
 </footer>
 </body>

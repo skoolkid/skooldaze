@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 69F6</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="69F5.html">69F5</a></span></td>
+<td class="prev">
+Prev: <a href="69F5.html">69F5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#69f6">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6A37.html">6A37</a></span></td>
+<td class="next">
+Next: <a href="6A37.html">6A37</a>
+</td>
 </tr>
 </table>
 <div class="description">69F6: Make a little boy trip people up</div>
@@ -29,7 +32,7 @@
 The address of this continual subcommand routine is placed into bytes 0x7C and 0x7D of little boy no. 1's character buffer by the routine at <a href="6A6E.html">6A6E</a>, and into bytes 0x7C and 0x7D of the character buffers of little boys 2-11 by the routine at <a href="6A82.html">6A82</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,118 +41,81 @@ The address of this continual subcommand routine is placed into bytes 0x7C and 0
 <td class="register-desc">Little boy's character number (0x98-0xA2)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="69f6"></span>69F6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="2">Pick up the little boy's y-coordinate in <span class="register">A</span></td>
+<td class="comment-1" rowspan="2">Pick up the little boy's y-coordinate in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69f8"></span>69F8</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69f9"></span>69F9</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6648.html#6649">$6649</a></td>
-<td class="comment-11" rowspan="1">Is the boy on a staircase?</td>
+<td class="comment-1" rowspan="1">Is the boy on a staircase?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69fc"></span>69FC</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69fd"></span>69FD</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$0A</td>
-<td class="comment-11" rowspan="1">We will check characters 0xA3-0xAC (teachers and main kids)</td>
+<td class="comment-1" rowspan="1">We will check characters 0xA3-0xAC (teachers and main kids)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69ff"></span>69FF</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$A362</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=0xA3 (MR WACKER), <span class="register">E</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=0xA3 (MR WACKER), <span class="register">E</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a02"></span>6A02</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a03"></span>6A03</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6a04"></span>6A04</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=little boy's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=little boy's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a05"></span>6A05</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Does this teacher's or main kid's x-coordinate match?</td>
+<td class="comment-1" rowspan="1">Does this teacher's or main kid's x-coordinate match?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a06"></span>6A06</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6A0D</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6a08"></span>6A08</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Next teacher or main kid</td>
+<td class="comment-1" rowspan="1">Next teacher or main kid</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a09"></span>6A09</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $6A04</td>
-<td class="comment-11" rowspan="1">Jump back until all teachers and main kids have been checked</td>
+<td class="comment-1" rowspan="1">Jump back until all teachers and main kids have been checked</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a0b"></span>6A0B</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a0c"></span>6A0C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -162,53 +128,38 @@ A teacher or main kid is at the same x-coordinate as the little boy. Now check t
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6a0d"></span>6A0D</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC E</td>
-<td class="comment-11" rowspan="2"><span class="register">E</span>=<span class="register">L</span>=0x61</td>
+<td class="comment-1" rowspan="2"><span class="register">E</span>=<span class="register">L</span>=0x61</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a0e"></span>6A0E</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a0f"></span>6A0F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=little boy's y-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=little boy's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a10"></span>6A10</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a11"></span>6A11</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Does this teacher's or main kid's y-coordinate match?</td>
+<td class="comment-1" rowspan="1">Does this teacher's or main kid's y-coordinate match?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a12"></span>6A12</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a13"></span>6A13</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6A08</td>
-<td class="comment-11" rowspan="1">Consider the next teacher or main kid if not</td>
+<td class="comment-1" rowspan="1">Consider the next teacher or main kid if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -221,116 +172,79 @@ A teacher or main kid is at the same location as the little boy.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a15"></span>6A15</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$70</td>
-<td class="comment-11" rowspan="2">Bytes 0x6F and 0x70 of the character's buffer may hold a routine address; pick up the MSB in <span class="register">A</span></td>
+<td class="comment-1" rowspan="2">Bytes 0x6F and 0x70 of the character's buffer may hold a routine address; pick up the MSB in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a17"></span>6A17</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a18"></span>6A18</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a1a"></span>6A1A</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70?</td>
+<td class="comment-1" rowspan="1">Is there an uninterruptible subcommand routine address in bytes 0x6F and 0x70?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a1b"></span>6A1B</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6A08</td>
-<td class="comment-11" rowspan="1">Consider the next teacher or main kid if so</td>
+<td class="comment-1" rowspan="1">Consider the next teacher or main kid if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a1d"></span>6A1D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=number of the character in the same location as the little boy</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=number of the character in the same location as the little boy</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a1e"></span>6A1E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $AC</td>
-<td class="comment-11" rowspan="1">Is it ERIC?</td>
+<td class="comment-1" rowspan="1">Is it ERIC?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a20"></span>6A20</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6A30</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a22"></span>6A22</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6F</td>
-<td class="comment-11" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6A46.html">6A46</a> into bytes 0x6F and 0x70 of the teacher's or main kid's buffer</td>
+<td class="comment-1" rowspan="4">Place the address of the uninterruptible subcommand routine at <a href="6A46.html">6A46</a> into bytes 0x6F and 0x70 of the teacher's or main kid's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a24"></span>6A24</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$46</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a26"></span>6A26</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a27"></span>6A27</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$6A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a29"></span>6A29</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Initialise the timing parameter in byte 0x71 of the character's buffer (which determines how long the character will stay down)</td>
+<td class="comment-1" rowspan="2">Initialise the timing parameter in byte 0x71 of the character's buffer (which determines how long the character will stay down)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a2a"></span>6A2A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$14</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a2c"></span>6A2C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a2e"></span>6A2E</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6A08</td>
-<td class="comment-11" rowspan="1">Consider the next teacher or main kid</td>
+<td class="comment-1" rowspan="1">Consider the next teacher or main kid</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -343,45 +257,41 @@ ERIC is in the same location as the little boy. Knock ERIC out.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6a30"></span>6A30</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FFB</td>
-<td class="comment-11" rowspan="1"><a href="7FFB.html">7FFB</a> holds ERIC's status flags</td>
+<td class="comment-1" rowspan="1"><a href="7FFB.html">7FFB</a> holds ERIC's status flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a33"></span>6A33</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 4,(HL)</td>
-<td class="comment-11" rowspan="1">Signal: ERIC has been knocked out</td>
+<td class="comment-1" rowspan="1">Signal: ERIC has been knocked out</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a35"></span>6A35</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6a36"></span>6A36</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="69F5.html">69F5</a></span></td>
+<td class="prev">
+Prev: <a href="69F5.html">69F5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#69f6">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6A37.html">6A37</a></span></td>
+<td class="next">
+Next: <a href="6A37.html">6A37</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/27126.html">Switch to decimal</a>.</div>
 </footer>
 </body>

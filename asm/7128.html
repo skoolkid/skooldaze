@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7128</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7120.html">7120</a></span></td>
+<td class="prev">
+Prev: <a href="7120.html">7120</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7128">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7142.html">7142</a></span></td>
+<td class="next">
+Next: <a href="7142.html">7142</a>
+</td>
 </tr>
 </table>
 <div class="description">7128: Get the identifier and coordinates of the blackboard closest to a character</div>
@@ -53,7 +56,7 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 </table>
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -62,131 +65,99 @@ Used by the routines at <a href="7142.html">7142</a>, <a href="71DC.html">71DC</
 <td class="register-desc">Character number (0xA3-0xA7)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7128"></span>7128</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 0x61 of the character's buffer holds his y-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 0x61 of the character's buffer holds his y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="712a"></span>712A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="712b"></span>712B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$9B2A</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=155 (y-coordinate), <span class="register">E</span>=42 (x-coordinate)</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=155 (y-coordinate), <span class="register">E</span>=42 (x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="712e"></span>712E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A0</td>
-<td class="comment-11" rowspan="1">Set the carry flag if the character's on the top floor</td>
+<td class="comment-1" rowspan="1">Set the carry flag if the character's on the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7130"></span>7130</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$EC</td>
-<td class="comment-11" rowspan="1">0xEC=Reading Room blackboard</td>
+<td class="comment-1" rowspan="1">0xEC=Reading Room blackboard</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7132"></span>7132</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if the character's on the top floor</td>
+<td class="comment-1" rowspan="1">Return if the character's on the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7133"></span>7133</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7134"></span>7134</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$A11A</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=26 (x-coordinate)</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=26 (x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7137"></span>7137</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7138"></span>7138</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $25</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="713a"></span>713A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$EE</td>
-<td class="comment-11" rowspan="1">0xEE=White Room blackboard</td>
+<td class="comment-1" rowspan="1">0xEE=White Room blackboard</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="713c"></span>713C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if the character's to the left of the wall between the White and Exam Rooms</td>
+<td class="comment-1" rowspan="1">Return if the character's to the left of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="713d"></span>713D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,$29</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=41 (x-coordinate)</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=161 (y-coordinate), <span class="register">E</span>=41 (x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="713f"></span>713F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$F0</td>
-<td class="comment-11" rowspan="1">0xF0=Exam Room blackboard</td>
+<td class="comment-1" rowspan="1">0xF0=Exam Room blackboard</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7141"></span>7141</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7120.html">7120</a></span></td>
+<td class="prev">
+Prev: <a href="7120.html">7120</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7128">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7142.html">7142</a></span></td>
+<td class="next">
+Next: <a href="7142.html">7142</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/28968.html">Switch to decimal</a>.</div>
 </footer>
 </body>

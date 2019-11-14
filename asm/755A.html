@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 755A</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7557.html">7557</a></span></td>
+<td class="prev">
+Prev: <a href="7557.html">7557</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#755a">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="758D.html">758D</a></span></td>
+<td class="next">
+Next: <a href="758D.html">758D</a>
+</td>
 </tr>
 </table>
 <div class="description">755A: Write a line of text into a graphic buffer</div>
@@ -29,7 +32,7 @@
 Used by the routines at <a href="75CC.html">75CC</a>, <a href="7600.html">7600</a>, <a href="7940.html">7940</a> and <a href="F9A5.html">F9A5</a>. Writes a line of text into a graphic buffer (at <a href="EB00.html">EB00</a>, <a href="EC00.html">EC00</a> or <a href="ED00.html">ED00</a>) and centres it.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,195 +45,132 @@ Used by the routines at <a href="75CC.html">75CC</a>, <a href="7600.html">7600</
 <td class="register-desc">Message address</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="755a"></span>755A</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="5">Clear the buffer ready for writing</td>
+<td class="comment-1" rowspan="5">Clear the buffer ready for writing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="755b"></span>755B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$40</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="755d"></span>755D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="755e"></span>755E</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC DE</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="755f"></span>755F</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $755D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7561"></span>7561</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC DE</td>
-<td class="comment-11" rowspan="1">Point <span class="register">DE</span> at the last byte of the buffer</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at the last byte of the buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7562"></span>7562</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$3E</td>
-<td class="comment-11" rowspan="1">There are 62 pixel columns available for writing in</td>
+<td class="comment-1" rowspan="1">There are 62 pixel columns available for writing in</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7564"></span>7564</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Pick up a character from the message in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick up a character from the message in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7565"></span>7565</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Move to the next character in the message</td>
+<td class="comment-1" rowspan="1">Move to the next character in the message</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7566"></span>7566</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Have we reached the end of the message?</td>
+<td class="comment-1" rowspan="1">Have we reached the end of the message?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7567"></span>7567</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$757F</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7569"></span>7569</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Save the message pointer</td>
+<td class="comment-1" rowspan="1">Save the message pointer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="756a"></span>756A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL</span> at the pixel width of the bitmap for the character in <span class="register">A</span></td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL</span> at the pixel width of the bitmap for the character in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="756b"></span>756B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,$D9</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="756d"></span>756D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Pick up the width in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick up the width in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="756e"></span>756E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Transfer the width to <span class="register">B</span></td>
+<td class="comment-1" rowspan="1">Transfer the width to <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="756f"></span>756F</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the next font character bitmap byte</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at the next font character bitmap byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7570"></span>7570</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7571"></span>7571</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7591.html">$7591</a></td>
-<td class="comment-11" rowspan="1">Insert the font character bitmap byte into the buffer</td>
+<td class="comment-1" rowspan="1">Insert the font character bitmap byte into the buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7574"></span>7574</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease the pixel column count</td>
+<td class="comment-1" rowspan="1">Decrease the pixel column count</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7575"></span>7575</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $756F</td>
-<td class="comment-11" rowspan="1">Jump back until all pixel columns for this letter are done</td>
+<td class="comment-1" rowspan="1">Jump back until all pixel columns for this letter are done</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7577"></span>7577</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=0 (empty vertical pixel column, i.e. space)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=0 (empty vertical pixel column, i.e. space)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7578"></span>7578</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease the pixel column count</td>
+<td class="comment-1" rowspan="1">Decrease the pixel column count</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7579"></span>7579</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7591.html">$7591</a></td>
-<td class="comment-11" rowspan="1">Insert the space into the buffer</td>
+<td class="comment-1" rowspan="1">Insert the space into the buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="757c"></span>757C</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore the message pointer to <span class="register">HL</span></td>
+<td class="comment-1" rowspan="1">Restore the message pointer to <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="757d"></span>757D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $7564</td>
-<td class="comment-11" rowspan="1">Jump back to write the next letter from the message</td>
+<td class="comment-1" rowspan="1">Jump back to write the next letter from the message</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -243,80 +183,64 @@ We've finished writing the message. Now centre it.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="757f"></span>757F</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,C</td>
-<td class="comment-11" rowspan="1">Did we use more than 62 pixel columns?</td>
+<td class="comment-1" rowspan="1">Did we use more than 62 pixel columns?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7581"></span>7581</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7582"></span>7582</td>
-<td class="bytes-0"></td>
 <td class="instruction">RR C</td>
-<td class="comment-11" rowspan="2"><span class="register">C</span> holds the number of unused pixel columns; halve this and add one to get the padding</td>
+<td class="comment-1" rowspan="2"><span class="register">C</span> holds the number of unused pixel columns; halve this and add one to get the padding</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7584"></span>7584</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7585"></span>7585</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="2">Insert an empty pixel column (space)</td>
+<td class="comment-1" rowspan="2">Insert an empty pixel column (space)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7586"></span>7586</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7591.html">$7591</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7589"></span>7589</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Next column of padding</td>
+<td class="comment-1" rowspan="1">Next column of padding</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="758a"></span>758A</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7585</td>
-<td class="comment-11" rowspan="1">Jump back until the text has been centred</td>
+<td class="comment-1" rowspan="1">Jump back until the text has been centred</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="758c"></span>758C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7557.html">7557</a></span></td>
+<td class="prev">
+Prev: <a href="7557.html">7557</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#755a">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="758D.html">758D</a></span></td>
+<td class="next">
+Next: <a href="758D.html">758D</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/30042.html">Switch to decimal</a>.</div>
 </footer>
 </body>

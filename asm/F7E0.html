@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at F7E0</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F7DA.html">F7DA</a></span></td>
+<td class="prev">
+Prev: <a href="F7DA.html">F7DA</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f7e0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F7FE.html">F7FE</a></span></td>
+<td class="next">
+Next: <a href="F7FE.html">F7FE</a>
+</td>
 </tr>
 </table>
 <div class="description">F7E0: Make MR WACKER give ERIC 2000 lines</div>
@@ -29,7 +32,7 @@
 Used by command lists <a href="FB20.html">0xD6</a> (after EINSTEIN has told MR WACKER what ERIC's up to) and <a href="FB55.html">0xDA</a> (after MR WACKER has found the pea-shooter on the fire escape).
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,103 +41,74 @@ Used by command lists <a href="FB20.html">0xD6</a> (after EINSTEIN has told MR W
 <td class="register-desc">0xA3 (MR WACKER)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f7e0"></span>F7E0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$DE00</td>
-<td class="comment-11" rowspan="1"><a href="DE00.html">DE00</a>: 'TAKE 2000 LINES YOU NASTY BOY'</td>
+<td class="comment-1" rowspan="1"><a href="DE00.html">DE00</a>: 'TAKE 2000 LINES YOU NASTY BOY'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7e3"></span>F7E3</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7CFC.html#7d26">$7D26</a></td>
-<td class="comment-11" rowspan="1">Make MR WACKER say this</td>
+<td class="comment-1" rowspan="1">Make MR WACKER say this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7e6"></span>F7E6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,($7FC6)</td>
-<td class="comment-11" rowspan="4">Add 2000 lines to ERIC's total (stored at <a href="7FC6.html">7FC6</a>)</td>
+<td class="comment-1" rowspan="4">Add 2000 lines to ERIC's total (stored at <a href="7FC6.html">7FC6</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7e9"></span>F7E9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$00C8</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7ec"></span>F7EC</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7ed"></span>F7ED</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FC6),HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7f0"></span>F7F0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$51DC</td>
-<td class="comment-11" rowspan="2">Print the new lines total</td>
+<td class="comment-1" rowspan="2">Print the new lines total</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7f3"></span>F7F3</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="76C8.html">$76C8</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7f6"></span>F7F6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$01</td>
-<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 1 so that the lesson will end soon</td>
+<td class="comment-1" rowspan="2">Set the MSB of the lesson clock to 1 so that the lesson will end soon</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7f8"></span>F7F8</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FF8),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f7fb"></span>F7FB</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="62A0.html#62a8">$62A8</a></td>
-<td class="comment-11" rowspan="1">Move to the next command in MR WACKER's command list</td>
+<td class="comment-1" rowspan="1">Move to the next command in MR WACKER's command list</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F7DA.html">F7DA</a></span></td>
+<td class="prev">
+Prev: <a href="F7DA.html">F7DA</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f7e0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F7FE.html">F7FE</a></span></td>
+<td class="next">
+Next: <a href="F7FE.html">F7FE</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/63456.html">Switch to decimal</a>.</div>
 </footer>
 </body>

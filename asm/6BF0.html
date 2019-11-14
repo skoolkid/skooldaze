@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 6BF0</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6BE5.html">6BE5</a></span></td>
+<td class="prev">
+Prev: <a href="6BE5.html">6BE5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6bf0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6C4E.html">6C4E</a></span></td>
+<td class="next">
+Next: <a href="6C4E.html">6C4E</a>
+</td>
 </tr>
 </table>
 <div class="description">6BF0: Check whether a character is beside a chair</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="6C7C.html">6C7C</a>. Returns with the zero flag set if the character is standing beside a chair. Returns with the carry flag set if the character should turn round.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,20 +49,12 @@ Used by the routine at <a href="6C7C.html">6C7C</a>. Returns with the zero flag 
 <td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6bf0"></span>6BF0</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">Set the zero flag if the character is facing left</td>
+<td class="comment-1" rowspan="1">Set the zero flag if the character is facing left</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -72,116 +67,83 @@ This entry point is used by the routine at <a href="6CAF.html">6CAF</a> with <sp
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6bf2"></span>6BF2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character's y-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=character's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6bf3"></span>6BF3</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6C2E</td>
-<td class="comment-11" rowspan="1">Jump if the character is facing right</td>
+<td class="comment-1" rowspan="1">Jump if the character is facing right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6bf5"></span>6BF5</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">Set the zero flag if the character is on the top floor</td>
+<td class="comment-1" rowspan="1">Set the zero flag if the character is on the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6bf7"></span>6BF7</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6bf8"></span>6BF8</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6C12</td>
-<td class="comment-11" rowspan="1">Jump if the character's on the middle floor</td>
+<td class="comment-1" rowspan="1">Jump if the character's on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6bfa"></span>6BFA</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $3A</td>
-<td class="comment-11" rowspan="1">Is the character to the right of the Map Room wall?</td>
+<td class="comment-1" rowspan="1">Is the character to the right of the Map Room wall?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6bfc"></span>6BFC</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$6C0B</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6bfe"></span>6BFE</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $30</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the Reading Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the leftmost chair in the Reading Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c00"></span>6C00</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if the character is to the left of this</td>
+<td class="comment-1" rowspan="1">Return if the character is to the left of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c01"></span>6C01</td>
-<td class="bytes-0"></td>
 <td class="instruction">NOP</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c02"></span>6C02</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $38</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Reading Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the rightmost chair in the Reading Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c04"></span>6C04</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$6C07</td>
-<td class="comment-11" rowspan="1">Jump if the character is beside the rightmost chair in the room</td>
+<td class="comment-1" rowspan="1">Jump if the character is beside the rightmost chair in the room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c06"></span>6C06</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">Return if the character is to the right of this chair</td>
+<td class="comment-1" rowspan="1">Return if the character is to the right of this chair</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c07"></span>6C07</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c08"></span>6C08</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="2">Return with the zero flag set if the character is standing beside a chair</td>
+<td class="comment-1" rowspan="2">Return with the zero flag set if the character is standing beside a chair</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c0a"></span>6C0A</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -194,32 +156,24 @@ The character is on the top floor to the right of the Map Room wall.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c0b"></span>6C0B</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $40</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the Map Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the leftmost chair in the Map Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c0d"></span>6C0D</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if the character is to the left of this</td>
+<td class="comment-1" rowspan="1">Return if the character is to the left of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c0e"></span>6C0E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $48</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Map Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the rightmost chair in the Map Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c10"></span>6C10</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6C04</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -232,53 +186,38 @@ The character is somewhere on the middle floor.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c12"></span>6C12</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $27</td>
-<td class="comment-11" rowspan="1">Is the character to the right of the Exam Room wall?</td>
+<td class="comment-1" rowspan="1">Is the character to the right of the Exam Room wall?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c14"></span>6C14</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$6C1E</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c16"></span>6C16</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $1D</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the White Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the leftmost chair in the White Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c18"></span>6C18</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if the character is to the left of this</td>
+<td class="comment-1" rowspan="1">Return if the character is to the left of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c19"></span>6C19</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="2">This is the x-coordinate (+1) of the rightmost chair in the White Room</td>
+<td class="comment-1" rowspan="2">This is the x-coordinate (+1) of the rightmost chair in the White Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c1a"></span>6C1A</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $26</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c1c"></span>6C1C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6C04</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -291,46 +230,34 @@ The character is on the middle floor to the right of the Exam Room wall.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c1e"></span>6C1E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $2B</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the leftmost chair in the Exam Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the leftmost chair in the Exam Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c20"></span>6C20</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if the character is to the left of this</td>
+<td class="comment-1" rowspan="1">Return if the character is to the left of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c21"></span>6C21</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $3C</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the left end of the first set of chairs in the Exam Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the left end of the first set of chairs in the Exam Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c23"></span>6C23</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$6C29</td>
-<td class="comment-11" rowspan="1">Jump if the character is to the left of this</td>
+<td class="comment-1" rowspan="1">Jump if the character is to the left of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c25"></span>6C25</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $44</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Exam Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the rightmost chair in the Exam Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c27"></span>6C27</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6C04</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -343,25 +270,18 @@ The character is in the Exam Room, to the left of the first set of chairs.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c29"></span>6C29</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="2">This is the x-coordinate (+1) of the right end of the second set of chairs in the Exam Room</td>
+<td class="comment-1" rowspan="2">This is the x-coordinate (+1) of the right end of the second set of chairs in the Exam Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c2a"></span>6C2A</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $36</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c2c"></span>6C2C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6C04</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -374,150 +294,115 @@ The character is facing right.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c2e"></span>6C2E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">Set the zero flag if the character is on the top floor</td>
+<td class="comment-1" rowspan="1">Set the zero flag if the character is on the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c30"></span>6C30</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=character's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c31"></span>6C31</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$6C42</td>
-<td class="comment-11" rowspan="1">Jump if the character is on the middle floor</td>
+<td class="comment-1" rowspan="1">Jump if the character is on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c33"></span>6C33</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $3A</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c35"></span>6C35</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$6C3E</td>
-<td class="comment-11" rowspan="1">Jump if the character is to the right of this</td>
+<td class="comment-1" rowspan="1">Jump if the character is to the right of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c37"></span>6C37</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $37</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the spot between the two chairs at the right in the Reading Room; if this were 'CP $38' instead, kids would be able to find the rightmost seat in the room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the spot between the two chairs at the right in the Reading Room; if this were 'CP $38' instead, kids would be able to find the rightmost seat in the room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c39"></span>6C39</td>
-<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
-<td class="comment-11" rowspan="1">Clear the carry flag if the character is to the left of the rightmost chair in the room (i.e. he's still on his way there)</td>
+<td class="comment-1" rowspan="1">Clear the carry flag if the character is to the left of the rightmost chair in the room (i.e. he's still on his way there)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c3a"></span>6C3A</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return unless the character is beside the rightmost chair in the room</td>
+<td class="comment-1" rowspan="1">Return unless the character is beside the rightmost chair in the room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c3b"></span>6C3B</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="2">Reset the zero flag, and set the carry flag to indicate that the character should turn round</td>
+<td class="comment-1" rowspan="2">Reset the zero flag, and set the carry flag to indicate that the character should turn round</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c3c"></span>6C3C</td>
-<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c3d"></span>6C3D</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c3e"></span>6C3E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $48</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost seat in the Map Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the rightmost seat in the Map Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c40"></span>6C40</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6C39</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c42"></span>6C42</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $27</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c44"></span>6C44</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$6C4A</td>
-<td class="comment-11" rowspan="1">Jump if the character is to the right of this</td>
+<td class="comment-1" rowspan="1">Jump if the character is to the right of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c46"></span>6C46</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $25</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the White Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the rightmost chair in the White Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c48"></span>6C48</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6C39</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6c4a"></span>6C4A</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $44</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the rightmost chair in the Exam Room</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the rightmost chair in the Exam Room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6c4c"></span>6C4C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $6C39</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6BE5.html">6BE5</a></span></td>
+<td class="prev">
+Prev: <a href="6BE5.html">6BE5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6bf0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6C4E.html">6C4E</a></span></td>
+<td class="next">
+Next: <a href="6C4E.html">6C4E</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/27632.html">Switch to decimal</a>.</div>
 </footer>
 </body>

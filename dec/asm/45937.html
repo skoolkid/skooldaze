@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 45937</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45928.html">45928</a></span></td>
+<td class="prev">
+Prev: <a href="45928.html">45928</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45937">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45951.html">45951</a></span></td>
+<td class="next">
+Next: <a href="45951.html">45951</a>
+</td>
 </tr>
 </table>
 <div class="description">45937: Prepare a message in the message graphic buffer (2)</div>
@@ -29,7 +32,7 @@
 Continues from <a href="45682.html">45682</a>. Generates the graphic data for the text of the message and centres it in the buffer at <a href="23296.html">23296</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,82 +45,60 @@ Continues from <a href="45682.html">45682</a>. Generates the graphic data for th
 <td class="register-desc">Message address</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45937"></span>45937</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="44776.html">44776</a></td>
-<td class="comment-11" rowspan="1">Slide the message text into the graphic buffer</td>
+<td class="comment-1" rowspan="1">Slide the message text into the graphic buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45940"></span>45940</td>
-<td class="bytes-0"></td>
 <td class="instruction">SRL C</td>
-<td class="comment-11" rowspan="2">Halve the number of remaining pixel columns and add one</td>
+<td class="comment-1" rowspan="2">Halve the number of remaining pixel columns and add one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45942"></span>45942</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45943"></span>45943</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="4">Insert this number of blank pixel columns, thus centring the message</td>
+<td class="comment-1" rowspan="4">Insert this number of blank pixel columns, thus centring the message</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45944"></span>45944</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="44520.html">44520</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45947"></span>45947</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45948"></span>45948</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,45943</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45950"></span>45950</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45928.html">45928</a></span></td>
+<td class="prev">
+Prev: <a href="45928.html">45928</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45937">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45951.html">45951</a></span></td>
+<td class="next">
+Next: <a href="45951.html">45951</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/B371.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7ED6</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7ED5.html">7ED5</a></span></td>
+<td class="prev">
+Prev: <a href="7ED5.html">7ED5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7ed6">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7EE4.html">7EE4</a></span></td>
+<td class="next">
+Next: <a href="7EE4.html">7EE4</a>
+</td>
 </tr>
 </table>
 <div class="description">7ED6: Remove the speech bubble if present</div>
@@ -29,74 +32,54 @@
 Used by the routines at <a href="6900.html">6900</a> and <a href="7DFA.html">7DFA</a>. Returns with the high score in <span class="register">HL</span>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7ed6"></span>7ED6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7F65)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=x-coordinate of the speech bubble lip (if present)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=x-coordinate of the speech bubble lip (if present)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ed9"></span>7ED9</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Is anyone speaking at the moment?</td>
+<td class="comment-1" rowspan="1">Is anyone speaking at the moment?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7eda"></span>7EDA</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL NZ,<a href="7432.html">$7432</a></td>
-<td class="comment-11" rowspan="1">Remove the speech bubble if so</td>
+<td class="comment-1" rowspan="1">Remove the speech bubble if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7edd"></span>7EDD</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6992.html">$6992</a></td>
-<td class="comment-11" rowspan="1">Update the display</td>
+<td class="comment-1" rowspan="1">Update the display</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ee0"></span>7EE0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,($7FC2)</td>
-<td class="comment-11" rowspan="1">Collect the high score from <a href="7FC2.html">7FC2</a></td>
+<td class="comment-1" rowspan="1">Collect the high score from <a href="7FC2.html">7FC2</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ee3"></span>7EE3</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7ED5.html">7ED5</a></span></td>
+<td class="prev">
+Prev: <a href="7ED5.html">7ED5</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7ed6">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7EE4.html">7EE4</a></span></td>
+<td class="next">
+Next: <a href="7EE4.html">7EE4</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/32470.html">Switch to decimal</a>.</div>
 </footer>
 </body>

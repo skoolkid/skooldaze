@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 6B3D</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6B3B.html">6B3B</a></span></td>
+<td class="prev">
+Prev: <a href="6B3B.html">6B3B</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6b3d">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6B54.html">6B54</a></span></td>
+<td class="next">
+Next: <a href="6B54.html">6B54</a>
+</td>
 </tr>
 </table>
 <div class="description">6B3D: Make a character walk up and down a few times or until a certain time</div>
@@ -29,7 +32,7 @@
 Used by command lists <a href="FD49.html">0xB6</a>, <a href="FD7C.html">0xC0</a>, <a href="FDDC.html">0xC2</a>, <a href="FD92.html">0xC4</a> and <a href="FDB3.html">0xCC</a> to make a character walk about a fixed location until a specified time, or until a certain number of walkabouts have been performed.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,110 +45,77 @@ Used by command lists <a href="FD49.html">0xB6</a>, <a href="FD7C.html">0xC0</a>
 <td class="register-desc">0x7A</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6b3d"></span>6B3D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="3">Reset bits 5 and 6 of byte 0x7A of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
+<td class="comment-1" rowspan="3">Reset bits 5 and 6 of byte 0x7A of the character's buffer, indicating that he should no longer walk fast or slow continuously (if he was doing so)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b3e"></span>6B3E</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND $9F</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b40"></span>6B40</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b41"></span>6B41</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Replace the address of this routine in bytes 0x63 and 0x64 of the character's buffer with that of <a href="6B32.html">6B32</a></td>
+<td class="comment-1" rowspan="2">Replace the address of this routine in bytes 0x63 and 0x64 of the character's buffer with that of <a href="6B32.html">6B32</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b43"></span>6B43</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$32</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b45"></span>6B45</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$67</td>
-<td class="comment-11" rowspan="3">Collect the next byte (the number of walkabouts) from the command list and place it in byte 0x67 of the character's buffer</td>
+<td class="comment-1" rowspan="3">Collect the next byte (the number of walkabouts) from the command list and place it in byte 0x67 of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b47"></span>6B47</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="618C.html">$618C</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b4a"></span>6B4A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b4b"></span>6B4B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$65</td>
-<td class="comment-11" rowspan="3">Collect the next byte (the signal byte - always 0) from the command list and place it in byte 0x65 of the character's buffer</td>
+<td class="comment-1" rowspan="3">Collect the next byte (the signal byte - always 0) from the command list and place it in byte 0x65 of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b4d"></span>6B4D</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="618C.html">$618C</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b50"></span>6B50</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6b51"></span>6B51</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="62D7.html#62e5">$62E5</a></td>
-<td class="comment-11" rowspan="1">Send the character on his first mini-walkabout</td>
+<td class="comment-1" rowspan="1">Send the character on his first mini-walkabout</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6B3B.html">6B3B</a></span></td>
+<td class="prev">
+Prev: <a href="6B3B.html">6B3B</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6b3d">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6B54.html">6B54</a></span></td>
+<td class="next">
+Next: <a href="6B54.html">6B54</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/27453.html">Switch to decimal</a>.</div>
 </footer>
 </body>

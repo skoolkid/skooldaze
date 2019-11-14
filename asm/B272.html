@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at B272</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="B268.html">B268</a></span></td>
+<td class="prev">
+Prev: <a href="B268.html">B268</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#b272">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="B27F.html">B27F</a></span></td>
+<td class="next">
+Next: <a href="B27F.html">B27F</a>
+</td>
 </tr>
 </table>
 <div class="description">B272: Prepare a message in the message graphic buffer (1)</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="AFE8.html">AFE8</a>. Clears the buffer at <a href="5B00.html">5B00</a> in preparation for the message.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,75 +41,55 @@ Used by the routine at <a href="AFE8.html">AFE8</a>. Clears the buffer at <a hre
 <td class="register-desc">Message address</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="b272"></span>B272</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="5">Clear the buffer at <a href="5B00.html">5B00</a> in preparation for the message</td>
+<td class="comment-1" rowspan="5">Clear the buffer at <a href="5B00.html">5B00</a> in preparation for the message</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="b273"></span>B273</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$5B00</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="b276"></span>B276</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="b277"></span>B277</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="b278"></span>B278</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$B276</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="b27a"></span>B27A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$FE</td>
-<td class="comment-11" rowspan="1">Initialise the pixel column counter</td>
+<td class="comment-1" rowspan="1">Initialise the pixel column counter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="b27c"></span>B27C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="B371.html">$B371</a></td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="B268.html">B268</a></span></td>
+<td class="prev">
+Prev: <a href="B268.html">B268</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#b272">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="B27F.html">B27F</a></span></td>
+<td class="next">
+Next: <a href="B27F.html">B27F</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/45682.html">Switch to decimal</a>.</div>
 </footer>
 </body>

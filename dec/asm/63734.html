@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 63734</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63668.html">63668</a></span></td>
+<td class="prev">
+Prev: <a href="63668.html">63668</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63734">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63749.html">63749</a></span></td>
+<td class="next">
+Next: <a href="63749.html">63749</a>
+</td>
 </tr>
 </table>
 <div class="description">63734: Check whether MR CREAK can reveal his safe combination letter</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="63191.html">63191</a>. Returns with the carry flag reset if we're dealing with MR CREAK and ERIC has not yet opened the safe.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,89 +41,66 @@ Used by the routine at <a href="63191.html">63191</a>. Returns with the carry fl
 <td class="register-desc">Teacher's character number (163-166)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63734"></span>63734</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,61889</td>
-<td class="comment-11" rowspan="1">Prepare <span class="register">BC</span> (<a href="61889.html">61889</a>='SILENCE! OR I'LL CANE THE LOT OF YOU') before returning</td>
+<td class="comment-1" rowspan="1">Prepare <span class="register">BC</span> (<a href="61889.html">61889</a>='SILENCE! OR I'LL CANE THE LOT OF YOU') before returning</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63737"></span>63737</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=teacher's character number</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=teacher's character number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63738"></span>63738</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 166</td>
-<td class="comment-11" rowspan="2">Return with the carry flag set if it's not MR CREAK (166)</td>
+<td class="comment-1" rowspan="2">Return with the carry flag set if it's not MR CREAK (166)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63740"></span>63740</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63741"></span>63741</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(32746)</td>
-<td class="comment-11" rowspan="1">Collect the game mode indicator from <a href="32746.html">32746</a></td>
+<td class="comment-1" rowspan="1">Collect the game mode indicator from <a href="32746.html">32746</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63744"></span>63744</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="3">Set the carry flag if it's demo mode or ERIC has already opened the safe</td>
+<td class="comment-1" rowspan="3">Set the carry flag if it's demo mode or ERIC has already opened the safe</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63745"></span>63745</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 2</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63747"></span>63747</td>
-<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63748"></span>63748</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63668.html">63668</a></span></td>
+<td class="prev">
+Prev: <a href="63668.html">63668</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63734">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63749.html">63749</a></span></td>
+<td class="next">
+Next: <a href="63749.html">63749</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/F8F6.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

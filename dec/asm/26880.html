@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 26880</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26836.html">26836</a></span></td>
+<td class="prev">
+Prev: <a href="26836.html">26836</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26880">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="27007.html">27007</a></span></td>
+<td class="next">
+Next: <a href="27007.html">27007</a>
+</td>
 </tr>
 </table>
 <div class="description">26880: Start a new game or enter demo mode</div>
@@ -29,40 +32,22 @@
 This section of code is entered at various points. The main entry point below is used by the startup routine at <a href="../start/24288.html">24288</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26880"></span>26880</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD SP,23806</td>
-<td class="comment-11" rowspan="1">Put the stack pointer somewhere safe</td>
+<td class="comment-1" rowspan="1">Put the stack pointer somewhere safe</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26883"></span>26883</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="32390.html">32390</a></td>
-<td class="comment-11" rowspan="1">Play the theme tune</td>
+<td class="comment-1" rowspan="1">Play the theme tune</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26886"></span>26886</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR 26902</td>
-<td class="comment-11" rowspan="1">Enter demo mode</td>
+<td class="comment-1" rowspan="1">Enter demo mode</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -75,67 +60,49 @@ This entry point is used by the routine at <a href="63990.html">63990</a> when E
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26888"></span>26888</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="32470.html">32470</a></td>
-<td class="comment-11" rowspan="1">Remove the speech bubble</td>
+<td class="comment-1" rowspan="1">Remove the speech bubble</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26891"></span>26891</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,(32708)</td>
-<td class="comment-11" rowspan="1"><span class="register">DE</span>=score</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=score</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26895"></span>26895</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND A</td>
-<td class="comment-11" rowspan="1">Reset the carry flag ready for a subtraction</td>
+<td class="comment-1" rowspan="1">Reset the carry flag ready for a subtraction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26896"></span>26896</td>
-<td class="bytes-0"></td>
 <td class="instruction">SBC HL,DE</td>
-<td class="comment-11" rowspan="1">Subtract the score from the high score...</td>
+<td class="comment-1" rowspan="1">Subtract the score from the high score...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26898"></span>26898</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...and add it back again</td>
+<td class="comment-1" rowspan="1">...and add it back again</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26899"></span>26899</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,26902</td>
-<td class="comment-11" rowspan="1">Jump unless we have a new high score</td>
+<td class="comment-1" rowspan="1">Jump unless we have a new high score</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26901"></span>26901</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=new high score</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=new high score</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26902"></span>26902</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">255: demo mode</td>
+<td class="comment-1" rowspan="1">255: demo mode</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26904"></span>26904</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR 26913</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -148,200 +115,137 @@ This entry point is used by the routine at <a href="32250.html">32250</a> when e
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26906"></span>26906</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="60896.html">60896</a></td>
-<td class="comment-11" rowspan="1">Ask for the input method, and change the character names (if desired)</td>
+<td class="comment-1" rowspan="1">Ask for the input method, and change the character names (if desired)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26909"></span>26909</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,(32706)</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=high score</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=high score</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26912"></span>26912</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">0: game mode (as opposed to demo mode)</td>
+<td class="comment-1" rowspan="1">0: game mode (as opposed to demo mode)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26913"></span>26913</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD SP,23806</td>
-<td class="comment-11" rowspan="1">Put the stack pointer somewhere safe</td>
+<td class="comment-1" rowspan="1">Put the stack pointer somewhere safe</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26916"></span>26916</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Save the high score</td>
+<td class="comment-1" rowspan="1">Save the high score</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26917"></span>26917</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1"><span class="register">E</span>=255 (demo mode) or 0</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=255 (demo mode) or 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26918"></span>26918</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(32761)</td>
-<td class="comment-11" rowspan="1">Collect the current lesson number (0-63) from <a href="32761.html">32761</a></td>
+<td class="comment-1" rowspan="1">Collect the current lesson number (0-63) from <a href="32761.html">32761</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26921"></span>26921</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND 48</td>
-<td class="comment-11" rowspan="2">Set <span class="register">A</span> to 15, 31, 47 or 63 (lessons 0, 16, 32, and 48 are PLAYTIME)</td>
+<td class="comment-1" rowspan="2">Set <span class="register">A</span> to 15, 31, 47 or 63 (lessons 0, 16, 32, and 48 are PLAYTIME)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26923"></span>26923</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,15</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26925"></span>26925</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=new lesson number minus one</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=new lesson number minus one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26926"></span>26926</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Save this for now</td>
+<td class="comment-1" rowspan="1">Save this for now</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26927"></span>26927</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="63242.html">63242</a></td>
-<td class="comment-11" rowspan="1">Unflash the safe and all shields</td>
+<td class="comment-1" rowspan="1">Unflash the safe and all shields</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26930"></span>26930</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,32765</td>
-<td class="comment-11" rowspan="1"><a href="32765.html">32765</a> holds the number (152-171) of the last character moved</td>
+<td class="comment-1" rowspan="1"><a href="32765.html">32765</a> holds the number (152-171) of the last character moved</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26933"></span>26933</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),151</td>
-<td class="comment-11" rowspan="1">Reset this number so 152 (little boy no. 1) is moved next</td>
+<td class="comment-1" rowspan="1">Reset this number so 152 (little boy no. 1) is moved next</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26935"></span>26935</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="3">Blank out the rest of the game status buffer (except for the random number seed at <a href="32766.html">32766</a>)</td>
+<td class="comment-1" rowspan="3">Blank out the rest of the game status buffer (except for the random number seed at <a href="32766.html">32766</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26936"></span>26936</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26938"></span>26938</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,26935</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26940"></span>26940</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,232</td>
-<td class="comment-11" rowspan="2">Initialise ERIC's main action timer at <a href="32744.html">32744</a></td>
+<td class="comment-1" rowspan="2">Initialise ERIC's main action timer at <a href="32744.html">32744</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26942"></span>26942</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),17</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26944"></span>26944</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,249</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="32761.html">32761</a> (which holds the lesson number, 0-63)</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="32761.html">32761</a> (which holds the lesson number, 0-63)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26946"></span>26946</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore the lesson number to <span class="register">D</span> and game mode indicator (0 or 255) to <span class="register">E</span></td>
+<td class="comment-1" rowspan="1">Restore the lesson number to <span class="register">D</span> and game mode indicator (0 or 255) to <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26947"></span>26947</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-11" rowspan="1">Set the lesson number</td>
+<td class="comment-1" rowspan="1">Set the lesson number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26948"></span>26948</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,247</td>
-<td class="comment-11" rowspan="2">Set the lesson clock (at <a href="32759.html">32759</a>) to 1</td>
+<td class="comment-1" rowspan="2">Set the lesson clock (at <a href="32759.html">32759</a>) to 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26950"></span>26950</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26951"></span>26951</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="2">If a new game is starting, prepare the shields and safe, and play the theme tune</td>
+<td class="comment-1" rowspan="2">If a new game is starting, prepare the shields and safe, and play the theme tune</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26952"></span>26952</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL NZ,<a href="63668.html">63668</a></td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26955"></span>26955</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="2">Restore the high score to <span class="register">HL</span>, and save it in <a href="32706.html">32706</a></td>
+<td class="comment-1" rowspan="2">Restore the high score to <span class="register">HL</span>, and save it in <a href="32706.html">32706</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26956"></span>26956</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (32706),HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -354,214 +258,146 @@ The following loop sets the initial animatory state, location and character flag
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26959"></span>26959</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,152</td>
-<td class="comment-11" rowspan="1">152=little boy no. 1</td>
+<td class="comment-1" rowspan="1">152=little boy no. 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26961"></span>26961</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,56064</td>
-<td class="comment-11" rowspan="1">The data table at <a href="56064.html">56064</a> holds the initial animatory states of the characters</td>
+<td class="comment-1" rowspan="1">The data table at <a href="56064.html">56064</a> holds the initial animatory states of the characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26964"></span>26964</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,96</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at byte 96 of the character buffer</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at byte 96 of the character buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26966"></span>26966</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="2">Set the initial animatory state of the character</td>
+<td class="comment-1" rowspan="2">Set the initial animatory state of the character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26967"></span>26967</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26968"></span>26968</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=97</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=97</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26969"></span>26969</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="1">The data table at <a href="56320.html">56320</a> holds the initial x-coordinates of the characters</td>
+<td class="comment-1" rowspan="1">The data table at <a href="56320.html">56320</a> holds the initial x-coordinates of the characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26970"></span>26970</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),169</td>
-<td class="comment-11" rowspan="1">All characters start on the bottom floor (y=169)</td>
+<td class="comment-1" rowspan="1">All characters start on the bottom floor (y=169)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26972"></span>26972</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=98</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=98</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26973"></span>26973</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Pick up the character's initial x-coordinate</td>
+<td class="comment-1" rowspan="1">Pick up the character's initial x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26974"></span>26974</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="1">The data table at <a href="56576.html">56576</a> holds the character flags</td>
+<td class="comment-1" rowspan="1">The data table at <a href="56576.html">56576</a> holds the character flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26975"></span>26975</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Set the character's initial x-coordinate</td>
+<td class="comment-1" rowspan="1">Set the character's initial x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26976"></span>26976</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Pick up the character flags (0=kid; 16=adult; 32=pellet)</td>
+<td class="comment-1" rowspan="1">Pick up the character flags (0=kid; 16=adult; 32=pellet)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26977"></span>26977</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC D</td>
-<td class="comment-11" rowspan="2">Point <span class="register">DE</span> back at the table of initial animatory states</td>
+<td class="comment-1" rowspan="2">Point <span class="register">DE</span> back at the table of initial animatory states</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26978"></span>26978</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26979"></span>26979</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1">Next character</td>
+<td class="comment-1" rowspan="1">Next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26980"></span>26980</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,29</td>
-<td class="comment-11" rowspan="4">Blank out the remaining 29 bytes of the character's buffer</td>
+<td class="comment-1" rowspan="4">Blank out the remaining 29 bytes of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26982"></span>26982</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26983"></span>26983</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26985"></span>26985</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 26982</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26987"></span>26987</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,122</td>
-<td class="comment-11" rowspan="2">Place the character flags into byte 122 of the character's buffer</td>
+<td class="comment-1" rowspan="2">Place the character flags into byte 122 of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26989"></span>26989</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26990"></span>26990</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26991"></span>26991</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=124</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=124</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26992"></span>26992</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),159</td>
-<td class="comment-11" rowspan="3">Place the address of the continual subcommand routine at <a href="25126.html#25247">25247</a> (RET) into bytes 124 and 125 of the character's buffer</td>
+<td class="comment-1" rowspan="3">Place the address of the continual subcommand routine at <a href="25126.html#25247">25247</a> (RET) into bytes 124 and 125 of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26994"></span>26994</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26995"></span>26995</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),98</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26997"></span>26997</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Next character</td>
+<td class="comment-1" rowspan="1">Next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26998"></span>26998</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Have we done all the non-player characters?</td>
+<td class="comment-1" rowspan="1">Have we done all the non-player characters?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26999"></span>26999</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,26964</td>
-<td class="comment-11" rowspan="1">Jump back to do the next one if not</td>
+<td class="comment-1" rowspan="1">Jump back to do the next one if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -574,31 +410,31 @@ All that remains now is to print the logo, lesson box and score box, and bring t
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="27001"></span>27001</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="27406.html">27406</a></td>
-<td class="comment-11" rowspan="1">Print the bottom 3 lines of the screen</td>
+<td class="comment-1" rowspan="1">Print the bottom 3 lines of the screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="27004"></span>27004</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="63768.html">63768</a></td>
-<td class="comment-11" rowspan="1">Scroll the skool into view and enter the main loop</td>
+<td class="comment-1" rowspan="1">Scroll the skool into view and enter the main loop</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26836.html">26836</a></span></td>
+<td class="prev">
+Prev: <a href="26836.html">26836</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26880">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="27007.html">27007</a></span></td>
+<td class="next">
+Next: <a href="27007.html">27007</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/6900.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

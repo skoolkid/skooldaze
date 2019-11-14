@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7986</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7984.html">7984</a></span></td>
+<td class="prev">
+Prev: <a href="7984.html">7984</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7986">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="799A.html">799A</a></span></td>
+<td class="next">
+Next: <a href="799A.html">799A</a>
+</td>
 </tr>
 </table>
 <div class="description">7986: Make a character speak (1)</div>
@@ -29,7 +32,7 @@
 The address of this interruptible subcommand routine is placed into bytes 0x69 and 0x6A of a character's buffer by the routines at <a href="7A32.html">7A32</a>, <a href="7CFC.html">7CFC</a> and <a href="F400.html">F400</a>. The subcommand terminates if the character is off-screen; otherwise it waits for anybody else to stop speaking before printing the speech bubble above the character's head and handing over control to the routine at <a href="799A.html">799A</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,48 +41,28 @@ The address of this interruptible subcommand routine is placed into bytes 0x69 a
 <td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7986"></span>7986</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6E</td>
-<td class="comment-11" rowspan="5">Zero out bytes 0x6D and 0x6E of the character's buffer, which normally hold the address of the next character in the submessage being spoken (when a character starts speaking, there is no submessage)</td>
+<td class="comment-1" rowspan="5">Zero out bytes 0x6D and 0x6E of the character's buffer, which normally hold the address of the next character in the submessage being spoken (when a character starts speaking, there is no submessage)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7988"></span>7988</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7989"></span>7989</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="798a"></span>798A</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="798b"></span>798B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -92,39 +75,28 @@ This entry point is used while the character is waiting for someone else to stop
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="798c"></span>798C</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="734E.html">$734E</a></td>
-<td class="comment-11" rowspan="1">Make the character start speaking if possible</td>
+<td class="comment-1" rowspan="1">Make the character start speaking if possible</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="798f"></span>798F</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP C,<a href="62A0.html#62a4">$62A4</a></td>
-<td class="comment-11" rowspan="1">Terminate this interruptible subcommand if the character is off-screen</td>
+<td class="comment-1" rowspan="1">Terminate this interruptible subcommand if the character is off-screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7992"></span>7992</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$69</td>
-<td class="comment-11" rowspan="2">Set the interruptible subcommand routine address in bytes 0x69 and 0x6A of the character's buffer to the entry point at <a href="7986.html#798c">798C</a></td>
+<td class="comment-1" rowspan="2">Set the interruptible subcommand routine address in bytes 0x69 and 0x6A of the character's buffer to the entry point at <a href="7986.html#798c">798C</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7994"></span>7994</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$8C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7996"></span>7996</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return if somebody else is speaking at the moment</td>
+<td class="comment-1" rowspan="1">Return if somebody else is speaking at the moment</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -137,31 +109,31 @@ Now it's this character's turn to speak.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7997"></span>7997</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$9A</td>
-<td class="comment-11" rowspan="1">Set the interruptible subcommand routine address in bytes 0x69 and 0x6A of the character's buffer to <a href="799A.html">799A</a></td>
+<td class="comment-1" rowspan="1">Set the interruptible subcommand routine address in bytes 0x69 and 0x6A of the character's buffer to <a href="799A.html">799A</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7999"></span>7999</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7984.html">7984</a></span></td>
+<td class="prev">
+Prev: <a href="7984.html">7984</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7986">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="799A.html">799A</a></span></td>
+<td class="next">
+Next: <a href="799A.html">799A</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/31110.html">Switch to decimal</a>.</div>
 </footer>
 </body>

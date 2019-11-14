@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7C6E</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7C6C.html">7C6C</a></span></td>
+<td class="prev">
+Prev: <a href="7C6C.html">7C6C</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7c6e">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7C97.html">7C97</a></span></td>
+<td class="next">
+Next: <a href="7C97.html">7C97</a>
+</td>
 </tr>
 </table>
 <div class="description">7C6E: Make a teacher perform dinner duty (1)</div>
@@ -29,7 +32,7 @@
 Used by command list <a href="FD59.html">0xB8</a>. Makes the teacher on dinner duty pace up and down the dinner hall, checking whether ERIC is present. If ERIC is absent, the teacher is sent to find him, after which the command list is restarted.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,41 +41,24 @@ Used by command list <a href="FD59.html">0xB8</a>. Makes the teacher on dinner d
 <td class="register-desc">0xA3 (MR WACKER) or 0xA5 (MR WITHIT)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7c6e"></span>7C6E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$7FC8</td>
-<td class="comment-11" rowspan="4">Set bit 7 at <a href="7FC8.html">7FC8</a>, indicating that dinner has started (and so ERIC should be in the dinner hall)</td>
+<td class="comment-1" rowspan="4">Set bit 7 at <a href="7FC8.html">7FC8</a>, indicating that dinner has started (and so ERIC should be in the dinner hall)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c71"></span>7C71</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c72"></span>7C72</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 7,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c74"></span>7C74</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -85,18 +71,14 @@ This entry point is used on subsequent calls when the teacher on dinner duty has
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7c75"></span>7C75</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="79D4.html">$79D4</a></td>
-<td class="comment-11" rowspan="1">Set the zero flag if ERIC is where he should be</td>
+<td class="comment-1" rowspan="1">Set the zero flag if ERIC is where he should be</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c78"></span>7C78</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$9721</td>
-<td class="comment-11" rowspan="1"><span class="register">D</span>=0x97 (LSB of <a href="7C97.html">7C97</a>), <span class="register">E</span>=33 (x-coordinate of the left end of the teacher's dinner duty orbit)</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=0x97 (LSB of <a href="7C97.html">7C97</a>), <span class="register">E</span>=33 (x-coordinate of the left end of the teacher's dinner duty orbit)</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -109,46 +91,32 @@ This entry point is used by the routine at <a href="7C97.html">7C97</a> with <sp
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7c7b"></span>7C7B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$69</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c7d"></span>7C7D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7C87</td>
-<td class="comment-11" rowspan="1">Jump if ERIC is where he should be</td>
+<td class="comment-1" rowspan="1">Jump if ERIC is where he should be</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c7f"></span>7C7F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$A0</td>
-<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="7BA0.html">7BA0</a> into bytes 0x69 and 0x6A of the character's buffer</td>
+<td class="comment-1" rowspan="3">Place the address of the interruptible subcommand routine at <a href="7BA0.html">7BA0</a> into bytes 0x69 and 0x6A of the character's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c81"></span>7C81</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c82"></span>7C82</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$7B</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c84"></span>7C84</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="7BA0.html">$7BA0</a></td>
-<td class="comment-11" rowspan="1">And jump to that routine now</td>
+<td class="comment-1" rowspan="1">And jump to that routine now</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -161,87 +129,66 @@ ERIC is where he should be, so there's no need to chase him.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7c87"></span>7C87</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$3C</td>
-<td class="comment-11" rowspan="3">Place the address of the interruptible subcommand routine at <a href="633C.html">633C</a> into bytes 0x69 and 0x6A of the teacher's buffer</td>
+<td class="comment-1" rowspan="3">Place the address of the interruptible subcommand routine at <a href="633C.html">633C</a> into bytes 0x69 and 0x6A of the teacher's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c89"></span>7C89</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c8a"></span>7C8A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$63</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c8c"></span>7C8C</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Place 33 or 62 into byte 0x6B of the teacher's buffer (to make him go to that x-coordinate next)</td>
+<td class="comment-1" rowspan="2">Place 33 or 62 into byte 0x6B of the teacher's buffer (to make him go to that x-coordinate next)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c8d"></span>7C8D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c8e"></span>7C8E</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Place 0 into byte 0x6C of the teacher's buffer, giving him more than enough time to reach the other end of the dinner hall without interruption</td>
+<td class="comment-1" rowspan="2">Place 0 into byte 0x6C of the teacher's buffer, giving him more than enough time to reach the other end of the dinner hall without interruption</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c8f"></span>7C8F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$00</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c91"></span>7C91</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of the teacher's buffer with that of <a href="7C97.html">7C97</a> or <a href="7C6E.html#7c75">7C75</a></td>
+<td class="comment-1" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of the teacher's buffer with that of <a href="7C97.html">7C97</a> or <a href="7C6E.html#7c75">7C75</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c93"></span>7C93</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7c94"></span>7C94</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="633C.html">$633C</a></td>
-<td class="comment-11" rowspan="1">Proceed to the other end of the dinner hall</td>
+<td class="comment-1" rowspan="1">Proceed to the other end of the dinner hall</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7C6C.html">7C6C</a></span></td>
+<td class="prev">
+Prev: <a href="7C6C.html">7C6C</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7c6e">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7C97.html">7C97</a></span></td>
+<td class="next">
+Next: <a href="7C97.html">7C97</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/31854.html">Switch to decimal</a>.</div>
 </footer>
 </body>

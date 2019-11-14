@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 24993</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="24972.html">24972</a></span></td>
+<td class="prev">
+Prev: <a href="24972.html">24972</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#24993">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="25008.html">25008</a></span></td>
+<td class="next">
+Next: <a href="25008.html">25008</a>
+</td>
 </tr>
 </table>
 <div class="description">24993: Get a random number</div>
@@ -29,95 +32,68 @@
 Used by the routines at <a href="25266.html">25266</a>, <a href="25303.html">25303</a>, <a href="27090.html">27090</a>, <a href="28672.html">28672</a>, <a href="29284.html">29284</a>, <a href="30464.html">30464</a>, <a href="31282.html">31282</a>, <a href="31968.html">31968</a>, <a href="31996.html">31996</a>, <a href="32048.html">32048</a>, <a href="62208.html">62208</a>, <a href="63573.html">63573</a> and <a href="63749.html">63749</a>. Returns with a random number in <span class="register">A</span>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="24993"></span>24993</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24994"></span>24994</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,(32766)</td>
-<td class="comment-11" rowspan="1"><a href="32766.html">32766</a> holds the random number seed</td>
+<td class="comment-1" rowspan="1"><a href="32766.html">32766</a> holds the random number seed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24997"></span>24997</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(23672)</td>
-<td class="comment-11" rowspan="1">Pick up the LSB of the system variable FRAMES</td>
+<td class="comment-1" rowspan="1">Pick up the LSB of the system variable FRAMES</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25000"></span>25000</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="2">Add 257 to the seed</td>
+<td class="comment-1" rowspan="2">Add 257 to the seed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25001"></span>25001</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC H</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25002"></span>25002</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR (HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=random number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25003"></span>25003</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (32766),HL</td>
-<td class="comment-11" rowspan="1">Store the new seed</td>
+<td class="comment-1" rowspan="1">Store the new seed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25006"></span>25006</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="25007"></span>25007</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="24972.html">24972</a></span></td>
+<td class="prev">
+Prev: <a href="24972.html">24972</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#24993">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="25008.html">25008</a></span></td>
+<td class="next">
+Next: <a href="25008.html">25008</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/61A1.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

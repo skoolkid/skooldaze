@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 6CF0</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6CEE.html">6CEE</a></span></td>
+<td class="prev">
+Prev: <a href="6CEE.html">6CEE</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6cf0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6D05.html">6D05</a></span></td>
+<td class="next">
+Next: <a href="6D05.html">6D05</a>
+</td>
 </tr>
 </table>
 <div class="description">6CF0: Make a character stand up if he's not already standing</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="63BE.html">63BE</a> to make sure a character is standing up before setting off for his destination.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,103 +41,78 @@ Used by the routine at <a href="63BE.html">63BE</a> to make sure a character is 
 <td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6cf0"></span>6CF0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Change the primary command routine address in bytes 0x63 and 0x64 of the character's buffer to <a href="63BE.html#63d1">63D1</a></td>
+<td class="comment-1" rowspan="2">Change the primary command routine address in bytes 0x63 and 0x64 of the character's buffer to <a href="63BE.html#63d1">63D1</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cf2"></span>6CF2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$D1</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cf4"></span>6CF4</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL</span> at the character's animatory state</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at the character's animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cf6"></span>6CF6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cf7"></span>6CF7</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND $07</td>
-<td class="comment-11" rowspan="1">Keep only bits 0-2</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cf9"></span>6CF9</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $04</td>
-<td class="comment-11" rowspan="1">Is the character standing?</td>
+<td class="comment-1" rowspan="1">Is the character standing?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cfb"></span>6CFB</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cfc"></span>6CFC</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Drop the return address (<a href="63BE.html#63d1">63D1</a>) from the stack</td>
+<td class="comment-1" rowspan="1">Drop the return address (<a href="63BE.html#63d1">63D1</a>) from the stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6cfd"></span>6CFD</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="6214.html">$6214</a></td>
-<td class="comment-11" rowspan="1">Update the SRB for the character's current animatory state</td>
+<td class="comment-1" rowspan="1">Update the SRB for the character's current animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6d00"></span>6D00</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND $F8</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=animatory state of the character standing up</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=animatory state of the character standing up</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6d02"></span>6D02</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="61B0.html">$61B0</a></td>
-<td class="comment-11" rowspan="1">Update the character's animatory state and update the SRB</td>
+<td class="comment-1" rowspan="1">Update the character's animatory state and update the SRB</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6CEE.html">6CEE</a></span></td>
+<td class="prev">
+Prev: <a href="6CEE.html">6CEE</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#6cf0">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6D05.html">6D05</a></span></td>
+<td class="next">
+Next: <a href="6D05.html">6D05</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/27888.html">Switch to decimal</a>.</div>
 </footer>
 </body>

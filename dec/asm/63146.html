@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 63146</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63056.html">63056</a></span></td>
+<td class="prev">
+Prev: <a href="63056.html">63056</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63146">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63191.html">63191</a></span></td>
+<td class="next">
+Next: <a href="63191.html">63191</a>
+</td>
 </tr>
 </table>
 <div class="description">63146: Deal with ERIC when he's writing on a blackboard</div>
@@ -29,7 +32,7 @@
 Called from the main loop at <a href="26471.html">26471</a> when bit 5 of ERIC's status flags at <a href="32763.html">32763</a> is set (by the routine at <a href="63056.html">63056</a>).
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,188 +45,120 @@ Called from the main loop at <a href="26471.html">26471</a> when bit 5 of ERIC's
 <td class="register-desc"><a href="32763.html">32763</a> (ERIC's status flags)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63146"></span>63146</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 13</td>
-<td class="comment-11" rowspan="1">Was ENTER pressed?</td>
+<td class="comment-1" rowspan="1">Was ENTER pressed?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63148"></span>63148</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,63188</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63150"></span>63150</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Store the keypress code in <span class="register">B</span></td>
+<td class="comment-1" rowspan="1">Store the keypress code in <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63151"></span>63151</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,172</td>
-<td class="comment-11" rowspan="1">172=ERIC</td>
+<td class="comment-1" rowspan="1">172=ERIC</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63153"></span>63153</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="28968.html">28968</a></td>
-<td class="comment-11" rowspan="6"><span class="register">C</span>=171 (Reading Room blackboard), 177 (White Room blackboard) or 183 (Exam Room blackboard)</td>
+<td class="comment-1" rowspan="6"><span class="register">C</span>=171 (Reading Room blackboard), 177 (White Room blackboard) or 183 (Exam Room blackboard)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63156"></span>63156</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB 179</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63158"></span>63158</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63159"></span>63159</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63160"></span>63160</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63161"></span>63161</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63162"></span>63162</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL</span> at byte 3 of the relevant blackboard contents buffer)</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL</span> at byte 3 of the relevant blackboard contents buffer)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63163"></span>63163</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,127</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63165"></span>63165</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
-<td class="comment-11" rowspan="2">Jump if 4 or more characters have been written so far, or the board was dirty before ERIC started writing</td>
+<td class="comment-1" rowspan="2">Jump if 4 or more characters have been written so far, or the board was dirty before ERIC started writing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63167"></span>63167</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,63178</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63169"></span>63169</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB 4</td>
-<td class="comment-11" rowspan="2">Point <span class="register">HL</span> at the byte preceding the first byte of the relevant blackboard contents buffer</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL</span> at the byte preceding the first byte of the relevant blackboard contents buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63171"></span>63171</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63172"></span>63172</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="3">Find the next 'open' slot (which will have bit 7 set) in the blackboard contents buffer</td>
+<td class="comment-1" rowspan="3">Find the next 'open' slot (which will have bit 7 set) in the blackboard contents buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63173"></span>63173</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63175"></span>63175</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,63172</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63177"></span>63177</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),B</td>
-<td class="comment-11" rowspan="1">Store the keypress code in the blackboard contents buffer</td>
+<td class="comment-1" rowspan="1">Store the keypress code in the blackboard contents buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63178"></span>63178</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="3">Restore the keypress code to <span class="register">A</span>; set <span class="register">BC</span>=<a href="32680.html#32684">32684</a> (Reading Room blackboard), <a href="32686.html#32690">32690</a> (White Room blackboard), or <a href="32692.html#32696">32696</a> (Exam Room blackboard) (which holds the pixel coordinates at which ERIC should write)</td>
+<td class="comment-1" rowspan="3">Restore the keypress code to <span class="register">A</span>; set <span class="register">BC</span>=<a href="32680.html#32684">32684</a> (Reading Room blackboard), <a href="32686.html#32690">32690</a> (White Room blackboard), or <a href="32692.html#32696">32696</a> (Exam Room blackboard) (which holds the pixel coordinates at which ERIC should write)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63179"></span>63179</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,B</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63180"></span>63180</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,127</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63182"></span>63182</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="28994.html#29023">29023</a></td>
-<td class="comment-11" rowspan="1">Write a single character on the blackboard</td>
+<td class="comment-1" rowspan="1">Write a single character on the blackboard</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63185"></span>63185</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="63056.html#63123">63123</a></td>
-<td class="comment-11" rowspan="1">Move ERIC's arm</td>
+<td class="comment-1" rowspan="1">Move ERIC's arm</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -236,31 +171,31 @@ ERIC has finished writing on the board (ENTER was pressed).
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63188"></span>63188</td>
-<td class="bytes-0"></td>
 <td class="instruction">RES 5,(HL)</td>
-<td class="comment-11" rowspan="1">Reset bit 5 of ERIC's status flags at <a href="32763.html">32763</a> to indicate that ERIC has finished writing on the board</td>
+<td class="comment-1" rowspan="1">Reset bit 5 of ERIC's status flags at <a href="32763.html">32763</a> to indicate that ERIC has finished writing on the board</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63190"></span>63190</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return to the main loop</td>
+<td class="comment-1" rowspan="1">Return to the main loop</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63056.html">63056</a></span></td>
+<td class="prev">
+Prev: <a href="63056.html">63056</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63146">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63191.html">63191</a></span></td>
+<td class="next">
+Next: <a href="63191.html">63191</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/F6AA.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

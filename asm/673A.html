@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 673A</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6736.html">6736</a></span></td>
+<td class="prev">
+Prev: <a href="6736.html">6736</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#673a">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6752.html">6752</a></span></td>
+<td class="next">
+Next: <a href="6752.html">6752</a>
+</td>
 </tr>
 </table>
 <div class="description">673A: Get the ASCII code of the last key pressed</div>
@@ -29,26 +32,12 @@
 Used by the routines at <a href="B6E8.html">B6E8</a>, <a href="B7E8.html">B7E8</a>, <a href="F533.html">F533</a>, <a href="F5DA.html">F5DA</a> and <a href="F778.html">F778</a>. Returns with the zero flag set if no key of interest was pressed. Otherwise returns with <span class="register">A</span> holding the ASCII code of the last key pressed.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="673a"></span>673A</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="67D8.html">$67D8</a></td>
-<td class="comment-11" rowspan="1">Get input from the Kempston joystick if it's in use</td>
+<td class="comment-1" rowspan="1">Get input from the Kempston joystick if it's in use</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -61,81 +50,55 @@ This entry point is used by the routines at <a href="68A0.html">68A0</a> and <a 
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="673d"></span>673D</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 5,(HL)</td>
-<td class="comment-11" rowspan="2">Check bit 5 of 5C3B, which will be set if a key was pressed; reset bit 5 afterwards</td>
+<td class="comment-1" rowspan="2">Check bit 5 of 5C3B, which will be set if a key was pressed; reset bit 5 afterwards</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="673f"></span>673F</td>
-<td class="bytes-0"></td>
 <td class="instruction">RES 5,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6741"></span>6741</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">Return with the zero flag set if no key was pressed</td>
+<td class="comment-1" rowspan="1">Return with the zero flag set if no key was pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6742"></span>6742</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($5C08)</td>
-<td class="comment-11" rowspan="1">Get the code of the last key pressed</td>
+<td class="comment-1" rowspan="1">Get the code of the last key pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6745"></span>6745</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $0D</td>
-<td class="comment-11" rowspan="1">Was it ENTER?</td>
+<td class="comment-1" rowspan="1">Was it ENTER?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6747"></span>6747</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$674D</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6749"></span>6749</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $20</td>
-<td class="comment-11" rowspan="4">Return with the zero flag reset if the last key pressed had an ASCII code between 0x20 and 0x7F inclusive (or it was ENTER)</td>
+<td class="comment-1" rowspan="4">Return with the zero flag reset if the last key pressed had an ASCII code between 0x20 and 0x7F inclusive (or it was ENTER)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="674b"></span>674B</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$6750</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="674d"></span>674D</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $80</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="674f"></span>674F</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="6750"></span>6750</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set the zero flag to indicate that no key of interest was pressed</td>
+<td class="comment-1" rowspan="1">Set the zero flag to indicate that no key of interest was pressed</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -148,24 +111,26 @@ The address of this entry point appears in the table of keypress handling routin
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="6751"></span>6751</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="6736.html">6736</a></span></td>
+<td class="prev">
+Prev: <a href="6736.html">6736</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#673a">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="6752.html">6752</a></span></td>
+<td class="next">
+Next: <a href="6752.html">6752</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/26426.html">Switch to decimal</a>.</div>
 </footer>
 </body>

@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 31229</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31188.html">31188</a></span></td>
+<td class="prev">
+Prev: <a href="31188.html">31188</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31229">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31255.html">31255</a></span></td>
+<td class="next">
+Next: <a href="31255.html">31255</a>
+</td>
 </tr>
 </table>
 <div class="description">31229: Get ERIC's coordinates</div>
@@ -29,68 +32,40 @@
 Used by the routines at <a href="31188.html">31188</a>, <a href="31648.html">31648</a> and <a href="63374.html">63374</a>. Returns with ERIC's coordinates (adjusted appropriately if he's jumping) in <span class="register">DE</span>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31229"></span>31229</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,(44129)</td>
-<td class="comment-11" rowspan="1">Pick up ERIC's coordinates in <span class="register">DE</span></td>
+<td class="comment-1" rowspan="1">Pick up ERIC's coordinates in <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31233"></span>31233</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(32763)</td>
-<td class="comment-11" rowspan="1"><a href="32763.html">32763</a> holds ERIC's status flags</td>
+<td class="comment-1" rowspan="1"><a href="32763.html">32763</a> holds ERIC's status flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31236"></span>31236</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">Bit 2 will be set if ERIC is jumping</td>
+<td class="comment-1" rowspan="1">Bit 2 will be set if ERIC is jumping</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31238"></span>31238</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="3">Get ERIC's y-coordinate in <span class="register">D</span> and x-coordinate in <span class="register">E</span></td>
+<td class="comment-1" rowspan="3">Get ERIC's y-coordinate in <span class="register">D</span> and x-coordinate in <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31239"></span>31239</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31240"></span>31240</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31241"></span>31241</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">Return unless ERIC is jumping</td>
+<td class="comment-1" rowspan="1">Return unless ERIC is jumping</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -103,73 +78,61 @@ This entry point is used by the routine at <a href="27303.html">27303</a> with E
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31242"></span>31242</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,155</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31244"></span>31244</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 156</td>
-<td class="comment-11" rowspan="1">Is ERIC on the top floor?</td>
+<td class="comment-1" rowspan="1">Is ERIC on the top floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31246"></span>31246</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31247"></span>31247</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,162</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31249"></span>31249</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP 163</td>
-<td class="comment-11" rowspan="1">Is ERIC on the middle floor?</td>
+<td class="comment-1" rowspan="1">Is ERIC on the middle floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31251"></span>31251</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31252"></span>31252</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,169</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the bottom floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the bottom floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31254"></span>31254</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31188.html">31188</a></span></td>
+<td class="prev">
+Prev: <a href="31188.html">31188</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31229">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31255.html">31255</a></span></td>
+<td class="next">
+Next: <a href="31255.html">31255</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/79FD.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

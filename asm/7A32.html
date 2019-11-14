@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7A32</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7A2A.html">7A2A</a></span></td>
+<td class="prev">
+Prev: <a href="7A2A.html">7A2A</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7a32">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7AD7.html">7AD7</a></span></td>
+<td class="next">
+Next: <a href="7AD7.html">7AD7</a>
+</td>
 </tr>
 </table>
 <div class="description">7A32: Prepare a question and answer</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="F400.html">F400</a>. Prepares a question message and stores its address in bytes 0x6B and 0x6C of the teacher's buffer; also prepares the answer message and stores its address in bytes 0x6B and 0x6C of EINSTEIN's buffer. Places the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 0x69 and 0x6A of the teacher's buffer before returning.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,41 +41,27 @@ Used by the routine at <a href="F400.html">F400</a>. Prepares a question message
 <td class="register-desc">Teacher's character number (0xA3-0xA6)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a32"></span>7A32</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Save the teacher's character number</td>
+<td class="comment-1" rowspan="1">Save the teacher's character number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a33"></span>7A33</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=teacher's character number</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=teacher's character number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a34"></span>7A34</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A3</td>
-<td class="comment-11" rowspan="1">Is it MR WACKER?</td>
+<td class="comment-1" rowspan="1">Is it MR WACKER?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a36"></span>7A36</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7A92</td>
-<td class="comment-11" rowspan="1">Jump if not</td>
+<td class="comment-1" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -85,144 +74,93 @@ MR WACKER is conducting this lesson, so we have to prepare a multiplication ques
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a38"></span>7A38</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$F008</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="F000.html#f008">F008</a>: the '12' in 'WHAT IS 12 x 34?'</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="F000.html#f008">F008</a>: the '12' in 'WHAT IS 12 x 34?'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a3b"></span>7A3B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$02</td>
-<td class="comment-11" rowspan="1">There are two numbers to generate</td>
+<td class="comment-1" rowspan="1">There are two numbers to generate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a3d"></span>7A3D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Store the second (the multiplier) in <span class="register">C</span> on pass 2</td>
+<td class="comment-1" rowspan="1">Store the second (the multiplier) in <span class="register">C</span> on pass 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a3e"></span>7A3E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
-<td class="comment-11" rowspan="6">Collect a random number between 32 and 99 in <span class="register">A</span></td>
+<td class="comment-1" rowspan="6">Collect a random number between 32 and 99 in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a41"></span>7A41</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND $7F</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a43"></span>7A43</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $64</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a45"></span>7A45</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7A3E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a47"></span>7A47</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $20</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a49"></span>7A49</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7A3E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a4b"></span>7A4B</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store this number temporarily</td>
+<td class="comment-1" rowspan="1">Store this number temporarily</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a4c"></span>7A4C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$2F</td>
-<td class="comment-11" rowspan="7">Insert the ASCII codes for the digits of the number into the 'WHAT IS 12 x 34?' message</td>
+<td class="comment-1" rowspan="7">Insert the ASCII codes for the digits of the number into the 'WHAT IS 12 x 34?' message</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a4e"></span>7A4E</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a4f"></span>7A4F</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB $0A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a51"></span>7A51</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7A4E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a53"></span>7A53</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,$3A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a55"></span>7A55</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a56"></span>7A56</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a57"></span>7A57</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore the number to <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Restore the number to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a58"></span>7A58</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$0D</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="F000.html#f00d">F00D</a>: the '34' in 'WHAT IS 12 x 34?'</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="F000.html#f00d">F00D</a>: the '34' in 'WHAT IS 12 x 34?'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a5a"></span>7A5A</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $7A3D</td>
-<td class="comment-11" rowspan="1">Jump back to insert the multiplier into the message</td>
+<td class="comment-1" rowspan="1">Jump back to insert the multiplier into the message</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -235,235 +173,144 @@ Now multiply the two numbers, and store the ASCII codes of the digits of the pro
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a5c"></span>7A5C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD DE,$0000</td>
-<td class="comment-11" rowspan="3"><span class="register">HL</span>=0 (ready for multiplication), and <span class="register">DE</span>=<a href="F011.html#f017">F017</a> (the '1234' in EINSTEIN's response message)</td>
+<td class="comment-1" rowspan="3"><span class="register">HL</span>=0 (ready for multiplication), and <span class="register">DE</span>=<a href="F011.html#f017">F017</a> (the '1234' in EINSTEIN's response message)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a5f"></span>7A5F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$17</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a61"></span>7A61</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a62"></span>7A62</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="3"><span class="register">HL</span>=the product of the two numbers</td>
+<td class="comment-1" rowspan="3"><span class="register">HL</span>=the product of the two numbers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a63"></span>7A63</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a64"></span>7A64</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7A62</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a66"></span>7A66</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$FC18</td>
-<td class="comment-11" rowspan="7">Calculate the 1000s digit and store its ASCII code in the appropriate spot</td>
+<td class="comment-1" rowspan="7">Calculate the 1000s digit and store its ASCII code in the appropriate spot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a69"></span>7A69</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a6a"></span>7A6A</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a6b"></span>7A6B</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7A69</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a6d"></span>7A6D</td>
-<td class="bytes-0"></td>
 <td class="instruction">SBC HL,BC</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a6f"></span>7A6F</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,$2F</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a71"></span>7A71</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a72"></span>7A72</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$FF9C</td>
-<td class="comment-11" rowspan="8">Calculate the 100s digit and store its ASCII code in the appropriate spot</td>
+<td class="comment-1" rowspan="8">Calculate the 100s digit and store its ASCII code in the appropriate spot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a75"></span>7A75</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$2F</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a77"></span>7A77</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a78"></span>7A78</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a79"></span>7A79</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7A77</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a7b"></span>7A7B</td>
-<td class="bytes-0"></td>
 <td class="instruction">SBC HL,BC</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a7d"></span>7A7D</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a7e"></span>7A7E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a7f"></span>7A7F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,L</td>
-<td class="comment-11" rowspan="7">Calculate the 10s digit and store its ASCII code in the appropriate spot</td>
+<td class="comment-1" rowspan="7">Calculate the 10s digit and store its ASCII code in the appropriate spot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a80"></span>7A80</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a81"></span>7A81</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a82"></span>7A82</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$2F</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a84"></span>7A84</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a85"></span>7A85</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB $0A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a87"></span>7A87</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7A84</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a89"></span>7A89</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,$3A</td>
-<td class="comment-11" rowspan="3">Store the ASCII code of the units digit in the appropriate spot</td>
+<td class="comment-1" rowspan="3">Store the ASCII code of the units digit in the appropriate spot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a8b"></span>7A8B</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a8c"></span>7A8C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a8d"></span>7A8D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7A18</td>
-<td class="comment-11" rowspan="1">This is the base address of the data table used for MR WACKER's questions and answers</td>
+<td class="comment-1" rowspan="1">This is the base address of the data table used for MR WACKER's questions and answers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a90"></span>7A90</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $7AC0</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -476,74 +323,54 @@ Some teacher other than MR WACKER is conducting this lesson.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7a92"></span>7A92</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB $A4</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=0 (MR ROCKITT), 1 (MR WITHIT), or 2 (MR CREAK)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=0 (MR ROCKITT), 1 (MR WITHIT), or 2 (MR CREAK)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a94"></span>7A94</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="F923.html">$F923</a></td>
-<td class="comment-11" rowspan="1">Make MR CREAK ask the birth year question if appropriate</td>
+<td class="comment-1" rowspan="1">Make MR CREAK ask the birth year question if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a97"></span>7A97</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$80</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a99"></span>7A99</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7AA6</td>
-<td class="comment-11" rowspan="1">Jump if we're dealing with MR ROCKITT</td>
+<td class="comment-1" rowspan="1">Jump if we're dealing with MR ROCKITT</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a9b"></span>7A9B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$AA</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a9d"></span>7A9D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$22</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7A22.html">7A22</a></td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="7A22.html">7A22</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7a9f"></span>7A9F</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Are we dealing with MR WITHIT?</td>
+<td class="comment-1" rowspan="1">Are we dealing with MR WITHIT?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aa0"></span>7AA0</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7AA6</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aa2"></span>7AA2</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$2A</td>
-<td class="comment-11" rowspan="1"><span class="register">HL</span>=<a href="7A2A.html">7A2A</a></td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="7A2A.html">7A2A</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aa4"></span>7AA4</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$D4</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -556,165 +383,106 @@ Now <span class="register">HL</span> points at one of the data tables at <a href
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7aa6"></span>7AA6</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
-<td class="comment-11" rowspan="3">Get a random number between 0x00 and 0x29 in <span class="register">A</span></td>
+<td class="comment-1" rowspan="3">Get a random number between 0x00 and 0x29 in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aa9"></span>7AA9</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $2A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aab"></span>7AAB</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7AA6</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aad"></span>7AAD</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=0x80-0xA9 (MR ROCKITT), 0xAA-0xD3 (MR WITHIT), or 0xD4-0xFD (MR CREAK)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=0x80-0xA9 (MR ROCKITT), 0xAA-0xD3 (MR WITHIT), or 0xD4-0xFD (MR CREAK)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aae"></span>7AAE</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="2">There are two types of question the teacher can ask; here we decide which one</td>
+<td class="comment-1" rowspan="2">There are two types of question the teacher can ask; here we decide which one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ab0"></span>7AB0</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7AB6</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ab2"></span>7AB2</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="4">Move forward four spaces in the data table to the LSBs for the second type of question</td>
+<td class="comment-1" rowspan="4">Move forward four spaces in the data table to the LSBs for the second type of question</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ab3"></span>7AB3</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ab4"></span>7AB4</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ab5"></span>7AB5</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7ab6"></span>7AB6</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,$F0</td>
-<td class="comment-11" rowspan="3">Insert the random identifier into the teacher's question</td>
+<td class="comment-1" rowspan="3">Insert the random identifier into the teacher's question</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ab8"></span>7AB8</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ab9"></span>7AB9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aba"></span>7ABA</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="4">Insert the corresponding random identifier into EINSTEIN's answer</td>
+<td class="comment-1" rowspan="4">Insert the corresponding random identifier into EINSTEIN's answer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7abb"></span>7ABB</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7abc"></span>7ABC</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR $01</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7abe"></span>7ABE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7abf"></span>7ABF</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7ac0"></span>7AC0</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-11" rowspan="3">Store the address of the answer message in bytes 0x6B and 0x6C of EINSTEIN's buffer</td>
+<td class="comment-1" rowspan="3">Store the address of the answer message in bytes 0x6B and 0x6C of EINSTEIN's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ac1"></span>7AC1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,$F0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ac3"></span>7AC3</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($A96B),DE</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ac7"></span>7AC7</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ac8"></span>7AC8</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">DE</span>=address of the question message</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=address of the question message</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -727,87 +495,65 @@ This entry point is used by the routine at <a href="F923.html">F923</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7ac9"></span>7AC9</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore the teacher's character number to <span class="register">H</span></td>
+<td class="comment-1" rowspan="1">Restore the teacher's character number to <span class="register">H</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aca"></span>7ACA</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6B</td>
-<td class="comment-11" rowspan="4">Store the address of the question message in bytes 0x6B and 0x6C of the teacher's buffer</td>
+<td class="comment-1" rowspan="4">Store the address of the question message in bytes 0x6B and 0x6C of the teacher's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7acc"></span>7ACC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7acd"></span>7ACD</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ace"></span>7ACE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7acf"></span>7ACF</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$6A</td>
-<td class="comment-11" rowspan="4">Place the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 0x69 and 0x6A of the teacher's buffer</td>
+<td class="comment-1" rowspan="4">Place the address of the interruptible subcommand routine at <a href="7986.html">7986</a> (make character speak) into bytes 0x69 and 0x6A of the teacher's buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ad1"></span>7AD1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$79</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ad3"></span>7AD3</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ad4"></span>7AD4</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$86</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ad6"></span>7AD6</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7A2A.html">7A2A</a></span></td>
+<td class="prev">
+Prev: <a href="7A2A.html">7A2A</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7a32">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7AD7.html">7AD7</a></span></td>
+<td class="next">
+Next: <a href="7AD7.html">7AD7</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/31282.html">Switch to decimal</a>.</div>
 </footer>
 </body>

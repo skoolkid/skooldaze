@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at F9DC</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F9BB.html">F9BB</a></span></td>
+<td class="prev">
+Prev: <a href="F9BB.html">F9BB</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f9dc">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F9E4.html">F9E4</a></span></td>
+<td class="next">
+Next: <a href="F9E4.html">F9E4</a>
+</td>
 </tr>
 </table>
 <div class="description">F9DC: Make a teacher tell ERIC to go home, and end the game (1)</div>
@@ -29,7 +32,7 @@
 Used by command list <a href="FADB.html">0xDE</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,47 +41,39 @@ Used by command list <a href="FADB.html">0xDE</a>.
 <td class="register-desc">0xA3 (MR WACKER) or 0xA4 (MR ROCKITT)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f9dc"></span>F9DC</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="F6FF.html">$F6FF</a></td>
-<td class="comment-11" rowspan="1">Get the address of the appropriate 'Go home' message in <span class="register">BC</span> (depending on who the teacher is)</td>
+<td class="comment-1" rowspan="1">Get the address of the appropriate 'Go home' message in <span class="register">BC</span> (depending on who the teacher is)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f9df"></span>F9DF</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$C9</td>
-<td class="comment-11" rowspan="1">0xC9=RET</td>
+<td class="comment-1" rowspan="1">0xC9=RET</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f9e1"></span>F9E1</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="F9F6.html">$F9F6</a></td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F9BB.html">F9BB</a></span></td>
+<td class="prev">
+Prev: <a href="F9BB.html">F9BB</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f9dc">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F9E4.html">F9E4</a></span></td>
+<td class="next">
+Next: <a href="F9E4.html">F9E4</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/63964.html">Switch to decimal</a>.</div>
 </footer>
 </body>

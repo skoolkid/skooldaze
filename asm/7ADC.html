@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 7ADC</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7AD7.html">7AD7</a></span></td>
+<td class="prev">
+Prev: <a href="7AD7.html">7AD7</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7adc">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7B95.html">7B95</a></span></td>
+<td class="next">
+Next: <a href="7B95.html">7B95</a>
+</td>
 </tr>
 </table>
 <div class="description">7ADC: Determine the next move of a character following another character</div>
@@ -57,7 +60,7 @@ Used by the routines at <a href="7BA0.html">7BA0</a>, <a href="F5DA.html">F5DA</
 </table>
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -70,69 +73,47 @@ Used by the routines at <a href="7BA0.html">7BA0</a>, <a href="F5DA.html">F5DA</
 <td class="register-desc">Follower's character number (0x98-0xAC)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7adc"></span>7ADC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$61</td>
-<td class="comment-11" rowspan="1">Byte 0x61 of the follower's buffer holds his y-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 0x61 of the follower's buffer holds his y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ade"></span>7ADE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7adf"></span>7ADF</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $9B</td>
-<td class="comment-11" rowspan="1">Is the follower on the top floor?</td>
+<td class="comment-1" rowspan="1">Is the follower on the top floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ae1"></span>7AE1</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7AF8</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ae3"></span>7AE3</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">Is the follower on the middle floor?</td>
+<td class="comment-1" rowspan="1">Is the follower on the middle floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ae5"></span>7AE5</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7AF8</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ae7"></span>7AE7</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
-<td class="comment-11" rowspan="1">Is the follower on the bottom floor?</td>
+<td class="comment-1" rowspan="1">Is the follower on the bottom floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7ae9"></span>7AE9</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7AF8</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -145,67 +126,46 @@ The follower is on a staircase. Find out whether he's going up or down and set <
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aeb"></span>7AEB</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$62</td>
-<td class="comment-11" rowspan="1">Byte 0x62 of the follower's buffer holds his x-coordinate</td>
+<td class="comment-1" rowspan="1">Byte 0x62 of the follower's buffer holds his x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aed"></span>7AED</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Pick this up in <span class="register">A</span></td>
+<td class="comment-1" rowspan="1">Pick this up in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aee"></span>7AEE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 0x60 holds the follower's animatory state</td>
+<td class="comment-1" rowspan="1">Byte 0x60 holds the follower's animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7af0"></span>7AF0</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,$50</td>
-<td class="comment-11" rowspan="1">Set bit 7 of <span class="register">A</span> if the follower is on a staircase at the right of the skool</td>
+<td class="comment-1" rowspan="1">Set bit 7 of <span class="register">A</span> if the follower is on a staircase at the right of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7af2"></span>7AF2</td>
-<td class="bytes-0"></td>
 <td class="instruction">XOR (HL)</td>
-<td class="comment-11" rowspan="4"><span class="register">A</span>=1 if the follower is going upstairs, 2 if he's going downstairs</td>
+<td class="comment-1" rowspan="4"><span class="register">A</span>=1 if the follower is going upstairs, 2 if he's going downstairs</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7af3"></span>7AF3</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND $80</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7af5"></span>7AF5</td>
-<td class="bytes-0"></td>
 <td class="instruction">RLCA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7af6"></span>7AF6</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7af7"></span>7AF7</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -218,18 +178,14 @@ The follower is not on a staircase. Which way should he go?
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7af8"></span>7AF8</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP D</td>
-<td class="comment-11" rowspan="1">Is the follower on the same floor as the target?</td>
+<td class="comment-1" rowspan="1">Is the follower on the same floor as the target?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7af9"></span>7AF9</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B3D</td>
-<td class="comment-11" rowspan="1">Jump if not</td>
+<td class="comment-1" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -242,60 +198,42 @@ The follower is on the same floor as the target. However, there may be a wall be
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7afb"></span>7AFB</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="2">Pick up the follower's x-coordinate in <span class="register">A</span></td>
+<td class="comment-1" rowspan="2">Pick up the follower's x-coordinate in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7afc"></span>7AFC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7afd"></span>7AFD</td>
-<td class="bytes-0"></td>
 <td class="instruction">SUB E</td>
-<td class="comment-11" rowspan="1">Is the follower in the same spot as his target?</td>
+<td class="comment-1" rowspan="1">Is the follower in the same spot as his target?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7afe"></span>7AFE</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7aff"></span>7AFF</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC L</td>
-<td class="comment-11" rowspan="2">Pick up the follower's y-coordinate in <span class="register">A</span></td>
+<td class="comment-1" rowspan="2">Pick up the follower's y-coordinate in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b00"></span>7B00</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b01"></span>7B01</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
-<td class="comment-11" rowspan="1">Is the follower on the bottom floor?</td>
+<td class="comment-1" rowspan="1">Is the follower on the bottom floor?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b03"></span>7B03</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B0D</td>
-<td class="comment-11" rowspan="1">Jump if not</td>
+<td class="comment-1" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -308,46 +246,33 @@ The follower and target are both on the bottom floor, so the follower should sim
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b05"></span>7B05</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b06"></span>7B06</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b07"></span>7B07</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1">Set the carry flag if the follower should go right</td>
+<td class="comment-1" rowspan="1">Set the carry flag if the follower should go right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b08"></span>7B08</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$03</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=3 if the follower should go left, 4 if he should go right</td>
+<td class="comment-1" rowspan="2"><span class="register">A</span>=3 if the follower should go left, 4 if he should go right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b0a"></span>7B0A</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADC A,$00</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b0c"></span>7B0C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -360,67 +285,49 @@ The follower and target are both on the middle floor or both on the top floor.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b0d"></span>7B0D</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">Set the zero flag if the follower and target are on the middle floor</td>
+<td class="comment-1" rowspan="1">Set the zero flag if the follower and target are on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b0f"></span>7B0F</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b10"></span>7B10</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b12"></span>7B12</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B16</td>
-<td class="comment-11" rowspan="1">Jump if the follower and target are on the top floor</td>
+<td class="comment-1" rowspan="1">Jump if the follower and target are on the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b14"></span>7B14</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b16"></span>7B16</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Compare the follower's x-coordinate with that of the wall</td>
+<td class="comment-1" rowspan="1">Compare the follower's x-coordinate with that of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b17"></span>7B17</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7B2B</td>
-<td class="comment-11" rowspan="1">Jump if the follower is to the right of the wall</td>
+<td class="comment-1" rowspan="1">Jump if the follower is to the right of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b19"></span>7B19</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1">Is the target character to the left of the wall?</td>
+<td class="comment-1" rowspan="1">Is the target character to the left of the wall?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b1a"></span>7B1A</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7B06</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -433,67 +340,49 @@ The follower is on the left side of the skool and must go downstairs to get to t
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b1c"></span>7B1C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b1d"></span>7B1D</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $0C</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the tops of the staircases at the left of the skool</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the tops of the staircases at the left of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b1f"></span>7B1F</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B08</td>
-<td class="comment-11" rowspan="1">Jump unless the follower is at the top of a staircase</td>
+<td class="comment-1" rowspan="1">Jump unless the follower is at the top of a staircase</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b21"></span>7B21</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
+<td class="comment-1" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b23"></span>7B23</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$04</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=4 will make the follower turn round if facing left</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=4 will make the follower turn round if facing left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b25"></span>7B25</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
-<td class="comment-11" rowspan="1">Is the follower facing left?</td>
+<td class="comment-1" rowspan="1">Is the follower facing left?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b27"></span>7B27</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b28"></span>7B28</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$02</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=2 will make the follower go down the stairs</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=2 will make the follower go down the stairs</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b2a"></span>7B2A</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -506,81 +395,59 @@ The follower is on the right side of the skool. Is the target there too?
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b2b"></span>7B2B</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1">Is the target character to the right of the wall?</td>
+<td class="comment-1" rowspan="1">Is the target character to the right of the wall?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b2c"></span>7B2C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7B06</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b2e"></span>7B2E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=follower's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b2f"></span>7B2F</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $4D</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the tops of the staircases at the right of the skool</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the tops of the staircases at the right of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b31"></span>7B31</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B08</td>
-<td class="comment-11" rowspan="1">Jump unless the follower is at the top of a staircase</td>
+<td class="comment-1" rowspan="1">Jump unless the follower is at the top of a staircase</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b33"></span>7B33</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
+<td class="comment-1" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b35"></span>7B35</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$03</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=3 will make the follower turn round if facing right</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=3 will make the follower turn round if facing right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b37"></span>7B37</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
-<td class="comment-11" rowspan="1">Is the follower facing right?</td>
+<td class="comment-1" rowspan="1">Is the follower facing right?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b39"></span>7B39</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Return if so</td>
+<td class="comment-1" rowspan="1">Return if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b3a"></span>7B3A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$02</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=2 will make the follower go down the stairs</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=2 will make the follower go down the stairs</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b3c"></span>7B3C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -593,67 +460,49 @@ The follower and target are on different floors.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b3d"></span>7B3D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7B4D</td>
-<td class="comment-11" rowspan="1">Jump if the target is on a floor above the follower</td>
+<td class="comment-1" rowspan="1">Jump if the target is on a floor above the follower</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b3f"></span>7B3F</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">Set the zero flag if the follower is on the middle floor</td>
+<td class="comment-1" rowspan="1">Set the zero flag if the follower is on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b41"></span>7B41</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b42"></span>7B42</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b44"></span>7B44</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B48</td>
-<td class="comment-11" rowspan="1">Jump if the follower is on the top floor</td>
+<td class="comment-1" rowspan="1">Jump if the follower is on the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b46"></span>7B46</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b48"></span>7B48</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Compare the follower's x-coordinate with that of the wall</td>
+<td class="comment-1" rowspan="1">Compare the follower's x-coordinate with that of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b49"></span>7B49</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NC,$7B1C</td>
-<td class="comment-11" rowspan="1">Jump if the follower is to the left of the wall (and so needs to go to the top of a staircase on the left)</td>
+<td class="comment-1" rowspan="1">Jump if the follower is to the left of the wall (and so needs to go to the top of a staircase on the left)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b4b"></span>7B4B</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7B2E</td>
-<td class="comment-11" rowspan="1">Jump if the follower is to the right of the wall (and so needs to go to the top of a staircase on the right)</td>
+<td class="comment-1" rowspan="1">Jump if the follower is to the right of the wall (and so needs to go to the top of a staircase on the right)</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -666,242 +515,174 @@ The target is on a floor above the follower. Which staircase should the follower
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b4d"></span>7B4D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=target's y-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=target's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b4e"></span>7B4E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,$9B</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the top floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the top floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b50"></span>7B50</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A2</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b52"></span>7B52</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$39</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the Reading and Map Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b54"></span>7B54</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7B5A</td>
-<td class="comment-11" rowspan="1">Jump if the target is above the middle floor</td>
+<td class="comment-1" rowspan="1">Jump if the target is above the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b56"></span>7B56</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,$A2</td>
-<td class="comment-11" rowspan="1">This is the y-coordinate of the middle floor</td>
+<td class="comment-1" rowspan="1">This is the y-coordinate of the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b58"></span>7B58</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b5a"></span>7B5A</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1">Compare the target's x-coordinate with that of the wall</td>
+<td class="comment-1" rowspan="1">Compare the target's x-coordinate with that of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b5b"></span>7B5B</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,$61</td>
-<td class="comment-11" rowspan="1">Signal: target is to the right of the wall</td>
+<td class="comment-1" rowspan="1">Signal: target is to the right of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b5d"></span>7B5D</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7B61</td>
-<td class="comment-11" rowspan="1">Jump if the target is to the right of the wall</td>
+<td class="comment-1" rowspan="1">Jump if the target is to the right of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b5f"></span>7B5F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,$01</td>
-<td class="comment-11" rowspan="1">Signal: target is to the left of the wall</td>
+<td class="comment-1" rowspan="1">Signal: target is to the left of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b61"></span>7B61</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=follower's y-coordinate</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=follower's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b62"></span>7B62</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $A9</td>
-<td class="comment-11" rowspan="1">Set the zero flag if the follower is on the bottom floor</td>
+<td class="comment-1" rowspan="1">Set the zero flag if the follower is on the bottom floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b64"></span>7B64</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"><span class="register">L</span>=0x62</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=0x62</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b65"></span>7B65</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B86</td>
-<td class="comment-11" rowspan="1">Jump if the follower is on the middle floor</td>
+<td class="comment-1" rowspan="1">Jump if the follower is on the middle floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b67"></span>7B67</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$13</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b69"></span>7B69</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC E</td>
-<td class="comment-11" rowspan="1">Is the target to the left of the wall?</td>
+<td class="comment-1" rowspan="1">Is the target to the left of the wall?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b6a"></span>7B6A</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7B6E</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b6c"></span>7B6C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$46</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the right of the skool</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the right of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b6e"></span>7B6E</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Compare this with the follower's x-coordinate</td>
+<td class="comment-1" rowspan="1">Compare this with the follower's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b6f"></span>7B6F</td>
-<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
-<td class="comment-11" rowspan="1">Set the carry flag if the follower should go right</td>
+<td class="comment-1" rowspan="1">Set the carry flag if the follower should go right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b70"></span>7B70</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$7B08</td>
-<td class="comment-11" rowspan="1">Jump if the follower is not at the bottom of a staircase</td>
+<td class="comment-1" rowspan="1">Jump if the follower is not at the bottom of a staircase</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b72"></span>7B72</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$60</td>
-<td class="comment-11" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
+<td class="comment-1" rowspan="1">Byte 0x60 of the follower's buffer holds his animatory state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b74"></span>7B74</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $13</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the bottoms of the staircases at the left of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b76"></span>7B76</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$01</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=1 will make the follower go upstairs</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=1 will make the follower go upstairs</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b78"></span>7B78</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7B80</td>
-<td class="comment-11" rowspan="1">Jump if the follower should go up a staircase at the left of the skool</td>
+<td class="comment-1" rowspan="1">Jump if the follower should go up a staircase at the left of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b7a"></span>7B7A</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
-<td class="comment-11" rowspan="1">Is the follower facing right?</td>
+<td class="comment-1" rowspan="1">Is the follower facing right?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b7c"></span>7B7C</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">Jump if so</td>
+<td class="comment-1" rowspan="1">Jump if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b7d"></span>7B7D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$04</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=3 will make the follower turn round and face right</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=3 will make the follower turn round and face right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b7f"></span>7B7F</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b80"></span>7B80</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 7,(HL)</td>
-<td class="comment-11" rowspan="1">Is the follower facing left?</td>
+<td class="comment-1" rowspan="1">Is the follower facing left?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b82"></span>7B82</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">Return (with <span class="register">A</span>=1) if so</td>
+<td class="comment-1" rowspan="1">Return (with <span class="register">A</span>=1) if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b83"></span>7B83</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$03</td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=3 will make the follower turn round and face left</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=3 will make the follower turn round and face left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b85"></span>7B85</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -914,80 +695,66 @@ The follower is on the middle floor, and the target is on the top floor.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b86"></span>7B86</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$26</td>
-<td class="comment-11" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
+<td class="comment-1" rowspan="1">This is the x-coordinate of the wall between the White and Exam Rooms</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b88"></span>7B88</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">Compare this with the follower's x-coordinate</td>
+<td class="comment-1" rowspan="1">Compare this with the follower's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b89"></span>7B89</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$61</td>
-<td class="comment-11" rowspan="1">Signal: follower is to the right of the wall</td>
+<td class="comment-1" rowspan="1">Signal: follower is to the right of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b8b"></span>7B8B</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$7B8F</td>
-<td class="comment-11" rowspan="1">Jump if the follower is to the right of the wall</td>
+<td class="comment-1" rowspan="1">Jump if the follower is to the right of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b8d"></span>7B8D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$01</td>
-<td class="comment-11" rowspan="1">Signal: follower is to the left of the wall</td>
+<td class="comment-1" rowspan="1">Signal: follower is to the left of the wall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="7b8f"></span>7B8F</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1">Is the target on the same side of the skool?</td>
+<td class="comment-1" rowspan="1">Is the target on the same side of the skool?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b90"></span>7B90</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$7B67</td>
-<td class="comment-11" rowspan="1">Jump if so (follower must go up the nearest staircase)</td>
+<td class="comment-1" rowspan="1">Jump if so (follower must go up the nearest staircase)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b92"></span>7B92</td>
-<td class="bytes-0"></td>
 <td class="instruction">CCF</td>
-<td class="comment-11" rowspan="1">Set the carry flag if the follower must go down a staircase at the right of the skool, and reset it if he must go down a staircase at the left of the skool</td>
+<td class="comment-1" rowspan="1">Set the carry flag if the follower must go down a staircase at the right of the skool, and reset it if he must go down a staircase at the left of the skool</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="7b93"></span>7B93</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR $7B49</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="7AD7.html">7AD7</a></span></td>
+<td class="prev">
+Prev: <a href="7AD7.html">7AD7</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#7adc">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="7B95.html">7B95</a></span></td>
+<td class="next">
+Next: <a href="7B95.html">7B95</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/31452.html">Switch to decimal</a>.</div>
 </footer>
 </body>

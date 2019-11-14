@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 79CA</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="79BA.html">79BA</a></span></td>
+<td class="prev">
+Prev: <a href="79BA.html">79BA</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#79ca">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="79D4.html">79D4</a></span></td>
+<td class="next">
+Next: <a href="79D4.html">79D4</a>
+</td>
 </tr>
 </table>
 <div class="description">79CA: Control EINSTEIN during class (2)</div>
@@ -29,7 +32,7 @@
 The address of this primary command routine is placed into bytes 0x63 and 0x64 of EINSTEIN's buffer by the routine at <a href="79BA.html">79BA</a>. After EINSTEIN has finished speaking, control resumes here.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,61 +41,48 @@ The address of this primary command routine is placed into bytes 0x63 and 0x64 o
 <td class="register-desc">0xA9 (EINSTEIN)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="79ca"></span>79CA</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$63</td>
-<td class="comment-11" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of EINSTEIN's buffer with that of <a href="79BA.html">79BA</a></td>
+<td class="comment-1" rowspan="2">Replace the address of this primary command routine in bytes 0x63 and 0x64 of EINSTEIN's buffer with that of <a href="79BA.html">79BA</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="79cc"></span>79CC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$BA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="79ce"></span>79CE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$7FC9</td>
-<td class="comment-11" rowspan="1"><a href="7FC9.html">7FC9</a> holds the lesson signal flags</td>
+<td class="comment-1" rowspan="1"><a href="7FC9.html">7FC9</a> holds the lesson signal flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="79d1"></span>79D1</td>
-<td class="bytes-0"></td>
 <td class="instruction">RES 7,(HL)</td>
-<td class="comment-11" rowspan="1">Signal: EINSTEIN has just spoken (so it's now the teacher's turn to speak)</td>
+<td class="comment-1" rowspan="1">Signal: EINSTEIN has just spoken (so it's now the teacher's turn to speak)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="79d3"></span>79D3</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="79BA.html">79BA</a></span></td>
+<td class="prev">
+Prev: <a href="79BA.html">79BA</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#79ca">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="79D4.html">79D4</a></span></td>
+<td class="next">
+Next: <a href="79D4.html">79D4</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/31178.html">Switch to decimal</a>.</div>
 </footer>
 </body>

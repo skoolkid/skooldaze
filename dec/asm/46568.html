@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 46568</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46463.html">46463</a></span></td>
+<td class="prev">
+Prev: <a href="46463.html">46463</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46568">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46590.html">46590</a></span></td>
+<td class="next">
+Next: <a href="46590.html">46590</a>
+</td>
 </tr>
 </table>
 <div class="description">46568: Guide a character onto the catwalk or off it</div>
@@ -29,116 +32,81 @@
 Used by the routines at <a href="46056.html">46056</a> and <a href="61408.html">61408</a>. Makes a character walk in from the left to the middle of the screen (at which point his name may be changed), or from the middle of the screen and off to the right.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46568"></span>46568</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,38</td>
-<td class="comment-11" rowspan="1">The character will take 38 steps along the catwalk</td>
+<td class="comment-1" rowspan="1">The character will take 38 steps along the catwalk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46570"></span>46570</td>
-<td class="bytes-0"></td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46571"></span>46571</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,152</td>
-<td class="comment-11" rowspan="1">This instruction is set by the routine at <a href="45429.html">45429</a> to either 'LD H,152' (boy) or 'LD H,164' (teacher) as appropriate</td>
+<td class="comment-1" rowspan="1">This instruction is set by the routine at <a href="45429.html">45429</a> to either 'LD H,152' (boy) or 'LD H,164' (teacher) as appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46573"></span>46573</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="46312.html">46312</a></td>
-<td class="comment-11" rowspan="1">Move the character one step along the catwalk</td>
+<td class="comment-1" rowspan="1">Move the character one step along the catwalk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46576"></span>46576</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="65088.html">65088</a></td>
-<td class="comment-11" rowspan="1">Make a walking sound effect</td>
+<td class="comment-1" rowspan="1">Make a walking sound effect</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46579"></span>46579</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,100</td>
-<td class="comment-11" rowspan="4">Pause briefly between steps</td>
+<td class="comment-1" rowspan="4">Pause briefly between steps</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46581"></span>46581</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 46581</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46583"></span>46583</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46584"></span>46584</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,46581</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46586"></span>46586</td>
-<td class="bytes-0"></td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46587"></span>46587</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ 46570</td>
-<td class="comment-11" rowspan="1">Jump back until 38 steps have been taken</td>
+<td class="comment-1" rowspan="1">Jump back until 38 steps have been taken</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46589"></span>46589</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46463.html">46463</a></span></td>
+<td class="prev">
+Prev: <a href="46463.html">46463</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46568">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46590.html">46590</a></span></td>
+<td class="next">
+Next: <a href="46590.html">46590</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../../asm/B5E8.html">Switch to hexadecimal</a>.</div>
 </footer>
 </body>

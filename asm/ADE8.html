@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at ADE8</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="AD7F.html">AD7F</a></span></td>
+<td class="prev">
+Prev: <a href="AD7F.html">AD7F</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#ade8">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="ADFB.html">ADFB</a></span></td>
+<td class="next">
+Next: <a href="ADFB.html">ADFB</a>
+</td>
 </tr>
 </table>
 <div class="description">ADE8: Insert a pixel column into the message graphic buffer</div>
@@ -29,7 +32,7 @@
 Used by the routines at <a href="AEE8.html">AEE8</a> and <a href="B371.html">B371</a>. Slides the current contents of the message graphic buffer (at <a href="5B00.html">5B00</a>) one pixel to the left, and places the new pixel column into the slot freed up on the right.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,110 +41,80 @@ Used by the routines at <a href="AEE8.html">AEE8</a> and <a href="B371.html">B37
 <td class="register-desc">Pixel column byte</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="ade8"></span>ADE8</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="ade9"></span>ADE9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD HL,$5BFF</td>
-<td class="comment-11" rowspan="1">Point <span class="register">HL'</span> at the end of the graphic buffer at <a href="5B00.html">5B00</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL'</span> at the end of the graphic buffer at <a href="5B00.html">5B00</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adec"></span>ADEC</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$08</td>
-<td class="comment-11" rowspan="1">There are 8 pixel rows in the graphic buffer</td>
+<td class="comment-1" rowspan="1">There are 8 pixel rows in the graphic buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="adee"></span>ADEE</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD B,$20</td>
-<td class="comment-11" rowspan="5">Append a pixel to the row and slide all the other pixels one space to the left</td>
+<td class="comment-1" rowspan="5">Append a pixel to the row and slide all the other pixels one space to the left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adf0"></span>ADF0</td>
-<td class="bytes-0"></td>
 <td class="instruction">RRCA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="adf1"></span>ADF1</td>
-<td class="bytes-0"></td>
 <td class="instruction">RL (HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adf3"></span>ADF3</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adf4"></span>ADF4</td>
-<td class="bytes-0"></td>
 <td class="instruction">DJNZ $ADF1</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adf6"></span>ADF6</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Next pixel row</td>
+<td class="comment-1" rowspan="1">Next pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adf7"></span>ADF7</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$ADEE</td>
-<td class="comment-11" rowspan="1">Jump back until all 8 pixels rows are done</td>
+<td class="comment-1" rowspan="1">Jump back until all 8 pixels rows are done</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adf9"></span>ADF9</td>
-<td class="bytes-0"></td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="adfa"></span>ADFA</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="AD7F.html">AD7F</a></span></td>
+<td class="prev">
+Prev: <a href="AD7F.html">AD7F</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#ade8">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="ADFB.html">ADFB</a></span></td>
+<td class="next">
+Next: <a href="ADFB.html">ADFB</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/44520.html">Switch to decimal</a>.</div>
 </footer>
 </body>

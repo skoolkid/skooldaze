@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at 69D2</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="69CA.html">69CA</a></span></td>
+<td class="prev">
+Prev: <a href="69CA.html">69CA</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#69d2">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="69E7.html">69E7</a></span></td>
+<td class="next">
+Next: <a href="69E7.html">69E7</a>
+</td>
 </tr>
 </table>
 <div class="description">69D2: Set a random destination for a character</div>
@@ -29,7 +32,7 @@
 Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at random from the table of locations at <a href="69CA.html">69CA</a> and places its coordinates into bytes 0x65 and 0x66 of the character's buffer.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,131 +41,90 @@ Used by the routine at <a href="69E7.html">69E7</a>. Selects a destination at ra
 <td class="register-desc">Character number (0x98-0xA9)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="69d2"></span>69D2</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="61A1.html">$61A1</a></td>
-<td class="comment-11" rowspan="1"><span class="register">A</span>=random number</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=random number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69d5"></span>69D5</td>
-<td class="bytes-0"></td>
 <td class="instruction">AND $06</td>
-<td class="comment-11" rowspan="2"><span class="register">A</span>=0xCA, 0xCC, 0xCE or 0xD0</td>
+<td class="comment-1" rowspan="2"><span class="register">A</span>=0xCA, 0xCC, 0xCE or 0xD0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69d7"></span>69D7</td>
-<td class="bytes-0"></td>
 <td class="instruction">ADD A,$CA</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69d9"></span>69D9</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="2">Point <span class="register">DE</span> at one of the four skool locations in the table at <a href="69CA.html">69CA</a></td>
+<td class="comment-1" rowspan="2">Point <span class="register">DE</span> at one of the four skool locations in the table at <a href="69CA.html">69CA</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69da"></span>69DA</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD D,$69</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69dc"></span>69DC</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="5">Pick up the coordinates of the skool location in <span class="register">A</span> and <span class="register">D</span></td>
+<td class="comment-1" rowspan="5">Pick up the coordinates of the skool location in <span class="register">A</span> and <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69dd"></span>69DD</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69de"></span>69DE</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69df"></span>69DF</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD H,(HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69e0"></span>69E0</td>
-<td class="bytes-0"></td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69e1"></span>69E1</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$65</td>
-<td class="comment-11" rowspan="4">Place the coordinates of the skool location into bytes 0x65 and 0x66 of the character's buffer to make it his next destination</td>
+<td class="comment-1" rowspan="4">Place the coordinates of the skool location into bytes 0x65 and 0x66 of the character's buffer to make it his next destination</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69e3"></span>69E3</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69e4"></span>69E4</td>
-<td class="bytes-0"></td>
 <td class="instruction">INC L</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69e5"></span>69E5</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="69e6"></span>69E6</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="69CA.html">69CA</a></span></td>
+<td class="prev">
+Prev: <a href="69CA.html">69CA</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#69d2">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="69E7.html">69E7</a></span></td>
+<td class="next">
+Next: <a href="69E7.html">69E7</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/27090.html">Switch to decimal</a>.</div>
 </footer>
 </body>

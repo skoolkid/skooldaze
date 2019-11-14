@@ -4,7 +4,6 @@
 <title>Skool Daze: Routine at F800</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -15,9 +14,13 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F7FE.html">F7FE</a></span></td>
+<td class="prev">
+Prev: <a href="F7FE.html">F7FE</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f800">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F855.html">F855</a></span></td>
+<td class="next">
+Next: <a href="F855.html">F855</a>
+</td>
 </tr>
 </table>
 <div class="description">F800: Make little boy no. 10 give ERIC a message</div>
@@ -29,7 +32,7 @@
 Used by command lists <a href="FAE6.html">0xD0</a> and <a href="FAF0.html">0xD2</a>. Makes little boy no. 10 tell ERIC about BOY WANDER having hidden a pea-shooter on the fire escape, EINSTEIN's intent to grass him up to MR WACKER, or ANGELFACE's medical condition.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -38,48 +41,29 @@ Used by command lists <a href="FAE6.html">0xD0</a> and <a href="FAF0.html">0xD2<
 <td class="register-desc">0xA1 (little boy no. 10)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f800"></span>F800</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FFB)</td>
-<td class="comment-11" rowspan="3">Set bit 3 of ERIC's status flags at <a href="7FFB.html">7FFB</a>, indicating that ERIC is being spoken to</td>
+<td class="comment-1" rowspan="3">Set bit 3 of ERIC's status flags at <a href="7FFB.html">7FFB</a>, indicating that ERIC is being spoken to</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f803"></span>F803</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 3,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f805"></span>F805</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FFB),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f808"></span>F808</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$FF</td>
-<td class="comment-11" rowspan="2">Adjust the MSB of the lesson clock so that the lesson will not end until the drama has played out</td>
+<td class="comment-1" rowspan="2">Adjust the MSB of the lesson clock so that the lesson will not end until the drama has played out</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f80a"></span>F80A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FF8),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -92,67 +76,49 @@ Figure out which message the boy should deliver, depending on what MR ROCKITT an
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f80d"></span>F80D</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($A478)</td>
-<td class="comment-11" rowspan="1">Collect byte 0x78 of MR ROCKITT's buffer, which holds the MSB of the command list start address</td>
+<td class="comment-1" rowspan="1">Collect byte 0x78 of MR ROCKITT's buffer, which holds the MSB of the command list start address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f810"></span>F810</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $FA</td>
-<td class="comment-11" rowspan="1">This is the MSB of <a href="FADB.html">FADB</a> (command list <a href="FADB.html">0xDE</a>)</td>
+<td class="comment-1" rowspan="1">This is the MSB of <a href="FADB.html">FADB</a> (command list <a href="FADB.html">0xDE</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f812"></span>F812</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$FF00</td>
-<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a href="FF00.html">FF00</a>: 'Don't let ANGELFACE touch you...'</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=<a href="FF00.html">FF00</a>: 'Don't let ANGELFACE touch you...'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f815"></span>F815</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR Z,$F822</td>
-<td class="comment-11" rowspan="1">Jump if MR ROCKITT is using command list <a href="FADB.html">0xDE</a></td>
+<td class="comment-1" rowspan="1">Jump if MR ROCKITT is using command list <a href="FADB.html">0xDE</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f817"></span>F817</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$35</td>
-<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a href="FF35.html">FF35</a>: 'EINSTEIN is going to tell MR WACKER...'</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=<a href="FF35.html">FF35</a>: 'EINSTEIN is going to tell MR WACKER...'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f819"></span>F819</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($A375)</td>
-<td class="comment-11" rowspan="1">Collect byte 0x75 of MR WACKER's buffer, which holds the LSB of the address reached in the command list</td>
+<td class="comment-1" rowspan="1">Collect byte 0x75 of MR WACKER's buffer, which holds the LSB of the address reached in the command list</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f81c"></span>F81C</td>
-<td class="bytes-0"></td>
 <td class="instruction">CP $3C</td>
-<td class="comment-11" rowspan="1">Is MR WACKER using command list <a href="FB3A.html">0xD8</a>?</td>
+<td class="comment-1" rowspan="1">Is MR WACKER using command list <a href="FB3A.html">0xD8</a>?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f81e"></span>F81E</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR C,$F822</td>
-<td class="comment-11" rowspan="1">Jump if not (he must be using command list <a href="FB20.html">0xD6</a>)</td>
+<td class="comment-1" rowspan="1">Jump if not (he must be using command list <a href="FB20.html">0xD6</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f820"></span>F820</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD C,$8F</td>
-<td class="comment-11" rowspan="1"><span class="register">BC</span>=<a href="FF8F.html">FF8F</a>: 'BOY WANDER has hidden a pea-shooter...'</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=<a href="FF8F.html">FF8F</a>: 'BOY WANDER has hidden a pea-shooter...'</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -165,81 +131,56 @@ Now <span class="register">BC</span> holds the address of the message to be deli
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f822"></span>F822</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7CFC.html#7d26">$7D26</a></td>
-<td class="comment-11" rowspan="1">Make the little boy deliver his message</td>
+<td class="comment-1" rowspan="1">Make the little boy deliver his message</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f825"></span>F825</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$68</td>
-<td class="comment-11" rowspan="2">Initialise the message repetition delay counter in byte 0x68 of the little boy's buffer to 40</td>
+<td class="comment-1" rowspan="2">Initialise the message repetition delay counter in byte 0x68 of the little boy's buffer to 40</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f827"></span>F827</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD (HL),$28</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f829"></span>F829</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD BC,$ECE0</td>
-<td class="comment-11" rowspan="1"><a href="ECE0.html">ECE0</a>: 'Press 'U' if you understood'</td>
+<td class="comment-1" rowspan="1"><a href="ECE0.html">ECE0</a>: 'Press 'U' if you understood'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f82c"></span>F82C</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FCB)</td>
-<td class="comment-11" rowspan="3">Set bit 0 at <a href="7FCB.html">7FCB</a>, indicating that the little boy is now waiting for acknowledgment from ERIC</td>
+<td class="comment-1" rowspan="3">Set bit 0 at <a href="7FCB.html">7FCB</a>, indicating that the little boy is now waiting for acknowledgment from ERIC</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f82f"></span>F82F</td>
-<td class="bytes-0"></td>
 <td class="instruction">SET 0,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f831"></span>F831</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FCB),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f834"></span>F834</td>
-<td class="bytes-0"></td>
 <td class="instruction">CALL <a href="7CFC.html#7d26">$7D26</a></td>
-<td class="comment-11" rowspan="1">Make the little boy say 'Press 'U' if you understood'</td>
+<td class="comment-1" rowspan="1">Make the little boy say 'Press 'U' if you understood'</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f837"></span>F837</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FFB)</td>
-<td class="comment-11" rowspan="1">Collect ERIC's status flags from <a href="7FFB.html">7FFB</a></td>
+<td class="comment-1" rowspan="1">Collect ERIC's status flags from <a href="7FFB.html">7FFB</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f83a"></span>F83A</td>
-<td class="bytes-0"></td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">Has 'U' been pressed yet?</td>
+<td class="comment-1" rowspan="1">Has 'U' been pressed yet?</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f83c"></span>F83C</td>
-<td class="bytes-0"></td>
 <td class="instruction">JR NZ,$F846</td>
-<td class="comment-11" rowspan="1">Jump if not</td>
+<td class="comment-1" rowspan="1">Jump if not</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -252,25 +193,18 @@ ERIC has acknowledged delivery of the message ('U' was pressed).
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f83e"></span>F83E</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,$0C</td>
-<td class="comment-11" rowspan="2">Set the MSB of the lesson clock to 0x0C, giving enough time for the ensuing drama to play out</td>
+<td class="comment-1" rowspan="2">Set the MSB of the lesson clock to 0x0C, giving enough time for the ensuing drama to play out</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f840"></span>F840</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FF8),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f843"></span>F843</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP <a href="62A0.html#62a8">$62A8</a></td>
-<td class="comment-11" rowspan="1">Move to the next command in little boy no. 10's command list</td>
+<td class="comment-1" rowspan="1">Move to the next command in little boy no. 10's command list</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -283,66 +217,52 @@ ERIC has not yet acknowledged delivery of the message ('U' has not been pressed)
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="f846"></span>F846</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD L,$68</td>
-<td class="comment-11" rowspan="3">Decrement the message repetition delay counter in byte 0x68 of the little boy's buffer and return unless it has reached 0</td>
+<td class="comment-1" rowspan="3">Decrement the message repetition delay counter in byte 0x68 of the little boy's buffer and return unless it has reached 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f848"></span>F848</td>
-<td class="bytes-0"></td>
 <td class="instruction">DEC (HL)</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f849"></span>F849</td>
-<td class="bytes-0"></td>
 <td class="instruction">RET NZ</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f84a"></span>F84A</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD A,($7FCB)</td>
-<td class="comment-11" rowspan="3">Reset bit 0 at <a href="7FCB.html">7FCB</a>, indicating that the little boy is no longer waiting for acknowledgment from ERIC (because he's going to repeat the message first)</td>
+<td class="comment-1" rowspan="3">Reset bit 0 at <a href="7FCB.html">7FCB</a>, indicating that the little boy is no longer waiting for acknowledgment from ERIC (because he's going to repeat the message first)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f84d"></span>F84D</td>
-<td class="bytes-0"></td>
 <td class="instruction">RES 0,A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f84f"></span>F84F</td>
-<td class="bytes-0"></td>
 <td class="instruction">LD ($7FCB),A</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="f852"></span>F852</td>
-<td class="bytes-0"></td>
 <td class="instruction">JP $F808</td>
-<td class="comment-11" rowspan="1">Deliver the message to ERIC once again</td>
+<td class="comment-1" rowspan="1">Deliver the message to ERIC once again</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="F7FE.html">F7FE</a></span></td>
+<td class="prev">
+Prev: <a href="F7FE.html">F7FE</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#f800">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="F855.html">F855</a></span></td>
+<td class="next">
+Next: <a href="F855.html">F855</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20190614</div>
+<div class="release">The complete Skool Daze RAM disassembly 20191114</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 7.2.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.0.</div>
 <div><a href="../dec/asm/63488.html">Switch to decimal</a>.</div>
 </footer>
 </body>
