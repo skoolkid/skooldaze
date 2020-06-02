@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017-2019 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2020 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -22,7 +22,7 @@ i23552 DEFS 1024
 ; https://skoolkit.ca
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017-2019 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017-2020 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -964,6 +964,7 @@ s25402 DEFS 2
 ; negotiating any staircases.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=WALK
 c25404 LD L,108      ; {The counter at byte #b108 of the character's buffer is
  25406 DEC (HL)      ; initialised by the calling routine to limit the amount
@@ -1036,6 +1037,7 @@ s25480 DEFS 4
 ; #b105 and #b106 of a character's buffer by the routine at #R25534 when the
 ; character has reached the bottom of a staircase he needs to ascend to reach
 ; his destination.
+@refs=25126
 @label=ASCEND
 c25484 LD B,255      ; Signal that the character is going up a staircase
  25486 JR 25490      ;
@@ -1048,6 +1050,7 @@ c25484 LD B,255      ; Signal that the character is going up a staircase
 ; destination.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=DESCEND
 c25488 LD B,1        ; Signal that the character is going down a staircase
 ; This entry point is used by the routine at #R25484 with #REGb=#b255.
@@ -2832,6 +2835,7 @@ s27125 DEFB 0
 ; by the routine at #R27266.
 ;
 ; H Little boy's character number (#b152-#b162)
+@refs=25126
 @label=TRIP
 c27126 LD L,97       ; {Pick up the little boy's y-coordinate in #REGa
  27128 LD A,(HL)     ; }
@@ -2914,6 +2918,7 @@ c27196 LD A,H        ; {Return now unless we are dealing with a teacher
 ; then makes him get up.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=KNOCKED
 c27206 LD L,113      ; Byte #b113 of the character's buffer holds the knockout
                      ; delay counter
@@ -3446,6 +3451,7 @@ s27726 DEFS 7
 ; been knocked out of a chair.
 ;
 ; H Dethroned character's number (#b152-#b169)
+@refs=25126
 @label=UNSEAT1
 c27733 LD L,113      ; {Set the delay counter determining how long the
  27735 LD (HL),4     ; character will sit on the floor before rising}
@@ -3469,6 +3475,7 @@ c27733 LD L,113      ; {Set the delay counter determining how long the
 ; #b111 and #b112 of a character's buffer by the routine at #R27733.
 ;
 ; H Dethroned character's number (#b152-#b169)
+@refs=25126
 @label=UNSEAT2
 c27748 LD L,113      ; Byte #b113 holds the delay counter
  27750 DEC (HL)      ; Is it time to stand up yet?
@@ -3500,6 +3507,7 @@ c27748 LD L,113      ; Byte #b113 holds the delay counter
 ; the same one, in EINSTEIN's case), or by the routine at #R27808.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=FINDSEAT2
 c27772 CALL 25108    ; Update the SRB for the character's current location
  27775 LD C,A        ; Store the character's animatory state in #REGc
@@ -3663,6 +3671,7 @@ c27914 LD L,A        ; #REGl=sprite UDG reference
 ; obstacle.
 ;
 ; H #b170 (BOY WANDER's pellet) or #b171 (ERIC's pellet)
+@refs=25126
 @label=PELLETH
 c27932 CALL 25108    ; Update the SRB for the pellet's current location
  27935 LD L,113      ; Byte #b113 of the pellet's buffer holds the distance
@@ -3816,6 +3825,7 @@ s28101 DEFB 0
 ; including any collision with a shield.
 ;
 ; H #b170 (BOY WANDER's pellet) or #b171 (ERIC's pellet)
+@refs=25126
 @label=PELLETV
 c28102 CALL 25108    ; Update the SRB for the pellet's current location
  28105 LD B,A        ; #REGb=pellet's animatory state
@@ -4147,6 +4157,7 @@ s28442 DEFS 4
 ; a punch, and gets the punching action under way if so.
 ;
 ; H #b168 (ANGELFACE)
+@refs=25126
 @label=VIOLENT
 c28446 LD L,112      ; {Return now if there is an uninterruptible subcommand
  28448 LD A,(HL)     ; routine address in bytes #b111 and #b112 of ANGELFACE's
@@ -4229,6 +4240,7 @@ s28533 DEFS 11
 ; #b111 and #b112 of ANGELFACE's buffer by the routine at #R28446.
 ;
 ; H #b168 (ANGELFACE)
+@refs=25126
 @label=PUNCH1
 c28544 LD L,111      ; {Place the address of the uninterruptible subcommand
 @ssub=LD (HL),28558%256
@@ -4248,6 +4260,7 @@ c28544 LD L,111      ; {Place the address of the uninterruptible subcommand
 ; #b111 and #b112 of ANGELFACE's buffer by the routine at #R28544.
 ;
 ; H #b168 (ANGELFACE)
+@refs=25126
 @label=PUNCH2
 c28558 LD L,111      ; {Place the address of the uninterruptible subcommand
 @ssub=LD (HL),28642%256
@@ -4321,6 +4334,7 @@ c28569 LD L,98       ; Byte #b98 of the puncher's buffer holds his x-coordinate
 ; #b111 and #b112 of ANGELFACE's buffer by the routine at #R28558.
 ;
 ; H #b168 (ANGELFACE)
+@refs=25126
 @label=PUNCH3
 c28642 LD L,111      ; {Place the address of the uninterruptible subcommand
 @ssub=LD (HL),28655%256
@@ -4341,6 +4355,7 @@ c28642 LD L,111      ; {Place the address of the uninterruptible subcommand
 ; #b111 and #b112 of ANGELFACE's buffer by the routine at #R28642.
 ;
 ; H #b168 (ANGELFACE)
+@refs=25126
 @label=PUNCH4
 c28655 JP 25248      ; Terminate this uninterruptible subcommand (ANGELFACE has
                      ; finished the punch)
@@ -4374,6 +4389,7 @@ c28665 LD (HL),44    ; {Place the address of the uninterruptible subcommand
 ; action under way if so.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=CATTY
 c28672 LD L,98       ; Byte #b98 of BOY WANDER's buffer holds his x-coordinate
  28674 LD A,(HL)     ; Pick this up in #REGa
@@ -4412,6 +4428,7 @@ s28713 DEFS 3
 ; #b111 and #b112 of BOY WANDER's buffer by the routine at #R28665.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=FIRE2
 c28716 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28733%256
@@ -4433,6 +4450,7 @@ c28716 LD L,111      ; {Replace the address of this uninterruptible subcommand
 ; #b111 and #b112 of BOY WANDER's buffer by the routine at #R28716.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=FIRE3
 c28733 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28744%256
@@ -4456,6 +4474,7 @@ c28733 LD L,111      ; {Replace the address of this uninterruptible subcommand
 ; point BOY WANDER's catapult is fully raised, and so a pellet is launched.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=FIRE4
 c28744 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28775%256
@@ -4496,6 +4515,7 @@ c28744 LD L,111      ; {Replace the address of this uninterruptible subcommand
 ; #b111 and #b112 of BOY WANDER's buffer by the routine at #R28744.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=FIRE5
 c28775 LD L,111      ; {Replace the address of this uninterruptible subcommand
 @ssub=LD (HL),28786%256
@@ -4519,6 +4539,7 @@ c28775 LD L,111      ; {Replace the address of this uninterruptible subcommand
 ; #b111 and #b112 of BOY WANDER's buffer by the routine at #R28775.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=FIRE6
 c28786 CALL 25108    ; Update the SRB for BOY WANDER's current animatory state
  28789 LD L,113      ; {Byte #b113 of BOY WANDER's buffer holds his pre-fire
@@ -4539,6 +4560,7 @@ c28786 CALL 25108    ; Update the SRB for BOY WANDER's current animatory state
 ; #b111 and #b112 of BOY WANDER's buffer by the routine at #R28786.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=FIRE7
 c28799 JP 25248      ; Terminate this uninterruptible subcommand (BOY WANDER
                      ; has finished firing)
@@ -4883,6 +4905,7 @@ u29137 DEFB 120,120,120,120,120,120,120,120,120,120,120
 ; #b105 and #b106 of a teacher's buffer by the routine at #R32048.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=WIPE1
 c29148 CALL 28968    ; #REGa=identifier of the blackboard the teacher is next
                      ; to
@@ -4930,6 +4953,7 @@ c29160 LD L,105      ; {Replace the address of the interruptible subcommand
  29173 INC L         ; {Store the y-coordinate of the top row of the blackboard
  29174 LD (HL),D     ; in byte #b109 of the teacher's buffer}
 ; After the initial call to this routine, each subsequent call enters here.
+@refs=25126
 @label=WIPING
  29175 LD L,107      ; {Decrement the number of board-wiping actions remaining
  29177 DEC (HL)      ; }
@@ -5010,6 +5034,7 @@ s29278 DEFS 6
 ; and #R62208.
 ;
 ; H Character number (#b163-#b167)
+@refs=25126
 @label=WRITEBRD
 c29284 CALL 28968    ; Collect the identifier of the nearest blackboard in
                      ; #REGa
@@ -6644,6 +6669,7 @@ u31108 DEFB 120,120
 ; routine at #R31130.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=SPEAK
 c31110 LD L,110      ; {Zero out bytes #b109 and #b110 of the character's
  31112 XOR A         ; buffer, which normally hold the address of the next
@@ -6684,6 +6710,7 @@ c31110 LD L,110      ; {Zero out bytes #b109 and #b110 of the character's
 ; bubble.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=SPEAK2
 c31130 CALL 32242    ; Make sure the character speaks slowly
  31133 PUSH HL       ;
@@ -7259,6 +7286,7 @@ c31638 LD (HL),D     ; {Place the command list entry address into bytes #b117
 ; or the classroom).
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=SEEKERIC
 c31648 CALL 31229    ; Get ERIC's coordinates in #REGde
  31651 CALL 32234    ; Make this teacher walk fast
@@ -7333,6 +7361,7 @@ c31648 CALL 31229    ; Get ERIC's coordinates in #REGde
 ; the routine at #R31768. It moves ERIC's chaser from the midstride position.
 ;
 ; H Number of the character looking for ERIC (#b161, #b163-#b166)
+@refs=25126
 @label=TOERIC
 c31739 LD L,105      ; {Replace the address of this routine in bytes #b105 and
 @ssub=LD (HL),31648%256
@@ -7663,6 +7692,7 @@ c31919 LD DE,43371   ; {Point #REGhl at byte #b107 of EINSTEIN's buffer
 ; #b105 and #b106 of a teacher's buffer by the routine at #R31919.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=SWOTSPK2
 c31944 LD A,(32713)  ; #R32713 holds the lesson signal flags
  31947 RLCA          ; Is EINSTEIN still speaking?
@@ -7999,6 +8029,7 @@ c32216 LD B,4        ; There are four pixel rows to slide left
 ; #R31648, #R63374 and #R64042.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=RUN
 c32234 LD L,123      ; {Set the speed change delay counter in byte #b123 of the
  32236 LD (HL),4     ; character's buffer to 4, preventing any speed change by
@@ -17607,6 +17638,7 @@ c64035 LD L,117      ; {Place #R64257 into bytes #b117 and #b118 of ANGELFACE's
 ; looking for ERIC to send him home).
 ;
 ; H #b168 (ANGELFACE)
+@refs=25126
 @label=CHKTOUCH
 c64042 LD A,(32715)  ; #R32715 holds the special playtime signal flags
  64045 BIT 4,A       ; Has ERIC been told (and understood) that ANGELFACE has
