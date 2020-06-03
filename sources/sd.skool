@@ -865,6 +865,7 @@ c25266 LD L,123      ; {Byte #b123 contains a counter that is reset to a random
 ;
 ; H Character number (#b152-#b169)
 ; L #b122
+@refs=25126
 @label=MVTILL
 c25303 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  25304 AND 159       ; buffer, indicating that he should no longer walk fast or
@@ -1150,6 +1151,7 @@ s25532 DEFS 2
 ;
 ; H Character number (#b152-#b169)
 ; L #b122
+@refs=25126
 @label=GOTO
 c25534 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  25535 AND 159       ; buffer, indicating that he should no longer walk fast or
@@ -2845,6 +2847,7 @@ c27090 CALL 24993    ; #REGa=random number
 ;
 ; H Character number (#b152-#b169)
 ; L #b122
+@refs=25126
 @label=GOTORAND
 c27111 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  27112 AND 159       ; buffer, indicating that he should no longer walk fast or
@@ -2997,6 +3000,7 @@ c27206 LD L,113      ; Byte #b113 of the character's buffer holds the knockout
 ;
 ; H #b152 (little boy no. 1)
 ; L #b122
+@refs=25126
 @label=RANDTRIP
 c27246 LD A,(HL)     ; {Reset bit 6 (do not walk slowly continuously) and bit 7
  27247 AND 31        ; (walk fast) and set bit 5 (walk fast continuously) of
@@ -3020,6 +3024,7 @@ s27262 DEFS 4
 ;
 ; H Little boy's character number (#b153-#b162)
 ; L #b122
+@refs=25126
 @label=FOLLOW
 c27266 LD A,(HL)     ; {Reset bit 6 (do not walk slowly continuously) and bit 7
  27267 AND 31        ; (walk fast) and set bit 5 (walk fast continuously) of
@@ -3190,6 +3195,7 @@ c27406 LD HL,23200   ; {Set #REGhl and #REGde to the attribute file address for
 ; command list if the designated number of walkabouts has been completed.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=NEXTWALK
 c27442 LD L,103      ; {Decrement the walkabouts counter in byte #b103 of the
  27444 DEC (HL)      ; character's buffer}
@@ -3210,6 +3216,7 @@ s27451 DEFS 2
 ;
 ; H Character number (#b152-#b169)
 ; L #b122
+@refs=25126
 @label=WALKABOUT
 c27453 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
  27454 AND 159       ; buffer, indicating that he should no longer walk fast or
@@ -3231,6 +3238,7 @@ c27453 LD A,(HL)     ; {Reset bits 5 and 6 of byte #b122 of the character's
 ; Lower the signal for a certain event
 ;
 ; Used by command lists #R64947(#b204) and #R64314(#b216).
+@refs=25126
 @label=SIGLOWER
 c27476 LD B,134      ; #b134 is the code for '#S/RES 0,(HL)/'
  27478 JR 27482      ; Jump into the signal-setting routine
@@ -3242,6 +3250,7 @@ c27476 LD B,134      ; #b134 is the code for '#S/RES 0,(HL)/'
 ; #R64265(#b212), #R64288(#b214), #R64314(#b216) and #R64341(#b218).
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=SIGRAISE
 c27480 LD B,198      ; #b198 is the code for '#S/SET 0,(HL)/'
 ; This entry point is used by the routine at #R27476 with #REGb=#b134 (the code
@@ -3581,6 +3590,7 @@ s27798 DEFS 10
 ; #R64749(#b168). Makes a character start looking for a seat.
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=FINDSEAT
 c27808 LD L,100      ; {Remove the address of this primary command routine from
  27810 LD (HL),0     ; bytes #b99 and #b100 of the character's buffer,
@@ -6785,6 +6795,7 @@ u31152 LD (HL),218   ; {(#b22,#b218)=#R55830='<8 spaces>'
 ; routine at #R31178.
 ;
 ; H #b169 (EINSTEIN)
+@refs=25126
 @label=GRASSETC
 c31162 LD A,(32713)  ; Pick up the lesson signal flags from #R32713
  31165 RLCA          ; Is it EINSTEIN's turn to speak yet?
@@ -6809,6 +6820,7 @@ c31162 LD A,(32713)  ; Pick up the lesson signal flags from #R32713
 ; finished speaking, control resumes here.
 ;
 ; H #b169 (EINSTEIN)
+@refs=25126
 @label=GRASS2
 c31178 LD L,99       ; {Replace the address of this primary command routine in
 @ssub=LD (HL),31162%256
@@ -7503,6 +7515,7 @@ c31768 INC B         ; #REGb=1
 ; otherwise moves to the next command in the command list.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=CHKTIME
 @ssub=LD A,(32759+1)
 c31807 LD A,(32760)  ; Pick up the MSB of the lesson clock (#b0-#b21)
@@ -7516,6 +7529,7 @@ c31807 LD A,(32760)  ; Pick up the MSB of the lesson clock (#b0-#b21)
 ; #R64988(#b194), #R64914(#b196), #R64947(#b204) and #R64975(#b206).
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @rfix=!31815-31828
 @label=RESTART
 c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
@@ -7574,6 +7588,7 @@ s31831 DEFS 3
 ; TABLE#
 ;
 ; H Character number (#b152-#b169)
+@refs=25126
 @label=ADDR2BUF
 @rsub=LD L,124       ; {Collect the address of the continual subcommand routine
 c31834 NOP           ;
@@ -7602,6 +7617,7 @@ s31852 DEFS 2
 ; restarted.
 ;
 ; H #b163 (MR WACKER) or #b165 (MR WITHIT)
+@refs=25126
 @label=DINDUTY
 c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
  31857 EX DE,HL      ; started (and so ERIC should be in the dinner hall)
@@ -7656,6 +7672,7 @@ c31854 LD DE,32712   ; {Set bit 7 at #R32712, indicating that dinner has
 ; #b100 of the teacher's buffer by the routine at #R31854. The teacher has
 ; walked to the left end of the dinner hall, so it's time to check whether ERIC
 ; is present.
+@refs=25126
 @label=DDUTY2
 c31895 CALL 31188    ; Set the zero flag if ERIC is in the dinner hall
 @ssub=LD DE,62+256*(31861%256)
@@ -7882,6 +7899,7 @@ c31996 LD DE,62063   ; {#REGbc=#R62050 (TURN TO PAGE 123 OF YOUR BOOKS...);
 ; the lesson.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=CLSNOERIC
 c32048 CALL 28968    ; #REGa=identifier of the blackboard the teacher is next
                      ; to
@@ -7947,6 +7965,7 @@ s32131 DEFB 0
 ; his year of birth written on the board.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=TELLSIT
 c32132 CALL 63191    ; Make MR CREAK reveal his safe combination letter if
                      ; appropriate; also set #REGbc=#R61889 (SILENCE! OR I'LL
@@ -7976,6 +7995,7 @@ c32132 CALL 63191    ; Make MR CREAK reveal his safe combination letter if
 ; Used by command list #R64892(#b192), and also by the routine at #R32167.
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=BWWRITECLN
 @nowarn
 c32158 LD BC,29284   ; {Hand over control to the routine at #R29284, making BOY
@@ -7989,6 +8009,7 @@ c32158 LD BC,29284   ; {Hand over control to the routine at #R29284, making BOY
 ; #R64702(#b164).
 ;
 ; H #b167 (BOY WANDER)
+@refs=25126
 @label=BWWRITE
 c32167 CALL 24972    ; Get the event ID (#b9, #b10 or #b11) from the command
                      ; list
@@ -8003,6 +8024,7 @@ c32167 CALL 24972    ; Get the event ID (#b9, #b10 or #b11) from the command
 ; conducting ERIC's class, and hands over to #R62208 if so or #R32048 if not.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=DOCLASS
 c32178 LD A,(32756)  ; Pick up the lesson descriptor from #R32756
  32181 AND 240       ; Keep only the 'teacher' bits (4-7)
@@ -16020,6 +16042,7 @@ u62197 DEFM "           " ; 11 spaces
 ; lesson.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=TEACHERIC
 c62208 CALL 31952    ; Make the teacher wait for EINSTEIN to sit down
  62211 JR Z,62252    ; Jump if ERIC is in the room
@@ -16179,6 +16202,7 @@ s62453 DEFS 11
 ; if ERIC goes missing.
 ;
 ; H Teacher's character number (#b163-#b166)
+@refs=25126
 @label=QALESSON
 c62464 LD L,100      ; {Replace the primary command routine address in bytes
 @ssub=LD (HL),62464/256
@@ -17017,6 +17041,7 @@ s63373 DEFB 0
 ; ROCKITT track down ERIC (to deliver a message).
 ;
 ; H Character number (#b161, #b163, #b164)
+@refs=25126
 @label=FINDERIC
 c63374 LD A,255      ; {Adjust the length of the lesson to allow the character
  63376 CALL 64004    ; enough time to find ERIC}
@@ -17103,6 +17128,7 @@ u63450 CALL 63668    ; Adjust the status of the shields and the safe
 ; on the fire escape).
 ;
 ; H #b163 (MR WACKER)
+@refs=25126
 @label=LINES2K
 c63456 LD BC,56832   ; #R56832: 'TAKE 2000 LINES YOU NASTY BOY'
  63459 CALL 32038    ; Make MR WACKER say this
@@ -17129,6 +17155,7 @@ s63486 DEFS 2
 ; condition.
 ;
 ; H #b161 (little boy no. 10)
+@refs=25126
 @label=TELLERIC
 c63488 LD A,(32763)  ; {Set bit 3 of ERIC's status flags at #R32763, indicating
  63491 SET 3,A       ; that ERIC is being spoken to
@@ -17545,6 +17572,7 @@ c63931 LD A,(32711)  ; Collect the MSB of the lines total
 ; Used by command list #R64219(#b222).
 ;
 ; H #b163 (MR WACKER) or #b164 (MR ROCKITT)
+@refs=25126
 @label=SENDHOME
 c63964 CALL 63231    ; Get the address of the appropriate 'Go home' message in
                      ; #REGbc (depending on who the teacher is)
@@ -17652,6 +17680,7 @@ c64016 CALL 28968    ; #REGa=identifier of the blackboard nearest to CREAK
 ; mumps.
 ;
 ; H #b168 (ANGELFACE)
+@refs=25126
 @label=RST220
 c64035 LD L,117      ; {Place #R64257 into bytes #b117 and #b118 of ANGELFACE's
 @ssub=LD (HL),64257%256
