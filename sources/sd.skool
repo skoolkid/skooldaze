@@ -645,6 +645,44 @@ c25126 LD A,(32765)  ; #R32765 holds the number of the last character moved
 ; { #R31739    | #D31739 }
 ; { #R31944    | #D31944 }
 ; TABLE#
+; .
+; The address of one of the following primary command routines (or an entry
+; point thereof) may be present in bytes #b99 and #b100 of a character's
+; buffer:
+; .
+; #TABLE(default,centre,:w)
+; { =h Address | =h Description }
+; { #R25247    | Do nothing }
+; { #R25303    | #D25303 }
+; { #R25534    | #D25534 }
+; { #R27111    | #D27111 }
+; { #R27246    | #D27246 }
+; { #R27266    | #D27266 }
+; { #R27442    | #D27442 }
+; { #R27453    | #D27453 }
+; { #R27476    | #D27476 }
+; { #R27480    | #D27480 }
+; { #R27808    | #D27808 }
+; { #R31162    | #D31162 }
+; { #R31178    | #D31178 }
+; { #R31807    | #D31807 }
+; { #R31815    | #D31815 }
+; { #R31834    | #D31834 }
+; { #R31854    | #D31854 }
+; { #R31895    | #D31895 }
+; { #R32048    | #D32048 }
+; { #R32132    | #D32132 }
+; { #R32158    | #D32158 }
+; { #R32167    | #D32167 }
+; { #R32178    | #D32178 }
+; { #R62208    | #D62208 }
+; { #R62464    | #D62464 }
+; { #R63374    | #D63374 }
+; { #R63456    | #D63456 }
+; { #R63488    | #D63488 }
+; { #R63964    | #D63964 }
+; { #R64035    | #D64035 }
+; TABLE#
  25155 LD L,112      ; Bytes #b111 and #b112 of the character's buffer may
                      ; contain the address of an uninterruptible subcommand
  25157 LD A,(HL)     ; Pick up the MSB in #REGa
