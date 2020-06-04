@@ -1591,6 +1591,7 @@ u25981 DEFB 9        ; Probably the operand of #S/LD (HL)/,n (which would have
 ;
 ; B ERIC's animatory state
 ; DE ERIC's coordinates
+@refs=26471
 @label=DOWN
 c25983 CALL 25956    ; Is ERIC sitting or lying down?
  25986 RET NZ        ; Return if so
@@ -1671,6 +1672,7 @@ s26075 DEFS 9
 ;
 ; B ERIC's animatory state
 ; DE ERIC's coordinates
+@refs=26471
 @label=UP
 c26084 CALL 25956    ; Is ERIC sitting or lying down?
  26087 RET NZ        ; Return if so
@@ -1767,6 +1769,7 @@ c26184 LD A,D        ; #REGa=character's y-coordinate
 ;
 ; B ERIC's animatory state
 ; DE ERIC's coordinates
+@refs=26471
 @label=LEFT
 c26194 CALL 25956    ; Is ERIC sitting or lying down?
  26197 RET NZ        ; Return if so
@@ -1837,6 +1840,7 @@ s26276 DEFS 6
 ;
 ; B ERIC's animatory state
 ; DE ERIC's coordinates
+@refs=26471
 @label=RIGHT
 c26282 CALL 25956    ; Is ERIC sitting or lying down?
  26285 RET NZ        ; Return if so
@@ -3615,6 +3619,7 @@ s27822 DEFB 0
 ; The address of this routine is found in the table of keypress handling
 ; routines at #R26624. It is called from the main loop at #R26471 when 'S' is
 ; pressed.
+@refs=26471
 @label=SITSTAND
 c27823 LD HL,32763   ; {Flip bit 7 of ERIC's status flags at #R32763
  27826 LD A,(HL)     ;
@@ -16306,6 +16311,7 @@ s62571 DEFS 3
 ; or '0' (zero) is pressed.
 ;
 ; DE ERIC's coordinates
+@refs=26471
 @label=FIRE
 @ssub=LD A,(43872+2)
 c62574 LD A,(43874)  ; #REGa=x-coordinate of ERIC's catapult pellet
@@ -16341,6 +16347,7 @@ c62574 LD A,(43874)  ; #REGa=x-coordinate of ERIC's catapult pellet
 ; The address of this routine is found in the table of keypress handling
 ; routines at #R26752. It is called from the main loop at #R26471 when 'H' is
 ; pressed.
+@refs=26471
 @label=HIT
 c62610 LD BC,2562    ; #REGb=#AS10 (ERIC raising fist), #REGc=#b2 (bit 1 set)
  62613 LD A,18       ; This will initialise the hitting action timer at #R32758
@@ -16352,6 +16359,7 @@ c62610 LD BC,2562    ; #REGb=#AS10 (ERIC raising fist), #REGc=#b2 (bit 1 set)
 ; The address of this routine is found in the table of keypress handling
 ; routines at #R26752. It is called from the main loop at #R26471 when 'J' or
 ; 'L' is pressed.
+@refs=26471
 @label=JUMP
 c62617 CALL 26184    ; Is ERIC on a staircase?
  62620 RET NZ        ; Return if so (ERIC can't jump while on a staircase)
@@ -16753,6 +16761,7 @@ s63055 DEFB 0
 ; The address of this routine is found in the table of keypress handling
 ; routines at #R26752. It is called from the main loop at #R26471 when 'W' is
 ; pressed.
+@refs=26471
 @label=WRITE
 c63056 LD HL,32763   ; #R32763 holds ERIC's status flags
  63059 BIT 7,(HL)    ; Is ERIC sitting or lying down?
