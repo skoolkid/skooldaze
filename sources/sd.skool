@@ -3116,6 +3116,7 @@ c27303 LD HL,32757   ; {#R32757 holds the delay counter used when ERIC has been
 ;
 ; Used indirectly by the routine at #R27353 when ERIC is engaged in an activity
 ; that precludes responding to keypresses.
+@refs=27353
 @label=ERICDONE
 c27351 SCF           ; {Return to the main loop with the carry flag set to
  27352 RET           ; indicate that ERIC has already been dealt with}
