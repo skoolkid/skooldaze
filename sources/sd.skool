@@ -5009,7 +5009,7 @@ c29160 LD L,105      ; {Replace the address of the interruptible subcommand
 ; After the initial call to this routine, each subsequent call enters here.
 @refs=25126
 @label=WIPING
- 29175 LD L,107      ; {Decrement the number of board-wiping actions remaining
+*29175 LD L,107      ; {Decrement the number of board-wiping actions remaining
  29177 DEC (HL)      ; }
  29178 BIT 7,(HL)    ; Has the teacher finished wiping the board?
  29180 JR NZ,29264   ; Jump if so
