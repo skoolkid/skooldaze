@@ -13,9 +13,6 @@ Release=The complete Skool Daze RAM disassembly 20191114
 Copyright=&#169; 1984 Microsphere Computer Services Ltd. &#169; 2019 Richard Dymond.
 AddressAnchor={address#IF({base}==16)(:04x)}
 
-[ImageWriter]
-DefaultAnimationFormat=png
-
 [Links]
 DataMap=[Data] (just the data)
 Graphics=Other graphics
