@@ -12,9 +12,9 @@ i23552 DEFS 1024
 
 @start
 @expand=#DEFINE2,1(LOGO,#UDGARRAY(8,#EVAL(6+7*{0}+2*{1}),2,8,tindex=2,alpha=#IF({1})(0,255));61208-61343-1-64({{ImagePath}}/{2}|Skool Daze))
-@replace=/#BUG(?![A-Z])/#LINK:Bugs
-@replace=/#FACT(?![A-Z])/#LINK:Facts
-@replace=/#POKE(?![A-Z])/#LINK:Pokes
+@expand=#DEFINE0(BUG,#LINK:Bugs)
+@expand=#DEFINE0(FACT,#LINK:Facts)
+@expand=#DEFINE0(POKE,#LINK:Pokes)
 @replace=/#n\i/#N\1,,,1($)
 @replace=/#b\i/#N\1,,,1(0x)/ (byte)
 @replace=/#w\i/#N(\1,4)/ (word)
