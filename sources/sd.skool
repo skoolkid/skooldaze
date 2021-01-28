@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017-2020 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2021 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -23,7 +23,7 @@ i23552 DEFS 1024
 ; https://skoolkit.ca
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017-2020 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017-2021 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -15346,7 +15346,9 @@ t59456 DEFM "THE PEAKS"
  59465 DEFB 2           ; Newline
  59466 DEFM "OF PERU"
  59473 DEFB 0           ; End marker
- 59474 DEFM "ERU"
+ 59474 DEFM "ERU"       ; This blackboard message probably used to be 'THE
+                        ; MOUNTAINS OF PERU' (as it is in the C64 version of
+                        ; the game, and which doesn't fit on the board)
  59477 DEFS 11
 
 ; 'THE GLASGOW^RAIN-FOREST'
@@ -15357,7 +15359,9 @@ t59488 DEFM "THE GLASGOW"
  59499 DEFB 2             ; Newline
  59500 DEFM "RAIN-FOREST"
  59511 DEFB 0             ; End marker
- 59512 DEFM "T"
+ 59512 DEFM "T"           ; This blackboard message probably used to be 'THE
+                          ; DONCASTER RAIN-FOREST' (as it is in the C64 version
+                          ; of the game, and which doesn't fit on the board)
  59513 DEFS 7
 
 ; 'THE EXPORTS^OF FIJI'

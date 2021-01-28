@@ -1,7 +1,13 @@
-; Copyright 2008-2015, 2017-2020 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2021 Richard Dymond (rjdymond@gmail.com)
 
 [Page:Changelog]
 SectionType=BulletPoints
+
+[Changelog:YYYYMMDD]
+-
+
+- Updated the #FACT#withitEdited() trivia entry with details of the probable
+  original versions of the blackboard messages at #R59456 and #R59488
 
 [Changelog:20200809]
 -
