@@ -1,4 +1,4 @@
-; Copyright 2008-2012, 2017 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2012, 2017, 2021 Richard Dymond (rjdymond@gmail.com)
 
 [Lessons]
 224=DINNER (MR WITHIT)
@@ -260,7 +260,7 @@ y-coordinate increment to use while chasing ERIC (see #R31739, #R31768)
 
 x-coordinate of the next column of the board to wipe (see #R29160)
 
-Number of paces remaining until the next command list restart request check
+Number of paces remaining until the interruptible subcommand is terminated
 (see #R25404)
 
 [CharBuf:109]
