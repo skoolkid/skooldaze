@@ -6,6 +6,7 @@ SectionType=BulletPoints
 [Changelog:YYYYMMDD]
 -
 
+- Added a trivia entry: #FACT#theSpecialPlaytimeTruce()
 - Updated the #FACT#withitEdited() trivia entry with details of the probable
   original versions of the blackboard messages at #R59456 and #R59488
 
