@@ -17825,7 +17825,7 @@ b64240 DEFW 63374    ; Find ERIC
  64242 DEFW 63488    ; Tell ERIC about EINSTEIN or BOY WANDER (if coming from
                      ; command list #R64230(#b208)) or ANGELFACE
  64244 DEFW 27480    ; Signal that...
- 64246 DEFB 28       ; ... ERIC has been told about EINSTEIN, BOY WANDER, or
+ 64246 DEFB 28       ; ...ERIC has been told about EINSTEIN, BOY WANDER, or
                      ; ANGELFACE
  64247 DEFW 27111    ; Go to a random location
  64249 DEFW 25303    ; Move about until...
