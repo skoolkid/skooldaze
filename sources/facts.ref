@@ -251,6 +251,26 @@ To get rid of ANGELFACE's favouritism and make the routine at #R28446 check all
 
 POKE #R28518(28519),11
 
+[Fact:angelfacesXrayVision:ANGELFACE's X-ray vision]
+When ANGELFACE is in the White Room waiting for the teacher to arrive and ERIC
+is in the Exam Room next to and facing the wall, ANGELFACE will throw punches
+at the White Room wall, apparently aware that ERIC is behind it, but unaware
+that ERIC cannot walk through the wall and meet his fist.
+
+#PUSHS
+#CALL:place_char(168,36,10,171)
+#CALL:place_char(172,39,10,0)
+#UDGTABLE { #CALL:play_area(axrv,30,7,20,7,2,1) } TABLE#
+#POPS
+
+The reason this happens is that the routine at #R28416, which checks whether
+anyone is within punching range, does not take into account the walls between
+classrooms.
+
+However, ANGELFACE will only perform this trick in the White Room: in the other
+classrooms he doesn't get close enough to the wall to be able to 'see' anyone
+through it.
+
 [Fact:seatSelection:Seat selection]
 Typically, when a teacher arrives at the classroom doorway to start the lesson,
 the boys will rush to the back seat and sit down. However, if a boy is late for
