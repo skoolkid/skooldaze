@@ -25,6 +25,7 @@
 <li><a href="#pointsForAPOrAP">Points for a punching or a pelleting</a></li>
 <li><a href="#bwShootsEricScores">BOY WANDER shoots, ERIC scores</a></li>
 <li><a href="#bullyFriends">ANGELFACE's friends</a></li>
+<li><a href="#angelfacesXrayVision">ANGELFACE's X-ray vision</a></li>
 <li><a href="#seatSelection">Seat selection</a></li>
 <li><a href="#unusedFlag">The mystery of the unused status flag</a></li>
 <li><a href="#unusedMSB">The mystery of the unused MSB</a></li>
@@ -36,6 +37,7 @@
 <li><a href="#initialPlaytimes">Initial playtimes</a></li>
 <li><a href="#doublePlaytimes">Double playtimes</a></li>
 <li><a href="#playtimeDistribution">Playtime distribution</a></li>
+<li><a href="#theSpecialPlaytimeTruce">The special playtime truce</a></li>
 <li><a href="#dullPlaytimes">Always a dull playtime in demo mode</a></li>
 <li><a href="#handsUp">Hands up!</a></li>
 <li><a href="#wipingWander">Board-wiping WANDER</a></li>
@@ -423,8 +425,35 @@ To get rid of ANGELFACE's favouritism and make the routine at <a href="../asm/6F
 POKE <a href="../asm/6F1E.html#6f66">28519</a>,11
 </div>
 </div>
-<div><span id="seatSelection"></span></div>
+<div><span id="angelfacesXrayVision"></span></div>
 <div class="box box-1">
+<div class="box-title">ANGELFACE's X-ray vision</div>
+<div class="paragraph">
+When ANGELFACE is in the White Room waiting for the teacher to arrive and ERIC
+is in the Exam Room next to and facing the wall, ANGELFACE will throw punches
+at the White Room wall, apparently aware that ERIC is behind it, but unaware
+that ERIC cannot walk through the wall and meet his fist.
+</div>
+<div class="paragraph">
+<table class="">
+<tr>
+<td class="" colspan="1" rowspan="1"><img alt="axrv" src="../images/play_area/axrv.png" /></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The reason this happens is that the routine at <a href="../asm/6F00.html">6F00</a>, which checks whether
+anyone is within punching range, does not take into account the walls between
+classrooms.
+</div>
+<div class="paragraph">
+However, ANGELFACE will only perform this trick in the White Room: in the other
+classrooms he doesn't get close enough to the wall to be able to 'see' anyone
+through it.
+</div>
+</div>
+<div><span id="seatSelection"></span></div>
+<div class="box box-2">
 <div class="box-title">Seat selection</div>
 <div class="paragraph">
 Typically, when a teacher arrives at the classroom doorway to start the lesson,
@@ -476,7 +505,7 @@ moving right to the back of the class.
 </div>
 </div>
 <div><span id="unusedFlag"></span></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">The mystery of the unused status flag</div>
 <div class="paragraph">
 Bit 6 of ERIC's status flags at <a href="../asm/7FFB.html">7FFB</a> is unused: it's always 0. However, the
@@ -502,7 +531,7 @@ What was this flag used for originally? The mystery may never be solved.
 </div>
 </div>
 <div><span id="unusedMSB"></span></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">The mystery of the unused MSB</div>
 <div class="paragraph">
 Byte 0x79 of a character's buffer is unused and always zero. However, the
@@ -518,7 +547,7 @@ development? We'll probably never know.
 </div>
 </div>
 <div><span id="pitchImperfect"></span></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Pitch imperfect</div>
 <div class="paragraph">
 When ERIC walks, fires his catapult, throws a punch, is knocked out, or
@@ -537,7 +566,7 @@ keys.
 </div>
 </div>
 <div><span id="shieldStats"></span></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">Shield stats</div>
 <div class="paragraph">
 Of the 15 shields on display around the skool, six are red:
@@ -635,7 +664,7 @@ and the remaining five display the triangle design:
 </div>
 </div>
 <div><span id="teacherRooms"></span></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Teachers and classrooms</div>
 <div class="paragraph">
 MR WACKER is the only teacher who teaches ERIC in all four classrooms. See his
@@ -654,7 +683,7 @@ MR CREAK never teaches in the Map Room or the Exam Room. See his
 </div>
 </div>
 <div><span id="timetableStats"></span></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">Timetable stats</div>
 <div class="paragraph">
 There are 64 periods in the <a href="../asm/FE00.html">main timetable</a>: 26 playtimes, 4 dinner
@@ -701,7 +730,7 @@ ANGELFACE spends more lesson periods in the Revision Library than any other boy
 </div>
 </div>
 <div><span id="playtimeProbabilities"></span></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Playtime probabilities</div>
 <div class="paragraph">
 During playtime, the teacher most likely to be found pacing up and down in the
@@ -731,7 +760,7 @@ chosen at random (see <a href="../asm/6E33.html">6E33</a>).
 </div>
 </div>
 <div><span id="initialPlaytimes"></span></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">Initial playtimes</div>
 <div class="paragraph">
 When demo mode or a new game starts, the timetable index is always
@@ -745,7 +774,7 @@ possible after the game has loaded, the timetable index is <a href="../asm/FE00.
 </div>
 </div>
 <div><span id="doublePlaytimes"></span></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Double playtimes</div>
 <div class="paragraph">
 There are five places in the <a href="../asm/FE00.html">main timetable</a> where one playtime is
@@ -763,7 +792,7 @@ code at <a href="../asm/66E6.html#66f8">66F8</a>.
 </div>
 </div>
 <div><span id="playtimeDistribution"></span></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">Playtime distribution</div>
 <div class="paragraph">
 Understandably, ERIC is always eager for playtime to come, but the number of
@@ -776,6 +805,23 @@ between one and three throughout the <a href="../asm/FE00.html">main timetable</
 <li>There are three periods between playtimes at timetable indexes <a href="../asm/FE00.html#fe19">0x1A-0x1C</a> and <a href="../asm/FE00.html#fe20">0x21-0x23</a></li>
 <li>There are two periods between all the other playtimes (not counting dinner periods)</li>
 </ul>
+</div>
+</div>
+<div><span id="theSpecialPlaytimeTruce"></span></div>
+<div class="box box-1">
+<div class="box-title">The special playtime truce</div>
+<div class="paragraph">
+BOY WANDER doesn't spend every period looking for opportunities to fire his
+catapult: in special playtimes <a href="../lessons/F3.html">0xF3</a> (in which ANGELFACE has mumps) and
+<a href="../lessons/F4.html">0xF4</a> (in which EINSTEIN is going tell MR WACKER what ERIC's up to) he
+keeps his catapult in his pocket at all times.
+</div>
+<div class="paragraph">
+Similarly, ANGELFACE doesn't spend every period looking for opportunities to
+beat up his classmates: in special playtimes <a href="../lessons/F3.html">0xF3</a> (in which he has
+mumps), <a href="../lessons/F4.html">0xF4</a> (in which EINSTEIN is going to tell MR WACKER what ERIC's up
+to) and <a href="../lessons/F5.html">0xF5</a> (in which BOY WANDER has hidden a pea-shooter) he keeps his
+fists to himself.
 </div>
 </div>
 <div><span id="dullPlaytimes"></span></div>
@@ -907,15 +953,16 @@ There is evidence that MR WITHIT used to be rather more verbose with his
 blackboard scribblings, but was edited before the game was released. See
 'MANCHESTER MONSOONS' at <a href="../asm/E800.html">E800</a>, which was probably 'WHY IT RAINS IN
 MANCHESTER' at some point (see <a href="facts.html#alternativeDifferences">Alternative differences</a>). Likewise, 'THE
-PEAKS OF PERU' at <a href="../asm/E840.html">E840</a> may once have been expressed less tersely (or been
-about something other than PEAKS). Finally, which rain-forest other than
-Glasgow's could WITHIT have been writing about at <a href="../asm/E860.html">E860</a>?
+PEAKS OF PERU' at <a href="../asm/E840.html">E840</a> may once have been 'THE MOUNTAINS OF PERU' (as it is
+in the C64 version of the game). And finally, the rain-forest other than
+Glasgow's that WITHIT was writing about at <a href="../asm/E860.html">E860</a> is probably Doncaster's
+(again, as it is in the C64 version).
 </div>
 </div>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20200809</div>
-<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2020 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.2.</div>
+<div class="release">The complete Skool Daze RAM disassembly 20210310</div>
+<div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2021 Richard Dymond.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.4.</div>
 <div><a href="../dec/reference/facts.html">Switch to decimal</a>.</div>
 </footer>
 </body>
