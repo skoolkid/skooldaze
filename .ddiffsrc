@@ -1,6 +1,6 @@
 # rc file for check-asms, check-bins, disassembly-diff, skooldiff, write-files
 
-OLD_VERSION=20200809
-SK_OLD_VERSION=8.2
+OLD_VERSION=20210310
+SK_OLD_VERSION=8.4
 SKOOL2BIN_START=24573
 SNAPSHOT=$SKOOLDAZE_HOME/build/skool_daze.z80

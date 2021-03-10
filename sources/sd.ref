@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017-2020 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2021 Richard Dymond (rjdymond@gmail.com)
 
 [Config]
 RefFiles=bugs.ref;changelog.ref;data.ref;facts.ref;glossary.ref;graphics.ref;pages.ref;pokes.ref
@@ -9,8 +9,8 @@ GameDir=skool_daze
 Game=Skool Daze
 Logo=#LOGO0,0(logo)
 StyleSheet=skoolkit.css;sd.css
-Release=The complete Skool Daze RAM disassembly 20200809
-Copyright=&#169; 1984 Microsphere Computer Services Ltd. &#169; 2020 Richard Dymond.
+Release=The complete Skool Daze RAM disassembly 20210310
+Copyright=&#169; 1984 Microsphere Computer Services Ltd. &#169; 2021 Richard Dymond.
 AddressAnchor={address#IF({base}==16)(:04x)}
 
 [Links]
