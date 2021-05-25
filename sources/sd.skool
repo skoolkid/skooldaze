@@ -15,7 +15,7 @@ i23552 DEFS 1024
 @expand=#DEFINE0(BUG,#LINK:Bugs)
 @expand=#DEFINE0(FACT,#LINK:Facts)
 @expand=#DEFINE0(POKE,#LINK:Pokes)
-@expand=#DEFINE0(S,#FORMAT({{mode[case]}}))
+@expand=#DEFINE0(S,#FORMAT({{mode[case]}}&1))
 @expand=#DEFINE1,1,3(-1)(#N({0},,,1)(0x))(AS,#LINK#(:AnimatoryStates#IF({0}>=0)(#{0}))({1}))
 @expand=#DEFINE1,1,2(#N({0},,,1)(0x))(LESSON,#LINK:Lesson{0}({1}))
 @replace=/#n\i/#N\1,,,1($)
@@ -482,9 +482,9 @@ c25008 LD L,96       ; Point #REGhl at byte #b96 of the character's buffer
 ; by the character's sprite, and #REGh holds the page number (#b173, #b177,
 ; #b181) corresponding to the leftmost column of the sprite that appears
 ; on-screen.
-*25051 RLCA          ; {Set the instruction at #R27015 to #S/SET/ n,#S/(HL)/
- 25052 RLCA          ; where n is the appropriate bit of the SRB byte that
- 25053 RLCA          ; needs to be set
+*25051 RLCA          ; {Set the instruction at #R27015 to #S/SET n,(HL)/ where
+ 25052 RLCA          ; n is the appropriate bit of the SRB byte that needs to
+ 25053 RLCA          ; be set
  25054 LD E,A        ;
  25055 AND 56        ;
  25057 ADD A,198     ;
@@ -512,10 +512,10 @@ c25008 LD L,96       ; Point #REGhl at byte #b96 of the character's buffer
  25085 LD L,A        ; }
 @ssub=LD A,(27015+1)
  25086 LD A,(27016)  ; {Prepare to change the instruction at #R27015 from
- 25089 ADD A,8       ; #S/SET/ n,#S/(HL)/ to #S/SET/ n+1,#S/(HL)/}
+ 25089 ADD A,8       ; #S/SET n,(HL)/ to #S/SET n+1,(HL)/}
 @ssub=LD (27015+1),A
-*25091 LD (27016),A  ; Change the instruction at #R27015 from #S/SET/
-                     ; n,#S/(HL)/ to #S/SET/ n+1,#S/(HL)/ or #S/SET 0,(HL)/
+*25091 LD (27016),A  ; Change the instruction at #R27015 from #S/SET n,(HL)/ to
+                     ; #S/SET n+1,(HL)/ or #S/SET 0,(HL)/
  25094 JR NC,25078   ; Jump back unless the instruction at #R27015 should be
                      ; changed to #S/SET 0,(HL)/ now
  25096 INC L         ; Move to the next byte of the SRB
@@ -977,8 +977,8 @@ c25374 PUSH AF       ; Save the event identifier briefly
  25382 LD (25397),A  ; that m is #R32712, #R32713, #R32714 or #R32715}
  25385 POP AF        ; Restore the event identifier to #REGa
  25386 AND 7         ; Keep only bits 0-2 (the bit index)
- 25388 ADD A,A       ; {Modify the #S/BIT/ n,#S/A/ instruction at #R25399 below
- 25389 ADD A,A       ; so that n=#REGa (0-7)
+ 25388 ADD A,A       ; {Modify the #S/BIT n,A/ instruction at #R25399 below so
+ 25389 ADD A,A       ; that n=#REGa (0-7)
  25390 ADD A,A       ;
  25391 ADD A,71      ;
 @ssub=LD (25399+1),A
@@ -3275,8 +3275,8 @@ c27480 LD B,198      ; #b198 is the code for '#S/SET 0,(HL)/'
  27493 LD E,A        ;
  27494 LD D,127      ;
  27496 EX DE,HL      ; }
- 27497 LD A,C        ; {Modify the instruction at #R27506 below to '#S/SET/
- 27498 RRCA          ; n,#S/(HL)/' or '#S/RES/ n,#S/(HL)/' as appropriate
+ 27497 LD A,C        ; {Modify the instruction at #R27506 below to '#S/SET
+ 27498 RRCA          ; n,(HL)/' or '#S/RES n,(HL)/' as appropriate
  27499 RRCA          ;
  27500 AND 56        ;
  27502 ADD A,B       ;
@@ -4657,8 +4657,8 @@ c28807 LD A,(32512)  ; #REGa=X: leftmost column of the skool on screen (0-64)
  28831 RLCA          ;
  28832 RLCA          ; }
  28833 LD E,A        ; Save this value in #REGe briefly
- 28834 AND 56        ; {Modify the #S/SET/ m,#S/(HL)/ instruction at #R28857
- 28836 ADD A,198     ; below
+ 28834 AND 56        ; {Modify the #S/SET m,(HL)/ instruction at #R28857 below
+ 28836 ADD A,198     ;
 @ssub=LD (28857+1),A
  28838 LD (28858),A  ; }
  28841 LD A,E        ; {Point #REGhl at the appropriate byte in the screen
@@ -4688,7 +4688,7 @@ c28807 LD A,(32512)  ; #REGa=X: leftmost column of the skool on screen (0-64)
  28870 LD A,198      ; #b198 will set n=0
  28872 JR Z,28879    ; Jump if we wrapped round to the next row
 @ssub=LD (28877+1),A
-*28874 LD (28878),A  ; Modify the #S/SET/ n,#S/(HL)/ instruction below so that
+*28874 LD (28878),A  ; Modify the #S/SET n,(HL)/ instruction below so that
                      ; n=m+1 mod 8
 @label=SRBSET3
  28877 SET 0,(HL)    ; Set the appropriate bit in the SRB byte; this
@@ -4891,9 +4891,9 @@ c28994 CALL 28882    ; #REGa=next character in the message being written
 *29054 ADD A,E       ;
  29055 LD E,A        ; }
  29056 CALL 28807    ; Update the screen refresh buffer for these coordinates
- 29059 LD A,(BC)     ; {Modify the #S/RES/ n,#S/(HL)/ instruction at #R29102
- 29060 AND 7         ; below, which in effect draws a white pixel (of chalk) at
- 29062 ADD A,A       ; the appropriate spot
+ 29059 LD A,(BC)     ; {Modify the #S/RES n,(HL)/ instruction at #R29102 below,
+ 29060 AND 7         ; which in effect draws a white pixel (of chalk) at the
+ 29062 ADD A,A       ; appropriate spot
  29063 ADD A,A       ;
  29064 ADD A,A       ;
  29065 CPL           ;
@@ -4926,8 +4926,8 @@ c28994 CALL 28882    ; #REGa=next character in the message being written
  29100 JR NC,29104   ; resetting bits in the skool graphic data; any bits
 @label=CHALK
  29102 RES 7,(HL)    ; already reset by previous writing remain reset (the
-*29104 INC H         ; '#S/RES/ n,#S/(HL)/' instruction is modified earlier in
- 29105 DJNZ 29099    ; this routine to reset the required bit)}
+*29104 INC H         ; '#S/RES n,(HL)/' instruction is modified earlier in this
+ 29105 DJNZ 29099    ; routine to reset the required bit)}
  29107 DEC C         ; Next pixel column
  29108 JR Z,29134    ; Jump if we've finished drawing the character on the
                      ; board
@@ -4935,9 +4935,9 @@ c28994 CALL 28882    ; #REGa=next character in the message being written
  29111 SUB 8         ; data
  29113 LD H,A        ; }
 @ssub=LD A,(29102+1)
- 29114 LD A,(29103)  ; {Modify the #S/RES/ n,#S/(HL)/ instruction at #R29102
- 29117 OR 64         ; above to #S/RES/ m,#S/(HL)/ where m=n-1 (mod 8),
- 29119 SUB 8         ; effectively moving one pixel column to the right
+ 29114 LD A,(29103)  ; {Modify the #S/RES n,(HL)/ instruction at #R29102 above
+ 29117 OR 64         ; to #S/RES m,(HL)/ where m=n-1 (mod 8), effectively
+ 29119 SUB 8         ; moving one pixel column to the right
  29121 AND 191       ;
 @ssub=LD (29102+1),A
  29123 LD (29103),A  ; }
