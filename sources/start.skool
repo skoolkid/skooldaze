@@ -1,12 +1,13 @@
-; Copyright 2008-2013, 2015, 2017, 2018 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2013, 2015, 2017, 2018, 2021 Richard Dymond
+; (rjdymond@gmail.com)
 
 @start
 @remote=main:26880
 @replace=/#w\i/#N(\1,4)/ (word)
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2013, 2015, 2017, 2018 Richard Dymond (this disassembly)
-@org
+; Copyright 2008-2013, 2015, 2017, 2018, 2021 Richard Dymond (this disassembly)
 
+@org
 ; Start
 ;
 ; We jump here from the load routine at #R32815@load.
@@ -21,4 +22,3 @@ c24288 LD SP,23806   ; Put the stack pointer somewhere safe
  24311 LDDR          ; }
  24313 EI            ; Enable interrupts
  24314 JP 26880      ; Play the theme tune and enter demo mode
-@end

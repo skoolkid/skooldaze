@@ -74,8 +74,8 @@
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
 ; Copyright 2001, 2008-2013, 2015, 2017-2019, 2021 Richard Dymond (this
 ; disassembly)
-@org
 
+@org
 ; Save Skool Daze to tape
 ;
 ; #UDGTABLE
