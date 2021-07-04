@@ -11,11 +11,11 @@ b23296 DEFS 256
 i23552 DEFS 1024
 
 @start
-@expand=#DEFINE2,1(LOGO,#UDGARRAY(8,#EVAL(6+7*{0}+2*{1}),2,8,tindex=2,alpha=#IF({1})(0,255));61208-61343-1-64({{ImagePath}}/{2}|Skool Daze))
-@expand=#DEFINE0(BUG,#LINK:Bugs)
-@expand=#DEFINE0(FACT,#LINK:Facts)
-@expand=#DEFINE0(POKE,#LINK:Pokes)
-@expand=#DEFINE0(S,#FORMAT({{mode[case]}}&1))
+@expand=#DEF(#LOGO(dark,trans)(fname) #UDGARRAY(8,6+7*$dark+2*$trans,2,8,tindex=2,alpha=(1-$trans)*255);61208-61343-1-64({ImagePath}/$fname|Skool Daze))
+@expand=#DEF(#BUG #LINK:Bugs)
+@expand=#DEF(#FACT #LINK:Facts)
+@expand=#DEF(#POKE #LINK:Pokes)
+@expand=#DEF(#S #FORMAT({mode[case]}&1))
 @expand=#DEF(#AS(s=-1)(t=#N($s,,,1)(0x)) #LINK#(:AnimatoryStates#IF($s>=0)(#$s))($t))
 @expand=#DEF(#LESSON(n)(t=#N($n,,,1)(0x)) #LINK:Lesson$n($t))
 @replace=/#n\i/#N\1,,,1($)
