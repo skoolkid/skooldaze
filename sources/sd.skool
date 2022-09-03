@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017-2021 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2022 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -25,7 +25,7 @@ i23552 DEFS 1024
 ; https://skoolkit.ca
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017-2021 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017-2022 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -1986,6 +1986,8 @@ c26426 CALL 26584    ; Get input from the Kempston joystick if it's in use
 ; Ring the bell
 ;
 ; Used by the routine at #R26342.
+; .
+; #HTML(#AUDIO1(bell.wav)([1718]*4600))
 ;
 ; L #b249
 @label=RINGBELL
