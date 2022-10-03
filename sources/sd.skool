@@ -8221,6 +8221,8 @@ c32279 DI            ; Disable interrupts
 ; Theme tune data
 ;
 ; Used by the routines at #R32390 and #R32400.
+; .
+; #HTML(#AUDIO1(tune.wav)(#INCLUDE(ThemeTune)))
 @label=THEMETUNE
 b32353 DEFB 121,53,119,51,121,53,113
  32360 DEFB 49,115,53,70,53,51,121,53,177
