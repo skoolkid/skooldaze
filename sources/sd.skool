@@ -8253,6 +8253,8 @@ c32400 LD HL,32353   ; The theme tune data is at #R32353
 ; Play the 'Got all shields/opened safe' tune
 ;
 ; Used by the routine at #R63668.
+; .
+; #HTML(#AUDIO1(all-shields.wav)(#INCLUDE(AllShieldsTune)))
 @label=WINTUNE
 c32406 CALL 32418    ; Play the first part of the tune
  32409 CALL 32418    ; Play the first part of the tune again
