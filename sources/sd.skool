@@ -6234,6 +6234,8 @@ c30464 PUSH BC       ;
                      ; #R60160
  30538 CALL 29977    ; Copy the lines bubble graphic to the screen
 ; Time for the first lines-giving sound effect.
+; .
+; #HTML(#AUDIO3(lines1.wav)([[296]*255, 307]*39, [296]*255))
  30541 LD A,(60160)  ; #REGa=lines bubble graphic attribute byte
  30544 LD DE,10240   ; #REGde=sound effect duration parameter
  30547 RRCA          ; {The border colour will be the same as the PAPER colour
@@ -6257,7 +6259,10 @@ c30464 PUSH BC       ;
  30570 LD A,B        ; #REGa=reprimand message identifier (#b0-#b15)
  30571 CALL 30156    ; Print the reprimand message
  30574 POP AF        ; Restore the border colour to #REGa
-; This entry point is used by the routine at #R63829.
+; Time for the second lines-giving sound effect. This entry point is used by
+; the routine at #R63829.
+; .
+; #HTML(#AUDIO3(lines2.wav)([[686]*255, 697]*19, [686]*255))
 *30575 LD DE,5120    ; #REGde=sound effect duration parameter
 *30578 OUT (254),A   ; {Play the second lines-giving sound effect
  30580 XOR 16        ;
