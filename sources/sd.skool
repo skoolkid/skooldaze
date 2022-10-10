@@ -15075,8 +15075,11 @@ u58600 DEFM "1800"
 ; Play the 'hit a shield' sound effect
 ;
 ; Used by the routine at #R28143.
+; .
+; #AUDIO4(shield.wav)(58605,58621)
 @label=SHIELDSND
 c58604 DI            ; Disable interrupts
+@assemble=2
  58605 LD C,16       ; There are 16 mini-sound effects in a row
 @keep
 *58607 LD HL,65047   ; {#REGa=#b1 (initial border colour: blue), #REGh=#b254
@@ -15086,6 +15089,7 @@ c58604 DI            ; Disable interrupts
  58615 CALL 65122    ; Play one mini-sound effect with these parameters
  58618 DEC C         ; Next mini-sound effect
  58619 JR NZ,58607   ; Jump back until all 16 have been done
+@assemble=1
  58621 EI            ; Re-enable interrupts
  58622 RET           ;
 
