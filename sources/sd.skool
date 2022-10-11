@@ -15524,6 +15524,12 @@ c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
 ; Make a jumping sound effect
 ;
 ; Used by the routine at #R62771.
+; .
+; #AUDIO2(jump.wav)([2532]*7)
+; .
+; #HTML(If the #S/CALL/ instruction below is fixed, a jump sounds like this:)
+; .
+; #AUDIO2(jump-fixed.wav)(#FOR1298,3170,39,1(n,n),3282,[2532]*7)
 @label=JUMPSOUND
 @ofix=               ; {Initialise the jumping sound effect parameters
 @ignoreua
