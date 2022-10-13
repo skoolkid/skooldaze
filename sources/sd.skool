@@ -18772,6 +18772,8 @@ c65106 PUSH BC       ;
 ;
 ; Used by the routine at #R27303. Makes a sound effect just after ERIC has been
 ; knocked over or pushed out of his seat.
+; .
+; #AUDIO6(knockout.wav)(65114,65136)
 ;
 ; A 1 + knockout delay counter value (#R32757)
 @label=SNDEFFECT
