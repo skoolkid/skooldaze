@@ -15514,6 +15514,8 @@ s60120 DEFS 8
 ; Make a hitting sound effect
 ;
 ; Used by the routine at #R62628.
+; .
+; #AUDIO2(hit.wav)([2532]*7,2589,[2532]*7)
 @label=HITSOUND
 c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
  60131 CALL 65088    ; close together}
