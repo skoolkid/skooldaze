@@ -18747,6 +18747,8 @@ b65024 DEFB 246      ; #b0: #LESSON246(PLAYTIME) (this is an
 ; Make a walking sound effect (yellow border)
 ;
 ; Used by the routines at #R46568 and #R60128.
+; .
+; #AUDIO2(walking.wav)(#FOR1,12,,3(n,[2532]*7,550000))
 @label=WALKSOUND
 c65088 PUSH BC       ;
  65089 LD A,6        ; The border will be yellow
