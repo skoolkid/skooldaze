@@ -11,7 +11,6 @@ b23296 DEFS 256
 i23552 DEFS 1024
 
 @start
-@expand=#DEF(#LOGO(dark,trans)(fname) #UDGARRAY(8,6+7*$dark+2*$trans,2,8,tindex=2,alpha=(1-$trans)*255);61208-61343-1-64({ImagePath}/$fname|Skool Daze))
 @expand=#DEF(#BUG #LINK:Bugs)
 @expand=#DEF(#FACT #LINK:Facts)
 @expand=#DEF(#POKE #LINK:Pokes)
