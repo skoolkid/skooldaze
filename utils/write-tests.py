@@ -16,7 +16,7 @@ SKOOL = 'sd.skool'
 
 SNAPSHOT = 'build/skool_daze.z80'
 
-OUTPUT = """Using ref files: sd.ref, bugs.ref, changelog.ref, data.ref, facts.ref, glossary.ref, graphics.ref, pages.ref, pokes.ref
+OUTPUT = """Using ref files: sd.ref, bugs.ref, changelog.ref, data.ref, facts.ref, glossary.ref, graphics.ref, pages.ref, pokes.ref, sound.ref
 Parsing sd.skool
 Output directory: {odir}/skool_daze
 Copying {SKOOLKIT_HOME}/skoolkit/resources/skoolkit.css to skoolkit.css
@@ -76,6 +76,7 @@ Writing lessons/#N253.html
 Writing lessons/#N254.html
 Writing lessons/#N255.html
 Writing tables/keys.html
+Writing sound/sound.html
 Parsing load.skool
 Writing load/load.html
 Writing disassembly files in load
