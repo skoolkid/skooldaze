@@ -18827,8 +18827,8 @@ c65141 LD HL,63506   ; {#REGa=#b4 (initial border colour: green), #REGh=#b248
                      ; (initial pitch)}
  65149 JR 65122      ; Make the sound effect with these parameters
 
-; Unused
 @assemble=1
+; Unused
 s65151 DEFB 0
 
 ; Addresses of command lists
