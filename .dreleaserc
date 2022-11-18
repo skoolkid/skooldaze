@@ -1,5 +1,5 @@
 GAME=sd
-SRCFILES=$(echo {sd,load,save,start}.skool {sd,bugs,changelog,data,facts,glossary,graphics,pages,pokes}.ref {sd,dark,green,plum}.css tiles.js skooldaze.py COPYING)
+SRCFILES=$(echo {sd,load,save,start}.skool {sd,bugs,changelog,data,facts,glossary,graphics,pages,pokes,sound}.ref {sd,dark,green,plum}.css tiles.js skooldaze.py COPYING)
 SKOOL2BINOPTS="-i -S 24573"
 CTLINVARIANCE=1
 WAVCONVERT="all-shields.wav bell.wav lines1.wav lines2.wav tune.wav walking.wav"
