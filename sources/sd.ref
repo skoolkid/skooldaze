@@ -10,8 +10,8 @@ GameDir=skool_daze
 Game=Skool Daze
 Logo=#LOGO0,0(logo)
 StyleSheet=skoolkit.css;sd.css
-Release=The complete Skool Daze RAM disassembly 20210310
-Copyright=&#169; 1984 Microsphere Computer Services Ltd. &#169; 2021 Richard Dymond.
+Release=The complete Skool Daze RAM disassembly 20221122
+Copyright=&#169; 1984 Microsphere Computer Services Ltd. &#169; 2022 Richard Dymond.
 AddressAnchor={address#IF({base}==16)(:04x)}
 
 [Links]
