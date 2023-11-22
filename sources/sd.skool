@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017-2022 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2023 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -25,7 +25,7 @@ i23552 DEFS 1024
 ; https://skoolkit.ca
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017-2022 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017-2023 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -8381,6 +8381,7 @@ c32497 LD DE,39722    ; The Reading Room blackboard is at
 @rfix+end
 
 @org
+@defs=32512:254 ; Clear the game status buffer
 ; x-coordinate of the leftmost column of the skool on screen
 ;
 ; Modified by the routines at #R24576 and #R24731.
