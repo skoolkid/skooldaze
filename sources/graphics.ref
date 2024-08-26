@@ -1,4 +1,4 @@
-; Copyright 2008-2014, 2017 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2014, 2017, 2024 Richard Dymond (rjdymond@gmail.com)
 
 [GraphicGlitch:einsteinHead:EINSTEIN's head]
 The line just above EINSTEIN's head contains a transparent pixel (shown in
@@ -16,7 +16,7 @@ To make the pixel blank:
 #UDGTABLE(gallery)
 { #CALL:as_img(17,4) | #CALL:as_img(19,4) |
   #CALL:as_img(145,4) | #CALL:as_img(147,4) }
-{ =c2 POKE 47649,252 | =c2 POKE 47777,63 }
+{ =c2 #WRITEPOKE(eh1[0]) | =c2 #WRITEPOKE(eh1[1]) }
 TABLE#
 #POPS
 
@@ -32,7 +32,7 @@ To make the line transparent:
 #POKES47653,255;47781,255
 #UDGTABLE(gallery)
 { #CALL:as_img(23,4) | #CALL:as_img(151,4) }
-{ POKE 47653,255 | POKE 47781,255 }
+{ #WRITEPOKE(eh2[0]) | #WRITEPOKE(eh2[1]) }
 TABLE#
 #POPS
 
@@ -49,7 +49,7 @@ To make the line transparent:
 #POKES47665,255;47793,255
 #UDGTABLE(gallery)
 { #CALL:as_img(54,4) | #CALL:as_img(182,4) }
-{ POKE 47665,255 | POKE 47793,255 }
+{ #WRITEPOKE(bwh[0]) | #WRITEPOKE(bwh[1]) }
 TABLE#
 #POPS
 
@@ -67,7 +67,7 @@ To make the ear always blank:
 #POKES53863,171;53991,213
 #UDGTABLE(gallery)
 { #CALL:as_img(73,4) | #CALL:as_img(201,4) }
-{ POKE 53863,171 | POKE 53991,213 }
+{ #WRITEPOKE(ce[0]) | #WRITEPOKE(ce[1]) }
 TABLE#
 #POPS
 
@@ -89,8 +89,7 @@ To fill in the blank pixel:
 #POKES52599,30;52855,222;52727,120;52983,123
 #UDGTABLE(gallery)
 { #CALL:as_img(77,4) | #CALL:as_img(205,4) }
-{ <div>POKE 52599,30</div><div>POKE 52855,222</div> |
-  <div>POKE 52727,120</div><div>POKE 52983,123</div> }
+{ #WRITEPOKES(ch[:2]) | #WRITEPOKES(ch[2:]) }
 TABLE#
 #POPS
 
@@ -109,7 +108,7 @@ To make these pixels blank:
 #UDGTABLE(gallery)
 { #CALL:as_img(80,4) | #CALL:as_img(82,4) | #CALL:as_img(85,4) |
   #CALL:as_img(208,4) | #CALL:as_img(210,4) | #CALL:as_img(213,4) }
-{ =c3 POKE 54367,228 | =c3 POKE 54495,39 }
+{ =c3 #WRITEPOKE(wt[0]) | =c3 #WRITEPOKE(wt[1]) }
 TABLE#
 #POPS
 
@@ -129,9 +128,8 @@ To make these pixels transparent:
 #UDGTABLE(gallery)
 { #CALL:as_img(97,4) | #CALL:as_img(225,4) |
   #CALL:as_img(99,4) | #CALL:as_img(227,4) }
-{ <div>POKE 53810,95</div><div>POKE 54322,95</div><div>POKE 54834,223</div> |
-  <div>POKE 53938,250</div><div>POKE 54450,250</div><div>POKE 54962,251</div> |
-  POKE 54837,250 | POKE 54965,95 }
+{ #WRITEPOKES(wf[:3]) | #WRITEPOKES(wf[3:6]) |
+  #WRITEPOKE(wf[6]) | #WRITEPOKE(wf[7]) }
 TABLE#
 #POPS
 
@@ -148,7 +146,7 @@ To make these pixels transparent:
 #POKES51767,235;51895,215
 #UDGTABLE(gallery)
 { #CALL:as_img(101,4) | #CALL:as_img(229,4) }
-{ POKE 51767,235 | POKE 51895,215 }
+{ #WRITEPOKE(wh[0]) | #WRITEPOKE(wh[1]) }
 TABLE#
 #POPS
 
@@ -172,14 +170,7 @@ To remove these differences:
 #POKES54172,116;54428,117;54684,108;54940,109;55196,172;55452,173
 #UDGTABLE(gallery)
 { #CALL:as_img(93,4) | #CALL:as_img(221,4) }
-{ <div>POKE 51996,232</div><div>POKE 52252,232</div><div>POKE 53020,36</div>
-  <div>POKE 53276,164</div><div>POKE 53532,44</div><div>POKE 53788,172</div>
-  <div>POKE 54044,46</div><div>POKE54300,174</div><div>POKE 54556,54</div>
-  <div>POKE 54812,182</div><div>POKE 55068,53</div><div>POKE 55324,181</div> |
-  <div>POKE 52124,23</div><div>POKE 52380,23</div><div>POKE 53148,36</div>
-  <div>POKE 53404,37</div><div>POKE 53660,52</div><div>POKE 53916,53</div>
-  <div>POKE 54172,116</div><div>POKE54428,117</div><div>POKE 54684,108</div>
-  <div>POKE 54940,109</div><div>POKE 55196,172</div><div>POKE 55452,173</div> }
+{ #WRITEPOKES(rc[:12]) | #WRITEPOKES(rc[12:]) }
 TABLE#
 #POPS
 
@@ -206,8 +197,8 @@ To make the extraneous blank pixel transparent:
 #UDGTABLE(gallery)
 { #CALL:as_img(1,4) | #CALL:as_img(17,4) |
   #CALL:as_img(33,4) | #CALL:as_img(49,4) }
-{ =c4 <div>POKE 47627,231 (facing left)</div>
-      <div>POKE 47755,231 (facing right)</div> }
+{ =c4 <div>#WRITEPOKE(ch[0]) (facing left)</div>
+      <div>#WRITEPOKE(ch[1]) (facing right)</div> }
 TABLE#
 #POPS
 
@@ -226,8 +217,8 @@ To make the extraneous blank pixels transparent:
 #POKES47742,247;47870,239
 #UDGTABLE(gallery)
 { #CALL:as_img(65,4) }
-{ <div>POKE 47742,247 (facing left)</div>
-  <div>POKE 47870,239 (facing right)</div> }
+{ <div>#WRITEPOKE(ch[0]) (facing left)</div>
+  <div>#WRITEPOKE(ch[1]) (facing right)</div> }
 TABLE#
 #POPS
 
@@ -254,10 +245,10 @@ To fix the masks:
 #UDGTABLE(gallery)
 { #CALL:as_img(1,4) | #CALL:as_img(17,4) | #CALL:as_img(33,4) |
   #CALL:as_img(49,4) | #CALL:as_img(65,4) }
-{ =c4 <div>POKE 50699,222 (facing left)</div>
-      <div>POKE 50827,123 (facing right)</div> |
-      <div>POKE 50814,222 (facing left)</div>
-      <div>POKE 50942,123 (facing right)</div> }
+{ =c4 <div>#WRITEPOKE(kf[0]) (facing left)</div>
+      <div>#WRITEPOKE(kf[1]) (facing right)</div> |
+      <div>#WRITEPOKE(kf[2]) (facing left)</div>
+      <div>#WRITEPOKE(kf[3]) (facing right)</div> }
 TABLE#
 #POPS
 
@@ -275,7 +266,7 @@ To shift it one pixel to the right:
 #POKES61009,204
 #UDGTABLE(gallery)
 { #UDGARRAY8,6,4,8;60952-60959;61016-61023;61080-61087(score_box_fixed_x4) }
-{ POKE 61009,204 }
+{ #WRITEPOKE(sb) }
 TABLE#
 #POPS
 
