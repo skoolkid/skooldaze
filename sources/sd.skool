@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017-2023 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2023, 2025 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -11,12 +11,12 @@ b23296 DEFS 256
 i23552 DEFS 1024
 
 @start
-@expand=#DEF(#BUG #LINK:Bugs)
-@expand=#DEF(#FACT #LINK:Facts)
-@expand=#DEF(#POKE #LINK:Pokes)
+@expand=#DEF(#BUG()(a) #LINK(Bugs#$a))
+@expand=#DEF(#FACT()(a) #LINK(Facts#$a))
+@expand=#DEF(#POKE()(a) #LINK(Pokes#$a))
 @expand=#DEF(#S #FORMAT({mode[case]}&1))
-@expand=#DEF(#AS(s=-1)(t=#N($s,,,1)(0x)) #LINK#(:AnimatoryStates#IF($s>=0)(#$s))($t))
-@expand=#DEF(#LESSON(n)(t=#N($n,,,1)(0x)) #LINK:Lesson$n($t))
+@expand=#DEF(#AS(s=-1)(t=#N($s,,,1)(0x)) #LINK#((AnimatoryStates#IF($s>=0)(#$s)))($t))
+@expand=#DEF(#LESSON(n)(t=#N($n,,,1)(0x)) #LINK(Lesson$n)($t))
 @replace=/#n\i/#N\1,,,1($)
 @replace=/#b\i/#N\1,,,1(0x)/ (byte)
 @replace=/#w\i/#N(\1,4)/ (word)
@@ -25,7 +25,7 @@ i23552 DEFS 1024
 ; https://skoolkit.ca
 ;
 ; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017-2023 Richard Dymond (this disassembly)
+; Copyright 2008-2015, 2017-2023, 2025 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -1718,7 +1718,7 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
 @bfix=JR Z,26143
  26137 JR Z,26141    ; #REGb=#AS2(#b2/#b130) if ERIC's current x-coordinate is
 @bfix=DEC B          ; even;
- 26139 DEC B         ; even (which is a #BUG#oneFourThreeFour(bug));
+ 26139 DEC B         ; even (which is a #BUG(oneFourThreeFour)(bug));
  26140 DEC B         ; #REGa=#AS3(#b3/#b131), #REGb=#AS0(#b0/#b128) if ERIC's
 @if({fix}>1)(label=)
 *26141 ADD A,2       ; current x-coordinate is odd
@@ -2146,7 +2146,7 @@ u26621 DEFB 81       ; #b81='Q' (up)
 ; Used by the routine at #R26471. The entries in this table are pointed to by
 ; the the entries in the keypress offset table at #R26656. Another table of
 ; ASCII codes and routine addresses can be found at #R26752. For more details,
-; see the #LINK:Keys(keypress table).
+; see the #LINK(Keys)(keypress table).
 @label=K_NONE
 b26624 DEFB 32       ; ' ' (SPACE)
  26625 DEFW 26449    ; Do nothing
@@ -2195,7 +2195,7 @@ b26655 DEFB 0
 ; table corresponds to a game key, and is the LSB/entry in this table
 ; corresponds to a game key, and is the address// of an entry in the table at
 ; #R26624 or the table at #R26752. For more details, see the
-; #LINK:Keys(keypress table).
+; #LINK(Keys)(keypress table).
 @label=KEYTABLE
 @ssub=DEFB 26624%256
 @rsub=DEFW 26624
@@ -2492,7 +2492,7 @@ b26656 DEFB 0        ; ' ': Unused
 ; Used by the routine at #R26471. The entries in this table are pointed to by
 ; the entries in the keypress offset table at #R26656. Another table of ASCII
 ; codes and routine addresses can be found at #R26624. For more details, see
-; the #LINK:Keys(keypress table).
+; the #LINK(Keys)(keypress table).
 @label=K_WRITE
 b26752 DEFB 119      ; 'w'
  26753 DEFW 63056    ; Write
@@ -3959,7 +3959,7 @@ c28143 LD A,(32746)  ; #R32746 holds the game mode indicator
  28179 RET Z         ; or black ink (which is normally true only if it's not a
  28180 LD A,(DE)     ; shield, but is also true if a speech bubble has been
  28181 AND 7         ; drawn over a shield; in this case, the routine exits
- 28183 RET Z         ; here, which is a #BUG#hiddenShield(bug))}
+ 28183 RET Z         ; here, which is a #BUG(hiddenShield)(bug))}
  28184 LD A,(DE)     ; #REGa=attribute of the shield
  28185 XOR C         ; {Check whether we should make the shields flash or not
  28186 RLCA          ; flash, and return unless the flash status of the shield
@@ -4280,7 +4280,7 @@ c28446 LD L,112      ; {Return now if there is an uninterruptible subcommand
 ; little boys?
  28516 LD H,152      ; #b152=little boy no. 1
  28518 LD B,7        ; We check only the first seven little boys -
-                     ; #FACT#bullyFriends(interesting)!
+                     ; #FACT(bullyFriends)(interesting)!
 *28520 CALL 28416    ; Is this little boy a potential target?
  28523 JR NC,28527   ; Jump if not
  28525 JR 28490      ; Otherwise throw a punch
@@ -7455,7 +7455,7 @@ c31739 LD L,105      ; {Replace the address of this routine in bytes #b105 and
 ; decrements the animatory state if the character is moving leftwards, and
 ; increments it if the character is moving rightwards. So when a character is
 ; moving leftwards while chasing ERIC, his walking animation will cycle through
-; phases 1 and 2 only, or 3 and 4 only. This is a #BUG#oneTwoOneTwo(bug).//
+; phases 1 and 2 only, or 3 and 4 only. This is a #BUG(oneTwoOneTwo)(bug).//
 @bfix=LD A,B         ; #REGa=character's current animatory state
  31756 LD A,(HL)     ; #REGa=x-coordinate increment (-1 or +1)
 @bfix=INC A          ; Increment it (to move the character to the next walking
@@ -7558,7 +7558,7 @@ c31815 LD A,(32761)  ; Pick up the current lesson number (#b0-#b63) from
  31823 LD A,(DE)     ; the #R65024(main timetable); note that this will not be
  31824 LD E,A        ; the identifier of the current lesson if the current
                      ; lesson is a 'special' playtime - #LESSON243, #LESSON244
-                     ; or #LESSON245 - which is a #BUG#wrongCommandList(bug)}
+                     ; or #LESSON245 - which is a #BUG(wrongCommandList)(bug)}
 @bfix=|NOP           ;
 @bfix=|SET 0,(HL)    ; Set this character's command list up for a restart
 @bfix=               ; (without replacing the command list start address in the
@@ -9272,8 +9272,8 @@ b38912 DEFB 1,13,29,43,43,43,43,43,96,103,77,43,43,43,43,43
 
 ; Character buffer for little boy no. 1 (#b152)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=BOY01CBUF
 b39008 DEFS 32
 
@@ -9364,8 +9364,8 @@ b39168 DEFB 2,14,14,44,13,29,43,43,97,104,107,111,116,43,43,43
 
 ; Character buffer for little boy no. 2 (#b153)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b39264 DEFS 32
 
 ; Skool attribute data for row 1
@@ -9456,8 +9456,8 @@ b39424 DEFB 2,15,30,45,14,14,85,0,98,105,14,14,14,0,0,0
 
 ; Character buffer for little boy no. 3 (#b154)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b39520 DEFS 32
 
 ; Skool attribute data for row 2
@@ -9547,8 +9547,8 @@ b39680 DEFB 2,16,31,46,60,74,86,75,99,105,14,14,14,0,0,52
 
 ; Character buffer for little boy no. 4 (#b155)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b39776 DEFS 32
 
 ; Skool attribute data for row 3
@@ -9640,8 +9640,8 @@ b39936 DEFB 2,17,32,47,61,75,75,86,99,105,14,14,14,0,0,52
 
 ; Character buffer for little boy no. 5 (#b156)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b40032 DEFS 32
 
 ; Skool attribute data for row 4
@@ -9733,8 +9733,8 @@ b40192 DEFB 2,14,33,48,62,76,87,91,100,105,14,14,14,0,0,0
 
 ; Character buffer for little boy no. 6 (#b157)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b40288 DEFS 32
 
 ; Skool attribute data for row 5
@@ -9826,8 +9826,8 @@ b40448 DEFB 2,14,34,49,63,9,88,92,0,105,14,14,14,0,0,0
 
 ; Character buffer for little boy no. 7 (#b158)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b40544 DEFS 32
 
 ; Skool attribute data for row 6
@@ -9919,8 +9919,8 @@ b40704 DEFB 3,18,35,50,64,77,43,43,43,43,43,96,13,121,126,131
 
 ; Character buffer for little boy no. 8 (#b159)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b40800 DEFS 32
 
 ; Skool attribute data for row 7
@@ -10012,8 +10012,8 @@ b40960 DEFB 4,19,19,51,51,14,0,0,0,0,0,112,117,122,26,132
 
 ; Character buffer for little boy no. 9 (#b160)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b41056 DEFS 32
 
 ; Skool attribute data for row 8
@@ -10104,8 +10104,8 @@ b41216 DEFB 5,20,36,52,65,14,0,52,101,106,219,52,105,123,127,26
 
 ; Character buffer for little boy no. 10 (#b161)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b41312 DEFS 32
 
 ; Skool attribute data for row 9
@@ -10196,8 +10196,8 @@ b41472 DEFB 5,21,26,53,66,14,0,52,101,106,0,52,105,14,128,133
 
 ; Character buffer for little boy no. 11 (#b162)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=BOY11CBUF
 b41568 DEFS 32
 
@@ -10287,8 +10287,8 @@ b41728 DEFB 6,22,37,54,67,78,0,93,21,21,108,113,105,14,14,134
 
 ; Character buffer for MR WACKER (#b163)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=WACKERCBUF
 b41824 DEFS 32
 
@@ -10377,8 +10377,8 @@ b41984 DEFB 7,23,38,55,68,79,89,94,102,102,109,114,105,14,14,135
 
 ; Character buffer for MR ROCKITT (#b164)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=ROCKITTCBUF
 b42080 DEFS 32
 
@@ -10408,7 +10408,7 @@ b42208 DEFB 188      ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64876(#b188)
 @bfix=DEFB 188  ; Lesson #LESSON229 (REVISION LIBRARY): #R64876(#b188) (Staff
 @bfix=          ; room)
  42213 DEFB 154      ; Lesson #LESSON229 (REVISION LIBRARY): #R64619(#b154)
-                     ; (Exam Room) (this is a #BUG#rockittExamRoom(bug))
+                     ; (Exam Room) (this is a #BUG(rockittExamRoom)(bug))
  42214 DEFB 134      ; Lesson #LESSON230 (REVISION LIBRARY): #R64458(#b134)
                      ; (White Room)
  42215 DEFB 134      ; Lesson #LESSON231 (MR WITHIT - MAP ROOM): #R64458(#b134)
@@ -10469,8 +10469,8 @@ b42240 DEFB 8,24,39,56,69,80,90,43,43,43,110,115,118,124,129,136
 
 ; Character buffer for MR WITHIT (#b165)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b42336 DEFS 32
 
 ; Skool attribute data for row 13
@@ -10561,8 +10561,8 @@ b42496 DEFB 9,25,9,0,70,81,0,0,0,0,0,0,119,26,130,137
 
 ; Character buffer for MR CREAK (#b166)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b42592 DEFS 32
 
 ; Skool attribute data for row 14
@@ -10595,7 +10595,7 @@ b42720 DEFB 188      ; Lesson #LESSON224 (DINNER (MR WITHIT)): #R64876(#b188)
 @bfix=DEFB 188  ; Lesson #LESSON230 (REVISION LIBRARY): #R64876(#b188) (Staff
 @bfix=          ; room)
  42726 DEFB 130      ; Lesson #LESSON230 (REVISION LIBRARY): #R64410(#b130)
-                     ; (Reading Room) (this is a #BUG#emptyClass(bug))
+                     ; (Reading Room) (this is a #BUG(emptyClass)(bug))
  42727 DEFB 130      ; Lesson #LESSON231 (MR WITHIT - MAP ROOM): #R64410(#b130)
                      ; (Reading Room)
  42728 DEFB 134      ; Lesson #LESSON232 (MR WACKER - READING ROOM):
@@ -10659,8 +10659,8 @@ b42752 DEFB 9,25,40,57,71,82,0,0,0,0,0,0,120,26,26,138
 
 ; Character buffer for BOY WANDER (#b167)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 b42848 DEFS 32
 
 ; Skool attribute data for row 15
@@ -10750,8 +10750,8 @@ b43008 DEFB 10,26,9,0,70,81,0,0,0,0,0,0,9,125,26,26
 
 ; Character buffer for ANGELFACE (#b168)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=BULLYCBUF
 b43104 DEFS 32
 
@@ -10837,8 +10837,8 @@ b43264 DEFB 9,25,9,0,72,83,0,0,0,0,0,0,9,0,125,26
 
 ; Character buffer for EINSTEIN (#b169)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=SWOTCBUF
 b43360 DEFS 32
 
@@ -10924,8 +10924,8 @@ b43520 DEFB 11,27,41,58,70,81,0,0,0,0,0,0,9,0,0,125
 
 ; Character buffer for BOY WANDER's pellet (#b170)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=BWPELCBUF
 b43616 DEFS 32
 
@@ -11019,8 +11019,8 @@ b43776 DEFB 9,25,9,59,73,84,43,43,43,43,43,43,9,0,0,0
 
 ; Character buffer for ERIC's pellet (#b171)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=ERICPELCBUF
 b43872 DEFS 32
 
@@ -11114,8 +11114,8 @@ b44032 DEFB 12,28,42,43,43,43,43,43,43,43,43,43,43,43,43,43
 
 ; Character buffer for ERIC (#b172)
 ;
-; See the #LINK:CharacterBuffers(character buffer documentation) for details of
-; how the buffer is used.
+; See the #LINK(CharacterBuffers)(character buffer documentation) for details
+; of how the buffer is used.
 @label=ERICCBUF
 b44128 DEFS 32
 
@@ -12657,9 +12657,9 @@ b47359 DEFB 0
 ;
 ; Used by the routine at #R24843. Tiles #b0 and #b128 are unused by design (and
 ; would appear completely blank if they were used); tiles #b74 and #b202 are
-; also unused; tiles #b21 and #b149 belong to the #FACT#handsUp(unused sprites
+; also unused; tiles #b21 and #b149 belong to the #FACT(handsUp)(unused sprites
 ; of the main kids with their hands raised); tiles #b75-#b80, #b82-#b101,
-; #b203-#b208 and #b210-#b229 belong to #FACT#doppelwacker(unused copies of MR
+; #b203-#b208 and #b210-#b229 belong to #FACT(doppelwacker)(unused copies of MR
 ; WACKER's sprites).
 ; .
 ; #UDGTABLE(gallery)
@@ -13618,7 +13618,7 @@ t56544 DEFM "DON'T TRY MY"
 
 ; Initial byte #b122 of the character buffers
 ;
-; Used by the routine at #R26880. See the #LINK:CharacterBuffers(character
+; Used by the routine at #R26880. See the #LINK(CharacterBuffers)(character
 ; buffer documentation) for descriptions of the individual bits in byte #b122.
 @label=INITIAL122
 b56576 DEFB 0        ; {Initial value of byte #b122 for the little boys
@@ -13639,7 +13639,7 @@ b56576 DEFB 0        ; {Initial value of byte #b122 for the little boys
 @bfix=DEFB 144       ; to make them walk instead of run
  56589 DEFB 16       ; 7 is reset, making them run at the start of the game
 @bfix=DEFB 144       ; }
- 56590 DEFB 16       ; (which is a #BUG#runningTeachers(bug))}
+ 56590 DEFB 16       ; (which is a #BUG(runningTeachers)(bug))}
  56591 DEFB 0        ; {Initial value of byte #b122 for BOY WANDER, ANGELFACE
  56592 DEFB 0        ; and EINSTEIN
  56593 DEFB 0        ; }
@@ -15342,7 +15342,7 @@ t59392 DEFM "MANCHESTER"
  59414 DEFM "STER"       ; This blackboard message probably used to be 'WHY IT
                          ; RAINS IN MANCHESTER' (as it is in the re-release of
                          ; Skool Daze by
-                         ; #FACT#alternativeDifferences(Alternative Software
+                         ; #FACT(alternativeDifferences)(Alternative Software
                          ; Ltd))
  59418 DEFS 6
 
@@ -15540,7 +15540,7 @@ c60139 LD HL,784     ; {These parameters were meant for the routine at #R65122;
  60142 LD DE,12896   ; however, the #S/CALL/ below is to #w62818 (98,245)
 @ofix=/              ; }
  60145 LD A,1        ; instead of #R65122 (98,254), which is a
-                     ; #BUG#jumpSound(bug)}
+                     ; #BUG(jumpSound)(bug)}
 @nowarn
 @ofix=/CALL 65122    ; Make the jumping sound effect
 @ignoreua
@@ -15558,7 +15558,7 @@ s60153 DEFS 7
 ; can be found at #R60416.
 ; .
 ; #UDGTABLE
-; { #UDGARRAY8,23,,8;60184-60191;60248-60255;60312-60319(lines_bubble) }
+; { #UDGARRAY8,23,,8(60184-60191;60248-60255;60312-60319)(lines_bubble) }
 ; TABLE#
 ; .
 ; The attribute bytes will be one of the following depending on who's getting
@@ -15624,7 +15624,7 @@ t60384 DEFM "DEMO. - PRESS"
 ; combination letter) before the bubble is displayed for the first time.
 ; .
 ; #UDGTABLE
-; { #UDGARRAY8,23,,8;60440-60447;60504-60511;60568-60575(lines_bubble2) }
+; { #UDGARRAY8,23,,8(60440-60447;60504-60511;60568-60575)(lines_bubble2) }
 ; TABLE#
 ; .
 ; The attribute bytes will be 7 (INK 7: PAPER 0) for the safe combination
@@ -15726,7 +15726,7 @@ s60927 DEFB 0
 ; Used by the routine at #R27406.
 ; .
 ; #UDGTABLE
-; { #UDGARRAY8,6,,8;60952-60959;61016-61023;61080-61087(score_box) }
+; { #UDGARRAY8,6,,8(60952-60959;61016-61023;61080-61087)(score_box) }
 ; TABLE#
 @label=SCOREBOX
 b60928 DEFB 6,6,6,6,6,6,6,6         ; {Attributes (PAPER 0: INK 6)
@@ -18229,7 +18229,7 @@ s64618 DEFB 0
 ; Command list #b154: Exam Room - little boy
 ;
 ; Used by the little boys in various lessons, and also by MR ROCKITT in lesson
-; #LESSON229 (which is a #BUG#rockittExamRoom(bug)).
+; #LESSON229 (which is a #BUG(rockittExamRoom)(bug)).
 @label=CLIST154
 b64619 DEFW 25534    ; Go to...
  64621 DEFB 162,61   ; ...the Exam Room
@@ -18676,7 +18676,7 @@ s65004 DEFS 20
 ; Used by the routine at #R63749.
 @label=TIMETABLE
 b65024 DEFB 246      ; #b0: #LESSON246(PLAYTIME) (this is an
-                     ; #FACT#initialPlaytimes(initial playtime))
+                     ; #FACT(initialPlaytimes)(initial playtime))
  65025 DEFB 226      ; #b1: #LESSON226(MR WACKER - EXAM ROOM)
  65026 DEFB 231      ; #b2: #LESSON231(MR WITHIT - MAP ROOM)
  65027 DEFB 247      ; #b3: #LESSON247(PLAYTIME)
@@ -18693,7 +18693,7 @@ b65024 DEFB 246      ; #b0: #LESSON246(PLAYTIME) (this is an
  65038 DEFB 250      ; #b14: #LESSON250(PLAYTIME)
  65039 DEFB 236      ; #b15: #LESSON236(MR WACKER - WHITE ROOM)
  65040 DEFB 251      ; #b16: #LESSON251(PLAYTIME) (this is an
-                     ; #FACT#initialPlaytimes(initial playtime))
+                     ; #FACT(initialPlaytimes)(initial playtime))
  65041 DEFB 232      ; #b17: #LESSON232(MR WACKER - READING ROOM)
  65042 DEFB 235      ; #b18: #LESSON235(MR CREAK - WHITE ROOM)
  65043 DEFB 248      ; #b19: #LESSON248(PLAYTIME)
@@ -18710,7 +18710,7 @@ b65024 DEFB 246      ; #b0: #LESSON246(PLAYTIME) (this is an
  65054 DEFB 237      ; #b30: #LESSON237(MR WITHIT - WHITE ROOM)
  65055 DEFB 233      ; #b31: #LESSON233(MR ROCKITT - READING ROOM)
  65056 DEFB 249      ; #b32: #LESSON249(PLAYTIME) (this is an
-                     ; #FACT#initialPlaytimes(initial playtime))
+                     ; #FACT(initialPlaytimes)(initial playtime))
  65057 DEFB 240      ; #b33: #LESSON240(MR WITHIT - MAP ROOM)
  65058 DEFB 230      ; #b34: #LESSON230(REVISION LIBRARY)
  65059 DEFB 235      ; #b35: #LESSON235(MR CREAK - WHITE ROOM)
@@ -18727,7 +18727,7 @@ b65024 DEFB 246      ; #b0: #LESSON246(PLAYTIME) (this is an
  65070 DEFB 229      ; #b46: #LESSON229(REVISION LIBRARY)
  65071 DEFB 231      ; #b47: #LESSON231(MR WITHIT - MAP ROOM)
  65072 DEFB 248      ; #b48: #LESSON248(PLAYTIME) (this is an
-                     ; #FACT#initialPlaytimes(initial playtime))
+                     ; #FACT(initialPlaytimes)(initial playtime))
  65073 DEFB 231      ; #b49: #LESSON231(MR WITHIT - MAP ROOM)
  65074 DEFB 232      ; #b50: #LESSON232(MR WACKER - READING ROOM)
  65075 DEFB 250      ; #b51: #LESSON250(PLAYTIME)

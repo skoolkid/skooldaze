@@ -1,7 +1,7 @@
-; Copyright 2008-2015, 2017, 2019 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017, 2019, 2025 Richard Dymond (rjdymond@gmail.com)
 
 [Page:PlayArea]
-PageContent=<div>#CALL:play_area(play_area,0,0,96,21,2,0,8)</div>
+PageContent=<div>#CALL(play_area(play_area,0,0,96,21,2,0,8))</div>
 
 [Page:PlayAreaTiles]
 JavaScript=tiles.js
@@ -101,7 +101,7 @@ The eight graphic bytes for a tile are located thus:
 Any given tile (identified by <i>udg_addr</i>) may appear at more than one
 location in the play area.
 </p>
-#CALL:play_area_tiles(96,21)
+#CALL(play_area_tiles(96,21))
 
 [Template:play_area_tiles]
 <table class="tiles">
@@ -141,7 +141,7 @@ PageContent=#INCLUDE(InitialAnimatoryStates)
 [InitialAnimatoryStates]
 #PUSHS
 #POKES56576,17,21
-<div>#CALL:play_area(initial_as,0,0,96,21,2,1,8)</div>
+<div>#CALL(play_area(initial_as,0,0,96,21,2,1,8))</div>
 #POPS
 
 [Page:AnimatoryStates]
@@ -155,7 +155,7 @@ appearance of the animatory state when used by a boy or a catapult pellet
 correspond to the appearance of the animatory state when used by a teacher
 (character numbers #b163-#b166). (See #R27914.)</p>
 <table class="animatoryStates">
-#CALL:animatory_states()
+#CALL(animatory_states())
 </table>
 
 [Template:animatory_state_row]
@@ -319,7 +319,7 @@ state with <i>udg_page</i>=#b201 (as used by a teacher, i.e. character numbers
 </p>
 </div>
 <table class="asTiles">
-#CALL:astiles()
+#CALL(astiles())
 </table>
 
 [Template:astiles_row]
@@ -396,8 +396,8 @@ PageContent=#INCLUDE(CharacterBuffers)
 
 [CharacterBuffers]
 <p>The character buffers occupy bytes #b96-#b127 in pages #b152-#b172.</p>
-#CALL:cast()
-#CALL:cbuffer()
+#CALL(cast())
+#CALL(cbuffer())
 
 [Template:cast]
 #TABLE(cbuffer,cbufPage,cbufAddress,cbufCharacter,transparent,cbufPage,cbufAddress,cbufCharacter,transparent,cbufPage,cbufAddress,cbufCharacter)
@@ -450,7 +450,7 @@ PageContent=#INCLUDE(PersonalTimetables)
 <th>No.</th>
 <th>Character</th>
 </tr>
-#CALL:personal_timetables()
+#CALL(personal_timetables())
 </table>
 
 [Template:personal_timetable]
@@ -468,7 +468,7 @@ PageContent=#INCLUDE(LessonIndex)
 <th>ID</th>
 <th>Lesson</th>
 </tr>
-#CALL:lesson_index()
+#CALL(lesson_index())
 </table>
 
 [Template:lesson_type]
@@ -478,100 +478,100 @@ PageContent=#INCLUDE(LessonIndex)
 </tr>
 
 [Page:Lesson224]
-PageContent=#CALL:lesson(224)
+PageContent=#CALL(lesson(224))
 
 [Page:Lesson225]
-PageContent=#CALL:lesson(225)
+PageContent=#CALL(lesson(225))
 
 [Page:Lesson226]
-PageContent=#CALL:lesson(226)
+PageContent=#CALL(lesson(226))
 
 [Page:Lesson227]
-PageContent=#CALL:lesson(227)
+PageContent=#CALL(lesson(227))
 
 [Page:Lesson228]
-PageContent=#CALL:lesson(228)
+PageContent=#CALL(lesson(228))
 
 [Page:Lesson229]
-PageContent=#CALL:lesson(229)
+PageContent=#CALL(lesson(229))
 
 [Page:Lesson230]
-PageContent=#CALL:lesson(230)
+PageContent=#CALL(lesson(230))
 
 [Page:Lesson231]
-PageContent=#CALL:lesson(231)
+PageContent=#CALL(lesson(231))
 
 [Page:Lesson232]
-PageContent=#CALL:lesson(232)
+PageContent=#CALL(lesson(232))
 
 [Page:Lesson233]
-PageContent=#CALL:lesson(233)
+PageContent=#CALL(lesson(233))
 
 [Page:Lesson234]
-PageContent=#CALL:lesson(234)
+PageContent=#CALL(lesson(234))
 
 [Page:Lesson235]
-PageContent=#CALL:lesson(235)
+PageContent=#CALL(lesson(235))
 
 [Page:Lesson236]
-PageContent=#CALL:lesson(236)
+PageContent=#CALL(lesson(236))
 
 [Page:Lesson237]
-PageContent=#CALL:lesson(237)
+PageContent=#CALL(lesson(237))
 
 [Page:Lesson238]
-PageContent=#CALL:lesson(238)
+PageContent=#CALL(lesson(238))
 
 [Page:Lesson239]
-PageContent=#CALL:lesson(239)
+PageContent=#CALL(lesson(239))
 
 [Page:Lesson240]
-PageContent=#CALL:lesson(240)
+PageContent=#CALL(lesson(240))
 
 [Page:Lesson241]
-PageContent=#CALL:lesson(241)
+PageContent=#CALL(lesson(241))
 
 [Page:Lesson242]
-PageContent=#CALL:lesson(242)
+PageContent=#CALL(lesson(242))
 
 [Page:Lesson243]
-PageContent=#CALL:lesson(243)
+PageContent=#CALL(lesson(243))
 
 [Page:Lesson244]
-PageContent=#CALL:lesson(244)
+PageContent=#CALL(lesson(244))
 
 [Page:Lesson245]
-PageContent=#CALL:lesson(245)
+PageContent=#CALL(lesson(245))
 
 [Page:Lesson246]
-PageContent=#CALL:lesson(246)
+PageContent=#CALL(lesson(246))
 
 [Page:Lesson247]
-PageContent=#CALL:lesson(247)
+PageContent=#CALL(lesson(247))
 
 [Page:Lesson248]
-PageContent=#CALL:lesson(248)
+PageContent=#CALL(lesson(248))
 
 [Page:Lesson249]
-PageContent=#CALL:lesson(249)
+PageContent=#CALL(lesson(249))
 
 [Page:Lesson250]
-PageContent=#CALL:lesson(250)
+PageContent=#CALL(lesson(250))
 
 [Page:Lesson251]
-PageContent=#CALL:lesson(251)
+PageContent=#CALL(lesson(251))
 
 [Page:Lesson252]
-PageContent=#CALL:lesson(252)
+PageContent=#CALL(lesson(252))
 
 [Page:Lesson253]
-PageContent=#CALL:lesson(253)
+PageContent=#CALL(lesson(253))
 
 [Page:Lesson254]
-PageContent=#CALL:lesson(254)
+PageContent=#CALL(lesson(254))
 
 [Page:Lesson255]
-PageContent=#CALL:lesson(255)
+PageContent=#CALL(lesson(255))
 
 [Page:CommandLists]
 Content=asm/#N65152.html
@@ -584,7 +584,7 @@ Content=asm/#N65152.html
 <a href="{prev_lesson[href]}">{prev_lesson[num]}</a></span>
 </td>
 <td class="up">
-Up: #LINK:LessonIndex(Index)
+Up: #LINK(LessonIndex)(Index)
 </td>
 <td class="next">
 <span class="next-{next_lesson[exists]}">Next:
@@ -608,7 +608,7 @@ Up: #LINK:LessonIndex(Index)
 <a href="{prev_lesson[href]}">{prev_lesson[num]}</a></span>
 </td>
 <td class="up">
-Up: #LINK:LessonIndex(Index)
+Up: #LINK(LessonIndex)(Index)
 </td>
 <td class="next">
 <span class="next-{next_lesson[exists]}">Next:
@@ -658,7 +658,7 @@ Routine = address at (Lookup + 1, Lookup + 2)
 <th>Routine</th>
 <th>Purpose</th>
 </tr>
-#CALL:keypress_table_rows()
+#CALL(keypress_table_rows())
 </table>
 
 [Template:keypress_table_row]

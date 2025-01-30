@@ -1,4 +1,4 @@
-; Copyright 2008-2013, 2015, 2017, 2019, 2021
+; Copyright 2008-2013, 2015, 2017, 2019, 2021, 2025
 ; Richard Dymond (rjdymond@gmail.com)
 
 [Fact:boy11:The importance of little boy no. 11]
@@ -36,8 +36,8 @@ MONSOONS'.
 (2) The font graphic for the '/' (slash) character is slightly broken:
 
 #UDGTABLE {
-  #PUSHS #POKES55855,3 #CALL:font(55599,1,4,alt_slash) #POPS |
-  instead of | #CALL:font(55599,1,4,slash)
+  #PUSHS #POKES55855,3 #CALL(font(55599,1,4,alt_slash)) #POPS |
+  instead of | #CALL(font(55599,1,4,slash))
 } TABLE#
 
 (3) In the stampede playtimes (lessons #LESSON252 and #LESSON253), the stampede
@@ -52,13 +52,13 @@ released by Microsphere.
 The '\' (backslash) character in the Skool Daze font has a bit missing:
 
 #UDGTABLE
-{ #CALL:font(55644,1,4,backslash_dot) }
+{ #CALL(font(55644,1,4,backslash_dot)) }
 TABLE#
 
 Interestingly, the corresponding bit is also missing from the '/' (slash)
 character in the version of Skool Daze that was released by Alternative
-Software in 1987 (see #FACT#alternativeDifferences()), but it is present in the
-original 1984 release by Microsphere.
+Software in 1987 (see #FACT(alternativeDifferences)()), but it is present in
+the original 1984 release by Microsphere.
 
 [Fact:onePaceOrThree:One pace or three?]
 If a teacher is conducting a class without ERIC, or is conducting ERIC's class
@@ -127,7 +127,7 @@ having to take part in the special playtime: just stand at the blackboard for
 about 20 minutes until the bell rings.
 
 Rather more interesting is that you can use this technique to
-#BUG#avoidingExpulsion(avoid expulsion).
+#BUG(avoidingExpulsion)(avoid expulsion).
 
 [Fact:doppelwacker:Doppelwacker]
 The sprite graphic data is split between two base pages: page #R47360(#b185)
@@ -137,18 +137,18 @@ copies of most of MR WACKER's sprites:
 
 #UDGTABLE(gallery)
 { =c2 #b185 | =c2 #b201 }
-{ #CALL:as_img(80, 2, 1, 120, 185) | #CALL:as_img(208, 2, 1, 120, 185) |
-  #CALL:as_img(80, 2, 1, 120, 201) | #CALL:as_img(208, 2, 1, 120, 201) }
-{ #CALL:as_img(81, 2, 1, 120, 185) | #CALL:as_img(209, 2, 1, 120, 185) |
-  #CALL:as_img(81, 2, 1, 120, 201) | #CALL:as_img(209, 2, 1, 120, 201) }
-{ #CALL:as_img(82, 2, 1, 120, 185) | #CALL:as_img(210, 2, 1, 120, 185) |
-  #CALL:as_img(82, 2, 1, 120, 201) | #CALL:as_img(210, 2, 1, 120, 201) }
-{ #CALL:as_img(83, 2, 1, 120, 185) | #CALL:as_img(211, 2, 1, 120, 185) |
-  #CALL:as_img(83, 2, 1, 120, 201) | #CALL:as_img(211, 2, 1, 120, 201) }
-{ #CALL:as_img(85, 2, 1, 120, 185) | #CALL:as_img(213, 2, 1, 120, 185) |
-  #CALL:as_img(85, 2, 1, 120, 201) | #CALL:as_img(213, 2, 1, 120, 201) }
-{ #CALL:as_img(87, 2, 1, 120, 185) | #CALL:as_img(215, 2, 1, 120, 185) |
-  #CALL:as_img(87, 2, 1, 120, 201) | #CALL:as_img(215, 2, 1, 120, 201) }
+{ #CALL(as_img(80, 2, 1, 120, 185)) | #CALL(as_img(208, 2, 1, 120, 185)) |
+  #CALL(as_img(80, 2, 1, 120, 201)) | #CALL(as_img(208, 2, 1, 120, 201)) }
+{ #CALL(as_img(81, 2, 1, 120, 185)) | #CALL(as_img(209, 2, 1, 120, 185)) |
+  #CALL(as_img(81, 2, 1, 120, 201)) | #CALL(as_img(209, 2, 1, 120, 201)) }
+{ #CALL(as_img(82, 2, 1, 120, 185)) | #CALL(as_img(210, 2, 1, 120, 185)) |
+  #CALL(as_img(82, 2, 1, 120, 201)) | #CALL(as_img(210, 2, 1, 120, 201)) }
+{ #CALL(as_img(83, 2, 1, 120, 185)) | #CALL(as_img(211, 2, 1, 120, 185)) |
+  #CALL(as_img(83, 2, 1, 120, 201)) | #CALL(as_img(211, 2, 1, 120, 201)) }
+{ #CALL(as_img(85, 2, 1, 120, 185)) | #CALL(as_img(213, 2, 1, 120, 185)) |
+  #CALL(as_img(85, 2, 1, 120, 201)) | #CALL(as_img(213, 2, 1, 120, 201)) }
+{ #CALL(as_img(87, 2, 1, 120, 185)) | #CALL(as_img(215, 2, 1, 120, 185)) |
+  #CALL(as_img(87, 2, 1, 120, 201)) | #CALL(as_img(215, 2, 1, 120, 201)) }
 TABLE#
 
 This suggests that the original plan was to have the graphic data for every
@@ -157,14 +157,14 @@ sprites, so the graphic data for him and the other teachers had to go to page
 #b201.
 
 [Fact:wackersOldShoes:MR WACKER's old shoes]
-The #FACT#doppelwacker(copies of MR WACKER's sprites based in page #b185) show
+The #FACT(doppelwacker)(copies of MR WACKER's sprites based in page #b185) show
 a slight difference in animatory states #b81 and #b209 compared to the official
 sprites based in page #b201:
 
 #UDGTABLE(gallery)
 { =c2 #b185 | =c2 #b201 }
-{ #CALL:as_img(81, 4, 1, 120, 185) | #CALL:as_img(209, 4, 1, 120, 185) |
-  #CALL:as_img(81, 4, 1, 120, 201) | #CALL:as_img(209, 4, 1, 120, 201) }
+{ #CALL(as_img(81, 4, 1, 120, 185)) | #CALL(as_img(209, 4, 1, 120, 185)) |
+  #CALL(as_img(81, 4, 1, 120, 201)) | #CALL(as_img(209, 4, 1, 120, 201)) }
 { #b81 | #b209 | #b81 | #b209 }
 TABLE#
 
@@ -204,9 +204,9 @@ different shape:
 
 #UDGTABLE(gallery)
 { =c2 #b185 (modified) | =c2 #b201 }
-{ #PUSHSwos #POKES47185,81 #CALL:as_img(81, 4, 1, 120, 185) |
-  #POKES45265,209 #CALL:as_img(209, 4, 1, 120, 185) #POPS |
-  #CALL:as_img(81, 4, 1, 120, 201) | #CALL:as_img(209, 4, 1, 120, 201) }
+{ #PUSHSwos #POKES47185,81 #CALL(as_img(81, 4, 1, 120, 185)) |
+  #POKES45265,209 #CALL(as_img(209, 4, 1, 120, 185)) #POPS |
+  #CALL(as_img(81, 4, 1, 120, 201)) | #CALL(as_img(209, 4, 1, 120, 201)) }
 { #b81 | #b209 | #b81 | #b209 }
 TABLE#
 
@@ -258,9 +258,9 @@ at the White Room wall, apparently aware that ERIC is behind it, but unaware
 that ERIC cannot walk through the wall and meet his fist.
 
 #PUSHS
-#CALL:place_char(168,36,10,171)
-#CALL:place_char(172,39,10,0)
-#UDGTABLE { #CALL:play_area(axrv,30,7,20,7,2,1) } TABLE#
+#CALL(place_char(168,36,10,171))
+#CALL(place_char(172,39,10,0))
+#UDGTABLE { #CALL(play_area(axrv,30,7,20,7,2,1)) } TABLE#
 #POPS
 
 The reason this happens is that the routine at #R28416, which checks whether
@@ -279,25 +279,25 @@ the teacher already has - then he will take some other seat (as shown below),
 depending on where his command list sends him.
 
 #PUSHS
-#CALL:hide_chars()
+#CALL(hide_chars())
 #UDGTABLE(gallery) {
-  #PUSHS #CALL:place_char(152,66,3,69)
-  #CALL:play_area(ss_mr_boy,63,0,11,7,2,1) #POPS |
-  #PUSHS #CALL:place_char(167,64,3,53)
-  #CALL:play_area(ss_mr_boy_wander,63,0,11,7,2,1) #POPS |
-  #PUSHS #CALL:place_char(168,68,3,37)
-  #CALL:play_area(ss_mr_angelface,63,0,11,7,2,1) #POPS |
-  #PUSHS #CALL:place_char(169,66,3,21)
-  #CALL:play_area(ss_mr_einstein,63,0,11,7,2,1) #POPS
+  #PUSHS #CALL(place_char(152,66,3,69))
+  #CALL(play_area(ss_mr_boy,63,0,11,7,2,1)) #POPS |
+  #PUSHS #CALL(place_char(167,64,3,53))
+  #CALL(play_area(ss_mr_boy_wander,63,0,11,7,2,1)) #POPS |
+  #PUSHS #CALL(place_char(168,68,3,37))
+  #CALL(play_area(ss_mr_angelface,63,0,11,7,2,1)) #POPS |
+  #PUSHS #CALL(place_char(169,66,3,21))
+  #CALL(play_area(ss_mr_einstein,63,0,11,7,2,1)) #POPS
 } TABLE#
 
 #UDGTABLE(gallery) {
-  #PUSHS #CALL:place_char(152,60,10,69)
-  #CALL:play_area(ss_er_boy,51,7,14,7,2,1) #POPS |
-  #PUSHS #CALL:place_char(168,53,10,37)
-  #CALL:play_area(ss_er_angelface,51,7,14,7,2,1) #POPS |
-  #PUSHS #CALL:place_char(169,53,10,21)
-  #CALL:play_area(ss_er_einstein,51,7,14,7,2,1) #POPS
+  #PUSHS #CALL(place_char(152,60,10,69))
+  #CALL(play_area(ss_er_boy,51,7,14,7,2,1)) #POPS |
+  #PUSHS #CALL(place_char(168,53,10,37))
+  #CALL(play_area(ss_er_angelface,51,7,14,7,2,1)) #POPS |
+  #PUSHS #CALL(place_char(169,53,10,21))
+  #CALL(play_area(ss_er_einstein,51,7,14,7,2,1)) #POPS
 } TABLE#
 #POPS
 
@@ -366,67 +366,67 @@ keys.
 Of the 15 shields on display around the skool, six are red:
 
 #UDGTABLE {
-#CALL:play_area(shield01,6,2,1,1,4) |
-#CALL:play_area(shield06,45,8,1,1,4) |
-#CALL:play_area(shield08,55,8,1,1,4) |
-#CALL:play_area(shield10,65,8,1,1,4) |
-#CALL:play_area(shield12,28,14,1,1,4) |
-#CALL:play_area(shield15,67,14,1,1,4)
+#CALL(play_area(shield01,6,2,1,1,4)) |
+#CALL(play_area(shield06,45,8,1,1,4)) |
+#CALL(play_area(shield08,55,8,1,1,4)) |
+#CALL(play_area(shield10,65,8,1,1,4)) |
+#CALL(play_area(shield12,28,14,1,1,4)) |
+#CALL(play_area(shield15,67,14,1,1,4))
 } TABLE#
 
 five are blue:
 
 #UDGTABLE {
-#CALL:play_area(shield02,8,2,1,1,4) |
-#CALL:play_area(shield03,47,2,1,1,4) |
-#CALL:play_area(shield05,78,2,1,1,4) |
-#CALL:play_area(shield09,60,8,1,1,4) |
-#CALL:play_area(shield13,30,14,1,1,4)
+#CALL(play_area(shield02,8,2,1,1,4)) |
+#CALL(play_area(shield03,47,2,1,1,4)) |
+#CALL(play_area(shield05,78,2,1,1,4)) |
+#CALL(play_area(shield09,60,8,1,1,4)) |
+#CALL(play_area(shield13,30,14,1,1,4))
 } TABLE#
 
 three are green:
 
 #UDGTABLE {
-#CALL:play_area(shield04,50,2,1,1,4) |
-#CALL:play_area(shield07,50,8,1,1,4) |
-#CALL:play_area(shield11,26,14,1,1,4)
+#CALL(play_area(shield04,50,2,1,1,4)) |
+#CALL(play_area(shield07,50,8,1,1,4)) |
+#CALL(play_area(shield11,26,14,1,1,4))
 } TABLE#
 
 and only one is magenta:
 
 #UDGTABLE {
-#CALL:play_area(shield14,65,14,1,1,4)
+#CALL(play_area(shield14,65,14,1,1,4))
 } TABLE#
 
 Unlike the colours, the shield designs appear in equal numbers. Five shields
 display the stripe design:
 
 #UDGTABLE {
-#CALL:play_area(shield01,6,2,1,1,4) |
-#CALL:play_area(shield06,45,8,1,1,4) |
-#CALL:play_area(shield08,55,8,1,1,4) |
-#CALL:play_area(shield10,65,8,1,1,4) |
-#CALL:play_area(shield12,28,14,1,1,4)
+#CALL(play_area(shield01,6,2,1,1,4)) |
+#CALL(play_area(shield06,45,8,1,1,4)) |
+#CALL(play_area(shield08,55,8,1,1,4)) |
+#CALL(play_area(shield10,65,8,1,1,4)) |
+#CALL(play_area(shield12,28,14,1,1,4))
 } TABLE#
 
 five display the squares design:
 
 #UDGTABLE {
-#CALL:play_area(shield04,50,2,1,1,4) |
-#CALL:play_area(shield05,78,2,1,1,4) |
-#CALL:play_area(shield09,60,8,1,1,4) |
-#CALL:play_area(shield11,26,14,1,1,4) |
-#CALL:play_area(shield15,67,14,1,1,4)
+#CALL(play_area(shield04,50,2,1,1,4)) |
+#CALL(play_area(shield05,78,2,1,1,4)) |
+#CALL(play_area(shield09,60,8,1,1,4)) |
+#CALL(play_area(shield11,26,14,1,1,4)) |
+#CALL(play_area(shield15,67,14,1,1,4))
 } TABLE#
 
 and the remaining five display the triangle design:
 
 #UDGTABLE {
-#CALL:play_area(shield02,8,2,1,1,4) |
-#CALL:play_area(shield03,47,2,1,1,4) |
-#CALL:play_area(shield07,50,8,1,1,4) |
-#CALL:play_area(shield13,30,14,1,1,4) |
-#CALL:play_area(shield14,65,14,1,1,4)
+#CALL(play_area(shield02,8,2,1,1,4)) |
+#CALL(play_area(shield03,47,2,1,1,4)) |
+#CALL(play_area(shield07,50,8,1,1,4)) |
+#CALL(play_area(shield13,30,14,1,1,4)) |
+#CALL(play_area(shield14,65,14,1,1,4))
 } TABLE#
 
 [Fact:teacherRooms:Teachers and classrooms]
@@ -559,9 +559,9 @@ ANGELFACE is up to, and then press another key to exit demo mode.
 The graphic data contains unused sprites of the main kids sitting down with a
 hand raised:
 
-#UDGTABLE
-{ #CALL:as_img(4) | #CALL:as_img(20) | #CALL:as_img(36) | #CALL:as_img(52) }
-TABLE#
+#UDGTABLE {
+#CALL(as_img(4)) | #CALL(as_img(20)) | #CALL(as_img(36)) | #CALL(as_img(52))
+} TABLE#
 
 Were these used while the game was in development? We'll probably never know.
 
@@ -576,9 +576,9 @@ we'll probably never know.
 Among the graphic data for the boys, there are four unused sprites of ANGELFACE
 that show him with his arm up as if writing on or wiping a blackboard:
 
-#UDGTABLE
-{ #CALL:as_img(44) | #CALL:as_img(45) | #CALL:as_img(172) | #CALL:as_img(173) }
-TABLE#
+#UDGTABLE {
+#CALL(as_img(44)) | #CALL(as_img(45)) | #CALL(as_img(172)) | #CALL(as_img(173))
+} TABLE#
 
 Were they used while the game was in development? Yet again, we'll probably
 never know.
@@ -620,7 +620,7 @@ answer.
 There is evidence that MR WITHIT used to be rather more verbose with his
 blackboard scribblings, but was edited before the game was released. See
 'MANCHESTER MONSOONS' at #R59392, which was probably 'WHY IT RAINS IN
-MANCHESTER' at some point (see #FACT#alternativeDifferences()). Likewise, 'THE
+MANCHESTER' at some point (see #FACT(alternativeDifferences)()). Likewise, 'THE
 PEAKS OF PERU' at #R59456 may once have been 'THE MOUNTAINS OF PERU' (as it is
 in the C64 version of the game). And finally, the rain-forest other than
 Glasgow's that WITHIT was writing about at #R59488 is probably Doncaster's

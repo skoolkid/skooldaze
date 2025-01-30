@@ -1,4 +1,5 @@
-; Copyright 2008-2015, 2017-2022, 2024 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2015, 2017-2022, 2024, 2025
+; Richard Dymond (rjdymond@gmail.com)
 
 [Config]
 Expand=#INCLUDE(Expand)
@@ -179,7 +180,7 @@ Write=0
 
 [Expand]
 #DEF(#LOGO(dark,trans)(fname)
-  #UDGARRAY(8,6+7*$dark+2*$trans,2,8,tindex=2,alpha=(1-$trans)*255);61208-61343-1-64({ImagePath}/$fname|Skool Daze)
+  #UDGARRAY(8,6+7*$dark+2*$trans,2,8,tindex=2,alpha=(1-$trans)*255)(61208-61343-1-64)({ImagePath}/$fname|Skool Daze)
 )
 
 #DEF(#WRITEPOKE()(name) #FOREACH(POKE$name)(p,p))

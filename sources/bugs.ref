@@ -1,4 +1,4 @@
-; Copyright 2008-2013, 2015, 2017 Richard Dymond (rjdymond@gmail.com)
+; Copyright 2008-2013, 2015, 2017, 2025 Richard Dymond (rjdymond@gmail.com)
 
 [Bug:runningTeachers:Running teachers]
 The teachers are all running at the start of the game.
@@ -20,8 +20,9 @@ phases 1, 2, 3 and 4. So, for example, when MR WITHIT is walking leftwards, his
 animatory states will progress thus (reading from right to left):
 
 #UDGTABLE {
-  #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(97) | #CALL:as_img(96) |
-  #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(97) | #CALL:as_img(96)
+  #CALL(as_img(99)) | #CALL(as_img(98)) | #CALL(as_img(97)) |
+  #CALL(as_img(96)) | #CALL(as_img(99)) | #CALL(as_img(98)) |
+  #CALL(as_img(97)) | #CALL(as_img(96))
 } TABLE#
 
 However, when a character is looking for ERIC and walking leftwards, he will
@@ -31,8 +32,9 @@ ERIC, his animatory states cycle thus (through phases 1 and 2) as he makes his
 way leftwards across the bottom floor:
 
 #UDGTABLE {
-  #CALL:as_img(97) | #CALL:as_img(96) | #CALL:as_img(97) | #CALL:as_img(96) |
-  #CALL:as_img(97) | #CALL:as_img(96) | #CALL:as_img(97) | #CALL:as_img(96)
+  #CALL(as_img(97)) | #CALL(as_img(96)) | #CALL(as_img(97)) |
+  #CALL(as_img(96)) | #CALL(as_img(97)) | #CALL(as_img(96)) |
+  #CALL(as_img(97)) | #CALL(as_img(96))
 } TABLE#
 
 And when MR WITHIT has left the White Room to hunt down the truant ERIC, his
@@ -40,8 +42,9 @@ animatory states cycle thus (through phases 3 and 4) as he makes his way
 leftwards across the bottom floor:
 
 #UDGTABLE {
-  #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(99) | #CALL:as_img(98) |
-  #CALL:as_img(99) | #CALL:as_img(98) | #CALL:as_img(99) | #CALL:as_img(98)
+  #CALL(as_img(99)) | #CALL(as_img(98)) | #CALL(as_img(99)) |
+  #CALL(as_img(98)) | #CALL(as_img(99)) | #CALL(as_img(98)) |
+  #CALL(as_img(99)) | #CALL(as_img(98))
 } TABLE#
 
 The reason for this shortened cycle of walking animation phases is the lack of
@@ -63,11 +66,11 @@ animation phases 1, 2, 3 and 4 thus:
 
 #PUSHS
 #UDGTABLE {
-#CALL:place_char(169,70,17,144) #CALL:play_area(oftfs1,70,15,6,6,2,1) |
-#CALL:place_char(169,70,16,145) #CALL:play_area(oftfs2,70,15,6,6,2,1) |
-#CALL:place_char(169,71,16,146) #CALL:play_area(oftfs3,70,15,6,6,2,1) |
-#CALL:place_char(169,71,15,147) #CALL:play_area(oftfs4,70,15,6,6,2,1) |
-#CALL:place_char(169,72,15,144) #CALL:play_area(oftfs5,70,15,6,6,2,1)
+#CALL(place_char(169,70,17,144)) #CALL(play_area(oftfs1,70,15,6,6,2,1)) |
+#CALL(place_char(169,70,16,145)) #CALL(play_area(oftfs2,70,15,6,6,2,1)) |
+#CALL(place_char(169,71,16,146)) #CALL(play_area(oftfs3,70,15,6,6,2,1)) |
+#CALL(place_char(169,71,15,147)) #CALL(play_area(oftfs4,70,15,6,6,2,1)) |
+#CALL(place_char(169,72,15,144)) #CALL(play_area(oftfs5,70,15,6,6,2,1))
 } TABLE#
 #POPS
 
@@ -77,11 +80,11 @@ thus:
 
 #PUSHS
 #UDGTABLE {
-#CALL:place_char(172,70,17,128) #CALL:play_area(oftfe1,70,15,6,6,2,1) |
-#CALL:place_char(172,70,16,131) #CALL:play_area(oftfe2,70,15,6,6,2,1) |
-#CALL:place_char(172,71,16,130) #CALL:play_area(oftfe3,70,15,6,6,2,1) |
-#CALL:place_char(172,71,15,131) #CALL:play_area(oftfe4,70,15,6,6,2,1) |
-#CALL:place_char(172,72,15,128) #CALL:play_area(oftfe5,70,15,6,6,2,1)
+#CALL(place_char(172,70,17,128)) #CALL(play_area(oftfe1,70,15,6,6,2,1)) |
+#CALL(place_char(172,70,16,131)) #CALL(play_area(oftfe2,70,15,6,6,2,1)) |
+#CALL(place_char(172,71,16,130)) #CALL(play_area(oftfe3,70,15,6,6,2,1)) |
+#CALL(place_char(172,71,15,131)) #CALL(play_area(oftfe4,70,15,6,6,2,1)) |
+#CALL(place_char(172,72,15,128)) #CALL(play_area(oftfe5,70,15,6,6,2,1))
 } TABLE#
 #POPS
 
@@ -161,8 +164,8 @@ POKE #R63942(63943),233 (keeps MR WACKER at bay until ERIC's lines total
 exceeds 10000)
 
 [Bug:avoidingExpulsion:Avoiding expulsion]
-By using the #FACT#undeliverableMessage(undeliverable message technique), it is
-possible to avoid being sent home by MR ROCKITT (when ERIC has mumps) or MR
+By using the #FACT(undeliverableMessage)(undeliverable message technique), it
+is possible to avoid being sent home by MR ROCKITT (when ERIC has mumps) or MR
 WACKER (when ERIC has 10000 or more lines).
 
 If MR ROCKITT is on his way to send ERIC home, head for the nearest blackboard
