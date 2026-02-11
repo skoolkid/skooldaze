@@ -1,4 +1,4 @@
-; Copyright 2022 Richard Dymond (rjdymond@gmail.com)
+; © 2022, 2026 Richard Dymond (rjdymond@gmail.com)
 
 [Page:Sound]
 SectionPrefix=Audio
@@ -7,59 +7,59 @@ SectionPrefix=Audio
 This tune is played by the routines at #R32390 (just after the game has loaded)
 and #R32400 (before a new game starts and when ERIC has gone up a year).
 
-#AUDIO1(tune.wav)(#INCLUDE(ThemeTune))
+#AUDIO0,,,,1(tune.wav)(#INCLUDE(ThemeTune))
 
 [Audio:allshields:All shields/opened safe tune]
 This tune is played by the routine at #R32406 when the 15th shield has started
 flashing and when the safe has been opened.
 
-#AUDIO1(all-shields.wav)(#INCLUDE(AllShieldsTune))
+#AUDIO0,,,,1(all-shields.wav)(#INCLUDE(AllShieldsTune))
 
 [Audio:bell:Bell]
 The bell sound effect is produced by the routine at #R26450.
 
-#AUDIO1(bell.wav)([1718]*4600)
+#AUDIO0,,,,1(bell.wav)([1718]*4600)
 
 [Audio:lines:Lines]
 These sound effects are produced by the routine at #R30464 when a teacher is
 giving lines to ERIC, EINSTEIN, ANGELFACE or BOY WANDER. The second sound
 effect is also used when a teacher reveals his safe combination letter.
 
-#AUDIO3(lines1.wav)([[296]*255, 307]*39, [296]*255)
+#AUDIO0,,,1,1(lines1.wav)([[296]*255, 307]*39, [296]*255)
 
-#AUDIO3(lines2.wav)([[686]*255, 697]*19, [686]*255)
+#AUDIO0,,,1,1(lines2.wav)([[686]*255, 697]*19, [686]*255)
 
 [Audio:catapult:Catapult]
 This sound effect is produced by the routine at #R65141 when ERIC fires the
 catapult.
 
-#AUDIO6(catapult.wav)(65141,65136)
+#AUDIO1,65141,65136,2(catapult.wav)
 
 [Audio:shield:Shield]
 This sound effect is produced by the routine at #R58604 when a shield has been
 hit.
 
-#AUDIO4(shield.wav)(58605,58621)
+#AUDIO1,58605,58621(shield.wav)
 
 [Audio:knockout:Knocked out]
 This sound effect is produced by the routine at #R65111 when ERIC has been
 knocked over or pushed out of a seat.
 
-#AUDIO6(knockout.wav)(65114,65136)
+#AUDIO1,65114,65136,2(knockout.wav)
 
 [Audio:hit:Hitting]
 This sound effect is produced by the routine at #R60128 when ERIC throws a
 punch.
 
-#AUDIO2(hit.wav)([2532]*7,2589,[2532]*7)
+#AUDIO0,,,1(hit.wav)([2532]*7,2589,[2532]*7)
 
 [Audio:jump:Jumping]
 This sound effect is produced by the routine at #R60139 when ERIC jumps.
 
-#AUDIO2(jump.wav)([2532]*7)
+#AUDIO0,,,1(jump.wav)([2532]*7)
 
 [Audio:walk:Walking]
 These sound effects are produced by the routine at #R65088 each time ERIC takes
 a step.
 
-#AUDIO2(walking.wav)(#FOR1,12,,3(n,[2532]*7,550000))
+#AUDIO0,,,1(walking.wav)(#FOR1,12,,3(n,[2532]*7,550000))

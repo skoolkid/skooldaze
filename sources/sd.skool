@@ -1,4 +1,4 @@
-; Copyright 2008-2015, 2017-2023, 2025 Richard Dymond (rjdymond@gmail.com)
+; © 2008-2015, 2017-2023, 2025, 2026 Richard Dymond (rjdymond@gmail.com)
 
 ; Message graphic buffer
 ;
@@ -11,6 +11,7 @@ b23296 DEFS 256
 i23552 DEFS 1024
 
 @start
+@rom
 @expand=#DEF(#BUG()(a) #LINK(Bugs#$a))
 @expand=#DEF(#FACT()(a) #LINK(Facts#$a))
 @expand=#DEF(#POKE()(a) #LINK(Pokes#$a))
@@ -24,8 +25,8 @@ i23552 DEFS 1024
 ; Skool Daze disassembly
 ; https://skoolkit.ca
 ;
-; Copyright 1984 Microsphere Computer Services Ltd (Skool Daze)
-; Copyright 2008-2015, 2017-2023, 2025 Richard Dymond (this disassembly)
+; © 1984 Microsphere Computer Services Ltd (Skool Daze)
+; © 2008-2015, 2017-2023, 2025, 2026 Richard Dymond (this disassembly)
 @ofix+begin
 ;
 ; This disassembly contains fixes for the following bugs:
@@ -1987,7 +1988,7 @@ c26426 CALL 26584    ; Get input from the Kempston joystick if it's in use
 ;
 ; Used by the routine at #R26342.
 ; .
-; #AUDIO1(bell.wav)([1718]*4600)
+; #AUDIO0,,,,1(bell.wav)([1718]*4600)
 ;
 ; L #b249
 @label=RINGBELL
@@ -6235,7 +6236,7 @@ c30464 PUSH BC       ;
  30538 CALL 29977    ; Copy the lines bubble graphic to the screen
 ; Time for the first lines-giving sound effect.
 ; .
-; #AUDIO3(lines1.wav)([[296]*255, 307]*39, [296]*255)
+; #AUDIO0,,,1,1(lines1.wav)([[296]*255, 307]*39, [296]*255)
  30541 LD A,(60160)  ; #REGa=lines bubble graphic attribute byte
  30544 LD DE,10240   ; #REGde=sound effect duration parameter
  30547 RRCA          ; {The border colour will be the same as the PAPER colour
@@ -6262,7 +6263,7 @@ c30464 PUSH BC       ;
 ; Time for the second lines-giving sound effect. This entry point is used by
 ; the routine at #R63829.
 ; .
-; #AUDIO3(lines2.wav)([[686]*255, 697]*19, [686]*255)
+; #AUDIO0,,,1,1(lines2.wav)([[686]*255, 697]*19, [686]*255)
 *30575 LD DE,5120    ; #REGde=sound effect duration parameter
 *30578 OUT (254),A   ; {Play the second lines-giving sound effect
  30580 XOR 16        ;
@@ -8227,7 +8228,7 @@ c32279 DI            ; Disable interrupts
 ;
 ; Used by the routines at #R32390 and #R32400.
 ; .
-; #AUDIO1(tune.wav)(#INCLUDE(ThemeTune))
+; #AUDIO0,,,,1(tune.wav)(#INCLUDE(ThemeTune))
 @label=THEMETUNE
 b32353 DEFB 121,53,119,51,121,53,113
  32360 DEFB 49,115,53,70,53,51,121,53,177
@@ -8259,7 +8260,7 @@ c32400 LD HL,32353   ; The theme tune data is at #R32353
 ;
 ; Used by the routine at #R63668.
 ; .
-; #AUDIO1(all-shields.wav)(#INCLUDE(AllShieldsTune))
+; #AUDIO0,,,,1(all-shields.wav)(#INCLUDE(AllShieldsTune))
 @label=WINTUNE
 c32406 CALL 32418    ; Play the first part of the tune
  32409 CALL 32418    ; Play the first part of the tune again
@@ -15076,7 +15077,7 @@ u58600 DEFM "1800"
 ;
 ; Used by the routine at #R28143.
 ; .
-; #AUDIO4(shield.wav)(58605,58621)
+; #AUDIO1,58605,58621(shield.wav)
 @label=SHIELDSND
 c58604 DI            ; Disable interrupts
 @assemble=2
@@ -15515,7 +15516,7 @@ s60120 DEFS 8
 ;
 ; Used by the routine at #R62628.
 ; .
-; #AUDIO2(hit.wav)([2532]*7,2589,[2532]*7)
+; #AUDIO0,,,1(hit.wav)([2532]*7,2589,[2532]*7)
 @label=HITSOUND
 c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
  60131 CALL 65088    ; close together}
@@ -15527,11 +15528,11 @@ c60128 CALL 65088    ; {A hitting sound effect is two walking sound effects
 ;
 ; Used by the routine at #R62771.
 ; .
-; #AUDIO2(jump.wav)([2532]*7)
+; #AUDIO0,,,1(jump.wav)([2532]*7)
 ; .
 ; #HTML(If the #S/CALL/ instruction below is fixed, a jump sounds like this:)
 ; .
-; #AUDIO2(jump-fixed.wav)(#FOR1298,3170,39,1(n,n),3282,[2532]*7)
+; #AUDIO0,,,1(jump-fixed.wav)(#FOR1298,3170,39,1(n,n),3282,[2532]*7)
 @label=JUMPSOUND
 @ofix=               ; {Initialise the jumping sound effect parameters
 @ignoreua
@@ -18748,7 +18749,7 @@ b65024 DEFB 246      ; #b0: #LESSON246(PLAYTIME) (this is an
 ;
 ; Used by the routines at #R46568 and #R60128.
 ; .
-; #AUDIO2(walking.wav)(#FOR1,12,,3(n,[2532]*7,550000))
+; #AUDIO0,,,1(walking.wav)(#FOR1,12,,3(n,[2532]*7,550000))
 @label=WALKSOUND
 c65088 PUSH BC       ;
  65089 LD A,6        ; The border will be yellow
@@ -18777,7 +18778,7 @@ c65106 PUSH BC       ;
 ; Used by the routine at #R27303. Makes a sound effect just after ERIC has been
 ; knocked over or pushed out of his seat.
 ; .
-; #AUDIO6(knockout.wav)(65114,65136)
+; #AUDIO1,65114,65136,2(knockout.wav)
 ;
 ; A 1 + knockout delay counter value (#R32757)
 @label=SNDEFFECT
@@ -18818,7 +18819,7 @@ c65111 CP 39         ; {Return (to #R27351) unless ERIC has just been knocked
 ;
 ; Used by the routine at #R62495.
 ; .
-; #AUDIO6(catapult.wav)(65141,65136)
+; #AUDIO1,65141,65136,2(catapult.wav)
 @label=FIRESOUND
 @keep
 c65141 LD HL,63506   ; {#REGa=#b4 (initial border colour: green), #REGh=#b248
