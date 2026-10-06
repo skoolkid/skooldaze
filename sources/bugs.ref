@@ -1,4 +1,4 @@
-; Copyright 2008-2013, 2015, 2017, 2025 Richard Dymond (rjdymond@gmail.com)
+; © 2008-2013, 2015, 2017, 2025, 2026 Richard Dymond (rjdymond@gmail.com)
 
 [Bug:runningTeachers:Running teachers]
 The teachers are all running at the start of the game.
@@ -144,7 +144,7 @@ list start address that was already there.
 The most noticeable effect of this bug will occur during a special playtime
 that has replaced a 'stampede' playtime (#LESSON252 or #LESSON253). Little boys
 1-9 and 11 (not 10, because he's busy looking for ERIC to tell him what's going
-on) start with command list #R64914(196) (walkabout), but when the restart
+on) start with command list #R64914(#b196) (walkabout), but when the restart
 command is reached, will switch to command list #R64947(#b204) (stampede
 leader) or #R64975(#b206) (stampede follower). Thus a special playtime in which
 ERIC must watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the

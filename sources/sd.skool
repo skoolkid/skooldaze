@@ -1636,8 +1636,8 @@ c25983 CALL 25956    ; Is ERIC sitting or lying down?
  26026 CP 48         ; Is ERIC on a staircase on the right side of the skool?
  26028 JR NC,26034   ; Jump if so
  26030 LD B,130      ; #AS130=ERIC standing, facing right
- 26032 INC E         ; {One pace to the right (taking into the account the one
- 26033 INC E         ; pace to the left made above)}
+ 26032 INC E         ; {One pace to the right (taking into account the one pace
+ 26033 INC E         ; to the left made above)}
 *26034 LD A,B        ; #REGa=#AS2(#b2/#b130)
  26035 BIT 0,L       ; {#REGa=#AS1(#b1/#b129), #REGb=#AS2(#b2/#b130) if ERIC's
  26037 JR Z,26043    ; current x-coordinate is even; #REGa=#AS3(#b3/#b131),
@@ -1711,8 +1711,8 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
  26126 CP 48         ; Is ERIC on a staircase on the left side of the skool?
  26128 JR C,26134    ; Jump if so
  26130 LD B,130      ; #AS130=ERIC standing, facing right
- 26132 INC E         ; {One pace to the right (taking into the account the one
- 26133 INC E         ; pace to the left made above)}
+ 26132 INC E         ; {One pace to the right (taking into account the one pace
+ 26133 INC E         ; to the left made above)}
 *26134 LD A,B        ; #REGa=#AS2(#b2/#b130)
 @bfix=BIT 0,L        ; {#REGa=#AS1(#b1/#b129),
  26135 BIT 0,L       ; {#REGa=#AS3(#b3/#b131),
@@ -2145,9 +2145,9 @@ u26621 DEFB 81       ; #b81='Q' (up)
 ; ASCII codes and routine addresses for the keypress offset table
 ;
 ; Used by the routine at #R26471. The entries in this table are pointed to by
-; the the entries in the keypress offset table at #R26656. Another table of
-; ASCII codes and routine addresses can be found at #R26752. For more details,
-; see the #LINK(Keys)(keypress table).
+; the entries in the keypress offset table at #R26656. Another table of ASCII
+; codes and routine addresses can be found at #R26752. For more details, see
+; the #LINK(Keys)(keypress table).
 @label=K_NONE
 b26624 DEFB 32       ; ' ' (SPACE)
  26625 DEFW 26449    ; Do nothing
@@ -3127,7 +3127,7 @@ c27303 LD HL,32757   ; {#R32757 holds the delay counter used when ERIC has been
 c27351 SCF           ; {Return to the main loop with the carry flag set to
  27352 RET           ; indicate that ERIC has already been dealt with}
 
-; Deal with  ERIC
+; Deal with ERIC
 ;
 ; Called from the main loop at #R26471. Deals with ERIC when any of bits 0-4 at
 ; #R32763 (ERIC's status flags) are set. Returns with the carry flag set if and
@@ -3180,7 +3180,7 @@ c27387 LD A,1        ; This will add 10 to the score
 @label=PRINTB3L
 c27406 LD HL,23200   ; {Set #REGhl and #REGde to the attribute file address for
  27409 LD D,H        ; the leftmost character square of the third line from the
- 27410 LD E,L        ; the bottom of the screen}
+ 27410 LD E,L        ; bottom of the screen}
 *27411 LD (HL),18    ; {INK 2: PAPER 2 for the bottom three lines of the screen
  27413 INC L         ;
  27414 JR NZ,27411   ; }
@@ -4614,7 +4614,7 @@ c28786 CALL 25108    ; Update the SRB for BOY WANDER's current animatory state
  28796 JP 25008      ; Restore BOY WANDER's pre-fire animatory state and update
                      ; the SRB
 
-; Make BOY WANDER his fire catapult (7)
+; Make BOY WANDER fire his catapult (7)
 ;
 ; The address of this uninterruptible subcommand routine is placed into bytes
 ; #b111 and #b112 of BOY WANDER's buffer by the routine at #R28786.
@@ -5211,7 +5211,7 @@ c29394 LD DE,(32612) ; Copy the speech bubble lip coordinates from #R32612 to
  29433 ADD A,4       ; corresponding to the bottom row of the speech bubble
  29435 LD E,A        ; }
  29436 LD A,(DE)     ; {Set bits 1-6 of this screen refresh buffer byte (so
- 29437 OR 126        ; that the part of the screen hidden by the middle 6 UDGS
+ 29437 OR 126        ; that the part of the screen hidden by the middle 6 UDGs
  29439 LD (DE),A     ; of the bottom row of the speech bubble will be
                      ; refreshed)}
  29440 RET           ; Return with the carry flag reset
@@ -5418,7 +5418,7 @@ c29518 LD A,(32512)  ; #REGa=leftmost column of the skool on screen (0-64)
  29678 DJNZ 29676    ; }
  29680 LD DE,(32612) ; Copy the speech bubble lip coordinates from #R32612 to
                      ; #REGde
- 29684 CALL 28807    ; Update the SRB for the lip of speech bubble
+ 29684 CALL 28807    ; Update the SRB for the lip of the speech bubble
  29687 CALL 62714    ; Open the lip of the speech bubble
  29690 CALL 29735    ; Update the SRB for the speech bubble
  29693 POP HL        ;
@@ -5579,7 +5579,7 @@ c29746 PUSH HL       ; Save the character number
  29859 LDIR          ; }
 ; Finally, clear the speech bubble lip coordinates (at #R32612) to indicate
 ; that no one is speaking.
- 29861 LD (32612),BC ; Set the speech bubble lip coordinates at to (0,0)
+ 29861 LD (32612),BC ; Set the speech bubble lip coordinates to (0,0)
  29865 POP HL        ; Restore the speaker's character number to #REGh
  29866 XOR A         ;
  29867 RET           ;
@@ -5837,8 +5837,8 @@ b30115 DEFB 127,1
 
 ; Draw the left and right edges of a lines bubble
 ;
-; Used by routines at #R30156 and #R30208. Draws the left and right edges of
-; the lines bubble against the lines of text just written into the graphic
+; Used by the routines at #R30156 and #R30208. Draws the left and right edges
+; of the lines bubble against the lines of text just written into the graphic
 ; buffer (at #R60160 or #R60416).
 ;
 ; DE Graphic buffer address
@@ -6017,21 +6017,21 @@ c30278 PUSH HL       ;
  30291 LD BC,55536   ; #REGbc=-10000
  30294 EX DE,HL      ; #REGhl=the number, #REGde=#R55552
  30295 ADD HL,BC     ; Subtract 10000
- 30296 JR C,30325    ; Jump if the number is > 10000
+ 30296 JR C,30325    ; Jump if the number is >= 10000
  30298 SBC HL,BC     ; Add the 10000 back on
 @keep
  30300 LD BC,64536   ; #REGbc=-1000
  30303 ADD HL,BC     ; Subtract 1000
- 30304 JR C,30338    ; Jump if the number is > 1000
+ 30304 JR C,30338    ; Jump if the number is >= 1000
  30306 SBC HL,BC     ; Add the 1000 back on
 @keep
  30308 LD BC,65436   ; #REGbc=-100
  30311 ADD HL,BC     ; Subtract 100
- 30312 JR C,30351    ; Jump if the number is > 100
+ 30312 JR C,30351    ; Jump if the number is >= 100
  30314 SBC HL,BC     ; Add the 100 back on
  30316 LD C,246      ; #REGbc=-10
  30318 ADD HL,BC     ; Subtract 10
- 30319 JR C,30363    ; Jump if the number is > 10
+ 30319 JR C,30363    ; Jump if the number is >= 10
  30321 SBC HL,BC     ; Add the 10 back on
  30323 JR 30371      ;
 ; We get here if the number is >= 10000.
@@ -7831,7 +7831,7 @@ c31968 LD A,H        ; {#REGl=#b0 (MR WACKER), #b16 (MR ROCKITT), #b32 (MR
 ; the return address from the stack and copies its LSB into byte #b99 of the
 ; character's buffer (where the LSB of the address of the primary command
 ; routine is held), copies the address of the interruptible subcommand routine
-; from #REGbc into bytes #b106 and #b107 of the character's buffer, and then
+; from #REGbc into bytes #b105 and #b106 of the character's buffer, and then
 ; jumps to that routine.
 ;
 ; BC Interruptible subcommand routine address
@@ -11296,7 +11296,7 @@ c44520 EXX           ;
  44531 DEC HL        ;
  44532 DJNZ 44529    ; }
  44534 DEC C         ; Next pixel row
- 44535 JR NZ,44526   ; Jump back until all 8 pixels rows are done
+ 44535 JR NZ,44526   ; Jump back until all 8 pixel rows are done
  44537 EXX           ;
  44538 RET           ;
 
@@ -16422,8 +16422,8 @@ c62628 LD HL,32758   ; #R32758 holds the hitting action timer (initially #b18)
  62650 CP 163        ; Was anyone decked?
  62652 JR Z,62661    ; Jump if not
  62654 CP 168        ; #b168=ANGELFACE
- 62656 LD A,3        ; {Add 30 the score and print it if ANGELFACE was decked
- 62658 CALL Z,27389  ; }
+ 62656 LD A,3        ; {Add 30 to the score and print it if ANGELFACE was
+ 62658 CALL Z,27389  ; decked}
 *62661 CALL 60128    ; Make a hitting sound effect
  62664 LD B,14       ; Lines reprimand #R57024(#b14): DON'T HIT YOUR MATES
  62666 JP 62550      ; Make any nearby teacher give ERIC lines
@@ -16449,14 +16449,14 @@ c62674 LD HL,32512   ; #R32512 holds the leftmost column of the skool on screen
  62680 SUB (HL)      ; {Return with the carry flag set if the pellet is
  62681 RET C         ; off-screen to the left}
  62682 CP 32         ; The screen is 32 columns wide
- 62684 CCF           ; {Return with carry flag set if the pellet is off-screen
- 62685 RET C         ; to the right}
+ 62684 CCF           ; {Return with the carry flag set if the pellet is
+ 62685 RET C         ; off-screen to the right}
 ; The potential target is on-screen.
  62686 LD L,A        ; #REGl=screen x-coordinate (0-31) of the potential target
  62687 LD A,D        ; {#REGa=screen y-coordinate (2, 8 or 14) of the potential
  62688 SUB 152       ; target}
  62690 RRCA          ; {#REGa=#b64 (top floor), #b1 (middle floor), or #b193
- 62691 RRCA          ; (bottom floor
+ 62691 RRCA          ; (bottom floor)
  62692 RRCA          ; }
  62693 LD H,A        ; Save this floor indicator in #REGh for now
  62694 AND 224       ; #REGa=#b64 (top floor), #b0 (middle) or #b192 (bottom)
@@ -16880,7 +16880,7 @@ c63146 CP 13         ; Was ENTER pressed?
  63161 LD C,A        ; }
  63162 LD L,A        ; {Point #REGhl at byte 3 of the relevant blackboard
 @ssub=LD H,32512/256
- 63163 LD H,127      ; contents buffer)}
+ 63163 LD H,127      ; contents buffer}
  63165 BIT 7,(HL)    ; {Jump if 4 or more characters have been written so far,
  63167 JR Z,63178    ; or the board was dirty before ERIC started writing}
  63169 SUB 4         ; {Point #REGhl at the byte preceding the first byte of
@@ -17061,7 +17061,7 @@ s63346 DEFS 6
 ; is set (by the routine at #R63488).
 @label=LISTEN
 c63352 LD HL,32715   ; #R32715 holds the special playtime signal flags
- 63355 BIT 0,(HL)    ; Is the little boy is still delivering the main message?
+ 63355 BIT 0,(HL)    ; Is the little boy still delivering the main message?
  63357 RET Z         ; Return if so
  63358 CALL 26426    ; Check the keyboard
  63361 RET Z         ; Return if no game keys were pressed
@@ -17126,7 +17126,7 @@ c63374 LD A,255      ; {Adjust the length of the lesson to allow the character
  63407 LD L,97       ; Byte #b97 of the character's buffer holds his
                      ; y-coordinate
  63409 LD A,(HL)     ; Pick this up in #REGa
- 63410 CP D          ; Set the zero flag if ERIC is on same floor
+ 63410 CP D          ; Set the zero flag if ERIC is on the same floor
  63411 CALL 63973    ; Compare this character's coordinates with ERIC's
  63414 JR NZ,63444   ; Jump if this character is on a staircase or more than 3
                      ; y-coordinates away from ERIC
@@ -17582,11 +17582,11 @@ s63930 DEFB 0
 @label=CHKLINES
 @ssub=LD A,(32710+1)
 c63931 LD A,(32711)  ; Collect the MSB of the lines total
- 63934 CP 3          ; Is the lines total < 7680 (30*256)?
+ 63934 CP 3          ; Is the lines total < 7680 (3*256*10)?
  63936 RET C         ; Return if so
  63937 JR NZ,63945   ; Jump if the MSB > 3 (lines total > 10240)
  63939 LD A,(32710)  ; So the MSB is 3; collect the LSB from #R32710
- 63942 CP 232        ; Is the lines total < 10000 (=232+256*30)?
+ 63942 CP 232        ; Is the lines total < 10000 ((232+256*3)*10)?
  63944 RET C         ; Return if so
 ; ERIC has 10000 lines or more. The end (of the game) is nigh.
 *63945 PUSH HL       ;
@@ -17649,8 +17649,7 @@ c63973 JR Z,63986    ; Jump if ERIC and his chaser are on the same floor
  63984 AND A         ; Reset the zero flag (ERIC has not been found)
  63985 RET           ;
 *63986 LD A,(HL)     ; #REGa=y-coordinate of the character looking for ERIC
- 63987 JP 26185      ; Set the zero flag set if the character is not on a
-                     ; staircase
+ 63987 JP 26185      ; Set the zero flag if the character is not on a staircase
 
 ; Make a teacher tell ERIC to go home, and end the game (2)
 ;
