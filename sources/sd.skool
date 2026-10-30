@@ -1762,7 +1762,7 @@ c26184 LD A,D        ; #REGa=character's y-coordinate
  26187 RET Z         ; Return with the zero flag set if so
  26188 CP 162        ; Is the character on the middle floor?
  26190 RET Z         ; Return with the zero flag set if so
- 26191 CP 169        ; Is the character on the top floor?
+ 26191 CP 169        ; Is the character on the bottom floor?
  26193 RET           ; Return with the zero flag set if so
 
 ; 'O' pressed - left
@@ -5317,7 +5317,7 @@ c29518 LD A,(32512)  ; #REGa=leftmost column of the skool on screen (0-64)
  29533 LD C,A        ; #REGc=screen x-coordinate (0-31) of the spot above the
                      ; character's head (where the speech bubble lip will be)
 @ssub=LD A,(32612+1)
- 29534 LD A,(32613)  ; #REGa=current speech bubble lip x-coordinate (if any)
+ 29534 LD A,(32613)  ; #REGa=current speech bubble lip y-coordinate (if any)
  29537 AND A         ; Is somebody else speaking at the moment?
  29538 RET NZ        ; Return with the zero flag reset if so
 ; The character is on-screen and no one else is speaking at the moment.
@@ -6387,7 +6387,7 @@ c30636 LD HL,32754   ; {Check (and decrement) the lines-giving delay counter at
 ; { 6     | Dinner hall }
 ; { 7     | None of the above }
 ; TABLE#
-*30712 LD A,(DE)     ; #REGa=ID of the region ERIC's in (7 if he's on a
+*30712 LD A,(DE)     ; #REGa=ID of the region ERIC's in (or 8 if he's on a
                      ; staircase)
  30713 AND A         ; Set the zero flag if ERIC's in a forbidden zone
  30714 LD A,1        ; Lines reprimand #R56224(#b1): THE ROOM IS PRIVATE
@@ -7303,7 +7303,7 @@ c31452 LD L,97       ; Byte #b97 of the follower's buffer holds his
                      ; left of the skool
  31610 BIT 7,(HL)    ; Is the follower facing right?
  31612 RET NZ        ; Jump if so
- 31613 LD A,4        ; #REGa=3 will make the follower turn round and face right
+ 31613 LD A,4        ; #REGa=4 will make the follower turn round and face right
  31615 RET           ;
 *31616 BIT 7,(HL)    ; Is the follower facing left?
  31618 RET Z         ; Return (with #REGa=1) if so
@@ -8310,7 +8310,7 @@ s32469 DEFB 0
 ; #REGhl.
 @label=RMSPEECH
 @ssub=LD A,(32612+1)
-c32470 LD A,(32613)  ; #REGa=x-coordinate of the speech bubble lip (if present)
+c32470 LD A,(32613)  ; #REGa=y-coordinate of the speech bubble lip (if present)
  32473 AND A         ; Is anyone speaking at the moment?
  32474 CALL NZ,29746 ; Remove the speech bubble if so
  32477 CALL 27026    ; Update the display
