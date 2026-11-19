@@ -1726,7 +1726,7 @@ c26084 CALL 25956    ; Is ERIC sitting or lying down?
 @if({fix}>1)(label=*)
  26143 DEC A         ; }
  26144 JP 25916      ; Update ERIC's animatory state and location
-; ERIC is on the middle floor or the top floor.
+; ERIC is on the middle floor or the bottom floor.
 *26147 LD A,E        ; #REGa=ERIC's x-coordinate
  26148 CP 19         ; This is the x-coordinate of the bottoms of the
                      ; staircases at the left of the skool
@@ -5246,7 +5246,7 @@ c29442 LD E,A        ; #REGe=ASCII code of the character from the message being
 @ssub=LD A,(32612+1)
  29460 LD A,(32613)  ; #REGa=y-coordinate of the speech bubble lip
  29463 SUB 154       ; {#REGd=screen y-coordinate of the top row of the speech
- 29465 LD D,A        ; bubble (0-17)}
+ 29465 LD D,A        ; bubble (0-15)}
  29466 RRCA          ; {Set #REGhl to the display file address corresponding to
  29467 RRCA          ; the top right edge of the text window within the speech
  29468 RRCA          ; bubble
@@ -5612,8 +5612,8 @@ c29871 LD A,(32512)  ; #REGa=leftmost column of the skool on screen (0-64)
 ; screen that will be overwritten by the lines bubble.
  29884 LD E,A        ; #REGe=teacher's screen x-coordinate (0-31)
  29885 LD A,D        ; #REGa=teacher's y-coordinate (152-169)
- 29886 SUB 155       ; {#REGa=teacher's screen y-coordinate (0-14)
- 29888 JR NC,29891   ;
+ 29886 SUB 155       ; {#REGa=screen y-coordinate of the top row of the speech
+ 29888 JR NC,29891   ; bubble (0-14)
  29890 XOR A         ; }
 *29891 RRCA          ; {Set #REGde to the attribute file address of the top
  29892 RRCA          ; left corner of the lines bubble
