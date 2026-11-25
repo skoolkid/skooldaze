@@ -3,6 +3,12 @@
 [Page:Changelog]
 SectionType=BulletPoints
 
+[Changelog:YYYYMMDD]
+-
+
+- Fixed the #FACT(wackerQtoZ)() trivia entry (MR WACKER chooses letters in the
+  range A-P, not A-O)
+
 [Changelog:20260410]
 -
 
@@ -287,7 +293,7 @@ Included in SkoolKit 1.0.
   - #FACT(wipingWander)()
   - #FACT(saveDuster)()
   - #FACT(wackerSwotTales)()
-  - #FACT(wackerPtoZ)()
+  - #FACT(wackerQtoZ)()
 
 [Changelog:20081119]
 First public release of the Skool Daze disassembly.
