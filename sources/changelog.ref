@@ -8,6 +8,8 @@ SectionType=BulletPoints
 
 - Fixed the #FACT(wackerQtoZ)() trivia entry (MR WACKER chooses letters in the
   range A-P, not A-O)
+- In #FACT(doublePlaytimes)(), noted that the bell will ring between two
+  playtimes if the second one is a special playtime
 
 [Changelog:20260410]
 -

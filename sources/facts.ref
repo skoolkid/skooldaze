@@ -513,8 +513,10 @@ There are five places in the #R65024(main timetable) where one playtime is
 followed immediately by another: timetable indexes #R65032(#b8/#b9),
 #R65043(#b19/#b20), #R65065(#b41/#b42), #R65075(#b51/#b52), and
 #R65081(#b57/#b58). However, you might be forgiven for not having noticed this
-because the bell does not ring between the playtimes in each pair (see
-#R26360).
+because the bell does not usually ring between the playtimes in each pair (see
+#R26360). The bell will ring only if the second playtime in the pair is
+replaced by a special playtime, which happens three times out of eight (see
+#R28211).
 
 Also note that playtimes #LESSON254 and #LESSON255 are used exclusively as the
 second playtime in double playtime periods. There's nothing special about those
