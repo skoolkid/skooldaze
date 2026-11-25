@@ -6,6 +6,7 @@ SectionType=BulletPoints
 [Changelog:YYYYMMDD]
 -
 
+- Documented a bug: #BUG(typo2)()
 - Fixed the #FACT(wackerQtoZ)() trivia entry (MR WACKER chooses letters in the
   range A-P, not A-O)
 - In #FACT(doublePlaytimes)(), noted that the bell will ring between two

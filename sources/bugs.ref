@@ -280,6 +280,9 @@ contents at the start of a new game. (This bug was fixed in Back to Skool.)
 [Bug:typo:Misspelt element]
 'Phosphorous' (at #R57532) is misspelt; it should be 'Phosphorus'.
 
+[Bug:typo2:Misspelt capital]
+'Gabarone' (at #R57904) is misspelt; it should be 'Gaborone'.
+
 [Bug:emptyClass:MR CREAK and the empty class]
 Lesson #LESSON230 (REVISION LIBRARY) has MR CREAK teaching an empty class in
 the Reading Room.
