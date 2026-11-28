@@ -3,6 +3,7 @@
 <head>
 <title>Skool Daze: Bugs</title>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body class="Bugs">
@@ -31,6 +32,7 @@
 <li><a href="#backSeat">Inaccessible back seat</a></li>
 <li><a href="#doublyDirty">Doubly dirty blackboards</a></li>
 <li><a href="#typo">Misspelt element</a></li>
+<li><a href="#typo2">Misspelt capital</a></li>
 <li><a href="#emptyClass">MR CREAK and the empty class</a></li>
 <li><a href="#chairHit">Share a chair</a></li>
 <li><a href="#absentTearaway">800 lines BOY WANDER - NOW WHERE ARE YOU?</a></li>
@@ -249,7 +251,7 @@ list start address that was already there.
 The most noticeable effect of this bug will occur during a special playtime
 that has replaced a 'stampede' playtime (<a href="../lessons/FC.html">0xFC</a> or <a href="../lessons/FD.html">0xFD</a>). Little boys
 1-9 and 11 (not 10, because he's busy looking for ERIC to tell him what's going
-on) start with command list <a href="../asm/FD92.html">196</a> (walkabout), but when the restart
+on) start with command list <a href="../asm/FD92.html">0xC4</a> (walkabout), but when the restart
 command is reached, will switch to command list <a href="../asm/FDB3.html">0xCC</a> (stampede
 leader) or <a href="../asm/FDCF.html">0xCE</a> (stampede follower). Thus a special playtime in which
 ERIC must watch out for ANGELFACE, BOY WANDER or EINSTEIN is complicated by the
@@ -442,8 +444,15 @@ contents at the start of a new game. (This bug was fixed in Back to Skool.)
 'Phosphorous' (at <a href="../asm/E0BC.html">E0BC</a>) is misspelt; it should be 'Phosphorus'.
 </div>
 </div>
-<div><span id="emptyClass"></span></div>
+<div><span id="typo2"></span></div>
 <div class="box box-1">
+<div class="box-title">Misspelt capital</div>
+<div class="paragraph">
+'Gabarone' (at <a href="../asm/E230.html">E230</a>) is misspelt; it should be 'Gaborone'.
+</div>
+</div>
+<div><span id="emptyClass"></span></div>
+<div class="box box-2">
 <div class="box-title">MR CREAK and the empty class</div>
 <div class="paragraph">
 Lesson <a href="../lessons/E6.html">0xE6</a> (REVISION LIBRARY) has MR CREAK teaching an empty class in
@@ -454,7 +463,7 @@ POKE <a href="../asm/A6E0.html#a6e6">42726</a>,<a href="../asm/FD6C.html">188</a
 </div>
 </div>
 <div><span id="chairHit"></span></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Share a chair</div>
 <div class="paragraph">
 If ERIC hits a character who is sitting on a chair, and then quickly sits in
@@ -463,7 +472,7 @@ character rises and takes his seat again.
 </div>
 </div>
 <div><span id="absentTearaway"></span></div>
-<div class="box box-1">
+<div class="box box-2">
 <div class="box-title">800 lines BOY WANDER - NOW WHERE ARE YOU?</div>
 <div class="paragraph">
 In lesson <a href="../lessons/EC.html">0xEC</a> (MR WACKER - WHITE ROOM), BOY WANDER is in the Revision
@@ -476,9 +485,9 @@ Revision Library (this time accompanied by ANGELFACE).
 </div>
 </div>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20260410</div>
+<div class="release">The complete Skool Daze RAM disassembly 20261128</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2026 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 10.0.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 10.2.</div>
 <div><a href="../dec/reference/bugs.html">Switch to decimal</a>.</div>
 </footer>
 </body>

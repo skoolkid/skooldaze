@@ -3,6 +3,7 @@
 <head>
 <title>Skool Daze: Trivia</title>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body class="Facts">
@@ -45,7 +46,7 @@
 <li><a href="#blackboardBlindness">Blackboard blindness</a></li>
 <li><a href="#saveDuster">Save the duster</a></li>
 <li><a href="#wackerSwotTales">WACKER loves EINSTEIN's tales</a></li>
-<li><a href="#wackerPtoZ">WACKER's letter-blindness</a></li>
+<li><a href="#wackerQtoZ">WACKER's letter-blindness</a></li>
 <li><a href="#battle1800">WHICH BATTLE OCCURRED IN 1800?</a></li>
 <li><a href="#withitEdited">WITHIT edited</a></li>
 </ul>
@@ -781,8 +782,10 @@ There are five places in the <a href="../asm/FE00.html">main timetable</a> where
 followed immediately by another: timetable indexes <a href="../asm/FE00.html#fe08">0x08/0x09</a>,
 <a href="../asm/FE00.html#fe13">0x13/0x14</a>, <a href="../asm/FE00.html#fe29">0x29/0x2A</a>, <a href="../asm/FE00.html#fe33">0x33/0x34</a>, and
 <a href="../asm/FE00.html#fe39">0x39/0x3A</a>. However, you might be forgiven for not having noticed this
-because the bell does not ring between the playtimes in each pair (see
-<a href="../asm/66E6.html#66f8">66F8</a>).
+because the bell does not usually ring between the playtimes in each pair (see
+<a href="../asm/66E6.html#66f8">66F8</a>). The bell will ring only if the second playtime in the pair is
+replaced by a special playtime, which happens three times out of eight (see
+<a href="../asm/6E33.html">6E33</a>).
 </div>
 <div class="paragraph">
 Also note that playtimes <a href="../lessons/FE.html">0xFE</a> and <a href="../lessons/FF.html">0xFF</a> are used exclusively as the
@@ -813,7 +816,7 @@ between one and three throughout the <a href="../asm/FE00.html">main timetable</
 <div class="paragraph">
 BOY WANDER doesn't spend every period looking for opportunities to fire his
 catapult: in special playtimes <a href="../lessons/F3.html">0xF3</a> (in which ANGELFACE has mumps) and
-<a href="../lessons/F4.html">0xF4</a> (in which EINSTEIN is going tell MR WACKER what ERIC's up to) he
+<a href="../lessons/F4.html">0xF4</a> (in which EINSTEIN is going to tell MR WACKER what ERIC's up to) he
 keeps his catapult in his pocket at all times.
 </div>
 <div class="paragraph">
@@ -926,12 +929,12 @@ MR WACKER never gives EINSTEIN lines for telling tales (see <a href="../asm/7CE0
 merely gullible, a firm believer in the virtue of snitching, or both?
 </div>
 </div>
-<div><span id="wackerPtoZ"></span></div>
+<div><span id="wackerQtoZ"></span></div>
 <div class="box box-1">
 <div class="box-title">WACKER's letter-blindness</div>
 <div class="paragraph">
 The first letter of the safe combination code (MR WACKER's) is always in the
-range A-O (see <a href="../asm/F855.html">F855</a>). Did WACKER never learn the alphabet from P to Z when
+range A-P (see <a href="../asm/F855.html">F855</a>). Did WACKER never learn the alphabet from Q to Z when
 he was at skool?
 </div>
 </div>
@@ -960,9 +963,9 @@ Glasgow's that WITHIT was writing about at <a href="../asm/E860.html">E860</a> i
 </div>
 </div>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20260410</div>
+<div class="release">The complete Skool Daze RAM disassembly 20261128</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2026 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 10.0.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 10.2.</div>
 <div><a href="../dec/reference/facts.html">Switch to decimal</a>.</div>
 </footer>
 </body>

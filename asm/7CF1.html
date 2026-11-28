@@ -3,6 +3,7 @@
 <head>
 <title>Skool Daze: Routine at 7CF1</title>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body class="Asm-c">
@@ -29,7 +30,7 @@ Next: <a href="7CFC.html">7CFC</a>
 <td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</a>, <a href="7D9E.html">7D9E</a>, <a href="F300.html">F300</a> and <a href="F400.html">F400</a>. Drops the return address from the stack and copies its LSB into byte 0x63 of the character's buffer (where the LSB of the address of the primary command routine is held), copies the address of the interruptible subcommand routine from <span class="register">BC</span> into bytes 0x6A and 0x6B of the character's buffer, and then jumps to that routine.
+Used by the routines at <a href="7CFC.html">7CFC</a>, <a href="7D30.html">7D30</a>, <a href="7D9E.html">7D9E</a>, <a href="F300.html">F300</a> and <a href="F400.html">F400</a>. Drops the return address from the stack and copies its LSB into byte 0x63 of the character's buffer (where the LSB of the address of the primary command routine is held), copies the address of the interruptible subcommand routine from <span class="register">BC</span> into bytes 0x69 and 0x6A of the character's buffer, and then jumps to that routine.
 </div>
 </div>
 <table class="input">
@@ -99,9 +100,9 @@ Next: <a href="7CFC.html">7CFC</a>
 </tr>
 </table>
 <footer>
-<div class="release">The complete Skool Daze RAM disassembly 20260410</div>
+<div class="release">The complete Skool Daze RAM disassembly 20261128</div>
 <div class="copyright">&#169; 1984 Microsphere Computer Services Ltd. &#169; 2026 Richard Dymond.</div>
-<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 10.0.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 10.2.</div>
 <div><a href="../dec/asm/31985.html">Switch to decimal</a>.</div>
 </footer>
 </body>
