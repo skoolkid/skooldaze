@@ -1,7 +1,7 @@
 # rc file for check-asms, check-bins, disassembly-diff, skooldiff, write-files
 
-OLD_VERSION=20260410
+OLD_VERSION=20261128
 RZX=$SPECTRUM_RZX/s/skooldaze.rzx
-SK_OLD_VERSION=10.0
+SK_OLD_VERSION=10.2
 SKOOL2BIN_START=24573
 SNAPSHOT=$SKOOLDAZE_HOME/build/skool_daze.z80
